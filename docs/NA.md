@@ -15,9 +15,13 @@
 
 ## Chapter 1: Mathematical Preliminaries
 
-### 截断误差和舍入误差
+### 误差
 
-### 绝对误差和相对误差
+#### 截断误差(Truncation Error)
+
+#### 舍入误差(Roundoff Error)
+
+#### 绝对误差和相对误差
 
 如果$p^*$是$p$的一个近似，那么该近似的**绝对误差**是$\lvert p-p^*\rvert$，**相对误差**是$\lvert \frac{p-p^{*}}{p} \rvert$，其中$p\neq0$。
 
