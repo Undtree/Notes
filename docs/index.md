@@ -1,4 +1,4 @@
-# Welcome to MkDocs(Math)
+# Welcome to HERE
 
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
