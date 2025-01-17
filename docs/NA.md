@@ -22,8 +22,10 @@
 #### 舍入误差(Roundoff Error)
 
 有限位浮点数代替无限位数产生的误差。
+
 - **Rounding**
   $0.1119 \to 0.112$
+
 - **Chopping**
   $0.1119 \to 0.111$
 
@@ -37,5 +39,7 @@
 - 除以一个较小的数或者乘以一个较大的数会放大误差
 
 ## Chapter 2: Solutions of Equations in One Variable
+
+### 牛顿迭代法(Newton's Method)
 
 
