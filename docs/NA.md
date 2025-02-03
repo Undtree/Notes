@@ -52,13 +52,20 @@
 
 ## Chapter 5: Initial-Value Problems for Ordinary Differential Equations
 
+
 !!! Note
 
 如标题所示，本章主要解决的是如何在计算机的世界中解决“常微分方程的初值问题”，用数学语言表达
 可以写成：
+
+找到初值
+
 $$
-找到初值\omega_0, \omega_2, \dots, 
+\omega_0, \omega_2, \dots, \omega_n,
 $$
+
+使得
+
 
 ### Euler's Method
 
