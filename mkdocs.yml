@@ -4,7 +4,7 @@ nav:
     - Index: index.md
     - Home: home.md
     - 数学:
-        - NA: NA.md
+        - 数值分析: NA.md
 
 theme:
     name: material
