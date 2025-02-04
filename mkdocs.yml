@@ -22,4 +22,4 @@ extra_javascript:
 
 extra_css:
   - stylesheet/extra.css
-  - https://fonts.loli.net/css2?family=Noto+Serif+SC:wght@200..900&display=swap
+  - https://fonts.loli.net/css2?family=Noto+Serif+SC&display=swap
