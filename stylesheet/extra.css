@@ -1,3 +1,7 @@
+body{
+    background-color: #ffffff;
+}
+
 :root{
     --md-text-font: "Noto Serif SC";
 }
