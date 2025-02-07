@@ -2,9 +2,11 @@ site_name: Undertree's 小站
 
 nav:
 #   - Index: index.md 
-    - Home: home.md
+    - Index: home.md
     - 数学:
         - 数值分析: NA.md
+    - 外语:
+        - 日语(日本語): JPN.md
 
 theme:
     name: material
