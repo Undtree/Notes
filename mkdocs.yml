@@ -7,6 +7,8 @@ nav:
     - 数值分析: NA.md
   - 外语:
     - 日语(日本語): JPN.md
+  - CS相关:
+    - 计算机体系结构: 计算机体系结构.md
 
 theme:
     name: material
