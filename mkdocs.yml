@@ -8,9 +8,10 @@ nav:
   - 外语:
     - 日语(日本語): JPN.md
   - CS相关:
-    - 计算机体系结构: 计算机体系结构.md
+    - 计算机体系结构: CA.md
     - 数据库系统: DBS.md
-    - 密码学: 密码学.md
+    - 密码学: Crypto.md
+    - 面向对象程序设计(in C++): OOP.md
 
 theme:
     name: material
