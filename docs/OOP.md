@@ -20,7 +20,7 @@
 
 ## The First C++ Program
 
-```Cpp
+```cpp
 #include <iostream>                 // 头文件
 using namespace std;                // using 是关键字，std是命名空间的label，
                                     // 告诉编译器后续未指明的变量均属于std命名空间
@@ -32,3 +32,15 @@ int main()
 }
 
 ```
+
+## Using Objects
+
+### 1. string
+
+- `string`是C++中的一个类(class)。
+
+- 要在代码中使用string，需要事先声明头文件`<string>`
+
+- 
+  
+- 放在任何一个类的变量中的东西都是一个对象(object)
