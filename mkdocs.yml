@@ -9,6 +9,7 @@ nav:
     - 日语(日本語): JPN.md
   - CS相关:
     - 计算机体系结构: 计算机体系结构.md
+    - 数据库系统: DBS.md
 
 theme:
     name: material
