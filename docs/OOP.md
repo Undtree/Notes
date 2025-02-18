@@ -17,3 +17,18 @@
   
 
 - 劣势
+
+## The First C++ Program
+
+```Cpp
+#include <iostream>                 // 头文件
+using namespace std;                // using 是关键字，std是命名空间的label，
+                                    // 告诉编译器后续未指明的变量均属于std命名空间
+int main()
+{
+    cout << "Hello World!" << endl; // cout: standard output ,
+                                    // 将字符串和endofline(endl)送入cout中
+    return 0;
+}
+
+```
