@@ -10,6 +10,7 @@ nav:
   - CS相关:
     - 计算机体系结构: 计算机体系结构.md
     - 数据库系统: DBS.md
+    - 密码学: 密码学.md
 
 theme:
     name: material
