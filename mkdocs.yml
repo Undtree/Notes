@@ -1,8 +1,7 @@
 site_name: Undertree's 小站
 
 nav:
-  - Home:
-    - home.md
+  - Home: home.md
   - 数学:
     - 数值分析: NA.md
   - 外语:
@@ -11,6 +10,9 @@ nav:
     - 计算机体系结构: CA.md
     - 数据库系统: DBS.md
     - 密码学: Crypto.md
+    - 数据结构与算法分析:
+      - FDS: FDS.md
+
     - 面向对象程序设计(in C++): OOP.md
 
 theme:
