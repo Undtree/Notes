@@ -1,7 +1,8 @@
 site_name: Undertree's 小站
 
 nav:
-  - Home: home.md
+  - Home: index.md
+
   - 数学:
     - 数值分析: NA.md
   - 外语:
