@@ -63,6 +63,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#introduction" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -489,6 +494,17 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    编译原理
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -498,6 +514,98 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      编程语言及设计
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      编译器的阶段(编译过程)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lexical-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      词法分析 Lexical Analysis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      有穷自动机
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="有穷自动机">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      有穷自动机的接收
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fa" class="md-nav__link">
+    <span class="md-ellipsis">
+      FA的分类
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -529,6 +637,89 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      编程语言及设计
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      编译器的阶段(编译过程)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lexical-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      词法分析 Lexical Analysis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      有穷自动机
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="有穷自动机">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      有穷自动机的接收
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fa" class="md-nav__link">
+    <span class="md-ellipsis">
+      FA的分类
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -545,7 +736,7 @@
   <h1>编译原理</h1>
 
 <div markdown="1" style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-:material-circle-edit-outline: 约 61 个字 :material-clock-time-two-outline: 预计阅读时间不到 1 分钟
+:material-circle-edit-outline: 约 441 个字 :material-clock-time-two-outline: 预计阅读时间 1 分钟
 </div>
 <div class="admonition abstract">
 <p class="admonition-title">Abstract</p>
@@ -557,10 +748,66 @@
 </li>
 <li>
 <p>Grading Policy:
-  75% Lecture Grade (Homework 10%+Quizzes 10%+Mid-Term 15%+Final 40%) + 25% Lab Grade; <u>Final &lt; 40/100 then you will fail this course&lt;\u&gt;.</p>
+  75% Lecture Grade (Homework 10%+Quizzes 10%+Mid-Term 15%+Final 40%) + 25% Lab Grade; <u>Final &lt; 40/100 then you will fail this course</u>.</p>
 </li>
 </ul>
 </div>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<h3 id="_1">编程语言及设计<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h3 id="_2">编译器的阶段(编译过程)<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p><strong>[ 前端 ]</strong>词法分析 → 语法分析 → 语义分析</p>
+<p>→<strong>[ 中端 ]</strong>中间代码生成 → 机器无关代码优化</p>
+<p>→<strong>[ 后端 ]</strong>指令选择 → 寄存器分配 → 指令调度</p>
+<h2 id="lexical-analysis">词法分析 Lexical Analysis<a class="headerlink" href="#lexical-analysis" title="Permanent link">&para;</a></h2>
+<p>词法分析就是将输入的字符串识别为<strong>有意义的子串</strong>。这样会带来其他的辅助任务，例如过滤注释和空格等。</p>
+<p>该部分内容和计算理论课程有很多重合: <a href="https://note.tonycrane.cc/cs/tcs/toc/topic1/">TonyCrane/计算理论-语言、自动机与正则表达式</a></p>
+<p><strong>[Definition]</strong> Lexeme(词素)</p>
+<p><strong>[Definition]</strong> Token</p>
+<p>正则表达式(RE)<span class="arithmatex">\(r\)</span>定义正则语言<span class="arithmatex">\(L(r)\)</span>。</p>
+<p>正则定义</p>
+<div class="admonition note 正则规则的二义性">
+<p class="admonition-title">Note</p>
+<ul>
+<li>
+<p>最长匹配原则</p>
+</li>
+<li>
+<p>规则优先原则</p>
+</li>
+</ul>
+</div>
+<h2 id="_3">有穷自动机<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<div class="arithmatex">\[
+M = \{S, \Sigma, move, s_0, F\}
+\]</div>
+<p>状态图和状态表，转换图和转换表</p>
+<h4 id="_4">有穷自动机的接收<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<p>给定输入串 x ，如果存在一个对应于串 x 的从初始状态到某终止状态的转换序列，则称串 x 被该 FA 接收。</p>
+<p>由一个 FA <span class="arithmatex">\(M\)</span> 接收的所有串构成的集合称为该 FA 接收(或定义的语言)，记作<span class="arithmatex">\(L(M)\)</span>。</p>
+<h3 id="fa">FA 的分类<a class="headerlink" href="#fa" title="Permanent link">&para;</a></h3>
+<p>此部分内容在计算理论已经涉及。</p>
+<div class="admonition note reviews">
+<p class="admonition-title">Note</p>
+<ul>
+<li>
+<p>NFA 非确定有穷自动机</p>
+</li>
+<li>
+<p>DFA </p>
+</li>
+</ul>
+<p>两种有穷自动机的主要差异在转换函数，即</p>
+<ul>
+<li>
+<p>DFA's move: <span class="arithmatex">\(S \times \Sigma \to S\)</span></p>
+</li>
+<li>
+<p>NFA's move: <span class="arithmatex">\(S \times \{\Sigma \} \to S\)</span></p>
+</li>
+</ul>
+</div>
+<p>词法分析器自动生成： RE→ 最小 DFA</p>
+<p>??? Example "Sample"</p>
 
 
 
