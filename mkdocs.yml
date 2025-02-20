@@ -15,6 +15,7 @@ nav:
       - FDS: FDS.md
 
     - 面向对象程序设计(in C++): OOP.md
+    - 编译原理: 编译原理.md
 
 theme:
     name: material
