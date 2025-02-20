@@ -31,6 +31,8 @@ markdown_extensions:
       generic: true
   - toc:
       permalink: true
+      
+  - md_in_html
   - attr_list
   - admonition
   - markdown_cjk_spacing.cjk_spacing
