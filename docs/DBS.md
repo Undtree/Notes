@@ -24,3 +24,28 @@
 
 ### Data Manipulation Language
 
+
+## Relational Model
+
+**relation & relationship**
+
+所有有相同属性的成员的集合称为一个relation。这和通常中文中认为的“关系”不同。
+
+!!! Example
+    一个球队中的所有球员、来上课的所有同学都可以称为一个relation，而你和你的宠物狗之间存在的关系在本课程中称为relationship。
+
+**Relation Schema and Instance**
+
+null: 不知道的值
+
+**Domain of Attribute**
+
+**Database**
+
+**Keys**
+
+![定义图](images/DB/db1.png "神秘关系图")
+
+![关系图](images/DB/db2.png "神秘关系图")
+
+**Relational Algebra**
