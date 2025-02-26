@@ -20,6 +20,13 @@ nav:
 theme:
     name: material
     language: 'zh'
+    features:
+      - search.share
+      - search.suggest
+      - search.highlight
+    font:
+      text: Noto Serif SC
+      code: JetBrains Mono
     icon: 
       logo: material/notebook-outline
 
@@ -50,5 +57,5 @@ extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
 
 extra_css:
-  - https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap
+#  - https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap
   - stylesheet/extra.css
