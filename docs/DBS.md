@@ -1,10 +1,14 @@
 !!! Abstract
     **课程信息**
     - 黄忠东老师授课。
+  
     - 参考用书：《Database System Concept》, 7th Edition
+
     - Grading Policy
     
-## 
+!!! Note 这门课讲什么？
+    在这门课程中，我们将学习到有严格事务要求(data access requirement)的结构化数据(data type)的管理。
+
 
 ### Data
 
