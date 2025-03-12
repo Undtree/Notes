@@ -6,7 +6,7 @@
 
     - Grading Policy
     
-!!! 这门课讲什么?
+!!! 这门课讲什么
     在这门课程中，我们将学习到有严格事务要求(data access requirement)的结构化数据(data type)的管理。
 
 ### 使用一般的文件处理系统可能产生的问题
@@ -21,6 +21,8 @@
     - 完整性约束(例如要求成绩必须>0)表示不明显
 
     - 修改和新增操作较为繁琐(需要修改程序代码)
+
+- 
 ### Data
 
 - Different Levels
@@ -64,3 +66,4 @@ null: 不知道的值
 ![关系图](images/DB/db2.png "神秘关系图")
 
 **Relational Algebra**
+
