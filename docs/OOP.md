@@ -71,5 +71,17 @@ int main()
 void move(float dx, float dy, struct *p);
 ```
 
+`new()`函数申请的空间来自于**虚拟地址**。`malloc()`函数则是向**操作系统**申请内存空间。
+
+## Inside Class
+
+### Overload Functions
+
+![6-1](images/OOP/6-1.png)
+
+构造函数重载
+
+### Default Argument
 
 
+### Inside Functions

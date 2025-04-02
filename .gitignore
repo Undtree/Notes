@@ -1,2 +1,6 @@
+# folders
 site/
 .vscode/
+
+# files
+*.drawio
