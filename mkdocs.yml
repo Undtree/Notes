@@ -25,6 +25,8 @@ theme:
       - search.share
       - search.suggest
       - search.highlight
+    font: 
+      code: "JetBrains Mono"
     icon: 
       logo: material/notebook-outline
 
@@ -54,12 +56,16 @@ markdown_extensions:
   
 extra_javascript:
   - javascripts/mathjax.js
+  - https://cdn.tonycrane.cc/utils/katex.min.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
 
 extra_css:
 #  - https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap
-  - https://cdn.tonycrane.cc/utils/katex.min.css
-  - https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css
-  - https://cdn.tonycrane.cc/lxgw/lxgwscreen.css
+#  - https://cdn.tonycrane.cc/utils/katex.min.css
+#  - https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css
+#  - https://cdn.tonycrane.cc/lxgw/lxgwscreen.css
+  - https://cdn.jsdelivr.net/npm/jetbrains-mono@1.0.6/css/jetbrains-mono.min.css
+  - https://gcore.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css
+  - https://gcore.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css
   - stylesheet/extra.css
