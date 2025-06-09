@@ -17,6 +17,7 @@
 <link href="https://cdn.jsdelivr.net/npm/jetbrains-mono@1.0.6/css/jetbrains-mono.min.css" rel="stylesheet"/>
 <link href="https://gcore.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css" rel="stylesheet"/>
 <link href="../stylesheet/extra.css" rel="stylesheet"/>
+<link href="../stylesheet/card.css" rel="stylesheet"/>
 <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 </head>
 <body dir="ltr">
@@ -241,16 +242,23 @@
 <nav aria-label="SQL" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#sql_1">
+<a class="md-nav__link" href="#sql_2">
 <span class="md-ellipsis">
-      基础SQL
+      SQL数据类型
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#sql_2">
+<a class="md-nav__link" href="#sql_3">
 <span class="md-ellipsis">
-      进阶SQL
+      SQL语句规范
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sql_4">
+<span class="md-ellipsis">
+      高级SQL
     </span>
 </a>
 </li>
@@ -258,14 +266,14 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_3">
+<a class="md-nav__link" href="#_4">
 <span class="md-ellipsis">
       数据库设计范式
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_4">
+<a class="md-nav__link" href="#_5">
 <span class="md-ellipsis">
       存储
     </span>
@@ -273,28 +281,28 @@
 <nav aria-label="存储" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_5">
+<a class="md-nav__link" href="#_6">
 <span class="md-ellipsis">
       存储层级
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_6">
+<a class="md-nav__link" href="#_7">
 <span class="md-ellipsis">
       磁盘存储接口
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_7">
+<a class="md-nav__link" href="#_8">
 <span class="md-ellipsis">
       磁盘工作机制
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_8">
+<a class="md-nav__link" href="#_9">
 <span class="md-ellipsis">
       磁盘性能评估
     </span>
@@ -311,7 +319,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_9">
+<a class="md-nav__link" href="#_10">
 <span class="md-ellipsis">
       数据存储结构
     </span>
@@ -319,7 +327,7 @@
 <nav aria-label="数据存储结构" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_10">
+<a class="md-nav__link" href="#_11">
 <span class="md-ellipsis">
       单条记录
     </span>
@@ -333,7 +341,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_13">
+<a class="md-nav__link" href="#_14">
 <span class="md-ellipsis">
       文件记录组织
     </span>
@@ -347,7 +355,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_14">
+<a class="md-nav__link" href="#_15">
 <span class="md-ellipsis">
       缓冲区/缓存
     </span>
@@ -365,7 +373,7 @@
 <nav aria-label="索引(Indexing)" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_15">
+<a class="md-nav__link" href="#_16">
 <span class="md-ellipsis">
       有序索引和无序索引
     </span>
@@ -379,21 +387,21 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_16">
+<a class="md-nav__link" href="#_17">
 <span class="md-ellipsis">
       内存索引优化
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_17">
+<a class="md-nav__link" href="#_18">
 <span class="md-ellipsis">
       高级索引
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_18">
+<a class="md-nav__link" href="#_19">
 <span class="md-ellipsis">
       写入优化索引
     </span>
@@ -403,7 +411,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_19">
+<a class="md-nav__link" href="#_20">
 <span class="md-ellipsis">
       查询处理
     </span>
@@ -428,14 +436,14 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_20">
+<a class="md-nav__link" href="#_21">
 <span class="md-ellipsis">
       并发控制实现
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_21">
+<a class="md-nav__link" href="#_22">
 <span class="md-ellipsis">
       错误恢复
     </span>
@@ -547,16 +555,23 @@
 <nav aria-label="SQL" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#sql_1">
+<a class="md-nav__link" href="#sql_2">
 <span class="md-ellipsis">
-      基础SQL
+      SQL数据类型
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#sql_2">
+<a class="md-nav__link" href="#sql_3">
 <span class="md-ellipsis">
-      进阶SQL
+      SQL语句规范
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sql_4">
+<span class="md-ellipsis">
+      高级SQL
     </span>
 </a>
 </li>
@@ -564,14 +579,14 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_3">
+<a class="md-nav__link" href="#_4">
 <span class="md-ellipsis">
       数据库设计范式
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_4">
+<a class="md-nav__link" href="#_5">
 <span class="md-ellipsis">
       存储
     </span>
@@ -579,28 +594,28 @@
 <nav aria-label="存储" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_5">
+<a class="md-nav__link" href="#_6">
 <span class="md-ellipsis">
       存储层级
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_6">
+<a class="md-nav__link" href="#_7">
 <span class="md-ellipsis">
       磁盘存储接口
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_7">
+<a class="md-nav__link" href="#_8">
 <span class="md-ellipsis">
       磁盘工作机制
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_8">
+<a class="md-nav__link" href="#_9">
 <span class="md-ellipsis">
       磁盘性能评估
     </span>
@@ -617,7 +632,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_9">
+<a class="md-nav__link" href="#_10">
 <span class="md-ellipsis">
       数据存储结构
     </span>
@@ -625,7 +640,7 @@
 <nav aria-label="数据存储结构" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_10">
+<a class="md-nav__link" href="#_11">
 <span class="md-ellipsis">
       单条记录
     </span>
@@ -639,7 +654,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_13">
+<a class="md-nav__link" href="#_14">
 <span class="md-ellipsis">
       文件记录组织
     </span>
@@ -653,7 +668,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_14">
+<a class="md-nav__link" href="#_15">
 <span class="md-ellipsis">
       缓冲区/缓存
     </span>
@@ -671,7 +686,7 @@
 <nav aria-label="索引(Indexing)" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_15">
+<a class="md-nav__link" href="#_16">
 <span class="md-ellipsis">
       有序索引和无序索引
     </span>
@@ -685,21 +700,21 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_16">
+<a class="md-nav__link" href="#_17">
 <span class="md-ellipsis">
       内存索引优化
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_17">
+<a class="md-nav__link" href="#_18">
 <span class="md-ellipsis">
       高级索引
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_18">
+<a class="md-nav__link" href="#_19">
 <span class="md-ellipsis">
       写入优化索引
     </span>
@@ -709,7 +724,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_19">
+<a class="md-nav__link" href="#_20">
 <span class="md-ellipsis">
       查询处理
     </span>
@@ -734,14 +749,14 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_20">
+<a class="md-nav__link" href="#_21">
 <span class="md-ellipsis">
       并发控制实现
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_21">
+<a class="md-nav__link" href="#_22">
 <span class="md-ellipsis">
       错误恢复
     </span>
@@ -756,7 +771,7 @@
 <article class="md-content__inner md-typeset">
 <h1>数据库系统</h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 5938 个字 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"></path></svg></span> 19 张图片 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 20 分钟</p>
+<p><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 8666 个字 <span class="twemoji"><svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"></path></svg></span> 47 行代码 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"></path></svg></span> 22 张图片 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 29 分钟</p>
 </div>
 <div class="admonition abstract">
 <p class="admonition-title">Abstract</p>
@@ -775,7 +790,17 @@
 <p class="admonition-title">这门课讲什么</p>
 <p>在这门课程中，我们将学习到有严格事务要求(data access requirement)的结构化数据(data type)的管理。</p>
 </div>
-<p>特别感谢Github上<a href="https://github.com/yile-liu/ZJU_database_system">@yile-liu</a>老师的数据库系统笔记。</p>
+<div class="admonition success">
+<p class="admonition-title">特别鸣谢🙇‍</p>
+<ul>
+<li>
+<p>Github上<a href="https://github.com/yile-liu/ZJU_database_system">@yile-liu</a>老师的数据库系统笔记。</p>
+</li>
+<li>
+<p>Chritch老师的博客 <a href="https://obsidian.zerokei.top/Hub/Database%20System/">数据库系统篇</a></p>
+</li>
+</ul>
+</div>
 <!-- ## 数据库概念
 
 ### 使用一般的文件处理系统可能产生的问题
@@ -800,7 +825,7 @@
 R = (A_1, A_2, …, A_n )
 \]</div>
 <p>被称为<strong>relation schema</strong>。一般地，我们用 <span class="arithmatex">\(R\)</span> 等大写字母表记一个relation schema，用 <span class="arithmatex">\(r\)</span> 等小写字母表记一个 relation instance。</p>
-<p>每一列的所有可取值(取值范围)被称为它的<strong>domain</strong>。我们给定列 <span class="arithmatex">\(A_i\)</span> 的 domain 是 <span class="arithmatex">\(D_i\)</span> ，那么从形式上说，一个<strong>relation</strong>就是 <span class="arithmatex">\(D_1 \times D_2 \times ... \times D_n\)</span> 的一个子集。</p>
+<p>每一列的所有可取值(取值范围)被称为它的<strong>domain</strong>。我们给定列 <span class="arithmatex">\(A_i\)</span> 的 domain 是 <span class="arithmatex">\(D_i\)</span> ，那么从形式上说，一个<strong>关系(relation)</strong>就是 <span class="arithmatex">\(D_1 \times D_2 \times ... \times D_n\)</span> 的一个子集。</p>
 <p>换句话说，一个relation instance就是一张表格，每一行代表一个事物，每一列代表一项属性。</p>
 <p>一个<strong>数据库(Database)</strong>就是由多个relation组成的。这一点在后续SQL部分还会有所体现。</p>
 <p>我们定义一个概念：<strong>键(key)</strong>，并规定键 <span class="arithmatex">\(K \subseteq R~\mbox{(Relation Schema)}\)</span>，键实际上就是一个列名。</p>
@@ -891,12 +916,7 @@ R = (A_1, A_2, …, A_n )
 <tr>
 <td style="text-align: center;"><span class="arithmatex">\(\theta\)</span> 连接</td>
 <td style="text-align: center;"><span class="arithmatex">\(r \bowtie_{\theta} s\)</span></td>
-<td style="text-align: center;">返回满足关系式 <span class="arithmatex">\(\theta\)</span> 的自然连接结果</td>
-</tr>
-<tr>
-<td style="text-align: center;">外连接：<br/>左外连接<br/>右外连接<br/>全外连接</td>
-<td style="text-align: center;"><br/><span class="arithmatex">\(r~⟕~s\)</span><br/><span class="arithmatex">\(r~⟖~s\)</span><br/><span class="arithmatex">\(r~⟗~s\)</span></td>
-<td style="text-align: center;"><br/>左外连接表示在保留左表所有记录的同时，进行join操作，以此类推。</td>
+<td style="text-align: center;">返回满足关系式</td>
 </tr>
 <tr>
 <td style="text-align: center;">除</td>
@@ -911,20 +931,409 @@ R = (A_1, A_2, …, A_n )
 <tr>
 <td style="text-align: center;"><br/>聚集</td>
 <td style="text-align: center;"><br/><span class="arithmatex">\(_{G_1, G_2, ..., G_n}~\mathcal{G}_{F_1(A_1), F_2(A_2), ..., F_n(A_n)}{r}\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(G_i\)</span> 是用于分组的属性 (可为空) ，<span class="arithmatex">\(F_i\)</span> 是聚集函数，<span class="arithmatex">\(A_i\)</span> 是属性名。聚集操作对一组值执行计算并返回单个值，它对数据集合进行"纵向"计算 (跨多行计算)。假设已经指定用于分组的属性，则按指定属性将关系划分为多个组，对每个组独立应用聚合函数，每组产生一个结果元组</td>
+<td style="text-align: center;"><span class="arithmatex">\(G_i\)</span> 是用于分组的属性 (可为空) ，<span class="arithmatex">\(F_i\)</span> 是聚集函数 (反映在数据库中就是<code>sum</code>/<code>avg</code>等函数) ，<span class="arithmatex">\(A_i\)</span> 是属性名。聚集操作对一组值执行计算并返回单个值，它对数据集合进行"纵向"计算 (跨多行计算)。假设已经指定用于分组的属性，则按指定属性将关系划分为多个组，对每个组独立应用聚合函数，每组产生一个结果元组</td>
 </tr>
 </tbody>
 </table>
 <h2 id="sql">SQL<a class="headerlink" href="#sql" title="Permanent link">¶</a></h2>
-<p>SQL，全称结构化查询语言。</p>
-<h3 id="sql_1">基础SQL<a class="headerlink" href="#sql_1" title="Permanent link">¶</a></h3>
-<h3 id="sql_2">进阶SQL<a class="headerlink" href="#sql_2" title="Permanent link">¶</a></h3>
-<h2 id="_3">数据库设计范式<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
-<h2 id="_4">存储<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
-<h3 id="_5">存储层级<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">这个章节对应教材第3-5章。</p>
+</div>
+<p>SQL全称结构化查询语言(Structured Query Language)。SQL数据定义语言（DDL）允许定义以下关系信息：</p>
+<ul>
+<li>
+<p>每个关系的模式（schema）</p>
+</li>
+<li>
+<p>各属性关联的值类型</p>
+</li>
+<li>
+<p>完整性约束</p>
+</li>
+<li>
+<p>为每个关系维护的索引集合</p>
+</li>
+<li>
+<p>关系的安全性与授权信息</p>
+</li>
+<li>
+<p>关系在磁盘上的物理存储结构</p>
+</li>
+</ul>
+<h4 id="sql_1">SQL的历史发展<a class="headerlink" href="#sql_1" title="Permanent link">¶</a></h4>
+<p>这里应该不考，暂时鸽了（</p>
+<h3 id="sql_2">SQL数据类型<a class="headerlink" href="#sql_2" title="Permanent link">¶</a></h3>
+<div class="card">
+<div class="card-header">char(n)</div>
+<div class="card-body">
+<p><strong>含义</strong>：定长为n的字符串</p>
+</div>
+</div>
+<div class="card">
+<div class="card-header">varchar(n)</div>
+<div class="card-body">
+<p><strong>含义</strong>：长度可变的字符串，最大长度为n</p>
+</div>
+</div>
+<div class="card">
+<div class="card-header">varchar(n)</div>
+<div class="card-body">
+<p><strong>含义</strong>：长度可变的字符串，最大长度为n</p>
+</div>
+</div>
+<div class="card">
+<div class="card-header">int</div>
+<div class="card-body">
+<p><strong>含义</strong>：整数。其数据范围是数学上的“整数”的一个<u>由库和计算机架构决定的</u>有限子集</p>
+</div>
+</div>
+<div class="card">
+<div class="card-header">smallint</div>
+<div class="card-body">
+<p><strong>含义</strong>：小整数。其数据范围是数学上的“整数”的一个<u>由库和计算机架构决定的</u>有限子集，只不过比int所包含的范围小。</p>
+</div>
+</div>
+<div class="card">
+<div class="card-header">numeric(p, d)</div>
+<div class="card-body">
+<p><strong>含义</strong>：十进制表示，总共有p位，其中小数点后有d位。</p>
+<blockquote>
+<p>例如对numeric(3, 1)，10.5、01.0是合法的，1.05、105、1都是不合法的。</p>
+</blockquote>
+</div>
+</div>
+<div class="card">
+<div class="card-header">float(n)</div>
+<div class="card-body">
+<p><strong>含义</strong>：<u>至少</u>有n个数字的浮点数。</p>
+</div>
+</div>
+<div class="card">
+<div class="card-header">real/double precision</div>
+<div class="card-body">
+<p><strong>含义</strong>：单精度浮点数和双精度浮点数。和C语言等的<code>float</code>/<code>double</code>大致对应。允许的数据范围<u>由库和计算机架构</u>决定。</p>
+</div>
+</div>
+<p>SQL还有一些关于时间的预设类型：</p>
+<div class="card">
+<div class="card-header">date</div>
+<div class="card-body">
+<p><strong>含义</strong>：日期，能且仅能包含(四位数字的)年份、月份和日期。</p>
+<blockquote>
+<p>例如"2025-6-9"、"2025-06-09"</p>
+</blockquote>
+</div>
+</div>
+<div class="card">
+<div class="card-header">time</div>
+<div class="card-body">
+<p><strong>含义</strong>：时间，最大单位是小时，至少包含小时、分钟、秒。</p>
+<blockquote>
+<p>"18:12:20" 和 "18:12:20.111" 都是可接受的输入。虽然标准格式要求小时、分钟、秒都应该是2位数字，但大多数数据库系统在输入时允许省略前导0。</p>
+</blockquote>
+</div>
+</div>
+<div class="card">
+<div class="card-header">timestamp</div>
+<div class="card-body">
+<p><strong>含义</strong>：从组成上看就是date+time。</p>
+<blockquote>
+<p>例如"2005-7-27 09:00:30.75"。</p>
+</blockquote>
+</div>
+</div>
+<div class="card">
+<div class="card-header">interval</div>
+<div class="card-body">
+<p><strong>含义</strong>：描述一个时间段。interval值可以被加在date/time/timestamp值上。</p>
+</div>
+</div>
+<p>SQL还有针对大型数据的表示方式。</p>
+<div class="card">
+<div class="card-header">blob</div>
+<div class="card-body">
+<p><strong>含义</strong>：二进制大对象，是一个可以存储二进制文件的容器。典型的blob是一张图片或者声音文件等。对其的解析会交给外部程序去运行，数据库只负责存储这些大对象。</p>
+</div>
+</div>
+<div class="card">
+<div class="card-header">clob</div>
+<div class="card-body">
+<p><strong>含义</strong>：字符大对象，是一个可以储存大段字符数据的容器。</p>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>需要注意的是，当一个查询操作需要查询一个大对象时，会返回给它一个指向这个对象的指针而非这个大对象本身。传指针可快多了！</p>
+</div>
+<p>SQL还允许用户自定义类型(<code>create type</code>)。</p>
+<h3 id="sql_3">SQL语句规范<a class="headerlink" href="#sql_3" title="Permanent link">¶</a></h3>
+<p>这里就不列出所有语法了，仅仅放一些个人觉得可能会错的地方。</p>
+<p>SQL所有的关键字都是<strong>大小写不敏感</strong>的。</p>
+<div class="card">
+<div class="card-header">建表</div>
+<div class="card-body">
+<p>一个例子：</p>
+<div class="language-SQL highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">student</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="n">ID</span><span class="w">             </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span>
+</span><span id="__span-0-3"><a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="n">name</span><span class="w">           </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="p">,</span>
+</span><span id="__span-0-4"><a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="n">dept_name</span><span class="w">      </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span>
+</span><span id="__span-0-5"><a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span><span class="n">tot_cred</span><span class="w">       </span><span class="nb">numeric</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span>
+</span><span id="__span-0-6"><a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">    </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="p">(</span><span class="n">ID</span><span class="p">),</span><span class="w">          </span><span class="c1">-- 声明为primary key的属性会自动确保其非空</span>
+</span><span id="__span-0-7"><a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">    </span><span class="k">foreign</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="p">(</span><span class="n">dept_name</span><span class="p">)</span><span class="w"> </span><span class="k">references</span><span class="w"> </span><span class="n">department</span>
+</span><span id="__span-0-8"><a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">                               </span><span class="c1">-- references关键字后应该跟一个关系(table)名</span>
+</span><span id="__span-0-9"><a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="p">);</span>
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">完整性约束(Integrity Constraint)</p>
+<p>完整性约束即对attribute内容的约束，不满足约束条件的tuple不能被插入。一般有5类约束方法：</p>
+<ul>
+<li>
+<p><code>not NULL</code>：限定该属性值非NULL。</p>
+</li>
+<li>
+<p><code>primary key</code>：声明为primary key的属性会自动确保其非空</p>
+</li>
+<li>
+<p><code>foreign key</code>：某个表中被声明为外键的属性一定是另外某个表的主键。</p>
+</li>
+<li>
+<p><code>check(&lt;predicate&gt;)</code>：自定义检查的条件，例如<code>CHECK (semester in ("spring", "autumn"))</code></p>
+</li>
+<li>
+<p>自定义domain：例如<code>create domain person_name char(20) not null</code>。此操作在SQL92标准被引入，允许用户自定义一个domain。其本质上是一种可重用的约束模板。其基本语法是：</p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">DOMAIN</span><span class="w"> </span><span class="n">domain_name</span><span class="w"> </span><span class="p">[</span><span class="k">AS</span><span class="p">]</span><span class="w"> </span><span class="err">数据类型</span>
+</span><span id="__span-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span><span class="p">[</span><span class="k">DEFAULT</span><span class="w"> </span><span class="err">默认值</span><span class="p">]</span>
+</span><span id="__span-1-3"><a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="p">[</span><span class="k">CHECK</span><span class="w"> </span><span class="p">(</span><span class="err">约束条件</span><span class="p">)];</span>
+</span></code></pre></div>
+<p>然后你就可以使用这个值域了。例如：</p>
+<p><div class="language-sql highlight"><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">DOMAIN</span><span class="w"> </span><span class="n">Email</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>
+</span><span id="__span-2-2"><a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="k">CHECK</span><span class="w"> </span><span class="p">(</span><span class="n">VALUE</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">'%@%.%'</span><span class="p">);</span>
+</span><span id="__span-2-3"><a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Users</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-2-5"><a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">    </span><span class="n">user_email</span><span class="w"> </span><span class="n">Email</span><span class="p">,</span><span class="w">  </span><span class="c1">-- 直接复用域定义</span>
+</span><span id="__span-2-6"><a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-2-7"><a href="#__codelineno-2-7" id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="p">);</span>
+</span></code></pre></div>
+它是基于现有类型的一种约束扩展，这一点和直接自定义类型(可以是完全独立的全新类型)有所不同。</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">查询</div>
+<div class="card-body">
+<p>一个典型的查询语句具有如下形式：</p>
+<div class="language-SQL highlight"><pre><span></span><code><span id="__span-3-1"><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">select</span><span class="w"> </span><span class="n">A1</span><span class="p">,</span><span class="w"> </span><span class="n">A2</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">An</span><span class="w">  </span><span class="c1">-- A_i 代表属性名</span>
+</span><span id="__span-3-2"><a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="k">from</span><span class="w"> </span><span class="n">r1</span><span class="p">,</span><span class="w"> </span><span class="n">r2</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">rm</span><span class="w">    </span><span class="c1">-- r_i 代表关系名</span>
+</span><span id="__span-3-3"><a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="k">where</span><span class="w"> </span><span class="n">P</span><span class="w">                 </span><span class="c1">-- P 代表筛选条件</span>
+</span></code></pre></div>
+<p>select可以细分为select all与select distinct，区别是是否为结果去重，select不使用后缀时默认为select all。select distinct与关系代数的 <span class="arithmatex">\(\Pi\)</span> 等价，而select all则不然。</p>
+<p>事实上，上述语句等价于关系代数表达式：</p>
+<div class="arithmatex">\[
+\Pi_{A1, \ldots, An} \left( \sigma_P (r1 \times r2 \times \ldots \times rm) \right)
+\]</div>
+<p>这里使用 <span class="arithmatex">\(\Pi\)</span> 会产生重复行的原因是，当关系中的两个元组各属性值完全相同时，<span class="arithmatex">\(\Pi\)</span> 才会去重，像这样先笛卡尔积后，虽然选定的属性值有重复，但是每个元组都不完全一样。 </p>
+<p>需要注意的是，查询操作返回一个关系(table)。</p>
+<div class="admonition tip">
+<p class="admonition-title">非典型的用法</p>
+<p>select选择的内容也可以是表达式，例如<code>select salary/1000 from teacher;</code>返回的是salary/1000的结果。</p>
+<p>也因此select可以没有from子句，一般用于展示数据或者赋值并展示结果，例如<code>select 12345/5;</code>单纯打印这个表达式的结果数字。</p>
+<p>select结果可以使用<code>order by ATTRIBUTE_NAME (desc/asc)</code>子句排序，desc/asc表示按照降/升序，不显式指定默认为asc。order by后面可以跟多个attribute，以逗号分隔，靠前的优先。</p>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">别名</div>
+<div class="card-body">
+<p>as可以为一个对象赋别名。当然，as还可以为同一个对象赋两个别名以实现自我对比。但是，as别名的作用域仅限于这条语句，实际名称并不会被更改，下图中的select语句完成后表名仍然叫instructor。as有时可以省略不写。</p>
+<div class="language-SQL highlight"><pre><span></span><code><span id="__span-4-1"><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">select</span><span class="w"> </span><span class="k">distinct</span><span class="w"> </span><span class="n">T</span><span class="p">.</span><span class="n">name</span>
+</span><span id="__span-4-2"><a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="k">from</span><span class="w"> </span><span class="n">instructoras</span><span class="w"> </span><span class="n">T</span><span class="p">,</span><span class="n">instructor</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">S</span>
+</span><span id="__span-4-3"><a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="k">where</span><span class="w"> </span><span class="n">T</span><span class="p">.</span><span class="n">salary</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">S</span><span class="p">.</span><span class="n">salary</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">S</span><span class="p">.</span><span class="n">dept_name</span><span class="w"> </span><span class="o">=</span><span class="s1">'Comp.Sci.'</span>
+</span></code></pre></div>
+<p><code>instructor as T</code> = <code>instructor T</code>。但是，在Oracle中，as必须被省略。</p>
+</div>
+</div>
+<div class="card">
+<div class="card-header">(字符串)模糊搜索</div>
+<div class="card-body">
+<p>like是模糊搜索的关键字。SQL字符串查找最常用的两个记号为<code>%</code>和<code>_</code>。<code>%</code>匹配任意字符串，<code>_</code>匹配任意单字符。</p>
+<p>需要字符串查找内容本身包含<code>%</code>或<code>_</code>时使用逃逸字符<code>\%</code>、<code>\_</code>。字符串内容匹配默认区分大小写。</p>
+<p><img alt="like_usage" src="../images/DB/db20.png"/></p>
+</div>
+</div>
+<div class="card">
+<div class="card-header">union/intersect/except</div>
+<div class="card-body">
+<p>它们三者各自都又有all和distinct两个版本，区别是结果是否去重，但是它们<strong>默认去重</strong>，这与select不同。</p>
+<p><code>union</code>/<code>intersect</code>/<code>except</code>分别等价于交集、并集、集合的减法。</p>
+</div>
+</div>
+<div class="card">
+<div class="card-header">group by</div>
+<div class="card-body">
+<p>配合各类代数操作，功能等价于关系代数中 <span class="arithmatex">\(\mathcal{G}\)</span> 前部的下标。</p>
+<p>group by<strong>先于select进行</strong>，创建一个仅包含代数操作列与group by列的临时表，select操作在这个临时表中进行。</p>
+<details class="danger">
+<summary>由此带来的特性</summary>
+<ul>
+<li>select...group by...可以在多个列名和列数不完全相同的表中进行，只要共有用于代数操作和group by的列就可以了。例如下面的表r1、r2等只要共有A1、A2(用于group by)和A3(用于sum)即可，其余列无所谓。</li>
+</ul>
+<div class="language-SQL highlight"><pre><span></span><code><span id="__span-5-1"><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">select</span><span class="w"> </span><span class="n">A1</span><span class="p">,</span><span class="w"> </span><span class="k">sum</span><span class="p">(</span><span class="n">A3</span><span class="p">)</span>
+</span><span id="__span-5-2"><a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="k">from</span><span class="w"> </span><span class="n">r1</span><span class="p">,</span><span class="w"> </span><span class="n">r2</span><span class="p">,</span><span class="w"> </span><span class="n">r3</span><span class="w"> </span><span class="p">.</span>
+</span><span id="__span-5-3"><a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="k">where</span><span class="w"> </span><span class="n">P</span><span class="w"> </span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">A1</span><span class="p">,</span><span class="w"> </span><span class="n">A2</span>
+</span></code></pre></div>
+<ul>
+<li>同时select代数操作和其他的列时，其他列必须同时放在group by里面，因为不能选择临时表中没有的列。</li>
+</ul>
+</details>
+</div>
+</div>
+<div class="card">
+<div class="card-header">where/having</div>
+<div class="card-body">
+<ul>
+<li>
+<p>where在group by之前进行，不满足条件的tuble不会参与group by进入临时表。</p>
+</li>
+<li>
+<p>having在group by之后进行，在产生的临时表中筛选，只返回满足的tuble。</p>
+</li>
+</ul>
+<p>因此引申出exists只能跟where；代数操作做条件只能跟having；同样的语句在where和having之后效果不一定相同。下面是一个正确用法示例：</p>
+<p><img alt="where_having_usage" src="../images/DB/db21.png"/></p>
+</div>
+</div>
+<div class="card">
+<div class="card-header">关于NULL</div>
+<div class="card-body">
+<p>NULL值不参与对列的代数函数运算，全NULL的tuple不会被count()计数。没有非NULL元素时，代数操作返回NULL，count()返回0。</p>
+</div>
+</div>
+<div class="card">
+<div class="card-header">some/all</div>
+<div class="card-body">
+<p>some/all跟在关系符号( <span class="arithmatex">\(&lt;\)</span>/<span class="arithmatex">\(&gt;\)</span>/<span class="arithmatex">\(\leq\)</span>/<span class="arithmatex">\(\geq\)</span>/<span class="arithmatex">\(=\)</span>/<span class="arithmatex">\(\neq\)</span> )后，some相当于于存在，all相当于任意。当其后的表中元素满足前面的关系则返回true。</p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-6-1"><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="mi">5</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="k">some</span><span class="err">{</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="mi">5</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="err">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span>
+</span><span id="__span-6-2"><a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="mi">5</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="k">some</span><span class="err">{</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="err">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span>
+</span><span id="__span-6-3"><a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="mi">5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">some</span><span class="err">{</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="err">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span>
+</span><span id="__span-6-4"><a href="#__codelineno-6-4" id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="mi">5</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">some</span><span class="err">{</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="mi">5</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="err">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span>
+</span><span id="__span-6-5"><a href="#__codelineno-6-5" id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="c1">-- (=some) = in 但是 ( != some) != not in</span>
+</span><span id="__span-6-6"><a href="#__codelineno-6-6" id="__codelineno-6-6" name="__codelineno-6-6"></a>
+</span><span id="__span-6-7"><a href="#__codelineno-6-7" id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="mi">5</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="k">all</span><span class="err">{</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="mi">5</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="err">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span>
+</span><span id="__span-6-8"><a href="#__codelineno-6-8" id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="mi">5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">all</span><span class="err">{</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="mi">5</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="err">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span>
+</span><span id="__span-6-9"><a href="#__codelineno-6-9" id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="mi">5</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="k">all</span><span class="err">{</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="err">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span>
+</span><span id="__span-6-10"><a href="#__codelineno-6-10" id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="mi">5</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">all</span><span class="err">{</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="err">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span>
+</span><span id="__span-6-11"><a href="#__codelineno-6-11" id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="c1">-- ( != all) = not in 但是 (=all) != in</span>
+</span></code></pre></div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">join(连接)</div>
+<div class="card-body">
+<p>Join语句的基本功能是将两张表中的tuple按一定规则进行匹配，将他们相同的列保留其一，不同的列全部保留，合成一个大tuple。</p>
+<ul>
+<li>
+<p><strong>Join Conditions：控制哪一些列或条件用于匹配两张表中的tuple</strong></p>
+<ul>
+<li>
+<p>natural：tuple所有同名列的值相等（默认）</p>
+</li>
+<li>
+<p>using (A1, A2...)：tuple同名列中指定的部分列的值相等</p>
+</li>
+<li>
+<p>on <predicate>：按照特定的规则匹配，不限于同名列</predicate></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Join Types：控制如何处理没有匹配对象的tuple</strong></p>
+<ul>
+<li>
+<p>Inner Join：没有匹配对象则不返回（默认）</p>
+</li>
+<li>
+<p>Left Outer Join：左侧表的tuple没有匹配对象，则为扩展的列填入NULL，一起返回</p>
+</li>
+<li>
+<p>Right Outer Join：右侧表的tuple没有匹配对象，则为扩展的列填入NULL，一起返回</p>
+</li>
+<li>
+<p>Full Outer Join：上面二者的并集</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="card">
+<div class="card-header">with/view</div>
+<div class="card-body">
+<p>建立一个作用域为一条语句的临时的表用于简化逻辑表达式增加可读性。相当于关系代数中的赋值操作。</p>
+<div class="language-SQL highlight"><pre><span></span><code><span id="__span-7-1"><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="k">with</span><span class="w"> </span><span class="n">temp_table_name</span><span class="p">(</span><span class="n">attribute_name1</span><span class="p">,</span><span class="w"> </span><span class="n">attibute_name2</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="k">alias</span>
+</span></code></pre></div>
+<p>view一般用于查找以及接口，语法和with相同，作用也基本相同。唯一的区别是view一经定义则一直可用，而with的作用域仅有单条语句。</p>
+<details class="note">
+<summary>view的特性</summary>
+<ul>
+<li>
+<p>view并不是实际存在的表，每次调用view时只是重复调用了筛选的条件。因此update table后，与之关联的view也会改变。</p>
+</li>
+<li>
+<p>我们一般不对view进行update。大部分SQL系统对update view有严格的限制。</p>
+<p><img alt="sql_restrictions_on_view" src="../images/DB/db22.png"/></p>
+</li>
+<li>
+<p>部分SQL也支持materialize view，view此时是一张真实存在的表，这一般是为了用空间换时间。物化视图相关的表发生变化时，它自己也必须同时更新，以维持一般view的特性。</p>
+</li>
+</ul>
+</details>
+</div>
+</div>
+<div class="card">
+<div class="card-header">index</div>
+<div class="card-body">
+<p><div class="language-sql highlight"><pre><span></span><code><span id="__span-8-1"><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">index_name</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">table_name</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">column1</span><span class="p">,</span><span class="w"> </span><span class="n">column2</span><span class="p">.....);</span><span class="w"> </span><span class="c1">-- 创建</span>
+</span><span id="__span-8-2"><a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">table_name</span><span class="w"> </span><span class="k">DROP</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">index_name</span><span class="p">;</span><span class="w"> </span><span class="c1">-- 删除</span>
+</span></code></pre></div>
+索引的原理类似于书的目录，要查找某个词不需要从头开始阅读书籍，可以从目录查到页码直接跳转，于是加快了查找的速度。具体实现请见<a href="#indexing">#索引(indexing)</a>一节。一个表可以创建多个索引，一
+个索引可以包含多个列。</p>
+<p>但索引并不是尽善尽美，例如update之后，索引需要同步维护；同时索引是一种物理结构，有额外的空间与IO开销。不适当的索引设置反而会降低效率。</p>
+</div>
+</div>
+<div class="card">
+<div class="card-header">权限授予与收回</div>
+<div class="card-body">
+<p>授予/收回权限的基本语法是：</p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-9-1"><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="k">grant</span><span class="w"> </span><span class="o">&lt;</span><span class="n">priviledge</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="k">role</span><span class="w"> </span><span class="n">name</span><span class="o">&gt;</span>
+</span><span id="__span-9-2"><a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="k">on</span><span class="w"> </span><span class="o">&lt;</span><span class="n">relation_name</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="n">view_name</span><span class="o">&gt;</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="o">&lt;</span><span class="k">user</span><span class="w"> </span><span class="n">list</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">-- 授予</span>
+</span><span id="__span-9-3"><a href="#__codelineno-9-3" id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="k">revoke</span><span class="w"> </span><span class="o">&lt;</span><span class="n">priviledge</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="k">role</span><span class="w"> </span><span class="n">name</span><span class="o">&gt;</span>
+</span><span id="__span-9-4"><a href="#__codelineno-9-4" id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="k">on</span><span class="w"> </span><span class="o">&lt;</span><span class="n">relation_name</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="n">view_name</span><span class="o">&gt;</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="o">&lt;</span><span class="k">user</span><span class="w"> </span><span class="n">list</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">-- 收回</span>
+</span></code></pre></div>
+<p>需要注意：</p>
+<ul>
+<li>
+<p>权限可以来自多个上级用户，相互可以重叠，例如有两者都为第三方授予了读取权限，此时即使有一方撤回了权限，第三方仍然可以正常读取。</p>
+</li>
+<li>
+<p>权限可以级联下放，例如A为B授予了某些权限，B可以继续向其他人授予不高于他自己的权限。当A撤回对B的权限时，B下放给他人的权限也会同时被收回。</p>
+</li>
+<li>
+<p>权限的基本单位是relation，需要授予某个数据库内所有relation的权限时可以使用<code>DB_name.*</code>。</p>
+</li>
+</ul>
+<p>有多个同类用户需要做统一的权限调整时，列出<user list="">的使用方式显然不便，此时就需要role。role是权限组成的集合，你可以像赋予单个权限一样将role赋予用户。修改某个role对应的权限集合时，所有被赋予这个role身份的用户权限都会同时被修改。</user></p>
+</div>
+</div>
+<h3 id="sql_4">高级SQL<a class="headerlink" href="#sql_4" title="Permanent link">¶</a></h3>
+<h4 id="_3"><a class="headerlink" href="#_3" title="Permanent link">¶</a></h4>
+<h2 id="_4">数据库设计范式<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
+<h2 id="_5">存储<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
+<h3 id="_6">存储层级<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
 <p><img alt="storage" src="../images/DB/db2.png"/></p>
 <p>上图中的是否易失是根据掉电后数据会不会丢失区分的。</p>
-<h3 id="_6">磁盘存储接口<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
+<h3 id="_7">磁盘存储接口<a class="headerlink" href="#_7" title="Permanent link">¶</a></h3>
 <p>存储设备通常直接连接到计算机系统上，因此往往需要一个接口。目前一些主流的存储设备协议家族有：</p>
 <ul>
 <li>
@@ -952,7 +1361,7 @@ NVMe 2.0采用PCIe 5.0 x4接口，理论带宽可达约 16GB/s。</p>
 <p>Networked storage provides a file system interface using networked file system protocol, instead of providing a disk system interface.</p>
 </li>
 </ul>
-<h3 id="_7">磁盘工作机制<a class="headerlink" href="#_7" title="Permanent link">¶</a></h3>
+<h3 id="_8">磁盘工作机制<a class="headerlink" href="#_8" title="Permanent link">¶</a></h3>
 <p>下图展示一个机械硬盘的结构：</p>
 <p><img alt="disk_mechanism" src="../images/DB/db3.png"/></p>
 <ol>
@@ -1054,7 +1463,7 @@ NVMe 2.0采用PCIe 5.0 x4接口，理论带宽可达约 16GB/s。</p>
 <p>坏扇区处理：执行坏扇区重映射 (remapping of bad sectors，通过备用扇区替换损坏区域)</p>
 </li>
 </ul>
-<h3 id="_8">磁盘性能评估<a class="headerlink" href="#_8" title="Permanent link">¶</a></h3>
+<h3 id="_9">磁盘性能评估<a class="headerlink" href="#_9" title="Permanent link">¶</a></h3>
 <p>磁盘性能一般从以下维度评价：</p>
 <ul>
 <li>
@@ -1094,12 +1503,12 @@ NVMe 2.0采用PCIe 5.0 x4接口，理论带宽可达约 16GB/s。</p>
 </li>
 </ul>
 <h3 id="flash-storage">闪存 Flash Storage<a class="headerlink" href="#flash-storage" title="Permanent link">¶</a></h3>
-<h2 id="_9">数据存储结构<a class="headerlink" href="#_9" title="Permanent link">¶</a></h2>
+<h2 id="_10">数据存储结构<a class="headerlink" href="#_10" title="Permanent link">¶</a></h2>
 <p>从物理存储的层面上看，一个数据库由多个文件(files)组成，每个文件是记录(records)的有序序列，每条记录是字段(fields)的有序序列。</p>
 <p>由于扇区的空间比较小且数目众多，在寻址时比较困难，所以操作系统就将多个扇区组合在一起，形成一个更大的单位，再对这个单位进行整体的操作。一般将这个单位称作<strong>块(blocks)</strong>。也就是说，操作系统是通过块来做为单位读取等操作数据的。而文件系统就是操作系统的一部分，<u>所以文件系统操作文件的最小单位是块</u>。</p>
 <p>我们下面的讨论假设每条记录的大小都不超过一个块。</p>
-<h3 id="_10">单条记录<a class="headerlink" href="#_10" title="Permanent link">¶</a></h3>
-<h4 id="_11">定长记录存储<a class="headerlink" href="#_11" title="Permanent link">¶</a></h4>
+<h3 id="_11">单条记录<a class="headerlink" href="#_11" title="Permanent link">¶</a></h3>
+<h4 id="_12">定长记录存储<a class="headerlink" href="#_12" title="Permanent link">¶</a></h4>
 <p>按行存放 (Row-Oriented Storage) 的定长数据的增查改都容易实现：</p>
 <ul>
 <li>
@@ -1120,7 +1529,7 @@ NVMe 2.0采用PCIe 5.0 x4接口，理论带宽可达约 16GB/s。</p>
 </li>
 </ul>
 <p>但是数据还可以按列存放，称为 Columnar Representation 或 Column-Oriented Storage 。增删查改的实现与上面类似；按列存放更有利于向量运算。如果按属性访问多于按tuple访问，这种储存方式会更快。</p>
-<h4 id="_12">不定长记录存储<a class="headerlink" href="#_12" title="Permanent link">¶</a></h4>
+<h4 id="_13">不定长记录存储<a class="headerlink" href="#_13" title="Permanent link">¶</a></h4>
 <details class="tip">
 <summary>为什么会有变长记录</summary>
 <ul>
@@ -1173,7 +1582,7 @@ NVMe 2.0采用PCIe 5.0 x4接口，理论带宽可达约 16GB/s。</p>
 <pre class="mermaid"><code>graph LR
 A[外部指针] --&gt; B[槽数组条目]
 B --&gt; C[实际记录位置]</code></pre>
-<h3 id="_13">文件记录组织<a class="headerlink" href="#_13" title="Permanent link">¶</a></h3>
+<h3 id="_14">文件记录组织<a class="headerlink" href="#_14" title="Permanent link">¶</a></h3>
 <p>我们总需要一种方式组织单条数据和数据页，即它们如何分布在文件内部。下图是几种常见的结构：</p>
 <p><img alt="File_Organization" src="../images/DB/db6.png"/></p>
 <h4 id="heap">堆(Heap)文件管理<a class="headerlink" href="#heap" title="Permanent link">¶</a></h4>
@@ -1242,7 +1651,7 @@ B --&gt; C[实际记录位置]</code></pre>
 <p><img alt="data_dic_storage" src="../images/DB/db10.png"/></p>
 <p>其中一种实现方式是用事先约定的固定的几个表，储存用户定义的信息。在磁盘中，这些metadata可以用下面的关系图表示：</p>
 <p><img alt="data_dic_storage_relation" src="../images/DB/db11.png"/></p>
-<h3 id="_14">缓冲区/缓存<a class="headerlink" href="#_14" title="Permanent link">¶</a></h3>
+<h3 id="_15">缓冲区/缓存<a class="headerlink" href="#_15" title="Permanent link">¶</a></h3>
 <p>我们希望更快速地获取一些短时间内频繁使用的数据。<strong>缓冲区(Buffer)</strong>就是这样的角色。Buffer是主内存中用于存储磁盘块副本的专用区域。而<strong>缓冲区管理器(Buffer Manager)</strong>就是负责动态分配和管理内存缓冲区的核心子系统。</p>
 <p>程序进程需要缓冲区中的数据时，它们就会唤起缓冲区管理器。</p>
 <p>若该块已在缓冲区中，缓冲区管理器返回其在主内存中的地址。  </p>
@@ -1265,12 +1674,12 @@ B --&gt; C[实际记录位置]</code></pre>
 <p><img alt="buffer_change" src="../images/DB/db12.png"/></p>
 <p>其余缓存策略：</p>
 <p><img alt="other_buffer_rep_policy" src="../images/DB/db13.png"/></p>
-<h2 id="indexing">索引(Indexing)<a class="headerlink" href="#indexing" title="Permanent link">¶</a></h2>
+<h2 id="indexing">索引(Indexing)<a id="indexing"></a><a class="headerlink" href="#indexing" title="Permanent link">¶</a></h2>
 <p>索引机制旨在加速对目标数据的访问。我们生活中也会遇到索引，比如图书馆书目的索引。</p>
 <p>一个<strong>索引文件(index file)</strong>由如下形式的记录(称为<strong>索引条目(index entries)</strong>)</p>
 <p><img alt="index_form" src="../images/DB/db14.png"/></p>
 <p>其中，<strong>search key(搜索键)</strong>是所有列中被选中用来查找记录的属性(列名)。这里的指针都指向各条记录。</p>
-<h3 id="_15">有序索引和无序索引<a class="headerlink" href="#_15" title="Permanent link">¶</a></h3>
+<h3 id="_16">有序索引和无序索引<a class="headerlink" href="#_16" title="Permanent link">¶</a></h3>
 <p>有两种基本的索引方式：<strong>有序索引</strong>和<strong>无序索引</strong>。这里的“序”指的是search key的值有无顺序。</p>
 <p>无序索引比较常见的是<strong>哈希索引(Hash indecies)</strong>，其原理就是通过哈希操作分布，而哈希操作想必大家在FDS课程中都已经有所了解。</p>
 <p>顺序索引可以根据不同的排序规则分类成：</p>
@@ -1373,10 +1782,10 @@ B --&gt; C[实际记录位置]</code></pre>
 <div class="arithmatex">\[
 单页索引个数 = \frac{页大小 - 指针大小}{索引数据大小 + 指针大小} + 1
 \]</div>
-<h3 id="_16">内存索引优化<a class="headerlink" href="#_16" title="Permanent link">¶</a></h3>
+<h3 id="_17">内存索引优化<a class="headerlink" href="#_17" title="Permanent link">¶</a></h3>
 <p>对<strong>磁盘</strong>而言，与磁盘页大小相匹配的索引用起来更快；因为磁盘IO的最小单位是扇区。</p>
 <p>而对<strong>memory和cache</strong>而言，节点大小小的用起来更快；因为随机访问性能高得多，也没有扇区大小限制。</p>
-<h3 id="_17">高级索引<a class="headerlink" href="#_17" title="Permanent link">¶</a></h3>
+<h3 id="_18">高级索引<a class="headerlink" href="#_18" title="Permanent link">¶</a></h3>
 <p><strong>多键索引</strong></p>
 <p>复合搜索键都是<strong>按照字典序(Lexicographic order)来排列</strong>的。多键复合索引可以高效地支持多条件查询。</p>
 <details class="danger">
@@ -1407,7 +1816,7 @@ B --&gt; C[实际记录位置]</code></pre>
 </li>
 </ul>
 </details>
-<h3 id="_18">写入优化索引<a class="headerlink" href="#_18" title="Permanent link">¶</a></h3>
+<h3 id="_19">写入优化索引<a class="headerlink" href="#_19" title="Permanent link">¶</a></h3>
 <ul>
 <li>
 <p><strong>LSM(Log Structured Merge)树</strong></p>
@@ -1440,13 +1849,13 @@ B --&gt; C[实际记录位置]</code></pre>
 <p class="admonition-title">Warning</p>
 <p>课程PPT将B树索引、哈希索引等一概隐藏了，这里就不放了，感兴趣的朋友可以去看教材。</p>
 </div>
-<h2 id="_19">查询处理<a class="headerlink" href="#_19" title="Permanent link">¶</a></h2>
+<h2 id="_20">查询处理<a class="headerlink" href="#_20" title="Permanent link">¶</a></h2>
 <h2 id="transaction">事务(Transaction)<a class="headerlink" href="#transaction" title="Permanent link">¶</a></h2>
 <p><strong>事务(Transaction)</strong>是一次数据库操作若干执行操作组成的抽象概念。Transaction的提出是为了维护数据的完整性。</p>
 <h3 id="acid">ACID<a class="headerlink" href="#acid" title="Permanent link">¶</a></h3>
 <p>事务的实现要求四个特性ACID：</p>
-<h2 id="_20">并发控制实现<a class="headerlink" href="#_20" title="Permanent link">¶</a></h2>
-<h2 id="_21">错误恢复<a class="headerlink" href="#_21" title="Permanent link">¶</a></h2>
+<h2 id="_21">并发控制实现<a class="headerlink" href="#_21" title="Permanent link">¶</a></h2>
+<h2 id="_22">错误恢复<a class="headerlink" href="#_22" title="Permanent link">¶</a></h2>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
