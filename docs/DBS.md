@@ -9,7 +9,11 @@
 !!! 这门课讲什么
     在这门课程中，我们将学习到有严格事务要求(data access requirement)的结构化数据(data type)的管理。
 
-特别感谢Github上[@yile-liu](https://github.com/yile-liu/ZJU_database_system)老师的数据库系统笔记。
+!!! Success "特别鸣谢🙇‍"
+
+    - Github上[@yile-liu](https://github.com/yile-liu/ZJU_database_system)老师的数据库系统笔记。
+
+    - Chritch老师的博客 [数据库系统篇](https://obsidian.zerokei.top/Hub/Database%20System/)
 
 <!-- ## 数据库概念
 
@@ -42,7 +46,7 @@ $$
 
 被称为**relation schema**。一般地，我们用 $R$ 等大写字母表记一个relation schema，用 $r$ 等小写字母表记一个 relation instance。
 
-每一列的所有可取值(取值范围)被称为它的**domain**。我们给定列 $A_i$ 的 domain 是 $D_i$ ，那么从形式上说，一个**relation**就是 $D_1 \times D_2 \times ... \times D_n$ 的一个子集。
+每一列的所有可取值(取值范围)被称为它的**domain**。我们给定列 $A_i$ 的 domain 是 $D_i$ ，那么从形式上说，一个**关系(relation)**就是 $D_1 \times D_2 \times ... \times D_n$ 的一个子集。
 
 换句话说，一个relation instance就是一张表格，每一行代表一个事物，每一列代表一项属性。
 
@@ -87,19 +91,482 @@ $$
 | :--: | :--: | :--: |
 | 集合交 | $r \cap s$ | 取同时出现在两个关系中的元组，可转化为 $r - (r - s)$ |
 | 自然连接 | $r \bowtie s$ | 取两个关系公共属性中具有**相同属性值**的元组进行拼接 |
-| $\theta$ 连接 | $r \bowtie_{\theta} s$ | 返回满足关系式 $\theta$ 的自然连接结果 |
-| 外连接：<br>左外连接<br>右外连接<br>全外连接</br> | <br>$r~⟕~s$<br>$r~⟖~s$<br>$r~⟗~s$</br> | <br>左外连接表示在保留左表所有记录的同时，进行join操作，以此类推。 |
+| $\theta$ 连接 | $r \bowtie_{\theta} s$ | 返回满足关系式 |
 | 除 | $r \div s$ | $r \div s = \{ t \mid t \in \Pi_{R - S}{(r)} \cap \forall u \in s (t \times u \in r) \}$，找出与“除数”关系中所有元组都有联系的元组 |
 | 赋值 | $r \leftarrow E$ | 将右边的计算结果赋值给左边的表 |
-| <br>聚集 | <br>$_{G_1, G_2, ..., G_n}~\mathcal{G}_{F_1(A_1), F_2(A_2), ..., F_n(A_n)}{r}$ | $G_i$ 是用于分组的属性 (可为空) ，$F_i$ 是聚集函数，$A_i$ 是属性名。聚集操作对一组值执行计算并返回单个值，它对数据集合进行"纵向"计算 (跨多行计算)。假设已经指定用于分组的属性，则按指定属性将关系划分为多个组，对每个组独立应用聚合函数，每组产生一个结果元组 |
+| <br>聚集 | <br>$_{G_1, G_2, ..., G_n}~\mathcal{G}_{F_1(A_1), F_2(A_2), ..., F_n(A_n)}{r}$ | $G_i$ 是用于分组的属性 (可为空) ，$F_i$ 是聚集函数 (反映在数据库中就是`sum`/`avg`等函数) ，$A_i$ 是属性名。聚集操作对一组值执行计算并返回单个值，它对数据集合进行"纵向"计算 (跨多行计算)。假设已经指定用于分组的属性，则按指定属性将关系划分为多个组，对每个组独立应用聚合函数，每组产生一个结果元组 |
 
 ## SQL
 
-SQL，全称结构化查询语言。
+!!! Tip "这个章节对应教材第3-5章。"
 
-### 基础SQL
+SQL全称结构化查询语言(Structured Query Language)。SQL数据定义语言（DDL）允许定义以下关系信息：
 
-### 进阶SQL
+- 每个关系的模式（schema）
+
+- 各属性关联的值类型
+
+- 完整性约束
+
+- 为每个关系维护的索引集合
+
+- 关系的安全性与授权信息
+
+- 关系在磁盘上的物理存储结构
+
+#### SQL的历史发展
+
+这里应该不考，暂时鸽了（
+
+### SQL数据类型
+
+<div class="card" markdown="1">
+<div class="card-header">char(n)</div>
+<div class="card-body" markdown="1">
+
+**含义**：定长为n的字符串
+
+</div>
+</div>
+
+<div class="card" markdown="1">
+<div class="card-header">varchar(n)</div>
+<div class="card-body" markdown="1">
+
+**含义**：长度可变的字符串，最大长度为n
+
+</div>
+</div>
+
+<div class="card" markdown="1">
+<div class="card-header">varchar(n)</div>
+<div class="card-body" markdown="1">
+
+**含义**：长度可变的字符串，最大长度为n
+
+</div>
+</div>
+
+<div class="card" markdown="1">
+<div class="card-header">int</div>
+<div class="card-body" markdown="1">
+
+**含义**：整数。其数据范围是数学上的“整数”的一个<u>由库和计算机架构决定的</u>有限子集
+
+</div>
+</div>
+
+<div class="card" markdown="1">
+<div class="card-header">smallint</div>
+<div class="card-body" markdown="1">
+
+**含义**：小整数。其数据范围是数学上的“整数”的一个<u>由库和计算机架构决定的</u>有限子集，只不过比int所包含的范围小。
+
+</div>
+</div>
+
+<div class="card" markdown="1">
+<div class="card-header">numeric(p, d)</div>
+<div class="card-body" markdown="1">
+
+**含义**：十进制表示，总共有p位，其中小数点后有d位。
+> 例如对numeric(3, 1)，10.5、01.0是合法的，1.05、105、1都是不合法的。
+
+</div>
+</div>
+
+<div class="card" markdown="1">
+<div class="card-header">float(n)</div>
+<div class="card-body" markdown="1">
+
+**含义**：<u>至少</u>有n个数字的浮点数。
+
+</div>
+</div>
+
+<div class="card" markdown="1">
+<div class="card-header">real/double precision</div>
+<div class="card-body" markdown="1">
+
+**含义**：单精度浮点数和双精度浮点数。和C语言等的`float`/`double`大致对应。允许的数据范围<u>由库和计算机架构</u>决定。
+
+</div>
+</div>
+
+SQL还有一些关于时间的预设类型：
+
+<div class="card" markdown="1">
+<div class="card-header">date</div>
+<div class="card-body" markdown="1">
+
+**含义**：日期，能且仅能包含(四位数字的)年份、月份和日期。
+
+> 例如"2025-6-9"、"2025-06-09"
+
+</div>
+</div>
+
+<div class="card" markdown="1">
+<div class="card-header">time</div>
+<div class="card-body" markdown="1">
+
+**含义**：时间，最大单位是小时，至少包含小时、分钟、秒。
+
+> "18:12:20" 和 "18:12:20.111" 都是可接受的输入。虽然标准格式要求小时、分钟、秒都应该是2位数字，但大多数数据库系统在输入时允许省略前导0。
+
+</div>
+</div>
+
+<div class="card" markdown="1">
+<div class="card-header">timestamp</div>
+<div class="card-body" markdown="1">
+
+**含义**：从组成上看就是date+time。
+
+> 例如"2005-7-27 09:00:30.75"。
+
+</div>
+</div>
+
+<div class="card" markdown="1">
+<div class="card-header">interval</div>
+<div class="card-body" markdown="1">
+
+**含义**：描述一个时间段。interval值可以被加在date/time/timestamp值上。
+
+</div>
+</div>
+
+SQL还有针对大型数据的表示方式。
+
+<div class="card" markdown="1">
+<div class="card-header">blob</div>
+<div class="card-body" markdown="1">
+
+**含义**：二进制大对象，是一个可以存储二进制文件的容器。典型的blob是一张图片或者声音文件等。对其的解析会交给外部程序去运行，数据库只负责存储这些大对象。
+
+</div>
+</div>
+
+<div class="card" markdown="1">
+<div class="card-header">clob</div>
+<div class="card-body" markdown="1">
+
+**含义**：字符大对象，是一个可以储存大段字符数据的容器。
+
+</div>
+</div>
+
+!!! Note
+    
+    需要注意的是，当一个查询操作需要查询一个大对象时，会返回给它一个指向这个对象的指针而非这个大对象本身。传指针可快多了！
+
+SQL还允许用户自定义类型(`create type`)。
+
+### SQL语句规范
+
+这里就不列出所有语法了，仅仅放一些个人觉得可能会错的地方。
+
+SQL所有的关键字都是**大小写不敏感**的。
+
+<div class="card" markdown="1">
+<div class="card-header">建表</div>
+<div class="card-body" markdown="1">
+
+一个例子：
+
+```SQL
+create table student (
+    ID             varchar(5),
+    name           varchar(20) not null,
+    dept_name      varchar(20),
+    tot_cred       numeric(3,0),
+    primary key (ID),          -- 声明为primary key的属性会自动确保其非空
+    foreign key (dept_name) references department
+                               -- references关键字后应该跟一个关系(table)名
+);
+```
+
+!!! Note "完整性约束(Integrity Constraint)"
+    
+    完整性约束即对attribute内容的约束，不满足约束条件的tuple不能被插入。一般有5类约束方法：
+
+    - `not NULL`：限定该属性值非NULL。
+
+    - `primary key`：声明为primary key的属性会自动确保其非空
+
+    - `foreign key`：某个表中被声明为外键的属性一定是另外某个表的主键。
+
+    - `check(<predicate>)`：自定义检查的条件，例如`CHECK (semester in ("spring", "autumn"))`
+
+    - 自定义domain：例如`create domain person_name char(20) not null`。此操作在SQL92标准被引入，允许用户自定义一个domain。其本质上是一种可重用的约束模板。其基本语法是：
+
+        ```sql
+        CREATE DOMAIN domain_name [AS] 数据类型
+            [DEFAULT 默认值]
+            [CHECK (约束条件)];
+        
+        ```
+        
+        然后你就可以使用这个值域了。例如：
+
+        ```sql
+        CREATE DOMAIN Email as VARCHAR(255)
+        CHECK (VALUE LIKE '%@%.%');
+
+        CREATE TABLE Users (
+            user_email Email,  -- 直接复用域定义
+            ...
+        );
+        ```
+        它是基于现有类型的一种约束扩展，这一点和直接自定义类型(可以是完全独立的全新类型)有所不同。
+
+</div>
+</div>
+
+<div class="card" markdown="1">
+<div class="card-header">查询</div>
+<div class="card-body" markdown="1">
+
+一个典型的查询语句具有如下形式：
+
+```SQL
+select A1, A2, ..., An  -- A_i 代表属性名
+from r1, r2, ..., rm    -- r_i 代表关系名
+where P                 -- P 代表筛选条件
+```
+
+select可以细分为select all与select distinct，区别是是否为结果去重，select不使用后缀时默认为select all。select distinct与关系代数的 $\Pi$ 等价，而select all则不然。
+
+事实上，上述语句等价于关系代数表达式：
+
+$$
+\Pi_{A1, \ldots, An} \left( \sigma_P (r1 \times r2 \times \ldots \times rm) \right)
+$$
+
+这里使用 $\Pi$ 会产生重复行的原因是，当关系中的两个元组各属性值完全相同时，$\Pi$ 才会去重，像这样先笛卡尔积后，虽然选定的属性值有重复，但是每个元组都不完全一样。 
+
+需要注意的是，查询操作返回一个关系(table)。
+
+!!! Tip "非典型的用法"
+
+    select选择的内容也可以是表达式，例如`select salary/1000 from teacher;`返回的是salary/1000的结果。
+
+    也因此select可以没有from子句，一般用于展示数据或者赋值并展示结果，例如`select 12345/5;`单纯打印这个表达式的结果数字。
+
+    select结果可以使用`order by ATTRIBUTE_NAME (desc/asc)`子句排序，desc/asc表示按照降/升序，不显式指定默认为asc。order by后面可以跟多个attribute，以逗号分隔，靠前的优先。
+
+</div>
+</div>
+
+<div class="card" markdown="1">
+<div class="card-header">别名</div>
+<div class="card-body" markdown="1">
+
+as可以为一个对象赋别名。当然，as还可以为同一个对象赋两个别名以实现自我对比。但是，as别名的作用域仅限于这条语句，实际名称并不会被更改，下图中的select语句完成后表名仍然叫instructor。as有时可以省略不写。
+
+```SQL
+select distinct T.name
+from instructoras T,instructor as S
+where T.salary > S.salary and S.dept_name ='Comp.Sci.'
+```
+
+`instructor as T` = `instructor T`。但是，在Oracle中，as必须被省略。
+
+</div>
+</div>
+
+<div class="card" markdown="1">
+<div class="card-header">(字符串)模糊搜索</div>
+<div class="card-body" markdown="1">
+
+like是模糊搜索的关键字。SQL字符串查找最常用的两个记号为`%`和`_`。`%`匹配任意字符串，`_`匹配任意单字符。
+
+需要字符串查找内容本身包含`%`或`_`时使用逃逸字符`\%`、`\_`。字符串内容匹配默认区分大小写。
+
+![like_usage](images/DB/db20.png)
+
+</div>
+</div>
+
+<div class="card" markdown="1">
+<div class="card-header">union/intersect/except</div>
+<div class="card-body" markdown="1">
+
+它们三者各自都又有all和distinct两个版本，区别是结果是否去重，但是它们**默认去重**，这与select不同。
+
+`union`/`intersect`/`except`分别等价于交集、并集、集合的减法。
+
+</div>
+</div>
+
+<div class="card" markdown="1">
+<div class="card-header">group by</div>
+<div class="card-body" markdown="1">
+
+配合各类代数操作，功能等价于关系代数中 $\mathcal{G}$ 前部的下标。
+
+group by**先于select进行**，创建一个仅包含代数操作列与group by列的临时表，select操作在这个临时表中进行。
+
+??? Danger "由此带来的特性"
+    
+    - select...group by...可以在多个列名和列数不完全相同的表中进行，只要共有用于代数操作和group by的列就可以了。例如下面的表r1、r2等只要共有A1、A2(用于group by)和A3(用于sum)即可，其余列无所谓。
+    
+    ```SQL
+    select A1, sum(A3)
+    from r1, r2, r3 .
+    where P group by A1, A2
+    ```
+
+    - 同时select代数操作和其他的列时，其他列必须同时放在group by里面，因为不能选择临时表中没有的列。
+
+</div>
+</div>
+
+<div class="card" markdown="1">
+<div class="card-header">where/having</div>
+<div class="card-body" markdown="1">
+
+- where在group by之前进行，不满足条件的tuble不会参与group by进入临时表。
+
+- having在group by之后进行，在产生的临时表中筛选，只返回满足的tuble。
+
+因此引申出exists只能跟where；代数操作做条件只能跟having；同样的语句在where和having之后效果不一定相同。下面是一个正确用法示例：
+
+![where_having_usage](images/DB/db21.png)
+
+</div>
+</div>
+
+<div class="card" markdown="1">
+<div class="card-header">关于NULL</div>
+<div class="card-body" markdown="1">
+
+NULL值不参与对列的代数函数运算，全NULL的tuple不会被count()计数。没有非NULL元素时，代数操作返回NULL，count()返回0。
+
+</div>
+</div>
+
+<div class="card" markdown="1">
+<div class="card-header">some/all</div>
+<div class="card-body" markdown="1">
+
+some/all跟在关系符号( $<$/$>$/$\leq$/$\geq$/$=$/$\neq$ )后，some相当于于存在，all相当于任意。当其后的表中元素满足前面的关系则返回true。
+
+```sql
+5 < some{[0], [5], [6]} = true
+5 < some{[0], [5]} = false
+5 = some{[0], [5]} = true
+5 != some{[0], [5], [6]} = true
+-- (=some) = in 但是 ( != some) != not in
+
+5 < all{[0], [5], [6]} = false
+5 = all{[0], [5], [6]} = false
+5 > all{[0], [4]} = true
+5 != all{[0], [4]} = true
+-- ( != all) = not in 但是 (=all) != in
+```
+
+</div>
+</div>
+
+<div class="card" markdown="1">
+<div class="card-header">join(连接)</div>
+<div class="card-body" markdown="1">
+
+Join语句的基本功能是将两张表中的tuple按一定规则进行匹配，将他们相同的列保留其一，不同的列全部保留，合成一个大tuple。
+
+- **Join Conditions：控制哪一些列或条件用于匹配两张表中的tuple**
+
+    - natural：tuple所有同名列的值相等（默认）
+
+    - using (A1, A2...)：tuple同名列中指定的部分列的值相等
+
+    - on <predicate>：按照特定的规则匹配，不限于同名列
+
+- **Join Types：控制如何处理没有匹配对象的tuple**
+
+    - Inner Join：没有匹配对象则不返回（默认）
+
+    - Left Outer Join：左侧表的tuple没有匹配对象，则为扩展的列填入NULL，一起返回
+
+    - Right Outer Join：右侧表的tuple没有匹配对象，则为扩展的列填入NULL，一起返回
+
+    - Full Outer Join：上面二者的并集
+
+</div>
+</div>
+
+<div class="card" markdown="1">
+<div class="card-header">with/view</div>
+<div class="card-body" markdown="1">
+
+建立一个作用域为一条语句的临时的表用于简化逻辑表达式增加可读性。相当于关系代数中的赋值操作。
+
+```SQL
+with temp_table_name(attribute_name1, attibute_name2 ... ) as alias
+```
+
+view一般用于查找以及接口，语法和with相同，作用也基本相同。唯一的区别是view一经定义则一直可用，而with的作用域仅有单条语句。
+
+??? Note "view的特性"
+
+    - view并不是实际存在的表，每次调用view时只是重复调用了筛选的条件。因此update table后，与之关联的view也会改变。
+
+    - 我们一般不对view进行update。大部分SQL系统对update view有严格的限制。
+
+        ![sql_restrictions_on_view](images/DB/db22.png)
+
+    - 部分SQL也支持materialize view，view此时是一张真实存在的表，这一般是为了用空间换时间。物化视图相关的表发生变化时，它自己也必须同时更新，以维持一般view的特性。
+
+</div>
+</div>
+
+<div class="card" markdown="1">
+<div class="card-header">index</div>
+<div class="card-body" markdown="1">
+
+```sql
+CREATE INDEX index_name ON table_name ( column1, column2.....); -- 创建
+ALTER TABLE table_name DROP INDEX index_name; -- 删除
+```
+索引的原理类似于书的目录，要查找某个词不需要从头开始阅读书籍，可以从目录查到页码直接跳转，于是加快了查找的速度。具体实现请见[#索引(indexing)](#indexing)一节。一个表可以创建多个索引，一
+个索引可以包含多个列。
+
+但索引并不是尽善尽美，例如update之后，索引需要同步维护；同时索引是一种物理结构，有额外的空间与IO开销。不适当的索引设置反而会降低效率。
+
+</div>
+</div>
+
+<div class="card" markdown="1">
+<div class="card-header">权限授予与收回</div>
+<div class="card-body" markdown="1">
+
+授予/收回权限的基本语法是：
+
+```sql
+grant <priviledge list or role name>
+on <relation_name or view_name> to <user list>; -- 授予
+revoke <priviledge list or role name>
+on <relation_name or view_name> to <user list>; -- 收回
+```
+
+需要注意：
+
+- 权限可以来自多个上级用户，相互可以重叠，例如有两者都为第三方授予了读取权限，此时即使有一方撤回了权限，第三方仍然可以正常读取。
+
+- 权限可以级联下放，例如A为B授予了某些权限，B可以继续向其他人授予不高于他自己的权限。当A撤回对B的权限时，B下放给他人的权限也会同时被收回。
+
+- 权限的基本单位是relation，需要授予某个数据库内所有relation的权限时可以使用`DB_name.*`。
+
+有多个同类用户需要做统一的权限调整时，列出<user list>的使用方式显然不便，此时就需要role。role是权限组成的集合，你可以像赋予单个权限一样将role赋予用户。修改某个role对应的权限集合时，所有被赋予这个role身份的用户权限都会同时被修改。
+
+</div>
+</div>
+
+### 高级SQL
+
+#### 
 
 ## 数据库设计范式
 
@@ -436,7 +903,7 @@ B+树不仅可以作为索引的结构，还可以直接作为文件组织的结
 
 ![other_buffer_rep_policy](images/DB/db13.png)
 
-## 索引(Indexing)
+## 索引(Indexing)<a id="indexing"></a>
 
 索引机制旨在加速对目标数据的访问。我们生活中也会遇到索引，比如图书馆书目的索引。
 
