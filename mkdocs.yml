@@ -32,20 +32,35 @@ theme:
 
 plugins:
     - statistics
+    - search
+    - mermaid2
 
 markdown_extensions:
+  - meta
+  - def_list
   - attr_list
   - md_in_html
   - admonition
   - markdown_cjk_spacing.cjk_spacing
   - toc:
       permalink: true
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.critic
+  - pymdownx.details
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
+  - pymdownx.superfences:
+      # make exceptions to highlighting of code:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
