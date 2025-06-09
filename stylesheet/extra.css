@@ -1,14 +1,18 @@
 :root {
-  --md-text-font: "Cascadia Mono", "LXGW WenKai Screen"; 
+  --md-text-font: "JetBrains Mono", "LXGW WenKai Screen"; 
   --md-code-font: "JetBrains Mono";
 }
 
 .md-typeset h1, .md-typeset h2 {
-  font-weight: 600;
+  font-weight: 680;
 }
 
 .md-typeset h3 {
-  font-weight: 500;
+  font-weight: 640;
+}
+
+.md-typeset h4 {
+  font-weight: 600;
 }
 
 .md-typeset h1, .md-typeset h2, .md-typeset h3, .md-typeset h4 {
@@ -17,10 +21,6 @@
 
 .md-typeset {
   font-size: .75rem;
-}
-
-.md-typeset h3 {
-  font-weight: 600;
 }
 
 .md-typeset code:not(pre code) {
