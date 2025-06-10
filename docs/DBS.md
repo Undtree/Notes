@@ -566,9 +566,88 @@ on <relation_name or view_name> to <user list>; -- 收回
 
 ### 高级SQL
 
-#### 
+#### 在高级编程语言中使用SQL、
+
+**嵌入式SQL(Embedded SQL)**
+
+SQL标准定义了如何将SQL嵌入到多种编程语言中，例如C、Java和Cobol。
+
+一种用来嵌入SQL查询的语言被称为**宿主语言 (host language)**，而宿主语言中允许的SQL结构则构成了**嵌入式SQL (embedded SQL)**。
+
+这些语言的基本形式遵循了System R将SQL嵌入到PL/I的模式:
+
+<div class="card" markdown="1">
+<div class="card-header">System R -> PL/I</div>
+<div class="card-body" markdown="1">
+
+**(1) 预处理器机制**
+
+- 输入：混合了 PL/I 代码和特殊标记的 SQL 语句(通过 EXEC SQL 界定)。
+
+- 输出：
+
+    - 纯 PL/I 代码(替换 SQL 为 PL/I 的数据库调用，如 SQLFetch)。
+
+    - 自动生成的通信区(如 SQLCA)用于传递执行状态(如错误码)。
+
+**(2) 宿主变量(Host Variables)**
+
+- 作用：在 PL/I 和 SQL 间传递数据。
+
+- 语法：PL/I 变量前加冒号(如 `:credit_amount`)，预处理器自动生成类型转换代码。
+
+- 限制：需显式声明类型匹配(如 PL/I 的 FIXED BINARY(31) 对应 SQL 的 INTEGER)。
+
+</div>
+</div>
+
+**注意**：具体形式因语言而异(例如，Java的嵌入式SQL使用 `#SQL { ... };`)。
+
+**主要问题**：
+
+* 在宿主语言和SQL语句之间交换参数和结果。
+* 处理集合(sets)与变量(variables)之间的差异。
+* 获取SQL语句的执行状态。
+* 将代码编译成宿主语言。
+
+**示例**：学生学分查询（通过游标逐行处理结果）。
+
+```C
+void getStudentInfo()
+{
+	int credit_amount;
+	char sId[16];
+	char sName[16];
+	EXEC SQL declare c cursor select id, name from student where tot_cred> :credit_amount END EXEC;
+	printf("Please input the credit amount: ");	
+	scanf("%d",&credit_amount);
+	EXEC SQL open c END_EXEC;
+	while (1)
+	{
+		EXEC SQL fetch c into :sId, :sName END_EXEC;
+		if (!strcmp(SQLSTATE,"02000"))
+			break;
+		printf("%s %s\n",sId,sName);
+	}
+	EXEC SQL close c END_EXEC;
+}
+
+```
+
+#### 过程化扩展
+
+#### 触发器(Trigger)
+
+#### 高级聚合与OLAP
+
+!!! Warning
+    好像不考，我就不写了（
 
 ## 数据库设计范式
+
+### E-S图
+
+
 
 ## 存储
 
