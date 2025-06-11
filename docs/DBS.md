@@ -54,9 +54,9 @@ $$
 
 我们定义一个概念：**键(key)**，并规定键 $K \subseteq R~\mbox{(Relation Schema)}$，键实际上就是一个列名。
 
-- $K$ is a **superkey** of $R$ if values for $K$ are sufficient to identify a unique tuple of each possible relation $r$.
+- $K$ is a **superkey(超键)** of $R$ if values for $K$ are sufficient to identify a unique tuple of each possible relation $r$.
 
-- Superkey $K$ is a **candidate key** if the number of attributes in $K$ is minimal (If we remove one more attribute in $K$, $K$ will not be a superkey).
+- Superkey $K$ is a **candidate key(候选键)** if the number of attributes in $K$ is minimal (If we remove one more attribute in $K$, $K$ will not be a superkey).
     
     Note that <u>Candidate key can have more than one attribute</u>.
 
@@ -566,7 +566,7 @@ on <relation_name or view_name> to <user list>; -- 收回
 
 ### 高级SQL
 
-#### 在高级编程语言中使用SQL、
+#### 在高级编程语言中使用SQL
 
 **嵌入式SQL(Embedded SQL)**
 
@@ -577,40 +577,67 @@ SQL标准定义了如何将SQL嵌入到多种编程语言中，例如C、Java和
 这些语言的基本形式遵循了System R将SQL嵌入到PL/I的模式:
 
 <div class="card" markdown="1">
-<div class="card-header">System R -> PL/I</div>
 <div class="card-body" markdown="1">
 
-**(1) 预处理器机制**
-
-- 输入：混合了 PL/I 代码和特殊标记的 SQL 语句(通过 EXEC SQL 界定)。
-
-- 输出：
-
-    - 纯 PL/I 代码(替换 SQL 为 PL/I 的数据库调用，如 SQLFetch)。
-
-    - 自动生成的通信区(如 SQLCA)用于传递执行状态(如错误码)。
-
-**(2) 宿主变量(Host Variables)**
-
-- 作用：在 PL/I 和 SQL 间传递数据。
-
-- 语法：PL/I 变量前加冒号(如 `:credit_amount`)，预处理器自动生成类型转换代码。
-
-- 限制：需显式声明类型匹配(如 PL/I 的 FIXED BINARY(31) 对应 SQL 的 INTEGER)。
-
-</div>
-</div>
-
-**注意**：具体形式因语言而异(例如，Java的嵌入式SQL使用 `#SQL { ... };`)。
-
-**主要问题**：
+嵌入式SQL需要解决的问题有：
 
 * 在宿主语言和SQL语句之间交换参数和结果。
 * 处理集合(sets)与变量(variables)之间的差异。
 * 获取SQL语句的执行状态。
 * 将代码编译成宿主语言。
 
-**示例**：学生学分查询（通过游标逐行处理结果）。
+**(1) 预处理器机制**
+
+- 输入：混合了宿主语言代码和特殊标记的 SQL 语句(通过`EXEC SQL`界定)。
+
+- 输出：
+
+    - 纯宿主语言代码(替换 SQL 为 PL/I 的数据库调用，如 SQLFetch)。
+
+    - 自动生成的通信区(如SQLCA)用于传递执行状态(如错误码)。
+
+!!! Warning "具体形式因语言而异(例如，Java的嵌入式SQL使用 `#SQL { ... };`)。"
+
+**(2) 宿主变量(Host Variables)**
+
+- 作用：在 PL/I 和 SQL 间传递数据。
+
+- 语法：宿主语言变量前加冒号(如 `:credit_amount`)，预处理器自动生成类型转换代码。
+
+- 限制：需显式声明类型匹配(如 PL/I 的 FIXED BINARY(31) 对应 SQL 的 INTEGER)。
+
+**(3) 游标(cursor)**
+
+我们知道，SQL的查询操作返回一个元组集合，即多行数据，但是宿主语言往往只能一行一行地处理数据。所以我们需要一个东西来暂存返回的结果。我们在嵌入式SQL里就可以声明一个**游标**：
+
+```sql
+EXEC SQL DECLARE cur CURSOR FOR 
+  SELECT id, name FROM employee WHERE dept = :dept_var;
+END_EXEC;
+```
+
+这样，在数据库端创建一个临时工作区，存储查询结果(避免一次性传输大量数据到客户端)。同时，通过游标位置，宿主语言也可以逐行访问结果。
+
+**操作流程**：
+
+- `OPEN cur`：执行查询，创建临时结果集；
+
+- `FETCH cur INTO :id, :name`：获取单行数据到宿主变量。如果需要连续获取需要考虑循环；
+
+- `CLOSE cur`：关闭查询，释放资源。
+
+**错误检查**：
+
+SQLCA(SQL Communication Area)：
+
+- 包含SQLSTATE(如 '02000' 表示无更多数据)。
+
+- 宿主语言通过检查SQLCA判断SQL执行状态。
+
+</div>
+</div>
+
+**示例**：学生学分查询(通过游标逐行处理结果)。
 
 ```C
 void getStudentInfo()
@@ -625,7 +652,7 @@ void getStudentInfo()
 	while (1)
 	{
 		EXEC SQL fetch c into :sId, :sName END_EXEC;
-		if (!strcmp(SQLSTATE,"02000"))
+		if (!strcmp(SQLSTATE,"02000")) // 02000状态码表示表中已经没有数据
 			break;
 		printf("%s %s\n",sId,sName);
 	}
@@ -633,6 +660,16 @@ void getStudentInfo()
 }
 
 ```
+
+**ODBC与JDBC**
+
+它们都是实现程序与数据库交互的API(application-program interface)。
+
+**ODBC**是C/C#/C++/VB的通用API，通过驱动管理器连接数据库(配置DSN)。
+
+核心函数：`SQLConnect()`, `SQLExecDirect()`, `SQLFetch()`。
+
+安全风险：SQL注入（需用预编译语句SQLPrepare）。
 
 #### 过程化扩展
 
@@ -645,7 +682,9 @@ void getStudentInfo()
 
 ## 数据库设计范式
 
-### E-S图
+数据库设计范式一般有两种：E-R模型范式和
+
+### E-R图
 
 
 
@@ -1151,14 +1190,228 @@ $$
 
 ## 查询处理
 
+基本的查询流程如下：
+
+解析与翻译 -> 优化 -> 执行
+
+<div align="center">    
+<img src="../images/DB/db24.png" alt="query_steps" style="zoom :80%;" />
+</div>
+
+衡量查询开销的主要指标有：**磁盘访问时间**、**CPU延迟**、网络连接等等。一般来说，磁盘访问是主要的性能开销项，其成本也相对容易估算。这一项可以通过以下指标进行量化计算：
+
+- 寻道(seek)次数 × 平均单次寻道成本
+
+- 读取的磁盘块数 × 平均单块读取成本
+
+- 写入的磁盘块数 × 平均单块写入成本
+
+简化起见，我们本章只使用**块传输次数(number of block transfers)**和**寻道次数(number of seeks)**作为开销的衡量。
+
+$$
+\mathrm{ T_{cost} = b \times t_T + S \times t_s }
+$$
+
+上式中，$t_T$ 指单块传输时间，$t_s$ 指单次寻道时间。这两个指标取决于数据在哪里存储。经验上看，假设一个块的大小为4KB：
+
+- High end magnetic disk: $t_S$ = 4 ms and $t_T$ = 0.1 ms
+
+- SSD: $t_S$ = 20-90 $\mu s$ and $t_T$ = 2-10 $\mu s$ for 4KB
+
+### 选择(Selection)操作
+
+针对选择操作(`select`)的算法主要有两类：直接对文件的线性(linear)扫描和使用索引的索引(index)扫描。
+
+- 线性扫描(A1)
+
+    扫描每个文件块，并逐条测试记录，看其是否满足选择的条件。
+
+    - 用 $b_r$ 描述存储了关系 $r$ 记录的块的数量。假设文件连续存储，那么一次线性扫描就需要 
+    
+    $$
+    \mathrm{b_r \times t_T + 1 \times t_s}
+    $$
+    
+    的时间。
+
+    - 如果选择是基于某个键的，找到目标记录后即可终止查询。此时，**平均来看**块传输的次数就会降到 $b_r / 2$。
+
+    - 线性搜索可适用于以下场景：
+
+        - 任意选择条件
+
+        - 文件记录无序存储
+
+        - 无索引可用
+
+    ??? Tip
+        
+        - 二分搜索通常不适用，因为数据物理存储不连续（除非存在索引）
+
+        - 二分搜索的寻道次数通常高于索引扫描
+
+- 索引扫描
+
+    注意，在下面的讨论中，$h_i$ 总是表示索引的层数。
+
+    - 等值查询
+
+        - A2(主索引 + 基于主键的等值查询) 
+
+            获得单条符合条件的记录。
+
+            $$
+            \mathrm{Cost = (h_i + 1) * (t_T + t_s)}
+            $$
+
+        - A3(主索引 + 基于非主键的等值查询)
+        
+            获得多条符合条件的记录。用 $b$ 表示存有符合条件的记录的块的数量，
+
+            $$
+            \mathrm{Cost = h_i * (t_T + t_s) + t_s + t_T \times b}
+            $$
+
+        - A4(二级索引 + 基于非主键的等值查询)
+
+            如果搜索键是候选键，那么可以得到单一的记录。
+
+            $$
+            \mathrm{Cost = (h_i + 1) * (t_T + t_s)}
+            $$
+
+            如果搜索键不是候选键，那么会得到多条记录。假如一共有n条符合要求的记录，这些记录可能分布在不同的块上，因而开销可能会变得很高：
+
+            $$
+            \mathrm{Cost = (h_i + n) * (t_T + t_s)}
+            $$
+
+    - 比较条件查询
+
+        比较条件查询($\sigma_{A \leq V}(r)$ 或者 $\sigma_{A \geq V}(r)$)可以使用前面的线性扫描完成，也可以使用下面的算法：
+
+        - A5(主索引)，关系已经按照属性A排序
+
+            - 对于 $\sigma_{A \geq V}(r)$，我们用索引找到第一个满足 $\geq V$ 关系的元组，然后从这里顺序扫描关系即可；
+
+            - 对于 $\sigma_{A \leq V}(r)$，我们甚至不需要索引，只需要从关系的开头顺序扫描，直到遇见第一个 $> V$ 的元组即可。
+
+        - A6(二级索引)
+
+            - 对于 $\sigma_{A \geq V}(r)$：
+
+                - 通过索引定位到首个 $\geq V$ 的索引项
+
+                - 顺序扫描后续索引条目，获取指向数据记录的指针
+
+            - 对于 $\sigma_{A \leq V}(r)$：
+
+                直接扫描索引叶子页，获取指针直到出现首个 $> V$ 的条目
+
+        上述两种算法：
+
+        - 共同操作：根据指针逐条读取对应数据记录
+
+        - 代价特性：每条记录需单独 I/O 操作
+
+        - 当满足条件的记录过多时，线性全表扫描可能更高效
+
+    - 复杂条件查询：多条件合取查询($\sigma_{\theta_1 \land \theta_2 \land ... \land \theta_n}(r)$)
+
+        - A7(使用单索引)
+
+        - A8(使用复合索引)
+
+        - A9(使用指针交集[intersection of identifiers])
+
+
+    - 复杂条件查询：多条件析取查询($\sigma_{\theta_1 \vee \theta_2 \vee ... \vee \theta_n}(r)$)
+
+        - A10(使用指针并集[union of identifiers])
+
+A1-A6总结：
+
+<div align="center">    
+<img src="../images/DB/db25.png" alt="seek_algorithms" style="zoom :80%;" />
+</div>
+
+### 排序(Sorting)
+
+从上面一节，我们知道，在选择操作时我们可能会针对关系构建索引，然后用有顺序的索引去读取关系。
+
+如果memory可以容纳目标关系，那么我们就可以用诸如快速排序的技巧。但是，实际情况往往是一个关系的大小不能被memory容纳，这个时候我们就需要**外部归并排序(external sort-merge)**。有关归并排序，还记不记得ADS课程中的讲解？
+
+
+
 ## 事务(Transaction)
 
-**事务(Transaction)**是一次数据库操作若干执行操作组成的抽象概念。Transaction的提出是为了维护数据的完整性。
+**事务(Transaction)**是程序一次执行若干次操作组成的抽象概念，是一个unit。Transaction的提出是为了维护数据的完整性。有了事务这一概念，我们还有两个主要的问题：
+
+- 如何处理并行事务？ --> [#并发控制(Concurrency Control)](#Concurrency_Control)
+
+- 如何处理例如硬件故障和系统崩溃这样的错误？ --> [#错误恢复(Recovery)](#Recovery)
+
+!!! Note "事务的状态"
+
+    <div align="center">    
+    <img src="../images/DB/db23.png" alt="txn_states" style="zoom :75%;" />
+    </div>
+
+    - **活跃(Active)** 
+
+        The initial state; the transaction stays in this state while it is executing
+
+    - **部分提交(Partially committed)**
+
+        After the final statement has been executed.
+
+    - **失败(Failed)**
+
+        After the discovery that normal execution can no longer proceed.
+
+    - **中止(Aborted)**
+
+        after the transaction has been rolled back and the database restored to its state prior to the start of the transaction. Two options after it has been aborted:
+
+        - Restart the transaction (can be done only if no internal logical error in the transaction)
+
+        - Kill the transaction
+
+    - **提交(Committed)**
+
+        After successful completion.
+
 
 ### ACID
 
 事务的实现要求四个特性ACID：
 
-## 并发控制实现
+- **A-Atomicity** 原子性
 
-## 错误恢复
+    一个事务应该被系统视作一个整体。假如一个事务执行中途发生故障，那么故障点前面属于该事务的操作不能反映到数据库中。也就是说，一个事物要么所有操作(包括Commit)成功完成，要么所有操作都应该被回滚。
+
+- **C-Consistency** 一致性
+
+    总体来说可以解释成：必须保证数据在操作修改前后仍然遵循
+
+    - 显式指定的完整性约束(如主键和外键)
+
+    - 隐式完整性约束，例如，所有账户余额的总和减去贷款总额必须等于现金持有量
+
+- **I-Isolation** 隔离性
+
+    即使有多个事务正在同时进行，它们彼此之间应该是不知道有其他事务正在进行的(这就是事务锁)。一个事务中途的结果应该对其他事务不可见。
+
+- **D-Durability** 持久性
+
+    一个事务声明已经结束后，断电等等的意外不能对已结束的事务的结果数据造成任何影响，也即已提交的修改必须要一直存在。
+
+为了实现隔离性，我们有一个自然的想法，就是让系统每次只能执行一个事务。但是这样效率太慢了，所以我们需要解决**并发控制**的问题。
+
+### 并发控制
+
+在允许并行的情况下，实现事务隔离性的机制是**Concurrency control schemes**。我们首先定义，并发事务的各个子操作在DBMS内部的具体执行步骤被称为**Schedule**。
+
+## 并发控制实现<a id="Concurrency_Control"></a>
+
+## 错误恢复<a id="Recovery"></a>
