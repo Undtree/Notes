@@ -682,11 +682,17 @@ void getStudentInfo()
 
 ## 数据库设计范式
 
-数据库设计范式一般有两种：E-R模型范式和
+数据库设计范式一般有两种：E-R模型范式和一般化模型。
 
 ### E-R图
 
+<div align="center">    
+<img src="../images/DB/db29.png" alt="ER_1" style="zoom: 90%"/>
+</div>
 
+<div align="center">    
+<img src="../images/DB/db30.png" alt="ER_2" style="zoom: 90%"/>
+</div>
 
 ## 存储
 
@@ -1316,6 +1322,10 @@ $$
 
         - 当满足条件的记录过多时，线性全表扫描可能更高效
 
+            ??? tip "推导"
+
+                
+
     - 复杂条件查询：多条件合取查询($\sigma_{\theta_1 \land \theta_2 \land ... \land \theta_n}(r)$)
 
         - A7(使用单索引)
@@ -1339,9 +1349,121 @@ A1-A6总结：
 
 从上面一节，我们知道，在选择操作时我们可能会针对关系构建索引，然后用有顺序的索引去读取关系。
 
-如果memory可以容纳目标关系，那么我们就可以用诸如快速排序的技巧。但是，实际情况往往是一个关系的大小不能被memory容纳，这个时候我们就需要**外部归并排序(external sort-merge)**。有关归并排序，还记不记得ADS课程中的讲解？
+如果memory可以容纳目标关系，那么我们就可以用诸如快速排序的技巧。但是，实际情况往往是一个关系的大小不能被memory容纳，这个时候我们就需要**外部归并排序(external sort-merge)**。还记不记得ADS课程中的讲解？
 
+外部归并排序流程，分治：
 
+<div align="center">    
+<img src="../images/DB/db26.png" alt="merge_sort" style="zoom :80%;" />
+</div>
+
+- **Step 1 (初始化)**  
+  
+    每次读入M个块到内存中，并在内存中进行排序，记为一个run $R_{i}$，然后写回磁盘。设完成初始化后得到的runs总个数为 $N_{0}$。
+
+- **Step 2 (归并)**
+  
+    - 如果 $N_{0} < M$：  可以分配 $N_{0}$ 个块用于归并，再用一个块作为输出缓冲区。
+
+    - 如果 $N_{0} \geq M$：需要进行递归合并，在每一轮中，可合并连续的 $M-1$ 个runs，并让runs的总数量变为 $\lceil N/(M-1) \rceil$，递归直到所有runs合并为一个。
+
+结论速通：(M指放进内存中的块的数量，$b_r$ 定义同前)
+
+- **runs**总数：$\lceil b_r / M \rceil$
+
+- 需要的**passes**数：$\lceil \log_{M-1}{(b_r / M)} \rceil$
+
+我们知道，一个块在进行排序的时候会产生两次块传输，因为要进入内存、从内存取出。所以，每一个pass都会产生 $2b_r$ 的块传输。我们不考虑最后一次pass的写盘开销，因为一个操作的最终结果可能会被直接传给父操作，不一定会写到盘中。所以，采用归并的**外部排序的块传输总量**是
+
+$$
+b_r (2\lceil \log_{M-1}{(b_r / M)}\rceil - 1) \to O (b_r \log b_r)
+$$
+
+每一个pass也需要 $2b_r$ 次寻道。此外，在生成runs的时候，对于每个run，磁盘需要一次寻道来读run，一次寻道来写run。因此采用归并的**外部排序的寻道总数**是
+
+$$
+2\lceil b_r / M \rceil + b_r (2\lceil \log_{M-1}{(b_r / M)}\rceil - 1)
+$$
+
+- 存储优化
+
+    - **Motivation**  
+        
+        为了进一步减少寻道成本，将输入和输出缓冲区的大小都设置为 $b_{b}$ 个块，这样内存中就只能放下 $\lfloor M/b_{b}\rfloor$ 个 runs 了。
+
+    - **block-transfer**  
+  
+        共 $b_{r}(2\lceil\log_{\lfloor M/b_{b}\rfloor-1}(b_{r}/M)\rceil+1)$ 次。
+
+    - **seek**  
+  
+        共 $2\lceil b_{r}/M\rceil + \lceil b_{r}/b_{b}\rceil(2\lceil\log_{\lfloor M/b_{b}\rfloor-1}(b_{r}/M)\rceil-1)$ 次。
+
+### 连接(Join)
+
+我们有多种方式来实现连接操作。
+
+#### **Nested-Loop Join**
+
+一般来说就是，为了计算 $\theta$ - join $r \bowtie_{\theta} s$ (此时称 $r$ 为**外关系(outer relation)**，$s$ 为**内关系(inner relation)**)：
+
+<div align="center">    
+<img src="../images/DB/db27.png" alt="nestedloop_algo" style="zoom: 90%"/>
+</div>
+
+- 不需要索引，代价是时间开销大，对于每一对元组都需要检查。
+
+- 最坏情况下，内存只能容纳两个关系中的各一个块。此时开销为 $(n_r + b_r) \times t_s + (n_r \times b_s + b_r) \times t_T$。
+
+    - 因为每轮都需要重新寻道，外关系遍历需要 $b_r \times (t_s + t_T)$
+
+    - 对于 $n_r$ 个外关系元组中的每一个，都需要对内关系做一次扫描，共花费 $n_r \times (t_s + b_s \times t_T)$。
+
+- 如果内关系可以完全放进内存，开销即可降低为 $2 \times t_s + (b_s + b_r) \times t_T$。
+
+    即在一开始先用 $t_s + b_s\times t_T$ 的时间将内关系全部读进内存。
+
+#### **Block Nested-Loop Join**
+
+和Nested-Loop Join相似，但是从实现上看，内外关系变成了对应关系的block，从block中再提取元组。
+
+<div align="center">    
+<img src="../images/DB/db28.png" alt="block_nestedloop_algo" style="zoom: 80%"/>
+</div>
+
+- 最坏情况的开销 
+    
+    $2b_{r} \times t_{S} + (b_{r} \times b_{s}) \times t_{T}$
+
+- 内存优化方案
+    
+    使用内存中的 $M-2$ 个块储存外关系，成本可降低为：  $2\lceil b_{r}/(M-2)\rceil \times t_{S} + (\lceil b_{r}/(M-2)\rceil \times b_{s} + b_{r}) \times t_{T}$
+
+    * $M-2$ 个块用于存储外关系，一个块用于存储内关系， 一个块用于结果输出。
+
+    * 具体来说，每轮取出 $M-2$ 个块处理，处理开销是 $2 \times t_{s} + (b_{s} + b_{r,i}) \times t_{T}$，其中 $\sum b_{r,i} = b_{r}$。每次都需要重新寻道
+
+- 最好情况
+
+    $2 \times t_{S} + (b_{r} + b_{s}) \times t_{T}$
+
+- 关键结论
+  
+    1. 扫描策略优化：交替进行向前/向后循环，充分利用缓冲区中的剩余块
+
+    2. 关系选择原则：若两个关系都不能完全放入内存，将小关系作为外关系的效率更高
+
+#### **Indexed Nested-Loop Join**
+
+如果
+
+**(1)** 连接是等值连接或者自然连接；或者
+
+**(2)** 内关系的连接属性上有索引(也可以专门为连接操作而建立)，
+
+我们就可以用 index lookup 替换 file scan。
+
+- 最坏情况下，缓冲区仅能容纳 $r$ 的一个块，并且对于 $r$ 中的每个元组都需要在 $s$ 上进行一次索引查找。
 
 ## 事务(Transaction)
 
