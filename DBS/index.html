@@ -267,6 +267,13 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#_22">
+<span class="md-ellipsis">
+      查询优化
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#transaction">
 <span class="md-ellipsis">
       事务(Transaction)
@@ -274,14 +281,14 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_22">
+<a class="md-nav__link" href="#_26">
 <span class="md-ellipsis">
       并发控制实现
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_23">
+<a class="md-nav__link" href="#_27">
 <span class="md-ellipsis">
       错误恢复
     </span>
@@ -414,6 +421,13 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#_22">
+<span class="md-ellipsis">
+      查询优化
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#transaction">
 <span class="md-ellipsis">
       事务(Transaction)
@@ -421,14 +435,14 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_22">
+<a class="md-nav__link" href="#_26">
 <span class="md-ellipsis">
       并发控制实现
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_23">
+<a class="md-nav__link" href="#_27">
 <span class="md-ellipsis">
       错误恢复
     </span>
@@ -443,7 +457,7 @@
 <article class="md-content__inner md-typeset">
 <h1>数据库系统</h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 11157 个字 <span class="twemoji"><svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"></path></svg></span> 69 行代码 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"></path></svg></span> 25 张图片 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 38 分钟</p>
+<p><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 15158 个字 <span class="twemoji"><svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"></path></svg></span> 69 行代码 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"></path></svg></span> 37 张图片 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 51 分钟</p>
 </div>
 <div class="admonition abstract">
 <p class="admonition-title">Abstract</p>
@@ -470,6 +484,9 @@
 </li>
 <li>
 <p>Chritch老师的博客 <a href="https://obsidian.zerokei.top/Hub/Database%20System/">数据库系统篇</a></p>
+</li>
+<li>
+<p>MEM佬的博客 <a href="https://mem.ac">mem.ac</a></p>
 </li>
 </ul>
 </div>
@@ -611,10 +628,10 @@ R = (A_1, A_2, …, A_n )
 <div class="admonition tip">
 <p class="admonition-title">这个章节对应教材第3-5章。</p>
 </div>
-<p>SQL全称结构化查询语言(Structured Query Language)。SQL数据定义语言（DDL）允许定义以下关系信息：</p>
+<p>SQL全称结构化查询语言(Structured Query Language)。SQL数据定义语言(DDL)允许定义以下关系信息：</p>
 <ul>
 <li>
-<p>每个关系的模式（schema）</p>
+<p>每个关系的模式(schema)</p>
 </li>
 <li>
 <p>各属性关联的值类型</p>
@@ -633,7 +650,7 @@ R = (A_1, A_2, …, A_n )
 </li>
 </ul>
 <h4 id="sql_1">SQL的历史发展<a class="headerlink" href="#sql_1" title="Permanent link">¶</a></h4>
-<p>这里应该不考，暂时鸽了（</p>
+<p>这里应该不考，暂时鸽了(</p>
 <h3 id="sql_2">SQL数据类型<a class="headerlink" href="#sql_2" title="Permanent link">¶</a></h3>
 <div class="card">
 <div class="card-header">char(n)</div>
@@ -909,7 +926,7 @@ R = (A_1, A_2, …, A_n )
 <p><strong>Join Conditions：控制哪一些列或条件用于匹配两张表中的tuple</strong></p>
 <ul>
 <li>
-<p>natural：tuple所有同名列的值相等（默认）</p>
+<p>natural：tuple所有同名列的值相等(默认)</p>
 </li>
 <li>
 <p>using (A1, A2...)：tuple同名列中指定的部分列的值相等</p>
@@ -923,7 +940,7 @@ R = (A_1, A_2, …, A_n )
 <p><strong>Join Types：控制如何处理没有匹配对象的tuple</strong></p>
 <ul>
 <li>
-<p>Inner Join：没有匹配对象则不返回（默认）</p>
+<p>Inner Join：没有匹配对象则不返回(默认)</p>
 </li>
 <li>
 <p>Left Outer Join：左侧表的tuple没有匹配对象，则为扩展的列填入NULL，一起返回</p>
@@ -1100,17 +1117,28 @@ R = (A_1, A_2, …, A_n )
 <p>它们都是实现程序与数据库交互的API(application-program interface)。</p>
 <p><strong>ODBC</strong>是C/C#/C++/VB的通用API，通过驱动管理器连接数据库(配置DSN)。</p>
 <p>核心函数：<code>SQLConnect()</code>, <code>SQLExecDirect()</code>, <code>SQLFetch()</code>。</p>
-<p>安全风险：SQL注入（需用预编译语句SQLPrepare）。</p>
+<p>安全风险：SQL注入(需用预编译语句SQLPrepare)。</p>
 <h4 id="_3">过程化扩展<a class="headerlink" href="#_3" title="Permanent link">¶</a></h4>
 <h4 id="trigger">触发器(Trigger)<a class="headerlink" href="#trigger" title="Permanent link">¶</a></h4>
 <h4 id="olap">高级聚合与OLAP<a class="headerlink" href="#olap" title="Permanent link">¶</a></h4>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>好像不考，我就不写了（</p>
+<p>好像不考，我就不写了(</p>
 </div>
 <h2 id="_4">数据库设计范式<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
-<p>数据库设计范式一般有两种：E-R模型范式和</p>
-<h3 id="e-r">E-R图<a class="headerlink" href="#e-r" title="Permanent link">¶</a></h3>
+<h3 id="e-r">E-R模型<a class="headerlink" href="#e-r" title="Permanent link">¶</a></h3>
+<div align="center">
+<img alt="ER_1" src="../images/DB/db29.png" style="zoom: 90%"/>
+</div>
+<div align="center">
+<img alt="ER_2" src="../images/DB/db30.png" style="zoom: 90%"/>
+</div>
+<p><strong>实体(entity)</strong>：在现实世界中能够与其他对象区分开来的一个对象。</p>
+<div class="language-text highlight"><pre><span></span><code>- 一个实体会有一组 属性(attribute)，我们可以用某些属性的值来识别唯一的实体。
+
+- 实体可以是具体的，也可以是抽象的。
+</code></pre></div>
+<p><strong>实体集(entity set)</strong>：相同类型（共享相同的属性）的一组实体构成了一个实体集。</p>
 <h2 id="_5">存储<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
 <h3 id="_6">存储层级<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
 <p><img alt="storage" src="../images/DB/db2.png"/></p>
@@ -1151,7 +1179,7 @@ NVMe 2.0采用PCIe 5.0 x4接口，理论带宽可达约 16GB/s。</p>
 <p><strong>读写磁头 (Read-write head)</strong></p>
 <ul>
 <li>
-<p>定位在盘片表面极近处（几乎接触）</p>
+<p>定位在盘片表面极近处(几乎接触)</p>
 </li>
 <li>
 <p>通过磁编码方式读取/写入信息  </p>
@@ -1181,7 +1209,7 @@ NVMe 2.0采用PCIe 5.0 x4接口，理论带宽可达约 16GB/s。</p>
 <p>扇区是物理读写的最小数据单元  </p>
 </li>
 <li>
-<p>典型扇区大小：512字节（现代高级格式盘为4K）  </p>
+<p>典型扇区大小：512字节(现代高级格式盘为4K)  </p>
 </li>
 <li>
 <p>每磁道扇区数：<br>
@@ -1207,7 +1235,7 @@ NVMe 2.0采用PCIe 5.0 x4接口，理论带宽可达约 16GB/s。</p>
 <p><strong>磁头-盘片组件(Head-Disk Assembly, HDA)</strong></p>
 <ul>
 <li>
-<p>单个主轴安装多层盘片（通常1-5片）  </p>
+<p>单个主轴安装多层盘片(通常1-5片)  </p>
 </li>
 <li>
 <p>每个盘面对应一个磁头，所有磁头安装在同一磁臂上  </p>
@@ -1316,13 +1344,13 @@ NVMe 2.0采用PCIe 5.0 x4接口，理论带宽可达约 16GB/s。</p>
 <summary>为什么会有变长记录</summary>
 <ul>
 <li>
-<p>多记录类型共存：单文件存储不同结构记录（如PostgreSQL的TOAST机制）</p>
+<p>多记录类型共存：单文件存储不同结构记录(如PostgreSQL的TOAST机制)</p>
 </li>
 <li>
 <p>变长字段：VARCHAR、TEXT、BLOB等类型</p>
 </li>
 <li>
-<p>重复字段：历史数据模型（如网状/层次模型）允许的多值属性</p>
+<p>重复字段：历史数据模型(如网状/层次模型)允许的多值属性</p>
 </li>
 </ul>
 <p>例如，存储JSON数组时可能产生变长记录</p>
@@ -1374,7 +1402,7 @@ B --&gt; C[实际记录位置]</code></pre>
 <p>记录自由放置：记录可以插入到文件中任何有空闲空间的位置</p>
 </li>
 <li>
-<p>记录固定性：记录一旦写入通常不移动（除非主动重组）</p>
+<p>记录固定性：记录一旦写入通常不移动(除非主动重组)</p>
 </li>
 <li>
 <p>关键需求：需要高效定位空闲空间</p>
@@ -1404,7 +1432,7 @@ B --&gt; C[实际记录位置]</code></pre>
 <p>删除：使用指针链。改变指针指向以改变逻辑先后关系。空余位置的处理视单条数据的结构而定。</p>
 </li>
 <li>
-<p>插入：需要先定位记录在何处插入。有剩余空间可以直接插入。但是如果当前block满了，只能插入到新block中(<strong>overflow block</strong>)。但我们又需要维持逻辑先后关系，这时就会形成下图所示的结构（为便于理解这里以定长数据为例）。</p>
+<p>插入：需要先定位记录在何处插入。有剩余空间可以直接插入。但是如果当前block满了，只能插入到新block中(<strong>overflow block</strong>)。但我们又需要维持逻辑先后关系，这时就会形成下图所示的结构(为便于理解这里以定长数据为例)。</p>
 <p><img alt="overflow_block" src="../images/DB/db7.png"/></p>
 </li>
 </ul>
@@ -1502,7 +1530,7 @@ B --&gt; C[实际记录位置]</code></pre>
 </li>
 </ul>
 <p>但是，稀疏索引由于需要两步定位记录，所以整体上查询记录的效率不如稠密索引。</p>
-<p>我们有一个较好的折中方案，<strong>按数据块建立稀疏索引</strong>：每个文件块（Block）在索引中对应一个条目，存储该块的最小搜索键值。</p>
+<p>我们有一个较好的折中方案，<strong>按数据块建立稀疏索引</strong>：每个文件块(Block)在索引中对应一个条目，存储该块的最小搜索键值。</p>
 <p>按照这个方案，我们可以继续嵌套下去，形成<strong>多级索引(Multilevel Index)</strong>。</p>
 <h3 id="b">B+树索引<a class="headerlink" href="#b" title="Permanent link">¶</a></h3>
 <p>有了前面的多级索引结构，我们或许能够联想到树的结构。于是，<strong>B+树索引</strong>作为一种顺序索引的替代出现了，并且广泛为大家所用！</p>
@@ -1631,6 +1659,7 @@ B --&gt; C[实际记录位置]</code></pre>
 <p class="admonition-title">Warning</p>
 <p>课程PPT将B树索引、哈希索引等一概隐藏了，这里就不放了，感兴趣的朋友可以去看教材。</p>
 </div>
+<hr/>
 <h2 id="_20">查询处理<a class="headerlink" href="#_20" title="Permanent link">¶</a></h2>
 <p>基本的查询流程如下：</p>
 <p>解析与翻译 -&gt; 优化 -&gt; 执行</p>
@@ -1698,7 +1727,7 @@ B --&gt; C[实际记录位置]</code></pre>
 <summary>Tip</summary>
 <ul>
 <li>
-<p>二分搜索通常不适用，因为数据物理存储不连续（除非存在索引）</p>
+<p>二分搜索通常不适用，因为数据物理存储不连续(除非存在索引)</p>
 </li>
 <li>
 <p>二分搜索的寻道次数通常高于索引扫描</p>
@@ -1786,6 +1815,9 @@ B --&gt; C[实际记录位置]</code></pre>
 </li>
 <li>
 <p>当满足条件的记录过多时，线性全表扫描可能更高效</p>
+<details class="tip">
+<summary>推导</summary>
+</details>
 </li>
 </ul>
 </li>
@@ -1818,7 +1850,300 @@ B --&gt; C[实际记录位置]</code></pre>
 </div>
 <h3 id="sorting">排序(Sorting)<a class="headerlink" href="#sorting" title="Permanent link">¶</a></h3>
 <p>从上面一节，我们知道，在选择操作时我们可能会针对关系构建索引，然后用有顺序的索引去读取关系。</p>
-<p>如果memory可以容纳目标关系，那么我们就可以用诸如快速排序的技巧。但是，实际情况往往是一个关系的大小不能被memory容纳，这个时候我们就需要<strong>外部归并排序(external sort-merge)</strong>。有关归并排序，还记不记得ADS课程中的讲解？</p>
+<p>如果memory可以容纳目标关系，那么我们就可以用诸如快速排序的技巧。但是，实际情况往往是一个关系的大小不能被memory容纳，这个时候我们就需要<strong>外部归并排序(external sort-merge)</strong>。还记不记得ADS课程中的讲解？</p>
+<p>外部归并排序流程，分治：</p>
+<div align="center">
+<img alt="merge_sort" src="../images/DB/db26.png" style="zoom :80%;"/>
+</div>
+<ul>
+<li>
+<p><strong>Step 1 (初始化)</strong> </p>
+<p>每次读入M个块到内存中，并在内存中进行排序，记为一个run <span class="arithmatex">\(R_{i}\)</span>，然后写回磁盘。设完成初始化后得到的runs总个数为 <span class="arithmatex">\(N_{0}\)</span>。</p>
+</li>
+<li>
+<p><strong>Step 2 (归并)</strong></p>
+<ul>
+<li>
+<p>如果 <span class="arithmatex">\(N_{0} &lt; M\)</span>：  可以分配 <span class="arithmatex">\(N_{0}\)</span> 个块用于归并，再用一个块作为输出缓冲区。</p>
+</li>
+<li>
+<p>如果 <span class="arithmatex">\(N_{0} \geq M\)</span>：需要进行递归合并，在每一轮中，可合并连续的 <span class="arithmatex">\(M-1\)</span> 个runs，并让runs的总数量变为 <span class="arithmatex">\(\lceil N/(M-1) \rceil\)</span>，递归直到所有runs合并为一个。</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>结论速通：(M指放进内存中的块的数量，<span class="arithmatex">\(b_r\)</span> 定义同前)</p>
+<ul>
+<li>
+<p><strong>runs</strong>总数：<span class="arithmatex">\(\lceil b_r / M \rceil\)</span></p>
+</li>
+<li>
+<p>需要的<strong>passes</strong>数：<span class="arithmatex">\(\lceil \log_{M-1}{(b_r / M)} \rceil\)</span></p>
+</li>
+</ul>
+<p>我们知道，一个块在进行排序的时候会产生两次块传输，因为要进入内存、从内存取出。所以，每一个pass都会产生 <span class="arithmatex">\(2b_r\)</span> 的块传输。我们不考虑最后一次pass的写盘开销，因为一个操作的最终结果可能会被直接传给父操作，不一定会写到盘中。所以，采用归并的<strong>外部排序的块传输总量</strong>是</p>
+<div class="arithmatex">\[
+b_r (2\lceil \log_{M-1}{(b_r / M)}\rceil - 1) \to O (b_r \log b_r)
+\]</div>
+<p>每一个pass也需要 <span class="arithmatex">\(2b_r\)</span> 次寻道。此外，在生成runs的时候，对于每个run，磁盘需要一次寻道来读run，一次寻道来写run。因此采用归并的<strong>外部排序的寻道总数</strong>是</p>
+<div class="arithmatex">\[
+2\lceil b_r / M \rceil + b_r (2\lceil \log_{M-1}{(b_r / M)}\rceil - 1)
+\]</div>
+<ul>
+<li>
+<p>存储优化</p>
+<ul>
+<li>
+<p><strong>Motivation</strong> </p>
+<p>为了进一步减少寻道成本，将输入和输出缓冲区的大小都设置为 <span class="arithmatex">\(b_{b}\)</span> 个块，这样内存中就只能放下 <span class="arithmatex">\(\lfloor M/b_{b}\rfloor\)</span> 个 runs 了。</p>
+</li>
+<li>
+<p><strong>block-transfer</strong> </p>
+<p>共 <span class="arithmatex">\(b_{r}(2\lceil\log_{\lfloor M/b_{b}\rfloor-1}(b_{r}/M)\rceil+1)\)</span> 次。</p>
+</li>
+<li>
+<p><strong>seek</strong> </p>
+<p>共 <span class="arithmatex">\(2\lceil b_{r}/M\rceil + \lceil b_{r}/b_{b}\rceil(2\lceil\log_{\lfloor M/b_{b}\rfloor-1}(b_{r}/M)\rceil-1)\)</span> 次。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="join">连接(Join)<a class="headerlink" href="#join" title="Permanent link">¶</a></h3>
+<p>我们有多种方式来实现连接操作。</p>
+<h4 id="nested-loop-join"><strong>Nested-Loop Join</strong><a class="headerlink" href="#nested-loop-join" title="Permanent link">¶</a></h4>
+<p>一般来说就是，为了计算 <span class="arithmatex">\(\theta\)</span> - join <span class="arithmatex">\(r \bowtie_{\theta} s\)</span> (此时称 <span class="arithmatex">\(r\)</span> 为<strong>外关系(outer relation)</strong>，<span class="arithmatex">\(s\)</span> 为<strong>内关系(inner relation)</strong>)：</p>
+<div align="center">
+<img alt="nestedloop_algo" src="../images/DB/db27.png" style="zoom: 90%"/>
+</div>
+<ul>
+<li>
+<p>不需要索引，代价是时间开销大，对于每一对元组都需要检查。</p>
+</li>
+<li>
+<p>最坏情况下，内存只能容纳两个关系中的各一个块。此时开销为 <span class="arithmatex">\((n_r + b_r) \times t_s + (n_r \times b_s + b_r) \times t_T\)</span>。</p>
+<ul>
+<li>
+<p>因为每轮都需要重新寻道，外关系遍历需要 <span class="arithmatex">\(b_r \times (t_s + t_T)\)</span></p>
+</li>
+<li>
+<p>对于 <span class="arithmatex">\(n_r\)</span> 个外关系元组中的每一个，都需要对内关系做一次扫描，共花费 <span class="arithmatex">\(n_r \times (t_s + b_s \times t_T)\)</span>。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>如果内关系可以完全放进内存，开销即可降低为 <span class="arithmatex">\(2 \times t_s + (b_s + b_r) \times t_T\)</span>。</p>
+<p>即在一开始先用 <span class="arithmatex">\(t_s + b_s\times t_T\)</span> 的时间将内关系全部读进内存。</p>
+</li>
+</ul>
+<h4 id="block-nested-loop-join"><strong>Block Nested-Loop Join</strong><a class="headerlink" href="#block-nested-loop-join" title="Permanent link">¶</a></h4>
+<p>和Nested-Loop Join相似，但是从实现上看，内外关系变成了对应关系的block，从block中再提取元组。</p>
+<div align="center">
+<img alt="block_nestedloop_algo" src="../images/DB/db28.png" style="zoom: 80%"/>
+</div>
+<ul>
+<li>
+<p>最坏情况的开销 </p>
+<p><span class="arithmatex">\(2b_{r} \times t_{S} + (b_{r} \times b_{s}) \times t_{T}\)</span></p>
+</li>
+<li>
+<p>内存优化方案</p>
+<p>使用内存中的 <span class="arithmatex">\(M-2\)</span> 个块储存外关系，成本可降低为：  <span class="arithmatex">\(2\lceil b_{r}/(M-2)\rceil \times t_{S} + (\lceil b_{r}/(M-2)\rceil \times b_{s} + b_{r}) \times t_{T}\)</span></p>
+<ul>
+<li>
+<p><span class="arithmatex">\(M-2\)</span> 个块用于存储外关系，一个块用于存储内关系， 一个块用于结果输出。</p>
+</li>
+<li>
+<p>具体来说，每轮取出 <span class="arithmatex">\(M-2\)</span> 个块处理，处理开销是 <span class="arithmatex">\(2 \times t_{s} + (b_{s} + b_{r,i}) \times t_{T}\)</span>，其中 <span class="arithmatex">\(\sum b_{r,i} = b_{r}\)</span>。每次都需要重新寻道</p>
+</li>
+</ul>
+</li>
+<li>
+<p>最好情况</p>
+<p><span class="arithmatex">\(2 \times t_{S} + (b_{r} + b_{s}) \times t_{T}\)</span></p>
+</li>
+<li>
+<p>关键结论</p>
+<ol>
+<li>
+<p>扫描策略优化：交替进行向前/向后循环，充分利用缓冲区中的剩余块</p>
+</li>
+<li>
+<p>关系选择原则：若两个关系都不能完全放入内存，将小关系作为外关系的效率更高</p>
+</li>
+</ol>
+</li>
+</ul>
+<h4 id="indexed-nested-loop-join"><strong>Indexed Nested-Loop Join</strong><a class="headerlink" href="#indexed-nested-loop-join" title="Permanent link">¶</a></h4>
+<p>如果</p>
+<p><strong>(1)</strong> 连接是等值连接或者自然连接；或者</p>
+<p><strong>(2)</strong> 内关系的连接属性上有索引(也可以专门为连接操作而建立)，</p>
+<p>我们就可以用 index lookup 替换 file scan。</p>
+<ul>
+<li>
+<p>最坏情况下，缓冲区仅能容纳 <span class="arithmatex">\(r\)</span> 的一个块，并且对于 <span class="arithmatex">\(r\)</span> 中的每个元组都需要在 <span class="arithmatex">\(s\)</span> 上进行一次索引查找。</p>
+</li>
+<li>
+<p>开销为 <span class="arithmatex">\(b_r(t_T + t_s) + n_r \times c\)</span>，其中 <span class="arithmatex">\(c\)</span> 是使用连接条件进行索引查找的代价。</p>
+</li>
+</ul>
+<h4 id="merge-join">Merge Join<a class="headerlink" href="#merge-join" title="Permanent link">¶</a></h4>
+<p>若两个关系都已经排序，则可使用类似归并排序的方法计算连接．如果关系未排序则需加上事先排序的代价。</p>
+<div class="admonition danger">
+<p class="admonition-title">合并连接仅可用于等值连接和自然连接！</p>
+</div>
+<p>设系统分别为 <span class="arithmatex">\(r\)</span> 和 <span class="arithmatex">\(s\)</span> 分配了M个块中的 <span class="arithmatex">\(x_r\)</span> 和 <span class="arithmatex">\(x_s\)</span> 个块(保证 <span class="arithmatex">\(x_r + x_s = M\)</span> )，则开销为</p>
+<div class="arithmatex">\[
+(\lceil b_r / x_r \rceil + \lceil b_s / x_s \rceil) \times t_s + (b_r + b_s) \times t_T
+\]</div>
+<h4 id="hash-join">Hash Join<a class="headerlink" href="#hash-join" title="Permanent link">¶</a></h4>
+<p>本质上是一种<strong>分治</strong>的思想！哈希连接算法流程大致是：</p>
+<ul>
+<li>
+<p>Partition：通过哈希函数将关系 <span class="arithmatex">\(r\)</span> 和 <span class="arithmatex">\(s\)</span> 分区并映射到 <span class="arithmatex">\(\{0, 1, …, n_h\}\)</span> 上，并写回磁盘。</p>
+</li>
+<li>
+<p>Build &amp; Probe：对于 <span class="arithmatex">\(s\)</span> 的每个分区 <span class="arithmatex">\(s_i\)</span>，将其全部载入内存中，并遍历 <span class="arithmatex">\(r_i\)</span> 中的每个块依次载入内存，进行连接。</p>
+</li>
+</ul>
+<p>为了确保 <span class="arithmatex">\(s\)</span> 中的每个分区都能被载入到内存中，我们一般令哈希表容量 <span class="arithmatex">\(n_h \geq \lceil b_s / M \rceil \times f\)</span>，<span class="arithmatex">\(f\)</span> 是 <strong>fudge factor</strong>，一般取1.2。<span class="arithmatex">\(f\)</span> 的选择动机在于哈希函数决定下的分区不一定是均匀的。<span class="arithmatex">\(r\)</span> 中的分区不需要一开始就载入内存，所以不影响容量的下界。</p>
+<p>同时，为了避免进行<strong>递归分区(recursive partitioning)</strong>，我们一般也要求 <span class="arithmatex">\(n_h &lt; M - 1\)</span>。这也是容量的上界。</p>
+<p>根据上述界定，我们经过数学运算可知，<span class="arithmatex">\(M &gt; \sqrt{b_s}\)</span>。</p>
+<div class="admonition exercise">
+<p class="admonition-title">在不进行递归分区的情况下，使用哈希连接最多能处理多大的relation？</p>
+<p>对于 12M 内存，块大小设置为 4K．则内存中最多可放下 3K (= 12M / 4K) 个块，可对最大 3K × 3K 个块的关系进行分区并哈希连接，也就是 3K × 3K × 4K = 36G 大小的关系。</p>
+</div>
+<p>好的，这是图片中文字的 Markdown 格式：</p>
+<ul>
+<li>
+<p>不考虑递归分区，保证没有哈希表溢出：</p>
+<ul>
+<li>
+<p>block-transfer</p>
+<ul>
+<li>
+<p>partition: 关系中的每个块都需要从磁盘中取出，共 <span class="arithmatex">\(b_s + b_r\)</span> 次块传输；还需要按分区进行写回，并且 <span class="arithmatex">\(n_h\)</span> 个分区中的每一个都可能剩一个只装了部分的块，共需 <span class="arithmatex">\(b_s + b_r + 2n_h\)</span> 次块传输。</p>
+</li>
+<li>
+<p>build &amp; probe: 刚才每个写回的块都刚好需要被取出一次，共 <span class="arithmatex">\(b_s + b_r + 2n_h\)</span> 次块传输。</p>
+</li>
+<li>
+<p>成本: <span class="arithmatex">\((3(b_s + b_r) + 4n_h) \times T_T\)</span></p>
+</li>
+</ul>
+</li>
+<li>
+<p>seek</p>
+<ul>
+<li>
+<p>partition: 假设为输入输出缓冲区各分配了 <span class="arithmatex">\(b_b\)</span> 个块，则划分总共需要 <span class="arithmatex">\(2(\lceil b_s / b_b \rceil + \lceil b_r / b_b \rceil)\)</span> 次寻道。</p>
+</li>
+<li>
+<p>build &amp; probe: 对于每个分区只需要进行一次寻道，总共 <span class="arithmatex">\(2n_h\)</span> 次。</p>
+</li>
+<li>
+<p>成本: <span class="arithmatex">\((2(\lceil b_s / b_b \rceil + \lceil b_r / b_b \rceil) + 2n_h) \times t_S\)</span>.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>如果需要递归分区：那么，每一次递归预计可以减小为原来的 <span class="arithmatex">\(1/(M-1)\)</span> 大小，共需要 <span class="arithmatex">\(d = \lceil \log_{M-1}(b_s) - 1 \rceil\)</span> 次递归。</p>
+<ul>
+<li>
+<p>block-transfer:</p>
+<ul>
+<li>
+<p>partition: <span class="arithmatex">\(2(b_s + b_r) \times d\)</span> 次块传输。</p>
+</li>
+<li>
+<p>build &amp; probe: <span class="arithmatex">\((b_s + b_r)\)</span> 次块传输 (TBD)。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>seek: <span class="arithmatex">\(2(\lceil b_r / b_b \rceil + \lceil b_s / b_b \rceil) \times d \times t_S\)</span>.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>到目前为止：我们已经学习了针对单个操作的算法。</p>
+<h4 id="_21">整体表达式树的替代方法<a class="headerlink" href="#_21" title="Permanent link">¶</a></h4>
+<div class="admonition warning">
+<p class="admonition-title">这段我确实有点没看懂，回来补一下</p>
+</div>
+<p><strong>1. 物化 (Materialization)</strong>：对于一个表达式，如果其输入是(数据库中的)关系或已经计算出的结果，就先计算这个表达式，并将其结果物化(存储)到磁盘上。然后重复这个过程，直到获得最终结果。</p>
+<ul>
+<li>
+<p><strong>物化求值 (Materialized evaluation)</strong>：从(表达式树的)最底层开始，一次执行一个操作。计算出的中间结果会被物化为临时关系，并用于其上一层操作的求值。</p>
+<ul>
+<li>
+<p>物化求值的优点是它总是适用的，但是，将结果写入磁盘再从磁盘读回的<strong>成本</strong>可能相当高。我们之前给出的操作成本公式忽略了将结果写入磁盘的成本，因此：</p>
+</li>
+<li>
+<p><strong>总成本 = 各个独立操作的成本之和 + 将中间结果写入磁盘的成本</strong></p>
+</li>
+<li>
+<p><strong>双缓冲 (Double buffering)</strong>：这是一个优化技术。它为每个操作使用两个输出缓冲区，当一个缓冲区被写满时，系统会将其内容写入磁盘，而计算过程可以同时在另一个缓冲区中进行填充。双缓冲技术使得磁盘写入可以和计算重叠进行，从而减少了总的执行时间。</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>2. 流水线 (Pipelining)</strong>：一个操作在执行过程中，无需等待其全部完成，就可以将产生的元组(tuples)立即传递给它的父操作。</p>
+<ul>
+<li>
+<p><strong>流水线求值 (Pipelined evaluation)</strong>：同时评估多个操作，将一个操作的结果直接传递给下一个操作。</p>
+<ul>
+<li>
+<p>例如，在之前的表达式树中，不要存储 <span class="arithmatex">\(\sigma_{building="Watson"}(department)\)</span> 的结果。而是应该将元组直接传递给连接(join)操作。同样地，也不要存储连接的结果，而是将元组直接传递给投影(projection)操作。</p>
+</li>
+<li>
+<p>成本比物化(materialization)低得多：因为无需将临时关系存储到磁盘。</p>
+</li>
+<li>
+<p>流水线并非总是可行 —— 例如，像排序(sort)和哈希连接(hash-join)这类操作就不支持。</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>为使流水线有效，需要使用那些能在接收输入元组的同时就开始生成输出元组的求值算法。流水线可以通过两种方式执行：<strong>需求驱动 (demand driven)</strong> 和 <strong>生产者驱动 (producer driven)</strong>。</p>
+<p>在需求驱动的逻辑中：</p>
+<ul>
+<li>系统会不断向(表达式树的)顶层操作请求下一个元组，每个操作都会向其子操作请求下一个元组。在中间过程中，每个操作都必须保持自身的“状态”(state)以明确自己稍后应该返回什么。</li>
+</ul>
+<p>在生产者驱动的逻辑中：</p>
+<ul>
+<li>
+<p>操作符会自己给父节点传递自己生成的元组。</p>
+</li>
+<li>
+<p>上下层的操作之间会有缓冲区。子操作会把自己生成的元组先放进缓冲区之中，副操作会根据自身条件筛选其中的元组并剔除不符合要求的那些。如果缓冲区暂满而子操作还没有写入全部的元组，子操作就进入等待，直到有空余空间。</p>
+</li>
+<li>
+<p>系统会调度那些输出缓冲区有空闲空间且能继续处理输入元组的操作。</p>
+</li>
+</ul>
+<details class="success">
+<summary>流水线中单个操作的实现</summary>
+<p>这里以需求驱动的流水线为例。</p>
+<p>每个操作都是以迭代器实现的。迭代器模式将每个关系代数操作封装为统一的接口。迭代器实现了下面的操作：</p>
+<ul>
+<li>
+<p><code>open()</code>：初始化操作，创建操作初始状态(如指针、缓冲区)</p>
+<p>例如 文件扫描：重置文件指针到起始位置；合并连接：先排序子关系，初始化游标 等。</p>
+</li>
+<li>
+<p><code>next()</code>：获取下一元组，更新内部状态(如游标位置)</p>
+<p>例如 文件扫描：读取当前元组后推进指针；合并连接：继续归并排序过程直至生成下一结果元组 等。</p>
+</li>
+<li>
+<p><code>close()</code>：释放资源，清除所有状态</p>
+<p>例如 关闭文件/释放缓冲区等。</p>
+</li>
+</ul>
+</details>
+<h2 id="_22">查询优化<a class="headerlink" href="#_22" title="Permanent link">¶</a></h2>
+<hr/>
 <h2 id="transaction">事务(Transaction)<a class="headerlink" href="#transaction" title="Permanent link">¶</a></h2>
 <p><strong>事务(Transaction)</strong>是程序一次执行若干次操作组成的抽象概念，是一个unit。Transaction的提出是为了维护数据的完整性。有了事务这一概念，我们还有两个主要的问题：</p>
 <ul>
@@ -1864,6 +2189,9 @@ B --&gt; C[实际记录位置]</code></pre>
 <p>After successful completion.</p>
 </li>
 </ul>
+<p><div align="center"> <br/>
+<img alt="stats_" src="../images/DB/db31.png" style="zoom: 80%"/>
+</div></p>
 </div>
 <h3 id="acid">ACID<a class="headerlink" href="#acid" title="Permanent link">¶</a></h3>
 <p>事务的实现要求四个特性ACID：</p>
@@ -1894,10 +2222,104 @@ B --&gt; C[实际记录位置]</code></pre>
 </li>
 </ul>
 <p>为了实现隔离性，我们有一个自然的想法，就是让系统每次只能执行一个事务。但是这样效率太慢了，所以我们需要解决<strong>并发控制</strong>的问题。</p>
-<h3 id="_21">并发控制<a class="headerlink" href="#_21" title="Permanent link">¶</a></h3>
-<p>在允许并行的情况下，实现事务隔离性的机制是<strong>Concurrency control schemes</strong>。我们首先定义，并发事务的各个子操作在DBMS内部的具体执行步骤被称为<strong>Schedule</strong>。</p>
-<h2 id="_22">并发控制实现<a id="Concurrency_Control"></a><a class="headerlink" href="#_22" title="Permanent link">¶</a></h2>
-<h2 id="_23">错误恢复<a id="Recovery"></a><a class="headerlink" href="#_23" title="Permanent link">¶</a></h2>
+<h3 id="_23">并发控制<a class="headerlink" href="#_23" title="Permanent link">¶</a></h3>
+<p>在允许并行的情况下，实现事务隔离性的机制是<strong>Concurrency control schemes</strong>。我们首先定义，并发事务的各个子操作在DBMS内部的具体执行步骤被称为<strong>调度(Schedule)</strong>。</p>
+<p>schedule大致可以分为两种：</p>
+<ul>
+<li>
+<p>串行调度</p>
+<p>一个事务执行完再执行另一个。所以，n个并行事务有 <span class="arithmatex">\(n!\)</span> 种可选择的串行调度。</p>
+<p><div align="center"> <br/>
+<img alt="serial_schedule" src="../images/DB/db32.png" style="zoom: 80%"/>
+</div></p>
+<p>串行调度一定可以保持一致性，但是效率较低。</p>
+</li>
+<li>
+<p>并行调度</p>
+<p>好的并行调度与串行调度的结果应该相同(S3与S1)，意味着上层始终可以按照严格串行来理解和调用数据库，即使其内部并不一定是串行调度。</p>
+<p><div align="center"> <br/>
+<img alt="concurrent_schedule" src="../images/DB/db33.png" style="zoom: 80%"/>
+</div></p>
+</li>
+</ul>
+<h4 id="serializability">可串行性(Serializability)<a class="headerlink" href="#serializability" title="Permanent link">¶</a></h4>
+<p>我们说，如果一种并行调度和某种串行调度等价，那么它是<strong>可串行化</strong>的。根据不同的调度等价形式，可引出以下两种概念：</p>
+<ol>
+<li>
+<p>冲突可串行化（Conflict Serializability）</p>
+</li>
+<li>
+<p>视图可串行化（View Serializability）</p>
+</li>
+</ol>
+<p>在接下来的讨论中，我们只关注读写指令。我们设 <span class="arithmatex">\(I_i\)</span> 和 <span class="arithmatex">\(I_j\)</span> 分别是事务 <span class="arithmatex">\(T_i\)</span> 和 <span class="arithmatex">\(T_j\)</span> 的指令。如果 <span class="arithmatex">\(I_i\)</span> 和 <span class="arithmatex">\(I_j\)</span> 同时对某个对象Q进行访问，且至少有一条指令正在向Q写入数据，那么这两条指令就是<strong>冲突(conflict)</strong>的。同时读Q不构成冲突。</p>
+<p>如果一个<u>调度</u> <span class="arithmatex">\(S\)</span> 以通过交换相互不冲突的语句转换为 <span class="arithmatex">\(S'\)</span>，或者说 <span class="arithmatex">\(S\)</span> 与 <span class="arithmatex">\(S'\)</span> 所有相互冲突的指令以相同的顺序排列，称 <span class="arithmatex">\(S\)</span> 和 <span class="arithmatex">\(S'\)</span> 是<strong>冲突等价(conflict equivalent)</strong>的。如果 <span class="arithmatex">\(S\)</span> 冲突等价于一个串行调度序列，称 <span class="arithmatex">\(S\)</span> 是<strong>冲突可串行(conflict serializable)</strong>的。</p>
+<div class="admonition warning">
+<p class="admonition-title">注意这里“冲突”和“冲突等价/可串行”对应的描述对象是不同的！</p>
+</div>
+<p>为了直观看到事务的执行顺序，方便我们判断调度是否冲突可串行，我们可以针对某个调度画出<strong>前趋图/优先图(Precedence Graph)</strong>。前趋图是一个有向图，图的顶点是调度中的各事务。如果对于两个事务 <span class="arithmatex">\(T_i\)</span> 和 <span class="arithmatex">\(T_j\)</span>，存在 <span class="arithmatex">\(T_i\)</span> 中的操作 <span class="arithmatex">\(I_i\)</span> 和 <span class="arithmatex">\(T_j\)</span> 中的操作 <span class="arithmatex">\(I_j\)</span>，满足 <u><span class="arithmatex">\(I_i\)</span> 在 <span class="arithmatex">\(I_j\)</span> 前，并且 <span class="arithmatex">\(I_i\)</span> 和 <span class="arithmatex">\(I_j\)</span> 冲突</u>，那么我们从 <span class="arithmatex">\(T_i\)</span> 的顶点引出一条有向边指向 <span class="arithmatex">\(T_j\)</span> 的顶点。我们一般在边上标注冲突指令所要访问的对象。</p>
+<p>如果一个调度的前趋图<u>没有环(acyclic)</u>，那么它就是冲突可串行化的。冲突可串行的调度所等价的串行调度的事务顺序可以由前趋图的<strong>拓扑排序(topological sorting)</strong>获得。</p>
+<div class="admonition note">
+<p class="admonition-title">环检测算法</p>
+<ul>
+<li>
+<p>如果使用邻接矩阵，则其时间复杂度是 <span class="arithmatex">\(O(n^2)\)</span>，这里 <span class="arithmatex">\(n\)</span> 是顶点数量。</p>
+</li>
+<li>
+<p>如果使用DFS算法，则时间复杂度可以优化至 <span class="arithmatex">\(O(n+e)\)</span>，这里 <span class="arithmatex">\(e\)</span> 是边的数量。</p>
+</li>
+</ul>
+<p>在事务冲突的语境下，前趋图往往都是<strong>稀疏图</strong>，这个时候采用DFS方法效率更高。</p>
+</div>
+<div align="center">
+<img alt="conflict_1" src="../images/DB/db34.png" style="zoom: 80%"/>
+</div>
+<h4 id="_24">级联调度<a class="headerlink" href="#_24" title="Permanent link">¶</a></h4>
+<p>如果并发调度下，某一个事务失败需要回滚会带动其他事务一起回滚，这种情况被称为<strong>级联回滚(cascading rollback)</strong>。如果一个调度序列不会引起任何级联回滚，称它是<strong>非级联调度(cascadeless schedule)</strong>。下图中是一个不是非级联调度的例子，这样的调度被认为是不好的。</p>
+<div align="center">
+<img alt="cascading_schedule" src="../images/DB/db35.png" style="zoom: 80%"/>
+</div>
+<p>实现非级联调度的具体要求是，并发事务对同一个数据有读有写时，任意做了写入的事务必须提交后，下一个事务才能从中读。</p>
+<p>在一个并发调度序列中，如果一个事务从另外一个事务的结果中读取数据，那么它应该在另外的事务commit之后commit。满足这一条件的调度称为<strong>可恢复的(Recoverable)</strong>。所以，任何非级联调度都是可恢复的调度。</p>
+<p>一个数据库系统必须提供一种机制，其应该让所有调度是冲突可串行的，且都是非级联调度。</p>
+<h4 id="_25">一致性等级<a class="headerlink" href="#_25" title="Permanent link">¶</a></h4>
+<p>我们从前面就知道串行调度数据安全性强而性能弱，并行调度反之。实际使用中，这往往不是二选一，而是取折中的问题。下面列出了常见的四种并行化的层次。</p>
+<ul>
+<li>
+<p><strong>Serializable</strong> — default</p>
+</li>
+<li>
+<p><strong>Repeatable read</strong> — only committed records to be read, repeated reads of same record must return same value.  However, a transaction may not be serializable – it may find some records inserted by a transaction but not find others.</p>
+</li>
+<li>
+<p><strong>Read committed</strong> — only committed records can be read, but successive reads of record may return different (but committed) values.</p>
+</li>
+<li>
+<p><strong>Read uncommitted</strong> — even uncommitted records may be read. </p>
+</li>
+</ul>
+<p>不过，以上所有均不允许脏写。</p>
+<hr/>
+<h2 id="_26">并发控制实现<a id="Concurrency_Control"></a><a class="headerlink" href="#_26" title="Permanent link">¶</a></h2>
+<h3 id="lock-based-protocols">Lock-Based Protocols<a class="headerlink" href="#lock-based-protocols" title="Permanent link">¶</a></h3>
+<p><strong>锁(lock)</strong>是一种控制并发访问的机制。数据对象一般可以拥有两种锁：</p>
+<ul>
+<li>
+<p>共享锁(Shared - S锁)。若事务T对数据对象A加上S锁，则事务T可以读A但不能修改A。其他事务只能再对A加S锁，而不能加X锁，直到T释放A上的S锁。这保证了其他事务可以读A，但在T释放A上的S锁之前不能对A做任何修改。</p>
+</li>
+<li>
+<p>排他锁(Exclusive - X锁)。若事务T对数据对象A加上X锁，事务T可以读A也可以修改A。其他事务不能再对A加任何锁，直到T释放A上的锁。这保证了其他事务在T释放A上的锁之前不能再读取和修改A。</p>
+</li>
+</ul>
+<p>锁相容矩阵如下。该表的含义是两个事务是否可以<strong>同时</strong>对同一个对象加指定的锁。</p>
+<div align="center">
+<img alt="Lock-compatibility_matrix" src="../images/DB/db36.png" style="zoom: 80%"/>
+</div>
+<p>锁策略一般是通过Lock Table实现，用哈希表归类数据，每个数据下辖链表储存当前锁的情况。例如下图中I7数据派锁给T23，I23数据派锁给T1、T8而T2在等待。</p>
+<div align="center">
+<img alt="lock_example" src="../images/DB/db37.png" style="zoom: 80%"/>
+</div>
+<h2 id="_27">错误恢复<a id="Recovery"></a><a class="headerlink" href="#_27" title="Permanent link">¶</a></h2>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
