@@ -43,7 +43,7 @@ markdown_extensions:
   - admonition
 # - markdown_cjk_spacing.cjk_spacing
   - toc:
-      toc_depth: 2
+      toc_depth: 3
       permalink: true
   - pymdownx.keys
   - pymdownx.mark
