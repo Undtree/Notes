@@ -164,6 +164,18 @@
       
     
     
+      <div class="md-header__source">
+        <a href="https://github.com/Undertree/Notes/" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    TonyCrane/Notes
+  </div>
+</a>
+      </div>
+    
   </nav>
   
 </header>
@@ -197,6 +209,18 @@
     </a>
     Undertree's 小站
   </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Undertree/Notes/" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    TonyCrane/Notes
+  </div>
+</a>
+    </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
     
@@ -882,6 +906,9 @@
                   
 
 
+  
+  
+
 
   <h1>编译原理</h1>
 
@@ -934,24 +961,24 @@
 <h3 id="_3">编译器的阶段(编译过程)<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
-<p><strong>[前端]</strong>词法分析→语法分析→语义分析</p>
+<p><strong>[ 前端 ]</strong>词法分析 → 语法分析 → 语义分析</p>
 </li>
 <li>
-<p><strong>[中端]</strong>中间代码生成→机器无关代码优化</p>
+<p><strong>[ 中端 ]</strong>中间代码生成 → 机器无关代码优化</p>
 </li>
 <li>
-<p><strong>[后端]</strong>指令选择→寄存器分配→指令调度</p>
+<p><strong>[ 后端 ]</strong>指令选择 → 寄存器分配 → 指令调度</p>
 </li>
 </ol>
 <h2 id="lexical-analysis"><strong>词法分析 Lexical Analysis</strong><a class="headerlink" href="#lexical-analysis" title="Permanent link">&para;</a></h2>
 <p>我们容易理解，程序代码是以字符串的形式传给编译器的。词法分析就是将输入的字符串识别为<strong>有意义的子串</strong>。这样会带来其他的辅助任务，例如过滤注释和空格等。</p>
 <div class="admonition note">
 <p class="admonition-title">Definition: Token(词法记号，单词)</p>
-<p>可以说是一类关键字的统称。以英语举例，名词(noun)就是一类token。</p>
+<p>可以说是一类关键字的统称。以英语举例，名词(noun)就是一类 token。</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Definition: Lexeme(词素)</p>
-<p>抽象地说，一个词素就是一类token的一个实例。</p>
+<p>抽象地说，一个词素就是一类 token 的一个实例。</p>
 </div>
 <p>该部分内容和计算理论课程有很多重合: <a href="https://note.tonycrane.cc/cs/tcs/toc/topic1/">TonyCrane/计算理论-语言、自动机与正则表达式</a></p>
 <h3 id="_4">正则表达式<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
@@ -967,7 +994,7 @@
 <p>其长度定义为该串中符号的个数，记作<span class="arithmatex">\(|s|\)</span>。</p>
 </li>
 <li>
-<p>空串指的是长度为0的串，通常用<span class="arithmatex">\(\varepsilon\)</span>表示。</p>
+<p>空串指的是长度为 0 的串，通常用<span class="arithmatex">\(\varepsilon\)</span>表示。</p>
 </li>
 <li>
 <p>串的连接(concatenation)</p>
@@ -982,7 +1009,7 @@ s^0 &amp;= \varepsilon \\
 s^n &amp;= s^{n-1}s,n\ge 1
 \end{cases}
 \]</div>
-<p>即串<span class="arithmatex">\(s\)</span>的n次幂表示将n个<span class="arithmatex">\(s\)</span>连接起来。</p>
+<p>即串<span class="arithmatex">\(s\)</span>的 n 次幂表示将 n 个<span class="arithmatex">\(s\)</span>连接起来。</p>
 </li>
 <li>
 <p><strong>语言</strong>: 字母表<span class="arithmatex">\(\Sigma\)</span>上的一个串集。</p>
@@ -997,22 +1024,22 @@ s^n &amp;= s^{n-1}s,n\ge 1
 <p>一个正则表达式实质上就是一个串。正则表达式(RE)<span class="arithmatex">\(r\)</span>定义正则语言<span class="arithmatex">\(L(r)\)</span>。</p>
 <ul>
 <li>
-<p><span class="arithmatex">\(\varepsilon\)</span>是一个RE，<span class="arithmatex">\(L(\varepsilon)=\{ \varepsilon \}\)</span></p>
+<p><span class="arithmatex">\(\varepsilon\)</span>是一个 RE ，<span class="arithmatex">\(L(\varepsilon)=\{ \varepsilon \}\)</span></p>
 </li>
 <li>
-<p>如果<span class="arithmatex">\(a \in \Sigma\)</span>，则<span class="arithmatex">\(a\)</span>是一个RE，<span class="arithmatex">\(L(a)=\{ a \}\)</span></p>
+<p>如果<span class="arithmatex">\(a \in \Sigma\)</span>，则<span class="arithmatex">\(a\)</span>是一个 RE ，<span class="arithmatex">\(L(a)=\{ a \}\)</span></p>
 </li>
 <li>
-<p>如果<span class="arithmatex">\(r\)</span>和<span class="arithmatex">\(s\)</span>都是RE，他们分别定义语言<span class="arithmatex">\(L(r)\)</span>和<span class="arithmatex">\(L(s)\)</span>:</p>
+<p>如果<span class="arithmatex">\(r\)</span>和<span class="arithmatex">\(s\)</span>都是 RE ，他们分别定义语言<span class="arithmatex">\(L(r)\)</span>和<span class="arithmatex">\(L(s)\)</span>:</p>
 <ul>
 <li>
-<p><span class="arithmatex">\(r | s\)</span>是一个RE，<span class="arithmatex">\(L(r | s) = L(r) \cup L(s)\)</span></p>
+<p><span class="arithmatex">\(r | s\)</span>是一个 RE ，<span class="arithmatex">\(L(r | s) = L(r) \cup L(s)\)</span></p>
 </li>
 <li>
-<p><span class="arithmatex">\(rs\)</span>是一个RE，<span class="arithmatex">\(L(rs) = L(r) L(s)\)</span></p>
+<p><span class="arithmatex">\(rs\)</span>是一个 RE ，<span class="arithmatex">\(L(rs) = L(r) L(s)\)</span></p>
 </li>
 <li>
-<p><span class="arithmatex">\(r*\)</span>是一个RE，<span class="arithmatex">\(L(r*) = (L(r))*\)</span>，这是Kleene闭包。</p>
+<p><span class="arithmatex">\(r*\)</span>是一个 RE ，<span class="arithmatex">\(L(r*) = (L(r))*\)</span>，这是 Kleene 闭包。</p>
 </li>
 </ul>
 </li>
@@ -1023,15 +1050,15 @@ s^n &amp;= s^{n-1}s,n\ge 1
 <ul>
 <li>
 <p>最长匹配原则</p>
-<p>对于输入的字符流，下一个token的匹配应该是符合某条规则的最长子串。</p>
+<p>对于输入的字符流，下一个 token 的匹配应该是符合某条规则的最长子串。</p>
 </li>
 <li>
 <p>规则优先原则</p>
-<p>对于一个特定的子串，其满足的第一个规则将作为其token类型。(顺序很重要！)</p>
+<p>对于一个特定的子串，其满足的第一个规则将作为其 token 类型。(顺序很重要！)</p>
 </li>
 </ul>
 </div>
-<p>词法分析器自动生成：RE→最小DFA</p>
+<p>词法分析器自动生成： RE→ 最小 DFA</p>
 <div class="admonition example">
 <p class="admonition-title">Sample</p>
 </div>
@@ -1042,25 +1069,25 @@ M = ( S, \Sigma, move, s_0, F )
 \]</div>
 <p>其中，<span class="arithmatex">\(S\)</span>代表有穷(要不然怎么是有穷自动机)状态集合；<span class="arithmatex">\(\Sigma\)</span>代表字母表；<span class="arithmatex">\(move(s, a)\)</span>代表转换函数，表示从状态<span class="arithmatex">\(s\)</span>出发，读入输入<span class="arithmatex">\(a\)</span>时转化到的状态；<span class="arithmatex">\(s_0\)</span>表示初始状态；<span class="arithmatex">\(F\)</span>表示终止状态。<span class="arithmatex">\(s_0 \in S\)</span>，<span class="arithmatex">\(F \subseteq S\)</span>。</p>
 <p>我们可以利用<strong>转换图</strong>以及<strong>转换表</strong>来表示一个有穷自动机。</p>
-<h4 id="dfa">DFA最小化算法<a class="headerlink" href="#dfa" title="Permanent link">&para;</a></h4>
+<h4 id="dfa">DFA 最小化算法<a class="headerlink" href="#dfa" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
-<p>DFA状态等价条件</p>
+<p>DFA 状态等价条件</p>
 </li>
 <li>
 <p>一致性条件</p>
-<p>s、t同为终态或非终态</p>
+<p>s、t 同为终态或非终态</p>
 </li>
 <li>
 <p>蔓延性条件</p>
-<p>对于所有输入的符号，s、t必须转换到等价的状态集，同时具有传递性</p>
+<p>对于所有输入的符号， s、t 必须转换到等价的状态集，同时具有传递性</p>
 </li>
 <li>
-<p>简化算法(Hopcroft算法)</p>
+<p>简化算法(Hopcroft 算法)</p>
 </li>
 </ul>
 <h2 id="parse-analysis">语法分析 Parse Analysis<a class="headerlink" href="#parse-analysis" title="Permanent link">&para;</a></h2>
-<p>从词法分析器获得token序列后，我们需要确认该token序列是否可以由语言的文法生成，或者说输入是否合法。这就是语法分析器的作用。一般而言，如果语法错误则报错，如果语法正确则生成语法分析树(通常生成AST，抽象语法树)。</p>
+<p>从词法分析器获得 token 序列后，我们需要确认该 token 序列是否可以由语言的文法生成，或者说输入是否合法。这就是语法分析器的作用。一般而言，如果语法错误则报错，如果语法正确则生成语法分析树(通常生成 AST ，抽象语法树)。</p>
 <p>这就需要我们</p>
 <ul>
 <li>
@@ -1070,17 +1097,17 @@ M = ( S, \Sigma, move, s_0, F )
 <p>还要理解一个表达式的构成，直到看到基本单元</p>
 </li>
 </ul>
-<p>语法分析器可以自己使用<u>向下递归(recursive descent)</u>的方式手写(clang，gcc 3.4后的版本都是)，也可以使用语法生成器(Bison，Yacc等等)</p>
+<p>语法分析器可以自己使用<u>向下递归(recursive descent)</u>的方式手写(clang ， gcc 3.4 后的版本都是)，也可以使用语法生成器(Bison ， Yacc 等等)</p>
 <p>我们可以利用<strong>上下文无关文法</strong>来描述语法。</p>
 <h3 id="cfg-context-free-grammar">上下文无关文法(CFG, Context-Free Grammar)<a class="headerlink" href="#cfg-context-free-grammar" title="Permanent link">&para;</a></h3>
-<p>一个CFG可以表示成如下集合：</p>
+<p>一个 CFG 可以表示成如下集合：</p>
 <div class="arithmatex">\[
 G = \{T, N, P, S\}
 \]</div>
 <p>其中，<span class="arithmatex">\(T\)</span>是终结符(Terminals)的集合，<span class="arithmatex">\(N\)</span>是非终结符(Non-terminals)的集合，<span class="arithmatex">\(P\)</span>是产生式(Productions)的集合，<span class="arithmatex">\(S\)</span>是开始符号(Start symbol)。</p>
 <ul>
 <li>
-<p>终结符应该是一种语言的tokens。一旦生成了一个文法，终结符就是固定的。</p>
+<p>终结符应该是一种语言的 tokens。一旦生成了一个文法，终结符就是固定的。</p>
 </li>
 <li>
 <p>非终结符通常表示语言中的语法变量。</p>
@@ -1096,11 +1123,11 @@ G = \{T, N, P, S\}
 <p>将产生式看成重写规则</p>
 </li>
 </ul>
-<h4 id="cfgparse-tree">CFG的Parse Tree<a class="headerlink" href="#cfgparse-tree" title="Permanent link">&para;</a></h4>
+<h4 id="cfgparse-tree">CFG 的 Parse Tree<a class="headerlink" href="#cfgparse-tree" title="Permanent link">&para;</a></h4>
 <p>就是把之前的推导过程图形化。</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>“给定CFG是否无二义性”是不可判定问题。</p>
+<p>“给定 CFG 是否无二义性”是不可判定问题。</p>
 </div>
 <h3 id="_6">递归下降分析(自顶向下分析)<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 
