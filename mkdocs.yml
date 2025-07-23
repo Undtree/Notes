@@ -1,4 +1,6 @@
 site_name: Undertree's 小站
+repo_name: TonyCrane/Notes
+repo_url: https://github.com/Undertree/Notes/
 
 nav:
   - Home: index.md
@@ -41,7 +43,7 @@ markdown_extensions:
   - attr_list
   - md_in_html
   - admonition
-# - markdown_cjk_spacing.cjk_spacing
+  - markdown_cjk_spacing.cjk_spacing
   - toc:
       toc_depth: 3
       permalink: true
