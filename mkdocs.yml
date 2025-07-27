@@ -27,6 +27,10 @@ theme:
       - search.share
       - search.suggest
       - search.highlight
+      - navigation.tracking
+      - navigation.tabs
+      - navigation.indexes
+      - navigation.top
     font: 
       code: "JetBrains Mono"
     icon: 
