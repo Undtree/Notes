@@ -11,6 +11,8 @@ nav:
     - 日语(日本語): JPN.md
   - CS相关:
     - 计算机体系结构: CA.md
+    - 计算机网络: Network.md
+    - 操作系统: OS.md
     - 数据库系统: DBS.md
     - 密码学: Crypto.md
     - 数据结构与算法分析:
