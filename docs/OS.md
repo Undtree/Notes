@@ -38,16 +38,14 @@
 
 * **定义**：进程是<u>“一个正在执行中的程序”</u>。操作系统执行各种程序，例如批处理系统中的“作业”（jobs）或时间共享系统中的“用户程序”或“任务”（tasks）。
 
-<!-- fence:start -->
 * **进程的内存结构**：一个进程在内存中包含：
     * **文本区域 (text section)**：即代码 (code)；
     * **程序计数器 (program counter)**；
     * **栈 (stack)**：用于存放函数参数、局部变量和返回地址；
     * **数据区域 (data section)**：存放全局变量；
     * **堆 (heap)**：用于动态分配内存。
-<!-- fence -->
-<img src="images/OS/image.png" alt="Process in Memory" style="zoom 60%"/>
-<!-- fence:end -->
+
+<img src="/images/OS/process.png" alt="Process in Memory" style="zoom 60%"/>
 
 ### 2. 进程状态 (Process State)
 
