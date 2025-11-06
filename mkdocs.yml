@@ -33,7 +33,6 @@ theme:
       - navigation.tabs
       - navigation.indexes
       - navigation.top
-      - navigation.footer
     font: 
       code: "JetBrains Mono"
     icon: 
@@ -45,15 +44,15 @@ plugins:
     - mermaid2
 
 markdown_extensions:
+  - toc:
+      toc_depth: 4
+      permalink: true
   - meta
   - def_list
   - attr_list
   - md_in_html
   - admonition
   - markdown_cjk_spacing.cjk_spacing
-  - toc:
-      toc_depth: 4
-      permalink: true
   - pymdownx.keys
   - pymdownx.mark
   - pymdownx.tilde

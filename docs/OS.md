@@ -44,9 +44,9 @@
     * **栈 (stack)**：用于存放函数参数、局部变量和返回地址；
     * **数据区域 (data section)**：存放全局变量；
     * **堆 (heap)**：用于动态分配内存。
-
-<img src="/images/OS/process.png" alt="Process in Memory" style="zoom 60%"/>
-
+<center>
+    <img src="/docs/images/OS/process.png" alt="Process in Memory" style="zoom 50%"/>
+</center>
 ### 2. 进程状态 (Process State)
 
 进程在其执行过程中会改变状态。
