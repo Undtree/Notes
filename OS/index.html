@@ -1159,11 +1159,12 @@
 <h2 id="process">进程 Process<a class="headerlink" href="#process" title="Permanent link">&para;</a></h2>
 <h3 id="1-process-concept">1. 进程概念 (Process Concept)<a class="headerlink" href="#1-process-concept" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>定义</strong>：进程是<u>“一个正在执行中的程序”</u>。操作系统执行各种程序，例如批处理系统中的“作业”（ jobs ）或时间共享系统中的“用户程序”或“任务”（ tasks ）。</li>
-</ul>
-<!-- fence:start -->
+<li>
+<p><strong>定义</strong>：进程是<u>“一个正在执行中的程序”</u>。操作系统执行各种程序，例如批处理系统中的“作业”（ jobs ）或时间共享系统中的“用户程序”或“任务”（ tasks ）。</p>
+</li>
+<li>
+<p><strong>进程的内存结构</strong>：一个进程在内存中包含：</p>
 <ul>
-<li><strong>进程的内存结构</strong>：一个进程在内存中包含：<ul>
 <li><strong>文本区域 (text section)</strong>：即代码 (code)；</li>
 <li><strong>程序计数器 (program counter)</strong>；</li>
 <li><strong>栈 (stack)</strong>：用于存放函数参数、局部变量和返回地址；</li>
@@ -1172,10 +1173,7 @@
 </ul>
 </li>
 </ul>
-<!-- fence -->
-<p><img src="images/OS/image.png" alt="Process in Memory" style="zoom 60%"/></p>
-<!-- fence:end -->
-
+<p><img src="/images/OS/process.png" alt="Process in Memory" style="zoom 60%"/></p>
 <h3 id="2-process-state">2. 进程状态 (Process State)<a class="headerlink" href="#2-process-state" title="Permanent link">&para;</a></h3>
 <p>进程在其执行过程中会改变状态。</p>
 <ul>
@@ -1332,6 +1330,46 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../Network/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 计算机网络">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                计算机网络
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../DBS/" class="md-footer__link md-footer__link--next" aria-label="下一页: 数据库系统">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                数据库系统
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
@@ -1356,7 +1394,7 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "search.share", "search.suggest", "search.highlight", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "search.share", "search.suggest", "search.highlight", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "navigation.footer"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
