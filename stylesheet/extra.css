@@ -1,5 +1,10 @@
+@font-face {
+  font-family: "Google Sans Flex";
+  src: "../../fonts/GOOGLESANSFLEX-REGULARBYHGGGYY.1.0.0.TTF";
+}
+
 :root {
-  --md-text-font: "JetBrains Mono", "LXGW WenKai Screen"; 
+  --md-text-font: "Google Sans Flex", "LXGW WenKai Screen"; 
   --md-code-font: "JetBrains Mono";
 }
 
