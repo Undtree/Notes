@@ -48,7 +48,7 @@
     * **数据区域 (data section)**：存放全局变量；
     * **堆 (heap)**：用于动态分配内存。
 <center>
-    <img src="/images/OS/process.png" alt="Process in Memory" style="zoom 50%"/>
+    <img src="images/OS/process.png" alt="Process in Memory" style="zoom 50%"/>
 </center>
 
 ### 2. 进程状态 (Process State)
@@ -62,7 +62,7 @@
 * **terminated (终止)**：进程已完成执行.
 
 <center>
-    <img src="/images/OS/state_diagram.png" alt="State Changes" style="zoom 50%"/>
+    <img src="images/OS/state_diagram.png" alt="State Changes" style="zoom 50%"/>
 </center>
 
 ### 3. 进程控制块 (PCB)
