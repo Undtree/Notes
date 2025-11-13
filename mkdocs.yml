@@ -34,7 +34,6 @@ theme:
       - navigation.indexes
       - navigation.top
     font: 
-      code: "JetBrains Mono"
     icon: 
       logo: material/notebook-outline
 
@@ -45,8 +44,8 @@ plugins:
 
 markdown_extensions:
   - toc:
-      toc_depth: 4
       permalink: true
+      toc_depth: 4
   - meta
   - def_list
   - attr_list
