@@ -1,0 +1,66 @@
+@font-face {
+  font-family: "Google Sans Flex";
+  src:url(../assets/fonts/GOOGLESANSFLEX-REGULARBYHGGGYY.1.0.0.TTF) format('truetype');
+  font-display: swap;
+}
+
+:root {
+  --md-text-font: "Google Sans Flex", "LXGW WenKai Screen"; 
+  --md-code-font: "JetBrains Mono";
+}
+
+.md-typeset h1, .md-typeset h2 {
+  font-weight: 680;
+}
+
+.md-typeset h3 {
+  font-weight: 640;
+}
+
+.md-typeset h4 {
+  font-weight: 600;
+}
+
+.md-typeset h1, .md-typeset h2, .md-typeset h3, .md-typeset h4 {
+  letter-spacing: 0;
+}
+
+.md-typeset {
+  font-size: .75rem;
+}
+
+.md-typeset code:not(pre code) {
+  font-size: inherit;
+}
+
+/* 功能：折叠逻辑 (简化版) */
+
+/* A. 默认状态：
+   找到右侧栏里，所有的 li 下面的 "子菜单容器(.md-nav)"
+   全部隐藏 */
+.md-sidebar--secondary li .md-nav {
+  /* 关键：必须设为 block 才能有高度动画，不能用 display: none */
+  display: block; 
+  
+  /* 初始状态：高度为 0，透明不可见 */
+  max-height: 8px;
+  opacity: 0;
+  overflow: hidden;
+  
+  /* 动画设置：高度和透明度在 0.3秒内平滑过渡 */
+  /* cubic-bezier 是 Material Design 标准的缓动曲线，手感更好 */
+  transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              opacity 0.3s linear;
+}
+
+/* 2. 展开状态：当满足以下任一条件时展开 */
+/* A. 父级标题被激活 (.md-nav__item--active) */
+/* B. 内部包含了被激活的链接 (:has(.md-nav__link--active)) */
+.md-sidebar--secondary li.md-nav__item--active > .md-nav,
+.md-sidebar--secondary li:has(.md-nav__link--active) > .md-nav {
+  /* 设置一个足够大的最大高度，确保内容能完全显示 */
+  /* 如果你的某个三级标题列表特别长，可以把这个数字改大，比如 2000px */
+  max-height: 1000px; 
+  
+  opacity: 1;
+}
