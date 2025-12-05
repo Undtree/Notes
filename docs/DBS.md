@@ -691,17 +691,17 @@ void getStudentInfo()
 
 **联系集(relationship set)**：一组相同类型的关系．
  
-    - 大多数关系集都是二元的，但有时也存在三元甚至包含更多实体集的关系．我们称参与到某个关系集的实体集个数为该关系集的**度(degree)**．
+- 大多数关系集都是二元的，但有时也存在三元甚至包含更多实体集的关系．我们称参与到某个关系集的实体集个数为该关系集的**度(degree)**．
  
-    - 联系集的形式化定义：设 $n$ 个可重复的实体集分别为 $E_1, E_2, ..., E_n$，在他们之上定义的联系集是一个关系(relation)，且应该是 $\{ (e_1, e_2, ..., e_n) \mid e_1 \in E_1, e_2 \in E_2, ..., e_n \in E_n \}$ 的子集。$(e_1, e_2, ..., e_n)$ 称为联系的一个实例。
+- 联系集的形式化定义：设 $n$ 个可重复的实体集分别为 $E_1, E_2, ..., E_n$，在他们之上定义的联系集是一个关系(relation)，且应该是 $\{ (e_1, e_2, ..., e_n) \mid e_1 \in E_1, e_2 \in E_2, ..., e_n \in E_n \}$ 的子集。$(e_1, e_2, ..., e_n)$ 称为联系的一个实例。
 
-    - 一组特性的实体集之间可能会包含多个联系集。
+- 一组特性的实体集之间可能会包含多个联系集。
 
-    ER 图中关系集的表示：用菱形(diamond)表示关系集，并从这个菱形出发，通过 直线(line) 连接到参与该关系集的实体集．
+ER 图中关系集的表示：用菱形(diamond)表示关系集，并从这个菱形出发，通过 直线(line) 连接到参与该关系集的实体集．
 
-    <div align="center">    
-    <img src="../images/DB/db42.png" alt="perform_2" style="zoom: 80%"/>
-    </div>
+<div align="center">    
+<img src="../images/DB/db42.png" alt="perform_2" style="zoom: 80%"/>
+</div>
 
     
 
@@ -1646,10 +1646,6 @@ $$
 
         After successful completion.
 
-    <div align="center">    
-    <img src="../images/DB/db31.png" alt="stats_" style="zoom: 80%"/>
-    </div>
-
 ### ACID
 
 事务的实现要求四个特性ACID：
@@ -2009,21 +2005,21 @@ T3 和 T4 均无法继续执行​​。执行 lock-S(B) 会导致 T4 等待 T3 
 
 对每一个事务的每一个write做记录：
 
-- Transaction开始时，记录<Ti start>
+- Transaction开始时，记录 \< Ti start \>
 
-- 对每一个写操作，记录<事务编号Ti，写数据的位置D，原值V0，新值V1>
+- 对每一个写操作，记录 \< 事务编号Ti，写数据的位置D，原值V0，新值V1 \>
 
-- 提交时，记录<T1 commit/abort>
+- 提交时，记录 \< T1 commit/abort \>
 
 对于日志的更新时期，我们又有两种方案：
 
 - **deferred-modification**：
 
-    写操作在commit以前都是在临时变量中做，commit后一次写入buff/disk
+    写操作在 commit 以前都是在临时变量中做，commit 后一次写入 buff/disk
 
 - **immediate-modification**：
 
-    允许在commit之前将值写入buff/disk。
+    允许在 commit 之前将值写入 buff/disk。
 
     **数据项写入前，其更新日志记录必须已持久化；数据库页刷出到磁盘前，其关联的所有日志记录必须已输出。**
 
