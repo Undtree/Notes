@@ -57,6 +57,25 @@ Interrupt 可以分为两种：硬件中断/软件中断(Trap)。软件中断可
 
 回顾计算机系统的组成
 
+### 虚拟机 (Virtual Machine)
+
+虚拟机是“分层”概念的具体实现的代表之一。具体来说，一个典型的虚拟机的架构大致如下：
+
+- 最上层/ 客户操作系统，即被安装的系统；
+
+- 第二层/ Hypervisor (虚拟机监控器) 为各 VM 创建的虚拟硬件层；
+
+- 第三层/ Hypervisor
+  
+- 最底层/ 物理硬件*
+
+!!! Tips "最底层的“物理硬件”指的是什么？"
+
+    这是针对 Hypervisor 的视角来说的。目前有两种流行的 Hypervisor：
+
+    - Type 1 Hypervisor：裸金属的，直接视机器上的物理硬件为自己的硬件。它本身相当于是一个精简的专用 OS 来驱动和管理硬件。
+    
+    - Type 2 Hypervisor：宿主型的，视宿主操作系统 (Host OS) 的内核及其提供的 API 接口为自己的硬件。
 
 
 ## 进程 Process
@@ -65,15 +84,25 @@ Interrupt 可以分为两种：硬件中断/软件中断(Trap)。软件中断可
 
 * **定义**：进程是<u>“一个正在执行中的程序”</u>。操作系统执行各种程序，例如批处理系统中的“作业”（jobs）或时间共享系统中的“用户程序”或“任务”（tasks）。
 
-* **进程的内存结构**：一个进程在内存中包含：
+<div class="grid cards" markdown>
+
+-   **进程的内存结构**
+
+    一个进程在内存中包含：
+
     * **文本区域 (text section)**：即代码 (code)；
+  
     * **程序计数器 (program counter)**；
+  
     * **栈 (stack)**：用于存放函数参数、局部变量和返回地址；
+  
     * **数据区域 (data section)**：存放全局变量；
+  
     * **堆 (heap)**：用于动态分配内存。
-<center>
-    <img src="./images/OS/process.png" alt="Process in Memory" style="zoom 40%"/>
-</center>
+
+-   ![process](images/OS/process.png){ width="350" style="display: block; margin: 0 auto;"}
+
+</div>
 
 ### 2. 进程状态 (Process State)
 
@@ -85,9 +114,7 @@ Interrupt 可以分为两种：硬件中断/软件中断(Trap)。软件中断可
 * **ready (就绪)**：进程等待被分配到处理器；
 * **terminated (终止)**：进程已完成执行.
 
-<center>
-    <img src="./images/OS/state_diagram.png" alt="State Changes" style="zoom 50%"/>
-</center>
+![state_diagram](images/OS/state_diagram.png){ width="400" style="display: block; margin: 0 auto;"}
 
 ### 3. 进程控制块 (PCB)
 
@@ -291,6 +318,7 @@ Interrupt 可以分为两种：硬件中断/软件中断(Trap)。软件中断可
     * 这是Java中类似RPC的机制。
     * 它允许一台机器上的Java程序调用一个**远程对象**上的方法。
 
+## 进程同步 Synchronization
 
 ## 线程 Thread
 
@@ -425,9 +453,8 @@ PPT详细介绍了几种主要的调度算法：
         * 如果 `q` 很小 : 必须相对于上下文切换时间而言足够大，否则开销会过高 。
 
 !!! Example "RR 算法平均等待时间"
-    <center>
-    <img src="./images/OS/quiz2.png" alt="Q4-6" style="zoom 50%"/>
-    </center>
+    
+    ![quiz2](images/OS/quiz2.png){ width="400" style="display: block; margin: 0 auto;"}
 
     时间单位是 ms，读者可以先自行计算一下答案。请时刻关注**就绪队列**的状态。
 
@@ -452,15 +479,24 @@ PPT详细介绍了几种主要的调度算法：
 
         ```        
 
-* **多级队列 (Multilevel Queue)**：
+- **多级队列 (Multilevel Queue)**：
+
     * 将就绪队列划分为多个独立的队列 。例如，分为“前台”（交互式）队列和“后台”（批处理）队列 。
+
     * 每个队列都有自己的调度算法（例如，前台用RR，后台用FCFS） 。
+
     * 必须在队列之间进行调度，例如：
+
         * **固定优先级**：先处理完所有前台队列，再处理后台队列（可能导致饥饿） 。
+
         * **时间片**：为每个队列分配一定的CPU时间（例如，80%给前台RR，20%给后台FCFS） 。
-* **多级反馈队列 (Multilevel Feedback Queue)**：
+
+- **多级反馈队列 (Multilevel Feedback Queue)**：
+
     * 允许进程在不同队列之间**移动** ；这可以实现老化 。
+
     * 由多个参数定义：队列数量、每个队列的调度算法、何时升级/降级进程的方法等 。
+
     * PPT给出了一个三级队列的例子（Q0使用RR TQ=8，Q1使用RR TQ=16，Q2使用FCFS） 。
 
 ### 4. 其他调度主题
@@ -549,4 +585,6 @@ PPT最后简要介绍了几种特定操作系统的调度实现：
 - **Intel Pentium：** 支持纯分段或**分段加分页**的混合模式。
   - 逻辑地址先通过分段单元生成线性地址，再通过分页单元生成物理地址 。
 - **Linux：** 在 Pentium 架构上采用了三级分页策略（全局目录、中间目录、页表）来管理线性地址 。
+
+## 文件系统 File System
 
