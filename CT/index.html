@@ -1,0 +1,1380 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../DBS/">
+      
+      
+        <link rel="next" href="../Crypto/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
+    
+    
+      
+        <title>计算理论 - Undertree's 小站</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jetbrains-mono@1.0.6/css/jetbrains-mono.min.css">
+    
+      <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css">
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../stylesheets/card.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="Undertree&#39;s 小站" class="md-header__button md-logo" aria-label="Undertree's 小站" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4zM3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7zm2-2v2h2V5zm0 14h2v-2H5zm0-6h2v-2H5z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Undertree's 小站
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              计算理论
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换至跟随系统"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="切换至跟随系统" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Undtree/Notes/" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Undtree/Notes
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../Network/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  计算机科学
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Crypto/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  安全
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Undertree&#39;s 小站" class="md-nav__button md-logo" aria-label="Undertree's 小站" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4zM3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7zm2-2v2h2V5zm0 14h2v-2H5zm0-6h2v-2H5z"/></svg>
+
+    </a>
+    Undertree's 小站
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Undtree/Notes/" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Undtree/Notes
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    计算机科学
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            计算机科学
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    计算机网络
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    操作系统
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DBS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    数据库系统
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    计算理论
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    计算理论
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#01" class="md-nav__link">
+    <span class="md-ellipsis">
+      01 集合、关系（数学基础）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="01 集合、关系（数学基础）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      三种基础的证明方法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三种基础的证明方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cantors-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      康托尔定理 (Cantor's Theorem)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      闭包及其性质
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="闭包及其性质">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      关系的闭包
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#02" class="md-nav__link">
+    <span class="md-ellipsis">
+      02 形式语言的理论基础
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="02 形式语言的理论基础">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 符号化表示
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 字符串运算
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 语言
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 语言的运算
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5 语言的有限表示法：正则表达式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5 语言的有限表示法：正则表达式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      表示
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identities" class="md-nav__link">
+    <span class="md-ellipsis">
+      重要恒等式 (Identities)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      生成器 vs 识别器
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#03" class="md-nav__link">
+    <span class="md-ellipsis">
+      03 正则语言与有限自动机
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    安全
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            安全
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Crypto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    密码学
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#01" class="md-nav__link">
+    <span class="md-ellipsis">
+      01 集合、关系（数学基础）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="01 集合、关系（数学基础）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      三种基础的证明方法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三种基础的证明方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cantors-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      康托尔定理 (Cantor's Theorem)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      闭包及其性质
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="闭包及其性质">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      关系的闭包
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#02" class="md-nav__link">
+    <span class="md-ellipsis">
+      02 形式语言的理论基础
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="02 形式语言的理论基础">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 符号化表示
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 字符串运算
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 语言
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 语言的运算
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5 语言的有限表示法：正则表达式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5 语言的有限表示法：正则表达式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      表示
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identities" class="md-nav__link">
+    <span class="md-ellipsis">
+      重要恒等式 (Identities)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      生成器 vs 识别器
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#03" class="md-nav__link">
+    <span class="md-ellipsis">
+      03 正则语言与有限自动机
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="_1">计算理论<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 2642 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 9 分钟</p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">授课信息</p>
+<p><strong>授课教师</strong>：顾实 / 金小刚（顾老师实际授课）</p>
+</div>
+<div class="admonition success">
+<p class="admonition-title">参考资料</p>
+<p>请支持 <a href="https://note.tonycrane.cc/cs/tcs/toc/">TonyCrane 的计算理论笔记</a></p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">写在前面...</p>
+<p>所谓计算理论，大致上说，就是计算机科学的理论基础。它以抽象的方式研究计算机“算什么”、“怎么算”、“算的代价”。</p>
+<p>在计算机科学中，对于同一个话题，我们主要研究<strong>四类问题</strong>：</p>
+<ul>
+<li>
+<p><strong>优化问题</strong>。例如，找一个图的<u>最小</u>生成树。</p>
+</li>
+<li>
+<p><strong>搜索问题</strong>。例如，找一个权重和 <span class="arithmatex">\(\le k\)</span> 的生成树。</p>
+</li>
+<li>
+<p><strong>决策问题</strong>。例如，判断<u>是否存在</u>一个权重和 <span class="arithmatex">\(\le k\)</span> 的生成树。</p>
+</li>
+<li>
+<p><strong>计数问题</strong>。例如，一个图总共有多少权重和 <span class="arithmatex">\(\le k\)</span> 的生成树。</p>
+</li>
+</ul>
+<p>在这其中，我们主要研究<strong>决策问题</strong>。</p>
+<ul>
+<li>
+<p>输出简单，要么是 Yes ，要么是 No。</p>
+</li>
+<li>
+<p>这也把所有的输入实例分成了两类：让答案为“是”的 Yes-instance 和让答案为“否”的 No-instance。</p>
+</li>
+<li>
+<p>由于<strong>难度等价性</strong>，研究了决策问题的难度，就基本掌握了其他问题的难度。</p>
+</li>
+</ul>
+</div>
+<h2 id="01">01 集合、关系（数学基础）<a class="headerlink" href="#01" title="Permanent link">&para;</a></h2>
+<h3 id="_2">三种基础的证明方法<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>归纳法 (Induction)</strong></p>
+</li>
+<li>
+<p><strong>鸽笼原理</strong></p>
+</li>
+<li>
+<p><strong>对角线论法（反证法）</strong> </p>
+</li>
+</ul>
+<h4 id="cantors-theorem">康托尔定理 (Cantor's Theorem)<a class="headerlink" href="#cantors-theorem" title="Permanent link">&para;</a></h4>
+<p>集合 <span class="arithmatex">\(A\)</span> 的幂集（所有子集的集合）<span class="arithmatex">\(P(A)\)</span> 的势严格大于 <span class="arithmatex">\(A\)</span> 的势，即 <span class="arithmatex">\(\text{card}(A) &lt; \text{card}(P(A))\)</span> 对所有集合 <span class="arithmatex">\(A\)</span> 都成立。</p>
+<details class="success">
+<summary>证明</summary>
+<p>令 <span class="arithmatex">\(f\)</span> 是一个从 <span class="arithmatex">\(A\)</span> 到其幂集 <span class="arithmatex">\(P(A)\)</span> (<span class="arithmatex">\(2^A\)</span>) 的映射。显然地，<span class="arithmatex">\(\text{card}(A) \le \text{card}(P(A))\)</span>。</p>
+<p>我们需要证明 <span class="arithmatex">\(A \neq P(A)\)</span>，即我们要证明这个单射(injection) <span class="arithmatex">\(f\)</span> 不能是满射的(surjective)。</p>
+<p>采取反证法。构造一个集合 <span class="arithmatex">\(B = \{x \in A \mid x \notin f(x)\}\)</span>。由于假设 <span class="arithmatex">\(f\)</span> 是满射，那么在 <span class="arithmatex">\(A\)</span> 中必然存在一个元素 <span class="arithmatex">\(t\)</span>，使得 <span class="arithmatex">\(f(t) = B\)</span>。接下来考虑 <span class="arithmatex">\(t\)</span> 与 <span class="arithmatex">\(B\)</span> 的关系：</p>
+<ul>
+<li>
+<p><strong>如果 <span class="arithmatex">\(t \in B\)</span></strong>：那么根据集合 <span class="arithmatex">\(B\)</span> 的定义，可知 <span class="arithmatex">\(t \notin f(t)\)</span>。但由于我们假设了 <span class="arithmatex">\(f(t) = B\)</span>，这推导出了 <span class="arithmatex">\(t \notin B\)</span>，产生<strong>矛盾</strong>。</p>
+</li>
+<li>
+<p><strong>如果 <span class="arithmatex">\(t \notin B\)</span></strong>：那么根据集合 <span class="arithmatex">\(B\)</span> 的定义，可知 <span class="arithmatex">\(t \in f(t)\)</span>。同样由于 <span class="arithmatex">\(f(t) = B\)</span>，这推导出了 <span class="arithmatex">\(t \in B\)</span>，再次产生<strong>矛盾</strong>。</p>
+</li>
+</ul>
+</details>
+<p>证明的核心就是“对角线论法”。</p>
+<div class="admonition example">
+<p class="admonition-title">Considering the set <span class="arithmatex">\(T\)</span> of all infinite sequences of binary digits (i.e. each digit is zero or one).<br>Is <span class="arithmatex">\(T\)</span> countable?</p>
+<p><span class="arithmatex">\(T\)</span> is <strong>uncountable</strong>（<span class="arithmatex">\(T\)</span> 不可数）。</p>
+<p>我们注意到，我们可以将 <span class="arithmatex">\(T\)</span> 中的某个序列 <span class="arithmatex">\(s\)</span> 中 1 的位置表示为自然数集的子集，例如对于 <span class="arithmatex">\(\{ 1, 4 \}\)</span>，我们可以解释为 <span class="arithmatex">\(s\)</span> 只有第 1 和第 4 位是 1 （从 0 开始计，当然不从 0 也无所谓），其余位置为 0 。这样，<span class="arithmatex">\(T\)</span> 和自然数集 <span class="arithmatex">\(\mathbb N\)</span> 的幂集 <span class="arithmatex">\(P(\mathbb N)\)</span> 存在一一对应关系（存在一个双射）。那么，<span class="arithmatex">\(| T | = | P(\mathbb N) |\)</span>。</p>
+<p>由康托尔定理，我们有：</p>
+<div class="arithmatex">\[|\mathbb N| &lt; |P(\mathbb N)|\]</div>
+<p>因此，<span class="arithmatex">\(| T | &gt; | \mathbb N |\)</span>；我们无法做到为每一个可能的无限序列编号，因此 <span class="arithmatex">\(T\)</span> 不可数。事实上，可数的数学定义就是存在一个从 <span class="arithmatex">\(S\)</span> 到自然数集 <span class="arithmatex">\(\mathbb N\)</span> 的单射 (Injection) 函数（直观地说，能以自然数编号）。</p>
+</div>
+<h3 id="_3">闭包及其性质<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>如果一个集合中的元素在进行某种运算后，结果仍然在该集合中，称该集合对该运算<strong>封闭 (closed)</strong>。</p>
+<p>例如，自然数集对加法封闭，但对减法不封闭。整数 <span class="arithmatex">\(\mathbb Z\)</span> 是包含 <span class="arithmatex">\(\mathbb N\)</span> 且对减法封闭的最小集合，那么 <span class="arithmatex">\(\mathbb Z\)</span> 就是 <span class="arithmatex">\(\mathbb N\)</span> 在减法下的<strong>闭包 (closure)</strong>（ The set <span class="arithmatex">\(\mathbb Z\)</span> is called a <strong>closure</strong> of <span class="arithmatex">\(\mathbb N\)</span> <strong>under</strong> subtraction.）。</p>
+<h4 id="_4">关系的闭包<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<p>简单来说，关系 <span class="arithmatex">\(R\)</span> 的闭包就是通过给关系添加<strong>最少数量</strong>的新元素，来使得添加之后的关系 <span class="arithmatex">\(R'\)</span> 满足一定的性质 <span class="arithmatex">\(P\)</span>，这个新的关系 <span class="arithmatex">\(R'\)</span> 就被称为关系 <span class="arithmatex">\(R\)</span> 关于性质 <span class="arithmatex">\(P\)</span> 的闭包。</p>
+<details>
+<summary>正式定义</summary>
+<p>假设 <span class="arithmatex">\(R\)</span> 是集合 <span class="arithmatex">\(A\)</span> 上的一个二元关系，<span class="arithmatex">\(P\)</span> 是某种性质（如自反性、对称性或传递性）。如果存在另一个关系 <span class="arithmatex">\(R'\)</span>，满足以下三个条件，则称 <span class="arithmatex">\(R'\)</span> 是 <span class="arithmatex">\(R\)</span> 关于性质 <span class="arithmatex">\(P\)</span> 的闭包：
+1. <strong>包含性</strong>：<span class="arithmatex">\(R \subseteq R'\)</span> （原有的关系都在里面）。
+2. <strong>性质性</strong>：<span class="arithmatex">\(R'\)</span> 具有性质 <span class="arithmatex">\(P\)</span>。
+3. <strong>最小性</strong>：对于任何包含 <span class="arithmatex">\(R\)</span> 且具有性质 <span class="arithmatex">\(P\)</span> 的关系 <span class="arithmatex">\(S\)</span>，都有 <span class="arithmatex">\(R' \subseteq S\)</span>（它是满足条件的所有关系中“最小”的那一个，不多加任何没用的元素）。</p>
+</details>
+<p>最常用的闭包有三种，<strong>自反 (Reflexive)、对称 (Symmetric)、传递 (Transitive)</strong>。读者可以回顾离散数学课程的相关内容。</p>
+<ul>
+<li>我们一般将关系 <span class="arithmatex">\(R\)</span> 的<strong>自反传递</strong>闭包记为 <span class="arithmatex">\(R^\ast\)</span> 。其定义是</li>
+</ul>
+<div class="arithmatex">\[
+R^\ast = \{(a,b) | a,b \in A~\text{and there is path from}~a~\text{to}~b ~\text{in}~R\}
+\]</div>
+<ul>
+<li>我们一般将关系 <span class="arithmatex">\(R\)</span> 的<strong>传递</strong>闭包记为 <span class="arithmatex">\(R^+\)</span> 。</li>
+</ul>
+<h2 id="02">02 形式语言的理论基础<a class="headerlink" href="#02" title="Permanent link">&para;</a></h2>
+<div class="admonition question">
+<p class="admonition-title">我们为什么要这样抽象地研究它？</p>
+<p>总感觉这里解释的不太好。回来再想想怎么解释，先复习吧。</p>
+<p>考虑一个决策问题。它完全可以抽象为：<strong>给定一个串 <span class="arithmatex">\(w\)</span>，判断 <span class="arithmatex">\(w\)</span> 是否属于所有 yes-instance 编码的集合 <span class="arithmatex">\(L\)</span></strong>。这里的 <span class="arithmatex">\(L\)</span> 也就是语言。</p>
+</div>
+<p>首先我们想一门人类的语言。无论它有没有文字，一门语言总是包含一些音素。它们的组合可以表达一个词语、短语或者句子，组成各种表达。研究表明，人类可以发出的音素数量是有限的。</p>
+<h3 id="21">2.1 符号化表示<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
+<p>我们定义：</p>
+<ul>
+<li>
+<p><strong>字母表 (Alphabet ，记为 <span class="arithmatex">\(\Sigma\)</span>)</strong>：一个<font color="red"><strong>有限</strong></font>集合。集合内的元素被称作符号 (Symbols)。</p>
+</li>
+<li>
+<p><strong>字符串 (String)</strong>：由 <span class="arithmatex">\(\Sigma\)</span> 中的符号组成的<font color="red"><strong>有限</strong></font>序列，称作 String over <span class="arithmatex">\(\Sigma\)</span> 。</p>
+<ul>
+<li>
+<p>空串 (<span class="arithmatex">\(\varepsilon\)</span> 或者 <span class="arithmatex">\(e\)</span>)：长度为 0 的字符串。</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\Sigma^\ast\)</span> 表记字母表 <span class="arithmatex">\(\Sigma\)</span> 上所有可能字符串的集合；</p>
+<p><span class="arithmatex">\(\Sigma^+\)</span> 表记字母表 <span class="arithmatex">\(\Sigma\)</span> 上所有非空字符串的集合（正闭包）；</p>
+<p><span class="arithmatex">\(\Sigma^i\)</span> 表记字母表 <span class="arithmatex">\(\Sigma\)</span> 上所有长度为 <span class="arithmatex">\(i\)</span> 的字符串。</p>
+<p>所以 <span class="arithmatex">\(\Sigma^\ast = \bigcup_{i \ge 0}\Sigma^i\)</span>，<span class="arithmatex">\(\Sigma^+ = \bigcup_{i \ge 1}\Sigma^i\)</span>。</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>语言 (Language)</strong>：是 <span class="arithmatex">\(\Sigma^\ast\)</span> 的任意子集（<span class="arithmatex">\(L \subseteq \Sigma^\ast\)</span>）。对于有无限个串的语言，我们通常用下面的形式表示：</p>
+</li>
+</ul>
+<div class="arithmatex">\[
+L = \{w \in \Sigma^\ast: w~\text{有性质}~P\}
+\]</div>
+<h3 id="22">2.2 字符串运算<a class="headerlink" href="#22" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>连接 (Concatenation)</strong>：<span class="arithmatex">\(xy\)</span>。</li>
+<li><strong>幂运算 (Exponentiation)</strong>：<span class="arithmatex">\(w^k\)</span> 表示 <span class="arithmatex">\(w\)</span> 重复 <span class="arithmatex">\(k\)</span> 次。<span class="arithmatex">\(w^0 = \varepsilon\)</span>。</li>
+<li><strong>反转 (Reversal)</strong>：<span class="arithmatex">\(w^R\)</span>。归纳定义：<span class="arithmatex">\(\varepsilon^R = \varepsilon\)</span>, <span class="arithmatex">\((ua)^R = a u^R\)</span>。</li>
+</ul>
+<h3 id="23">2.3 语言<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>基数悖论</strong>：</p>
+<ul>
+<li>
+<p>对于一个字母表 <span class="arithmatex">\(\Sigma\)</span>（有限），字符串集 <span class="arithmatex">\(\Sigma^*\)</span> 是可数（可数无限）的。语言总是 <span class="arithmatex">\(\Sigma^*\)</span> 的子集，所以一个语言总是可数的。</p>
+<details class="success">
+<summary>证明</summary>
+<p>证明 <span class="arithmatex">\(\Sigma^*\)</span> 可数，也就是需要构建一个双射 <span class="arithmatex">\(f: \mathbb N \to \Sigma^*\)</span>。</p>
+<ul>
+<li>我们不妨给字母表里的符号按照某种顺序固定：<span class="arithmatex">\(\Sigma = \{a_1, a+2, ..., a_n\}\)</span>。</li>
+<li>对于字符串集的每一个串，<ul>
+<li>按长度排：长度短的字符串永远排在长度长的字符串前面。</li>
+<li>同长度按字母表中的顺序排：如果长度一样，就按照预先定好的字母表顺序来排。</li>
+</ul>
+</li>
+</ul>
+<p>这样，每一个串都有一个确定的位置，每一个自然数都对应了一个唯一的字符串（长度 + 字典定位）。</p>
+</details>
+</li>
+<li>
+<p><strong>语言的集合</strong>（即 <span class="arithmatex">\(P(\Sigma^*)\)</span>）是<strong>不可数</strong>的（由康托尔定理）。一个非空字母表形成的所有语言的数量是 <span class="arithmatex">\(|\mathbb R|\)</span>。更一般的，一个可数无限集的幂集的势总是 <span class="arithmatex">\(|\mathbb R|\)</span>。</p>
+</li>
+</ul>
+<p>不可判定性：计算机程序/算法/正则表达式是有限长度的字符串，因此只有可数无限多个程序。这意味存在<strong>无数个无法被计算机描述或解决的语言（问题）</strong>。</p>
+</li>
+</ul>
+<h3 id="24">2.4 语言的运算<a class="headerlink" href="#24" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>集合运算</strong>：并 (<span class="arithmatex">\(\cup\)</span>)、交 (<span class="arithmatex">\(\cap\)</span>)、补 (<span class="arithmatex">\(\bar{L} = \Sigma^* - L\)</span>)、差 (<span class="arithmatex">\(-\)</span>)。</p>
+</li>
+<li>
+<p><strong>连接 (Concatenation)</strong>：<span class="arithmatex">\(L_1 L_2 = \{xy \mid x \in L_1, y \in L_2\}\)</span>。</p>
+</li>
+<li>
+<p><u><strong>克林星号 (Kleene Star, <span class="arithmatex">\(L^*\)</span>)</strong>：</u></p>
+<ul>
+<li>定义：从 <span class="arithmatex">\(L\)</span> 中取任意个（包括 0 个）字符串进行连接所组成的所有字符串的集合。</li>
+<li>
+<p><span class="arithmatex">\(L^* = \bigcup_{i \ge 0} L^i = L^0 \cup L^1 \cup L^2 \dots\)</span></p>
+<p>我们以 <span class="arithmatex">\(L^k\)</span> 表示从 <span class="arithmatex">\(L\)</span> 中任取 <span class="arithmatex">\(k\)</span> 个字符串所有可能的集合。</p>
+</li>
+<li>
+<p>总是包含 <span class="arithmatex">\(\varepsilon\)</span>，因为 <span class="arithmatex">\(L^0 = \{\varepsilon\}\)</span>。</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>正闭包 (<span class="arithmatex">\(L^+\)</span>)</strong>：<span class="arithmatex">\(L^+ = LL^* = \bigcup_{i \ge 1} L^i\)</span>。</p>
+<ul>
+<li>如果不包含空串的组合，则 <span class="arithmatex">\(L^+\)</span> 不含 <span class="arithmatex">\(\varepsilon\)</span>。</li>
+</ul>
+</li>
+</ul>
+<h3 id="25">2.5 语言的有限表示法：正则表达式<a class="headerlink" href="#25" title="Permanent link">&para;</a></h3>
+<p>由于许多语言是无限集，我们想要一种有限的方式来描述它们。</p>
+<h4 id="_5">定义<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<p>正则表达式采用递归定义法。它是定义在字母表 <span class="arithmatex">\(\Sigma \cup \{(,),\cup,\ast\}\)</span> 上的字符串。</p>
+<ol>
+<li><strong>基础 (原子性， Atomic)</strong>：<span class="arithmatex">\(\emptyset\)</span> 和 <span class="arithmatex">\(\{a\}\)</span> (其中 <span class="arithmatex">\(a \in \Sigma\)</span>) 是正则表达式。<span class="arithmatex">\(\varepsilon\)</span> (或 <span class="arithmatex">\(\{e\}\)</span>) 也是。</li>
+<li><strong>归纳 (组合性， Composite)</strong>：如果 <span class="arithmatex">\(\alpha, \beta\)</span> 是正则表达式，则以下也是：<ul>
+<li><span class="arithmatex">\(\alpha \cup \beta\)</span>。</li>
+<li><span class="arithmatex">\(\alpha \circ \beta\)</span>（也表示成 <span class="arithmatex">\(\alpha \beta\)</span>）。</li>
+<li><span class="arithmatex">\(\alpha^*\)</span>，表示克林星号（重复）。</li>
+</ul>
+</li>
+</ol>
+<p>其实就类似于各编程语言中使用的正则表达式，不过那些“正则表达式”一般都加了不属于这里规定的正则表达式的更多功能。</p>
+<h4 id="_6">表示<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<p>函数 <span class="arithmatex">\(\mathcal{L}(r)\)</span> 将正则表达式 <span class="arithmatex">\(r\)</span> 映射到它所代表的语言。</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(\mathcal{L}(\emptyset) = \emptyset\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\mathcal{L}(a) = \{a\}\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\mathcal{L}(\alpha \cup \beta) = \mathcal{L}(\alpha) \cup \mathcal{L}(\beta)\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\mathcal{L}(\alpha \beta) = \mathcal{L}(\alpha) \circ \mathcal{L}(\beta)\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\mathcal{L}(\alpha^*) = (\mathcal{L}(\alpha))^*\)</span></p>
+</li>
+</ul>
+<p><strong>克林定理 (Kleene's Theorem)</strong> 指出，一个语言是正则的，<strong>当且仅当</strong>它可以被某个正则表达式描述。</p>
+<div class="admonition note">
+<p class="admonition-title">正则语言的三个性质</p>
+<ol>
+<li>
+<p>每个能用正则表达式表示的语言，都可以用无穷多个不同的正则表达式来表示。（正则表达式和正则语言是多对一的关系。）</p>
+</li>
+<li>
+<p>正则语言类是由基本语言（单个字符和空集）在并、连接和克林星号运算下的闭包。（请参考正则表达式的递归定义。）</p>
+</li>
+<li>
+<p>正则表达式在通用性上是不充分的。例如 <span class="arithmatex">\(\{0^n 1^n : n \ge 0\}\)</span> 无法被正则表达式描述。（正则表达式本质上对应于有限状态自动机（ DFA ，后面讲到）。DFA 的状态是有限的，它无法记住“已经读入了多少个 0”，即缺乏计数能力。）</p>
+</li>
+</ol>
+</div>
+<h4 id="identities">重要恒等式 (Identities)<a class="headerlink" href="#identities" title="Permanent link">&para;</a></h4>
+<ul>
+<li><span class="arithmatex">\(SR \ne RS\)</span> (连接不满足交换律)</li>
+<li><span class="arithmatex">\(S \cup R = R \cup S\)</span> (并集满足交换律)</li>
+<li><span class="arithmatex">\(R(ST) = (RS)T\)</span> (连接结合律)</li>
+<li><span class="arithmatex">\(R(S \cup T) = RS \cup RT\)</span>，<span class="arithmatex">\((R \cup S)T = RT \cup ST\)</span> (分配律)</li>
+<li><span class="arithmatex">\(\emptyset^* = \{ e \}\)</span> (空集的星号是含空串的集合) $= e^* $</li>
+<li></li>
+</ul>
+<h4 id="vs">生成器 vs 识别器<a class="headerlink" href="#vs" title="Permanent link">&para;</a></h4>
+<p>这是计算理论中描述语言的两种视角：
+1.  <strong>生成器 (Generator)</strong>：
+    *   <strong>代表</strong>：正则表达式。
+    *   <strong>机制</strong>：给出一套蓝图或指令，展示如何<strong>构造</strong>出语言中的字符串（例如：“先写个 a ，再写任意个 b...”）。
+2.  <strong>识别器 (Recognition Device)</strong>：
+    *   <strong>代表</strong>：有限自动机 (DFA/NFA)。
+    *   <strong>机制</strong>：输入一个字符串，机器内部状态流转，最后输出 <strong>Yes/No</strong> 来判定该字符串是否属于该语言。</p>
+<p>!!! "补充"</p>
+<p>在实际应用（如编程）中，我们常用：
+*   <span class="arithmatex">\(\Sigma\)</span>：表示任意一个字符（课件 Slide 21 中的 <span class="arithmatex">\(10^* \cup \dots\)</span> 例子中 implied 了通配符的概念）。
+*   <span class="arithmatex">\(R^+\)</span>：<span class="arithmatex">\(RR^*\)</span>。</p>
+<ul>
+<li><span class="arithmatex">\(\emptyset\)</span> vs <span class="arithmatex">\(\{\epsilon\}\)</span>：<ul>
+<li><span class="arithmatex">\(\emptyset\)</span> 是空语言，没有元素。</li>
+<li><span class="arithmatex">\(\{\epsilon\}\)</span> 是只包含空串的语言，有一个元素（长度为 0 的串）。</li>
+<li>在连接运算中：<span class="arithmatex">\(L \circ \emptyset = \emptyset\)</span>，但 <span class="arithmatex">\(L \circ \{\epsilon\} = L\)</span>。</li>
+</ul>
+</li>
+<li><span class="arithmatex">\(L^*\)</span> 总是包含 <span class="arithmatex">\(\epsilon\)</span>，即使 <span class="arithmatex">\(L\)</span> 本身不包含。若 <span class="arithmatex">\(L=\emptyset\)</span>，则 <span class="arithmatex">\(L^* = \{\epsilon\}\)</span>。</li>
+</ul>
+<h2 id="03">03 正则语言与有限自动机<a class="headerlink" href="#03" title="Permanent link">&para;</a></h2>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["toc.follow", "content.code.copy", "search.share", "search.suggest", "search.highlight", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.tonycrane.cc/utils/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

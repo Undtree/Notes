@@ -35,7 +35,7 @@
 
 /* 功能：折叠逻辑 (简化版) */
 
-/* A. 默认状态：
+/* 默认状态：
    找到右侧栏里，所有的 li 下面的 "子菜单容器(.md-nav)"
    全部隐藏 */
 .md-sidebar--secondary li .md-nav {
@@ -53,7 +53,7 @@
               opacity 0.3s linear;
 }
 
-/* 2. 展开状态：当满足以下任一条件时展开 */
+/* 展开状态：当满足以下任一条件时展开 */
 /* A. 父级标题被激活 (.md-nav__item--active) */
 /* B. 内部包含了被激活的链接 (:has(.md-nav__link--active)) */
 .md-sidebar--secondary li.md-nav__item--active > .md-nav,
@@ -63,4 +63,19 @@
   max-height: 1000px; 
   
   opacity: 1;
+}
+
+/* 主题切换过渡 */
+
+body, 
+.md-header, 
+.md-sidebar, 
+.md-footer,
+.md-main__inner,
+.md-nav__link {
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+[data-md-color-scheme="slate"] {
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
