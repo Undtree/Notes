@@ -9,17 +9,19 @@ nav:
   #   - 数值分析: NA.md
   # - 外语:
   #   - 日语(日本語): JPN.md
-  - CS相关:
+  - 计算机科学:
     - 计算机网络: Network.md
     - 操作系统: OS.md
     # - 计算机体系结构: CA.md
     - 数据库系统: DBS.md
-    # - 密码学: Crypto.md
     # - 数据结构与算法分析:
     #   - FDS: FDS.md
 
     # - 面向对象程序设计(in C++): OOP.md
     # - 编译原理: 编译原理.md
+  - 安全:
+    - 密码学: Crypto.md
+    # - 软件安全: SwSec.md
 
 theme:
     name: material

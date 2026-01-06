@@ -78,4 +78,11 @@ $$
 
 !!! Example "一些计算"
 
-    TODO...
+    What is the minimum bandwidth needed to achieve a data rate of $B$ bits/sec if the signal is transmitted using **NRZ** and **Manchester** encoding? Explain your answer.
+
+    ??? Tips "解答"
+
+        In NRZ, the data rate = signal rate, so the signal rate is $B$ bps. So, the minimum bandwidth need to achieve $B$ bits/sec data rate is $B/2$ Hz.
+        
+        In Manchester encoding, the data rate = 1/2 $\times$ signal rate, so the signal rate is $2B$ bps. So, the minimum bandwidth need to achieve $B$ bits/sec data rate is $B$ Hz.
+
