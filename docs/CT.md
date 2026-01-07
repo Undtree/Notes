@@ -30,6 +30,8 @@
 
     - 由于**难度等价性**，研究了决策问题的难度，就基本掌握了其他问题的难度。
 
+    本课程的逻辑（应该）是，从小范围（特解）逐渐向大范围（通解）介绍对计算的抽象。
+
 ## 01 集合、关系（数学基础）
 
 ### 三种基础的证明方法
@@ -346,13 +348,13 @@ $$
 
         ![NFA-3-DFA](images/CT/NFA-3.png){ width="300" style="display: block; margin: 0 auto;"}
 
-### 3.4 正则表达式
+### 3.4 等价性定理
 
 请读者再一次回顾 [2.5节](#2.5) 中的内容。
 
 #### 克林定理 (Kleene's Theorem)
 
-一个语言是正则的，**当且仅当**它被有限自动机 (DFA/NFA) 接受，当且仅当它能用正则表达式描述。
+一个语言是正则的，**当且仅当**它被有限自动机 (DFA/NFA) 接受，**当且仅当**它能用正则表达式描述。
 
 !!! Success "证明"
 
@@ -412,20 +414,6 @@ $$
 3.  重复这个过程，直到只剩下 $s_G$ 和 $f_G$。
 4.  最后这两点之间连线上的那个巨大表达式，就是该自动机对应的**正则表达式**。
 
-!!! info "判定性质"
-    对于正则语言，以下问题是可判定的（即存在算法解决）：
-
-    *   **成员性 (Membership)**：$w \in L(M)$？（模拟运行 DFA 即可）。
-
-    *   **空性 (Emptiness)**：$L(M) = \emptyset$？（检查从起点到终点是否有路径，BFS/DFS）。
-
-    *   **有限性 (Finiteness)**：$L(M)$ 是有限集吗？（检查是否存在从起点可达且能到达终点的环）。
-
-    *   **等价性 (Equivalence)**：$L(M_1) = L(M_2)$？（检查 $(L(M_1) \cap \overline{L(M_2)}) \cup (\overline{L(M_1)} \cap L(M_2))$ 是否为空）。
-
-!!! Warning "正则语言的局限性"
-    虽然正则语言能处理模式匹配（如 grep），但无法处理嵌套结构（如编程语言中的括号匹配、HTML 标签配对）。这引出了下一章的内容：**上下文无关文法 (Context-Free Grammars)** 和 **下推自动机 (Pushdown Automata)**。
-
 ### 3.5 泵引理 (Pumping Lemma) —— 用于证明“非正则”
 *   **定理内容**：若 $L$ 是正则的，则存在长度 $n$（泵长度），使得任意长度 $\ge n$ 的字符串 $w \in L$ 都可以被分割为 $w = xyz$，满足：
     1.  $|xy| \le n$
@@ -467,6 +455,21 @@ $$
             3.  未被标记的对合并。
     *   **结论**：每个正则语言都有（同构意义下）唯一的最小 DFA。
 
+### 3.6 判定性问题
+
+对于正则语言，以下问题是可判定的（即存在算法解决）：
+
+*   **成员性 (Membership)**：$w \in L(M)$？（模拟运行 DFA 即可）。
+
+*   **空性 (Emptiness)**：$L(M) = \emptyset$？（检查从起点到终点是否有路径，BFS/DFS）。
+
+*   **有限性 (Finiteness)**：$L(M)$ 是有限集吗？（检查是否存在从起点可达且能到达终点的环）。
+
+*   **等价性 (Equivalence)**：$L(M_1) = L(M_2)$？（检查 $(L(M_1) \cap \overline{L(M_2)}) \cup (\overline{L(M_1)} \cap L(M_2))$ 是否为空）。
+
+!!! Warning "正则语言的局限性"
+    虽然正则语言能处理模式匹配（如 grep），但无法处理嵌套结构（如编程语言中的括号匹配、HTML 标签配对）。这引出了下一章的内容：**上下文无关文法 (Context-Free Grammars)** 和 **下推自动机 (Pushdown Automata)**。
+
 ---
 
 ## 04 上下文无关语言与下推自动机
@@ -475,7 +478,213 @@ $$
 
 !!! Abstract "一般来讲这里的内容足够分成两章。但是我想借用这样的标题引发读者比较本章内容和前一章内容。"
 
-### 上下文无关文法 (CFG)
+### 4.1 上下文无关文法 (CFG)
+
+*   **形式化定义 (4元组)**：一个 CFG $G$ 表示为 $(V, \Sigma, R, S)$。
+    *   $V$：字母表 (Variables/Alphabets)。
+    *   $\Sigma \subseteq V$：终结符集合 (Terminals)。
+    *   $R$：产生式规则集合 (Rules)。形式为 $A \to w$，其中 $A \in V - \Sigma, w \in V^*$。不难看出 $R \subseteq (V-\Sigma) \times V^*$。
+    *   $S$：起始变元 (Start variable, $S \in V - \Sigma$)。
+
+*   **推导 ($\Rightarrow$)**：对于一个 CFG $G$，任意的 $x,y,z,w,u \in V^*$ 和任意的 $A \in V-\Sigma$：
+    *   一步推导；$uAv \Rightarrow_G u\beta v$ if $(A, \beta) \in R$
+    *   一般的推导：$w \Rightarrow_G^* u$ if $w = u \vee w \Rightarrow_G ... \Rightarrow_G u$
+
+*   **语言 $L(G)$**：$\{w \in \Sigma^* | S \Rightarrow^* w\}$。即从 $S$ 出发能推导出的所有终结符串。如同正则语言的判定，我们说如果一个语言能由一个 CFG 生成（$L = L(G)，G~\text{is CFG}$），那么该语言就是上下文无关语言 (CFL)。
+
+!!! Tip "所有正则语言都是 CFL，但反之不然（$\text{Regular Languages} \subseteq \text{CFL}$）。（如 $\{a^n b^n \mid n \ge 0\}$ 是 CFL 但不是正则语言）。"
 
 
+!!! Warning "提示"
+    
+    -   ~~Language $L$ is CFL iff it is accepted by a CFG.~~
+
+        **accept 是不对的**。因为 CFG 是一个生成串的 relation，我们只能说由 CFG 生成 (generated)。
+
+    -   ~~The set of terminals is always nonempty.~~
+
+        在定义下，**终结符集合可以是空集**。定义只要求终结符集合有限。在终结符是空集的情况下，CFG 要么生成空语言，要么只包含空串。
+
+    -   The set of non-terminals is always nonempty.
+
+        这句话是**正确**的。无论怎么说，起始变元都是非终结符。
+
+### 4.2 文法的范式 (Normal Forms)
+
+*   **乔姆斯基范式 (Chomsky Normal Form, CNF)**：
+    *   所有规则形式均为 $A \to BC$ 或 $A \to a$。
+    *   性质：任何长度为 $n$ 的字符串在 CNF中文法的推导步数正好是 $2n-1$。
+*   **格雷巴赫范式 (Greibach Normal Form, GNF)**：
+    *   规则形式为 $A \to a\alpha$（$a$ 是终结符，$\alpha$ 是变元串）。
+    *   性质：非常适合用于构造对应的下推自动机。
+
+### 4.3 推导、解析树与二义性
+
+*   **解析树 (Parse Tree)**：可以表示一个 CFG 的推导。
+
+    *   根节点是 $S$，叶节点是终结符或 $\varepsilon$，内部节点是变元；反过来说，终结符或 $\varepsilon$ 只能出现在叶节点，变元只能出现在内部节点。
+
+    *   直观展示了字符串的语法结构。
+
+对于同一个 CFG 和同一个串，我们或许有许许多多推导的过程。考虑两个推导
+
+$$
+D = x_1 \Rightarrow x_2 \Rightarrow x_3 \Rightarrow ... \Rightarrow x_n, x_i \in V^*, x_1 \in V - \Sigma, x_n \in \Sigma^*
+$$
+
+$$
+D' = x'_1 \Rightarrow x'_2 \Rightarrow x'_3 \Rightarrow ... \Rightarrow x'_n, x'_i \in V^*, x'_1 \in V - \Sigma, x'_n \in \Sigma^*
+$$
+
+$D$ **先于 (preceds/precede)** $D'$ ($D \prec D'$) $\Leftrightarrow \exists~1 \le k \le n$，使得：
+
+-   对于所有的 $i \ne k$，$x_i = x'_i$
+-   $x_{k-1} = x'_{k-1} = uAvBw$，其中 $u,v,w \in V^*$，$A,B \in V-\Sigma$
+-   $x_k = uyvBw，x'_k = uAvzw$，其中 $A \to y \in R, B \to z \in R$
+-   $x_{k+1} = x'_{k+1} = uyvzw$
+
+$D$ 和 $D'$ 相似 (similar) $\Leftrightarrow (D, D')$ 在 $\prec$ 的自反、对称、传递闭包上。
+
+!!! Warning "辨析"
+
+    但我们不能武断地说，只要 $x_1 = x'_1, x_n = x'_n$，两个推导就一定是相似的。有可能它们存在两处或以上的不同（不妨加一个中间者来验证这一点）。
+
+我们规定两种**推导类型**：
+
+*   **最左推导 (Leftmost Derivation)**：每一步都替换最左边的非终结符。
+
+*   **最右推导 (Rightmost Derivation)**：每一步都替换最右边的非终结符。
+
+不难发现，
+
+-   对于给定的一棵解析树，
+    
+    采用（左子树优先的）前序遍历展开非终结符，可以得到最左推导；
+    
+    采用右子树优先的前序遍展开非终结符，可以得到最右推导。
+
+-   对于给定的最左或最右推导，
+
+    我们也可以唯一确定一棵解析树（上面的方式反过来）。
+
+可以看出，解析树和最左/最右推导之间是一对一映射。（一棵解析树对应唯一的最左推导和唯一的最右推导。）
+
+*   **二义性 (Ambiguity)**：
+
+    *   **定义**：如果一个字符串 $w$ 在给定文法下存在**两棵不同的解析树**（或两个不同的最左推导），则称该**文法**是二义的。
+
+    *   **例子**：算术表达式 $E \to E + E \mid E * E \mid id$ 对字符串 `id + id * id` 有两种解析树（先加还是先乘）。
+
+    *   **固有二义性 (Inherent Ambiguity)**：有些语言本身就是二义的，无论怎么设计文法，都无法消除二义性（例如 $\{a^n b^n c^m d^m\} \cup \{a^n b^m c^m d^n\}$）。
+
+### 4.4.1 下推自动机 (Pushdown Automata, PDA)
+
+#### 基本定义
+*   **核心思想**：PDA = 有限自动机 (FA) + **栈 (Stack)**。栈提供了无限的“后进先出”存储（写）能力，使其能处理嵌套结构。
+*   **形式化定义 (6元组)**：$M = (K, \Sigma, \Gamma, \Delta, s, F)$。
+    *   $K$：状态集。
+    *   $\Sigma$：输入字母表。
+    *   $\Gamma$：**栈字母表** (Stack Alphabet)。（比自动机多的东西！）
+    *   $s$：初始状态。
+    *   $F$：接受状态集。
+    *   $\Delta$：转移关系 (非确定性)。每个 Component 形式为 $((p, u, \beta), (q, \gamma)) \in \Delta$。
+        *   含义：在状态 $p$，读入输入 $u$ (可以是 $\varepsilon$。课件上把这个描述成“磁带头”，读入的输入非空就往前挪，读入空串就不动)，弹出栈顶 $\beta$，转移到状态 $q$，压入 $\gamma$。
+        *   在画图的时候，$((p, u, \beta), (q, \gamma))$ 常表示成：
+            ![PDA-1](images/CT/PDA-1.png){ width="200" style="display: block; margin: 0 auto;"}
+
+!!! Warning "需要特别注意的是，即使符号可能相同，栈字母表和输入字母表是完全独立的两个表。PDA 不是从输入拿字符到栈上的；PDA 用栈来辅助自己判断下一步应该怎么办。"
+
+??? Example "符号晦涩难懂？来看个例子！"
+
+    ![PDA-2](images/CT/PDA-2.png){ width="300" style="display: block; margin: 0 auto;"}
+
+    根据图示，我们可以知道 $M$ 的转移关系有五个 Components：
+
+    -   $((q_0, a, e), (q_0, a)) \to$ 读到了输入 $a$，将栈字母表中的符号 $a$ 压栈；
+    -   $((q_0, b, e), (q_0, b)) \to$ 读到了输入 $b$，将栈字母表中的符号 $b$ 压栈；
+    -   $((q_0, c, e), (q_1, e)) \to$ 读到了 $c$，进入接受态；
+    -   $((q_1, a, a), (q_1, e)) \to$ 如果栈顶为 $a$，又读到输入 $a$，则将栈字母表中的符号 $a$ 弹出；
+    -   $((q_1, b, b), (q_1, e)) \to$ 如果栈顶为 $b$，又读到输入 $b$，则将栈字母表中的符号 $b$ 弹出。
+
+    这个自动机对应的语言 $L(M) = \{wcw^R : w \in \{ a,b \}^* \}$
+
+#### 运行机制与接受条件
+*   **格局 (Configuration)**：$(q, w, \alpha)$ 表示当前状态 $q$，剩余输入 $w$，栈内容 $\alpha$。
+*   **接受方式**：
+    1.  **终态接受 (Acceptance by Final State)**：输入读完且停在 $F$ 中（课件采用此定义）。
+    2.  **空栈接受 (Acceptance by Empty Stack)**：输入读完且栈变空。
+    
+    这两种接受方式在非确定性 PDA 下是等价的，可以互相转化。
+
+### 4.4.2 确定性下推自动机 (DPDA)
+*   **定义**：对于任意格局，至多只有一种可能的动作（无 $\varepsilon$ 转移冲突）。
+*   **局限性**：
+    *   **DPDA < NPDA**：**与有限自动机不同**，确定性 PDA 的能力**弱于**非确定性 PDA。
+    *   **DCFL (Deterministic CFL)**：被 DPDA 接受的语言。
+    *   例如：回文 $\{ww^R\}$ 是 CFL 但不是 DCFL（因为机器不知道中间点在哪，必须猜，只能用 NPDA）。
+    *   DCFL 在补运算下封闭，而一般 CFL 不封闭。
+
+### 4.5 等价性定理
+
+#### CFG to PDA (构造法)
+*   **思路**：PDA 模拟 CFG 的最左推导。
+*   **构造**：
+    *   栈中初始放入 $S$。
+    *   若栈顶是变元 $A$，非确定性地选择规则 $A \to w$，将 $A$ 弹出并压入 $w$（展开）。
+    *   若栈顶是终结符 $a$，则匹配输入带上的 $a$（匹配）。
+
+#### PDA to CFG (构造法)
+*   **思路**：文法中的变元需要表示 PDA "从状态 $p$ 到状态 $q$ 且清空了期间压入的栈" 的过程。
+*   **简单 PDA (Simple PDA)**：课件中介绍的一种中间形式，限制每一步动作要么 pop 1个，要么 push 0-2 个符号。
+*   **变元构造**：非终结符形如 $\langle p, X, q \rangle$，表示从状态 $p$ 开始，栈顶是 $X$，经过一系列计算最终到达状态 $q$ 并把这个 $X$ 弹出的过程。
+
+### 4.6 泵引理 (Pumping Lemma for CFL) —— 用于证明不是CFL
+*   **定理**：若 $L$ 是 CFL，存在长度 $p$，对任意 $s \in L$ 且 $|s| \ge p$，可分解为 $s = uvxyz$，满足：
+    1.  $|vxy| \le p$ (泵出的部分长度有限)
+    2.  $|vy| > 0$ (至少有一部分是非空的)
+    3.  $\forall i \ge 0, uv^ixy^iz \in L$
+*   **直观解释**：解析树非常高时，必然有一条长路径，路径上会出现重复的非终结符（鸽巢原理）。这个重复的非终结符 $A$ 导致了可以被重复生成的结构（$A \Rightarrow^* vAy$）。
+*   **博弈论应用**：与正则语言类似，通过与“对手”博弈来寻找矛盾。
+*   **典型非 CFL 例子**：
+    *   $L = \{a^n b^n c^n \mid n \ge 0\}$（因为 CFL 只有两个“泵”位置 $v, y$，无法同时照顾到 $a, b, c$ 三个部分）。
+    *   $L = \{ww \mid w \in \{0,1\}^*\}$（复制语言）。
+    *   $L = \{a^p \mid p \text{ is prime}\}$（单字母表语言，若它是 CFL 则必是正则，但素数语言不是正则）。
+
+### 封闭性
+*   **封闭的运算**：
+    *   **并 (Union)**: $S \to S_1 \mid S_2$。
+    *   **连接 (Concatenation)**: $S \to S_1 S_2$。
+    *   **Kleene 星号 (Star)**: $S \to S S_1 \mid \epsilon$。
+    *   **逆转 (Reversal)**。
+*   **不封闭的运算**：
+    *   **交 (Intersection)**：$L_1 \cap L_2$ 不一定是 CFL。
+        *   例：$\{a^n b^n c^*\} \cap \{a^* b^n c^n\} = \{a^n b^n c^n\}$ (非 CFL)。
+    *   **补 (Complementation)**：如果 CFL 对补封闭，由德摩根律可知它对交也封闭，导出矛盾。
+*   **特殊情况**：
+    *   CFL $\cap$ 正则语言 = CFL (课件中证明了这一点，通过构造 PDA 与 DFA 的“积自动机”实现)。
+
+### 4.7 判定性问题
+*   **成员性**：给定 $w$，问 $w \in L(G)$？
+    *   **CYK 算法**：基于动态规划，时间复杂度 $O(n^3)$。需要先将文法转为 CNF。
+*   **空性**：$L(G) = \emptyset$？
+    *   可判定。检查起始符 $S$ 是否能推导出终结符串（标记法）。
+*   **有限性**：$L(G)$ 是有限集吗？
+    *   可判定。检查生成的依赖图中是否存在环。
+*   **等价性无法判定！**：
+    *   判断两个 CFG 是否等价 ($L(G_1) = L(G_2)$?) 是**不可判定**的；
+    *   判断 CFG 是否有二义性是**不可判定**的。
+
+---
+
+??? Note "总结：正则语言 vs 上下文无关语言"
+
+    | 特性 | 正则语言 (Regular) | 上下文无关语言 (CFL) |
+    | :---: | :---: | :---: |
+    | **生成器** | 正则表达式 | 上下文无关文法 (CFG) |
+    | **识别器** | 有限自动机 (DFA/NFA) | 下推自动机 (PDA) |
+    | **核心限制** | 有限内存 | 无限栈内存 (后进先出) |
+    | **典型例子** | $\{a^n \mid n \ge 0\}$ (Parity) | $\{a^n b^n \mid n \ge 0\}$ (Matching) |
+    | **泵引理** | $w = xyz$ | $w = uvxyz$ |
+    | **封闭性** | 并, 交, 补, 连接, 星号 | 并, 连接, 星号 (**交, 补不封闭**) |
+    | **等价性判定** | 可判定 | **不可判定** |
 
