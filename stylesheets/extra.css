@@ -9,16 +9,37 @@
   --md-code-font: "JetBrains Mono";
 }
 
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color:        #00296a; /* 页眉背景 */
+  --md-primary-fg-color--dark:  #000732; /* 深色变体 */
+  --md-primary-fg-color--light: #2c4c83; /* 浅色变体 */
+  --md-accent-fg-color:         #0097a7;
+  --md-typeset-a-color:         #006064; 
+} 
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color:        #00122e; 
+  --md-primary-fg-color--dark:  #000000;
+
+  /* 2. 背景色 - 覆盖 Slate 默认的灰色，改为深蓝灰 */
+  --md-default-bg-color:        #0d1117; /* GitHub Dark 风格 */
+
+  --md-accent-fg-color:         #4dd0e1; 
+  
+  /* 4. 代码块背景 - 让代码块稍微有点颜色区分 */
+  --md-code-bg-color:           #161b22;
+}
+
 .md-typeset h1, .md-typeset h2 {
   font-weight: 680;
 }
 
 .md-typeset h3 {
-  font-weight: 640;
+  font-weight: 650;
 }
 
 .md-typeset h4 {
-  font-weight: 600;
+  font-weight: 620;
 }
 
 .md-typeset h1, .md-typeset h2, .md-typeset h3, .md-typeset h4 {
