@@ -26,6 +26,7 @@ nav:
 
 theme:
     name: material
+    # favicon: assets/logo/
     language: 'zh'
     features:
       - toc.follow
@@ -39,29 +40,29 @@ theme:
       - navigation.top
     font: false
     palette:
-        - media: "(prefers-color-scheme)"
-          scheme: default
-          primary: indigo
-          accent: indigo
-          toggle:
-            icon: material/brightness-auto
-            name: 切换至日间模式
+      - media: "(prefers-color-scheme)"
+        scheme: default
+        primary: indigo
+        accent: indigo
+        toggle:
+          icon: material/brightness-auto
+          name: 切换至日间模式
 
-        - media: "(prefers-color-scheme: light)"
-          scheme: default
-          primary: indigo
-          accent: indigo
-          toggle:
-            icon: material/brightness-7
-            name: 切换至夜间模式
+      - media: "(prefers-color-scheme: light)"
+        scheme: default
+        primary: indigo
+        accent: indigo
+        toggle:
+          icon: material/brightness-7
+          name: 切换至夜间模式
 
-        - media: "(prefers-color-scheme: dark)"
-          scheme: slate
-          primary: indigo
-          accent: indigo
-          toggle:
-            icon: material/brightness-4
-            name: 切换至跟随系统
+      - media: "(prefers-color-scheme: dark)"
+        scheme: slate
+        primary: indigo
+        accent: indigo
+        toggle:
+          icon: material/brightness-4
+          name: 切换至跟随系统
     icon: 
       logo: material/notebook-outline
 
@@ -93,10 +94,6 @@ markdown_extensions:
       pygments_lang_class: true
   - pymdownx.superfences:
       # make exceptions to highlighting of code:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.emoji:
