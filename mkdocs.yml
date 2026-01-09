@@ -3,7 +3,7 @@ repo_name: Undtree/Notes
 repo_url: https://github.com/Undtree/Notes/
 
 nav:
-  - Home: index.md
+  - 主页: index.md
 
   # - 数学:
   #   - 数值分析: NA.md
