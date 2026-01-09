@@ -97,3 +97,21 @@ body,
 [data-md-color-scheme="slate"] {
     transition: background-color 0.5s ease, color 0.5s ease;
 }
+
+/* changelog 自定义 */
+
+.timeline-card {
+    color: #ffffff; 
+}
+
+.timeline-card a,
+.timeline-card .changelog-content a {
+    color: #ffffff;
+    opacity: 0.85;
+}
+
+.timeline-card a:hover,
+.timeline-card .changelog-content a:hover {
+    color: var(--md-accent-fg-color);
+    opacity: 1;
+}
