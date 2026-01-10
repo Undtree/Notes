@@ -9,9 +9,9 @@ nav:
   #   - 数值分析: NA.md
   # - 外语:
   #   - 日语(日本語): JPN.md
-  - 计算机科学:
-    - 计算机网络: Network.md
-    - 操作系统: OS.md
+  - 计算机科学相关:
+    # - 计算机网络: Network.md
+    # - 操作系统: OS.md
     # - 计算机体系结构: CA.md
     - 数据库系统: DBS.md
     - 计算理论: CT.md
@@ -39,6 +39,7 @@ theme:
       - navigation.indexes
       - navigation.top
     font: false
+    custom_dir: overrides
     palette:
       - media: "(prefers-color-scheme)"
         scheme: default

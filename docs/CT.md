@@ -1071,7 +1071,7 @@ $$
     
     它是一个公理/假设，而非数学定理，但目前所有已知的计算模型（如 $\lambda$ 演算、递归函数）都被证明与图灵机等价，所以，它被广泛接受。
 
-![All_over](images/CT/UTM-1.png)
+![All_over](images/CT/UTM-1.png){ width="400" style="display: block; margin: 0 auto;" }
 
 !!! Question "这和接下来要了解的内容有什么关系？"
     -   CTT 的存在明确了不可判定性 (Undecidability) 的绝对性。因为 CTT，我们可以说，如果一个问题图灵机无法解决，那么任何算法和任何未来的计算机在逻辑上都无法解决。
@@ -1196,7 +1196,7 @@ UTM 是现代计算机“存储程序”思想的起源。
 
 一个非常强大的工具，用于批量证明不可判定性。
 
-*   **内容**：对于图灵机所识别的语言的任何**非平凡 (Non-trivial)** 属性 $P$，语言 $L_P = \{ \langle M \rangle \mid L(M) \text{ satisfies } P \}$ 都是不可判定的。
+*   **内容**：对于图灵机所识别的语言的任何**非平凡 (Non-trivial)** 属性 $P$，语言 $L_P = \{ \langle M \rangle \mid L(M) \text{ satisfies } P \}$ 都是不可判定的。直观上说，这个定理是在说，对于任何程序行为的非平凡性质，不存在算法能判断任意程序是否具有该性质。
 *   **解释**：
     *   **语义属性**：这是关于语言 $L(M)$ 的属性，而不是机器 $M$ 本身的语法属性（比如“$M$ 有5个状态”是可判定的，但“$M$ 接受空串”是关于语言的，不可判定）。
     *   **非平凡**：至少有一个 R.E. 语言满足 $P$，且至少有一个 R.E. 语言不满足 $P$（至少适用于一种，但不适用于所有）；如果一个语言拥有这个性质，那么所有与之等价的语言也必须拥有这个性质。
@@ -1246,3 +1246,20 @@ UTM 是现代计算机“存储程序”思想的起源。
     *   **语言视角**：递归语言、R.E. 语言。
     *   **函数视角**：$\mu$-递归函数。
     *   **逻辑视角**：莱斯定理（语义性质不可判定）。
+
+<script src="https://giscus.app/client.js"
+        data-repo="Undtree/Notes"
+        data-repo-id="R_kgDOMeUFpA"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOMeUFpM4C0y5E"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
