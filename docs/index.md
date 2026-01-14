@@ -1,6 +1,6 @@
 ---
 home: true
-comment: True
+comment: false
 changelog: True
 nostatistics: True
 hide:
