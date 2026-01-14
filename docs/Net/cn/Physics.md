@@ -40,7 +40,7 @@ $$
 
     这里我们讨论的其实是对比特流进行编码（在课本中这部分也称为调制）；在通带传输中我们讨论真正的调制，即将数据转换为连续的模拟信号。
 
-![baseband_transmission](/docs/images/Network/baseband.png){ width="580" style="display: block; margin: 0 auto;"}
+![baseband_transmission](images/Network/baseband.png){ width="580" style="display: block; margin: 0 auto;"}
 
 - **NRZ**
     
