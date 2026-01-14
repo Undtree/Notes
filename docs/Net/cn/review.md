@@ -46,22 +46,106 @@
     -   数字调制 (Modulation) 与复用 (Multiplexing)
     -   公共交换电话网络，PSTN
 
-*   **数据速率计算**：
-    *   **比特率 = 码元速率 (波特率) $\times$ 每个码元携带的比特数**。调制方法决定了 bits per symbol
-    *   **奈奎斯特定理 (无噪声)**：最大波特率 $B = 2H$，数据速率 $B = 2H \log_2 V$ (H为带宽，V为离散电平数)。
-    *   **香农定理 (有噪声)**：最大数据速率 $B = H \log_2 (1 + S/N)$。
-    *   **信噪比 (SNR)**：用分贝表示，$dB = 10 \log_{10} S/N$。
-*   **传输介质**：有线（双绞线、同轴电缆、电力线、光纤）和无线（无线电、微波、红外、光波）。
+### 数据通信的理论基础
+
+#### 1. 码元速率 vs 数据速率 (Symbol rate vs. Data rate) *(Slide 18)*
+*   **码元速率 (Symbol Rate / Baud Rate):** 信号每秒变化的次数（波特率）。
+*   **数据速率 (Data Rate / Bit Rate):** 每秒传输的比特数 (bps)。
+*   **关系公式:** $\text{Data Rate} = \text{Symbol Rate} \times \text{Bits per Symbol}$
+*   例如，
+    *   QAM/多电平: 如果使用8个离散电压电平，1个码元可以代表 $\log_2 8 = 3$ 个比特。此时 Data Rate = 3 * Symbol Rate。
+    *   曼彻斯特编码 (Manchester): 使用电压跳变（高变低或低变高）来表示1或0。需要2个码元（半个周期高，半个周期低）来表示1个比特。此时 Data Rate = 1/2 * Symbol Rate。
+
+#### 2. 奈奎斯特定理 (Nyquist Theorem)
+*   **适用场景:** 理想的、**无噪声** 信道。
+*   **公式:**
+    *   最大数据速率 $B = 2H \log_2 V$ (bits/sec)，H为带宽，V为离散电平数。
+    *   最大码元速率 $S = 2H$
+
+#### 3. 香农定理 (Shannon Theorem)
+*   **适用场景:** 带有**随机噪声（高斯白噪声是最普遍的噪声模型）** 的信道。
+*   **公式:** 最大数据速率 $B = H \log_2 (1 + S/N)$ (bits/sec)
+*   **信噪比 (SNR):** 公式中的 $S/N$ 是比值，但通常题目给出的是分贝 (dB)。
+    *   换算公式: $\text{dB} = 10 \log_{10} (S/N)$
+    *   例子: 20dB 意味着 $S/N = 100$；30dB 意味着 $S/N = 1000$。**计算时一定要先将dB换算成比值代入公式。**
+
+### 传输介质
+
+*   **有线传输 (Guided):**
+    *   磁介质、双绞线 (Twisted pair)、同轴电缆 (Coaxial cable)、电力线、**光纤 (Fiber optics)**。
+*   **无线传输 (Wireless):**
+    *   无线电 (Radio)、微波 (Microwave)、红外与毫米波、光波传输。
     
     ![freq-of-waves](/Notes/images/Network/freq.png){ width="600" style="display: block; margin: 0 auto;" }
 
-*   **数字调制与复用**：
-    *   **基带传输**：编码方式包括 NRZ、NRZI、曼彻斯特编码（Ex 2: 两个码元代表1比特，效率50%）、AMI。
-    *   **通带传输**：调幅、调频、调相。星座图包括 QPSK、QAM-16、QAM-64。
-    *   **复用技术**：FDM (频分)、TDM (时分)、WDM (波分)、CDM (码分)。
-        *   **CDM (码分复用)**：每个站分配一个唯一的、互相正交的码片序列。发送 1 为原码，发送 0 为反码。
-*   **PSTN**
-    *   三个主要部分：Local loops (客户 -> 交换所) / trunks (交换所间的长距离链接) / switching offices
+### 数字调制与复用 (Digital Modulation and Multiplexing)
+
+#### 1. 传输方式
+*   **基带传输:**
+    *   信号占用从0到最大值的频率。
+    *   **编码方式 (Slide 24):**
+        *   **NRZ (不归零):** 高电平1，低电平0。
+        *   **NRZI (倒不归零):** 遇到1翻转，遇到0保持。
+        *   **Manchester (曼彻斯特):** 每一位中间都有跳变。1是高到低，0是低到高（或反之）。用于时钟同步。
+        *   **AMI (双极性):** 0不跳变，1交替为正负电压。
+*   **通带传输:**
+    *   信号占用载波频率周围的一段频带。
+    *   **调制方式:** 调节振幅、频率、相位。
+    *   **星座图 (Constellation diagrams, Slide 26):**
+        *   **QPSK:** 4个点，每个点2 bit。
+        *   **QAM-16:** 16个点，每个点4 bit。
+        *   **QAM-64:** 64个点，每个点6 bit。
+        *   点越多，传输速率越高，但抗干扰能力越差。
+
+#### 2. 复用技术 (Multiplexing)
+
+*   **FDM (频分复用):** 分割频率。
+*   **TDM (时分复用):** 分割时间片。
+*   **WDM (波分复用):** 在光纤上使用不同波长的光（本质是高频FDM）。
+*   **CDM (码分复用 / CDMA):**
+    *   **原理:** 每个站点被分配唯一的**码片序列 (Chip sequence)**。
+    *   **正交性 (Orthogonal):** 任意两个不同站点的码片序列向量的点积为0 ($S \cdot T = 0$)，自己的点积为1 ($S \cdot S = 1$)。
+    *   **发送:** 发送1发码片序列 $S$，发送0发反码片序列 $\bar{S}$ (即 $-S$)。
+    *   **接收 (Recovery):** 将接收到的叠加信号与目标站点的码片序列做**内积**。
+        *   结果为 +1: 发送了比特 1。
+        *   结果为 -1: 发送了比特 0。
+        *   结果为 0: 该站点未发送数据。
+
+!!! Example "例子"
+    ![CDM-Eg](/Notes/images/Network/CDM-Eg.png){ width="600" style="display: block; margin: 0 auto;" }
+
+### 公用交换电话网络 (PSTN)
+
+PSTN 包含三个部分：本地回路 (Local loops)、干线 (Trunks)、交换局 (Switching offices)。
+
+#### 1. 本地回路 (Local loop)
+*   连接用户到交换局。
+*   **技术演进:** 拨号调制解调器 (Modem) -> **xDSL (数字用户线)**。
+*   **ADSL (非对称 DSL):**
+    *   带宽非对称（下载 > 上传）。
+    *   **原理:** 使用 **离散多音频调制 (Discrete Multitone Modulation)**。将带宽分割成许多个4kHz的子信道（Slide 30图示），本质上是FDM。
+
+#### 2. 干线 (Trunks)
+*   连接交换局之间，使用复用技术 (FDM 或 TDM)。
+*   **T1 Carrier (T1载波):**
+    *   使用 **TDM** (时分复用)。
+    *   **容量:** 复用 **24** 个语音信道。
+    *   **帧结构:** 
+        *   每个信道采样 8 bit (7 data + 1 control)。
+        *   一帧 = 24 * 8 + 1 (framing bit) = **193 bits**。
+        *   采样率 8000次/秒。
+    *   **总速率:** $193 \text{ bits} \times 8000/\text{sec} \approx \textbf{1.544 Mbps}$。
+
+#### 3. 交换技术对比 (Switching)
+*   **电路交换 (Circuit-switched):** (如传统电话)
+    *   需要建立连接 (Call setup)。
+    *   物理路径独占，带宽固定。
+    *   资源浪费 (Wasted bandwidth) 如果不传输数据。
+*   **分组交换 (Packet-switched):** (如Internet)
+    *   不需要建立连接。
+    *   没有独占路径，带宽动态分配。
+    *   存在排队延迟，可能发生拥塞。
+
 ---
 
 ## 第三章：数据链路层
@@ -99,21 +183,6 @@
 ---
 
 ## 第五章：网络层
-*   **服务类型**：无连接服务 (数据报) vs 面向连接服务 (虚电路)。
-*   **路由算法**：
-    *   **距离矢量路由 (DV)**：Bellman-Ford 算法，存在“无穷大计数”问题。
-    *   **链路状态路由 (LS)**：OSPF 协议基础，使用 Dijkstra 算法计算最短路径。
-    *   **分层路由**：通过区域划分减少路由表规模。
-    *   **其他**：广播 (逆向路径转发)、组播 (剪枝生成树)、Anycast (选播)。
-*   **互联网协议 (IPv4)**：
-    *   **首部**：版本、IHL、总长度、标识/标志/偏移 (用于分片)、TTL、协议、校验和、源/目地址。
-    *   **CIDR (无分类域间路由)**：最长前缀匹配。
-    *   **NAT (网络地址转换)**：私有地址转换，缓解 IP 枯竭，涉及 NAT 穿透问题。
-*   **IPv6**：128位地址，简化首部，取消校验和，支持扩展首部。
-*   **辅助协议**：ICMP (控制报文)、ARP (IP 转 MAC)、DHCP (动态获取 IP)。
-*   **路由协议**：RIP (内部, DV)、OSPF (内部, LS)、BGP (外部, 策略路由)。
-*   **SDN (软件定义网络)**：数据平面（局部转发）与控制平面（全局逻辑）分离。
-
 ### 网络层设计
 
 网络层向传输层提供两种类型的服务：
@@ -149,6 +218,8 @@
     5.  使用 Dijkstra 算法计算到每个节点的最短路径。
   
     **对比 DV：** LS 收敛快，更健壮，但通过广播交换信息，消息量较大。
+
+![Comp-LS-DV](/Notes/images/Network/Comp-LS-DV.png){ width="600" style="display: block; margin: 0 auto;" }
 
 *   **分层路由 (Hierarchical Routing):**
     *   **目的：** 解决网络规模过大导致路由表过于庞大的问题。
@@ -232,13 +303,13 @@
 *   **扩展头部 (Extension Headers):** 选项信息放在扩展头中，由 `Next Header` 字段指示。
 
 #### 5. 互联网控制协议
-*   **ICMP (Internet Control Message Protocol):** *(Slide 117)*
+*   **ICMP (Internet Control Message Protocol):**
     *   用于报告错误和网络探测。
     *   常见类型：Destination Unreachable（不可达）、Time Exceeded（TTL耗尽，Traceroute利用此原理）、Echo Request/Reply（Ping）。
-*   **ARP (Address Resolution Protocol):** *(Slide 118)*
+*   **ARP (Address Resolution Protocol):**
     *   作用：已知 IP 地址，解析对应的 MAC 地址。
     *   工作在局域网内。
-*   **DHCP (Dynamic Host Configuration Protocol):** *(Slide 119)*
+*   **DHCP (Dynamic Host Configuration Protocol):**
     *   作用：动态分配IP地址、网关、DNS等配置。
     *   前身是 RARP 和 BOOTP。
 
