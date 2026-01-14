@@ -3,3 +3,6 @@
     - "newpage":
         text: 新增页面“计算理论”
         href: CT/
+    - "changelog":
+        text: 重构了“计算机网络”
+        href: Net/cn/
