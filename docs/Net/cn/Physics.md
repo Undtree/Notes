@@ -1,18 +1,6 @@
-# 计算机网络
+# 物理层
 
-!!! Abstract "课程信息"
-
-    授课教师：董玮
-
-    参考教材：Computer Networks (by Tanenbaum, Feamster and Wetherall, 6th edition)
-
-!!! Success "另外..."
-
-    请支持 [咸鱼暄的代码空间](https://xuan-insr.github.io/)
-
-## 物理层
-
-### 数据传输相关
+## 数据传输相关
 
 **data rate / bit rate**：单位时间内传输的信息中 bit 的数目，即 (数据量/时间)。
 
@@ -38,11 +26,11 @@ $$
 
 对于给出 $V$ 的情况，无论是否说明无噪声都应使用 Nyquist's theorem 确定 data rate 的一个上界；对于给出 SNR 的情况，也应根据 Shannon's theorem 确定另一个上界。
 
-### 数字调制
+## 数字调制
 
 数据与代表它们的信号之间的**转换过程**称为数字调制 (digital modulation)。
 
-#### 1. 基带传输 Baseband Transmission
+### 1. 基带传输 Baseband Transmission
 
 直接将数据转换为数字信号，数字信号是离散的。占用传输介质上的全部频率，用于有线介质（需要注意，光纤不是基带传输）。
 
@@ -85,4 +73,3 @@ $$
         In NRZ, the data rate = signal rate, so the signal rate is $B$ bps. So, the minimum bandwidth need to achieve $B$ bits/sec data rate is $B/2$ Hz.
         
         In Manchester encoding, the data rate = 1/2 $\times$ signal rate, so the signal rate is $2B$ bps. So, the minimum bandwidth need to achieve $B$ bits/sec data rate is $B$ Hz.
-

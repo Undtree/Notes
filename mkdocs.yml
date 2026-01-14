@@ -20,6 +20,11 @@ nav:
 
     # - 面向对象程序设计(in C++): OOP.md
     # - 编译原理: 编译原理.md
+  - 网络相关:
+    - Net/index.md
+    - 计算机网络:
+      - Net/Network/index.md
+
   - 安全:
     - 密码学: Crypto.md
     # - 软件安全: SwSec.md
