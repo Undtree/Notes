@@ -53,7 +53,7 @@
     *   **信噪比 (SNR)**：用分贝表示，$dB = 10 \log_{10} S/N$。
 *   **传输介质**：有线（双绞线、同轴电缆、电力线、光纤）和无线（无线电、微波、红外、光波）。
     
-    ![freq-of-waves](images/Network/freq.png){ width="600" style="display: block; margin: 0 auto;" }
+    ![freq-of-waves](/images/Network/freq.png){ width="600" style="display: block; margin: 0 auto;" }
 
 *   **数字调制与复用**：
     *   **基带传输**：编码方式包括 NRZ、NRZI、曼彻斯特编码（Ex 2: 两个码元代表1比特，效率50%）、AMI。
@@ -74,7 +74,7 @@
 *   **流量控制 (滑动窗口)**：
     *   **停止-等待协议**：利用率 $U = 1 / (2\alpha + 1)$，其中 $\alpha = T_{prop} / T_{frame}$。
 
-    ![stop-and-wait](images/Network/stop-and-wait.png)
+    ![stop-and-wait](/images/Network/stop-and-wait.png)
 
     *   **滑动窗口协议**：GBN (回退N帧)、SR (选择重传)。窗口大小需满足：$发送窗口 + 接收窗口 \le 2^n$。
 *   **PPP 协议**：点对点协议。包含 LCP (链路控制) 和 NCP (网络控制)。
