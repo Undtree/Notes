@@ -1836,19 +1836,25 @@
 <hr />
 <h2 id="_6">第三章：数据链路层<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <h3 id="_7">数据链路层的服务<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<p>数据链路层向网络层提供三种类型的服务：
-1.  <strong>无确认无连接服务 (Unacknowledged connectionless):</strong> 发送方直接发，不需建立连接，接收方也不回复 ACK （如以太网）。
-2.  <strong>有确认无连接服务 (Acknowledged connectionless):</strong> 不需建立连接，但每帧都需要确认（如 Wifi ）。
-3.  <strong>有确认面向连接服务 (Acknowledged connection-oriented):</strong> 建立连接，每帧确认，编号保证顺序。</p>
+<p>数据链路层向网络层提供三种类型的服务：</p>
+<ol>
+<li><strong>无确认无连接服务 (Unacknowledged connectionless):</strong> 发送方直接发，不需建立连接，接收方也不回复 ACK （如以太网）。</li>
+<li><strong>有确认无连接服务 (Acknowledged connectionless):</strong> 不需建立连接，但每帧都需要确认（如 Wifi ）。</li>
+<li><strong>有确认面向连接服务 (Acknowledged connection-oriented):</strong> 建立连接，每帧确认，编号保证顺序。</li>
+</ol>
 <hr />
 <h3 id="_8">成帧<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
-<p>如何将比特流划分成“帧”？课件列出了四种方法：
-1.  <strong>字节计数法 (Byte count):</strong> 头部带一个长度字段。缺点：如果长度字段出错，后续同步会完全丢失。
-2.  <strong>字节填充法 (Byte stuffing):</strong> 使用特定的 FLAG 字节作为帧的开始和结束。如果数据中出现了 FLAG ，则使用转义字符（ ESC ）进行填充。
-3.  <strong>比特填充法 (Bit stuffing):</strong>
-    *   使用 <code>01111110</code> 作为边界标志。
-    *   <strong>规则：</strong> 发送方只要检测到数据中有<strong>连续 5 个 1</strong>，立即在后面插入一个<strong>0</strong>。接收方做逆操作。
-4.  <strong>物理层编码违例法:</strong> 使用物理层中非法的信号电平（如曼彻斯特编码中没有跳变的信号）来界定帧。</p>
+<p>如何将比特流划分成“帧”？课件列出了四种方法：</p>
+<ol>
+<li><strong>字节计数法 (Byte count):</strong> 头部带一个长度字段。缺点：如果长度字段出错，后续同步会完全丢失。</li>
+<li><strong>字节填充法 (Byte stuffing):</strong> 使用特定的 FLAG 字节作为帧的开始和结束。如果数据中出现了 FLAG ，则使用转义字符（ ESC ）进行填充。</li>
+<li><strong>比特填充法 (Bit stuffing):</strong><ul>
+<li>使用 <code>01111110</code> 作为边界标志。</li>
+<li><strong>规则：</strong> 发送方只要检测到数据中有<strong>连续 5 个 1</strong>，立即在后面插入一个<strong>0</strong>。接收方做逆操作。</li>
+</ul>
+</li>
+<li><strong>物理层编码违例法:</strong> 使用物理层中非法的信号电平（如曼彻斯特编码中没有跳变的信号）来界定帧。</li>
+</ol>
 <h3 id="_9">差错控制<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <h4 id="1-hamming-distance">1. 海明距离 (Hamming Distance)<a class="headerlink" href="#1-hamming-distance" title="Permanent link">&para;</a></h4>
 <p>这是理论核心。
