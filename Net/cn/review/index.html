@@ -1618,11 +1618,11 @@
 
 <h1 id="_1">期末复习<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 8464 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 13 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 28 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 8465 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 13 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 28 分钟</p>
 </div>
 <blockquote>
-<p><del>孩子们，这门课真的不能速通...</del>
-本页内容由 Gemini 3 Pro 生成后再人工修改，不免存在疏漏，恳请读者朋友们斧正。</p>
+<p><del>孩子们，这门课真的不能速通...</del></p>
+<p>本页内容由 Gemini 3 Pro 生成后再人工修改，不免存在疏漏，恳请读者朋友们斧正。</p>
 </blockquote>
 <hr />
 <h2 id="_2">第一章：引言<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
@@ -1857,14 +1857,22 @@
 </ol>
 <h3 id="_9">差错控制<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <h4 id="1-hamming-distance">1. 海明距离 (Hamming Distance)<a class="headerlink" href="#1-hamming-distance" title="Permanent link">&para;</a></h4>
-<p>这是理论核心。
-*   <strong>定义：</strong> 两个码字之间不同比特的个数。<strong>海明距离</strong>是指整个编码集中任意两个有效码字之间距离的最小值。
-*   <strong>纠错与检错能力（重点公式）：</strong>
-    *   <strong>检测 d 个错误 (Detect d errors):</strong> 需要海明距离 <strong><span class="arithmatex">\(D \ge d + 1\)</span></strong>。
-        *   <em>解释：</em> d 个错误无法将一个有效码字变成另一个有效码字。
-    *   <strong>纠正 d 个错误 (Correct d errors):</strong> 需要海明距离 <strong><span class="arithmatex">\(D \ge 2d + 1\)</span></strong>。
-        *   <em>解释：</em> 即使发生 d 个错误，错误的码字离原本的码字依然比离其他任何有效码字都近。
-    *   <em>例子:</em> 要纠正 2 个错误，需要海明距离为 5 的编码。如果只有距离 3 ，无法纠正 2 个错误。</p>
+<p>这是理论核心。</p>
+<ul>
+<li><strong>定义：</strong> 两个码字之间不同比特的个数。<strong>海明距离</strong>是指整个编码集中任意两个有效码字之间距离的最小值。</li>
+<li><strong>纠错与检错能力（重点公式）：</strong><ul>
+<li><strong>检测 d 个错误 (Detect d errors):</strong> 需要海明距离 <strong><span class="arithmatex">\(D \ge d + 1\)</span></strong>。<ul>
+<li><em>解释：</em> d 个错误无法将一个有效码字变成另一个有效码字。</li>
+</ul>
+</li>
+<li><strong>纠正 d 个错误 (Correct d errors):</strong> 需要海明距离 <strong><span class="arithmatex">\(D \ge 2d + 1\)</span></strong>。<ul>
+<li><em>解释：</em> 即使发生 d 个错误，错误的码字离原本的码字依然比离其他任何有效码字都近。</li>
+</ul>
+</li>
+<li><em>例子:</em> 要纠正 2 个错误，需要海明距离为 5 的编码。如果只有距离 3 ，无法纠正 2 个错误。</li>
+</ul>
+</li>
+</ul>
 <h4 id="2_1">2. 检错码<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li><strong>校验和 (Checksum):</strong><ul>
@@ -1886,7 +1894,7 @@
 </ul>
 <div class="admonition example">
 <p class="admonition-title">CRC 计算示例</p>
-<p><img alt="CRC" src="/Notes/images/Network/CRC.png" style="display: block; margin: 0 auto;" width="600" /></p>
+<p><img alt="CRC" src="/Notes/images/Network/CRC.png" style="display: block; margin: 0 auto;" width="500" /></p>
 </div>
 </li>
 </ul>
@@ -2112,13 +2120,19 @@
 </ul>
 <p><img alt="ALOHA" src="/Notes/images/Network/ALOHA.png" style="display: block; margin: 0 auto;" width="600" /></p>
 <h4 id="2-csma">2. CSMA 协议 (载波侦听多路访问)<a class="headerlink" href="#2-csma" title="Permanent link">&para;</a></h4>
-<p>为了避免 ALOHA 那样盲目发送导致的冲突，引入了“先听后说”机制。
-*   <strong>1-坚持 CSMA (1-persistent):</strong> 侦听到信道忙，就持续监听；一变空闲，<strong>立即 (概率=1)</strong> 发送。
-    *   缺点：如果有两个人在等，一空闲两人同时发，必冲突。
-*   <strong>非坚持 CSMA (Non-persistent):</strong> 侦听到信道忙，就不听了，等待一个<strong>随机时间</strong>后再来侦听。
-    *   优点：减少了冲突。
-    *   缺点：增加了延迟（信道空闲时可能没人发）。
-*   <strong>p-坚持 CSMA (p-persistent):</strong> 侦听到信道空闲，以概率 <span class="arithmatex">\(p\)</span> 发送，以概率 <span class="arithmatex">\(1-p\)</span> 推迟。适用于分槽信道。</p>
+<p>为了避免 ALOHA 那样盲目发送导致的冲突，引入了“先听后说”机制。</p>
+<ul>
+<li><strong>1-坚持 CSMA (1-persistent):</strong> 侦听到信道忙，就持续监听；一变空闲，<strong>立即 (概率=1)</strong> 发送。<ul>
+<li>缺点：如果有两个人在等，一空闲两人同时发，必冲突。</li>
+</ul>
+</li>
+<li><strong>非坚持 CSMA (Non-persistent):</strong> 侦听到信道忙，就不听了，等待一个<strong>随机时间</strong>后再来侦听。<ul>
+<li>优点：减少了冲突。</li>
+<li>缺点：增加了延迟（信道空闲时可能没人发）。</li>
+</ul>
+</li>
+<li><strong>p-坚持 CSMA (p-persistent):</strong> 侦听到信道空闲，以概率 <span class="arithmatex">\(p\)</span> 发送，以概率 <span class="arithmatex">\(1-p\)</span> 推迟。适用于分槽信道。</li>
+</ul>
 <h4 id="3-csmacd-csma-">3. CSMA/CD (带冲突检测的 CSMA) - 以太网的基础<a class="headerlink" href="#3-csmacd-csma-" title="Permanent link">&para;</a></h4>
 <ul>
 <li><strong>机制：</strong> “边听边说”。<ol>
@@ -2230,10 +2244,12 @@
 <li><strong>NAV (网络分配向量):</strong> 其他站点听到 RTS 或 CTS 中的时长信息后，设置一个虚拟计时器（ NAV ），在此期间不尝试发送。</li>
 </ul>
 <h4 id="3-ifs">3. 帧间间隔 (IFS)<a class="headerlink" href="#3-ifs" title="Permanent link">&para;</a></h4>
-<p>802.11 定义了不同优先级的等待时间：
-*   <strong>SIFS (Short IFS):</strong> 最短。用于 ACK、CTS 等控制帧。优先级最高。
-*   <strong>PIFS (PCF IFS):</strong> 中等。用于无竞争服务（轮询）。
-*   <strong>DIFS (DCF IFS):</strong> 最长。用于普通数据传输竞争。</p>
+<p>802.11 定义了不同优先级的等待时间：</p>
+<ul>
+<li><strong>SIFS (Short IFS):</strong> 最短。用于 ACK、CTS 等控制帧。优先级最高。</li>
+<li><strong>PIFS (PCF IFS):</strong> 中等。用于无竞争服务（轮询）。</li>
+<li><strong>DIFS (DCF IFS):</strong> 最长。用于普通数据传输竞争。</li>
+</ul>
 <h3 id="_14">数据链路层交换<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
 <h4 id="1-bridges">1. 网桥 (Bridges)<a class="headerlink" href="#1-bridges" title="Permanent link">&para;</a></h4>
 <ul>
@@ -2252,7 +2268,7 @@
 <li><strong>过程：</strong><ol>
 <li>选一个 <strong>根网桥 (Root Bridge)</strong>（ ID 最小的）。</li>
 <li>每个网桥计算到根的最短路径。</li>
-<li>关闭（ Block ）那些不在最短路径树上的端口。</li>
+<li>关闭那些不在最短路径树上的端口。</li>
 </ol>
 </li>
 </ul>
@@ -2467,15 +2483,17 @@
 <hr />
 <h2 id="_18">第六章：传输层<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h2>
 <h3 id="berkeley-sockets">传输层服务接口： Berkeley Sockets<a class="headerlink" href="#berkeley-sockets" title="Permanent link">&para;</a></h3>
-<p>这是应用程序与网络协议栈交互的门户，提供了 8 个核心<strong>原语 (Primitives)</strong>：
-*   <strong>SOCKET</strong>：创建一个新的通信端点。
-*   <strong>BIND</strong>：将一个本地地址（ IP+端口）与 socket 关联。
-*   <strong>LISTEN</strong>：通告愿意接受连接，并设置等待队列的大小。
-*   <strong>ACCEPT</strong>：被动接受一个进入的连接请求。
-*   <strong>CONNECT</strong>：主动尝试建立一个连接（三次握手发起方）。
-*   <strong>SEND</strong>：通过连接发送数据。
-*   <strong>RECEIVE</strong>：从连接接收数据。
-*   <strong>CLOSE</strong>：释放连接。</p>
+<p>这是应用程序与网络协议栈交互的门户，提供了 8 个核心<strong>原语 (Primitives)</strong>：</p>
+<ul>
+<li><strong>SOCKET</strong>：创建一个新的通信端点。</li>
+<li><strong>BIND</strong>：将一个本地地址（ IP+端口）与 socket 关联。</li>
+<li><strong>LISTEN</strong>：通告愿意接受连接，并设置等待队列的大小。</li>
+<li><strong>ACCEPT</strong>：被动接受一个进入的连接请求。</li>
+<li><strong>CONNECT</strong>：主动尝试建立一个连接（三次握手发起方）。</li>
+<li><strong>SEND</strong>：通过连接发送数据。</li>
+<li><strong>RECEIVE</strong>：从连接接收数据。</li>
+<li><strong>CLOSE</strong>：释放连接。</li>
+</ul>
 <h3 id="_19">传输协议要素<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
 <p>这一部分对比了<strong>传输层</strong>与<strong>数据链路层</strong>的异同点。</p>
 <ul>
@@ -2535,9 +2553,9 @@
 <h3 id="tcp_1">TCP 连接管理<a class="headerlink" href="#tcp_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>建立连接（三次握手）</strong>：<ol>
-<li>Host 1 <span class="arithmatex">\(\rightarrow\)</span> Host 2: <code>SYN (SEQ=x)</code></li>
-<li>Host 1 <span class="arithmatex">\(\leftarrow\)</span> Host 1: <code>SYN (SEQ=y), ACK=x+1</code></li>
-<li>Host 1 <span class="arithmatex">\(\rightarrow\)</span> Host 2: <code>SEQ=x+1, ACK=y+1</code></li>
+<li>Host 1 <span class="arithmatex">\(\rightarrow\)</span> Host 2: <code>SYN (seq=x)</code></li>
+<li>Host 1 <span class="arithmatex">\(\leftarrow\)</span> Host 2: <code>SYN (seq=y), ACK (ack=x+1)</code></li>
+<li>Host 1 <span class="arithmatex">\(\rightarrow\)</span> Host 2: <code>seq=x+1, ACK (ack=y+1)</code></li>
 </ol>
 </li>
 <li><strong>连接释放（四次挥手）</strong>：<ul>
@@ -2607,9 +2625,11 @@
 </div>
 <h3 id="tcp_2">TCP 拥塞控制<a class="headerlink" href="#tcp_2" title="Permanent link">&para;</a></h3>
 <p>TCP Tahoe 和 TCP Reno 是 TCP 拥塞控制的两个经典版本。它们的核心区别在于如何处理丢包。</p>
-<p>为了控制发送速率， TCP 维护两个核心变量：
-1.  <strong><code>cwnd</code> (Congestion Window)</strong>：拥塞窗口，决定了发送方一次能发多少数据。
-2.  <strong><code>Threshold</code> (ssthresh)</strong>：慢启动阈值，是“慢启动”阶段和“拥塞避免”阶段的分界线。</p>
+<p>为了控制发送速率， TCP 维护两个核心变量：</p>
+<ol>
+<li><strong><code>cwnd</code> (Congestion Window)</strong>：拥塞窗口，决定了发送方一次能发多少数据。</li>
+<li><strong><code>Threshold</code> (ssthresh)</strong>：慢启动阈值，是“慢启动”阶段和“拥塞避免”阶段的分界线。</li>
+</ol>
 <p>发送速率大约等于：<span class="arithmatex">\(\text{Rate} \approx \frac{\text{cwnd}}{\text{RTT}}\)</span></p>
 <h4 id="_20">两个共同的基础阶段<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h4>
 <p>无论是 Tahoe 还是 Reno ，在网络正常（没丢包）的时候，行为是一样的：</p>
@@ -2638,10 +2658,12 @@
 </li>
 </ul>
 <h4 id="_21">丢包处理<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h4>
-<p>丢包有两种表现形式：
-1.  <strong>超时 (Timeout)</strong>：发送方等了很久都没收到确认，计时器响了（情况严重，说明网络可能断了或极其拥堵）。
-2.  <strong>3 个冗余 ACK (3 Duplicate ACKs)</strong>：发送方连续收到 3 个对同一个包的确认（说明虽然有包丢了，但后续的包接收方收到了，网络还能通，情况没那么严重）。</p>
-<ul>
+<p>丢包有两种表现形式：</p>
+<ol>
+<li><strong>超时 (Timeout)</strong>：发送方等了很久都没收到确认，计时器响了（情况严重，说明网络可能断了或极其拥堵）。</li>
+<li>
+<p><strong>3 个冗余 ACK (3 Duplicate ACKs)</strong>：发送方连续收到 3 个对同一个包的确认（说明虽然有包丢了，但后续的包接收方收到了，网络还能通，情况没那么严重）。</p>
+</li>
 <li>
 <p>TCP Tahoe</p>
 <p>Tahoe 的策略非常激进，被称为<strong>“Hard Reset”</strong>。无论发生什么类型的丢包（超时 还是 3 个冗余 ACK ），它都一视同仁：</p>
@@ -2682,7 +2704,7 @@
 </li>
 </ul>
 </li>
-</ul>
+</ol>
 <div class="admonition example">
 <p class="admonition-title">对比</p>
 <p><img alt="Reno-Tahoe" src="/Notes/images/Network/Reno-Tahoe.png" style="display: block; margin: 0 auto;" width="600" /></p>
