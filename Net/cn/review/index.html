@@ -1976,15 +1976,19 @@
 </tbody>
 </table>
 <ul>
-<li><em>例如</em>，对于 SR 协议，如果序列号是 3 bit (0-7)，发送窗口最大只能是 4 ，否则接收方无法区分是重传的旧帧还是新的帧。</li>
+<li><em>但请注意</em>，对于 SR 协议我们一般默认<strong>发送窗口等于接收窗口</strong>。也即 SR 协议下，如果序列号是 3 bit (0-7)，发送窗口最大只能是 4 ，否则接收方无法区分是重传的旧帧还是新的帧。</li>
 </ul>
 <h3 id="ppp">数据链路层协议实例： PPP<a class="headerlink" href="#ppp" title="Permanent link">&para;</a></h3>
-<p>PPP 是广域网中常用的点对点协议（如 ADSL, SONET ）。
-*   <strong>特点：</strong> 面向字节，用于路由器之间或主机到 ISP。
-*   <strong>三个组成部分：</strong>
-    1.  <strong>成帧 (Framing):</strong> 定义帧的边界，支持检错。
-    2.  <strong>LCP (Link Control Protocol):</strong> 用于建立、测试和拆除数据链路连接（身份验证等）。
-    3.  <strong>NCP (Network Control Protocol):</strong> 协商网络层参数（例如，为每一方分配 IP 地址）。不同的网络层协议需要不同的 NCP。</p>
+<p>PPP 是广域网中常用的点对点协议（如 ADSL, SONET ）。</p>
+<ul>
+<li><strong>特点：</strong> 面向字节，用于路由器之间或主机到 ISP。</li>
+<li><strong>三个组成部分：</strong><ol>
+<li><strong>成帧 (Framing):</strong> 定义帧的边界，支持检错。</li>
+<li><strong>LCP (Link Control Protocol):</strong> 用于建立、测试和拆除数据链路连接（身份验证等）。</li>
+<li><strong>NCP (Network Control Protocol):</strong> 协商网络层参数（例如，为每一方分配 IP 地址）。不同的网络层协议需要不同的 NCP。</li>
+</ol>
+</li>
+</ul>
 <hr />
 <h2 id="_11">第四章：介质访问控制子层<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
 <p><strong>MAC 层 (Medium Access Control Layer)</strong> 是数据链路层的一个子层（下层）。</p>
