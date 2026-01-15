@@ -154,6 +154,7 @@ PSTN 包含三个部分：本地回路 (Local loops)、干线 (Trunks)、交换�
 ### 数据链路层的服务
 
 数据链路层向网络层提供三种类型的服务：
+
 1.  **无确认无连接服务 (Unacknowledged connectionless):** 发送方直接发，不需建立连接，接收方也不回复ACK（如以太网）。
 2.  **有确认无连接服务 (Acknowledged connectionless):** 不需建立连接，但每帧都需要确认（如Wifi）。
 3.  **有确认面向连接服务 (Acknowledged connection-oriented):** 建立连接，每帧确认，编号保证顺序。
@@ -163,6 +164,7 @@ PSTN 包含三个部分：本地回路 (Local loops)、干线 (Trunks)、交换�
 ### 成帧
 
 如何将比特流划分成“帧”？课件列出了四种方法：
+
 1.  **字节计数法 (Byte count):** 头部带一个长度字段。缺点：如果长度字段出错，后续同步会完全丢失。
 2.  **字节填充法 (Byte stuffing):** 使用特定的 FLAG 字节作为帧的开始和结束。如果数据中出现了 FLAG，则使用转义字符（ESC）进行填充。
 3.  **比特填充法 (Bit stuffing):**
