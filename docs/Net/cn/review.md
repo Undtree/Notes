@@ -1,6 +1,7 @@
 # 期末复习
 
 > ~~孩子们，这门课真的不能速通...~~
+> 
 > 本页内容由 Gemini 3 Pro 生成后再人工修改，不免存在疏漏，恳请读者朋友们斧正。
 
 ---
@@ -176,6 +177,7 @@ PSTN 包含三个部分：本地回路 (Local loops)、干线 (Trunks)、交换�
 
 #### 1. 海明距离 (Hamming Distance)
 这是理论核心。
+
 *   **定义：** 两个码字之间不同比特的个数。**海明距离**是指整个编码集中任意两个有效码字之间距离的最小值。
 *   **纠错与检错能力（重点公式）：**
     *   **检测 d 个错误 (Detect d errors):** 需要海明距离 **$D \ge d + 1$**。
@@ -198,7 +200,7 @@ PSTN 包含三个部分：本地回路 (Local loops)、干线 (Trunks)、交换�
     
     !!! Example "CRC 计算示例"
     
-        ![CRC](/Notes/images/Network/CRC.png){ width="600" style="display: block; margin: 0 auto;" }
+        ![CRC](/Notes/images/Network/CRC.png){ width="500" style="display: block; margin: 0 auto;" }
 
 ### 流量控制
 
@@ -359,6 +361,7 @@ MAC 层是**动作的执行者**，MAC 地址是**动作的操作对象**。
 
 #### 2. CSMA 协议 (载波侦听多路访问)
 为了避免ALOHA那样盲目发送导致的冲突，引入了“先听后说”机制。
+
 *   **1-坚持 CSMA (1-persistent):** 侦听到信道忙，就持续监听；一变空闲，**立即 (概率=1)** 发送。
     *   缺点：如果有两个人在等，一空闲两人同时发，必冲突。
 *   **非坚持 CSMA (Non-persistent):** 侦听到信道忙，就不听了，等待一个**随机时间**后再来侦听。
@@ -453,6 +456,7 @@ MAC 层是**动作的执行者**，MAC 地址是**动作的操作对象**。
 
 #### 3. 帧间间隔 (IFS)
 802.11 定义了不同优先级的等待时间：
+
 *   **SIFS (Short IFS):** 最短。用于ACK、CTS等控制帧。优先级最高。
 *   **PIFS (PCF IFS):** 中等。用于无竞争服务（轮询）。
 *   **DIFS (DCF IFS):** 最长。用于普通数据传输竞争。
@@ -472,7 +476,7 @@ MAC 层是**动作的执行者**，MAC 地址是**动作的操作对象**。
 *   **过程：**
     1.  选一个 **根网桥 (Root Bridge)**（ID最小的）。
     2.  每个网桥计算到根的最短路径。
-    3.  关闭（Block）那些不在最短路径树上的端口。
+    3.  关闭那些不在最短路径树上的端口。
 
 #### 3. 虚拟局域网 (VLAN)
 *   **概念：** 将局域网的物理连接和逻辑分组解耦。
@@ -637,6 +641,7 @@ MAC 层是**动作的执行者**，MAC 地址是**动作的操作对象**。
 ## 第六章：传输层
 ### 传输层服务接口：Berkeley Sockets
 这是应用程序与网络协议栈交互的门户，提供了 8 个核心**原语 (Primitives)**：
+
 *   **SOCKET**：创建一个新的通信端点。
 *   **BIND**：将一个本地地址（IP+端口）与 socket 关联。
 *   **LISTEN**：通告愿意接受连接，并设置等待队列的大小。
@@ -696,9 +701,9 @@ MAC 层是**动作的执行者**，MAC 地址是**动作的操作对象**。
 
 ### TCP 连接管理
 *   **建立连接（三次握手）**：
-    1.  Host 1 $\rightarrow$ Host 2: `SYN (SEQ=x)`
-    2.  Host 1 $\leftarrow$ Host 1: `SYN (SEQ=y), ACK=x+1`
-    3.  Host 1 $\rightarrow$ Host 2: `SEQ=x+1, ACK=y+1`
+    1.  Host 1 $\rightarrow$ Host 2: `SYN (seq=x)`
+    2.  Host 1 $\leftarrow$ Host 2: `SYN (seq=y), ACK (ack=x+1)`
+    3.  Host 1 $\rightarrow$ Host 2: `seq=x+1, ACK (ack=y+1)`
 *   **连接释放（四次挥手）**：
     *   涉及 `FIN` 和 `ACK` 的交互。一方发 FIN 表示数据发完了，进入半关闭状态，直到另一方也发 FIN。
 *   **状态转换**：包括 `LISTEN`, `SYN_SENT`, `ESTABLISHED`, `FIN_WAIT_1`, `TIME_WAIT`（等待 2MSL 以确保包死掉）等。
@@ -772,6 +777,7 @@ MAC 层是**动作的执行者**，MAC 地址是**动作的操作对象**。
 TCP Tahoe 和 TCP Reno 是 TCP 拥塞控制的两个经典版本。它们的核心区别在于如何处理丢包。
 
 为了控制发送速率，TCP 维护两个核心变量：
+
 1.  **`cwnd` (Congestion Window)**：拥塞窗口，决定了发送方一次能发多少数据。
 2.  **`Threshold` (ssthresh)**：慢启动阈值，是“慢启动”阶段和“拥塞避免”阶段的分界线。
 
@@ -795,6 +801,7 @@ TCP Tahoe 和 TCP Reno 是 TCP 拥塞控制的两个经典版本。它们的核�
 #### 丢包处理
 
 丢包有两种表现形式：
+
 1.  **超时 (Timeout)**：发送方等了很久都没收到确认，计时器响了（情况严重，说明网络可能断了或极其拥堵）。
 2.  **3 个冗余 ACK (3 Duplicate ACKs)**：发送方连续收到 3 个对同一个包的确认（说明虽然有包丢了，但后续的包接收方收到了，网络还能通，情况没那么严重）。
 
