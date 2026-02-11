@@ -29,6 +29,9 @@ nav:
     - 密码学: Crypto.md
     # - 软件安全: SwSec.md
 
+  - 数理内容:
+    - 大学物理: Phy.md
+
 theme:
     name: material
     # favicon: assets/logo/
