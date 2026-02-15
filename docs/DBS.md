@@ -11,7 +11,7 @@
 
 !!! Success "特别鸣谢🙇‍"
 
-    - Github上 [@yile-liu] (https://github.com/yile-liu/ZJU_database_system)老师的数据库系统笔记。
+    - Github上 [@yile-liu](https://github.com/yile-liu/ZJU_database_system) 老师的数据库系统笔记。
 
     - Chritch老师的博客 [数据库系统篇](https://obsidian.zerokei.top/Hub/Database%20System/)
 
@@ -79,7 +79,7 @@ $$
 | 集合交 | $r \cap s$ | 取同时出现在两个关系中的元组，可转化为 $r - (r - s)$ |
 | 自然连接 | $r \bowtie s$ | 取两个关系公共属性中具有**相同属性值**的元组进行拼接 |
 | $\theta$ 连接 | $r \bowtie_{\theta} s$ | 返回满足关系式 |
-| 除 | $r \div s $ | $r \div s = \Pi_{R-S}(r) - \Pi_{R-S}\big( (\Pi_{R-S}(r) \times s - r \big)$，找出与“除数”关系中所有元组都有联系(能连接)的元组。$R-S$ 代表 \( r \) 和 \( s \) 的属性集差。|
+| 除 | $r \div s$ | $r \div s = \Pi_{R-S}(r) - \Pi_{R-S}\big( (\Pi_{R-S}(r) \times s - r \big)$，找出与“除数”关系中所有元组都有联系(能连接)的元组。$R-S$ 代表 \( r \) 和 \( s \) 的属性集差。|
 | 赋值 | $r \leftarrow E$ | 将右边的计算结果赋值给左边的表 |
 | <br>聚集 | <br>$_{G_1, G_2, ..., G_n}~\mathcal{G}_{F_1(A_1), F_2(A_2), ..., F_n(A_n)}{r}$ | $G_i$ 是用于分组的属性 (可为空) ，$F_i$ 是聚集函数 (反映在数据库中就是`sum`/`avg`等函数) ，$A_i$ 是属性名。聚集操作对一组值执行计算并返回单个值，它对数据集合进行"纵向"计算 (跨多行计算)。假设已经指定用于分组的属性，则按指定属性将关系划分为多个组，对每个组独立应用聚合函数，每组产生一个结果元组 |
 
