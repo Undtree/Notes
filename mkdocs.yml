@@ -19,15 +19,25 @@ nav:
     #   - FDS: FDS.md
 
     # - 面向对象程序设计(in C++): OOP.md
-    # - 编译原理: 编译原理.md
+    - 编译原理: CP.md
+    - 软件工程:
+      - SE/index.md
+    - 多媒体技术: multimedia.md
+
   - 网络相关:
     - Net/index.md
     - 计算机网络:
       - Net/cn/index.md
 
   - 安全:
-    - 密码学: Crypto.md
+    # - 密码学: Crypto.md
     # - 软件安全: SwSec.md
+    # - 人工智能安全: 
+    #   - AISec/index.md
+
+  - 人工智能:
+    - 自然语言处理导论:
+      - NLP/index.md
 
   - 数理内容:
     - 大学物理: Phy.md

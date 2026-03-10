@@ -2,6 +2,7 @@
 site/
 .vscode/
 Archive/
+private/
 
 # files
 *.drawio
