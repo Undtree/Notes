@@ -29,7 +29,7 @@ nav:
     - 计算机网络:
       - Net/cn/index.md
 
-  - 安全:
+  # - 安全:
     # - 密码学: Crypto.md
     # - 软件安全: SwSec.md
     # - 人工智能安全: 
