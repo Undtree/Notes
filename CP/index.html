@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../TOC/">
+        <link rel="prev" href="../DS/">
       
       
         <link rel="next" href="../SE/">
@@ -439,6 +439,8 @@
       
         
       
+        
+      
     
     
     
@@ -512,6 +514,29 @@
   
   <span class="md-ellipsis">
     计算理论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    数据结构与算法分析
     
   </span>
   
@@ -691,7 +716,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -709,8 +734,8 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
             <span class="md-nav__icon md-icon"></span>
             软件工程
           </label>
@@ -1272,13 +1297,13 @@
 </li>
 </ol>
 <h2 id="lexical-analysis"><strong>词法分析 Lexical Analysis</strong><a class="headerlink" href="#lexical-analysis" title="Permanent link">&para;</a></h2>
-<p>我们容易理解，程序代码是以字符串的形式传给编译器的。词法分析就是将输入的字符串识别为<strong>有意义的子串</strong>。这样会带来其他的辅助任务，例如过滤注释和空格等。</p>
+<p>我们容易理解，程序代码是以字符串的形式传给编译器的。词法分析就是将输入的字符串识别为 <strong>有意义的子串</strong>。这样会带来其他的辅助任务，例如过滤注释和空格等。</p>
 <div class="admonition note">
-<p class="admonition-title">Definition: Token(词法记号，单词)</p>
-<p>可以说是一类关键字的统称。以英语举例，名词(noun)就是一类 token。</p>
+<p class="admonition-title">Definition: Token (词法记号，单词)</p>
+<p>可以说是一类关键字的统称。以英语举例，名词 (noun) 就是一类 token。</p>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Definition: Lexeme(词素)</p>
+<p class="admonition-title">Definition: Lexeme (词素)</p>
 <p>抽象地说，一个词素就是一类 token 的一个实例。</p>
 </div>
 <p>该部分内容和计算理论课程有很多重合: <a href="https://note.tonycrane.cc/cs/tcs/toc/topic1/">TonyCrane/计算理论-语言、自动机与正则表达式</a></p>
@@ -1380,15 +1405,11 @@ $$
 - 简化算法(Hopcroft算法) -->
 
 <h2 id="parse-analysis">语法分析 Parse Analysis<a class="headerlink" href="#parse-analysis" title="Permanent link">&para;</a></h2>
-<p>从词法分析器获得 token 序列后，我们需要确认该 token 序列是否可以由语言的文法生成，或者说输入是否合法。这就是语法分析器的作用。一般而言，如果语法错误则报错，如果语法正确则生成语法分析树(通常生成 AST ，抽象语法树)。</p>
+<p>从词法分析器获得 token 序列后，我们需要确认该 token 序列是否可以由语言的文法生成，或者说输入是否合法。这就是语法分析器的作用。一般而言，如果语法错误则报错，如果语法正确则生成语法分析树 (通常生成 AST ，抽象语法树)。</p>
 <p>这就需要我们</p>
 <ul>
-<li>
-<p>首先规定好合法的基本单元(token)</p>
-</li>
-<li>
-<p>还要理解一个表达式的构成，直到看到基本单元</p>
-</li>
+<li>首先规定好合法的基本单元(token)</li>
+<li>还要理解一个表达式的构成，直到看到基本单元。</li>
 </ul>
 <p>语法分析器可以自己使用<u>向下递归(recursive descent)</u>的方式手写(clang ， gcc 3.4 后的版本都是)，也可以使用语法生成器(Bison ， Yacc 等等)</p>
 <p>我们可以利用<strong>上下文无关文法</strong>来描述语法。</p>
