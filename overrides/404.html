@@ -1,0 +1,19 @@
+{% extends "main.html" %}
+
+{% block content %}
+  <section class="not-found" aria-labelledby="not-found-title">
+    <p class="not-found__code" aria-hidden="true">404</p>
+    <h1 id="not-found-title">这页笔记还没有写好</h1>
+    <p class="not-found__description">
+      页面可能尚未发布、已经移动，或者地址中有一个小小的拼写错误。
+    </p>
+    <div class="not-found__actions">
+      <a class="md-button md-button--primary" href="{{ config.site_url }}">
+        返回首页
+      </a>
+      <a class="md-button" href="{{ config.repo_url }}" target="_blank" rel="noopener">
+        前往仓库
+      </a>
+    </div>
+  </section>
+{% endblock %}

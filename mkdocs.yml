@@ -1,4 +1,5 @@
 site_name: Undertree's 小站
+site_url: https://undtree.github.io/Notes/
 repo_name: Undtree/Notes
 repo_url: https://github.com/Undtree/Notes/
 
@@ -139,3 +140,4 @@ extra_css:
 # - https://gcore.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css
   - stylesheets/extra.css
   - stylesheets/card.css
+  - stylesheets/404.css

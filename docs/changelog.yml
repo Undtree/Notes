@@ -12,9 +12,9 @@
         text: 完成计网复习页
         href: Net/cn/review/
   - "2026-03":
-    - "newpage":
-        text: 新增“软件工程”
-        href: SE/
+    # - "newpage":
+    #     text: 新增“软件工程”
+    #     href: SE/
 
     - "newpage":
         text: 新增“多媒体技术”
