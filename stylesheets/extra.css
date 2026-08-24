@@ -4,9 +4,15 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "LXGW NeoZhiSong Plus";
+  src: url(../assets/fonts/LXGWNEOZHISONGPLUS.TTF) format('truetype');
+  font-display: swap;
+}
+
 :root {
-  --md-text-font: "Google Sans Flex", "LXGW WenKai Screen"; 
-  --md-code-font: "JetBrains Mono";
+  --md-text-font: "LXGW WenKai Screen", "LXGW NeoZhiSong Plus"; 
+  --md-code-font: "Fira Code", "LXGW WenKai Mono", monospace;
 }
 
 [data-md-color-scheme="default"] {

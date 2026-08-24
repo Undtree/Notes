@@ -1,0 +1,55 @@
+/* Custom 404 page */
+
+.not-found {
+  max-width: 36rem;
+  margin: clamp(3rem, 12vh, 8rem) auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.not-found__code {
+  margin: 0;
+  color: var(--md-accent-fg-color);
+  font-size: clamp(5rem, 18vw, 9rem);
+  font-weight: 750;
+  line-height: .9;
+  letter-spacing: -.06em;
+  opacity: .18;
+}
+
+.not-found h1 {
+  margin: -1rem 0 .8rem;
+  color: var(--md-default-fg-color);
+  font-size: clamp(1.7rem, 5vw, 2.4rem);
+  line-height: 1.2;
+}
+
+.not-found__description {
+  max-width: 28rem;
+  margin: 0 auto 1.8rem;
+  color: var(--md-default-fg-color--light);
+  font-size: .9rem;
+  line-height: 1.8;
+}
+
+.not-found__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .7rem;
+  justify-content: center;
+}
+
+.not-found__actions .md-button {
+  min-width: 7.5rem;
+}
+
+@media screen and (max-width: 30rem) {
+  .not-found {
+    margin-top: 3rem;
+  }
+
+  .not-found__actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
