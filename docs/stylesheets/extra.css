@@ -11,7 +11,7 @@
 }
 
 :root {
-  --md-text-font: "LXGW NeoZhiSong Plus", "LXGW WenKai Screen"; 
+  --md-text-font: "LXGW WenKai Screen", "LXGW NeoZhiSong Plus"; 
   --md-code-font: "Fira Code", "LXGW WenKai Mono", monospace;
 }
 
