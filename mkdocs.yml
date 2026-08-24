@@ -25,9 +25,9 @@ nav:
     - 多媒体技术: multimedia.md
 
   - 网络相关:
-    - Net/index.md
+    - Web/index.md
     - 计算机网络:
-      - Net/cn/index.md
+      - Web/cn/index.md
 
   # - 安全:
     # - 密码学: Crypto.md
