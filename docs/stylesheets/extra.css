@@ -106,18 +106,82 @@ body,
 
 /* changelog 自定义 */
 
+/* 卡片：主色渐变背景 + 白字，hover 微上浮 */
 .timeline-card {
-    color: #ffffff; 
+    color: #ffffff;
+    background-image: linear-gradient(
+        135deg,
+        var(--md-primary-fg-color) 0%,
+        var(--md-primary-fg-color--light) 100%
+    );
+    border-radius: .5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .15);
+    transition: transform .2s ease, box-shadow .2s ease;
 }
 
+.timeline-card:hover {
+    transform: translateX(4px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .25);
+}
+
+/* 时间标题：加粗 + 强调 */
+.changelog-time {
+    font-weight: 700;
+    letter-spacing: .02em;
+    color: #ffffff;
+    opacity: .95;
+}
+
+/* 更新类型徽章：实色 + 白字 + 圆角，明暗模式通用 */
+.changelog-type,
+.changelog-type-function,
+.changelog-type-pageupdate,
+.changelog-type-newpage {
+    color: #ffffff;
+    border-radius: .5rem;
+    padding: 2px 8px;
+    font-weight: 600;
+}
+
+.changelog-type {
+    background-color: #3f6ec6;
+}
+
+.changelog-type-function {
+    background-color: #e6695b;
+}
+
+.changelog-type-pageupdate {
+    background-color: #0097a7;
+}
+
+.changelog-type-newpage {
+    background-color: #43a047;
+}
+
+/* 时间轴圆点：使用强调色 */
+.timeline-dot {
+    background: var(--md-accent-fg-color);
+    box-shadow: 0 0 0 5px var(--md-default-bg-color);
+}
+
+/* 卡片内链接 */
 .timeline-card a,
 .timeline-card .changelog-content a {
     color: #ffffff;
     opacity: 0.85;
+    text-decoration: none;
 }
 
 .timeline-card a:hover,
 .timeline-card .changelog-content a:hover {
     color: var(--md-accent-fg-color);
     opacity: 1;
+}
+
+/* 暗色模式：关闭渐变，改用略亮的深蓝 + 边框，避免与背景融合 */
+[data-md-color-scheme="slate"] .timeline-card {
+    background-image: none;
+    background-color: #12233f;
+    border: 1px solid rgba(255, 255, 255, .08);
 }

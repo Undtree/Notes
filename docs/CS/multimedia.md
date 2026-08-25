@@ -103,7 +103,7 @@
 
 显示元件的硬件特性或限制往往使得输出的亮度和给予的电压(信号)值不成正比，但我们期望它是成正比的。
 
-![no-gamma-correction](images/multimedia/gamma-1.png) { width="350" style="display: block; margin: 0 auto;"}
+![no-gamma-correction](../images/multimedia/gamma-1.png) { width="350" style="display: block; margin: 0 auto;"}
 
 我们希望这个误差被修正。
 

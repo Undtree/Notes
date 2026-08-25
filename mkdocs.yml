@@ -7,40 +7,45 @@ nav:
   - 主页: index.md
 
   # - 数学:
-  #   - 数值分析: NA.md
+  #   - 数值分析: 数理内容/NA.md
   # - 外语:
-  #   - 日语(日本語): JPN.md
-  - 计算机科学相关:
+  #   - 日语(日本語): Language/JPN.md
+
+  - 计算机科学:
+    - CS/index.md
     # - 计算机网络: Network.md
-    # - 操作系统: OS.md
-    # - 计算机体系结构: CA.md
-    - 数据库系统: DBS.md
-    - 计算理论: TOC.md
-    - 数据结构与算法分析: DS.md
-
-    # - 面向对象程序设计(in C++): OOP.md
-    - 编译原理: CP.md
+    # - 操作系统: CS/OS.md
+    # - 计算机体系结构: CS/CA.md
+    # - 面向对象程序设计(in C++): CS/OOP.md
+    - 数据结构与算法分析: CS/DS.md
+    - 计算理论: CS/TOC.md
+    - 编译原理: CS/CP.md
+    - 数据库系统: CS/DBS.md
     - 软件工程:
-      - SE/index.md
-    - 多媒体技术: multimedia.md
+      - CS/SE/index.md
+    - 多媒体技术: CS/multimedia.md
 
-  - 网络相关:
+  - Web 相关:
     - Web/index.md
     - 计算机网络:
       - Web/cn/index.md
 
   # - 安全:
-    # - 密码学: Crypto.md
-    # - 软件安全: SwSec.md
+    # - 密码学: Security/Crypto.md
+    # - 软件安全: Security/SwSec.md
     # - 人工智能安全: 
-    #   - AISec/index.md
+    #   - Security/AISec/index.md
 
   - 人工智能:
+    - AI/index.md
     - 自然语言处理导论:
-      - NLP/index.md
+      - AI/NLP/index.md
+    - 深度合成与电子取证:
+      - AI/深度合成与电子取证/index.md
 
   - 数理内容:
-    - 大学物理: Phy.md
+    - sciences/index.md
+    - 大学物理: sciences/Phy.md
 
 theme:
     name: material

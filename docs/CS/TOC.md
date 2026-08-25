@@ -286,7 +286,7 @@ $$
 
 我们发现，对于有些问题，如果使用自动机，我们需要费很大劲来确认这个自动机长什么样，例如，接受语言 $L=(ab \cup aba)^*$ 的自动机至少要五个状态：
 
-![NFA-1](images/CT/NFA-1.png){ width="400" style="display: block; margin: 0 auto;"}
+![NFA-1](../images/CT/NFA-1.png){ width="400" style="display: block; margin: 0 auto;"}
 
 因此，我们考虑设计简化自动机，于是我们有了 NFA。NFA 允许“猜测”路径，只要存在一条成功的路径即视为接受。
 
@@ -331,7 +331,7 @@ $$
 
     -   可以画出如下所示的图。   
 
-        ![NFA-2](images/CT/NFA-2.png){ width="300" style="display: block; margin: 0 auto;"}
+        ![NFA-2](../images/CT/NFA-2.png){ width="300" style="display: block; margin: 0 auto;"}
 
     -   考虑子集构造法：
         -   起始状态：$\{q_0\} (A)$
@@ -350,7 +350,7 @@ $$
 
         最终的 DFA**（省略了死状态！建议考试有时间还是画出来）**：
 
-        ![NFA-3-DFA](images/CT/NFA-3.png){ width="300" style="display: block; margin: 0 auto;"}
+        ![NFA-3-DFA](../images/CT/NFA-3.png){ width="300" style="display: block; margin: 0 auto;"}
 
 !!! Danger "关于死状态 (Trap State)..."
 
@@ -602,13 +602,13 @@ $D$ 和 $D'$ 相似 (similar) $\Leftrightarrow (D, D')$ 在 $\prec$ 的自反、
     *   $\Delta$：转移关系 (非确定性)。每个 Component 形式为 $((p, u, \beta), (q, \gamma)) \in \Delta$。这里 $\beta, \gamma \in \Gamma^*$
         *   含义：在状态 $p$，读入输入 $u$ (可以是 $\varepsilon$。课件上把这个描述成“磁带头”，读入的输入非空就往前挪，读入空串就不动)，弹出栈顶 $\beta$，转移到状态 $q$，压入 $\gamma$。
         *   在画图的时候，$((p, u, \beta), (q, \gamma))$ 常表示成：
-            ![PDA-1](images/CT/PDA-1.png){ width="200" style="display: block; margin: 0 auto;"}
+            ![PDA-1](../images/CT/PDA-1.png){ width="200" style="display: block; margin: 0 auto;"}
 
 !!! Warning "需要特别注意的是，即使符号可能相同，栈字母表和输入字母表是完全独立的两个表。PDA 不是从输入拿字符到栈上的；PDA 用栈来辅助自己判断下一步应该怎么办。"
 
 ??? Example "符号晦涩难懂？来看个例子！"
 
-    ![PDA-2](images/CT/PDA-2.png){ width="300" style="display: block; margin: 0 auto;"}
+    ![PDA-2](../images/CT/PDA-2.png){ width="300" style="display: block; margin: 0 auto;"}
 
     根据图示，我们可以知道 $M$ 的转移关系有五个 Components：
 
@@ -660,7 +660,7 @@ $D$ 和 $D'$ 相似 (similar) $\Leftrightarrow (D, D')$ 在 $\prec$ 的自反、
         -   $((q,b,a),(q,e))$
         -   $((q,e,c),(f,e))$
 
-        ![PDA-3](images/CT/PDA-3.png){ width="350" style="display: block; margin: 0 auto;"}
+        ![PDA-3](../images/CT/PDA-3.png){ width="350" style="display: block; margin: 0 auto;"}
 
 ### 4.4.2 确定性下推自动机 (DPDA)
 *   **定义**：对于任意格局，至多只有一种可能的动作（无 $\varepsilon$-转移冲突）。
@@ -694,9 +694,9 @@ $D$ 和 $D'$ 相似 (similar) $\Leftrightarrow (D, D')$ 在 $\prec$ 的自反、
     -   For each $f \in F$, $((f, e, Z),(f', e))$
     -   All transition of $\Delta$，但需要替换为满足条件的等价形式：
         -   替换 $|\beta| \ge 2$ 的转换；
-        ![PDA-4](images/CT/PDA-4.png){ width="300" style="display: block; margin: 0 auto;" }
+        ![PDA-4](../images/CT/PDA-4.png){ width="300" style="display: block; margin: 0 auto;" }
         -   替换 $|\gamma| > 2$ 的转换（同时避免引入 $|\beta| \ge 2$）。
-        ![PDA-5](images/CT/PDA-5.png){ width="300" style="display: block; margin: 0 auto;" }
+        ![PDA-5](../images/CT/PDA-5.png){ width="300" style="display: block; margin: 0 auto;" }
 
 *   **变元构造**：非终结符形如 $\langle p, X, q \rangle$，对应从状态 $p$ 开始，栈顶是 $X$，经过一系列计算最终到达状态 $q$ 并把这个 $X$ 弹出的过程。
 
@@ -774,7 +774,7 @@ $D$ 和 $D'$ 相似 (similar) $\Leftrightarrow (D, D')$ 在 $\prec$ 的自反、
     *   $\delta$：转移函数，$(K - H) \to K \times (\Sigma \cup \{\leftarrow, \to\})$。$\delta(q, a) = (p, b)$ 表示“当前状态 $q$ 读到 $a$，转为状态 $p$，写入 $b$”。$b \in \Sigma \cup \{\leftarrow, \to\}$，如果 $b$ 是 $\leftarrow, \to$ 则代表将读写头左移或右移。特别地，如果 $a = \triangleright$，$b$ 必然是 $\to$；$a \in \Sigma$，$b$ 必然不是 $\triangleright$。
         
         在图示中经常这样表示（$L$，左或 $R$，右）：
-        ![TM-1](images/CT/TM-1.png){ width="200" style="display: block; margin: 0 auto;" }
+        ![TM-1](../images/CT/TM-1.png){ width="200" style="display: block; margin: 0 auto;" }
 
 #### 基础图灵机与图灵机表示法
 从上面的定义，我们可以定义两种基础的图灵机（在 $M = (\{s,h\}, \Sigma, \delta, s, \{h\})$ 定义下）：
@@ -864,7 +864,7 @@ $$
 
     能够将 $\underline{\sqcup} w \sqcup$ 变为 $\sqcup w \sqcup w \underline{\sqcup}$，$w$ 不含 $\sqcup$（不然机器不知道哪个该拷贝哪个不该拷贝）。长这样：
 
-    ![TM-2](images/CT/TM-2.png){ width="300" style="display: block; margin: 0 auto;" }
+    ![TM-2](../images/CT/TM-2.png){ width="300" style="display: block; margin: 0 auto;" }
 
 ### 5.4 图灵机的变体与等价性
 
@@ -931,7 +931,7 @@ $$
 
         模拟的过程可以这样表示：
 
-        ![TM-3](images/CT/TM-3.png){ width="400" style="display: block; margin: 0 auto;" }
+        ![TM-3](../images/CT/TM-3.png){ width="400" style="display: block; margin: 0 auto;" }
 
         其中，
 
@@ -1071,7 +1071,7 @@ $$
     
     它是一个公理/假设，而非数学定理，但目前所有已知的计算模型（如 $\lambda$ 演算、递归函数）都被证明与图灵机等价，所以，它被广泛接受。
 
-![All_over](images/CT/UTM-1.png){ width="400" style="display: block; margin: 0 auto;" }
+![All_over](../images/CT/UTM-1.png){ width="400" style="display: block; margin: 0 auto;" }
 
 !!! Question "这和接下来要了解的内容有什么关系？"
     -   CTT 的存在明确了不可判定性 (Undecidability) 的绝对性。因为 CTT，我们可以说，如果一个问题图灵机无法解决，那么任何算法和任何未来的计算机在逻辑上都无法解决。
@@ -1160,11 +1160,11 @@ UTM 是现代计算机“存储程序”思想的起源。
 *   **定理**
     *   如果 $A \le_m B$ 且 $A$ 不可判定，则 $B$ 也不可判定（如果 $B$ 能解，$A$ 也能解，矛盾）。反过来讲，如果 $A \le_m B$ 且 $B$ 可判定，则 $A$ 也可判定（逆否）。
 
-    ![UD-1](images/CT/UD-1.png)
+    ![UD-1](../images/CT/UD-1.png)
 
     *   如果 $A \le_m B$ 且 $A$ 不是 R.E.，则 $B$ 也不是 R.E.。反过来讲，如果 $A \le_m B$ 且 $B$ 是 R.E.，则 $A$ 也是 R.E.。
 
-    ![UD-2](images/CT/UD-2.png)
+    ![UD-2](../images/CT/UD-2.png)
 
 *   **常见归约路径**：
     *   $H$ (停机问题) $\le_m$ $E_{TM}$ (空带停机问题)

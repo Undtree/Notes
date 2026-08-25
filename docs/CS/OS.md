@@ -100,7 +100,7 @@ Interrupt 可以分为两种：硬件中断/软件中断(Trap)。软件中断可
   
     * **堆 (heap)**：用于动态分配内存。
 
--   ![process](images/OS/process.png){ width="350" style="display: block; margin: 0 auto;"}
+-   ![process](../images/OS/process.png){ width="350" style="display: block; margin: 0 auto;"}
 
 </div>
 
@@ -114,7 +114,7 @@ Interrupt 可以分为两种：硬件中断/软件中断(Trap)。软件中断可
 * **ready (就绪)**：进程等待被分配到处理器；
 * **terminated (终止)**：进程已完成执行.
 
-![state_diagram](images/OS/state_diagram.png){ width="400" style="display: block; margin: 0 auto;"}
+![state_diagram](../images/OS/state_diagram.png){ width="400" style="display: block; margin: 0 auto;"}
 
 ### 3. 进程控制块 (PCB)
 
@@ -454,7 +454,7 @@ PPT详细介绍了几种主要的调度算法：
 
 !!! Example "RR 算法平均等待时间"
     
-    ![quiz2](images/OS/quiz2.png){ width="400" style="display: block; margin: 0 auto;"}
+    ![quiz2](../images/OS/quiz2.png){ width="400" style="display: block; margin: 0 auto;"}
 
     时间单位是 ms，读者可以先自行计算一下答案。请时刻关注**就绪队列**的状态。
 

@@ -142,7 +142,7 @@
     
     -   其原理是用一个 **大数组（例如结构体数组）** 模拟内存，以数组下标模拟地址。每个结构体中存储数据和下一个结构体所在的下标（也就是 freelist）。
 
-        ![cursor-space](images/DS/ch3-1.png)
+        ![cursor-space](../images/DS/ch3-1.png)
 
     -   通过对 freelist 的管理，我们可以实现 `malloc` 和 `free`：
         -   `malloc` 相当于是从 freelist 里删除了地址为 p 的节点。

@@ -78,7 +78,7 @@
 *   **无线传输 (Wireless):**
     *   无线电 (Radio)、微波 (Microwave)、红外与毫米波、光波传输。
     
-    ![freq-of-waves](/Notes/images/Network/freq.png){ width="600" style="display: block; margin: 0 auto;" }
+    ![freq-of-waves](../../images/Network/freq.png){ width="600" style="display: block; margin: 0 auto;" }
 
 ### 数字调制与复用 (Digital Modulation and Multiplexing)
 
@@ -114,7 +114,7 @@
         *   结果为 0: 该站点未发送数据。
 
 !!! Example "例子"
-    ![CDM-Eg](/Notes/images/Network/CDM-Eg.png){ width="600" style="display: block; margin: 0 auto;" }
+    ![CDM-Eg](../../images/Network/CDM-Eg.png){ width="600" style="display: block; margin: 0 auto;" }
 
 ### 公用交换电话网络 (PSTN)
 
@@ -197,7 +197,7 @@ PSTN 包含三个部分：本地回路 (Local loops)、干线 (Trunks)、交换�
     
     !!! Example "CRC 计算示例"
     
-        ![CRC](/Notes/images/Network/CRC.png){ width="500" style="display: block; margin: 0 auto;" }
+        ![CRC](../../images/Network/CRC.png){ width="500" style="display: block; margin: 0 auto;" }
 
 ### 流量控制
 
@@ -354,7 +354,7 @@ MAC 层是**动作的执行者**，MAC 地址是**动作的操作对象**。
     *   **效率：** 提高了一倍，最大吞吐量为 **36.8%** ($1/e$)。
     *   **冲突窗口：** 减小为 $t$。
 
-![ALOHA](/Notes/images/Network/ALOHA.png){ width="600" style="display: block; margin: 0 auto;" }
+![ALOHA](../../images/Network/ALOHA.png){ width="600" style="display: block; margin: 0 auto;" }
 
 #### 2. CSMA 协议 (载波侦听多路访问)
 为了避免ALOHA那样盲目发送导致的冲突，引入了“先听后说”机制。
@@ -519,7 +519,7 @@ MAC 层是**动作的执行者**，MAC 地址是**动作的操作对象**。
   
     **对比 DV：** LS 收敛快，更健壮，但通过广播交换信息，消息量较大。
 
-![Comp-LS-DV](/Notes/images/Network/Comp-LS-DV.png){ width="600" style="display: block; margin: 0 auto;" }
+![Comp-LS-DV](../../images/Network/Comp-LS-DV.png){ width="600" style="display: block; margin: 0 auto;" }
 
 *   **分层路由 (Hierarchical Routing):**
     *   **目的：** 解决网络规模过大导致路由表过于庞大的问题。
@@ -678,7 +678,7 @@ MAC 层是**动作的执行者**，MAC 地址是**动作的操作对象**。
 
 #### (2) TCP 首部字段
 
-![TCP-header](/Notes/images/Network/TCP-header.png){ width="600" style="display: block; margin: 0 auto;" }
+![TCP-header](../../images/Network/TCP-header.png){ width="600" style="display: block; margin: 0 auto;" }
 
 *   **源/目的端口**：标识端点，结合 IP 构成 48 位的唯一 Socket 标识。
 *   **序号 (Seq)** & **确认号 (Ack)**：各 32 位。
@@ -705,7 +705,7 @@ MAC 层是**动作的执行者**，MAC 地址是**动作的操作对象**。
     *   涉及 `FIN` 和 `ACK` 的交互。一方发 FIN 表示数据发完了，进入半关闭状态，直到另一方也发 FIN。
 *   **状态转换**：包括 `LISTEN`, `SYN_SENT`, `ESTABLISHED`, `FIN_WAIT_1`, `TIME_WAIT`（等待 2MSL 以确保包死掉）等。
 
-![Conn-Manage](/Notes/images/Network/Conn-Manage.png){ width="600" style="display: block; margin: 0 auto;" }
+![Conn-Manage](../../images/Network/Conn-Manage.png){ width="600" style="display: block; margin: 0 auto;" }
 
 ### TCP 计时器管理：Jacobson 算法
 这是为了动态调整**重传超时时间 (RTO)**。
@@ -830,7 +830,7 @@ TCP Tahoe 和 TCP Reno 是 TCP 拥塞控制的两个经典版本。它们的核�
             4.  **跳过慢启动，直接进入拥塞避免 (Congestion Avoidance)** 阶段（线性增长）。
 
 !!! Example "对比"
-    ![Reno-Tahoe](/Notes/images/Network/Reno-Tahoe.png){ width="600" style="display: block; margin: 0 auto;" }
+    ![Reno-Tahoe](../../images/Network/Reno-Tahoe.png){ width="600" style="display: block; margin: 0 auto;" }
 
     *   **蓝色线 (TCP Tahoe)**：
         *   当在 `cwnd=12` 处发生“3个冗余ACK”时，它直接掉到了底（`cwnd=1`），然后重新慢启动。
@@ -876,7 +876,7 @@ TCP Tahoe 和 TCP Reno 是 TCP 拥塞控制的两个经典版本。它们的核�
         -   二级域名：如 yale, google 等。
 *   **资源记录**：每个域，无论是单个主机还是顶级域，都可以有一组与其关联的资源记录。一个资源记录是五元组 `(Domain_name, Time_to_live, Class, Type, Value)` 。一些重要的资源类型：
 
-![DNS-resource](/Notes/images/Network/DNS-resource.png){ width="600" style="display: block; margin: 0 auto;" }
+![DNS-resource](../../images/Network/DNS-resource.png){ width="600" style="display: block; margin: 0 auto;" }
 
 *   **查询方式**
     *   递归查询：主机向本地服务器请求，本地服务器“包办到底”，直到拿回最终结果。
@@ -888,7 +888,7 @@ TCP Tahoe 和 TCP Reno 是 TCP 拥塞控制的两个经典版本。它们的核�
     *   发送协议 (SMTP)：用于邮件提交和邮件传输。
     *   读取协议 (POP3 / IMAP)：用于最终投递到接收者。
 
-![Email-arch](/Notes/images/Network/Email-arch.png){ width="600" style="display: block; margin: 0 auto;" }
+![Email-arch](../../images/Network/Email-arch.png){ width="600" style="display: block; margin: 0 auto;" }
 
 *   **邮件格式**
 *   RFC 5322：基本的互联网邮件格式，区分信封字段 (Envelope) 和首部字段(Header)，使用 ASCII 文本。
@@ -904,7 +904,7 @@ TCP Tahoe 和 TCP Reno 是 TCP 拥塞控制的两个经典版本。它们的核�
 *   **基础架构**
     *   URL (统一资源定位符)：格式为 协议(http) + DNS名称 + 路径名。
     
-![www-protocol](/Notes/images/Network/www-protocol.png){ width="600" style="display: block; margin: 0 auto;" }
+![www-protocol](../../images/Network/www-protocol.png){ width="600" style="display: block; margin: 0 auto;" }
 
 *   **浏览器与服务器**：
     *   浏览器处理非 HTML 类型：使用 插件 (Plug-ins) 或 辅助程序 (Helper applications)。
@@ -944,7 +944,7 @@ TCP Tahoe 和 TCP Reno 是 TCP 拥塞控制的两个经典版本。它们的核�
     *   **持久连接 (Persistent connections)**：一个 TCP 连接内可以发多个请求。
     *   **流水线**：不必等上一个响应回来就可以发下一个请求。
 
-![HTTP-1x](/Notes/images/Network/HTTP-1x.png){ width="600" style="display: block; margin: 0 auto;" }
+![HTTP-1x](../../images/Network/HTTP-1x.png){ width="600" style="display: block; margin: 0 auto;" }
 
 *   **HTTP/2**：
     *   **二进制格式**、**优先级处理**。

@@ -8,6 +8,8 @@
 
 ## 大物甲Ⅱ
 
-<iframe src="../assets/pdf/phy-A-II.pdf" width="100%" height="500px"></iframe>
+<!-- iframe 是裸 HTML，MkDocs 不会重写其 src，须按输出页 URL（sciences/Phy/）写相对路径；
+     而下方按钮是 markdown 链接，MkDocs 构建时会自动重写，保持源相对 ../assets/ 即可 -->
+<iframe src="../../assets/pdf/phy-A-II.pdf" width="100%" height="500px"></iframe>
 
 [:material-download: 下载 PDF 文档](../assets/pdf/phy-A-II.pdf){: .md-button .md-button--primary download="大学物理甲Ⅱ整理" }

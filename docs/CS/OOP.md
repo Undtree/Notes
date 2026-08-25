@@ -77,7 +77,7 @@ void move(float dx, float dy, struct *p);
 
 ### Overload Functions
 
-![6-1](images/OOP/6-1.png)
+![6-1](../images/OOP/6-1.png)
 
 构造函数重载
 

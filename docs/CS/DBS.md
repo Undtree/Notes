@@ -23,7 +23,7 @@
 
 我们来看一个例子：
 
-![relation_example](images/DB/db1.png)
+![relation_example](../images/DB/db1.png)
 
 在这个例子中，蓝底的列名被称为**attributes(属性)**，下面的每一行被称为一个**tuple(元组)**。我们给定 $A_1, A_2, …, A_n$ 是一系列attributes，那么
 
@@ -371,7 +371,7 @@ like是模糊搜索的关键字。SQL字符串查找最常用的两个记号为`
 
 需要字符串查找内容本身包含`%`或`_`时使用逃逸字符`\%`、`\_`。字符串内容匹配默认区分大小写。
 
-![like_usage](images/DB/db20.png)
+![like_usage](../images/DB/db20.png)
 
 </div>
 </div>
@@ -420,7 +420,7 @@ group by**先于select进行**，创建一个仅包含代数操作列与group by
 
 因此引申出exists只能跟where；代数操作做条件只能跟having；同样的语句在where和having之后效果不一定相同。下面是一个正确用法示例：
 
-![where_having_usage](images/DB/db21.png)
+![where_having_usage](../images/DB/db21.png)
 
 </div>
 </div>
@@ -502,7 +502,7 @@ view一般用于查找以及接口，语法和with相同，作用也基本相同
 
     - 我们一般不对view进行update。大部分SQL系统对update view有严格的限制。
 
-        ![sql_restrictions_on_view](images/DB/db22.png)
+        ![sql_restrictions_on_view](../images/DB/db22.png)
 
     - 部分SQL也支持materialize view，view此时是一张真实存在的表，这一般是为了用空间换时间。物化视图相关的表发生变化时，它自己也必须同时更新，以维持一般view的特性。
 
@@ -717,7 +717,7 @@ ER 图中关系集的表示：用菱形(diamond)表示关系集，并从这个�
 
 ### 存储层级
 
-![storage](images/DB/db2.png)
+![storage](../images/DB/db2.png)
 
 上图中的是否易失是根据掉电后数据会不会丢失区分的。
 
@@ -752,7 +752,7 @@ ER 图中关系集的表示：用菱形(diamond)表示关系集，并从这个�
 
 下图展示一个机械硬盘的结构：
 
-![disk_mechanism](images/DB/db3.png)
+![disk_mechanism](../images/DB/db3.png)
 
 1. **读写磁头 (Read-write head)**
 
@@ -876,7 +876,7 @@ ER 图中关系集的表示：用菱形(diamond)表示关系集，并从这个�
 
 - 删除后的空位用链表串联供下次插入用 (如图所示：link all free records on a free list)
 
-    ![file_deletion_1](images/DB/db4.png)
+    ![file_deletion_1](../images/DB/db4.png)
 
 - 删除后将最下面的一个数据移到删除后的空位
 
@@ -900,7 +900,7 @@ ER 图中关系集的表示：用菱形(diamond)表示关系集，并从这个�
 属性按照顺序存储。对于不定长的属性值，用定长的数据 $\mbox{(offset, length)}$ 间接表达，例如图中(21, 5)表示该属性从21号Byte开始且长度为5。
 在定长的属性值存储完后再存储不定长属性值的本体。
 
-![file_deletion_2](images/DB/db5.png)
+![file_deletion_2](../images/DB/db5.png)
 
 ### 槽式页(Slotted Page)
 
@@ -934,7 +934,7 @@ B --> C[实际记录位置]
 
 我们总需要一种方式组织单条数据和数据页，即它们如何分布在文件内部。下图是几种常见的结构：
 
-![File_Organization](images/DB/db6.png)
+![File_Organization](../images/DB/db6.png)
 
 #### 堆(Heap)文件管理
 
@@ -968,7 +968,7 @@ B --> C[实际记录位置]
 
 - 插入：需要先定位记录在何处插入。有剩余空间可以直接插入。但是如果当前block满了，只能插入到新block中(**overflow block**)。但我们又需要维持逻辑先后关系，这时就会形成下图所示的结构(为便于理解这里以定长数据为例)。
     
-    ![overflow_block](images/DB/db7.png)
+    ![overflow_block](../images/DB/db7.png)
 
 因为存在上图所示问题，在多次插入和删除之后指针系统会变得很低效，因此顺序文件系统需要适时Reorganize。
 
@@ -976,7 +976,7 @@ B --> C[实际记录位置]
 
 这种技术将多个逻辑上关联的表的记录混合存储在同一个物理文件块中，以优化关联查询性能。从实现上看，它是将频繁参与连接操作(如`JOIN`)的表记录存储在同一物理页或相邻页中。下面就是一个例子：
 
-![example_of_mul_clus](images/DB/db8.png)
+![example_of_mul_clus](../images/DB/db8.png)
 
 这可以提高查找的速度，但也意味着成倍的空间和增删改成本。
 
@@ -998,7 +998,7 @@ B --> C[实际记录位置]
 
 我们也可以利用指针连接起一些关系的记录：
 
-![pointer_mul_clus](images/DB/db9.png)
+![pointer_mul_clus](../images/DB/db9.png)
 
 #### Table Partitioning
 
@@ -1014,11 +1014,11 @@ B+树不仅可以作为索引的结构，还可以直接作为文件组织的结
 
 上面的三类文件组织都是对库中的实例而言的，但是数据库还有一些框架性的全局的信息需要储存，我们称为**Metadata**。**Data Dictionary**(亦称**system catalog**)就用来存储这些信息。
 
-![data_dic_storage](images/DB/db10.png)
+![data_dic_storage](../images/DB/db10.png)
 
 其中一种实现方式是用事先约定的固定的几个表，储存用户定义的信息。在磁盘中，这些metadata可以用下面的关系图表示：
 
-![data_dic_storage_relation](images/DB/db11.png)
+![data_dic_storage_relation](../images/DB/db11.png)
 
 ### 缓冲区/缓存
 
@@ -1040,11 +1040,11 @@ B+树不仅可以作为索引的结构，还可以直接作为文件组织的结
 
 最常用的是LRU策略(Least Recently Used Stratergy)，即根据“最近访问过的内容更有可能再次被访问”的原则管理缓存内容。需要理解下图所示buffer的变化(实际上这部分内容计组也涉及过)：
 
-![buffer_change](images/DB/db12.png)
+![buffer_change](../images/DB/db12.png)
 
 其余缓存策略：
 
-![other_buffer_rep_policy](images/DB/db13.png)
+![other_buffer_rep_policy](../images/DB/db13.png)
 
 ## 索引(Indexing)<a id="indexing"></a>
 
@@ -1052,7 +1052,7 @@ B+树不仅可以作为索引的结构，还可以直接作为文件组织的结
 
 一个**索引文件(index file)**由如下形式的记录(称为**索引条目(index entries)**)
 
-![index_form](images/DB/db14.png)
+![index_form](../images/DB/db14.png)
 
 其中，**search key(搜索键)**是所有列中被选中用来查找记录的属性(列名)。这里的指针都指向各条记录。
 
@@ -1068,7 +1068,7 @@ B+树不仅可以作为索引的结构，还可以直接作为文件组织的结
 
     索引(搜索键)的顺序与物理储存的顺序对应。
 
-    ![primary_index](images/DB/db15.png)
+    ![primary_index](../images/DB/db15.png)
 
     **Index-sequential file**: ordered sequential file with a primary index.
 
@@ -1077,17 +1077,17 @@ B+树不仅可以作为索引的结构，还可以直接作为文件组织的结
 
     物理存储不按照搜索键存储。每个索引条目指向一个指针桶，这个指针桶指向相同搜索键值的所有数据。
 
-    ![secondary_index](images/DB/db16.png)
+    ![secondary_index](../images/DB/db16.png)
 
 <u>二级索引必须是**稠密(Dense)**的</u>。一个稠密索引中，一条索引必须对应一个搜索键值，每个搜索键值都要有相应的索引对应。稠密索引对文件是否是顺序的没有要求。
 
-![secondary_dense](images/DB/db17.png)
+![secondary_dense](../images/DB/db17.png)
 
 在上图中，文件并没有按照索引的搜索键`dept_name`存储，所以这是一个二级索引，同时是一个稠密索引。
 
 与之对应的，**稀疏索引(Sparse Index)**指的是只有部分搜索键值有对应索引。
 
-![sparse_index](images/DB/db18.png)
+![sparse_index](../images/DB/db18.png)
 
 比如我们如果想找到搜索键值为K的记录：
 
@@ -1131,7 +1131,7 @@ B+树不仅可以作为索引的结构，还可以直接作为文件组织的结
 
 但是，B+树优点远胜缺点，因而被广泛应用。下面是一个B+树的例子：
 
-![example_bplus](images/DB/db19.png)
+![example_bplus](../images/DB/db19.png)
 
 #### B+树的结构
 
