@@ -5,75 +5,83 @@
          <lastmod>2026-08-25</lastmod>
     </url>
     <url>
-         <loc>https://undtree.github.io/Notes/CA/</loc>
+         <loc>https://undtree.github.io/Notes/AI/</loc>
          <lastmod>2026-08-25</lastmod>
     </url>
     <url>
-         <loc>https://undtree.github.io/Notes/CP/</loc>
+         <loc>https://undtree.github.io/Notes/AI/NLP/</loc>
          <lastmod>2026-08-25</lastmod>
     </url>
     <url>
-         <loc>https://undtree.github.io/Notes/DBS/</loc>
+         <loc>https://undtree.github.io/Notes/AI/%E6%B7%B1%E5%BA%A6%E5%90%88%E6%88%90%E4%B8%8E%E7%94%B5%E5%AD%90%E5%8F%96%E8%AF%81/</loc>
          <lastmod>2026-08-25</lastmod>
     </url>
     <url>
-         <loc>https://undtree.github.io/Notes/DS/</loc>
+         <loc>https://undtree.github.io/Notes/CS/</loc>
          <lastmod>2026-08-25</lastmod>
     </url>
     <url>
-         <loc>https://undtree.github.io/Notes/JPN/</loc>
+         <loc>https://undtree.github.io/Notes/CS/CA/</loc>
          <lastmod>2026-08-25</lastmod>
     </url>
     <url>
-         <loc>https://undtree.github.io/Notes/NA/</loc>
+         <loc>https://undtree.github.io/Notes/CS/CP/</loc>
          <lastmod>2026-08-25</lastmod>
     </url>
     <url>
-         <loc>https://undtree.github.io/Notes/OOP/</loc>
+         <loc>https://undtree.github.io/Notes/CS/DBS/</loc>
          <lastmod>2026-08-25</lastmod>
     </url>
     <url>
-         <loc>https://undtree.github.io/Notes/OS/</loc>
+         <loc>https://undtree.github.io/Notes/CS/DS/</loc>
          <lastmod>2026-08-25</lastmod>
     </url>
     <url>
-         <loc>https://undtree.github.io/Notes/Phy/</loc>
+         <loc>https://undtree.github.io/Notes/CS/OOP/</loc>
          <lastmod>2026-08-25</lastmod>
     </url>
     <url>
-         <loc>https://undtree.github.io/Notes/TOC/</loc>
+         <loc>https://undtree.github.io/Notes/CS/OS/</loc>
          <lastmod>2026-08-25</lastmod>
     </url>
     <url>
-         <loc>https://undtree.github.io/Notes/multimedia/</loc>
+         <loc>https://undtree.github.io/Notes/CS/TOC/</loc>
          <lastmod>2026-08-25</lastmod>
     </url>
     <url>
-         <loc>https://undtree.github.io/Notes/Archive/Crypto/</loc>
+         <loc>https://undtree.github.io/Notes/CS/multimedia/</loc>
          <lastmod>2026-08-25</lastmod>
     </url>
     <url>
-         <loc>https://undtree.github.io/Notes/Archive/SwSec/</loc>
+         <loc>https://undtree.github.io/Notes/CS/SE/</loc>
          <lastmod>2026-08-25</lastmod>
     </url>
     <url>
-         <loc>https://undtree.github.io/Notes/Archive/AISec/</loc>
+         <loc>https://undtree.github.io/Notes/CS/SE/ch3/</loc>
          <lastmod>2026-08-25</lastmod>
     </url>
     <url>
-         <loc>https://undtree.github.io/Notes/Archive/AISec/Intro/</loc>
+         <loc>https://undtree.github.io/Notes/CS/SE/proc/</loc>
          <lastmod>2026-08-25</lastmod>
     </url>
     <url>
-         <loc>https://undtree.github.io/Notes/SE/</loc>
+         <loc>https://undtree.github.io/Notes/Language/JPN/</loc>
          <lastmod>2026-08-25</lastmod>
     </url>
     <url>
-         <loc>https://undtree.github.io/Notes/SE/ch3/</loc>
+         <loc>https://undtree.github.io/Notes/Security/Crypto/</loc>
          <lastmod>2026-08-25</lastmod>
     </url>
     <url>
-         <loc>https://undtree.github.io/Notes/SE/proc/</loc>
+         <loc>https://undtree.github.io/Notes/Security/SwSec/</loc>
+         <lastmod>2026-08-25</lastmod>
+    </url>
+    <url>
+         <loc>https://undtree.github.io/Notes/Security/AISec/</loc>
+         <lastmod>2026-08-25</lastmod>
+    </url>
+    <url>
+         <loc>https://undtree.github.io/Notes/Security/AISec/Intro/</loc>
          <lastmod>2026-08-25</lastmod>
     </url>
     <url>
@@ -101,7 +109,15 @@
          <lastmod>2026-08-25</lastmod>
     </url>
     <url>
-         <loc>https://undtree.github.io/Notes/%E6%B7%B1%E5%BA%A6%E5%90%88%E6%88%90%E4%B8%8E%E7%94%B5%E5%AD%90%E5%8F%96%E8%AF%81/</loc>
+         <loc>https://undtree.github.io/Notes/sciences/</loc>
+         <lastmod>2026-08-25</lastmod>
+    </url>
+    <url>
+         <loc>https://undtree.github.io/Notes/sciences/NA/</loc>
+         <lastmod>2026-08-25</lastmod>
+    </url>
+    <url>
+         <loc>https://undtree.github.io/Notes/sciences/Phy/</loc>
          <lastmod>2026-08-25</lastmod>
     </url>
 </urlset>
