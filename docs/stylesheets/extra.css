@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: "Google Sans Flex";
   src:url(../assets/fonts/GOOGLESANSFLEX-REGULARBYHGGGYY.1.0.0.TTF) format('truetype');
   font-display: swap;
@@ -8,10 +8,10 @@
   font-family: "LXGW NeoZhiSong Plus";
   src: url(../assets/fonts/LXGWNEOZHISONGPLUS.TTF) format('truetype');
   font-display: swap;
-}
+} */
 
 :root {
-  --md-text-font: "LXGW WenKai Screen", "LXGW NeoZhiSong Plus"; 
+  --md-text-font: "Noto Serif Variable", "LXGW WenKai Screen", "LXGW NeoZhiSong Plus";
   --md-code-font: "Fira Code", "LXGW WenKai Mono", monospace;
 }
 
