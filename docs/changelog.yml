@@ -15,7 +15,10 @@
     # - "newpage":
     #     text: 新增“软件工程”
     #     href: CS/SE/
-
     - "newpage":
         text: 新增“多媒体技术”
         href: CS/multimedia/
+  - "2026-09":
+    - "changelog":
+        text: 重构了“数据结构”
+        href: DS/

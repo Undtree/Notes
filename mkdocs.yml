@@ -17,12 +17,11 @@ nav:
     # - 操作系统: CS/OS.md
     # - 计算机体系结构: CS/CA.md
     # - 面向对象程序设计(in C++): CS/OOP.md
-    - 数据结构与算法分析: CS/DS.md
+    - 数据结构与算法分析: CS/DS/index.md
     - 计算理论: CS/TOC.md
     - 编译原理: CS/CP.md
     - 数据库系统: CS/DBS.md
-    - 软件工程:
-      - CS/SE/index.md
+    - 软件工程: CS/SE/index.md
     - 多媒体技术: CS/multimedia.md
 
   - Web 相关:
