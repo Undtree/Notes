@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://undtree.github.io/Notes/Web/cn/Physics/">
+        <link rel="canonical" href="https://undtree.github.io/Notes/CS/DS/graph/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>物理层 - Undertree's 小站</title>
+        <title>图论 - Undertree's 小站</title>
       
     
     
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              物理层
+              图论
             
           </span>
         </div>
@@ -263,7 +263,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../CS/" class="md-tabs__link">
+        <a href="../../" class="md-tabs__link">
           
   
   
@@ -287,7 +287,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../" class="md-tabs__link">
+        <a href="../../../Web/" class="md-tabs__link">
           
   
   
@@ -463,7 +463,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../CS/" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   
@@ -509,7 +509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../CS/DS/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -537,7 +537,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../CS/TOC/" class="md-nav__link">
+      <a href="../../TOC/" class="md-nav__link">
         
   
   
@@ -565,7 +565,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../CS/CP/" class="md-nav__link">
+      <a href="../../CP/" class="md-nav__link">
         
   
   
@@ -593,7 +593,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../CS/DBS/" class="md-nav__link">
+      <a href="../../DBS/" class="md-nav__link">
         
   
   
@@ -621,7 +621,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../CS/SE/" class="md-nav__link">
+      <a href="../../SE/" class="md-nav__link">
         
   
   
@@ -649,7 +649,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../CS/multimedia/" class="md-nav__link">
+      <a href="../../multimedia/" class="md-nav__link">
         
   
   
@@ -707,7 +707,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
+            <a href="../../../Web/" class="md-nav__link ">
               
   
   
@@ -774,7 +774,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../../Web/cn/" class="md-nav__link ">
               
   
   
@@ -1169,30 +1169,141 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        数据传输相关
+        图的重要概念
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="图的重要概念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        连通、弱连通、强连通
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#maximal-connected-subgraph" class="md-nav__link">
     <span class="md-ellipsis">
       
-        数字调制
+        极大连通子图 (Maximal Connected Subgraph)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="数字调制">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minimal-connected-subgraph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        极小连通子图 (Minimal Connected Subgraph)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        图的遍历
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="图的遍历">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-baseband-transmission" class="md-nav__link">
+  <a href="#breadth-first-bfs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. 基带传输 Baseband Transmission
+        广度优先 (Breadth-First) 搜索，BFS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#depth-first-dfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        深度优先 (Depth-First) 搜索，DFS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        遍历与连通性
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        图的应用
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="图的应用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        最小生成树
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        最短路算法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        拓扑排序和网络流
       
     </span>
   </a>
@@ -1225,70 +1336,220 @@
   
 
 
-<h1 id="_1">物理层<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h1 id="_1">图论<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 1301 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 1 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 4 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 4324 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 4 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 14 分钟</p>
 </div>
-<h2 id="_2">数据传输相关<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p><strong>data rate / bit rate</strong>：单位时间内传输的信息中 bit 的数目，即 (数据量/时间)。</p>
-<p><strong>symbol rate / baud rate</strong>：单位时间内传输的 symbol 数目，即单位时间内可能发生的信号变化次数。</p>
-<div class="admonition note">
-<p class="admonition-title">奈奎斯特定理 Nyquist's theorem</p>
-<p>在理想（无噪声）低通（带宽有限）信道中，极限码元传输速率是 <span class="arithmatex">\(2 W\)</span> Baud ，其中 <span class="arithmatex">\(W\)</span> 是理想低通信道的（模拟）带宽。若用 <span class="arithmatex">\(V\)</span> 表示每个码元离散电平的数目（即其可以取的离散值的个数，也即其进制数），则<strong>极限数据率</strong>为 <span class="arithmatex">\(2 \times W \log_2 V\)</span> (b/s)。</p>
-<p>例如，一条无噪声的 8 <span class="arithmatex">\(\text{kHz}\)</span> 信道，每个信号包含 8 级，则最大传输速率为 <span class="arithmatex">\(2 \times 8\text{kHz} \times \log_2 8\)</span> bit = <span class="arithmatex">\(48\)</span> kb/s</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">香农定理 Shannon's theorem</p>
-<p>在受高斯白噪声干扰的低通信道中，用 <span class="arithmatex">\(W\)</span> 表示信道的（模拟）带宽，<span class="arithmatex">\(S\)</span> 表示信号平均功率，<span class="arithmatex">\(N\)</span> 表示高斯噪声功率，则<strong>极限数据率</strong>是 <span class="arithmatex">\(W \log_2{(1 + S/N)}\)</span> (b/s)。</p>
-</div>
-<p><strong>信噪比 Signal-to-Noise Ratio, SNR</strong>： SNR 公式</p>
-<div class="arithmatex">\[
-\text{SNR} = 20 \times \lg(信号功率 / 噪声功率)
-\]</div>
-<p>中的 <span class="arithmatex">\(S/N\)</span> 就是信噪比，没有单位；但为了方便表示更大的范围，也用 <span class="arithmatex">\(10\lg(S/N)\)</span> 表示信噪比，单位为分贝 dB （事实上 dB 本来就是一个比例单位）。如果看到 dB 为单位的信噪比，应换算为 S/N 再代入公式。</p>
-<p>对于给出 <span class="arithmatex">\(V\)</span> 的情况，无论是否说明无噪声都应使用 Nyquist's theorem 确定 data rate 的一个上界；对于给出 SNR 的情况，也应根据 Shannon's theorem 确定另一个上界。</p>
-<h2 id="_3">数字调制<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>数据与代表它们的信号之间的<strong>转换过程</strong>称为数字调制 (digital modulation)。</p>
-<h3 id="1-baseband-transmission">1. 基带传输 Baseband Transmission<a class="headerlink" href="#1-baseband-transmission" title="Permanent link">&para;</a></h3>
-<p>直接将数据转换为数字信号，数字信号是离散的。占用传输介质上的全部频率，用于有线介质（需要注意，光纤不是基带传输）。</p>
-<p>基带传输传的就是方波。方波的频域是 Sa 函数（即 <span class="arithmatex">\((\sin t) / t\)</span>），因此它需要的频率范围是无穷大的；而实际上的传输媒体提供的频率范围是有限的，因此会存在一定的<strong>失真</strong>。</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>这里我们讨论的其实是对比特流进行编码（在课本中这部分也称为调制）；在通带传输中我们讨论真正的调制，即将数据转换为连续的模拟信号。</p>
-</div>
-<p><img alt="baseband_transmission" src="../../../images/Network/baseband.png" style="display: block; margin: 0 auto;" width="580" /></p>
+<h2 id="_2">图的重要概念<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="_3">连通、弱连通、强连通<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>"连通"刻画的是顶点之间能否"相互到达"。无向图的边没有方向，相关概念只有一种；有向图的边带有方向，因此需要进一步区分 <strong>强连通</strong> 与 <strong>弱连通</strong> 。</p>
+<p><strong>定义（连通）</strong>：设 <span class="arithmatex">\(G\)</span> 为无向图。若从顶点 <span class="arithmatex">\(u\)</span> 到顶点 <span class="arithmatex">\(v\)</span> 之间存在路径，则称 <span class="arithmatex">\(u\)</span> 与 <span class="arithmatex">\(v\)</span> 是<strong>连通的 (Connected)</strong>。若 <span class="arithmatex">\(G\)</span> 中<strong>任意两个顶点</strong>都连通，则称 <span class="arithmatex">\(G\)</span> 为<strong>连通图 (Connected Graph)</strong>，否则称 <span class="arithmatex">\(G\)</span> 为<strong>非连通图</strong>。</p>
+<p><strong>定义（强连通）</strong>：设 <span class="arithmatex">\(G\)</span> 为有向图。若从顶点 <span class="arithmatex">\(u\)</span> 到顶点 <span class="arithmatex">\(v\)</span> 之间存在路径，<strong>且</strong>从 <span class="arithmatex">\(v\)</span> 到 <span class="arithmatex">\(u\)</span> 之间也存在路径，则称 <span class="arithmatex">\(u\)</span> 与 <span class="arithmatex">\(v\)</span> 是<strong>强连通的 (Strongly Connected)</strong>。若 <span class="arithmatex">\(G\)</span> 中<strong>任意两个顶点</strong>都强连通，则称 <span class="arithmatex">\(G\)</span> 为<strong>强连通图 (Strongly Connected Graph)</strong>。</p>
+<p><strong>定义（弱连通）</strong>：设 <span class="arithmatex">\(G\)</span> 为有向图。若<strong>忽略所有边的方向</strong>（把有向边当作无向边）后所得的无向图是连通的，则称 <span class="arithmatex">\(G\)</span> 为<strong>弱连通图 (Weakly Connected Graph)</strong>。</p>
 <ul>
-<li>
-<p><strong>NRZ</strong></p>
-<p>Non-Return to Zero 用正电压 / 有光表示 1 ，负电压 / 没有光表示 0。问题：如果是 0 和 1 交替，接收端可以在每一次变化时校准；但是如果一直是 0 或者 1 的话那过一段时间可能就数错了。即：无法传递时钟信号，双方难以同步；除非双方都带有时钟线。</p>
-</li>
-<li>
-<p><strong>Manchester （以太网 Ethernet 的编码方式）</strong></p>
-<p>用一个高和一个低表示 1 ，一个低一个高表示 0 （实际上就是与一个时钟信号做了 XOR ，如图）。解决了时钟信号的问题，即每个码元中间一定有电平跳变。问题是带宽开销增大了一倍。</p>
-</li>
-<li>
-<p><strong>NRZI, NRZ Invert （ USB 2.0 的编码方式）</strong></p>
-<p>用信号翻转表示 1 ，信号不变表示 0。没有带宽开销的增加；解决了一长串都是 1 的问题；但是如果一长串都是 0 还是不行。4B/5B mapping 解决了这个问题，保证映射结果永远不会出现连续 3 个 0 ，虽然增加了 25% 的开销，但是比 Manchester 好一些：</p>
-</li>
-<li>
-<p><strong>扰频/倒频 scrambling</strong></p>
-<p>尝试解决一长串 0 和 1 的问题。发送数据之前，用一个伪随机序列 XOR 数据，接收器用同样的序列 XOR 后得到结果。问题：不能完全保证不会出现一长串 0 或 1 ；尤其是序列较短之类的情况可能出错或被恶意用户攻击。</p>
-</li>
-<li>
-<p><strong>双极编码 Bipolar encoding</strong> / AMI, Alternate Mark Inversion</p>
-<p>这种编码方式关注信号的平衡性；短时间内正电压和负电压一样多的信号称为平衡信号 balanced signal ，这样的信号均值为 0 ，即没有直流分量；由于传输介质的物理性质，没有直流分量是一个优点。这种编码方式用 +1 或者 -1 表示 1 ，每次的 1 与前一次的 1 表示法相反，保证最多只差 1 个；用 0 表示 0。</p>
-</li>
+<li>注意"连通"要求的是<strong>路径存在</strong>，两点不一定直接相邻（直接有边相连称为<em>相邻</em>，比连通更强）；路径可以经由若干个中间顶点辗转到达。</li>
+<li>三个概念对"可达"的要求依次递减：<strong>强连通</strong>要求任意两点之间<strong>双向</strong>都有路径；<strong>弱连通</strong>只要求忽略方向后任意两点之间有路径；<strong>连通</strong>定义在无向图上——无向边本身可双向通行，"有路径"天然意味着"双向可达"。</li>
+<li>有向图若是<strong>强连通图</strong>，必然是<strong>弱连通图</strong>；反之不一定成立。</li>
+<li>类比无向图的"连通分量"，有向图的<strong>极大强连通子图</strong>称为<strong>强连通分量 (Strongly Connected Component, SCC)</strong>，详见下一节末尾的注意。</li>
+<li>判定技巧：<span class="arithmatex">\(n\)</span> 个顶点的无向图若边数 <span class="arithmatex">\(m &gt; \frac{(n-1)(n-2)}{2}\)</span>，则必为<strong>连通图</strong>（非连通时边数最多的情况是 <span class="arithmatex">\(n-1\)</span> 个顶点构成完全图、剩余 1 个顶点孤立，恰好 <span class="arithmatex">\(\frac{(n-1)(n-2)}{2}\)</span> 条边）。</li>
 </ul>
-<p>还有一种 8B/10B 编码模式。同时考虑这些问题，通过映射保证没有超过 5 个连续的 0 或 1 ，同时保持 0 和 1 数目相对均等；其额外带宽消耗也只有 25%。</p>
-<div class="admonition example">
-<p class="admonition-title">一些计算</p>
-<p>What is the minimum bandwidth needed to achieve a data rate of <span class="arithmatex">\(B\)</span> bits/sec if the signal is transmitted using <strong>NRZ</strong> and <strong>Manchester</strong> encoding? Explain your answer.</p>
-<details class="tips">
-<summary>解答</summary>
-<p>In NRZ, the data rate = signal rate, so the signal rate is <span class="arithmatex">\(B\)</span> bps. So, the minimum bandwidth need to achieve <span class="arithmatex">\(B\)</span> bits/sec data rate is <span class="arithmatex">\(B/2\)</span> Hz.</p>
-<p>In Manchester encoding, the data rate = 1/2 <span class="arithmatex">\(\times\)</span> signal rate, so the signal rate is <span class="arithmatex">\(2B\)</span> bps. So, the minimum bandwidth need to achieve <span class="arithmatex">\(B\)</span> bits/sec data rate is <span class="arithmatex">\(B\)</span> Hz.</p>
-</details>
+<h3 id="maximal-connected-subgraph">极大连通子图 (Maximal Connected Subgraph)<a class="headerlink" href="#maximal-connected-subgraph" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">正式的解释</p>
+<p><strong>定义</strong>：设 <span class="arithmatex">\(G\)</span> 为无向图，<span class="arithmatex">\(G'\)</span> 是 <span class="arithmatex">\(G\)</span> 的一个连通子图。若 <span class="arithmatex">\(G\)</span> 中不存在连通子图 <span class="arithmatex">\(G''\)</span>，使得 <span class="arithmatex">\(G'\)</span> 是 <span class="arithmatex">\(G''\)</span> 的真子图（<span class="arithmatex">\(G' \subsetneq G''\)</span>），即 <span class="arithmatex">\(G'\)</span> 无法再并入更多顶点（连同其关联边）而仍保持连通，则称 <span class="arithmatex">\(G'\)</span> 为 <span class="arithmatex">\(G\)</span> 的<strong>极大连通子图</strong>。</p>
+<ul>
+<li>无向图 <span class="arithmatex">\(G\)</span> 的极大连通子图恰为 <span class="arithmatex">\(G\)</span> 的<strong>连通分量 (Connected Component)</strong>。</li>
+<li>"极大"的意思是包含了依附于连通分量中顶点的<strong>所有边</strong>。</li>
+<li><span class="arithmatex">\(G\)</span> 的每个顶点恰好属于<strong>唯一一个</strong>极大连通子图；所有极大连通子图互不相交，且并集覆盖 <span class="arithmatex">\(G\)</span> 的全部顶点（构成顶点集的一个划分）。</li>
+<li><span class="arithmatex">\(G\)</span> 本身连通 <span class="arithmatex">\(\iff\)</span> <span class="arithmatex">\(G\)</span> 只有一个极大连通子图（即 <span class="arithmatex">\(G\)</span> 自身）。</li>
+<li><em>注意：这里的"极大"针对的是顶点集合——在保持连通的前提下，顶点数量已无法再增加。对于有向图，对应概念为强连通分量</em>。</li>
+</ul>
 </div>
+<details class="example">
+<summary>举个例子</summary>
+<p>把图想象成一张"社交关系网"：两个人之间有边 = 互相认识。</p>
+<p><strong>极大连通子图</strong>就是"一个圈子"：圈内任意两人都能通过朋友的朋友等辗转认识（连通）；而圈子外的任何人，跟圈内人<strong>没有任何一条边相连</strong>，一旦拉进来，整个圈子就不连通了。</p>
+<ul>
+<li>一个团体 40 个人，按"是否认识"可以分成几个互不往来的小圈子，每个圈子就是一个极大连通子图（连通分量）。</li>
+<li>所以"极大"的意思是：这个圈子<strong>已经大得不能再大了</strong>——再添任何一个人进来，大家就连不起来了。</li>
+<li>如果 40 人都互相认识（整个图连通），那这个团体本身就是唯一的一个极大连通子图。</li>
+</ul>
+</details>
+<h3 id="minimal-connected-subgraph">极小连通子图 (Minimal Connected Subgraph)<a class="headerlink" href="#minimal-connected-subgraph" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">正式的解释</p>
+<p><strong>定义</strong>：设 <span class="arithmatex">\(G\)</span> 为连通图，<span class="arithmatex">\(G'\)</span> 是 <span class="arithmatex">\(G\)</span> 的一个连通子图，且通常要求 <span class="arithmatex">\(G'\)</span> <strong>包含 <span class="arithmatex">\(G\)</span> 的全部顶点</strong>（即生成子图）。若在 <span class="arithmatex">\(G'\)</span> 中<strong>删除任意一条边</strong>都会使其不再连通，则称 <span class="arithmatex">\(G'\)</span> 为 <span class="arithmatex">\(G\)</span> 的<strong>极小连通子图</strong>。</p>
+<ul>
+<li>若 <span class="arithmatex">\(G'\)</span> 含有 <span class="arithmatex">\(G\)</span> 的全部 <span class="arithmatex">\(n\)</span> 个顶点，则 <span class="arithmatex">\(G'\)</span> 恰好有 <span class="arithmatex">\(n-1\)</span> 条边，即 <span class="arithmatex">\(G'\)</span> 是一棵<strong>生成树 (Spanning Tree)</strong>。</li>
+<li>边数已是在"保持连通（并涵盖全部顶点）"前提下的<strong>最小值</strong>：少一条边即不连通，多一条边则产生回路。</li>
+<li>极小连通子图<strong>一般不唯一</strong>：同一个连通图通常存在多棵不同的生成树。</li>
+<li>辨析："极大连通子图"在<strong>顶点维度</strong>上求"包含关系最大"；"极小连通子图"在<strong>边维度</strong>上求"删除关系最小"。二者优化的维度不同，不可混淆。</li>
+</ul>
+</div>
+<details class="example">
+<summary>举个例子</summary>
+<p>接着用"社交网"打比方：老板要求<strong>团体内 40 个人必须都能互相联系上</strong>（连通），但关系越多维护成本越高，希望使用的"边"越少越好。</p>
+<p><strong>极小连通子图</strong>就是：在保证 40 个人全都连得上的前提下，<strong>删掉任何一条边都会有人掉队</strong>的最精简关系网。</p>
+<ul>
+<li>这样的关系网恰好有 <span class="arithmatex">\(40 - 1 = 39\)</span> 条边（<span class="arithmatex">\(n-1\)</span> 条），也就是一棵"生成树"——用一条树状主干线把所有人串起来。</li>
+<li>类比：拉一个 40 人的群，并不需要两两都是好友，只要有一条主干线把所有人群串起来即可；再多加一条边（多余的关系）就属于浪费。</li>
+</ul>
+</details>
+<h2 id="_4">图的遍历<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="breadth-first-bfs">广度优先 (Breadth-First) 搜索， BFS<a class="headerlink" href="#breadth-first-bfs" title="Permanent link">&para;</a></h3>
+<p>其基本思想是，</p>
+<ol>
+<li>首先访问起始节点 <span class="arithmatex">\(v\)</span>，然后从 <span class="arithmatex">\(v\)</span> 出发，依次访问 <span class="arithmatex">\(v\)</span> 的所有未被访问的邻接节点 <span class="arithmatex">\(w_1, w_2, \dots, w_i\)</span>；</li>
+<li>随后再依次访问 <span class="arithmatex">\(w_1, w_2, \dots, w_i\)</span> 的所有未被访问的邻接节点；</li>
+<li>再从这些被访问过的顶点出发，访问它们尚未被访问的邻接节点，直至所有从 <span class="arithmatex">\(v\)</span> 可达的节点都被访问。</li>
+<li>如果此时图中仍然有未被访问的节点，则再选一个未被访问的节点作为新的起始点，重复 1-3 ，直至所有节点都被访问。</li>
+</ol>
+<p>事实上，图的 BFS 就是树的层序遍历算法的自然推广。</p>
+<p>在执行 BFS 的过程中，我们需要一个辅助队列，暂存当前层顶点的下一层顶点。每个顶点最多入队一次，在最坏情况下， BFS 的空间复杂度是 <span class="arithmatex">\(O(|V|)\)</span>。</p>
+<p>采用 BFS 的遍历实质上是对每个顶点查找其邻接点的过程。采用 <strong>邻接表</strong> 存储时，每个顶点需要搜索（入队）一次，时间复杂度 <span class="arithmatex">\(O(|V|)\)</span>；搜索每个顶点的邻接点时，遍历每个顶点的边表，最终每条边均需访问一次，时间复杂度 <span class="arithmatex">\(O(|E|)\)</span>，因此总的时间复杂度为 <span class="arithmatex">\(O(|V|+|E|)\)</span>。采用 <strong>邻接矩阵</strong> 存储时，查找每个顶点的临界点的时间复杂度是 <span class="arithmatex">\(O(|V|)\)</span>，因此总的时间复杂度为 <span class="arithmatex">\(O(|V|^2)\)</span>。</p>
+<p>不难发现， BFS 总是按照距离由近到远的顺序遍历图中的顶点，从而保证了每个顶点首次被访问时，所经过的路径一定是最短路径。最短路径一定是 <strong>简单路径</strong>，也即没有重复顶点的路径。所以， BFS 可以求解 <strong>无权图的单源最短路径问题</strong>。</p>
+<h3 id="depth-first-dfs">深度优先 (Depth-First) 搜索， DFS<a class="headerlink" href="#depth-first-dfs" title="Permanent link">&para;</a></h3>
+<p>类似树的先序遍历。其基本思想是，</p>
+<ol>
+<li>首先访问起始节点 <span class="arithmatex">\(v\)</span>，然后从 <span class="arithmatex">\(v\)</span> 出发，访问 <span class="arithmatex">\(v\)</span> 的一个未被访问的邻接节点 <span class="arithmatex">\(w_1\)</span>；</li>
+<li>随后访问 <span class="arithmatex">\(w_1\)</span> 的一个未被访问的邻接节点 <span class="arithmatex">\(x_1\)</span>，以此类推；</li>
+<li>当无法继续向下访问时，回退至上一节点（递归返回），检查其是否还有未访问的邻接节点；</li>
+<li>若有，则从该节点开始继续前述搜索过程，直到所有节点都被访问。</li>
+</ol>
+<p>我们通常采用递归的方式实现 DFS。因此，在最坏情况下，递归深度可达 <span class="arithmatex">\(|V|\)</span>，因而空间复杂度为 <span class="arithmatex">\(O(|V|)\)</span>。</p>
+<p>采用 DFS 的遍历本质上是通过边依次访问邻接点的过程。和 BFS 一样，其时间复杂度进取决于图的存储结构。采用 <strong>邻接表</strong> 存储时，总的时间复杂度为 <span class="arithmatex">\(O(|V|+|E|)\)</span>。采用 <strong>邻接矩阵</strong> 存储时，总的时间复杂度为 <span class="arithmatex">\(O(|V|^2)\)</span>。</p>
+<div class="admonition note">
+<p class="admonition-title">生成树</p>
+<p>BFS 和 DFS 的生成树存在的前提是图是连通图（否则是生成森林）。不论是 BFS 还是 DFS ，基于 <strong>邻接表</strong> 得到的生成树是不唯一的；基于 <strong>邻接矩阵和同一源点</strong> 得到的生成树是唯一的。</p>
+</div>
+<h3 id="_5">遍历与连通性<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>对于无向图，为了遍历所有顶点的调用 <code>BFS()</code> 或 <code>DFS()</code> 次数恰好等于该图的连通分量数，因为每次调用都恰好遍历一个连通分量重的所有顶点。</li>
+<li>对于有向图，仅当初始顶点到达图中每一个顶点都有路径时才能通过一次遍历访问所有顶点。即使整个图是弱连通的，图中也会有非强连通分量。在非强连通分量重单次调用 DFS 或 BFS 不一定可以访问到该子图的所有顶点。</li>
+</ul>
+<p><img alt="非强连通分量的有向图示例" src="../../../images/DS/ch6-traversal.svg" /></p>
+<p>如上图所示，该有向图是 <strong>弱连通</strong> 的（忽略方向后所有顶点连通），但顶点 <span class="arithmatex">\(1\)</span>、<span class="arithmatex">\(3\)</span> 都只指向顶点 <span class="arithmatex">\(2\)</span>，没有任何边离开顶点 <span class="arithmatex">\(2\)</span>：从顶点 <span class="arithmatex">\(2\)</span> 出发的单次 DFS/BFS 只能访问到 <span class="arithmatex">\(2\)</span> 自身，无法到达 <span class="arithmatex">\(1\)</span> 和 <span class="arithmatex">\(3\)</span>，故该图 <strong>不是强连通</strong> 的。</p>
+<h2 id="_6">图的应用<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="_7">最小生成树<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>我们在极小连通子图中一并介绍了生成树的概念。最小生成树则是在带权无向图的语境下提出的。具有最小总权重的生成树成为图 <span class="arithmatex">\(G\)</span> 的最小生成树。</p>
+<p>显然，如果图中没有权值相同的边，那么最小生成树唯一。那么如何构造最小生成树？</p>
+<div class="admonition warning">
+<p class="admonition-title">注意</p>
+<p>"如果图中没有权值相同的边，那么最小生成树唯一"的 <strong>否命题不成立</strong>。</p>
+</div>
+<div class="admonition success">
+<p class="admonition-title">原理</p>
+<p>首先想象一个现成的最小生成树，其对应带权连通无向图 <span class="arithmatex">\(G=(V, E)\)</span>。</p>
+<p>对于 <span class="arithmatex">\(V\)</span> 的任一非空子集 <span class="arithmatex">\(U\)</span>，若 <span class="arithmatex">\((u,v)\)</span> 是一条权值最小的边，其中 <span class="arithmatex">\(u \in U, v \in V-U\)</span>，那么 <span class="arithmatex">\(G\)</span> 的最小生成树一定包含这条边 <span class="arithmatex">\((u, v)\)</span>。</p>
+</div>
+<p>依据这个原理我们主要介绍两种算法。设要表示的连通图 <span class="arithmatex">\(G = (V, E)\)</span>，生成树为 <span class="arithmatex">\(T = (U, E_T)\)</span>。</p>
+<div class="admonition note">
+<p class="admonition-title">Prim 算法</p>
+<ol>
+<li>初始化。向空树 <span class="arithmatex">\(T\)</span> 中添加图 <span class="arithmatex">\(G\)</span> 的任一顶点而不加入任何边。此时 <span class="arithmatex">\(U = \{u_0\}\)</span>, <span class="arithmatex">\(E_T = \emptyset\)</span>。</li>
+<li>循环。重复直至 <span class="arithmatex">\(U = V\)</span>。从图 <span class="arithmatex">\(G\)</span> 中选择满足 <span class="arithmatex">\(\{(u,v) | u \in U, v \in V-U\}\)</span> 且具有最小权值的边加入树 <span class="arithmatex">\(T\)</span>。更新 <span class="arithmatex">\(U \leftarrow U \cup \{v\}\)</span>, <span class="arithmatex">\(E_T \leftarrow E_T \cup \{(u, v)\}\)</span>。</li>
+</ol>
+<p>该算法的时间复杂度是 <strong><span class="arithmatex">\(O(|V^2|)\)</span></strong>，因为对于每一个顶点都要遍历所有的顶点以找到最小权重的边。该时间复杂度与 <span class="arithmatex">\(|E|\)</span> 无关，因此 Prim 算法特别适合求解 <strong>边稠密</strong> 图的最小生成树。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Kruskal 算法</p>
+<ol>
+<li>初始化。每个顶点构成独立的树，不加入任何边，<span class="arithmatex">\(T\)</span> 是所有顶点构成的森林。此时 <span class="arithmatex">\(U = V\)</span>, <span class="arithmatex">\(E_T = \emptyset\)</span>。</li>
+<li>循环。重复直至 <span class="arithmatex">\(T\)</span> 成为一棵树（连通分量数量为 1 ）。按照权值递增的顺序从 <span class="arithmatex">\(E - E_T\)</span> 中选择一条边。如果该边加入 <span class="arithmatex">\(T\)</span> 后不构成回路，则确实加入并更新 <span class="arithmatex">\(E_T\)</span>；否则舍弃这条边，直到 <span class="arithmatex">\(E_T\)</span> 包含 n-1 条边。</li>
+</ol>
+<p>该算法的时间复杂度是 <strong><span class="arithmatex">\(O(|E \log_2 E|)\)</span></strong>。在最坏情况下，由于有些关键边权重很大或存在环路等因素，我们需要对每一条边各扫描一次。在每一次扫描中，如果我们使用堆存储（常用的方法），从中选出最小值的时间是 <span class="arithmatex">\(O(\log_2 |E|)\)</span>。同时，使用并查集来快速确定两个顶点是否已经属于同一棵树（集合）的时间复杂度是 <span class="arithmatex">\(O(\alpha(|V|))\)</span>，由于 <span class="arithmatex">\(\alpha(|V|)\)</span> 增长极其缓慢而近似为常数。</p>
+<p>如果使用排序算法确定最小值，那么排序算法的时间复杂度 <span class="arithmatex">\(O(|E|\log_2 |E|)\)</span>。随后依次取每一条边并判断是否成环的时间大致是 <span class="arithmatex">\(O(|E|)\)</span>（<span class="arithmatex">\(O(\alpha(|V|))\)</span> 被近似为常数）。这样，总体的时间复杂度依旧是 <span class="arithmatex">\(O(|E|\log_2 |E|)\)</span>。</p>
+<p>可以发现算法的时间复杂度与 <span class="arithmatex">\(|V|\)</span> 无关，因此 Kruskal 算法特别适合求解 <strong>边稀疏</strong> 以及 <strong>顶点较多</strong> 的图。</p>
+</div>
+<h3 id="_8">最短路算法<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>我们之前提到过 BFS 可以求解无权图的最短路径。对于带权图来说应该怎么办呢？</p>
+<div class="admonition note">
+<p class="admonition-title">单源最短路： Dijkstra 算法</p>
+<p>迪杰斯特拉算法使用一个集合 <span class="arithmatex">\(S\)</span> 记录 <strong>已确定最短路径的顶点</strong>。初始将源点放入 <span class="arithmatex">\(S\)</span>。在每一步以 <strong>贪心策略</strong> 寻找到最短路径顶点 <span class="arithmatex">\(i\)</span> 加入 <span class="arithmatex">\(S\)</span> 后，更新源点到各个 <strong>尚未确定最短路径的顶点</strong> 的当前最短路长度。</p>
+<p>在算法执行过程中我们一般维护三个数组：</p>
+<ul>
+<li><code>final[]</code>：标记各顶点是否已经找到最短路径；</li>
+<li><code>dist[]</code>：记录从 <strong>源点</strong> 到点 <span class="arithmatex">\(i\)</span> 的当前最短路长度；</li>
+<li><code>path[]</code>：存储从 <strong>源点</strong> 到点 <span class="arithmatex">\(i\)</span> 的最短路径。该数组用于算法流程结束后的回溯，以重构出最短路径。</li>
+</ul>
+<p>假设指定顶点 0 为源点，图以邻接矩阵 <code>arcs[][]</code> 存储。算法的步骤如下：</p>
+<ol>
+<li>初始化。<span class="arithmatex">\(S = \{0\}\)</span>，<code>dist</code> 数组初始值 <code>dist[i] = arcs[0][i]</code>；</li>
+<li>选择最短路顶点。从不在 <span class="arithmatex">\(S\)</span> 的顶点集合中选出一个顶点 <span class="arithmatex">\(j\)</span>，使得 <code>dist[j]</code> 最小。此时 <span class="arithmatex">\(j\)</span> 就是当前从源点出发的最短路径的终点，将 <span class="arithmatex">\(j\)</span> 加入 <span class="arithmatex">\(S\)</span>，因为其最短路径已经确定。</li>
+<li>松弛操作。更新最短路长度。对每个从顶点 <span class="arithmatex">\(j\)</span> 出发的邻接顶点 <span class="arithmatex">\(k\)</span>，如果 <code>dist[j]</code> + <code>arcs[j][k]</code> &lt; <code>dist[k]</code>，更新 <code>dist[k]</code> 为 <code>dist[j]</code> + <code>arcs[j][k]</code>。</li>
+<li>重复步骤 2、3 ，直到所有顶点都包含在 <span class="arithmatex">\(S\)</span> 中。</li>
+</ol>
+<details class="tip">
+<summary>Dijkstra 算法的适用性</summary>
+<p>迪杰斯特拉算法不适用存在 <strong>负权边</strong> 的图。</p>
+</details>
+<div class="admonition success">
+<p class="admonition-title">时间复杂度</p>
+<p>采用邻接矩阵表示图、线性扫描 <code>dist[]</code> 数组查找最小值（朴素方法）时， Dijkstra 算法的时间复杂度是 <span class="arithmatex">\(O(|V|^2)\)</span>。这是因为要确定 <span class="arithmatex">\(|V|\)</span> 个顶点到源点的最短路径；在针对每个顶点操作时，线性扫描找最小顶点是 <span class="arithmatex">\(O(|V|)\)</span> 的，松弛操作也是 <span class="arithmatex">\(O(|V|)\)</span> 的。</p>
+<p>如果采用邻接表表示图，在针对每个顶点操作时，线性扫描找最小顶点还是 <span class="arithmatex">\(O(|V|)\)</span> 的，松弛操作则会变成 <span class="arithmatex">\(O(|E|)\)</span> 的。这是因为邻接表只需要遍历存在的边。</p>
+<p>如果采用堆优化，那么爪最小顶点的复杂度是 <span class="arithmatex">\(O(\log |V|)\)</span>；每个顶点的松弛操作也是 <span class="arithmatex">\(O(\log |V|)\)</span> 的。</p>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">各顶点间的最短距离： Floyd 算法</p>
+<p>弗洛伊德算法的基本思想是，对于两个给定的顶点 <span class="arithmatex">\(v_i\)</span> 和 <span class="arithmatex">\(v_j\)</span>，从直接连接开始，依次考虑加入某个中间顶点后，给定顶点之间的最短距离。这是动态规划的思想。</p>
+<p>假设图依旧使用邻接矩阵 <code>arcs[][]</code> 存储， Floyd 算法的描述如下：</p>
+<ol>
+<li>
+<p>定义 n 阶方阵序列 <span class="arithmatex">\(A^{(-1)}, A^{(0)}, \dots, A^{(n-1)}\)</span>。其中约定：</p>
+<div class="arithmatex">\[
+\begin{cases}
+\ A^{(-1)}[i][j] = arcs[i][j] \\
+\ A^{(k)}[i][j] = \min\{A^{(k-1)}[i][j], A^{(k-1)}[i][k] + A^{(k-1)}[k][j]\}, k = 0, 1, \dots, n-1
+\end{cases}
+\]</div>
+<p>上标小括号内的数字 <span class="arithmatex">\(i\)</span> 代表允许使用编号不超过 <span class="arithmatex">\(i\)</span> 的顶点作为中间顶点，-1 代表两端点直接相连。</p>
+</li>
+<li>
+<p>从 <span class="arithmatex">\(A^{(-1)}\)</span> 出发，迭代算出每一个 <span class="arithmatex">\(A^{(k)}\)</span>，最后得到的 <span class="arithmatex">\(A^{(n-1)}\)</span> 即为所求的对应顶点对的最短路径长度。</p>
+</li>
+</ol>
+<details class="tip">
+<summary>Floyd 算法的适用性</summary>
+<p>弗洛伊德算法不适用存在 <strong>负权环</strong> 的图，其适用性较 Dijkstra 广一些。</p>
+</details>
+<div class="admonition success">
+<p class="admonition-title">时间复杂度</p>
+<p>Floyd 算法的时间复杂度为 <span class="arithmatex">\(O(|V|^3)\)</span>。因为对于每一次迭代，都要有三层循环来遍历所有顶点。但它的好处是无需复杂的数据结构，且因常数因子实际较小，因此对于中等规模的图，运行效率不错。</p>
+</div>
+</div>
+<h3 id="_9">拓扑排序和网络流<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">DAG 图</p>
+<p>我们之前在树的章节了解过如何用二叉树表达一个表达式。但我们可能会发现一个表达式中存在在多个位置被复用的子表达式，对应到二叉树中重复的子结构。这些重复会造成空间的浪费。这个时候，我们可以考虑合并这些公共结构，这样二叉树就会变成一个有向无环图（ DAG 图）。公共表达式只需被存储一次，并通过多个父节点的入边共享，显著节省了存储空间。</p>
+<p><img alt="example-for-DAG-app" src="../../../images/DS/ch6-1.jpg" /></p>
+</div>
+<p>DAG 图还可以用来表示工程。每个顶点代表一个活动，有向边 &lt;<span class="arithmatex">\(V_i, V_j\)</span>&gt; 表示活动 <span class="arithmatex">\(V_i\)</span> 必须先于活动 <span class="arithmatex">\(V_j\)</span> 进行。这样的 DAG 图我们称之为 <strong>顶点表示活动的网络</strong>，简称 <strong>AOV 网</strong>。</p>
+<p>图论中的 <strong>拓扑排序</strong> 指的是由 DAG 图的顶点构成的一个线性序列，满足：
+1. 每个顶点恰好出现一次；
+2. 若存在从顶点 A 到顶点 B 的路径，则在拓扑排序的序列中， B 必须在 A 之后。</p>
+<p>每个 AOV 网都有一个或多个拓扑排序序列。</p>
+<p>一个常用的从 AOV 网构建拓扑排序的方法是：</p>
+<ol>
+<li>从 AOV 网中 <strong>随机选择</strong> 一个没有前驱（入度为 0 ）的顶点并输出它。</li>
+<li>从网络中删除该顶点和所有以它为起点的有向边；</li>
+<li>重复步骤 1 和 2 ，直至当前的网为空或非空但无法找到新的入度为 0 的顶点。后一种情况表明<u>有向图中必然有环</u>。</li>
+</ol>
+<p><img alt="AOV-example" src="../../../images/DS/ch6-2.jpg" /></p>
+<p>我们发现 AOV 网的边是无权值的，只能表现出活动的先后顺序。我们考虑一个“升级版”：让图还能表示出活动的开销。于是诞生了 <strong>用边表示活动的网络</strong>， AOE 网。在带权有向图中，以顶点表示<em>事件</em>，以有向边表示活动，并以边上的权值表示完成该活动所需的开销。</p>
+<p>AOE 网满足：
+1. 只有在某顶点所代表的事件发生后，从改顶点出发的有向边所代表的活动才能开始；
+2. 只有当进入某顶点的各有向边所代表的活动都已经完成时，该顶点所代表的事件才能发生。</p>
+<p>AOE 网中通常只有一个入度为 0 的顶点（源点）；同时仅有一个出度为 0 的顶点（汇点）。<strong>完成整个工程所需要的最短时间</strong> 等于 <strong>关键路径</strong> 的长度。可以看出，<strong>路径长度最大</strong> 的才被称为关键路径。根据定义，同一个 AOE 网的关键路径可能不止一条。</p>
+<p>分别记事件的最早发生时间和最晚发生时间为 <span class="arithmatex">\(v_e\)</span> 和 <span class="arithmatex">\(v_l\)</span>；分别记活动的最早开始时间和最晚开始时间为 <span class="arithmatex">\(a_e\)</span> 和 <span class="arithmatex">\(a_l\)</span>。求关键路径的算法步骤如下：</p>
+<ol>
+<li>从源点出发，令 <span class="arithmatex">\(v_e(源点) = 0\)</span>，按照拓扑有序求其余顶点的 <span class="arithmatex">\(v_e\)</span>；</li>
+<li>从汇点出发，令 <span class="arithmatex">\(v_l(汇点) = v_e(汇点)\)</span>，按照逆拓扑有序求其余顶点的 <span class="arithmatex">\(v_l\)</span>；</li>
+<li>根据各顶点（事件）的 <span class="arithmatex">\(v_e\)</span>，求所有弧（活动）的 <span class="arithmatex">\(a_e\)</span>；</li>
+<li>根据各顶点的 <span class="arithmatex">\(v_l\)</span>，求所有弧的 <span class="arithmatex">\(a_l\)</span>；</li>
+<li>求 AOE 网络中所有活动的时间余量 <span class="arithmatex">\(d(i) = a_l(i) - a_e(i)\)</span>，取所有余量为 0 的活动，构建出关键路径。 </li>
+</ol>
+<p><img alt="AOE-example" src="../../../images/DS/ch6-3.jpg" /></p>
 
 
 
