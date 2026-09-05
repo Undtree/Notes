@@ -2466,7 +2466,7 @@
 
 <h1 id="_1">期末复习<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 9915 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 13 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 33 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 9929 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 13 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 33 分钟</p>
 </div>
 <blockquote>
 <p><del>孩子们，这门课真的不能速通...</del></p>
@@ -2751,9 +2751,9 @@
 <li><strong>机制：</strong> 发送一帧，等待 ACK ，再发下一帧。</li>
 <li><strong>利用率 (Utilization/Efficiency) 计算（重点）：</strong><ul>
 <li>
-<div class="arithmatex">\[U = \frac{T_{frame}}{T_{cycle}} = \frac{T_{frame}}{T_{frame} + 2 \times T_{prop}}\]</div>
+<div class="arithmatex">\[U = \displaystyle\frac{T_{frame}}{T_{cycle}} = \displaystyle\frac{T_{frame}}{T_{frame} + 2 \times T_{prop}}\]</div>
 </li>
-<li>令 <span class="arithmatex">\(\alpha = T_{prop} / T_{frame}\)</span>，则 <span class="arithmatex">\(U = \frac{1}{2\alpha + 1}\)</span>。</li>
+<li>令 <span class="arithmatex">\(\alpha = T_{prop} / T_{frame}\)</span>，则 <span class="arithmatex">\(U = \displaystyle\frac{1}{2\alpha + 1}\)</span>。</li>
 <li><strong><span class="arithmatex">\(T_{prop}\)</span> (传播延迟):</strong> 距离 / 光速。</li>
 <li><strong><span class="arithmatex">\(T_{frame}\)</span> (发送延迟):</strong> 帧大小 / 带宽。</li>
 </ul>
@@ -2776,15 +2776,15 @@
 </ul>
 <p>接着，计算各项时间开销：</p>
 <ol>
-<li>数据包传输时延 <span class="arithmatex">\(t_{data} = \frac{L_{data}}{R} = \frac{1120}{10^8} = 11.2 \mu\text{s}\)</span></li>
-<li>确认帧传输时延 <span class="arithmatex">\(t_{ack} = \frac{L_{ack}}{R} = \frac{480}{10^8} = 4.8 \mu\text{s}\)</span></li>
-<li>有效载荷传输时间 <span class="arithmatex">\(t_{payload} = \frac{L_{payload}}{R} = \frac{800}{10^8} = 8 \mu\text{s}\)</span></li>
+<li>数据包传输时延 <span class="arithmatex">\(t_{data} = \displaystyle\frac{L_{data}}{R} = \displaystyle\frac{1120}{10^8} = 11.2 \mu\text{s}\)</span></li>
+<li>确认帧传输时延 <span class="arithmatex">\(t_{ack} = \displaystyle\frac{L_{ack}}{R} = \displaystyle\frac{480}{10^8} = 4.8 \mu\text{s}\)</span></li>
+<li>有效载荷传输时间 <span class="arithmatex">\(t_{payload} = \displaystyle\frac{L_{payload}}{R} = \displaystyle\frac{800}{10^8} = 8 \mu\text{s}\)</span></li>
 </ol>
 <p>在停止-等待协议中，一个完整的周期 <span class="arithmatex">\(T_{total}\)</span> 包括：发送数据包的时间、数据包到达 B 的传播时间、B 发送确认帧的时间、确认帧到达 A 的传播时间。</p>
 <p><span class="arithmatex">\(T_{total} = t_{data} + t_{prop} + t_{ack} + t_{prop}\)</span></p>
 <p><span class="arithmatex">\(T_{total} = 11.2 \mu\text{s} + 12 \mu\text{s} + 4.8 \mu\text{s} + 12 \mu\text{s} = 40 \mu\text{s}\)</span></p>
 <p>有效利用率定义为传输有效载荷的时间与总周期的比值：
-<span class="arithmatex">\(U_{eff} = \frac{t_{payload}}{T_{total}} = \frac{8 \mu\text{s}}{40 \mu\text{s}} = 0.2\)</span></p>
+<span class="arithmatex">\(U_{eff} = \displaystyle\frac{t_{payload}}{T_{total}} = \displaystyle\frac{8 \mu\text{s}}{40 \mu\text{s}} = 0.2\)</span></p>
 <p>因此，有效利用率为 <strong>20%</strong>。</p>
 </details>
 </div>
@@ -2792,7 +2792,7 @@
 <ul>
 <li>允许发送方在收到 ACK 之前发送多个帧（管道化）。</li>
 <li><strong>利用率：</strong> 如果窗口足够大，可以使信道利用率接近 100%。<ul>
-<li><span class="arithmatex">\(U = \frac{N \times T_{frame}}{T_{frame} + 2T_{prop}}\)</span> （当 <span class="arithmatex">\(N\)</span> 较小时）</li>
+<li><span class="arithmatex">\(U = \displaystyle\frac{N \times T_{frame}}{T_{frame} + 2T_{prop}}\)</span> （当 <span class="arithmatex">\(N\)</span> 较小时）</li>
 <li>理想窗口大小 <span class="arithmatex">\(N \approx 2\alpha + 1\)</span>。</li>
 </ul>
 </li>
@@ -3476,7 +3476,7 @@
 <li><strong><code>cwnd</code> (Congestion Window)</strong>：拥塞窗口，决定了发送方一次能发多少数据。</li>
 <li><strong><code>Threshold</code> (ssthresh)</strong>：慢启动阈值，是“慢启动”阶段和“拥塞避免”阶段的分界线。</li>
 </ol>
-<p>发送速率大约等于：<span class="arithmatex">\(\text{Rate} \approx \frac{\text{cwnd}}{\text{RTT}}\)</span></p>
+<p>发送速率大约等于：<span class="arithmatex">\(\text{Rate} \approx \displaystyle\frac{\text{cwnd}}{\text{RTT}}\)</span></p>
 <h4 id="_20">两个共同的基础阶段<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h4>
 <p>无论是 Tahoe 还是 Reno ，在网络正常（没丢包）的时候，行为是一样的：</p>
 <ul>
@@ -3577,7 +3577,7 @@
 <li>目标：每经过 1 个 RTT ，<code>cwnd</code> + 1。</li>
 <li>
 <p>实现：每收到 1 个 ACK ：</p>
-<div class="arithmatex">\[cwnd = cwnd + MSS \times \left( \frac{MSS}{cwnd} \right)\]</div>
+<div class="arithmatex">\[cwnd = cwnd + MSS \times \left( \displaystyle\frac{MSS}{cwnd} \right)\]</div>
 </li>
 </ul>
 </li>

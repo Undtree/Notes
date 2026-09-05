@@ -1338,21 +1338,31 @@
 
 <h1 id="_1">图论<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 4324 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 4 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 14 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 1219 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 4 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 4 分钟</p>
 </div>
 <h2 id="_2">图的重要概念<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">容易误解的名词</p>
+<p>有向图中的边也可以称为弧。<strong>弧尾</strong> 指的是弧的 <strong>起点</strong>，<strong>弧头</strong> 指的是弧的 <strong>终点</strong>。</p>
+</div>
 <h3 id="_3">连通、弱连通、强连通<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>"连通"刻画的是顶点之间能否"相互到达"。无向图的边没有方向，相关概念只有一种；有向图的边带有方向，因此需要进一步区分 <strong>强连通</strong> 与 <strong>弱连通</strong> 。</p>
 <p><strong>定义（连通）</strong>：设 <span class="arithmatex">\(G\)</span> 为无向图。若从顶点 <span class="arithmatex">\(u\)</span> 到顶点 <span class="arithmatex">\(v\)</span> 之间存在路径，则称 <span class="arithmatex">\(u\)</span> 与 <span class="arithmatex">\(v\)</span> 是<strong>连通的 (Connected)</strong>。若 <span class="arithmatex">\(G\)</span> 中<strong>任意两个顶点</strong>都连通，则称 <span class="arithmatex">\(G\)</span> 为<strong>连通图 (Connected Graph)</strong>，否则称 <span class="arithmatex">\(G\)</span> 为<strong>非连通图</strong>。</p>
 <p><strong>定义（强连通）</strong>：设 <span class="arithmatex">\(G\)</span> 为有向图。若从顶点 <span class="arithmatex">\(u\)</span> 到顶点 <span class="arithmatex">\(v\)</span> 之间存在路径，<strong>且</strong>从 <span class="arithmatex">\(v\)</span> 到 <span class="arithmatex">\(u\)</span> 之间也存在路径，则称 <span class="arithmatex">\(u\)</span> 与 <span class="arithmatex">\(v\)</span> 是<strong>强连通的 (Strongly Connected)</strong>。若 <span class="arithmatex">\(G\)</span> 中<strong>任意两个顶点</strong>都强连通，则称 <span class="arithmatex">\(G\)</span> 为<strong>强连通图 (Strongly Connected Graph)</strong>。</p>
 <p><strong>定义（弱连通）</strong>：设 <span class="arithmatex">\(G\)</span> 为有向图。若<strong>忽略所有边的方向</strong>（把有向边当作无向边）后所得的无向图是连通的，则称 <span class="arithmatex">\(G\)</span> 为<strong>弱连通图 (Weakly Connected Graph)</strong>。</p>
 <ul>
-<li>注意"连通"要求的是<strong>路径存在</strong>，两点不一定直接相邻（直接有边相连称为<em>相邻</em>，比连通更强）；路径可以经由若干个中间顶点辗转到达。</li>
-<li>三个概念对"可达"的要求依次递减：<strong>强连通</strong>要求任意两点之间<strong>双向</strong>都有路径；<strong>弱连通</strong>只要求忽略方向后任意两点之间有路径；<strong>连通</strong>定义在无向图上——无向边本身可双向通行，"有路径"天然意味着"双向可达"。</li>
-<li>有向图若是<strong>强连通图</strong>，必然是<strong>弱连通图</strong>；反之不一定成立。</li>
-<li>类比无向图的"连通分量"，有向图的<strong>极大强连通子图</strong>称为<strong>强连通分量 (Strongly Connected Component, SCC)</strong>，详见下一节末尾的注意。</li>
-<li>判定技巧：<span class="arithmatex">\(n\)</span> 个顶点的无向图若边数 <span class="arithmatex">\(m &gt; \frac{(n-1)(n-2)}{2}\)</span>，则必为<strong>连通图</strong>（非连通时边数最多的情况是 <span class="arithmatex">\(n-1\)</span> 个顶点构成完全图、剩余 1 个顶点孤立，恰好 <span class="arithmatex">\(\frac{(n-1)(n-2)}{2}\)</span> 条边）。</li>
+<li>注意"连通"要求的是 <strong>路径存在</strong>，两点不一定直接相邻（直接有边相连，比连通更强）；路径可以经由若干个中间顶点辗转到达。</li>
+<li><strong>连通</strong> 定义在无向图上——无向边本身可双向通行；强连通和弱连通则定义在有向图上。</li>
+<li>有向图若是 <strong>强连通图</strong>，必然是 <strong>弱连通图</strong>；反之不一定成立。</li>
+<li>类比无向图的"连通分量"，有向图的 <strong>极大强连通子图</strong> 称为 <strong>强连通分量 (Strongly Connected Component, SCC)</strong>。</li>
 </ul>
+<details class="tip">
+<summary>连通的判定</summary>
+<ul>
+<li><span class="arithmatex">\(n\)</span> 个顶点的无向图若边数 <span class="arithmatex">\(e &gt; \displaystyle\frac{(n-1)(n-2)}{2}\)</span>，则必为 <strong>连通图</strong>（非连通时，边数最多的情况是 <span class="arithmatex">\(n-1\)</span> 个顶点构成完全图、剩余 1 个顶点孤立，恰好 <span class="arithmatex">\(\displaystyle\frac{(n-1)(n-2)}{2}\)</span> 条边）。</li>
+<li><span class="arithmatex">\(n\)</span> 个顶点的无向图若边数 <span class="arithmatex">\(e &lt; n-1\)</span>，则必为 <strong>非连通图</strong>（ n-1 条边恰好对应 n 个顶点）。</li>
+</ul>
+</details>
 <h3 id="maximal-connected-subgraph">极大连通子图 (Maximal Connected Subgraph)<a class="headerlink" href="#maximal-connected-subgraph" title="Permanent link">&para;</a></h3>
 <div class="admonition note">
 <p class="admonition-title">正式的解释</p>

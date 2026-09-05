@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="440" viewBox="0 0 1120 440">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5"
+            markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#4051b5"/>
+    </marker>
+  </defs>
+
+  <!-- 白色背景 -->
+  <rect x="0" y="0" width="1120" height="440" fill="#ffffff"/>
+
+  <!-- 小标题 -->
+  <text x="240" y="38" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="20" font-weight="bold" fill="#1a237e">调整前（p 为黑、孩子 c 为红）</text>
+  <text x="800" y="38" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="20" font-weight="bold" fill="#1a237e">调整后（c 替代 p 并染黑）</text>
+
+  <!-- 调整前 -->
+
+  <!-- 边：P - T0 -->
+  <line x1="105" y1="120" x2="215" y2="120" stroke="#1f1f1f" stroke-width="2"/>
+  <!-- 边：P - p -->
+  <line x1="240" y1="120" x2="240" y2="215" stroke="#1f1f1f" stroke-width="2"/>
+  <!-- 边：p - NIL -->
+  <line x1="240" y1="215" x2="175" y2="310" stroke="#1f1f1f" stroke-width="2"/>
+  <!-- 边：p - c -->
+  <line x1="240" y1="215" x2="305" y2="310" stroke="#1f1f1f" stroke-width="2"/>
+  <!-- 边：c - NIL -->
+  <line x1="305" y1="310" x2="268" y2="400" stroke="#1f1f1f" stroke-width="2"/>
+  <!-- 边：c - NIL -->
+  <line x1="305" y1="310" x2="342" y2="400" stroke="#1f1f1f" stroke-width="2"/>
+  <!-- 边：P - T0 -->
+  <line x1="665" y1="120" x2="775" y2="120" stroke="#1f1f1f" stroke-width="2"/>
+  <!-- 边：P - c -->
+  <line x1="800" y1="120" x2="800" y2="215" stroke="#1f1f1f" stroke-width="2"/>
+  <!-- 边：c - NIL -->
+  <line x1="800" y1="215" x2="735" y2="310" stroke="#1f1f1f" stroke-width="2"/>
+  <!-- 边：c - NIL -->
+  <line x1="800" y1="215" x2="865" y2="310" stroke="#1f1f1f" stroke-width="2"/>
+
+  <!-- 结点 -->
+  <!-- 结点 T0（P 的左子树） -->
+  <polygon points="75,142 135,142 105,96" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="105" y="128" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="14" font-weight="bold" fill="#1f1f1f">T0</text>
+  <!-- 结点 P（p 的父亲） -->
+  <circle cx="240" cy="120" r="26" fill="#1f1f1f" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="240" y="120" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="15" font-weight="bold" fill="#ffffff">P</text>
+  <!-- 结点 p（被删结点） -->
+  <circle cx="240" cy="215" r="26" fill="#1f1f1f" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="240" y="215" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="15" font-weight="bold" fill="#ffffff">p</text>
+  <!-- 被删结点 p -->
+  <circle cx="240" cy="215" r="34" fill="none" stroke="#d62728" stroke-width="3" stroke-dasharray="7 4"/>
+  <!-- 结点 NIL（外部结点） -->
+  <rect x="166" y="301" width="18" height="18" fill="#1f1f1f"/>
+  <!-- 结点 c（p 的右孩子（红）） -->
+  <circle cx="305" cy="310" r="26" fill="#ffffff" stroke="#d62728" stroke-width="3.5"/>
+  <text x="305" y="310" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="15" font-weight="bold" fill="#1a237e">c</text>
+  <!-- 结点 NIL（外部结点） -->
+  <rect x="259" y="391" width="18" height="18" fill="#1f1f1f"/>
+  <!-- 结点 NIL（外部结点） -->
+  <rect x="333" y="391" width="18" height="18" fill="#1f1f1f"/>
+  <!-- 结点 T0（P 的左子树） -->
+  <polygon points="635,142 695,142 665,96" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="665" y="128" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="14" font-weight="bold" fill="#1f1f1f">T0</text>
+  <!-- 结点 P（p 的父亲） -->
+  <circle cx="800" cy="120" r="26" fill="#1f1f1f" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="800" y="120" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="15" font-weight="bold" fill="#ffffff">P</text>
+  <!-- 结点 c（替代 p 并染黑） -->
+  <circle cx="800" cy="215" r="26" fill="#1f1f1f" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="800" y="215" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="15" font-weight="bold" fill="#ffffff">c</text>
+  <!-- 结点 NIL（外部结点） -->
+  <rect x="726" y="301" width="18" height="18" fill="#1f1f1f"/>
+  <!-- 结点 NIL（外部结点） -->
+  <rect x="856" y="301" width="18" height="18" fill="#1f1f1f"/>
+
+  <!-- 调整前后分隔箭头 -->
+  <line x1="548" y1="210" x2="640" y2="210" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+</svg>

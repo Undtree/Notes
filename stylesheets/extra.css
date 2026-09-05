@@ -183,5 +183,37 @@ body,
 [data-md-color-scheme="slate"] .timeline-card {
     background-image: none;
     background-color: #12233f;
-    border: 1px solid rgba(255, 255, 255, .08);
+    border: 2px solid rgba(255, 255, 255, .08);
+}
+
+/* 图片：圆角描边展示 */
+/* 描边颜色取自主题色：
+   明色模式 -> 主题主色 #00296a 的低透明度版本
+   暗色模式 -> 主题强调色 #4dd0e1 的低透明度版本 */
+.md-typeset img {
+    box-sizing: border-box;
+    border-radius: .5rem;
+    border: 4px solid rgba(0, 41, 106, .18); /* #00296a */
+    transition: border-color .3s ease;
+}
+
+[data-md-color-scheme="slate"] .md-typeset img {
+    border-color: rgba(77, 208, 225, .28); /* #4dd0e1 */
+}
+
+/* flag-table 表格样式 */
+.fl_table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border: 1px solid var(--md-default-fg-color--lighter);
+}
+
+.fl-table-node {
+  box-sizing: border-box;
+  height: 2.75rem;
+  padding: 0;
+  border: 1px solid var(--md-default-fg-color--lighter);
+  text-align: center;
+  vertical-align: middle;
 }

@@ -1265,6 +1265,111 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#04" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 优先队列
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="04 优先队列">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-priority-queue-adt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 优先队列 (Priority Queue) 简介与 ADT 模型
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 一些简单的实现方式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-binary-heap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 二叉堆 (Binary Heap)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 二叉堆的基础操作
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 系统级高级操作
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-buildheap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 线性建堆算法 (BuildHeap)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 典型应用与扩展
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#05" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 并查集
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1288,7 +1393,7 @@
 
 <h1 id="_1">树<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 1645 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 5 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 3347 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 11 分钟</p>
 </div>
 <h2 id="01">01 基本概念和术语<a class="headerlink" href="#01" title="Permanent link">&para;</a></h2>
 <p>树作为一种非线性的数据结构非常重要，用来模拟具有层级关系的数据。</p>
@@ -1388,6 +1493,105 @@
 <li><strong>最坏情况</strong>：如果把已经排好序的数字（如 1, 2, 3, 4, 5, 6, 7 ）依次插入，二叉搜索树会退化成一条单向链表（高度等于节点数 <span class="arithmatex">\(N\)</span>），时间复杂度退化到 <strong><span class="arithmatex">\(O(N)\)</span></strong>。</li>
 </ul>
 <p>有关 ADS 课程中介绍的其他树形结构，请看这里：</p>
+<h2 id="04">04 优先队列<a class="headerlink" href="#04" title="Permanent link">&para;</a></h2>
+<p>我们在之前已经了解过队列。</p>
+<h3 id="1-priority-queue-adt">1. 优先队列 (Priority Queue) 简介与 ADT 模型<a class="headerlink" href="#1-priority-queue-adt" title="Permanent link">&para;</a></h3>
+<p>优先队列是一种特殊的数据结构，它的主要特点是每次总是<strong>删除具有最高（或最低）优先级的元素</strong> 。它被定义为一个包含零个或多个元素的有限有序表。</p>
+<ul>
+<li><strong>基本操作</strong>：主要包含初始化 (<code>Initialize</code>)、插入元素 (<code>Insert</code>)、删除最小/最高优先级元素 (<code>DeleteMin</code>) 以及查找最小元素 (<code>FindMin</code>) 。</li>
+</ul>
+<h3 id="2_1">2. 一些简单的实现方式<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<p>我们先来看，如果用简单的数据结构实现优先队列：</p>
+<ul>
+<li><strong>普通数组 (Array)</strong>：插入极快，只需添加到末尾，时间复杂度为 <span class="arithmatex">\(O(1)\)</span> ；但删除最小元素时，需要遍历整个数组去寻找最值 <span class="arithmatex">\(O(n)\)</span>，并且删除后需要移动后续元素来填补空缺 <span class="arithmatex">\(O(n)\)</span> 。</li>
+<li><strong>普通链表 (Linked List)</strong>：在链表头部插入元素的时间复杂度为 <span class="arithmatex">\(O(1)\)</span> ；但删除最小元素同样需要遍历 <span class="arithmatex">\(O(n)\)</span>，只是移动指针的操作较快 <span class="arithmatex">\(\Theta(1)\)</span> 。</li>
+<li><strong>有序数组 (Ordered Array)</strong>：这种方式要求在插入时就找到合适的排序位置，时间复杂度为 <span class="arithmatex">\(O(n)\)</span> ；由于数据已经有序，删除最末尾（或最前端）元素的速度非常快，复杂度仅为 <span class="arithmatex">\(\Theta(1)\)</span> 。</li>
+<li><strong>二叉搜索树 (Binary Search Tree)</strong>：虽然可以用来实现，但在极端插入情况下可能会导致树极度不平衡，丧失效率。</li>
+</ul>
+<h3 id="3-binary-heap">3. 二叉堆 (Binary Heap)<a class="headerlink" href="#3-binary-heap" title="Permanent link">&para;</a></h3>
+<p>为了更高效地维持优先级顺序，我们引入“二叉堆”。它必须同时满足两个重要性质：</p>
+<ol>
+<li>
+<p>结构性质。</p>
+<p>二叉堆在逻辑上必须是一棵<strong>完全二叉树</strong> 。这意味着除了最底层外，其余各层都被完全填满，且最底层节点从左向右紧密排列 。高度为 <span class="arithmatex">\(h\)</span> 的树其节点总数在 <span class="arithmatex">\(2^h\)</span> 到 <span class="arithmatex">\(2^{h+1}-1\)</span> 之间，树的高度为 <span class="arithmatex">\(h = \lfloor \log N \rfloor\)</span> 。</p>
+</li>
+<li>
+<p><strong>数组表示法</strong>：因为完全二叉树的结构非常紧凑且规律，可以直接使用数组 <code>BT[n+1]</code> 来进行顺序存储，这种方式省去了指针开销 。通常将数组索引 <code>0</code> 的位置留空或设为哨兵 。</p>
+</li>
+<li>
+<p><strong>父子索引计算</strong>：对于数组中任意索引为 <span class="arithmatex">\(i\)</span> 的节点：其父节点索引为 <span class="arithmatex">\(\lfloor i/2 \rfloor\)</span> ；左子节点为 <span class="arithmatex">\(2i\)</span> ；右子节点为 <span class="arithmatex">\(2i+1\)</span> 。</p>
+</li>
+<li>
+<p><strong>2. 堆序性质 (Heap Order Property)</strong>：</p>
+</li>
+<li>以<strong>最小堆 (Min Heap)</strong> 为例，它的核心规则是：<strong>每个节点的键值都不大于其所有子节点的键值</strong> 。这意味着根节点永远是整个树中的最小元素 。类似地，也可以改变规则构建最大堆 (Max Heap) 。</li>
+</ol>
+<h3 id="4">4. 二叉堆的基础操作<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>插入操作 (Insertion) 与 上滤 (Percolate Up)</strong>：</li>
+<li>
+<p>为了保持完全二叉树的形状，首先在树的末尾（数组最后一个有效位置的后一个位置）创建一个“空穴” 。</p>
+</li>
+<li>
+<p>然后将待插入的新元素与其父节点比较，如果新元素更小，就将父节点的值<strong>下移</strong>填入空穴，空穴随之<strong>上移</strong> 。不断重复这个比较和上移的过程（即上滤），直到找到合适的位置 。</p>
+</li>
+<li>
+<p>利用数组索引 <code>0</code> 放置一个比所有可能输入都小的“哨兵”值，可以省去循环中判断越界的开销 。时间复杂度为 <span class="arithmatex">\(O(\log N)\)</span> 。</p>
+</li>
+<li>
+<p><strong>删除最小元素 (DeleteMin) 与 下滤 (Percolate Down)</strong>：</p>
+</li>
+<li>
+<p>最小元素就是根节点，直接将其删除，此时根部留下一个“空穴” 。</p>
+</li>
+<li>
+<p>随后取出堆中最后一个元素 。</p>
+</li>
+<li>
+<p>比较空穴的<strong>两个子节点</strong>，选出较小的一个，将该子节点<strong>上移</strong>填入空穴，空穴随之<strong>下移</strong> 。重复这个过程（即下滤），直到最后一个元素能够合法放入空穴 。时间复杂度同样为 <span class="arithmatex">\(O(\log N)\)</span> 。</p>
+</li>
+</ul>
+<h3 id="5">5. 系统级高级操作<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<p>在操作系统内核的设计中，进程的 CPU 调度经常依赖优先队列来管理。课件中特别提到的几个高级操作在此类场景下极具应用价值：</p>
+<ul>
+<li>
+<p><strong>DecreaseKey <span class="arithmatex">\((P, \Delta, H)\)</span></strong>：将位置 P 处的元素键值减小 <span class="arithmatex">\(\Delta\)</span> 。键值减小可能破坏堆序，因此需要对该节点执行<strong>上滤 (Percolate up)</strong> 操作 。这可以用来强制提升某个系统进程的优先级，以便让程序能优先获得执行权 。</p>
+</li>
+<li>
+<p><strong>IncreaseKey <span class="arithmatex">\((P, \Delta, H)\)</span></strong>：将位置 P 处的元素键值增加 <span class="arithmatex">\(\Delta\)</span> 。对应需要执行<strong>下滤 (Percolate down)</strong> 操作 。这通常用于惩罚那些消耗了过多 CPU 时间的进程，主动降低其调度优先级 。</p>
+</li>
+<li>
+<p><strong>Delete (P, H)</strong>：删除堆中任意位置 P 的节点 。常规做法是先执行 <span class="arithmatex">\(DecreaseKey(P, \infty, H)\)</span> 将其优先级提至无限高（使其一路“上滤”到根节点），然后再执行基础的 <span class="arithmatex">\(DeleteMin(H)\)</span> 将其剥离 。常用于处理用户手动结束（异常终止）某个进程的场景 。</p>
+</li>
+<li>
+<p><strong>注</strong>：如果要在堆中寻找除最小/最大值之外的特定键值，堆并没有提供高效的路径，只能进行 <span class="arithmatex">\(O(N)\)</span> 的线性遍历扫描 。</p>
+</li>
+</ul>
+<h3 id="6-buildheap">6. 线性建堆算法 (BuildHeap)<a class="headerlink" href="#6-buildheap" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>如果我们要将 N 个无序的数据直接转换为一个二叉堆，逐个调用 <span class="arithmatex">\(O(\log N)\)</span> 的插入操作效率是不够的 。</p>
+</li>
+<li>
+<p>更高效的算法是：将数据原封不动放入树形结构后，<strong>从最后一个拥有子节点的父节点开始，依次向前倒序遍历，并对每个节点执行一次下滤 (Percolate Down) 操作</strong> 。通过数学证明，这种方式的整体时间复杂度可以优化为惊人的 <span class="arithmatex">\(O(N)\)</span> 。</p>
+</li>
+</ul>
+<h3 id="7">7. 典型应用与扩展<a class="headerlink" href="#7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>经典应用</strong>：利用优先队列可以高效解决诸如“给定一个包含 N 个元素的列表，寻找其中第 k 大的元素”这类选择与排序问题 。</p>
+</li>
+<li>
+<p><strong>进阶扩展： d-叉堆 (d-Heaps)</strong>：除了二叉，堆也可以是 <span class="arithmatex">\(d\)</span> 叉的，即每个节点拥有 <span class="arithmatex">\(d\)</span> 个子节点 。</p>
+</li>
+<li>
+<p>它的缺点在于执行 <code>DeleteMin</code> 时，为了找出最小的子节点，需要进行 <span class="arithmatex">\(d-1\)</span> 次比较 。因此整体时间复杂度变为 <span class="arithmatex">\(O(d \log_d N)\)</span> 。此外，二叉堆中寻找子节点的 <code>*2</code> 或 <code>/2</code> 操作可以用极快的二进制位移实现，而在 d-叉堆中只能依赖真实的乘除法器 。</p>
+</li>
+<li>
+<p><strong>适用场景</strong>：但是，当优先队列的数据量过于庞大，<strong>无法完全存放在主内存中时</strong>， d-叉堆因为树的高度大幅降低，能够显著减少磁盘 I/O 访问深度，在此时会表现出极大的优势 。</p>
+</li>
+</ul>
+<h2 id="05">05 并查集<a class="headerlink" href="#05" title="Permanent link">&para;</a></h2>
 
 
 
