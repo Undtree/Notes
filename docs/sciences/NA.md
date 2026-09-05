@@ -31,7 +31,7 @@
 
 #### 绝对误差和相对误差
 
-如果$p^{*}$是$p$的一个近似，那么该近似的**绝对误差**是$\lvert p-p^*\rvert$，**相对误差**是$\lvert \frac{p-p^{*}}{p} \rvert$，其中$p\neq0$。
+如果$p^{*}$是$p$的一个近似，那么该近似的**绝对误差**是$\lvert p-p^*\rvert$，**相对误差**是$\lvert \displaystyle\frac{p-p^{*}}{p} \rvert$，其中$p\neq0$。
 
 #### 误差产生的情况
 

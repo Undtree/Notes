@@ -16,7 +16,7 @@
 !!! Note "目录"
     - [x] [算法的分析](./intro.md)
     - [ ] [线性数据结构](./lineards.md)
-    - [ ] [树](./trees.md)
+    - [ ] [树形结构](./trees.md)
     - [x] [图论](./graph.md)
     - [ ] [查找](./search.md)
     - [ ] [排序](./sort.md)

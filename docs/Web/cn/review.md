@@ -206,8 +206,8 @@ PSTN 包含三个部分：本地回路 (Local loops)、干线 (Trunks)、交换�
 #### 1. 停等协议 (Stop-and-Wait)
 *   **机制：** 发送一帧，等待ACK，再发下一帧。
 *   **利用率 (Utilization/Efficiency) 计算（重点）：**
-    *   $$U = \frac{T_{frame}}{T_{cycle}} = \frac{T_{frame}}{T_{frame} + 2 \times T_{prop}}$$
-    *   令 $\alpha = T_{prop} / T_{frame}$，则 $U = \frac{1}{2\alpha + 1}$。
+    *   $$U = \displaystyle\frac{T_{frame}}{T_{cycle}} = \displaystyle\frac{T_{frame}}{T_{frame} + 2 \times T_{prop}}$$
+    *   令 $\alpha = T_{prop} / T_{frame}$，则 $U = \displaystyle\frac{1}{2\alpha + 1}$。
     *   **$T_{prop}$ (传播延迟):** 距离 / 光速。
     *   **$T_{frame}$ (发送延迟):** 帧大小 / 带宽。
 
@@ -228,9 +228,9 @@ PSTN 包含三个部分：本地回路 (Local loops)、干线 (Trunks)、交换�
 
         接着，计算各项时间开销：
 
-        1. 数据包传输时延 $t_{data} = \frac{L_{data}}{R} = \frac{1120}{10^8} = 11.2 \mu\text{s}$
-        2. 确认帧传输时延 $t_{ack} = \frac{L_{ack}}{R} = \frac{480}{10^8} = 4.8 \mu\text{s}$
-        3. 有效载荷传输时间 $t_{payload} = \frac{L_{payload}}{R} = \frac{800}{10^8} = 8 \mu\text{s}$
+        1. 数据包传输时延 $t_{data} = \displaystyle\frac{L_{data}}{R} = \displaystyle\frac{1120}{10^8} = 11.2 \mu\text{s}$
+        2. 确认帧传输时延 $t_{ack} = \displaystyle\frac{L_{ack}}{R} = \displaystyle\frac{480}{10^8} = 4.8 \mu\text{s}$
+        3. 有效载荷传输时间 $t_{payload} = \displaystyle\frac{L_{payload}}{R} = \displaystyle\frac{800}{10^8} = 8 \mu\text{s}$
 
         在停止-等待协议中，一个完整的周期 $T_{total}$ 包括：发送数据包的时间、数据包到达 B 的传播时间、B 发送确认帧的时间、确认帧到达 A 的传播时间。
 
@@ -239,7 +239,7 @@ PSTN 包含三个部分：本地回路 (Local loops)、干线 (Trunks)、交换�
         $T_{total} = 11.2 \mu\text{s} + 12 \mu\text{s} + 4.8 \mu\text{s} + 12 \mu\text{s} = 40 \mu\text{s}$
 
         有效利用率定义为传输有效载荷的时间与总周期的比值：
-        $U_{eff} = \frac{t_{payload}}{T_{total}} = \frac{8 \mu\text{s}}{40 \mu\text{s}} = 0.2$
+        $U_{eff} = \displaystyle\frac{t_{payload}}{T_{total}} = \displaystyle\frac{8 \mu\text{s}}{40 \mu\text{s}} = 0.2$
 
         因此，有效利用率为 **20%**。
 
@@ -247,7 +247,7 @@ PSTN 包含三个部分：本地回路 (Local loops)、干线 (Trunks)、交换�
 #### 2. 滑动窗口协议 (Sliding Window)
 *   允许发送方在收到ACK之前发送多个帧（管道化）。
 *   **利用率：** 如果窗口足够大，可以使信道利用率接近 100%。
-    *   $U = \frac{N \times T_{frame}}{T_{frame} + 2T_{prop}}$ （当 $N$ 较小时）
+    *   $U = \displaystyle\frac{N \times T_{frame}}{T_{frame} + 2T_{prop}}$ （当 $N$ 较小时）
     *   理想窗口大小 $N \approx 2\alpha + 1$。
 
 #### 3. 两种ARQ协议对比（重点记忆窗口大小限制）
@@ -778,7 +778,7 @@ TCP Tahoe 和 TCP Reno 是 TCP 拥塞控制的两个经典版本。它们的核�
 1.  **`cwnd` (Congestion Window)**：拥塞窗口，决定了发送方一次能发多少数据。
 2.  **`Threshold` (ssthresh)**：慢启动阈值，是“慢启动”阶段和“拥塞避免”阶段的分界线。
 
-发送速率大约等于：$\text{Rate} \approx \frac{\text{cwnd}}{\text{RTT}}$
+发送速率大约等于：$\text{Rate} \approx \displaystyle\frac{\text{cwnd}}{\text{RTT}}$
 
 #### 两个共同的基础阶段
 无论是 Tahoe 还是 Reno，在网络正常（没丢包）的时候，行为是一样的：
@@ -848,7 +848,7 @@ TCP Tahoe 和 TCP Reno 是 TCP 拥塞控制的两个经典版本。它们的核�
     *   目标：每经过 1 个 RTT，`cwnd` + 1。
     *   实现：每收到 1 个 ACK：
 
-        $$cwnd = cwnd + MSS \times \left( \frac{MSS}{cwnd} \right)$$
+        $$cwnd = cwnd + MSS \times \left( \displaystyle\frac{MSS}{cwnd} \right)$$
 
 2.  **指数增长 (慢启动)**：
     *   目标：每经过 1 个 RTT，`cwnd` 翻倍。
