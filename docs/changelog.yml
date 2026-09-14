@@ -3,22 +3,31 @@
     - "newpage":
         text: 新增页面“计算理论”
         href: CS/TOC/
-    - "changelog":
-        text: 重构了“计算机网络”
-        href: Web/cn/
+    # - "changelog":
+    #     text: 重构了“计算机网络”
+    #     href: Web/cn/
   - "2026-02":
     - "newpage": 新增“数理基础”分类
     - "changelog":
         text: 完成计网复习页
         href: Web/cn/review/
-  - "2026-03":
-    # - "newpage":
-    #     text: 新增“软件工程”
-    #     href: CS/SE/
-    - "newpage":
-        text: 新增“多媒体技术”
-        href: CS/multimedia/
+  # - "2026-03":
+  #   - "newpage":
+  #       text: 新增“软件工程”
+  #       href: CS/SE/
+  #   - "newpage":
+  #       text: 新增“多媒体技术”
+  #       href: CS/multimedia/
   - "2026-09":
     - "changelog":
         text: 重构了“数据结构”
         href: CS/DS/
+    - "newpage":
+        text: 新增“计算机组成原理”
+        href: CS/CO/
+    - "newpage":
+        text: 新增“操作系统”
+        href: CS/OS/
+    - "newpage":
+        text: 新增“概率论与数理统计”
+        href: sciences/PaS

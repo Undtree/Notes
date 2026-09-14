@@ -281,9 +281,9 @@ B 树常常存储在磁盘上，因此这些"指针"也往往是磁盘页号、�
 而磁盘的存取次数和树的高度成正比，我们下面来讨论 B 树的高度范围。设 $n \geq 1$，对于任意一棵包含 n 个 **关键字**、高度为 h、阶数为 m 的 B 树：
 
 -   最小高度：每个结点拥有最多的关键字。在这种情况下，B 树最多可以容纳 $(m-1)(1+m+m^2+\dots+m^{h-1}) = m^h-1$ 个关键字，于是 $n \leq m^h-1$，$h \geq \log_m(n+1)$；
--   最大高度：每个结点拥有最少的关键字。在这种情况下，第 1 层有 1 个结点，第 2 层至少有 2 个结点；除根结点外，每个非叶结点至少有 $\lceil \displaystyle\frac{m}{2} \rceil$ 个孩子，以此类推，第 h+1 层至少有 $2(\lceil \displaystyle\frac{m}{2} \rceil)^{h-1}$。所以所以对包含 n 个关键字的 B 树，其外部结点恒有 n+1 个，于是 $n+1 \geq 2(\lceil \displaystyle\frac{m}{2} \rceil)^{h-1}$，$h \leq \log_{\lceil \displaystyle\frac{m}{2} \rceil}(\displaystyle\frac{n+1}{2}) + 1$。
+-   最大高度：每个结点拥有最少的关键字。在这种情况下，第 1 层有 1 个结点，第 2 层至少有 2 个结点；除根结点外，每个非叶结点至少有 $\lceil \displaystyle\frac{m}{2} \rceil$ 个孩子，以此类推，第 h+1 层至少有 $2(\lceil \displaystyle\frac{m}{2} \rceil)^{h-1}$。所以所以对包含 n 个关键字的 B 树，其外部结点恒有 n+1 个，于是 $n+1 \geq 2(\lceil \displaystyle\frac{m}{2} \rceil)^{h-1}$，$h \leq \log_{\lceil \frac{m}{2} \rceil}(\displaystyle\frac{n+1}{2}) + 1$。
 
-也即树的高度的范围在 $\log_m(n+1) \leq h \leq \log_{\lceil \displaystyle\frac{m}{2} \rceil}(\displaystyle\frac{n+1}{2}) + 1$.
+也即树的高度的范围在 $\log_m(n+1) \leq h \leq \log_{\lceil \frac{m}{2} \rceil}(\displaystyle\frac{n+1}{2}) + 1$.
 
 #### B 树的插入
 
@@ -445,8 +445,8 @@ $$
 -   **线性探测**。$d_i = i$。
     -   冲突发生时，依次查看表中下一个单元。如此循环，只要表未满，必能找到一个空闲单元。
     -   会导致聚集 (clustering) 现象：原本映射到地址 i 的同义词被映射到 i+1，而本应该存入 i+1 的元素则被迫占用 i+2，以此类推。这会导致大量元素在相邻地址上聚集，搜索次数会变得非常大。
-        -   使用线性探测的探测次数对于插入和不成功查找来说，约为 $\displaystyle\frac{1}{2}(1 + \displaystyle\frac{1}{(1+\lambda)^2})$
-        -   而对于成功查找来说，需要约 $\displaystyle\frac{1}{2}(1 + \displaystyle\frac{1}{1+\lambda})$
+        -   使用线性探测的探测次数对于插入和不成功查找来说，约为 $\displaystyle\frac{1}{2}(1 + \displaystyle\frac{1}{(1-\lambda)^2})$
+        -   而对于成功查找来说，需要约 $\displaystyle\frac{1}{2}(1 + \displaystyle\frac{1}{1-\lambda})$
 -   **二次探测**（平方探测）。$d_i = i^2$（王道给出的另一序列是 $1^2, -1^2, 2^2, -2^2, \dots, k^2, -k^2$）。
     -   如果哈希表长度为质数，当表至少有一半是空的时，使用二次探测总能插入一个新的元素。
     -   这是因为二次探测虽然未必能探测所有哈希表中的位置，但至少也可以覆盖一半的地址空间。
@@ -499,7 +499,18 @@ $$
 -   表填满一半了或当哈希表达到了某一个特定的装载密度时；
 -   插入失败；...
 
-#### 哈希查找的性能
+### 哈希表的查找和删除
+
+!!! Note "哈希表的查找"
+    对于给定的关键字，将其代入哈希函数，找到对应的地址（桶）。
+    
+    若该地址已经有数据但不是给定的关键字（查找失败），按照冲突处理的方法继续，直至在某个地址找到对应的关键字（查找成功）或地址上是空的（查找失败）或者已经遍历整个哈希表都没有找到对应关键字（查找失败）。
+
+!!! Warning "哈希表的删除"
+    不能直接物理删除表中的元素。这样可能截断其他具有相同散列地址的元素的查找地址。（《王道》）
+    这句话的意思是，
+
+### 哈希查找的性能
 
 哈希表的 ASL 主要取决于哈希函数、冲突处理方法装载密度（装填因子）。下面是一个具体的例子：
 
@@ -531,20 +542,20 @@ $$
     <tbody>
         <tr>
         <td class="fl-table-node"></td>
-        <td class="fl-table-node"></td>
-        <td class="fl-table-node"></td>
-        <td class="fl-table-node">10</td>
-        <td class="fl-table-node">11</td>
-        <td class="fl-table-node">23</td>
-        <td class="fl-table-node">79</td>
-        <td class="fl-table-node">84</td>
-        <td class="fl-table-node">20</td>
-        <td class="fl-table-node">19</td>
-        <td class="fl-table-node">55</td>
-        <td class="fl-table-node">27</td>
-        <td class="fl-table-node">68</td>
-        <td class="fl-table-node">01</td>
         <td class="fl-table-node">14</td>
+        <td class="fl-table-node">01</td>
+        <td class="fl-table-node">68</td>
+        <td class="fl-table-node">27</td>
+        <td class="fl-table-node">55</td>
+        <td class="fl-table-node">19</td>
+        <td class="fl-table-node">20</td>
+        <td class="fl-table-node">84</td>
+        <td class="fl-table-node">79</td>
+        <td class="fl-table-node">23</td>
+        <td class="fl-table-node">11</td>
+        <td class="fl-table-node">10</td>
+        <td class="fl-table-node"></td>
+        <td class="fl-table-node"></td>
         <td class="fl-table-node"></td>
         </tr>
     </tbody>
