@@ -448,6 +448,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -517,6 +521,62 @@
     
   
     数据结构与算法分析
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    计算机组成原理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    操作系统
   
 
     
@@ -1050,6 +1110,8 @@
       
         
       
+        
+      
     
     
     
@@ -1119,6 +1181,34 @@
     
   
     大学物理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sciences/PaS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    概率论与数理统计
   
 
     
@@ -1489,19 +1579,30 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
   <a href="#_15" class="md-nav__link">
     <span class="md-ellipsis">
       
-        哈希查找的性能
+        哈希表的查找和删除
       
     </span>
   </a>
   
 </li>
         
-      </ul>
-    </nav>
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        哈希查找的性能
+      
+    </span>
+  </a>
   
 </li>
         
@@ -1533,7 +1634,7 @@
 
 <h1 id="_1">查找<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 8902 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M360.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m64.6 136.1c-12.5 12.5-12.5 32.8 0 45.3l73.4 73.4-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l96-96c12.5-12.5 12.5-32.8 0-45.3l-96-96c-12.5-12.5-32.8-12.5-45.3 0zm-274.7 0c-12.5-12.5-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l73.3-73.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg></span> 105 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 13 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 31 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 9081 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M360.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m64.6 136.1c-12.5 12.5-12.5 32.8 0 45.3l73.4 73.4-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l96-96c12.5-12.5 12.5-32.8 0-45.3l-96-96c-12.5-12.5-32.8-12.5-45.3 0zm-274.7 0c-12.5-12.5-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l73.3-73.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg></span> 105 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 13 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 32 分钟</p>
 </div>
 <p>衡量一个查找算法的核心指标是 <strong>平均查找长度 (ASL)</strong>。查找长度指的是一次查找中关键字 (key) 的比较次数， ASL 则是所有查找长度的平均值，或者说是所有查找操作中 key 的比较次数的加权平均值：</p>
 <div class="arithmatex">\[
@@ -1803,9 +1904,9 @@ T_{k-1} 中所有关键字 &gt; K_{k-1}
 <p>而磁盘的存取次数和树的高度成正比，我们下面来讨论 B 树的高度范围。设 <span class="arithmatex">\(n \geq 1\)</span>，对于任意一棵包含 n 个 <strong>关键字</strong>、高度为 h、阶数为 m 的 B 树：</p>
 <ul>
 <li>最小高度：每个结点拥有最多的关键字。在这种情况下， B 树最多可以容纳 <span class="arithmatex">\((m-1)(1+m+m^2+\dots+m^{h-1}) = m^h-1\)</span> 个关键字，于是 <span class="arithmatex">\(n \leq m^h-1\)</span>，<span class="arithmatex">\(h \geq \log_m(n+1)\)</span>；</li>
-<li>最大高度：每个结点拥有最少的关键字。在这种情况下，第 1 层有 1 个结点，第 2 层至少有 2 个结点；除根结点外，每个非叶结点至少有 <span class="arithmatex">\(\lceil \displaystyle\frac{m}{2} \rceil\)</span> 个孩子，以此类推，第 h+1 层至少有 <span class="arithmatex">\(2(\lceil \displaystyle\frac{m}{2} \rceil)^{h-1}\)</span>。所以所以对包含 n 个关键字的 B 树，其外部结点恒有 n+1 个，于是 <span class="arithmatex">\(n+1 \geq 2(\lceil \displaystyle\frac{m}{2} \rceil)^{h-1}\)</span>，<span class="arithmatex">\(h \leq \log_{\lceil \displaystyle\frac{m}{2} \rceil}(\displaystyle\frac{n+1}{2}) + 1\)</span>。</li>
+<li>最大高度：每个结点拥有最少的关键字。在这种情况下，第 1 层有 1 个结点，第 2 层至少有 2 个结点；除根结点外，每个非叶结点至少有 <span class="arithmatex">\(\lceil \displaystyle\frac{m}{2} \rceil\)</span> 个孩子，以此类推，第 h+1 层至少有 <span class="arithmatex">\(2(\lceil \displaystyle\frac{m}{2} \rceil)^{h-1}\)</span>。所以所以对包含 n 个关键字的 B 树，其外部结点恒有 n+1 个，于是 <span class="arithmatex">\(n+1 \geq 2(\lceil \displaystyle\frac{m}{2} \rceil)^{h-1}\)</span>，<span class="arithmatex">\(h \leq \log_{\lceil \frac{m}{2} \rceil}(\displaystyle\frac{n+1}{2}) + 1\)</span>。</li>
 </ul>
-<p>也即树的高度的范围在 <span class="arithmatex">\(\log_m(n+1) \leq h \leq \log_{\lceil \displaystyle\frac{m}{2} \rceil}(\displaystyle\frac{n+1}{2}) + 1\)</span>.</p>
+<p>也即树的高度的范围在 <span class="arithmatex">\(\log_m(n+1) \leq h \leq \log_{\lceil \frac{m}{2} \rceil}(\displaystyle\frac{n+1}{2}) + 1\)</span>.</p>
 <h4 id="b_1">B 树的插入<a class="headerlink" href="#b_1" title="Permanent link">&para;</a></h4>
 <p>将关键字 key 插入 B 树的过程可以大致分为：</p>
 <ol>
@@ -1954,8 +2055,8 @@ H_i(x) = (H(x) + d_i) \% m
 <li><strong>线性探测</strong>。<span class="arithmatex">\(d_i = i\)</span>。<ul>
 <li>冲突发生时，依次查看表中下一个单元。如此循环，只要表未满，必能找到一个空闲单元。</li>
 <li>会导致聚集 (clustering) 现象：原本映射到地址 i 的同义词被映射到 i+1 ，而本应该存入 i+1 的元素则被迫占用 i+2 ，以此类推。这会导致大量元素在相邻地址上聚集，搜索次数会变得非常大。<ul>
-<li>使用线性探测的探测次数对于插入和不成功查找来说，约为 <span class="arithmatex">\(\displaystyle\frac{1}{2}(1 + \displaystyle\frac{1}{(1+\lambda)^2})\)</span></li>
-<li>而对于成功查找来说，需要约 <span class="arithmatex">\(\displaystyle\frac{1}{2}(1 + \displaystyle\frac{1}{1+\lambda})\)</span></li>
+<li>使用线性探测的探测次数对于插入和不成功查找来说，约为 <span class="arithmatex">\(\displaystyle\frac{1}{2}(1 + \displaystyle\frac{1}{(1-\lambda)^2})\)</span></li>
+<li>而对于成功查找来说，需要约 <span class="arithmatex">\(\displaystyle\frac{1}{2}(1 + \displaystyle\frac{1}{1-\lambda})\)</span></li>
 </ul>
 </li>
 </ul>
@@ -2022,7 +2123,18 @@ H_i(x) = (H(x) + d_i) \% m
 <li>表填满一半了或当哈希表达到了某一个特定的装载密度时；</li>
 <li>插入失败；...</li>
 </ul>
-<h4 id="_15">哈希查找的性能<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h4>
+<h3 id="_15">哈希表的查找和删除<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">哈希表的查找</p>
+<p>对于给定的关键字，将其代入哈希函数，找到对应的地址（桶）。</p>
+<p>若该地址已经有数据但不是给定的关键字（查找失败），按照冲突处理的方法继续，直至在某个地址找到对应的关键字（查找成功）或地址上是空的（查找失败）或者已经遍历整个哈希表都没有找到对应关键字（查找失败）。</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">哈希表的删除</p>
+<p>不能直接物理删除表中的元素。这样可能截断其他具有相同散列地址的元素的查找地址。（《王道》）
+这句话的意思是，</p>
+</div>
+<h3 id="_16">哈希查找的性能<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
 <p>哈希表的 ASL 主要取决于哈希函数、冲突处理方法装载密度（装填因子）。下面是一个具体的例子：</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
@@ -2051,20 +2163,20 @@ H_i(x) = (H(x) + d_i) \% m
 <p><tbody>
     <tr>
     <td class="fl-table-node"></td>
-    <td class="fl-table-node"></td>
-    <td class="fl-table-node"></td>
-    <td class="fl-table-node">10</td>
-    <td class="fl-table-node">11</td>
-    <td class="fl-table-node">23</td>
-    <td class="fl-table-node">79</td>
-    <td class="fl-table-node">84</td>
-    <td class="fl-table-node">20</td>
-    <td class="fl-table-node">19</td>
-    <td class="fl-table-node">55</td>
-    <td class="fl-table-node">27</td>
-    <td class="fl-table-node">68</td>
-    <td class="fl-table-node">01</td>
     <td class="fl-table-node">14</td>
+    <td class="fl-table-node">01</td>
+    <td class="fl-table-node">68</td>
+    <td class="fl-table-node">27</td>
+    <td class="fl-table-node">55</td>
+    <td class="fl-table-node">19</td>
+    <td class="fl-table-node">20</td>
+    <td class="fl-table-node">84</td>
+    <td class="fl-table-node">79</td>
+    <td class="fl-table-node">23</td>
+    <td class="fl-table-node">11</td>
+    <td class="fl-table-node">10</td>
+    <td class="fl-table-node"></td>
+    <td class="fl-table-node"></td>
     <td class="fl-table-node"></td>
     </tr>
 </tbody>

@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="1030" viewBox="0 0 1120 1030">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#4051b5"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="1120" height="1030" fill="#ffffff"/>
+  <text x="60" y="45" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="20" font-weight="bold" fill="#1a237e">初始链表（d = 3 位十进制关键字，r = 10）</text>
+  <rect x="60" y="80" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="88" y="98" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">2</tspan><tspan fill="#1a237e">7</tspan><tspan fill="#1a237e">8</tspan></text>
+  <line x1="116" y1="98" x2="162" y2="98" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="164" y="80" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="192" y="98" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">1</tspan><tspan fill="#1a237e">0</tspan><tspan fill="#1a237e">9</tspan></text>
+  <line x1="220" y1="98" x2="266" y2="98" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="268" y="80" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="296" y="98" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">0</tspan><tspan fill="#1a237e">6</tspan><tspan fill="#1a237e">3</tspan></text>
+  <line x1="324" y1="98" x2="370" y2="98" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="372" y="80" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="400" y="98" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">9</tspan><tspan fill="#1a237e">3</tspan><tspan fill="#1a237e">0</tspan></text>
+  <line x1="428" y1="98" x2="474" y2="98" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="476" y="80" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="504" y="98" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">5</tspan><tspan fill="#1a237e">8</tspan><tspan fill="#1a237e">9</tspan></text>
+  <line x1="532" y1="98" x2="578" y2="98" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="580" y="80" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="608" y="98" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">1</tspan><tspan fill="#1a237e">8</tspan><tspan fill="#1a237e">4</tspan></text>
+  <line x1="636" y1="98" x2="682" y2="98" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="684" y="80" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="712" y="98" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">5</tspan><tspan fill="#1a237e">0</tspan><tspan fill="#1a237e">5</tspan></text>
+  <line x1="740" y1="98" x2="786" y2="98" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="788" y="80" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="816" y="98" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">2</tspan><tspan fill="#1a237e">6</tspan><tspan fill="#1a237e">9</tspan></text>
+  <line x1="844" y1="98" x2="890" y2="98" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="892" y="80" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="920" y="98" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">0</tspan><tspan fill="#1a237e">0</tspan><tspan fill="#1a237e">8</tspan></text>
+  <line x1="948" y1="98" x2="994" y2="98" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="996" y="80" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="1024" y="98" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">0</tspan><tspan fill="#1a237e">8</tspan><tspan fill="#1a237e">3</tspan></text>
+  <text x="1066" y="98" dominant-baseline="central" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="15" fill="#555555">∧</text>
+  <text x="60" y="165" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="20" font-weight="bold" fill="#1a237e">第一趟：按个位（k⁰）分配</text>
+  <rect x="60" y="200" width="92" height="100" rx="8" fill="#fafafa" stroke="#9e9e9e" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="106.0" y="216" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="15" font-weight="bold" fill="#4051b5">Q0</text>
+  <rect x="78" y="238" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="106" y="256" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">9</tspan><tspan fill="#1a237e">3</tspan><tspan fill="#d62728">0</tspan></text>
+  <rect x="174" y="200" width="168" height="100" rx="8" fill="#fafafa" stroke="#9e9e9e" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="258.0" y="216" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="15" font-weight="bold" fill="#4051b5">Q3</text>
+  <rect x="192" y="238" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="220" y="256" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">0</tspan><tspan fill="#1a237e">6</tspan><tspan fill="#d62728">3</tspan></text>
+  <line x1="248" y1="256" x2="266" y2="256" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="268" y="238" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="296" y="256" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">0</tspan><tspan fill="#1a237e">8</tspan><tspan fill="#d62728">3</tspan></text>
+  <rect x="364" y="200" width="92" height="100" rx="8" fill="#fafafa" stroke="#9e9e9e" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="410.0" y="216" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="15" font-weight="bold" fill="#4051b5">Q4</text>
+  <rect x="382" y="238" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="410" y="256" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">1</tspan><tspan fill="#1a237e">8</tspan><tspan fill="#d62728">4</tspan></text>
+  <rect x="478" y="200" width="92" height="100" rx="8" fill="#fafafa" stroke="#9e9e9e" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="524.0" y="216" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="15" font-weight="bold" fill="#4051b5">Q5</text>
+  <rect x="496" y="238" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="524" y="256" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">5</tspan><tspan fill="#1a237e">0</tspan><tspan fill="#d62728">5</tspan></text>
+  <rect x="592" y="200" width="168" height="100" rx="8" fill="#fafafa" stroke="#9e9e9e" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="676.0" y="216" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="15" font-weight="bold" fill="#4051b5">Q8</text>
+  <rect x="610" y="238" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="638" y="256" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">2</tspan><tspan fill="#1a237e">7</tspan><tspan fill="#d62728">8</tspan></text>
+  <line x1="666" y1="256" x2="684" y2="256" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="686" y="238" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="714" y="256" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">0</tspan><tspan fill="#1a237e">0</tspan><tspan fill="#d62728">8</tspan></text>
+  <rect x="782" y="200" width="244" height="100" rx="8" fill="#fafafa" stroke="#9e9e9e" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="904.0" y="216" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="15" font-weight="bold" fill="#4051b5">Q9</text>
+  <rect x="800" y="238" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="828" y="256" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">1</tspan><tspan fill="#1a237e">0</tspan><tspan fill="#d62728">9</tspan></text>
+  <line x1="856" y1="256" x2="874" y2="256" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="876" y="238" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="904" y="256" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">5</tspan><tspan fill="#1a237e">8</tspan><tspan fill="#d62728">9</tspan></text>
+  <line x1="932" y1="256" x2="950" y2="256" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="952" y="238" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="980" y="256" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">2</tspan><tspan fill="#1a237e">6</tspan><tspan fill="#d62728">9</tspan></text>
+  <text x="60" y="335" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="14" fill="#555555">收集：按 Q0 → Q3 → Q4 → Q5 → Q8 → Q9 的顺序依次串接</text>
+  <rect x="60" y="355" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="88" y="373" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">9</tspan><tspan fill="#1a237e">3</tspan><tspan fill="#1a237e">0</tspan></text>
+  <line x1="116" y1="373" x2="162" y2="373" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="164" y="355" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="192" y="373" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">0</tspan><tspan fill="#1a237e">6</tspan><tspan fill="#1a237e">3</tspan></text>
+  <line x1="220" y1="373" x2="266" y2="373" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="268" y="355" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="296" y="373" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">0</tspan><tspan fill="#1a237e">8</tspan><tspan fill="#1a237e">3</tspan></text>
+  <line x1="324" y1="373" x2="370" y2="373" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="372" y="355" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="400" y="373" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">1</tspan><tspan fill="#1a237e">8</tspan><tspan fill="#1a237e">4</tspan></text>
+  <line x1="428" y1="373" x2="474" y2="373" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="476" y="355" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="504" y="373" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">5</tspan><tspan fill="#1a237e">0</tspan><tspan fill="#1a237e">5</tspan></text>
+  <line x1="532" y1="373" x2="578" y2="373" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="580" y="355" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="608" y="373" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">2</tspan><tspan fill="#1a237e">7</tspan><tspan fill="#1a237e">8</tspan></text>
+  <line x1="636" y1="373" x2="682" y2="373" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="684" y="355" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="712" y="373" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">0</tspan><tspan fill="#1a237e">0</tspan><tspan fill="#1a237e">8</tspan></text>
+  <line x1="740" y1="373" x2="786" y2="373" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="788" y="355" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="816" y="373" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">1</tspan><tspan fill="#1a237e">0</tspan><tspan fill="#1a237e">9</tspan></text>
+  <line x1="844" y1="373" x2="890" y2="373" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="892" y="355" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="920" y="373" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">5</tspan><tspan fill="#1a237e">8</tspan><tspan fill="#1a237e">9</tspan></text>
+  <line x1="948" y1="373" x2="994" y2="373" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="996" y="355" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="1024" y="373" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">2</tspan><tspan fill="#1a237e">6</tspan><tspan fill="#1a237e">9</tspan></text>
+  <text x="1066" y="373" dominant-baseline="central" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="15" fill="#555555">∧</text>
+  <text x="60" y="445" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="20" font-weight="bold" fill="#1a237e">第二趟：按十位（k¹）分配</text>
+  <rect x="60" y="480" width="244" height="100" rx="8" fill="#fafafa" stroke="#9e9e9e" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="182.0" y="496" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="15" font-weight="bold" fill="#4051b5">Q0</text>
+  <rect x="78" y="518" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="106" y="536" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">5</tspan><tspan fill="#d62728">0</tspan><tspan fill="#1a237e">5</tspan></text>
+  <line x1="134" y1="536" x2="152" y2="536" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="154" y="518" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="182" y="536" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">0</tspan><tspan fill="#d62728">0</tspan><tspan fill="#1a237e">8</tspan></text>
+  <line x1="210" y1="536" x2="228" y2="536" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="230" y="518" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="258" y="536" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">1</tspan><tspan fill="#d62728">0</tspan><tspan fill="#1a237e">9</tspan></text>
+  <rect x="326" y="480" width="92" height="100" rx="8" fill="#fafafa" stroke="#9e9e9e" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="372.0" y="496" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="15" font-weight="bold" fill="#4051b5">Q3</text>
+  <rect x="344" y="518" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="372" y="536" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">9</tspan><tspan fill="#d62728">3</tspan><tspan fill="#1a237e">0</tspan></text>
+  <rect x="440" y="480" width="168" height="100" rx="8" fill="#fafafa" stroke="#9e9e9e" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="524.0" y="496" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="15" font-weight="bold" fill="#4051b5">Q6</text>
+  <rect x="458" y="518" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="486" y="536" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">0</tspan><tspan fill="#d62728">6</tspan><tspan fill="#1a237e">3</tspan></text>
+  <line x1="514" y1="536" x2="532" y2="536" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="534" y="518" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="562" y="536" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">2</tspan><tspan fill="#d62728">6</tspan><tspan fill="#1a237e">9</tspan></text>
+  <rect x="630" y="480" width="92" height="100" rx="8" fill="#fafafa" stroke="#9e9e9e" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="676.0" y="496" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="15" font-weight="bold" fill="#4051b5">Q7</text>
+  <rect x="648" y="518" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="676" y="536" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">2</tspan><tspan fill="#d62728">7</tspan><tspan fill="#1a237e">8</tspan></text>
+  <rect x="744" y="480" width="244" height="100" rx="8" fill="#fafafa" stroke="#9e9e9e" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="866.0" y="496" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="15" font-weight="bold" fill="#4051b5">Q8</text>
+  <rect x="762" y="518" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="790" y="536" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">0</tspan><tspan fill="#d62728">8</tspan><tspan fill="#1a237e">3</tspan></text>
+  <line x1="818" y1="536" x2="836" y2="536" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="838" y="518" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="866" y="536" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">1</tspan><tspan fill="#d62728">8</tspan><tspan fill="#1a237e">4</tspan></text>
+  <line x1="894" y1="536" x2="912" y2="536" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="914" y="518" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="942" y="536" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">5</tspan><tspan fill="#d62728">8</tspan><tspan fill="#1a237e">9</tspan></text>
+  <text x="60" y="615" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="14" fill="#555555">收集：按 Q0 → Q3 → Q6 → Q7 → Q8 的顺序依次串接</text>
+  <rect x="60" y="635" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="88" y="653" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">5</tspan><tspan fill="#1a237e">0</tspan><tspan fill="#1a237e">5</tspan></text>
+  <line x1="116" y1="653" x2="162" y2="653" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="164" y="635" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="192" y="653" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">0</tspan><tspan fill="#1a237e">0</tspan><tspan fill="#1a237e">8</tspan></text>
+  <line x1="220" y1="653" x2="266" y2="653" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="268" y="635" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="296" y="653" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">1</tspan><tspan fill="#1a237e">0</tspan><tspan fill="#1a237e">9</tspan></text>
+  <line x1="324" y1="653" x2="370" y2="653" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="372" y="635" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="400" y="653" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">9</tspan><tspan fill="#1a237e">3</tspan><tspan fill="#1a237e">0</tspan></text>
+  <line x1="428" y1="653" x2="474" y2="653" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="476" y="635" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="504" y="653" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">0</tspan><tspan fill="#1a237e">6</tspan><tspan fill="#1a237e">3</tspan></text>
+  <line x1="532" y1="653" x2="578" y2="653" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="580" y="635" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="608" y="653" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">2</tspan><tspan fill="#1a237e">6</tspan><tspan fill="#1a237e">9</tspan></text>
+  <line x1="636" y1="653" x2="682" y2="653" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="684" y="635" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="712" y="653" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">2</tspan><tspan fill="#1a237e">7</tspan><tspan fill="#1a237e">8</tspan></text>
+  <line x1="740" y1="653" x2="786" y2="653" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="788" y="635" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="816" y="653" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">0</tspan><tspan fill="#1a237e">8</tspan><tspan fill="#1a237e">3</tspan></text>
+  <line x1="844" y1="653" x2="890" y2="653" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="892" y="635" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="920" y="653" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">1</tspan><tspan fill="#1a237e">8</tspan><tspan fill="#1a237e">4</tspan></text>
+  <line x1="948" y1="653" x2="994" y2="653" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="996" y="635" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="1024" y="653" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">5</tspan><tspan fill="#1a237e">8</tspan><tspan fill="#1a237e">9</tspan></text>
+  <text x="1066" y="653" dominant-baseline="central" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="15" fill="#555555">∧</text>
+  <text x="60" y="725" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="20" font-weight="bold" fill="#1a237e">第三趟：按百位（k²）分配</text>
+  <rect x="60" y="760" width="244" height="100" rx="8" fill="#fafafa" stroke="#9e9e9e" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="182.0" y="776" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="15" font-weight="bold" fill="#4051b5">Q0</text>
+  <rect x="78" y="798" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="106" y="816" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#d62728">0</tspan><tspan fill="#1a237e">0</tspan><tspan fill="#1a237e">8</tspan></text>
+  <line x1="134" y1="816" x2="152" y2="816" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="154" y="798" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="182" y="816" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#d62728">0</tspan><tspan fill="#1a237e">6</tspan><tspan fill="#1a237e">3</tspan></text>
+  <line x1="210" y1="816" x2="228" y2="816" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="230" y="798" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="258" y="816" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#d62728">0</tspan><tspan fill="#1a237e">8</tspan><tspan fill="#1a237e">3</tspan></text>
+  <rect x="326" y="760" width="168" height="100" rx="8" fill="#fafafa" stroke="#9e9e9e" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="410.0" y="776" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="15" font-weight="bold" fill="#4051b5">Q1</text>
+  <rect x="344" y="798" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="372" y="816" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#d62728">1</tspan><tspan fill="#1a237e">0</tspan><tspan fill="#1a237e">9</tspan></text>
+  <line x1="400" y1="816" x2="418" y2="816" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="420" y="798" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="448" y="816" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#d62728">1</tspan><tspan fill="#1a237e">8</tspan><tspan fill="#1a237e">4</tspan></text>
+  <rect x="516" y="760" width="168" height="100" rx="8" fill="#fafafa" stroke="#9e9e9e" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="600.0" y="776" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="15" font-weight="bold" fill="#4051b5">Q2</text>
+  <rect x="534" y="798" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="562" y="816" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#d62728">2</tspan><tspan fill="#1a237e">6</tspan><tspan fill="#1a237e">9</tspan></text>
+  <line x1="590" y1="816" x2="608" y2="816" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="610" y="798" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="638" y="816" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#d62728">2</tspan><tspan fill="#1a237e">7</tspan><tspan fill="#1a237e">8</tspan></text>
+  <rect x="706" y="760" width="168" height="100" rx="8" fill="#fafafa" stroke="#9e9e9e" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="790.0" y="776" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="15" font-weight="bold" fill="#4051b5">Q5</text>
+  <rect x="724" y="798" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="752" y="816" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#d62728">5</tspan><tspan fill="#1a237e">0</tspan><tspan fill="#1a237e">5</tspan></text>
+  <line x1="780" y1="816" x2="798" y2="816" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="800" y="798" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="828" y="816" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#d62728">5</tspan><tspan fill="#1a237e">8</tspan><tspan fill="#1a237e">9</tspan></text>
+  <rect x="896" y="760" width="92" height="100" rx="8" fill="#fafafa" stroke="#9e9e9e" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="942.0" y="776" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="15" font-weight="bold" fill="#4051b5">Q9</text>
+  <rect x="914" y="798" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="942" y="816" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#d62728">9</tspan><tspan fill="#1a237e">3</tspan><tspan fill="#1a237e">0</tspan></text>
+  <text x="60" y="895" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="14" fill="#555555">收集：按 Q0 → Q1 → Q2 → Q5 → Q9 的顺序依次串接</text>
+  <rect x="60" y="915" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="88" y="933" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">0</tspan><tspan fill="#1a237e">0</tspan><tspan fill="#1a237e">8</tspan></text>
+  <line x1="116" y1="933" x2="162" y2="933" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="164" y="915" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="192" y="933" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">0</tspan><tspan fill="#1a237e">6</tspan><tspan fill="#1a237e">3</tspan></text>
+  <line x1="220" y1="933" x2="266" y2="933" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="268" y="915" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="296" y="933" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">0</tspan><tspan fill="#1a237e">8</tspan><tspan fill="#1a237e">3</tspan></text>
+  <line x1="324" y1="933" x2="370" y2="933" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="372" y="915" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="400" y="933" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">1</tspan><tspan fill="#1a237e">0</tspan><tspan fill="#1a237e">9</tspan></text>
+  <line x1="428" y1="933" x2="474" y2="933" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="476" y="915" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="504" y="933" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">1</tspan><tspan fill="#1a237e">8</tspan><tspan fill="#1a237e">4</tspan></text>
+  <line x1="532" y1="933" x2="578" y2="933" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="580" y="915" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="608" y="933" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">2</tspan><tspan fill="#1a237e">6</tspan><tspan fill="#1a237e">9</tspan></text>
+  <line x1="636" y1="933" x2="682" y2="933" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="684" y="915" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="712" y="933" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">2</tspan><tspan fill="#1a237e">7</tspan><tspan fill="#1a237e">8</tspan></text>
+  <line x1="740" y1="933" x2="786" y2="933" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="788" y="915" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="816" y="933" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">5</tspan><tspan fill="#1a237e">0</tspan><tspan fill="#1a237e">5</tspan></text>
+  <line x1="844" y1="933" x2="890" y2="933" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="892" y="915" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="920" y="933" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">5</tspan><tspan fill="#1a237e">8</tspan><tspan fill="#1a237e">9</tspan></text>
+  <line x1="948" y1="933" x2="994" y2="933" stroke="#1f1f1f" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="996" y="915" width="56" height="36" rx="6" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="1024" y="933" dominant-baseline="central" text-anchor="middle" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="16"><tspan fill="#1a237e">9</tspan><tspan fill="#1a237e">3</tspan><tspan fill="#1a237e">0</tspan></text>
+  <text x="1066" y="933" dominant-baseline="central" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="15" fill="#555555">∧</text>
+  <text x="60" y="985" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="14" fill="#555555">三趟之后，整个链表按关键字从小到大排好，排序完成。</text>
+  <text x="60" y="1010" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif" font-size="14" fill="#555555">注：空队列未画出；红色数字为当前趟所按的位。</text>
+</svg>
