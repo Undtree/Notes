@@ -90,6 +90,12 @@ theme:
           name: 切换至跟随系统
     icon: 
       logo: material/notebook-outline
+      admonition:
+        tip: material/lightbulb-outline
+        info: material/information-outline
+        success: material/check-circle-outline
+        warning: material/alert-circle-outline
+        danger: material/alert-octagon-outline
 
 plugins:
     - statistics
@@ -100,6 +106,11 @@ plugins:
 markdown_extensions:
   - toc:
       permalink: true
+      # 默认 slugify 会丢弃非 ASCII 字符，中文标题的锚点会退化成 _1、_2…
+      # 改用 pymdownx 的 slugify：保留 Unicode，中文标题的锚点就是标题本身
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
       toc_depth: 4
   - meta
   - def_list
