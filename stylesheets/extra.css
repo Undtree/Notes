@@ -57,6 +57,12 @@
   font-size: inherit;
 }
 
+/* Let the table size naturally */
+.md-typeset__table table:not([class]) {
+  display: table;
+  overflow: visible;
+}
+
 /* 功能：折叠逻辑 (简化版) */
 
 /* 默认状态：
