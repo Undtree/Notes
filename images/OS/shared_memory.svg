@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 420" width="1020" height="420" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">
+  <title>共享存储示意图</title>
+  <desc>进程 A 与进程 B 的虚拟地址空间中各有一段共享区，被映射到同一段共享存储区，箭头表示进程对共享存储区的读/写访问。</desc>
+
+  <defs>
+    <!-- 双向箭头头部（同一 marker 同时用于起点与终点） -->
+    <marker id="shm-arrow" viewBox="0 0 10 10" refX="9.5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#4051b5"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="1020" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="510" y="46" text-anchor="middle" font-size="21" font-weight="700" fill="#1a237e">共享存储（共享内存）</text>
+  <text x="510" y="74" text-anchor="middle" font-size="15" fill="#455a64">同一段物理内存被映射到多个进程的虚拟地址空间</text>
+
+  <!-- ============ 进程 A ============ -->
+  <rect x="45" y="115" width="260" height="250" rx="12" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="175" y="151" text-anchor="middle" font-size="17" font-weight="700" fill="#1a237e">进程 A</text>
+  <line x1="58" y1="167" x2="292" y2="167" stroke="#9aa7bd" stroke-width="1" stroke-dasharray="5 4"/>
+
+  <rect x="60" y="180" width="234" height="30" rx="5" fill="#f5f7fb" stroke="#1f1f1f" stroke-width="1.2"/>
+  <text x="74" y="200" font-size="14" fill="#1a237e">代码段</text>
+
+  <rect x="60" y="214" width="234" height="30" rx="5" fill="#f5f7fb" stroke="#1f1f1f" stroke-width="1.2"/>
+  <text x="74" y="234" font-size="14" fill="#1a237e">数据段</text>
+
+  <rect x="60" y="248" width="234" height="30" rx="5" fill="#f5f7fb" stroke="#1f1f1f" stroke-width="1.2"/>
+  <text x="74" y="268" font-size="14" fill="#1a237e">堆</text>
+
+  <rect x="60" y="282" width="234" height="30" rx="5" fill="#f5f7fb" stroke="#1f1f1f" stroke-width="1.2"/>
+  <text x="74" y="302" font-size="14" fill="#1a237e">栈</text>
+
+  <rect x="60" y="316" width="234" height="30" rx="5" fill="#dfe7fb" stroke="#4051b5" stroke-width="2"/>
+  <text x="74" y="336" font-size="14" font-weight="700" fill="#4051b5">共享区（映射）</text>
+
+  <!-- ============ 进程 B ============ -->
+  <rect x="715" y="115" width="260" height="250" rx="12" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="845" y="151" text-anchor="middle" font-size="17" font-weight="700" fill="#1a237e">进程 B</text>
+  <line x1="728" y1="167" x2="962" y2="167" stroke="#9aa7bd" stroke-width="1" stroke-dasharray="5 4"/>
+
+  <rect x="730" y="180" width="234" height="30" rx="5" fill="#f5f7fb" stroke="#1f1f1f" stroke-width="1.2"/>
+  <text x="744" y="200" font-size="14" fill="#1a237e">代码段</text>
+
+  <rect x="730" y="214" width="234" height="30" rx="5" fill="#f5f7fb" stroke="#1f1f1f" stroke-width="1.2"/>
+  <text x="744" y="234" font-size="14" fill="#1a237e">数据段</text>
+
+  <rect x="730" y="248" width="234" height="30" rx="5" fill="#f5f7fb" stroke="#1f1f1f" stroke-width="1.2"/>
+  <text x="744" y="268" font-size="14" fill="#1a237e">堆</text>
+
+  <rect x="730" y="282" width="234" height="30" rx="5" fill="#f5f7fb" stroke="#1f1f1f" stroke-width="1.2"/>
+  <text x="744" y="302" font-size="14" fill="#1a237e">栈</text>
+
+  <rect x="730" y="316" width="234" height="30" rx="5" fill="#dfe7fb" stroke="#4051b5" stroke-width="2"/>
+  <text x="744" y="336" font-size="14" font-weight="700" fill="#4051b5">共享区（映射）</text>
+
+  <!-- ============ 共享存储区 ============ -->
+  <rect x="380" y="115" width="260" height="250" rx="12" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="510" y="151" text-anchor="middle" font-size="17" font-weight="700" fill="#1a237e">共享存储区</text>
+  <line x1="393" y1="167" x2="627" y2="167" stroke="#9aa7bd" stroke-width="1" stroke-dasharray="5 4"/>
+
+  <rect x="398" y="186" width="224" height="112" rx="6" fill="#dfe7fb" stroke="#4051b5" stroke-width="2"/>
+  <!-- 共享缓冲区网格 -->
+  <g stroke="#a9bbdd" stroke-width="1">
+    <line x1="398" y1="214" x2="622" y2="214"/>
+    <line x1="398" y1="242" x2="622" y2="242"/>
+    <line x1="398" y1="270" x2="622" y2="270"/>
+    <line x1="430" y1="186" x2="430" y2="298"/>
+    <line x1="462" y1="186" x2="462" y2="298"/>
+    <line x1="494" y1="186" x2="494" y2="298"/>
+    <line x1="526" y1="186" x2="526" y2="298"/>
+    <line x1="558" y1="186" x2="558" y2="298"/>
+    <line x1="590" y1="186" x2="590" y2="298"/>
+  </g>
+  <text x="510" y="330" text-anchor="middle" font-size="13" fill="#455a64">同一段物理内存</text>
+  <text x="510" y="352" text-anchor="middle" font-size="13" fill="#455a64">同时映射到 A、B 的地址空间</text>
+
+  <!-- ============ 数据流向箭头 ============ -->
+  <line x1="305" y1="331" x2="380" y2="331" stroke="#4051b5" stroke-width="3.5" marker-start="url(#shm-arrow)" marker-end="url(#shm-arrow)"/>
+  <text x="342" y="318" text-anchor="middle" font-size="13" fill="#4051b5">读 / 写</text>
+
+  <line x1="640" y1="331" x2="715" y2="331" stroke="#4051b5" stroke-width="3.5" marker-start="url(#shm-arrow)" marker-end="url(#shm-arrow)"/>
+  <text x="677" y="318" text-anchor="middle" font-size="13" fill="#4051b5">读 / 写</text>
+
+  <!-- 底部注释 -->
+  <text x="510" y="400" text-anchor="middle" font-size="14" fill="#455a64">双向箭头表示进程对共享存储区的访问；并发读写必须由用户程序引入同步互斥机制</text>
+</svg>
