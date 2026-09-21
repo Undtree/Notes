@@ -11,9 +11,11 @@
     -   [@Isshiki修 的操作系统笔记](https://note.isshikih.top/cour_note/D3QD_OperatingSystem/)
     -   2027 王道操作系统考研复习指导
 
-!!! Note "目录"
+!!! Note "目录 & 关键词索引"
     - [x] [概述](./os_intro.md)
     - [ ] [进程和线程](./process.md)
+    - [ ] [调度](./shedule.md)
+    - [ ] [同步](./sync.md)
     - [ ] [内存管理](./memory.md)
     - [ ] [文件管理](./file.md)
     - [ ] [输入输出](./IO.md)

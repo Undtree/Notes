@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 410" width="1020" height="410" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">
+  <title>间接通信方式</title>
+  <desc>发送进程 A 与接收进程 B 都不直接指定对方，而是以信箱为中间实体：A 把消息投递到信箱，B 从信箱中取出消息。</desc>
+
+  <defs>
+    <marker id="mbox-arrow" viewBox="0 0 10 10" refX="9.5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#4051b5"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="1020" height="410" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="510" y="46" text-anchor="middle" font-size="21" font-weight="700" fill="#1a237e">间接通信方式（信箱机制）</text>
+  <text x="510" y="74" text-anchor="middle" font-size="15" fill="#455a64">双方都以信箱为对象投递与取用消息，彼此无需知道对方是谁</text>
+
+  <!-- ============ 发送进程 A ============ -->
+  <rect x="40" y="110" width="230" height="240" rx="12" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="155" y="145" text-anchor="middle" font-size="17" font-weight="700" fill="#1a237e">发送进程 A</text>
+  <line x1="52" y1="161" x2="258" y2="161" stroke="#9aa7bd" stroke-width="1" stroke-dasharray="5 4"/>
+
+  <rect x="54" y="180" width="202" height="42" rx="6" fill="#f5f7fb" stroke="#1f1f1f" stroke-width="1.2"/>
+  <text x="155" y="207" text-anchor="middle" font-size="15" fill="#1a237e" font-family="Consolas, Source Han Sans SC, monospace">send(mbox, msg)</text>
+
+  <text x="155" y="256" text-anchor="middle" font-size="14" fill="#455a64">只须指明信箱标识</text>
+  <text x="155" y="278" text-anchor="middle" font-size="14" fill="#455a64">不必知道接收方</text>
+
+  <!-- ============ 发送 → 信箱 ============ -->
+  <line x1="272" y1="231" x2="373" y2="231" stroke="#4051b5" stroke-width="3.5" marker-end="url(#mbox-arrow)"/>
+  <text x="322" y="214" text-anchor="middle" font-size="12" font-weight="700" fill="#4051b5">send 原语</text>
+  <text x="322" y="253" text-anchor="middle" font-size="12" fill="#455a64">投递消息</text>
+
+  <!-- ============ 信箱 ============ -->
+  <rect x="375" y="110" width="270" height="240" rx="12" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="510" y="145" text-anchor="middle" font-size="17" font-weight="700" fill="#1a237e">信箱（Mailbox）</text>
+  <line x1="387" y1="161" x2="633" y2="161" stroke="#9aa7bd" stroke-width="1" stroke-dasharray="5 4"/>
+
+  <!-- 信箱缓冲区 -->
+  <rect x="392" y="176" width="236" height="100" rx="8" fill="#dfe7fb" stroke="#4051b5" stroke-width="2"/>
+  <text x="510" y="196" text-anchor="middle" font-size="13" fill="#4051b5">信箱中的消息</text>
+  <rect x="398" y="210" width="68" height="42" rx="5" fill="#ffffff" stroke="#4051b5" stroke-width="1.5"/>
+  <text x="432" y="237" text-anchor="middle" font-size="13" fill="#1a237e">消息 1</text>
+  <rect x="476" y="210" width="68" height="42" rx="5" fill="#ffffff" stroke="#4051b5" stroke-width="1.5"/>
+  <text x="510" y="237" text-anchor="middle" font-size="13" fill="#1a237e">消息 2</text>
+  <rect x="554" y="210" width="68" height="42" rx="5" fill="#ffffff" stroke="#4051b5" stroke-width="1.5"/>
+  <text x="588" y="237" text-anchor="middle" font-size="13" fill="#1a237e">消息 3</text>
+
+  <text x="510" y="298" text-anchor="middle" font-size="13" fill="#455a64">由内核维护的中间实体</text>
+  <text x="510" y="318" text-anchor="middle" font-size="13" fill="#455a64">可支持多对多通信</text>
+
+  <!-- ============ 信箱 → 接收进程 B ============ -->
+  <line x1="647" y1="231" x2="748" y2="231" stroke="#4051b5" stroke-width="3.5" marker-end="url(#mbox-arrow)"/>
+  <text x="697" y="214" text-anchor="middle" font-size="12" font-weight="700" fill="#4051b5">receive 原语</text>
+  <text x="697" y="253" text-anchor="middle" font-size="12" fill="#455a64">取出消息</text>
+
+  <!-- ============ 接收进程 B ============ -->
+  <rect x="750" y="110" width="230" height="240" rx="12" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="865" y="145" text-anchor="middle" font-size="17" font-weight="700" fill="#1a237e">接收进程 B</text>
+  <line x1="762" y1="161" x2="968" y2="161" stroke="#9aa7bd" stroke-width="1" stroke-dasharray="5 4"/>
+
+  <rect x="764" y="180" width="202" height="42" rx="6" fill="#f5f7fb" stroke="#1f1f1f" stroke-width="1.2"/>
+  <text x="865" y="207" text-anchor="middle" font-size="15" fill="#1a237e" font-family="Consolas, Source Han Sans SC, monospace">receive(mbox, &amp;msg)</text>
+
+  <text x="865" y="256" text-anchor="middle" font-size="14" fill="#455a64">从指定信箱中</text>
+  <text x="865" y="278" text-anchor="middle" font-size="14" fill="#455a64">取出一条消息</text>
+
+  <!-- 底部注释 -->
+  <text x="510" y="390" text-anchor="middle" font-size="14" fill="#455a64">间接通信：消息经由信箱中转，发送方与接收方彼此解耦，同一信箱可由多个进程共享</text>
+</svg>

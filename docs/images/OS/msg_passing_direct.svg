@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 410" width="1020" height="410" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">
+  <title>直接通信方式</title>
+  <desc>发送进程 A 调用 send 原语并显式指定接收方 B，消息被复制到内核中 B 的消息缓冲队列，B 再用 receive 原语取走消息。</desc>
+
+  <defs>
+    <marker id="msg-arrow" viewBox="0 0 10 10" refX="9.5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#4051b5"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="1020" height="410" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="510" y="46" text-anchor="middle" font-size="21" font-weight="700" fill="#1a237e">直接通信方式</text>
+  <text x="510" y="74" text-anchor="middle" font-size="15" fill="#455a64">发送方显式指定接收方，消息在内核中排队后由接收方取走</text>
+
+  <!-- ============ 发送进程 A ============ -->
+  <rect x="40" y="110" width="230" height="240" rx="12" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="155" y="145" text-anchor="middle" font-size="17" font-weight="700" fill="#1a237e">发送进程 A</text>
+  <line x1="52" y1="161" x2="258" y2="161" stroke="#9aa7bd" stroke-width="1" stroke-dasharray="5 4"/>
+
+  <rect x="54" y="180" width="202" height="42" rx="6" fill="#f5f7fb" stroke="#1f1f1f" stroke-width="1.2"/>
+  <text x="155" y="207" text-anchor="middle" font-size="15" fill="#1a237e" font-family="Consolas, Source Han Sans SC, monospace">send(B, msg)</text>
+
+  <text x="155" y="256" text-anchor="middle" font-size="14" fill="#455a64">send 参数中给出</text>
+  <text x="155" y="278" text-anchor="middle" font-size="14" fill="#455a64">接收方 B 的标识</text>
+
+  <!-- ============ 发送 → 内核队列 ============ -->
+  <line x1="272" y1="231" x2="373" y2="231" stroke="#4051b5" stroke-width="3.5" marker-end="url(#msg-arrow)"/>
+  <text x="322" y="214" text-anchor="middle" font-size="12" font-weight="700" fill="#4051b5">send 原语</text>
+  <text x="322" y="253" text-anchor="middle" font-size="12" fill="#455a64">拷贝消息</text>
+
+  <!-- ============ 操作系统内核区 ============ -->
+  <rect x="375" y="110" width="270" height="240" rx="12" fill="#f8f9fc" stroke="#9aa7bd" stroke-width="2" stroke-dasharray="7 5"/>
+  <text x="510" y="145" text-anchor="middle" font-size="17" font-weight="700" fill="#1a237e">操作系统内核区</text>
+  <line x1="387" y1="161" x2="633" y2="161" stroke="#9aa7bd" stroke-width="1" stroke-dasharray="5 4"/>
+
+  <!-- 消息缓冲队列 -->
+  <rect x="392" y="176" width="236" height="100" rx="8" fill="#dfe7fb" stroke="#4051b5" stroke-width="2"/>
+  <text x="510" y="196" text-anchor="middle" font-size="13" fill="#4051b5">B 的消息缓冲队列</text>
+  <rect x="398" y="210" width="68" height="42" rx="5" fill="#ffffff" stroke="#4051b5" stroke-width="1.5"/>
+  <text x="432" y="237" text-anchor="middle" font-size="13" fill="#1a237e">消息 1</text>
+  <rect x="476" y="210" width="68" height="42" rx="5" fill="#ffffff" stroke="#4051b5" stroke-width="1.5"/>
+  <text x="510" y="237" text-anchor="middle" font-size="13" fill="#1a237e">消息 2</text>
+  <rect x="554" y="210" width="68" height="42" rx="5" fill="#ffffff" stroke="#4051b5" stroke-width="1.5"/>
+  <text x="588" y="237" text-anchor="middle" font-size="13" fill="#1a237e">消息 3</text>
+
+  <text x="510" y="298" text-anchor="middle" font-size="13" fill="#455a64">该队列由内核为 B 维护</text>
+  <text x="510" y="318" text-anchor="middle" font-size="13" fill="#455a64">消息按 FIFO 次序排队</text>
+
+  <!-- ============ 内核队列 → 接收进程 B ============ -->
+  <line x1="647" y1="231" x2="748" y2="231" stroke="#4051b5" stroke-width="3.5" marker-end="url(#msg-arrow)"/>
+  <text x="697" y="214" text-anchor="middle" font-size="12" font-weight="700" fill="#4051b5">receive 原语</text>
+  <text x="697" y="253" text-anchor="middle" font-size="12" fill="#455a64">取走消息</text>
+
+  <!-- ============ 接收进程 B ============ -->
+  <rect x="750" y="110" width="230" height="240" rx="12" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+  <text x="865" y="145" text-anchor="middle" font-size="17" font-weight="700" fill="#1a237e">接收进程 B</text>
+  <line x1="762" y1="161" x2="968" y2="161" stroke="#9aa7bd" stroke-width="1" stroke-dasharray="5 4"/>
+
+  <rect x="764" y="180" width="202" height="42" rx="6" fill="#f5f7fb" stroke="#1f1f1f" stroke-width="1.2"/>
+  <text x="865" y="207" text-anchor="middle" font-size="15" fill="#1a237e" font-family="Consolas, Source Han Sans SC, monospace">receive(A, &amp;msg)</text>
+
+  <text x="865" y="256" text-anchor="middle" font-size="14" fill="#455a64">从自己的消息队列</text>
+  <text x="865" y="278" text-anchor="middle" font-size="14" fill="#455a64">中取出一条消息</text>
+
+  <!-- 底部注释 -->
+  <text x="510" y="390" text-anchor="middle" font-size="14" fill="#455a64">直接通信：接收方由 send 的参数确定，消息必须先复制进内核缓冲区，通信双方由此建立显式的联系</text>
+</svg>
