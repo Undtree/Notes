@@ -98,3 +98,43 @@
     border-color: var(--md-accent-fg-color);
     color: var(--md-accent-bg-color) !important;
 }
+
+/* 卡片投影，叠加在 .card 上使用（用法：<div class="card card-shadow">）。
+   浅色模式：中性灰投影，靠近卡片处紧实、远处散开。
+   深色模式：页面底色本身已接近纯黑，纯黑投影看不出来，因此改用
+   「比页面底色更亮的抬升面色 + 更强的投影 + 亮色细边」来表现悬浮感。 */
+.card-shadow {
+    box-shadow:
+        0 1px 2px rgba(0, 0, 0, .12),
+        0 4px 12px rgba(0, 0, 0, .16),
+        0 12px 28px -6px rgba(0, 0, 0, .14);
+    transition: box-shadow .3s cubic-bezier(.4, 0, .2, 1);
+}
+
+.card-shadow:is(:focus,:hover),
+.card-shadow:has(:is(:focus,:hover)) {
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, .16),
+        0 8px 20px rgba(0, 0, 0, .2),
+        0 20px 40px -8px rgba(0, 0, 0, .18);
+}
+
+[data-md-color-scheme="slate"] .card-shadow {
+    /* 抬升表面：比 --md-default-bg-color(#0d1117) 亮一档 */
+    background-color: #1c2128;
+    border-color: #3d444d;
+    box-shadow:
+        0 1px 2px rgba(0, 0, 0, .95),
+        0 8px 24px rgba(0, 0, 0, .9),
+        inset 0 1px 0 rgba(255, 255, 255, .08),
+        0 0 0 1px rgba(255, 255, 255, .06);
+}
+
+[data-md-color-scheme="slate"] .card-shadow:is(:focus,:hover),
+[data-md-color-scheme="slate"] .card-shadow:has(:is(:focus,:hover)) {
+    box-shadow:
+        0 2px 5px rgba(0, 0, 0, .95),
+        0 16px 40px rgba(0, 0, 0, .95),
+        inset 0 1px 0 rgba(255, 255, 255, .12),
+        0 0 0 1px rgba(255, 255, 255, .1);
+}

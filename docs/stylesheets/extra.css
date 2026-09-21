@@ -223,3 +223,60 @@ body,
   text-align: center;
   vertical-align: middle;
 }
+
+/* 图文分栏：左侧正文、右侧配图各自成列。
+   用 flex-wrap 代替媒体查询，容器变窄时自动退化为上下堆叠。 */
+.split-cols {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.5rem;
+  margin: 1em 0;
+}
+
+.split-cols__text {
+  flex: 1 1 12rem;
+  min-width: 0;
+}
+
+.split-cols__media {
+  flex: 1 1 7.5rem;
+  min-width: 0;
+  margin: 0 auto;
+}
+
+/* 去掉首尾段落的上下外边距，避免整列视觉上被压低 */
+.split-cols__text > :first-child {
+  margin-top: 0;
+}
+
+.split-cols__text > :last-child {
+  margin-bottom: 0;
+}
+
+/* 配图等比缩放，并限制高度，防止竖长图把整行撑得过高 */
+.split-cols__media img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 20rem;
+  margin: 0 auto;
+}
+
+.split-cols__media figure {
+  margin: 0;
+}
+
+/* img 会被 md_in_html 包一层 p，这里去掉它的默认外边距，让图注紧贴图片 */
+.split-cols__media figure > p {
+  margin: 0;
+}
+
+/* 图注 */
+.split-cols__media figcaption {
+  margin-top: .4em;
+  color: var(--md-default-fg-color--light);
+  font-size: .7em;
+  text-align: center;
+}

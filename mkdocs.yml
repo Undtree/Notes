@@ -132,6 +132,7 @@ markdown_extensions:
   - pymdownx.superfences:
       # make exceptions to highlighting of code:
   - pymdownx.inlinehilite
+  - pymdownx.blocks.caption
   - pymdownx.snippets
   - pymdownx.tasklist:
       custom_checkbox: true
