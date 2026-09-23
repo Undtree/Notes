@@ -45,6 +45,7 @@ nav:
 
   - 数理内容:
     - sciences/index.md
+    - 微积分: sciences/Calculus.md
     - 大学物理: sciences/Phy.md
     - 概率论与数理统计: sciences/PaS.md
 
