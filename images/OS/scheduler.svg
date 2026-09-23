@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 520" width="1280" height="520" role="img" aria-labelledby="title desc" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">
+<title id="title">调度器的组成</title>
+<desc id="desc">就绪队列中的就绪进程送入排队器；排队器按调度策略把它们排成队列后交给分派器，分派器从中选出一个进程并读写其 PCB，把进程状态由就绪改为运行；随后上下文切换器与 PCB 交互，保存被换下进程的现场、恢复新进程的现场，最后由分派器把 CPU 分配给新选中的进程。PCB 是分派器与上下文切换器共同访问的数据结构。</desc>
+
+<defs>
+  <!-- 单向箭头头部 -->
+  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#4051b5"/>
+  </marker>
+</defs>
+
+<!-- 背景 -->
+<rect width="1280" height="520" fill="#ffffff"/>
+
+<!-- ============ 调度器（虚线框，内含三个部分） ============ -->
+<rect x="290" y="105" width="790" height="290" rx="18" fill="#f7f9fe" stroke="#4051b5" stroke-width="1.6" stroke-dasharray="7 6"/>
+<text x="685" y="94" text-anchor="middle" font-size="20" font-weight="700" fill="#1a237e">调度器</text>
+
+<!-- 排队器 -->
+<rect x="320" y="190" width="210" height="120" rx="12" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+<text x="425" y="258" text-anchor="middle" font-size="20" font-weight="700" fill="#283593">排队器</text>
+
+<!-- 分派器 -->
+<rect x="590" y="190" width="210" height="120" rx="12" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+<text x="695" y="258" text-anchor="middle" font-size="20" font-weight="700" fill="#283593">分派器</text>
+
+<!-- 上下文切换器 -->
+<rect x="860" y="190" width="210" height="120" rx="12" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+<text x="965" y="258" text-anchor="middle" font-size="20" font-weight="700" fill="#283593">上下文切换器</text>
+
+<!-- ============ 就绪队列 ============ -->
+<rect x="36" y="145" width="200" height="210" rx="12" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+<text x="136" y="176" text-anchor="middle" font-size="16" font-weight="700" fill="#1a237e">就绪队列</text>
+<line x1="52" y1="188" x2="220" y2="188" stroke="#9aa7bd" stroke-width="1" stroke-dasharray="5 4"/>
+
+<rect x="52" y="192" width="168" height="28" rx="6" fill="#f5f7fb" stroke="#1f1f1f" stroke-width="1.2"/>
+<text x="68" y="211" font-size="14" fill="#1a237e">P1</text>
+<rect x="52" y="224" width="168" height="28" rx="6" fill="#f5f7fb" stroke="#1f1f1f" stroke-width="1.2"/>
+<text x="68" y="243" font-size="14" fill="#1a237e">P2</text>
+<rect x="52" y="256" width="168" height="28" rx="6" fill="#f5f7fb" stroke="#1f1f1f" stroke-width="1.2"/>
+<text x="68" y="275" font-size="14" fill="#1a237e">P3</text>
+<rect x="52" y="288" width="168" height="28" rx="6" fill="#f5f7fb" stroke="#1f1f1f" stroke-width="1.2"/>
+<text x="68" y="307" font-size="14" fill="#1a237e">P4</text>
+<text x="136" y="342" text-anchor="middle" font-size="16" fill="#9aa7bd">⋮</text>
+
+<!-- ============ CPU ============ -->
+<rect x="1150" y="185" width="110" height="130" rx="12" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+<text x="1205" y="259" text-anchor="middle" font-size="22" font-weight="700" fill="#1a237e">CPU</text>
+
+<!-- ============ PCB（分派器与上下文切换器共同访问的数据结构） ============ -->
+<rect x="620" y="432" width="440" height="68" rx="12" fill="#ffffff" stroke="#1f1f1f" stroke-width="2"/>
+<text x="840" y="476" text-anchor="middle" font-size="20" font-weight="700" fill="#1a237e">PCB</text>
+
+<!-- ============ 组件之间的流向 ============ -->
+<!-- 就绪进程送入排队器 -->
+<line x1="236" y1="250" x2="318" y2="250" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<!-- 排队器 → 分派器 -->
+<line x1="530" y1="250" x2="588" y2="250" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<!-- 分派器 → 上下文切换器 -->
+<line x1="800" y1="250" x2="858" y2="250" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<!-- 上下文切换器 → CPU -->
+<line x1="1070" y1="250" x2="1146" y2="250" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<text x="1115" y="236" text-anchor="middle" font-size="13" fill="#4051b5">分配 CPU</text>
+
+<!-- 分派器 ↔ PCB：取出被选中进程、读写其 PCB（状态由就绪改为运行） -->
+<line x1="655" y1="310" x2="655" y2="428" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<line x1="735" y1="428" x2="735" y2="314" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<text x="695" y="378" text-anchor="middle" font-size="14" fill="#4051b5">状态</text>
+
+<!-- 上下文切换器 ↔ PCB：保存被换下进程的现场 / 恢复新进程的现场 -->
+<line x1="925" y1="310" x2="925" y2="428" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<line x1="1005" y1="428" x2="1005" y2="314" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<text x="965" y="378" text-anchor="middle" font-size="14" fill="#4051b5">现场</text>
+</svg>

@@ -31,3 +31,6 @@
     - "newpage":
         text: 新增“概率论与数理统计”
         href: sciences/PaS
+    - "newpage":
+        text: 新增“微积分”
+        href: sciences/Calculus

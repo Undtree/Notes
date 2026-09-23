@@ -21,7 +21,7 @@
     
     
       
-        <title>Sync - Undertree's 小站</title>
+        <title>同步 - Undertree's 小站</title>
       
     
     
@@ -109,6 +109,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#同步" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -139,7 +144,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Sync
+              同步
             
           </span>
         </div>
@@ -1137,6 +1142,8 @@
       
         
       
+        
+      
     
     
     
@@ -1189,6 +1196,34 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sciences/Calculus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    微积分
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
               
             
               
@@ -1271,6 +1306,66 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#基本概念" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基本概念
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基本概念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#临界资源" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        临界资源
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#同步_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        同步
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#互斥" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        互斥
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1291,11 +1386,22 @@
   
 
 
-  <h1>Sync</h1>
-
+<h1 id="同步">同步<a class="headerlink" href="#同步" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 0 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间不到 1 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 613 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 2 分钟</p>
 </div>
+<p>在多道程序环境下，进程是并发执行的，不同进程之间存在多种相互制约关系。虽然我们之前提到过进程的独立性，但我们也了解到有协作进程这种东西的存在。这些进程可能需要对一些共享的资源进行修改，而我们往往希望这一系列修改按照某种顺序进行。考虑一个只含有加法和乘法而没有其他操作符的表达式，如 <code>1 + 2 * 3</code>。正常来说，我们都预期这个表达式“先乘后加”。但是，操作系统是有异步性的（各个进程以不可预知的速度向前推进），如果不加以约束，加法可能会先被计算。</p>
+<p>所以我们需要设计一种机制，来确保进程的执行（在某种意义上）可控。这种机制就是进程同步。</p>
+<h2 id="基本概念">基本概念<a class="headerlink" href="#基本概念" title="Permanent link">&para;</a></h2>
+<p>首先我们需要了解几个术语，这在接下来的讨论中会频繁出现。</p>
+<h3 id="临界资源">临界资源<a class="headerlink" href="#临界资源" title="Permanent link">&para;</a></h3>
+<p>虽然多个进程可以共享系统中的各种资源，但其中许多资源 <strong>在同一时刻仅允许一个进程访问</strong>，这类资源被称为临界资源。常见的临界资源包括物理设备（如打印机）以及被多个进程共享的变量、数据结构等。</p>
+<p>在每个进程中，访问临界资源的那段代码称为临界区。</p>
+<h3 id="同步_1">同步<a class="headerlink" href="#同步_1" title="Permanent link">&para;</a></h3>
+<p>同步（ Synchronization ）指的是，为完成某种任务而建立的两个或多个进程，由于需要协调彼此的运行次序，而在执行过程中产生 <strong>等待或传递信息</strong> 的制约关系。同步关系源于进程之间的相互合作。</p>
+<p>例如 A 对 B 的管道通信。管道（缓冲区）为空时， B 因无法获得数据而被阻塞；一旦 A 向管道中送入数据， B 即被唤醒。反之，管道已满时， A 无法写入数据， A 被阻塞；一旦 B 从管道中取出数据， A 即被唤醒。</p>
+<h3 id="互斥">互斥<a class="headerlink" href="#互斥" title="Permanent link">&para;</a></h3>
+<p>互斥（ Mutual Exclusion ）指的是，当一个进程正在临界区中使用临界资源时，其他试图访问该资源的进程必须等待；只有当占用临界资源的进程退出临界区后，其他进程才被允许进入。换句话说，“一山不容二虎”。</p>
 
 
 
