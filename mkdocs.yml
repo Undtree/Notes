@@ -18,7 +18,15 @@ nav:
     # - 面向对象程序设计(in C++): CS/OOP.md
     - 数据结构与算法分析: CS/DS/index.md
     - 计算机组成原理: CS/CO/index.md
-    - 操作系统: CS/OS/index.md
+    - 操作系统: 
+      - CS/OS/index.md
+      - 概述: CS/OS/os_intro.md
+      - 进程和线程: CS/OS/process.md
+      - 调度: CS/OS/schedule.md
+      - 同步: CS/OS/sync.md
+      - 内存管理: CS/OS/memory.md
+      - 文件管理: CS/OS/filesystem.md
+      - 输入输出: CS/OS/IO.md
     - 计算理论: CS/TOC.md
     - 编译原理: CS/CP.md
     - 数据库系统: CS/DBS.md
