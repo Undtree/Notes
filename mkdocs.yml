@@ -13,8 +13,6 @@ nav:
 
   - 计算机科学:
     - CS/index.md
-    # - 计算机网络: Network.md
-    # - 计算机体系结构: CS/CA.md
     # - 面向对象程序设计(in C++): CS/OOP.md
     - 数据结构与算法分析: CS/DS/index.md
     - 计算机组成原理: CS/CO/index.md
@@ -25,13 +23,13 @@ nav:
       - 调度: CS/OS/schedule.md
       - 同步: CS/OS/sync.md
       - 内存管理: CS/OS/memory.md
-      - 文件管理: CS/OS/filesystem.md
+      - 文件管理: CS/OS/file.md
       - 输入输出: CS/OS/IO.md
     - 计算理论: CS/TOC.md
     - 编译原理: CS/CP.md
     - 数据库系统: CS/DBS.md
-    - 软件工程: CS/SE/index.md
-    - 多媒体技术: CS/multimedia.md
+    # - 软件工程: CS/SE/index.md
+    # - 多媒体技术: CS/multimedia.md
 
   - Web 相关:
     - Web/index.md
@@ -46,10 +44,10 @@ nav:
 
   - 人工智能:
     - AI/index.md
-    - 自然语言处理导论:
-      - AI/NLP/index.md
-    - 深度合成与电子取证:
-      - AI/深度合成与电子取证/index.md
+    # - 自然语言处理导论:
+    #   - AI/NLP/index.md
+    # - 深度合成与电子取证:
+    #   - AI/深度合成与电子取证/index.md
 
   - 数理内容:
     - sciences/index.md
