@@ -280,3 +280,24 @@ body,
   font-size: .7em;
   text-align: center;
 }
+
+/* 选择题选项：两列网格，让右列选项（B、D…）左边缘严格对齐。
+   用法：<div class="exam-options" markdown="1">，每个选项单独成段（空行分隔），
+   按 A、B、C、D 顺序书写，单数选项自动落在左列，双数落在右列。 */
+.exam-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1em 1.5em;
+}
+
+/* 选项段落本身是网格项，去掉默认外边距，行距统一交给 gap 控制 */
+.md-typeset .exam-options > p {
+  margin: 0;
+}
+
+/* 窄屏退化为单列，避免行内公式溢出 */
+@media screen and (max-width: 37.5em) {
+  .exam-options {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
