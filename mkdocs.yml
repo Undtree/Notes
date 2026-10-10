@@ -14,7 +14,14 @@ nav:
   - 计算机科学:
     - CS/index.md
     # - 面向对象程序设计(in C++): CS/OOP.md
-    - 数据结构与算法分析: CS/DS/index.md
+    - 数据结构与算法分析: 
+      - CS/DS/index.md
+      - 算法的分析: CS/DS/ds_intro.md
+      - 线性数据结构: CS/DS/lineards.md
+      - 树形结构: CS/DS/trees.md
+      - 图论: CS/DS/graph.md
+      - 查找: CS/DS/search.md
+      - 排序: CS/DS/sort.md
     - 计算机组成原理: CS/CO/index.md
     - 操作系统: 
       - CS/OS/index.md
@@ -100,6 +107,7 @@ theme:
       admonition:
         tip: material/lightbulb-outline
         info: material/information-outline
+        note: material/note-outline
         success: material/check-circle-outline
         warning: material/alert-circle-outline
         danger: material/alert-octagon-outline
@@ -108,7 +116,7 @@ plugins:
     - statistics
     - changelog
     - search
-    - mermaid2
+  # - mermaid2
 
 markdown_extensions:
   - toc:
@@ -148,22 +156,17 @@ markdown_extensions:
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
   
+# 第三方资源由本地初始化脚本异步加载，失败时不会阻塞页面。
 extra_javascript:
-  - javascripts/mathjax.js
+  - javascripts/fonts.js
+  - javascripts/katex.js
 # - javascripts/toc_scroll_fix.js
-  - https://cdn.tonycrane.cc/utils/katex.min.js
-  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
-  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
 
 extra_css:
 # - https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap
-# - https://cdn.tonycrane.cc/utils/katex.min.css
 # - https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css
 # - https://cdn.tonycrane.cc/lxgw/lxgwscreen.css
 # - https://cdn.jsdelivr.net/npm/jetbrains-mono@1.0.6/css/jetbrains-mono.min.css 
-  - https://gcore.jsdelivr.net/npm/@fontsource-variable/noto-serif@5.3.0/index.css
-  - https://gcore.jsdelivr.net/npm/@fontsource-variable/noto-serif@5.3.0/wght-italic.css 
-  - https://gcore.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.7.0/style.css
 # - https://gcore.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css
   - stylesheets/extra.css
   - stylesheets/card.css

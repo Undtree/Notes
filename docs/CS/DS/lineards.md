@@ -9,7 +9,7 @@
 
     !!! Example "int 类型"
         $$
-        \text{int} = \{0, \pm 1, \pm 2 , \dots, \text{INT_MAX}, \text{INT_MIN}\} \cup \{+,-,\times,/,\%,\dots\}
+        \text{int} = \{0, \pm 1, \pm 2 , \dots, \text{INT\_MAX}, \text{INT\_MIN}\} \cup \{+,-,\times,/,\%,\dots\}
         $$
 
 抽象数据结构是一个逻辑上的概念，帮助我们了解一个数据结构的大致情况。我们只关心它能做什么 (Specification)，而不关心它怎么做 (Implementation)。
