@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 580" width="1120" height="580" role="img" aria-labelledby="title desc" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">
+<title id="title">算术逻辑单元（ALU）的组成</title>
+<desc id="desc">ALU 内部包含带标志加法器、逻辑运算与移位等部件：操作数 A、B 同时送入各部件，操作控制信号决定各部件执行的操作并通过多路选择器选出一路结果作为输出 F；带标志加法器还向上输出 CF、OF、SF、ZF 标志。</desc>
+
+<defs>
+  <!-- 箭头头部 -->
+  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#4051b5"/>
+  </marker>
+</defs>
+
+<!-- 背景 -->
+<rect width="1120" height="580" fill="#ffffff"/>
+
+<!-- ============ ALU 专用轮廓（内部展开为功能模块） ============ -->
+<path d="M 300 80 L 860 180 V 380 L 300 480 V 300 L 370 280 L 300 260 Z" fill="#f7f9fe" stroke="#4051b5" stroke-width="2"/>
+<text x="580" y="62" text-anchor="middle" font-size="20" font-weight="700" fill="#1a237e">算术逻辑单元（ALU）</text>
+
+<!-- 内部：带标志加法器 -->
+<rect x="345" y="130" width="200" height="110" rx="12" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+<text x="445" y="191" text-anchor="middle" font-size="16" font-weight="700" fill="#283593">带标志加法器</text>
+
+<!-- 内部：逻辑运算与移位 -->
+<rect x="345" y="290" width="200" height="110" rx="12" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+<text x="445" y="348" text-anchor="middle" font-size="16" font-weight="700" fill="#283593">逻辑运算与移位</text>
+<text x="445" y="376" text-anchor="middle" font-size="13" fill="#4051b5">与、或、非、异或等</text>
+
+<!-- 内部：多路选择器，梯形窄边为输出端 -->
+<path d="M 640 150 L 770 185 V 315 L 640 350 Z" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+<text x="705" y="242" text-anchor="middle" font-size="22" font-weight="700" fill="#283593">MUX</text>
+<text x="705" y="272" text-anchor="middle" font-size="13" fill="#4051b5">多路选择器</text>
+
+<!-- 操作数 A、B 与分支 -->
+<line x1="200" y1="150" x2="341" y2="150" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<text x="194" y="156" text-anchor="end" font-size="16" fill="#1a237e">A</text>
+<line x1="240" y1="190" x2="341" y2="190" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<text x="234" y="196" text-anchor="end" font-size="16" fill="#1a237e">B</text>
+<circle cx="220" cy="150" r="4.5" fill="#4051b5"/>
+<circle cx="310" cy="190" r="4.5" fill="#4051b5"/>
+<path d="M 220 150 L 220 330 L 341 330" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<path d="M 310 190 V 370 H 345" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+
+<!-- 内部连线到多路选择器 -->
+<line x1="545" y1="185" x2="636" y2="185" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<path d="M 545 345 L 590 345 L 590 315 L 636 315" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+
+<!-- 结果输出 F -->
+<line x1="770" y1="250" x2="906" y2="250" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<text x="914" y="256" font-size="16" fill="#1a237e">F</text>
+
+<!-- 标志输出 -->
+<line x1="420" y1="130" x2="420" y2="44" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<text x="420" y="32" text-anchor="middle" font-size="15" fill="#1a237e">CF、OF、SF、ZF</text>
+
+<!-- 操作控制信号 -->
+<text x="548" y="540" text-anchor="end" font-size="15" fill="#1a237e">操作控制信号</text>
+<path d="M 560 545 V 450 H 705 V 332.5" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<path d="M 560 450 V 353 A 8 8 0 0 1 560 337 V 265 H 500 V 240" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<path d="M 560 420 H 500 V 400" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<circle cx="560" cy="450" r="4.5" fill="#4051b5"/>
+<circle cx="560" cy="420" r="4.5" fill="#4051b5"/>
+</svg>
