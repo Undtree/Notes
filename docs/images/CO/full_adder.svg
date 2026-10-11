@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 460" width="1200" height="460" role="img" aria-labelledby="title desc" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">
+<title id="title">一位全加器的符号与逻辑实现</title>
+<desc id="desc">（a）一位全加器的符号：输入 A_i、B_i 与进位输入 C_in，输出本位和 S_i 与进位输出 C_out。（b）逻辑实现（门电路采用国际通用的特定形状符号）：A_i、B_i 经异或门得 X、经与门得 G；X 再与 C_in 经异或门得本位和 S_i、经与门得 T；G 与 T 经或门得进位 C_out。</desc>
+
+<defs>
+  <!-- 箭头头部 -->
+  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#4051b5"/>
+  </marker>
+</defs>
+
+<!-- 背景 -->
+<rect width="1200" height="460" fill="#ffffff"/>
+
+<!-- 分栏虚线 -->
+<line x1="580" y1="40" x2="580" y2="440" stroke="#9aa7bd" stroke-width="1.4" stroke-dasharray="6 6"/>
+
+<!-- ============ （a）一位全加器的符号 ============ -->
+<text x="300" y="60" text-anchor="middle" font-size="18" font-weight="700" fill="#1a237e">（a）一位全加器的符号</text>
+
+<rect x="200" y="150" width="200" height="170" rx="12" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+<text x="300" y="232" text-anchor="middle" font-size="22" font-weight="700" fill="#283593">全加器</text>
+<text x="300" y="266" text-anchor="middle" font-size="16" fill="#4051b5">FA</text>
+
+<line x1="100" y1="190" x2="196" y2="190" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<text x="94" y="196" text-anchor="end" font-size="16" fill="#1a237e">A<tspan font-size="11" dy="4">i</tspan></text>
+<line x1="100" y1="240" x2="196" y2="240" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<text x="94" y="246" text-anchor="end" font-size="16" fill="#1a237e">B<tspan font-size="11" dy="4">i</tspan></text>
+<line x1="100" y1="290" x2="196" y2="290" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<text x="94" y="296" text-anchor="end" font-size="16" fill="#1a237e">C<tspan font-size="11" dy="4">in</tspan></text>
+
+<line x1="404" y1="205" x2="498" y2="205" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<text x="506" y="211" font-size="16" fill="#1a237e">S<tspan font-size="11" dy="4">i</tspan></text>
+<line x1="404" y1="275" x2="498" y2="275" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<text x="506" y="281" font-size="16" fill="#1a237e">C<tspan font-size="11" dy="4">out</tspan></text>
+
+<!-- ============ （b）全加器的逻辑实现 ============ -->
+<text x="890" y="60" text-anchor="middle" font-size="18" font-weight="700" fill="#1a237e">（b）全加器的逻辑实现</text>
+
+<!-- 门电路：国际通用的特定形状符号 -->
+<!-- U1：异或门，产生 X = A ⊕ B -->
+<path d="M 743 104 Q 761 140 743 176" fill="none" stroke="#4051b5" stroke-width="2"/>
+<path d="M 755 104 Q 773 140 755 176 C 775 168 801 158 825 140 C 801 122 775 112 755 104 Z" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+
+<!-- U3：与门，产生 G = AB -->
+<path d="M 768 294 H 800 A 36 36 0 0 1 800 366 H 768 Z" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+
+<!-- U2：异或门，产生 S_i = X ⊕ C_in -->
+<path d="M 933 104 Q 951 140 933 176" fill="none" stroke="#4051b5" stroke-width="2"/>
+<path d="M 945 104 Q 963 140 945 176 C 965 168 991 158 1015 140 C 991 122 965 112 945 104 Z" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+
+<!-- U4：与门，产生 T = X·C_in -->
+<path d="M 958 254 H 990 A 36 36 0 0 1 990 326 H 958 Z" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+
+<!-- U5：或门，产生 C_out = G + T -->
+<path d="M 1055 364 Q 1073 400 1055 436 C 1075 428 1103 418 1125 400 C 1103 382 1075 372 1055 364 Z" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+
+<!-- 输入 A、B 及其分支 -->
+<line x1="620" y1="122" x2="747" y2="122" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<text x="614" y="128" text-anchor="end" font-size="16" fill="#1a237e">A</text>
+<line x1="620" y1="158" x2="747" y2="158" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<text x="614" y="164" text-anchor="end" font-size="16" fill="#1a237e">B</text>
+<circle cx="650" cy="122" r="4.5" fill="#4051b5"/>
+<circle cx="700" cy="158" r="4.5" fill="#4051b5"/>
+<path d="M 650 122 V 348 H 764" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<path d="M 700 158 V 312 H 764" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+
+<!-- X 的产生与分配 -->
+<path d="M 825 140 H 870" fill="none" stroke="#4051b5" stroke-width="3.5"/>
+<text x="846" y="130" text-anchor="middle" font-size="15" fill="#4051b5">X</text>
+<circle cx="870" cy="140" r="4.5" fill="#4051b5"/>
+<path d="M 870 140 V 122 H 892 A 8 8 0 0 1 908 122 H 937" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<path d="M 870 140 V 308 H 954" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+
+<!-- 进位输入 C_in 及分支（跨线处画弧，表示与 X 的连线不相连） -->
+<text x="612" y="96" text-anchor="end" font-size="16" fill="#1a237e">C<tspan font-size="11" dy="4">in</tspan></text>
+<path d="M 618 90 H 900 V 272 H 954" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<path d="M 900 158 H 937" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<circle cx="900" cy="158" r="4.5" fill="#4051b5"/>
+
+<!-- G、T 送入或门 -->
+<path d="M 836 330 H 880 V 418 H 1051" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<text x="858" y="322" text-anchor="middle" font-size="15" fill="#4051b5">G</text>
+<path d="M 1026 290 H 1040 V 382 H 1051" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<text x="1040" y="282" text-anchor="middle" font-size="15" fill="#4051b5">T</text>
+
+<!-- 输出 S_i 与 C_out -->
+<path d="M 1015 140 H 1052" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<text x="1058" y="146" font-size="16" fill="#1a237e">S<tspan font-size="11" dy="4">i</tspan></text>
+<path d="M 1125 400 H 1176" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<text x="1150" y="386" text-anchor="middle" font-size="16" fill="#1a237e">C<tspan font-size="11" dy="4">out</tspan></text>
+
+</svg>

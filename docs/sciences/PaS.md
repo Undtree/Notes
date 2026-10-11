@@ -2667,9 +2667,6 @@ $$
 
     由切比雪夫不等式可知，一个充分条件是 $\displaystyle \varepsilon\ge\frac{\sigma}{\sqrt\alpha}.$
 
-### 
-
-
 ## 大数定律与中心极限定理
 ### 依概率收敛
 
@@ -3376,11 +3373,13 @@ $$
     U=\sum_{i=1}^{\nu}Z_i^2
     $$
 
-    服从自由度为 $\nu$ 的 $\chi^2$ 分布，记为 $U\sim\chi^2(\nu)$。
+    服从自由度为 $\nu$ 的 $\chi^2$ 分布，记为 $U\sim\chi^2(\nu)$。它的取值为非负数。
 
-    它的取值为非负数，主要性质为 $E(U)=\nu,\qquad D(U)=2\nu.$
+    主要性质为
+    
+    -   $E(U)=\nu,~~ D(U)=2\nu.$
 
-    若 $U\sim\chi^2(\nu_1)$、$V\sim\chi^2(\nu_2)$ 且相互独立，则 $U+V\sim\chi^2(\nu_1+\nu_2).$
+    -   若 $U\sim\chi^2(\nu_1)$、$V\sim\chi^2(\nu_2)$ 且相互独立，则 $U+V\sim\chi^2(\nu_1+\nu_2).$
 
     自由度反映构成平方和的独立标准正态分量个数；在样本残差平方和中，估计均值会产生一个线性约束，因此常出现 $n-1$ 个自由度。
 
@@ -3392,7 +3391,9 @@ $$
     T=\frac{Z}{\sqrt{U/\nu}}\sim t(\nu).
     $$
 
-    $t$ 分布关于 $0$ 对称，尾部比标准正态分布更厚。其数字特征为 $E(T)=0\quad(\nu>1), \qquad D(T)=\dfrac{\nu}{\nu-2}\quad(\nu>2).$（注意条件）
+    $t$ 分布关于 $0$ 对称，尾部比标准正态分布更厚。
+    
+    其数字特征为 $E(T)=0\quad(\nu>1), ~~ D(T)=\dfrac{\nu}{\nu-2}\quad(\nu>2).$（注意条件）
 
     特别地，$t(1)$ 为标准柯西分布，数学期望不存在；当 $\nu\to\infty$ 时，$t(\nu)$ 依分布趋于 $N(0,1)$。
     
@@ -3406,16 +3407,75 @@ $$
     W=\frac{U/\nu_1}{V/\nu_2}\sim F(\nu_1,\nu_2).
     $$
 
-    $\nu_1$ 是分子自由度，$\nu_2$ 是分母自由度，二者次序不能交换。主要性质包括 $\dfrac1W\sim F(\nu_2,\nu_1),$ $T\sim t(\nu)\quad\Longrightarrow\quad T^2\sim F(1,\nu).$
+    主要性质包括
+    
+    -   $\dfrac1W\sim F(\nu_2,\nu_1),$ $T\sim t(\nu)\quad\Longrightarrow\quad T^2\sim F(1,\nu).$
 
-    $F$ 分布不关于 $0$ 对称。其期望与方差在相应条件下为 $E(W)=\dfrac{\nu_2}{\nu_2-2}\quad(\nu_2>2),$
+    -   $F$ 分布**不关于 $0$ 对称**。其期望与方差在相应条件下为
 
-    $$
-    D(W)=
-    \frac{2\nu_2^2(\nu_1+\nu_2-2)}
-    {\nu_1(\nu_2-2)^2(\nu_2-4)}
-    \quad(\nu_2>4).
-    $$
+        $$
+        E(W)=\dfrac{\nu_2}{\nu_2-2}\quad(\nu_2>2),\\
+        D(W)=
+        \frac{2\nu_2^2(\nu_1+\nu_2-2)}
+        {\nu_1(\nu_2-2)^2(\nu_2-4)}
+        \quad(\nu_2>4).
+        $$
+
+!!! example "抽样分布的识别"
+
+    1.  设 $X_1, X_2$ 是取自正态总体 $X\sim N(1,1)$ 的简单随机样本，则 $\dfrac{X_1-1}{|1-X_2|}$ 服从（    ）。
+
+        A. $t(1)$ B. $F(1,1)$ C. $\chi^2(1)$ D. $N(1,1)$
+
+        ??? success "解答"
+
+            A.
+
+            由题给条件，注意到 $X_1,X_2$ 是来自 $N(1,1)$ 的简单随机样本，知
+
+            $$
+            X_1-1\sim N(0,1),\qquad X_2-1\sim N(0,1),
+            $$
+
+            且二者相互独立。
+
+            令 $Z=X_1-1$、$U=(X_2-1)^2$。因此 $Z\sim N(0,1)$、$U\sim\chi^2(1)$，并且 $Z$ 与 $U$ 也相互独立。
+
+            再将分母改写为
+
+            $$
+            |1-X_2|=\sqrt{(X_2-1)^2}=\sqrt{U/1},
+            $$
+
+            就得到了 $t$ 分布定义中的形式：
+
+            $$
+            \frac{X_1-1}{|1-X_2|}
+            =\frac{Z}{\sqrt{U/1}}
+            \sim t(1).
+            $$
+
+            所以选 **A**。这里的自由度 $1$ 来自分母中的 $U$ 只有一个独立标准正态变量的平方。
+
+    2.  设 $X_1, X_2, \cdots, X_{10}$ 是来自正态总体 $X\sim N(0, \sigma^2)(\sigma \gt 0)$ 的简单随机样本。令 $Y^2 = \dfrac 19 \sum\limits_{i=2}^{10} X_i^2$，则下列结论正确的是（    ）。
+    
+        A. $X_1^2 \sim \chi^2(1)$ B. $Y^2 \sim \chi^2(9)$ C. $\dfrac{X_1}{|Y|} \sim t(9)$ D. $\dfrac{X_1^2}{Y^2} \sim F(9,1)$
+
+        ??? success "解答"
+
+            C.
+
+            事实上，由题给条件可知 $\dfrac{X_i}{\sigma} \sim N(0,1),\, i=1,2,\cdots,10$，且相互独立。根据抽样分布的定义，
+
+            $$
+            \dfrac{X_1^2}{\sigma^2} \sim \chi^2(1),\,\sum_{i=2}^{10} (\dfrac{X_i}{\sigma})^2 = \dfrac{9Y^2}{\sigma^2} \sim \chi^2(9).
+            $$
+
+            $Y^2$ 不服从 $\chi^2(9)$，注意系数是不符合定义的。
+
+            又 $X_1$ 和 $Y^2$ 一定相互独立，故 $\dfrac{X_1/\sigma}{\sqrt{\dfrac{9Y^2}{\sigma^2}/9}} = \dfrac{X_1}{|Y|} \sim \chi^2(9).$
+
+            而 $X_1^2 \sim \chi^2(1)$，$9Y^2 \sim \chi^2(9)$，故 $\dfrac{X_1^2/1}{9Y^2/9} = \dfrac{X_1^2}{Y^2} \sim F(1,9).$
 
 !!! example "服从抽样分布的独立性条件"
 
@@ -3478,7 +3538,14 @@ $$
     $$
 
     $$
-    U=\frac{(n-1)S^2}{\sigma^2}\sim\chi^2(n-1),
+    \frac1{\sigma^2}\sum_{i=1}^n(X_i-\mu)^2\sim\chi^2(n).
+    $$
+
+    若以样本均值 $\overline X$ 替代 $\mu$，则对应结论变为
+
+    $$
+    \frac1{\sigma^2}\sum_{i=1}^n(X_i-\overline X)^2
+    =\frac{(n-1)S^2}{\sigma^2}\sim\chi^2(n-1).
     $$
 
     并且 $\overline X$ 与 $S^2$ 相互独立。因此，
@@ -3491,22 +3558,7 @@ $$
 
 !!! warning "需要注意的是，样本均值与样本方差的独立性是正态样本的重要性质，不能直接推广到任意总体。"
 
-!!! tip "② 已知总体均值时的平方和"
-
-    若 $\mu$ 已知，则
-
-    $$
-    \frac1{\sigma^2}\sum_{i=1}^n(X_i-\mu)^2\sim\chi^2(n).
-    $$
-
-    若以样本均值 $\overline X$ 替代未知的 $\mu$，则对应结论变为
-
-    $$
-    \frac1{\sigma^2}\sum_{i=1}^n(X_i-\overline X)^2
-    =\frac{(n-1)S^2}{\sigma^2}\sim\chi^2(n-1).
-    $$
-
-!!! tip "③ 两个独立正态总体"
+!!! tip "② 两个独立正态总体"
 
     设两组样本分别来自
 
@@ -3516,7 +3568,7 @@ $$
     Y_j\overset{\mathrm{iid}}{\sim}N(\mu_2,\sigma_2^2),
     $$
 
-    容量分别为 $n_1,n_2\ge2$，且两组样本相互独立。记各自样本方差为 $S_1^2,S_2^2$，则
+    容量分别为 $n_1,n_2\ge2$，且两组样本相互独立。易知 $\overline X - \overline Y \sim N(\mu_1 - \mu_2, \dfrac{\sigma_1^2}{n_1}+\dfrac{\sigma_2^2}{n_2})$。记各自样本方差为 $S_1^2,S_2^2$，则
 
     $$
     \frac{(\overline X-\overline Y)-(\mu_1-\mu_2)}
@@ -3528,43 +3580,105 @@ $$
     \sim F(n_1-1,n_2-1).
     $$
 
-    若进一步有 $\sigma_1^2=\sigma_2^2=\sigma^2$，定义合并样本方差
+    !!! info "若进一步有 $\sigma_1^2=\sigma_2^2=\sigma^2$..."
+        定义合并样本方差
 
-    $$
-    S_p^2=
-    \frac{(n_1-1)S_1^2+(n_2-1)S_2^2}{n_1+n_2-2},
-    $$
+        $$
+        S_p^2=
+        \frac{(n_1-1)S_1^2+(n_2-1)S_2^2}{n_1+n_2-2},
+        $$
 
-    则
+        则
 
-    $$
-    \frac{(\overline X-\overline Y)-(\mu_1-\mu_2)}
-    {S_p\sqrt{1/n_1+1/n_2}}
-    \sim t(n_1+n_2-2).
-    $$
-
-    合并方差的精确 $t$ 结论需要两总体方差相等；方差未知且不等时，不能直接使用这个公式。
+        $$
+        \frac{(\overline X-\overline Y)-(\mu_1-\mu_2)}
+        {S_p\sqrt{1/n_1+1/n_2}}
+        \sim t(n_1+n_2-2).
+        $$
 
 !!! example "习题"
 
-    从总体 $X\sim N\left(\mu,2^2\right)$ 中随意抽取容量为 $n$ 的一组样本，其均值为 $\overline X$，若要求 $E(|\overline X - \mu|)\le 0.1$，则 $n$ 的最小取值是多少？
+    1.  从总体 $X\sim N\left(\mu,2^2\right)$ 中随意抽取容量为 $n$ 的一组样本，其均值为 $\overline X$，若要求 $E(|\overline X - \mu|)\le 0.1$，则 $n$ 的最小取值是多少？
 
-    ??? success "解答"
+        ??? success "解答"
 
-        如果总体服从正态分布，那么样本均值也应该服从正态分布： $\displaystyle \overline X\sim N\left(\mu,\frac{\sigma^2}{n}\right) = N(\mu,\frac 4n)$
+            如果总体服从正态分布，那么样本均值也应该服从正态分布（可参看 ① 中结论）。 $\displaystyle \overline X\sim N\left(\mu,\frac{\sigma^2}{n}\right) = N(\mu,\frac 4n)$
 
-        所以 $\overline X -\mu \sim N(0, \displaystyle\frac 4n)$。
+            所以 $\overline X -\mu \sim N(0, \displaystyle\frac 4n)$。
 
-        而对于对于正态分布 $Z \sim N(0, \tau^2)$，其绝对值的数学期望为 $E(|Z|) = \tau \sqrt{\displaystyle\frac{2}{\pi}}$（见[常见分布的期望与方差](#常见分布的期望与方差)）。令 $Y = \overline X -\mu$，显然有 $\displaystyle E(|Y|) = \frac{2}{\sqrt n} \sqrt{\frac{2}{\pi}}$
+            而对于对于正态分布 $Z \sim N(0, \tau^2)$，其绝对值的数学期望为 $E(|Z|) = \tau \sqrt{\displaystyle\frac{2}{\pi}}$（见[常见分布的期望与方差](#常见分布的期望与方差)）。令 $Y = \overline X -\mu$，显然有 $\displaystyle E(|Y|) = \frac{2}{\sqrt n} \sqrt{\frac{2}{\pi}}$
 
-        由题意得 $\displaystyle \frac{2}{\sqrt n} \sqrt{\frac{2}{\pi}} \le 0.1$
+            由题意得 $\displaystyle \frac{2}{\sqrt n} \sqrt{\frac{2}{\pi}} \le 0.1$
 
-        解得 $n \pi \ge 800$，$n \ge \displaystyle\frac{800}{\pi} \approx 254.65$，所以 $n$ 最小是 $\mathbb 255$。
+            解得 $n \pi \ge 800$，$n \ge \displaystyle\frac{800}{\pi} \approx 254.65$，所以 $n$ 最小是 $\mathbb 255$。
+
+    2.  设总体 $X$ 和 $Y$ 相互独立，且都服从正态分布 $N(0,\sigma^2)$，$X_1, X_2, \cdots, X_n$ 和 $Y_1, Y_2, \cdots, Y_n$ 分别是来自总体 $X$ 和 $Y$ 且容量都为 $n$ 的两个简单随机样本，样本均值、样本方差分别为 $\overline X$、$S_X^2$ 和 $\overline Y$、$S_Y^2$，则（  ）。
+
+        <div class="exam-options" markdown="1">
+
+        A. $\overline X-\overline Y\sim N(0,\sigma^2)$
+
+        B. $S_X^2+S_Y^2\sim\chi^2(2n-2)$
+
+        C. $\dfrac{\overline X-\overline Y}{\sqrt{S_X^2+S_Y^2}}\sim t(2n-2)$
+
+        D. $\dfrac{S_X^2}{S_Y^2}\sim F(n-1,n-1)$
+        </div>
+
+        ??? success "解答"
+
+            D.
+
+            对于 A，$D(\overline X-\overline Y) = 2\sigma^2$；
+
+            对于 B，$S_X^2+S_Y^2 = \dfrac {1}{n-1} \sum\limits_{i=1}^n (X_i - \overline X)^2 + \dfrac {1}{n-1} \sum\limits_{i=1}^n (Y_i - \overline Y)^2$ 不符合 $\chi^2$ 分布的定义；
+
+            对于 C，不符合 $t$ 分布的定义（可对照 ② 中的结论）；
+
+            对于 D，根据 ① 中相关结论有 $\dfrac{(n-1)S^2}{\sigma^2} \sim \chi^2(n-1)$，由 $F$ 分布的定义知选项正确。
+
+    3.  设 $X,Y$ 独立同分布于 $N(0,\sigma^2)$，$X_1,\cdots,X_9$ 与 $Y_1,\cdots,Y_{11}$ 是分别来自总体 $X$ 与 $Y$ 的简单随机样本，样本方差分别为 $S_X^2$ 与 $S_Y^2$，记 $S_1^2=\dfrac12(S_X^2+S_Y^2)$，$S_2^2=\dfrac19(4S_X^2+5S_Y^2)$，则方差最小的是（  ）。
+
+        A. $S_X^2$
+        B. $S_Y^2$
+        C. $S_1^2$
+        D. $S_2^2$
+
+        ??? success "解答"
+
+            D.
+
+            由正态总体下样本方差的性质（可参看 ① 中结论），$D(S^2)=\dfrac{2\sigma^4}{n-1}$。分别代入两组样本的容量 $9$ 和 $11$，得
+
+            $$
+            D(S_X^2)=\frac{2\sigma^4}{9-1}=\frac{\sigma^4}{4},\qquad
+            D(S_Y^2)=\frac{2\sigma^4}{11-1}=\frac{\sigma^4}{5}.
+            $$
+
+            两组样本相互独立，因而 $S_X^2$ 与 $S_Y^2$ 也相互独立。利用独立随机变量线性组合的方差公式 $D(aU+bV)=a^2D(U)+b^2D(V)$，有
+
+            $$
+            D(S_1^2)
+            =\frac14\left[D(S_X^2)+D(S_Y^2)\right]
+            =\frac14\left(\frac{\sigma^4}{4}+\frac{\sigma^4}{5}\right)
+            =\frac{9\sigma^4}{80},
+            $$
+
+            $$
+            D(S_2^2)
+            =\frac1{81}\left[16D(S_X^2)+25D(S_Y^2)\right]
+            =\frac1{81}\left(4\sigma^4+5\sigma^4\right)
+            =\frac{\sigma^4}{9}.
+            $$
+
+            所以
+
+            $$
+            D(S_2^2)\lt D(S_1^2)\lt D(S_Y^2)\lt D(S_X^2).
+            $$
 
 ### 参数的点估计
 #### 概念
-
-**估计量与估计值**
 
 用统计量 $\widehat\theta=\widehat\theta(X_1,\ldots,X_n)$ 估计未知参数 $\theta$，称为参数的**点估计**。其中，$\widehat\theta$ 是估计量，将观测值代入得到的 $\widehat\theta(x_1,\ldots,x_n)$ 是估计值。
 
@@ -3574,101 +3688,205 @@ $$
 
 #### 方法
 
-**矩估计法**
+???+ note "矩估计法"
 
-矩估计法用样本矩代替总体矩，并解出未知参数。
+    矩估计法用样本矩代替总体矩，并解出未知参数。
 
-若总体含 $r$ 个未知参数 $\theta_1,\ldots,\theta_r$，可选择 $r$ 个存在的总体矩，建立方程 $E_\theta(X^k)=A_k,\qquad k=1,\ldots,r,$
+    若总体含 $r$ 个未知参数 $\theta_1,\ldots,\theta_r$，可选择 $r$ 个存在的总体矩，建立方程 $E_\theta(X^k)=A_k,\qquad k=1,\ldots,r,$
 
-再求解得到矩估计量。所选矩应足以识别参数，方程的解还应满足参数空间的限制。
+    再求解得到矩估计量。所选矩应足以识别参数，方程的解还应满足参数空间的限制。
 
-例如，正态总体 $N(\mu,\sigma^2)$ 满足 $E(X)=\mu,\qquad E(X^2)=\mu^2+\sigma^2.$
+    例如，正态总体 $N(\mu,\sigma^2)$ 满足 $E(X)=\mu,\qquad E(X^2)=\mu^2+\sigma^2.$
 
-用 $A_1,A_2$ 代替总体矩，得到
+    用 $A_1,A_2$ 代替总体矩，得到
 
-$$
-\widehat\mu_{\mathrm{MM}}=\overline X,
-\qquad
-\widehat{\sigma^2}_{\mathrm{MM}}
-=A_2-A_1^2
-=\frac1n\sum_{i=1}^n(X_i-\overline X)^2.
-$$
+    $$
+    \widehat\mu_{\mathrm{MM}}=\overline X,
+    \qquad
+    \widehat{\sigma^2}_{\mathrm{MM}}
+    =A_2-A_1^2
+    =\frac1n\sum_{i=1}^n(X_i-\overline X)^2.
+    $$
 
-这里的方差矩估计使用分母 $n$，与分母为 $n-1$ 的无偏样本方差 $S^2$ 不同。
+    这里的方差矩估计使用分母 $n$，与分母为 $n-1$ 的无偏样本方差 $S^2$ 不同。
 
-若 $X\sim U(0,\theta)$、$\theta>0$，由 $E(X)=\theta/2$，可得 $\widehat\theta_{\mathrm{MM}}=2\overline X$。
+    若 $X\sim U(0,\theta)$、$\theta>0$，由 $E(X)=\theta/2$，可得 $\widehat\theta_{\mathrm{MM}}=2\overline X$。
 
-**最大似然估计法**
+???+ note "最大似然估计法"
 
-给定样本观测值 $x_1,\ldots,x_n$，将样本联合概率或联合密度视为参数 $\theta$ 的函数，称为**似然函数**：
+    给定样本观测值 $x_1,\ldots,x_n$，将样本联合概率或联合密度视为参数 $\theta$ 的函数，称为**似然函数**：
 
-$$
-L(\theta)=\prod_{i=1}^np(x_i;\theta)
-$$
+    <center markdown="1">
+    $L(\theta)=\prod_{i=1}^np(x_i;\theta)~~$ 或 $~~L(\theta)=\prod_{i=1}^nf(x_i;\theta).$
+    </center>
 
-或
+    使 $L(\theta)$ 在参数空间内达到最大值的参数值，称为**最大似然估计值**。将数据换回随机样本，得到**最大似然估计量**。
 
-$$
-L(\theta)=\prod_{i=1}^nf(x_i;\theta).
-$$
+    当 $L(\theta)>0$ 时，可以最大化对数似然 $\ell(\theta)=\ln L(\theta)$ 以简化乘积。常用步骤为：写出似然及参数范围，取对数，求驻点，再检查极值性质、边界和参数限制。
 
-使 $L(\theta)$ 在参数空间内达到最大值的参数值，称为最大似然估计值。将数据换回随机样本，得到最大似然估计量。
+    似然不是“参数在给定数据下的概率”。求导得到的驻点也不自动就是最大值，最大似然估计还可能不存在或不唯一。
 
-当 $L(\theta)>0$ 时，可以最大化对数似然 $\ell(\theta)=\log L(\theta)$ 以简化乘积。常用步骤为：写出似然及参数范围，取对数，求驻点，再检查极值性质、边界和参数限制。
+    ??? tip "最大似然估计在几种分布下的估计结果"
 
-似然不是“参数在给定数据下的概率”。求导得到的驻点也不自动就是最大值，最大似然估计还可能不存在或不唯一。
+        -   **伯努利总体**：若 $X_i\sim B(1,p)$、$p\in[0,1]$，则
 
-**最大似然估计的常见例子**
+            $$
+            L(p)=p^{\sum_i x_i}(1-p)^{n-\sum_i x_i},
+            \qquad
+            \widehat p=\overline X.
+            $$
 
-- **伯努利总体**：若 $X_i\sim B(1,p)$、$p\in[0,1]$，则
+            全为 $0$ 或全为 $1$ 的样本对应边界估计 $0$ 或 $1$。
 
-$$
-L(p)=p^{\sum_i x_i}(1-p)^{n-\sum_i x_i},
-\qquad
-\widehat p=\overline X.
-$$
+        -   **指数总体**：若 $X_i\sim\operatorname{Exp}(\lambda)$，其中 $\lambda>0$ 为率参数，则在 $\sum_ix_i>0$ 时，
 
-全为 $0$ 或全为 $1$ 的样本对应边界估计 $0$ 或 $1$。
+            $$
+            \ell(\lambda)=n\ln\lambda-\lambda\sum_ix_i,
+            \qquad
+            \widehat\lambda=\frac1{\overline X}.
+            $$
 
-- **指数总体**：若 $X_i\sim\operatorname{Exp}(\lambda)$，其中 $\lambda>0$ 为率参数，则在 $\sum_ix_i>0$ 时，
+        -   **正态总体**：均值、方差均未知时，对样本离差平方和大于 $0$ 的通常情形，
 
-$$
-\ell(\lambda)=n\log\lambda-\lambda\sum_ix_i,
-\qquad
-\widehat\lambda=\frac1{\overline X}.
-$$
+            $$
+            \widehat\mu=\overline X,\qquad
+            \widehat{\sigma^2}=\frac1n\sum_{i=1}^n(X_i-\overline X)^2.
+            $$
 
-- **正态总体**：均值、方差均未知时，对样本离差平方和大于 $0$ 的通常情形，
+            对连续正态样本且 $n\ge2$，离差平方和大于 $0$ 以概率 $1$ 成立。
 
-$$
-\widehat\mu=\overline X,\qquad
-\widehat{\sigma^2}=\frac1n\sum_{i=1}^n(X_i-\overline X)^2.
-$$
+    参数影响取值范围时，对均匀总体，采用密度版本
 
-对连续正态样本且 $n\ge2$，离差平方和大于 $0$ 以概率 $1$ 成立。
+    $$
+    f(x;\theta)=\frac1\theta\mathbf1_{\{0\lt x\le\theta\}},
+    \qquad\theta>0,
+    $$
 
-**参数影响取值范围时的处理**
+    则对于正的样本观测值， $L(\theta)=\theta^{-n}\mathbf1_{\{\theta\ge x_{(n)}\}}.$
 
-对均匀总体，采用密度版本
+    在允许范围 $\theta\ge x_{(n)}$ 内，$\theta^{-n}$ 随 $\theta$ 增大而减小，因此 $\widehat\theta_{\mathrm{MLE}}=X_{(n)}.$
 
-$$
-f(x;\theta)=\frac1\theta\mathbf1_{\{0\lt x\le\theta\}},
-\qquad\theta>0,
-$$
+    此时最大值位于参数约束边界，不能只靠对数似然求导找零点。端点采用上述闭端密度版本，使最大值能够在 $\theta=x_{(n)}$ 处取到；若把约束写成严格的 $\theta>x_{(n)}$，则对应似然只有边界上确界，需要明确这一差别。
 
-则对于正的样本观测值， $L(\theta)=\theta^{-n}\mathbf1_{\{\theta\ge x_{(n)}\}}.$
+    !!! tip "最大似然估计的不变性"
 
-在允许范围 $\theta\ge x_{(n)}$ 内，$\theta^{-n}$ 随 $\theta$ 增大而减小，因此 $\widehat\theta_{\mathrm{MLE}}=X_{(n)}.$
+        若 $\widehat\theta$ 是 $\theta$ 的最大似然估计量，则在诱导的似然意义下，$g(\widehat\theta)$ 是 $g(\theta)$ 的最大似然估计量。
 
-此时最大值位于参数约束边界，不能只靠对数似然求导找零点。端点采用上述闭端密度版本，使最大值能够在 $\theta=x_{(n)}$ 处取到；若把约束写成严格的 $\theta>x_{(n)}$，则对应似然只有边界上确界，需要明确这一差别。
+        例如，指数总体的率参数估计为 $\widehat\lambda=1/\overline X$，其均值 $1/\lambda$ 的最大似然估计为 $\overline X$。
 
-**最大似然估计的不变性**
+        不变性不意味着变换后的估计量无偏；无偏性一般不会在非线性变换下保持。
 
-若 $\widehat\theta$ 是 $\theta$ 的最大似然估计量，则在诱导的似然意义下，$g(\widehat\theta)$ 是 $g(\theta)$ 的最大似然估计量。
+!!! example "习题"
 
-例如，指数总体的率参数估计为 $\widehat\lambda=1/\overline X$，其均值 $1/\lambda$ 的最大似然估计为 $\overline X$。
+    1.  设 $X_1, X_2, \cdots, X_n$ 是取自总体 $X$ 的简单随机样本，$X$ 的概率密度为
 
-不变性不意味着变换后的估计量无偏；无偏性一般不会在非线性变换下保持。
+        $$
+        f(x)=\frac{1}{2\lambda}e^{-\frac{|x|}{\lambda}},
+        \qquad -\infty\lt x\lt +\infty,\quad \lambda>0.
+        $$
+
+        求：(1) $\lambda$ 的矩估计量；(2) $\lambda$ 的最大似然估计量。
+
+        ??? success "解答"
+
+            **(1) $\lambda$ 的矩估计量。**
+
+            密度关于 $x=0$ 对称，故 $E(X)=0$（一阶矩为 $0$），其中不含 $\lambda$，不能用于估计；改用二阶原点矩。由
+
+            $$
+            E(X^2)
+            =\int_{-\infty}^{+\infty}x^2\cdot\frac{1}{2\lambda}e^{-\frac{|x|}{\lambda}}\,\mathrm dx
+            =\frac{1}{\lambda}\int_0^{+\infty}x^2e^{-\frac{x}{\lambda}}\,\mathrm dx
+            =\frac{1}{\lambda}\cdot2\lambda^3
+            =2\lambda^2,
+            $$
+
+            令 $A_2=\dfrac1n\sum_{i=1}^nX_i^2$，则由 $2\lambda^2=A_2$ 解得
+
+            $$
+            \widehat\lambda_{\mathrm{MM}}
+            =\sqrt{\frac{A_2}{2}}
+            =\sqrt{\frac{1}{2n}\sum_{i=1}^nX_i^2}.
+            $$
+
+            !!! tip "另一种做法"
+
+                由于密度关于原点对称，也可由一阶绝对矩 $E|X|=\lambda$ 直接用 $\frac1n\sum_{i=1}^n|X_i|$ 作为 $\lambda$ 的矩估计，与最大似然估计量一致。按原点矩的矩估计法，通常做法则是上面的 $E(X^2)$。
+
+            ---
+
+            **(2) $\lambda$ 的最大似然估计量。**
+
+            设样本观测值为 $x_1,\ldots,x_n$，似然函数为
+
+            $$
+            L(\lambda)
+            =\prod_{i=1}^n\frac{1}{2\lambda}e^{-\frac{|x_i|}{\lambda}}
+            =(2\lambda)^{-n}e^{-\frac{1}{\lambda}\sum_{i=1}^n|x_i|},
+            \qquad \lambda>0.
+            $$
+
+            取对数得 $\displaystyle \ell(\lambda)=-n\ln(2\lambda)-\frac{1}{\lambda}\sum_{i=1}^n|x_i|$，对其求导：
+
+            $$
+            \ell'(\lambda)
+            =-\frac n\lambda+\frac{1}{\lambda^2}\sum_{i=1}^n|x_i|
+            =\frac{1}{\lambda^2}\left(\sum_{i=1}^n|x_i|-n\lambda\right).
+            $$
+
+            令 $\ell'(\lambda)=0$ 得驻点 $\displaystyle \widehat\lambda=\frac1n\sum_{i=1}^n|x_i|$。又当 $\lambda\to0^+$ 或 $\lambda\to+\infty$ 时均有 $L(\lambda)\to0$，所以该驻点就是最大值点，故
+
+            $$
+            \widehat\lambda_{\mathrm{MLE}}=\frac1n\sum_{i=1}^n|X_i|.
+            $$
+    
+    2.  在数集 $\Omega=\{0,1,2,\cdots,N\}$ 中有放回地抽取 $n$ 次，得 $X_1,X_2,\cdots,X_n$，则 $N$ 的最大似然估计量是（    ）。
+
+        <div class="exam-options" markdown="1">
+
+        A. $\max\{X_1,X_2,\cdots,X_n\}$
+
+        B. $\min\{X_1,X_2,\cdots,X_n\}$
+
+        C. $\dfrac 1n\sum\limits_{i=1}^n X_i$
+
+        D. $n$
+        </div>
+
+        ??? success "解答"
+
+            A.
+
+            有放回地随机抽取，即每次等可能地抽到 $0,1,\cdots,N$ 中的任意一个数，故
+
+            $$
+            P(X_i=k)=\frac{1}{N+1},
+            \qquad k=0,1,\cdots,N.
+            $$
+
+            设样本观测值为 $x_1,\ldots,x_n$，则似然函数为
+
+            $$
+            L(N)=
+            \begin{cases}
+            \dfrac{1}{(N+1)^n}, & N\ge\max\{x_1,\ldots,x_n\},\\
+            0, & N\lt\max\{x_1,\ldots,x_n\}.
+            \end{cases}
+            $$
+
+            当 $N\lt\max\{x_1,\ldots,x_n\}$ 时，至少有一个观测值不可能取到，故 $L(N)=0$；而在可行的参数范围 $N\ge\max\{x_1,\ldots,x_n\}$ 上，$\dfrac{1}{(N+1)^n}$ 关于 $N$ 单调递减，所以 $L(N)$ 在左端点 $N=\max\{x_1,\ldots,x_n\}$ 处取得最大值。
+
+            换回随机样本，得 $N$ 的最大似然估计量
+
+            $$
+            \widehat N=\max\{X_1,X_2,\cdots,X_n\}.
+            $$
+
+            故选 **A**。
+
+            !!! tip "直观理解"
+
+                $N$ 越小，每个值被抽到的概率 $\dfrac{1}{N+1}$ 越大，但 $N$ 不能小于样本中已经出现的最大值。因此最优的 $N$ 恰好等于样本最大值。
 
 #### 估计量的评价标准
 
@@ -3725,183 +3943,205 @@ $$
 </div>
 </div>
 
+!!! example "习题"
+
+    设总体 $X$ 的数学期望 $E(X) = 0$，方差 $D(X) = \sigma^2$。$X_1,X_2,\cdots,X_n~(n \gt 2)$ 是来自总体 $X$ 的简单随机样本。$\overline X = \dfrac 1n \sum\limits_{i=1}^n X_i$，$S^2 = \dfrac 1{n-1} \sum\limits_{i=1}^n (X_i-\overline X)^2$，则下列属于 $\sigma^2$ 的无偏估计量是（    ）。
+
+    <div class="exam-options" markdown="1">
+
+    A. $n{\overline X}^2+S^2$
+
+    B. $\dfrac 12 (n{\overline X}^2+S^2)$
+
+    C. $\dfrac 13 (n{\overline X}^2+S^2)$
+
+    D. $\dfrac 14 (n{\overline X}^2+S^2)$
+    </div>
+
+    ??? success "解答"
+        B.
+
+        
+
 #### 估计量的数字特征与收敛性
 
-**求期望与方差**
+???+ note "求期望与方差"
 
-将估计量看作样本函数，利用期望线性性、方差公式或其抽样分布计算。
+    将估计量看作样本函数，利用期望线性性、方差公式或其抽样分布计算。
 
-例如，若 $\widehat\theta=\sum_{i=1}^na_iX_i$，样本独立同分布且 $E(X_i)=\mu$、$D(X_i)=\sigma^2$，则
+    例如，若 $\widehat\theta=\sum_{i=1}^na_iX_i$，样本独立同分布且 $E(X_i)=\mu$、$D(X_i)=\sigma^2$，则
 
-$$
-E(\widehat\theta)=\mu\sum_{i=1}^na_i,
-\qquad
-D(\widehat\theta)=\sigma^2\sum_{i=1}^na_i^2.
-$$
+    $$
+    E(\widehat\theta)=\mu\sum_{i=1}^na_i,
+    \qquad
+    D(\widehat\theta)=\sigma^2\sum_{i=1}^na_i^2.
+    $$
 
-若 $\sum_i a_i=1$，则它无偏估计 $\mu$。由 $\displaystyle \sum_{i=1}^na_i^2\ge\frac1n,$
+    若 $\sum_i a_i=1$，则它无偏估计 $\mu$。由 $\displaystyle \sum_{i=1}^na_i^2\ge\frac1n,$
 
-可知等权重 $a_i=1/n$ 对应的样本均值，在这类固定权重的线性无偏估计量中方差最小。
+    可知等权重 $a_i=1/n$ 对应的样本均值，在这类固定权重的线性无偏估计量中方差最小。
 
-**验证依概率收敛**
+???+ note "验证依概率收敛"
 
-常用方法包括：
+    常用方法包括：
 
-- 应用大数定律及依概率收敛的连续函数性质。
-- 证明 $E(\widehat\theta_n)\to\theta$ 且 $D(\widehat\theta_n)\to0$。
-- 直接计算或估计 $P(|\widehat\theta_n-\theta|\ge\varepsilon)$，证明其趋于 $0$。
+    - 应用大数定律及依概率收敛的连续函数性质。
+    - 证明 $E(\widehat\theta_n)\to\theta$ 且 $D(\widehat\theta_n)\to0$。
+    - 直接计算或估计 $P(|\widehat\theta_n-\theta|\ge\varepsilon)$，证明其趋于 $0$。
 
-例如，若总体为 $U(0,\theta)$，令 $M_n=X_{(n)}$，则
+    例如，若总体为 $U(0,\theta)$，令 $M_n=X_{(n)}$，则
 
-$$
-E(M_n)=\frac n{n+1}\theta,
-\qquad
-D(M_n)=\frac{n\theta^2}{(n+1)^2(n+2)}.
-$$
+    $$
+    E(M_n)=\frac n{n+1}\theta,
+    \qquad
+    D(M_n)=\frac{n\theta^2}{(n+1)^2(n+2)}.
+    $$
 
-所以 $M_n$ 有偏，但 $E(M_n)\to\theta$、$D(M_n)\to0$，从而 $M_n\xrightarrow{P}\theta$。
+    所以 $M_n$ 有偏，但 $E(M_n)\to\theta$、$D(M_n)\to0$，从而 $M_n\xrightarrow{P}\theta$。
 
-也可以直接利用其分布：对 $0\lt\varepsilon\lt\theta$，
+    也可以直接利用其分布：对 $0\lt\varepsilon\lt\theta$，
 
-$$
-P(|M_n-\theta|\ge\varepsilon)
-=P(M_n\le\theta-\varepsilon)
-=\left(1-\frac{\varepsilon}{\theta}\right)^n\to0.
-$$
+    $$
+    P(|M_n-\theta|\ge\varepsilon)
+    =P(M_n\le\theta-\varepsilon)
+    =\left(1-\frac{\varepsilon}{\theta}\right)^n\to0.
+    $$
 
-乘以修正系数可得到无偏估计量 $\frac{n+1}{n}M_n$，它也一致收敛于 $\theta$。
+    乘以修正系数可得到无偏估计量 $\frac{n+1}{n}M_n$，它也一致收敛于 $\theta$。
 
 ### 参数的区间估计
 #### 概念
 
-**置信区间与置信水平**
+???+ note "置信区间与置信水平"
 
-设 $L=L(X_1,\ldots,X_n)$、$U=U(X_1,\ldots,X_n)$ 为样本函数。若对每个参数真值 $\theta$，
+    设 $L=L(X_1,\ldots,X_n)$、$U=U(X_1,\ldots,X_n)$ 为样本函数。若对每个参数真值 $\theta$，
 
-$$
-P_\theta(L\le\theta\le U)=1-\alpha,
-\qquad 0\lt\alpha\lt1,
-$$
+    $$
+    P_\theta(L\le\theta\le U)=1-\alpha,
+    \qquad 0\lt\alpha\lt1,
+    $$
 
-则称随机区间 $[L,U]$ 为 $\theta$ 的置信水平为 $1-\alpha$ 的置信区间。某些构造使用覆盖概率至少为 $1-\alpha$ 的保守区间。
+    则称随机区间 $[L,U]$ 为 $\theta$ 的置信水平为 $1-\alpha$ 的置信区间。某些构造使用覆盖概率至少为 $1-\alpha$ 的保守区间。
 
-抽样前，区间端点是随机的，参数 $\theta$ 是固定的；重复抽样并按同一规则构造区间，长期来看有约 $1-\alpha$ 的比例覆盖真值。
+    抽样前，区间端点是随机的，参数 $\theta$ 是固定的；重复抽样并按同一规则构造区间，长期来看有约 $1-\alpha$ 的比例覆盖真值。
 
-样本已经观测后，得到的是一个确定区间。不能把频率学派的置信水平解释为“固定参数以 $1-\alpha$ 的概率落入这一个已经算出的区间”。
+    样本已经观测后，得到的是一个确定区间。不能把频率学派的置信水平解释为“固定参数以 $1-\alpha$ 的概率落入这一个已经算出的区间”。
 
-**枢轴量法与区间宽度**
+???+ note "枢轴量"
 
-构造置信区间的常见方法是寻找**枢轴量** $Q(X_1,\ldots,X_n;\theta)$：它可以含未知参数，但其分布不含未知参数。
+    构造置信区间的常见方法是寻找**枢轴量** $Q(X_1,\ldots,X_n;\theta)$：它可以含未知参数，但其分布不含未知参数。
 
-具体步骤为：
+    具体步骤为：
 
-1. 选择分布已知的枢轴量。
-2. 利用分位点写出概率为 $1-\alpha$ 的事件。
-3. 对不等式变形，把待估参数单独放在中间。
-4. 用观测值替代样本变量，得到区间估计值。
+    1. 选择分布已知的枢轴量。
+    2. 利用分位点写出概率为 $1-\alpha$ 的事件。
+    3. 对不等式变形，把待估参数单独放在中间。
+    4. 用观测值替代样本变量，得到区间估计值。
 
-例如，若 $Z=(\overline X-\mu)/(\sigma/\sqrt n)\sim N(0,1)$，则 $P\left(-z_{\alpha/2}\le Z\le z_{\alpha/2}\right)=1-\alpha.$
+    例如，若 $Z=\dfrac{(\overline X-\mu)}{(\sigma/\sqrt n)}\sim N(0,1)$，则 $P\left(-z_{\alpha/2}\le Z\le z_{\alpha/2}\right)=1-\alpha.$
 
-移项后就得到 $\mu$ 的双侧置信区间。
+    移项后就得到 $\mu$ 的双侧置信区间。
 
-在其他条件相同的情况下，提高置信水平通常会使区间变宽，增大样本量通常会使区间变窄。区间宽度反映估计精度，但比较宽度时应保持置信水平及模型条件一致。
+    在其他条件相同的情况下，提高置信水平通常会使区间变宽，增大样本量通常会使区间变窄。区间宽度反映估计精度，但比较宽度时应保持置信水平及模型条件一致。
 
 #### 单个正态总体均值和方差的置信区间
 
-**均值：总体方差已知**
+???+ note "均值"
 
-设 $X_1,\ldots,X_n\overset{\mathrm{iid}}{\sim}N(\mu,\sigma^2)$，$\sigma^2$ 已知，则 $\mu$ 的置信水平为 $1-\alpha$ 的双侧置信区间为
+    -   **总体方差已知**：
 
-$$
-\left[
-\overline X-z_{\alpha/2}\frac{\sigma}{\sqrt n},
-\quad
-\overline X+z_{\alpha/2}\frac{\sigma}{\sqrt n}
-\right].
-$$
+        设 $X_1,\ldots,X_n\overset{\mathrm{iid}}{\sim}N(\mu,\sigma^2)$，$\sigma^2$ 已知，则 $\mu$ 的置信水平为 $1-\alpha$ 的双侧置信区间为
 
-这里使用总体标准差 $\sigma$，相应枢轴量服从标准正态分布。若总体不正态，仅在满足中心极限定理等条件且近似适当时，才可将它用作大样本近似区间。
+        $$
+        \left[
+        \overline X-z_{\alpha/2}\frac{\sigma}{\sqrt n},
+        \quad
+        \overline X+z_{\alpha/2}\frac{\sigma}{\sqrt n}
+        \right].
+        $$
 
-**均值：总体方差未知**
+        这里使用总体标准差 $\sigma$，相应枢轴量服从标准正态分布。若总体不正态，仅在满足中心极限定理等条件且近似适当时，才可将它用作大样本近似区间。
 
-设总体正态，$\mu,\sigma^2$ 均未知，且 $n\ge2$。由
+    -   **总体方差未知**：
 
-$$
-\frac{\overline X-\mu}{S/\sqrt n}\sim t(n-1),
-$$
+        设总体正态，$\mu,\sigma^2$ 均未知，且 $n\ge2$。由
 
-可得 $\mu$ 的双侧置信区间
+        $$
+        \frac{\overline X-\mu}{S/\sqrt n}\sim t(n-1),
+        $$
 
-$$
-\left[
-\overline X-t_{\alpha/2}(n-1)\frac S{\sqrt n},
-\quad
-\overline X+t_{\alpha/2}(n-1)\frac S{\sqrt n}
-\right].
-$$
+        可得 $\mu$ 的双侧置信区间
 
-使用 $S$ 替代 $\sigma$ 后，精确的小样本分布为 $t(n-1)$，不能仍然无条件使用标准正态临界值。
+        $$
+        \left[
+        \overline X-t_{\alpha/2}(n-1)\frac S{\sqrt n},
+        \quad
+        \overline X+t_{\alpha/2}(n-1)\frac S{\sqrt n}
+        \right].
+        $$
 
-例如，$n=16$、$\overline x=10$、$s=2$，取置信水平 $0.95$，则区间为 $10\pm t_{0.025}(15)\dfrac2{4}.$
+        使用 $S$ 替代 $\sigma$ 后，精确的小样本分布为 $t(n-1)$，不能仍然无条件使用标准正态临界值。
 
-用 $t_{0.025}(15)\approx2.131$，得到约为 $[8.9345,11.0655]$ 的区间。
+        例如，$n=16$、$\overline x=10$、$s=2$，取置信水平 $0.95$，则区间为 $10\pm t_{0.025}(15)\dfrac2{4}.$
 
-**方差：总体均值未知**
+        用 $t_{0.025}(15)\approx2.131$，得到约为 $[8.9345,11.0655]$ 的区间。
 
-设总体正态，$\mu$ 未知，$n\ge2$。由
+???+ note "方差"
 
-$$
-Q=\frac{(n-1)S^2}{\sigma^2}\sim\chi^2(n-1)
-$$
+    -   **总体均值未知**：
 
-及上侧分位点约定，
+        设总体正态，$\mu$ 未知，$n\ge2$。由
 
-$$
-P\left(
-\chi^2_{1-\alpha/2}(n-1)
-\le Q\le
-\chi^2_{\alpha/2}(n-1)
-\right)=1-\alpha.
-$$
+        $$
+        Q=\frac{(n-1)S^2}{\sigma^2}\sim\chi^2(n-1)
+        $$
 
-解出 $\sigma^2$，得到置信区间
+        及上侧分位点约定，
 
-$$
-\left[
-\frac{(n-1)S^2}{\chi^2_{\alpha/2}(n-1)},
-\quad
-\frac{(n-1)S^2}{\chi^2_{1-\alpha/2}(n-1)}
-\right].
-$$
+        $$
+        P\left(
+        \chi^2_{1-\alpha/2}(n-1)
+        \le Q\le
+        \chi^2_{\alpha/2}(n-1)
+        \right)=1-\alpha.
+        $$
 
-下限的分母是较大的分位点，上限的分母是较小的分位点；对正数取倒数时，不等号方向会反转。
+        解出 $\sigma^2$，得到置信区间
 
-若要求标准差 $\sigma$ 的置信区间，对以上两个端点分别开平方即可。
+        $$
+        \left[
+        \frac{(n-1)S^2}{\chi^2_{\alpha/2}(n-1)},
+        \quad
+        \frac{(n-1)S^2}{\chi^2_{1-\alpha/2}(n-1)}
+        \right].
+        $$
 
-**方差：总体均值已知**
+        下限的分母是较大的分位点，上限的分母是较小的分位点；对正数取倒数时，不等号方向会反转。
 
-若总体均值 $\mu$ 已知，则使用
+        若要求标准差 $\sigma$ 的置信区间，对以上两个端点分别开平方即可。
 
-$$
-Q_0=\frac{\sum_{i=1}^n(X_i-\mu)^2}{\sigma^2}\sim\chi^2(n),
-$$
+    -   **总体均值已知**：
 
-得到 $\sigma^2$ 的双侧置信区间
+        若总体均值 $\mu$ 已知，则使用
 
-$$
-\left[
-\frac{\sum_{i=1}^n(X_i-\mu)^2}{\chi^2_{\alpha/2}(n)},
-\quad
-\frac{\sum_{i=1}^n(X_i-\mu)^2}{\chi^2_{1-\alpha/2}(n)}
-\right].
-$$
+        $$
+        Q_0=\frac{\sum_{i=1}^n(X_i-\mu)^2}{\sigma^2}\sim\chi^2(n),
+        $$
 
-这里围绕已知的 $\mu$ 计算平方和，自由度为 $n$；不能混用未知均值情形的 $n-1$。
+        得到 $\sigma^2$ 的双侧置信区间
+
+        $$
+        \left[
+        \frac{\sum_{i=1}^n(X_i-\mu)^2}{\chi^2_{\alpha/2}(n)},
+        \quad
+        \frac{\sum_{i=1}^n(X_i-\mu)^2}{\chi^2_{1-\alpha/2}(n)}
+        \right].
+        $$
+
+        这里围绕已知的 $\mu$ 计算平方和，自由度为 $n$；不能混用未知均值情形的 $n-1$。
 
 ### 假设检验
 #### 概念
-
-**检验统计量、拒绝域与检验结论**
 
 假设检验先对总体分布或参数提出一个假设，再根据样本判断是否有足够证据拒绝它。
 
@@ -3915,11 +4155,9 @@ $$
 
 若统计量观测值落入拒绝域，则**拒绝 $H_0$**；否则**不拒绝 $H_0$**。
 
-“不拒绝”表示当前数据不足以拒绝原假设，不等于已经证明原假设正确。显著性检验的结论也应与模型假设和实际问题结合解释。
+!!! warning "“不拒绝”表示当前数据不足以拒绝原假设，并不代表已经证明原假设正确。"
 
 #### 原假设与备择假设
-
-**双侧检验与单侧检验**
 
 原假设 $H_0$ 是接受检验的命题，备择假设 $H_1$ 表示与之相对的研究方向。对参数 $\theta$ 和指定值 $\theta_0$，常见形式为：
 
@@ -3937,9 +4175,7 @@ $$
 
 检验方向应由问题事先确定，不能看到样本结果后再选择更容易显著的一侧。
 
-#### 小概率原理与显著性水平
-
-**小概率原理**
+#### 小概率原理
 
 如果 $H_0$ 成立时，某类结果出现的概率很小，而样本恰好落入预先规定的这类结果区域，就将其视为反对 $H_0$ 的证据。
 
@@ -3947,7 +4183,7 @@ $$
 
 连续模型中单个观测点的概率本来就为 $0$，所以检验比较的是尾部区域等事件的概率，而不是某个精确观测点的概率。
 
-**显著性水平与 p 值**
+#### 显著性水平与 p 值
 
 设拒绝域为 $W$。显著性水平 $\alpha$ 控制原假设为真时错误拒绝它的概率：
 
@@ -3958,7 +4194,7 @@ $$
 
 $\Theta_0$ 为原假设对应的参数集合。精确连续检验常在原假设边界上达到等号。
 
-$p$ 值是在原假设模型下，取得当前观测结果或更极端结果的相应尾部概率。例如，标准正态均值检验的观测值为 $z_{\mathrm{obs}}$ 时，
+$p$ 值是在原假设模型下，取得当前观测结果或更极端结果的**相应尾部概率**。例如，标准正态均值检验的观测值为 $z_{\mathrm{obs}}$ 时，
 
 $$
 p_{\text{右侧}}=1-\Phi(z_{\mathrm{obs}}),
@@ -3974,169 +4210,169 @@ $$
 
 #### 正态总体下的六大检验及拒绝域
 
-**一、单总体均值检验：方差已知（Z 检验）**
+???+ note "① 单总体均值检验：方差已知（Z 检验）"
 
-设 $X_i\overset{\mathrm{iid}}{\sim}N(\mu,\sigma^2)$，$\sigma^2$ 已知，检验基准为 $\mu_0$。使用
+    设 $X_i\overset{\mathrm{iid}}{\sim}N(\mu,\sigma^2)$，$\sigma^2$ 已知，检验基准为 $\mu_0$。使用
 
-$$
-Z=\frac{\overline X-\mu_0}{\sigma/\sqrt n}.
-$$
+    $$
+    Z=\frac{\overline X-\mu_0}{\sigma/\sqrt n}.
+    $$
 
-在 $\mu=\mu_0$ 时，$Z\sim N(0,1)$。显著性水平为 $\alpha$ 的拒绝域为：
+    在 $\mu=\mu_0$ 时，$Z\sim N(0,1)$。显著性水平为 $\alpha$ 的拒绝域为：
 
-<center markdown="1">
+    <center markdown="1">
 
-| 备择假设 | 拒绝域 |
-| --- | --- |
-| $H_1:\mu\ne\mu_0$ | $|Z|>z_{\alpha/2}$ |
-| $H_1:\mu>\mu_0$ | $Z>z_\alpha$ |
-| $H_1:\mu\lt\mu_0$ | $Z\lt-z_\alpha$ |
+    | 备择假设 | 拒绝域 |
+    | --- | --- |
+    | $H_1:\mu\ne\mu_0$ | $|Z|>z_{\alpha/2}$ |
+    | $H_1:\mu>\mu_0$ | $Z>z_\alpha$ |
+    | $H_1:\mu\lt\mu_0$ | $Z\lt-z_\alpha$ |
 
-</center>
+    </center>
 
-例如，$\mu_0=50$、$\sigma=10$、$n=100$、$\overline x=52.5$，则 $z_{\mathrm{obs}}=2.5$。在 $\alpha=0.05$ 的双侧检验中，$2.5>1.96$，因此拒绝 $H_0:\mu=50$。
+    ---
 
-**二、单总体均值检验：方差未知（t 检验）**
+    例如，$\mu_0=50$、$\sigma=10$、$n=100$、$\overline x=52.5$，则 $z_{\mathrm{obs}}=2.5$。在 $\alpha=0.05$ 的双侧检验中，$2.5>1.96$，因此拒绝 $H_0:\mu=50$。
 
-设总体正态，$\sigma^2$ 未知，$n\ge2$。使用
+???+ note "② 单总体均值检验：方差未知（t 检验）"
 
-$$
-T=\frac{\overline X-\mu_0}{S/\sqrt n}.
-$$
+    设总体正态，$\sigma^2$ 未知，$n\ge2$。使用
 
-在 $\mu=\mu_0$ 时，$T\sim t(n-1)$。拒绝域为：
+    $$
+    T=\frac{\overline X-\mu_0}{S/\sqrt n}.
+    $$
 
-<center markdown="1">
+    在 $\mu=\mu_0$ 时，$T\sim t(n-1)$。拒绝域为：
 
-| 备择假设 | 拒绝域 |
-| --- | --- |
-| $H_1:\mu\ne\mu_0$ | $|T|>t_{\alpha/2}(n-1)$ |
-| $H_1:\mu>\mu_0$ | $T>t_\alpha(n-1)$ |
-| $H_1:\mu\lt\mu_0$ | $T\lt-t_\alpha(n-1)$ |
+    <center markdown="1">
 
-</center>
+    | 备择假设 | 拒绝域 |
+    | --- | --- |
+    | $H_1:\mu\ne\mu_0$ | $|T|>t_{\alpha/2}(n-1)$ |
+    | $H_1:\mu>\mu_0$ | $T>t_\alpha(n-1)$ |
+    | $H_1:\mu\lt\mu_0$ | $T\lt-t_\alpha(n-1)$ |
 
-这里 $S^2$ 的分母为 $n-1$。正态性保证该 $t$ 分布是精确结论，而非仅由样本量较大得到的近似。
+    </center>
 
-**三、单总体方差检验（$\chi^2$ 检验）**
+    这里 $S^2$ 的分母为 $n-1$。正态性保证该 $t$ 分布是精确结论，而非仅由样本量较大得到的近似。
 
-设总体正态，均值未知，检验基准方差为 $\sigma_0^2>0$。使用
+???+ note "③ 单总体方差检验（$\chi^2$ 检验）"
 
-$$
-Q=\frac{(n-1)S^2}{\sigma_0^2}.
-$$
+    设总体正态，均值未知，检验基准方差为 $\sigma_0^2>0$。使用
 
-在 $\sigma^2=\sigma_0^2$ 时，$Q\sim\chi^2(\nu)$，其中 $\nu=n-1$。常用等尾拒绝域为：
+    $$
+    Q=\frac{(n-1)S^2}{\sigma_0^2}.
+    $$
 
-<center markdown="1">
+    在 $\sigma^2=\sigma_0^2$ 时，$Q\sim\chi^2(\nu)$，其中 $\nu=n-1$。常用等尾拒绝域为：
 
-| 备择假设 | 拒绝域 |
-| --- | --- |
-| $H_1:\sigma^2\ne\sigma_0^2$ | $Q\lt\chi^2_{1-\alpha/2}(\nu)$ 或 $Q>\chi^2_{\alpha/2}(\nu)$ |
-| $H_1:\sigma^2>\sigma_0^2$ | $Q>\chi^2_\alpha(\nu)$ |
-| $H_1:\sigma^2\lt\sigma_0^2$ | $Q\lt\chi^2_{1-\alpha}(\nu)$ |
+    <center markdown="1">
 
-</center>
+    | 备择假设 | 拒绝域 |
+    | --- | --- |
+    | $H_1:\sigma^2\ne\sigma_0^2$ | $Q\lt\chi^2_{1-\alpha/2}(\nu)$ 或 $Q>\chi^2_{\alpha/2}(\nu)$ |
+    | $H_1:\sigma^2>\sigma_0^2$ | $Q>\chi^2_\alpha(\nu)$ |
+    | $H_1:\sigma^2\lt\sigma_0^2$ | $Q\lt\chi^2_{1-\alpha}(\nu)$ |
 
-若总体均值 $\mu$ 已知，可改用 $Q=\sum_i(X_i-\mu)^2/\sigma_0^2$，并把自由度改为 $\nu=n$。
+    </center>
 
-**四、两总体均值差检验：两方差已知（Z 检验）**
+    若总体均值 $\mu$ 已知，可改用 $Q=\sum_i(X_i-\mu)^2/\sigma_0^2$，并把自由度改为 $\nu=n$。
 
-设两个总体均为正态，两组样本相互独立，方差 $\sigma_1^2,\sigma_2^2$ 已知。检验均值差基准 $\Delta_0$，使用
+???+ note "④ 两总体均值差检验：两方差已知（Z 检验）"
 
-$$
-Z=
-\frac{\overline X-\overline Y-\Delta_0}
-{\sqrt{\sigma_1^2/n_1+\sigma_2^2/n_2}}.
-$$
+    设两个总体均为正态，两组样本相互独立，方差 $\sigma_1^2,\sigma_2^2$ 已知。检验均值差基准 $\Delta_0$，使用
 
-在 $\mu_1-\mu_2=\Delta_0$ 时，$Z\sim N(0,1)$。拒绝域为：
+    $$
+    Z=
+    \frac{\overline X-\overline Y-\Delta_0}
+    {\sqrt{\sigma_1^2/n_1+\sigma_2^2/n_2}}.
+    $$
 
-<center markdown="1">
+    在 $\mu_1-\mu_2=\Delta_0$ 时，$Z\sim N(0,1)$。拒绝域为：
 
-| 备择假设 | 拒绝域 |
-| --- | --- |
-| $H_1:\mu_1-\mu_2\ne\Delta_0$ | $|Z|>z_{\alpha/2}$ |
-| $H_1:\mu_1-\mu_2>\Delta_0$ | $Z>z_\alpha$ |
-| $H_1:\mu_1-\mu_2\lt\Delta_0$ | $Z\lt-z_\alpha$ |
+    <center markdown="1">
 
-</center>
+    | 备择假设 | 拒绝域 |
+    | --- | --- |
+    | $H_1:\mu_1-\mu_2\ne\Delta_0$ | $|Z|>z_{\alpha/2}$ |
+    | $H_1:\mu_1-\mu_2>\Delta_0$ | $Z>z_\alpha$ |
+    | $H_1:\mu_1-\mu_2\lt\Delta_0$ | $Z\lt-z_\alpha$ |
 
-检验两个均值是否相等时，取 $\Delta_0=0$。两组样本的独立性不能省略；配对数据需要按差值样本等相应模型处理。
+    </center>
 
-**五、两总体均值差检验：两方差未知但相等（合并 t 检验）**
+    检验两个均值是否相等时，取 $\Delta_0=0$。两组样本的独立性不能省略；配对数据需要按差值样本等相应模型处理。
 
-设两个正态总体具有共同的未知方差 $\sigma^2$，两组样本相互独立，$n_1,n_2\ge2$。令
+???+ note "⑤ 两总体均值差检验：两方差未知但相等（合并 t 检验）"
 
-$$
-S_p^2=
-\frac{(n_1-1)S_1^2+(n_2-1)S_2^2}{n_1+n_2-2},
-$$
+    设两个正态总体具有共同的未知方差 $\sigma^2$，两组样本相互独立，$n_1,n_2\ge2$。令
 
-$$
-T=
-\frac{\overline X-\overline Y-\Delta_0}
-{S_p\sqrt{1/n_1+1/n_2}}.
-$$
+    $$
+    S_p^2=
+    \frac{(n_1-1)S_1^2+(n_2-1)S_2^2}{n_1+n_2-2},
+    $$
 
-在 $\mu_1-\mu_2=\Delta_0$ 时，$T\sim t(\nu)$，其中 $\nu=n_1+n_2-2$。拒绝域为：
+    $$
+    T=
+    \frac{\overline X-\overline Y-\Delta_0}
+    {S_p\sqrt{1/n_1+1/n_2}}.
+    $$
 
-<center markdown="1">
+    在 $\mu_1-\mu_2=\Delta_0$ 时，$T\sim t(\nu)$，其中 $\nu=n_1+n_2-2$。拒绝域为：
 
-| 备择假设 | 拒绝域 |
-| --- | --- |
-| $H_1:\mu_1-\mu_2\ne\Delta_0$ | $|T|>t_{\alpha/2}(\nu)$ |
-| $H_1:\mu_1-\mu_2>\Delta_0$ | $T>t_\alpha(\nu)$ |
-| $H_1:\mu_1-\mu_2\lt\Delta_0$ | $T\lt-t_\alpha(\nu)$ |
+    <center markdown="1">
 
-</center>
+    | 备择假设 | 拒绝域 |
+    | --- | --- |
+    | $H_1:\mu_1-\mu_2\ne\Delta_0$ | $|T|>t_{\alpha/2}(\nu)$ |
+    | $H_1:\mu_1-\mu_2>\Delta_0$ | $T>t_\alpha(\nu)$ |
+    | $H_1:\mu_1-\mu_2\lt\Delta_0$ | $T\lt-t_\alpha(\nu)$ |
 
-方差未知并不等于方差相等。若不满足等方差假设，不能直接使用这个合并方差公式及其自由度。
+    </center>
 
-**六、两总体方差比检验（F 检验）**
+    !!! warning "方差未知并不等于方差相等。若不满足等方差假设，不能直接使用这个合并方差公式及其自由度。"
 
-设两个正态总体的均值未知，两组样本相互独立。检验方差比基准 $r_0=\dfrac{\sigma_1^2}{\sigma_2^2}>0,$
+???+ note "⑥ 两总体方差比检验（F 检验）"
 
-其中 $r_0$ 表示原假设规定的数值。使用
+    设两个正态总体的均值未知，两组样本相互独立。检验方差比基准 $r_0=\dfrac{\sigma_1^2}{\sigma_2^2}>0,$
 
-$$
-F_{\mathrm{stat}}=\frac{S_1^2/S_2^2}{r_0}.
-$$
+    其中 $r_0$ 表示原假设规定的数值。使用
 
-在原假设边界 $\sigma_1^2/\sigma_2^2=r_0$ 时，
+    $$
+    F_{\mathrm{stat}}=\frac{S_1^2/S_2^2}{r_0}.
+    $$
 
-$$
-F_{\mathrm{stat}}\sim F(\nu_1,\nu_2),
-\qquad
-\nu_1=n_1-1,\quad\nu_2=n_2-1.
-$$
+    在原假设边界 $\sigma_1^2/\sigma_2^2=r_0$ 时，
 
-常用等尾拒绝域为：
+    $$
+    F_{\mathrm{stat}}\sim F(\nu_1,\nu_2),
+    \qquad
+    \nu_1=n_1-1,\quad\nu_2=n_2-1.
+    $$
 
-<center markdown="1">
+    常用等尾拒绝域为：
 
-| 备择假设 | 拒绝域 |
-| --- | --- |
-| $H_1:\sigma_1^2/\sigma_2^2\ne r_0$ | $F_{\mathrm{stat}}\lt F_{1-\alpha/2}(\nu_1,\nu_2)$ 或 $F_{\mathrm{stat}}>F_{\alpha/2}(\nu_1,\nu_2)$ |
-| $H_1:\sigma_1^2/\sigma_2^2>r_0$ | $F_{\mathrm{stat}}>F_\alpha(\nu_1,\nu_2)$ |
-| $H_1:\sigma_1^2/\sigma_2^2\lt r_0$ | $F_{\mathrm{stat}}\lt F_{1-\alpha}(\nu_1,\nu_2)$ |
+    <center markdown="1">
 
-</center>
+    | 备择假设 | 拒绝域 |
+    | --- | --- |
+    | $H_1:\sigma_1^2/\sigma_2^2\ne r_0$ | $F_{\mathrm{stat}}\lt F_{1-\alpha/2}(\nu_1,\nu_2)$ 或 $F_{\mathrm{stat}}>F_{\alpha/2}(\nu_1,\nu_2)$ |
+    | $H_1:\sigma_1^2/\sigma_2^2>r_0$ | $F_{\mathrm{stat}}>F_\alpha(\nu_1,\nu_2)$ |
+    | $H_1:\sigma_1^2/\sigma_2^2\lt r_0$ | $F_{\mathrm{stat}}\lt F_{1-\alpha}(\nu_1,\nu_2)$ |
 
-检验两方差是否相等时取 $r_0=1$。分子对应第一总体、分母对应第二总体；若交换分子分母，应同时交换自由度、变换方差比及备择方向。
+    </center>
 
-**检验与置信区间的联系**
+    检验两方差是否相等时取 $r_0=1$。分子对应第一总体、分母对应第二总体；若交换分子分母，应同时交换自由度、变换方差比及备择方向。
 
-对同一模型、同一枢轴量及相匹配的双侧检验，显著性水平 $\alpha$ 的检验与置信水平 $1-\alpha$ 的区间互相对应： $\theta_0\text{ 不在相应置信区间内} \iff \text{拒绝 }H_0:\theta=\theta_0.$
+!!! tip "检验与置信区间的联系"
 
-例如，正态总体方差未知时，$\mu_0$ 不在对应的双侧 $t$ 置信区间内，等价于 $|T|>t_{\alpha/2}(n-1)$。
+    对同一模型、同一枢轴量及相匹配的双侧检验，显著性水平 $\alpha$ 的检验与置信水平 $1-\alpha$ 的区间互相对应： $\theta_0\text{ 不在相应置信区间内} \iff \text{拒绝 }H_0:\theta=\theta_0.$
 
-上述精确检验统计量在原假设下均为连续分布，临界点处取严格或非严格不等号不改变第一类错误概率；实际计算时应统一端点判定约定。
+    例如，正态总体方差未知时，$\mu_0$ 不在对应的双侧 $t$ 置信区间内，等价于 $|T|>t_{\alpha/2}(n-1)$。
+
+    上述精确检验统计量在原假设下均为连续分布，临界点处取严格或非严格不等号不改变第一类错误概率；实际计算时应统一端点判定约定。
 
 ### 两类错误
 #### 第一类错误
-
-**弃真错误与显著性水平**
 
 当 $H_0$ 实际为真，却作出拒绝 $H_0$ 的结论，称为**第一类错误**，也称弃真错误。
 
@@ -4147,8 +4383,6 @@ $$
 例如，使用 $\alpha=0.05$ 的检验，并不保证本次结论一定正确，而是控制按同一规则反复检验时的弃真概率。
 
 #### 第二类错误
-
-**取伪错误与检验功效**
 
 当 $H_0$ 实际为假，却未拒绝 $H_0$，称为**第二类错误**，也称取伪错误。
 
@@ -4167,28 +4401,28 @@ $\beta$ 一般依赖真实参数值、样本量、显著性水平以及检验规
 
 </center>
 
-**第二类错误概率的计算**
+???+ note "第二类错误概率的计算"
 
-计算 $\beta$ 时，先确定“不拒绝域”，再把统计量放到备择假设下的真实分布中计算概率。不能继续把它当成原假设下的标准分布。
+    计算 $\beta$ 时，先确定“不拒绝域”，再把统计量放到备择假设下的真实分布中计算概率。不能继续把它当成原假设下的标准分布。
 
-例如，正态总体方差 $\sigma^2$ 已知，检验 $H_0:\mu=\mu_0$ 对 $H_1:\mu\ne\mu_0$。双侧 $Z$ 检验的不拒绝域为
+    例如，正态总体方差 $\sigma^2$ 已知，检验 $H_0:\mu=\mu_0$ 对 $H_1:\mu\ne\mu_0$。双侧 $Z$ 检验的不拒绝域为
 
-$$
-a\le\overline X\le b,
-\qquad
-a=\mu_0-z_{\alpha/2}\frac{\sigma}{\sqrt n},
-\quad
-b=\mu_0+z_{\alpha/2}\frac{\sigma}{\sqrt n}.
-$$
+    $$
+    a\le\overline X\le b,
+    \qquad
+    a=\mu_0-z_{\alpha/2}\frac{\sigma}{\sqrt n},
+    \quad
+    b=\mu_0+z_{\alpha/2}\frac{\sigma}{\sqrt n}.
+    $$
 
-若真实均值为 $\mu_1\ne\mu_0$，则 $\overline X\sim N(\mu_1,\sigma^2/n)$，因此
+    若真实均值为 $\mu_1\ne\mu_0$，则 $\overline X\sim N(\mu_1,\sigma^2/n)$，因此
 
-$$
-\beta(\mu_1)
-=\Phi\left(\frac{b-\mu_1}{\sigma/\sqrt n}\right)
--\Phi\left(\frac{a-\mu_1}{\sigma/\sqrt n}\right).
-$$
+    $$
+    \beta(\mu_1)
+    =\Phi\left(\frac{b-\mu_1}{\sigma/\sqrt n}\right)
+    -\Phi\left(\frac{a-\mu_1}{\sigma/\sqrt n}\right).
+    $$
 
-在固定样本量、模型和通常的检验形式下，降低 $\alpha$ 会缩小拒绝域，往往使 $\beta$ 增大。增加样本量则通常可以在保持 $\alpha$ 不变时降低特定备择下的 $\beta$，提高功效。
+    在固定样本量、模型和通常的检验形式下，降低 $\alpha$ 会缩小拒绝域，往往使 $\beta$ 增大。增加样本量则通常可以在保持 $\alpha$ 不变时降低特定备择下的 $\beta$，提高功效。
 
-因此，“显著性水平更低”不等于检验在所有方面都更好；还要结合样本量和需要识别的参数偏离程度。
+    因此，“显著性水平更低”不等于检验在所有方面都更好；还要结合样本量和需要识别的参数偏离程度。

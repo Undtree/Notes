@@ -101,14 +101,17 @@
 
 /* 卡片投影，叠加在 .card 上使用（用法：<div class="card card-shadow">）。
    浅色模式：中性灰投影，靠近卡片处紧实、远处散开。
-   深色模式：页面底色本身已接近纯黑，纯黑投影看不出来，因此改用
-   「比页面底色更亮的抬升面色 + 更强的投影 + 亮色细边」来表现悬浮感。 */
+   深色模式：用更亮的表面、顶部高光和柔和的灰蓝外缘拉开层次，
+   再以近实远虚的向下投影表现高度，悬停或聚焦时进一步抬升。 */
 .card-shadow {
     box-shadow:
         0 1px 2px rgba(0, 0, 0, .12),
         0 4px 12px rgba(0, 0, 0, .16),
         0 12px 28px -6px rgba(0, 0, 0, .14);
-    transition: box-shadow .3s cubic-bezier(.4, 0, .2, 1);
+    transition: box-shadow .3s cubic-bezier(.4, 0, .2, 1),
+                background-color .3s cubic-bezier(.4, 0, .2, 1),
+                border-color .3s cubic-bezier(.4, 0, .2, 1),
+                transform .3s cubic-bezier(.4, 0, .2, 1);
 }
 
 .card-shadow:is(:focus,:hover),
@@ -120,21 +123,37 @@
 }
 
 [data-md-color-scheme="slate"] .card-shadow {
-    /* 抬升表面：比 --md-default-bg-color(#0d1117) 亮一档 */
-    background-color: #1c2128;
-    border-color: #3d444d;
+    /* 与页面底色 #0d1117 拉开明度差，外缘补足暗背景上的阴影对比。 */
+    background-color: #242b35;
+    border-color: #485361;
     box-shadow:
-        0 1px 2px rgba(0, 0, 0, .95),
-        0 8px 24px rgba(0, 0, 0, .9),
-        inset 0 1px 0 rgba(255, 255, 255, .08),
-        0 0 0 1px rgba(255, 255, 255, .06);
+        inset 0 1px 0 rgba(255, 255, 255, .12),
+        0 2px 4px rgba(0, 0, 0, .65),
+        0 10px 24px -4px rgba(0, 0, 0, .75),
+        0 24px 48px -12px rgba(0, 0, 0, .85),
+        0 0 18px rgba(148, 163, 184, .1);
 }
 
 [data-md-color-scheme="slate"] .card-shadow:is(:focus,:hover),
 [data-md-color-scheme="slate"] .card-shadow:has(:is(:focus,:hover)) {
+    background-color: #2a323e;
+    border-color: #637083;
+    transform: translateY(-2px);
     box-shadow:
-        0 2px 5px rgba(0, 0, 0, .95),
-        0 16px 40px rgba(0, 0, 0, .95),
-        inset 0 1px 0 rgba(255, 255, 255, .12),
-        0 0 0 1px rgba(255, 255, 255, .1);
+        inset 0 1px 0 rgba(255, 255, 255, .18),
+        0 4px 8px rgba(0, 0, 0, .7),
+        0 16px 32px -6px rgba(0, 0, 0, .8),
+        0 32px 64px -12px rgba(0, 0, 0, .9),
+        0 0 24px rgba(148, 163, 184, .16);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .card-shadow {
+        transition: none;
+    }
+
+    [data-md-color-scheme="slate"] .card-shadow:is(:focus,:hover),
+    [data-md-color-scheme="slate"] .card-shadow:has(:is(:focus,:hover)) {
+        transform: none;
+    }
 }

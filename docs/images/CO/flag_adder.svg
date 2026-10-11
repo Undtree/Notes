@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1340 650" width="1340" height="650" role="img" aria-labelledby="title desc" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">
+<title id="title">带标志加法器及其标志位生成电路</title>
+<desc id="desc">（a）带标志加法器的符号：输入 A、B（n 位）与进位输入 C_in，输出结果 F（n 位）以及标志 CF、OF、SF、ZF。（b）由全加器链实现：CF 直接取最高位的进位 C_n；OF 由 C_n 与 C_{n−1} 经异或门得到；SF 直接取结果最高位 F_{n−1}；ZF 由结果各位经或非门得到。</desc>
+
+<defs>
+  <!-- 箭头头部 -->
+  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#4051b5"/>
+  </marker>
+  <!-- 异或门（特定形状符号） -->
+  <g id="xor-gate" fill="#eaf0ff" stroke="#4051b5" stroke-width="2">
+    <path d="M -16 -36 Q 2 0 -16 36" fill="none"/>
+    <path d="M 0 -36 Q 18 0 0 36 C 22 28 48 18 72 0 C 48 -18 22 -28 0 -36 Z"/>
+  </g>
+  <!-- 或非门（特定形状符号 + 输出端小圆圈） -->
+  <g id="nor-gate" fill="#eaf0ff" stroke="#4051b5" stroke-width="2">
+    <path d="M 0 -36 Q 18 0 0 36 C 22 28 48 18 72 0 C 48 -18 22 -28 0 -36 Z"/>
+    <circle cx="78" cy="0" r="6" fill="#ffffff"/>
+  </g>
+</defs>
+
+<!-- 背景 -->
+<rect width="1340" height="650" fill="#ffffff"/>
+
+<!-- 分栏虚线 -->
+<line x1="505" y1="40" x2="505" y2="630" stroke="#9aa7bd" stroke-width="1.4" stroke-dasharray="6 6"/>
+
+<!-- ============ （a）带标志加法器的符号 ============ -->
+<text x="245" y="54" text-anchor="middle" font-size="18" font-weight="700" fill="#1a237e">（a）带标志加法器的符号</text>
+
+<path d="M 95 340 H 395 L 345 160 H 145 Z" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+<text x="245" y="266" text-anchor="middle" font-size="22" font-weight="700" fill="#283593">加法器</text>
+
+<!-- 输入 A、B（各 n 位） -->
+<path d="M 200 430 V 344" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<text x="188" y="415" text-anchor="end" font-size="17" fill="#1a237e">A</text>
+<text x="206" y="415" font-size="13" fill="#1a237e">n</text>
+<path d="M 290 430 V 344" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<text x="278" y="415" text-anchor="end" font-size="17" fill="#1a237e">B</text>
+<text x="296" y="415" font-size="13" fill="#1a237e">n</text>
+
+<!-- 进位输入、输出 -->
+<path d="M 440 255 H 372" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<text x="446" y="261" font-size="16" fill="#1a237e">C<tspan font-size="11" dy="4">in</tspan></text>
+<path d="M 117 255 H 56" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<text x="50" y="261" text-anchor="end" font-size="16" fill="#1a237e">C<tspan font-size="11" dy="4">out</tspan></text>
+
+<!-- 四个标志与结果 F 均为部件输出 -->
+<path d="M 165 160 V 116" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<text x="165" y="104" text-anchor="middle" font-size="15" fill="#1a237e">CF</text>
+<path d="M 205 160 V 116" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<text x="205" y="104" text-anchor="middle" font-size="15" fill="#1a237e">OF</text>
+<path d="M 245 160 V 116" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<text x="245" y="104" text-anchor="middle" font-size="15" fill="#1a237e">SF</text>
+<path d="M 285 160 V 116" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<text x="285" y="104" text-anchor="middle" font-size="15" fill="#1a237e">ZF</text>
+<path d="M 325 160 V 116" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<text x="325" y="104" text-anchor="middle" font-size="17" fill="#1a237e">F</text>
+<text x="341" y="104" font-size="13" fill="#1a237e">n</text>
+
+<!-- ============ （b）带标志加法器的逻辑电路 ============ -->
+<text x="925" y="54" text-anchor="middle" font-size="18" font-weight="700" fill="#1a237e">（b）带标志加法器的逻辑电路</text>
+
+<!-- 全加器链：FA_{n-1}、…、FA_1、FA_0 -->
+<rect x="665" y="430" width="100" height="100" rx="10" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+<text x="715" y="488" text-anchor="middle" font-size="20" font-weight="700" fill="#283593">FA</text>
+<rect x="865" y="430" width="100" height="100" rx="10" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+<text x="915" y="488" text-anchor="middle" font-size="20" font-weight="700" fill="#283593">FA</text>
+<rect x="995" y="430" width="100" height="100" rx="10" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+<text x="1045" y="488" text-anchor="middle" font-size="20" font-weight="700" fill="#283593">FA</text>
+
+<!-- 各位加数与本位和（F 由 FA 顶部引出，兼作标志生成电路的输入） -->
+<path d="M 715 430 V 146" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<text x="715" y="134" text-anchor="middle" font-size="17" fill="#1a237e">SF</text>
+<path d="M 915 430 V 146" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<text x="915" y="134" text-anchor="middle" font-size="17" fill="#1a237e">F<tspan font-size="11" dy="4">1</tspan></text>
+<path d="M 1045 430 V 146" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<text x="1045" y="134" text-anchor="middle" font-size="17" fill="#1a237e">F<tspan font-size="11" dy="4">0</tspan></text>
+
+<path d="M 689 570 V 534" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<text x="689" y="594" text-anchor="middle" font-size="14" fill="#1a237e">A<tspan font-size="10" dy="3">n−1</tspan></text>
+<path d="M 741 570 V 534" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<text x="741" y="594" text-anchor="middle" font-size="14" fill="#1a237e">B<tspan font-size="10" dy="3">n−1</tspan></text>
+<path d="M 889 570 V 534" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<text x="889" y="594" text-anchor="middle" font-size="14" fill="#1a237e">A<tspan font-size="10" dy="3">1</tspan></text>
+<path d="M 941 570 V 534" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<text x="941" y="594" text-anchor="middle" font-size="14" fill="#1a237e">B<tspan font-size="10" dy="3">1</tspan></text>
+<path d="M 1019 570 V 534" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<text x="1019" y="594" text-anchor="middle" font-size="14" fill="#1a237e">A<tspan font-size="10" dy="3">0</tspan></text>
+<path d="M 1071 570 V 534" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<text x="1071" y="594" text-anchor="middle" font-size="14" fill="#1a237e">B<tspan font-size="10" dy="3">0</tspan></text>
+
+<!-- 进位链：C_in 由右侧进入，逐级向高位传递 -->
+<path d="M 1250 480 H 1099" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<text x="1256" y="486" font-size="16" fill="#1a237e">C<tspan font-size="11" dy="4">in</tspan></text>
+<path d="M 995 480 H 969" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<text x="980" y="470" text-anchor="middle" font-size="13" fill="#1a237e">C<tspan font-size="11" dy="4">1</tspan></text>
+<path d="M 865 480 H 767" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<rect x="812" y="464" width="44" height="32" fill="#ffffff"/>
+<text x="834" y="488" text-anchor="middle" font-size="20" fill="#1a237e">⋯</text>
+
+<!-- C_n（最高位借出/向外的进位）：作为 CF，并与 C_{n-1} 一起生成 OF -->
+<path d="M 665 480 H 560 V 146" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<text x="605" y="466" text-anchor="middle" font-size="13" fill="#1a237e">C<tspan font-size="11" dy="4">n</tspan></text>
+<text x="560" y="134" text-anchor="middle" font-size="17" fill="#1a237e">CF</text>
+<path d="M 800 480 V 318 H 723 A 8 8 0 0 0 707 318 H 597" fill="none" stroke="#4051b5" stroke-width="3.5"/>
+<text x="806" y="420" font-size="13" fill="#1a237e">C<tspan font-size="11" dy="4">n−1</tspan></text>
+
+<!-- OF：C_n 与 C_{n-1} 异或 -->
+<use href="#xor-gate" transform="translate(588 300)"/>
+<path d="M 560 282 H 597" fill="none" stroke="#4051b5" stroke-width="3.5"/>
+<path d="M 660 300 H 672 V 146" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<text x="672" y="134" text-anchor="middle" font-size="17" fill="#1a237e">OF</text>
+
+<!-- ZF：各位结果经或非门 -->
+<use href="#nor-gate" transform="translate(1100 300)"/>
+<path d="M 715 270 H 907 A 8 8 0 0 1 923 270 H 1037 A 8 8 0 0 1 1053 270 H 1109" fill="none" stroke="#4051b5" stroke-width="3.5"/>
+<path d="M 915 300 H 1037 A 8 8 0 0 1 1053 300 H 1109" fill="none" stroke="#4051b5" stroke-width="3.5"/>
+<path d="M 1045 330 H 1109" fill="none" stroke="#4051b5" stroke-width="3.5"/>
+<path d="M 1184 300 H 1196 V 146" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
+<text x="1196" y="134" text-anchor="middle" font-size="17" fill="#1a237e">ZF</text>
+
+<!-- 分支接点 -->
+<circle cx="560" cy="282" r="4.5" fill="#4051b5"/>
+<circle cx="715" cy="270" r="4.5" fill="#4051b5"/>
+<circle cx="915" cy="300" r="4.5" fill="#4051b5"/>
+<circle cx="1045" cy="330" r="4.5" fill="#4051b5"/>
+<circle cx="800" cy="480" r="4.5" fill="#4051b5"/>
+</svg>
