@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 834" width="1100" height="834" role="img" aria-labelledby="title desc" font-family="Source Han Sans SC, Noto Sans SC, Microsoft YaHei, sans-serif">
+  <title id="title">Peterson 算法的指令重排反例</title>
+  <desc id="desc">时间向下推进，圆圈编号表示全局执行次序。初始 flag[0] 和 flag[1] 均为 false。P0 的两条赋值被重排：第一步先写 turn 为 1，第五步才写 flag[0] 为 true。P1 按原顺序在第二步写 flag[1] 为 true，第三步写 turn 为 0，第四步因 flag[0] 仍为 false 而进入临界区。P1 尚未退出时，P0 在第六步因 turn 为 0 而通过检查，也进入临界区。底部红色区域表示两个临界区重叠，互斥性被破坏。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b"/>
+    </marker>
+    <style>
+      .code { font-family: Consolas, DejaVu Sans Mono, monospace; font-size: 23px; }
+      .number { font-size: 20px; font-weight: 700; fill: #ffffff; text-anchor: middle; }
+      .flow { stroke: #64748b; stroke-width: 2; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect width="1100" height="834" rx="16" fill="#ffffff"/>
+  <text x="550" y="40" text-anchor="middle" font-size="27" font-weight="700" fill="#1a237e">Peterson 算法：重排可能破坏互斥</text>
+  <text x="550" y="76" text-anchor="middle" font-size="20" fill="#475569">初始 flag[0] = flag[1] = false；圆圈编号表示全局执行次序</text>
+
+  <!-- 两列分别展示进程；纵坐标表示操作发生的先后。 -->
+  <rect x="120" y="190" width="410" height="574" rx="12" fill="#f6f8ff"/>
+  <rect x="570" y="190" width="410" height="574" rx="12" fill="#fffaf3"/>
+  <rect x="120" y="104" width="410" height="72" rx="12" fill="#eaf0ff" stroke="#4051b5" stroke-width="1.5"/>
+  <rect x="570" y="104" width="410" height="72" rx="12" fill="#fff0d9" stroke="#a65d13" stroke-width="1.5"/>
+  <text x="325" y="132" text-anchor="middle" font-size="24" font-weight="700" fill="#283593">进程 P₀</text>
+  <text x="325" y="160" text-anchor="middle" font-size="18" fill="#4051b5">重排后：先写 turn，再写 flag[0]</text>
+  <text x="775" y="132" text-anchor="middle" font-size="24" font-weight="700" fill="#85480f">进程 P₁</text>
+  <text x="775" y="160" text-anchor="middle" font-size="18" fill="#85480f">原顺序：先写 flag[1]，再写 turn</text>
+  <text x="57" y="178" text-anchor="middle" font-size="20" fill="#475569">时间</text>
+  <line x1="57" y1="198" x2="57" y2="752" stroke="#64748b" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- P0：turn 的写入提前，flag 的写入推迟到 P1 进入之后。 -->
+  <rect x="140" y="198" width="370" height="54" rx="9" fill="#ffffff" stroke="#4051b5" stroke-width="1.7"/>
+  <circle cx="166" cy="225" r="17" fill="#4051b5"/>
+  <text x="166" y="232" class="number">1</text>
+  <text x="201" y="233" class="code" fill="#283593">turn = 1</text>
+  <line x1="325" y1="252" x2="325" y2="320" class="flow" stroke-dasharray="6 5"/>
+  <text x="325" y="350" text-anchor="middle" font-size="21" fill="#4051b5">flag[0] 仍为 false</text>
+  <text x="325" y="381" text-anchor="middle" font-size="19" fill="#475569">P₀ 尚未声明进入意愿</text>
+  <line x1="325" y1="401" x2="325" y2="512" class="flow" stroke-dasharray="6 5"/>
+
+  <!-- P1：两条赋值及检查均保持原顺序。 -->
+  <rect x="590" y="270" width="370" height="50" rx="9" fill="#ffffff" stroke="#a65d13" stroke-width="1.7"/>
+  <circle cx="616" cy="295" r="17" fill="#a65d13"/>
+  <text x="616" y="302" class="number">2</text>
+  <text x="651" y="303" class="code" fill="#85480f">flag[1] = true</text>
+  <line x1="775" y1="320" x2="775" y2="333" class="flow"/>
+  <rect x="590" y="335" width="370" height="50" rx="9" fill="#ffffff" stroke="#a65d13" stroke-width="1.7"/>
+  <circle cx="616" cy="360" r="17" fill="#a65d13"/>
+  <text x="616" y="367" class="number">3</text>
+  <text x="651" y="368" class="code" fill="#85480f">turn = 0</text>
+  <line x1="775" y1="385" x2="775" y2="398" class="flow"/>
+  <rect x="590" y="400" width="370" height="93" rx="9" fill="#fff0d9" stroke="#a65d13" stroke-width="1.7"/>
+  <circle cx="616" cy="428" r="17" fill="#a65d13"/>
+  <text x="616" y="435" class="number">4</text>
+  <text x="647" y="436" font-size="21" fill="#85480f">读到 flag[0] 为 false</text>
+  <text x="775" y="472" text-anchor="middle" font-size="20" font-weight="700" fill="#85480f">while 条件为 false → 进入临界区</text>
+  <line x1="775" y1="493" x2="775" y2="510" class="flow"/>
+  <rect x="590" y="512" width="370" height="244" rx="9" fill="#fff0d9" stroke="#a65d13" stroke-width="1.7"/>
+  <text x="775" y="581" text-anchor="middle" font-size="25" font-weight="700" fill="#85480f">临界区</text>
+  <text x="775" y="623" text-anchor="middle" font-size="20" fill="#85480f">尚未退出</text>
+  <text x="775" y="655" text-anchor="middle" font-size="20" fill="#85480f">flag[1] 仍为 true</text>
+
+  <!-- P0：看到 turn 为 0，不会等待仍在临界区中的 P1。 -->
+  <rect x="140" y="514" width="370" height="54" rx="9" fill="#ffffff" stroke="#4051b5" stroke-width="1.7"/>
+  <circle cx="166" cy="541" r="17" fill="#4051b5"/>
+  <text x="166" y="548" class="number">5</text>
+  <text x="201" y="549" class="code" fill="#283593">flag[0] = true</text>
+  <line x1="325" y1="568" x2="325" y2="598" class="flow"/>
+  <rect x="140" y="600" width="370" height="88" rx="9" fill="#eaf0ff" stroke="#4051b5" stroke-width="1.7"/>
+  <circle cx="166" cy="628" r="17" fill="#4051b5"/>
+  <text x="166" y="635" class="number">6</text>
+  <text x="197" y="636" font-size="21" fill="#283593">读到 turn 为 0（而非 1）</text>
+  <text x="325" y="670" text-anchor="middle" font-size="20" font-weight="700" fill="#283593">while 条件为 false → 进入临界区</text>
+  <line x1="325" y1="688" x2="325" y2="702" class="flow"/>
+
+  <!-- 用同一高度的红色区域强调两个临界区在时间上重叠。 -->
+  <rect x="140" y="704" width="370" height="52" rx="9" fill="#ffe5e5" stroke="#c62828" stroke-width="2"/>
+  <rect x="590" y="704" width="370" height="52" rx="9" fill="#ffe5e5" stroke="#c62828" stroke-width="2"/>
+  <line x1="510" y1="730" x2="590" y2="730" stroke="#c62828" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="325" y="737" text-anchor="middle" font-size="23" font-weight="700" fill="#b71c1c">P₀ 进入临界区</text>
+  <text x="775" y="737" text-anchor="middle" font-size="23" font-weight="700" fill="#b71c1c">P₁ 仍在临界区</text>
+  <rect x="120" y="778" width="860" height="40" rx="9" fill="#fff0f0"/>
+  <text x="550" y="805" text-anchor="middle" font-size="23" font-weight="700" fill="#b71c1c">两个临界区重叠：互斥性被破坏</text>
+</svg>

@@ -1,0 +1,2941 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://undtree.github.io/Notes/CS/CO/co_IO/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>输入/输出系统 - Undertree's 小站</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+  
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+  
+  <style>:root{--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M12%202a7%207%200%200%201%207%207c0%202.38-1.19%204.47-3%205.74V17a1%201%200%200%201-1%201H9a1%201%200%200%201-1-1v-2.26C6.19%2013.47%205%2011.38%205%209a7%207%200%200%201%207-7M9%2021v-1h6v1a1%201%200%200%201-1%201h-4a1%201%200%200%201-1-1m3-17a5%205%200%200%200-5%205c0%202.05%201.23%203.81%203%204.58V16h4v-2.42c1.77-.77%203-2.53%203-4.58a5%205%200%200%200-5-5%22/%3E%3C/svg%3E');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M11%209h2V7h-2m1%2013c-4.41%200-8-3.59-8-8s3.59-8%208-8%208%203.59%208%208-3.59%208-8%208m0-18A10%2010%200%200%200%202%2012a10%2010%200%200%200%2010%2010%2010%2010%200%200%200%2010-10A10%2010%200%200%200%2012%202m-1%2015h2v-6h-2z%22/%3E%3C/svg%3E');--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M14%2010h5.5L14%204.5zM5%203h10l6%206v10a2%202%200%200%201-2%202H5a2%202%200%200%201-2-2V5c0-1.11.89-2%202-2m0%202v14h14v-7h-7V5z%22/%3E%3C/svg%3E');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M12%202C6.5%202%202%206.5%202%2012s4.5%2010%2010%2010%2010-4.5%2010-10S17.5%202%2012%202m0%2018c-4.41%200-8-3.59-8-8s3.59-8%208-8%208%203.59%208%208-3.59%208-8%208m4.59-12.42L10%2014.17l-2.59-2.58L6%2013l4%204%208-8z%22/%3E%3C/svg%3E');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M11%2015h2v2h-2zm0-8h2v6h-2zm1-5C6.47%202%202%206.5%202%2012a10%2010%200%200%200%2010%2010%2010%2010%200%200%200%2010-10A10%2010%200%200%200%2012%202m0%2018a8%208%200%200%201-8-8%208%208%200%200%201%208-8%208%208%200%200%201%208%208%208%208%200%200%201-8%208%22/%3E%3C/svg%3E');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M8.27%203%203%208.27v7.46L8.27%2021h7.46C17.5%2019.24%2021%2015.73%2021%2015.73V8.27L15.73%203M9.1%205h5.8L19%209.1v5.8L14.9%2019H9.1L5%2014.9V9.1m6%205.9h2v2h-2zm0-8h2v6h-2z%22/%3E%3C/svg%3E');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/timeline.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/card.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/404.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#输入输出系统" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="Undertree&#39;s 小站" class="md-header__button md-logo" aria-label="Undertree's 小站" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4zM3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7zm2-2v2h2V5zm0 14h2v-2H5zm0-6h2v-2H5z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Undertree's 小站
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              输入/输出系统
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换至跟随系统"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="切换至跟随系统" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Undtree/Notes/" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Undtree/Notes
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  主页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+    
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 16H3V4h18m0-2H3c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h7v2H8v2h8v-2h-2v-2h7a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2"/></svg>
+    
+  
+  计算机科学
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Web/" class="md-tabs__link">
+          
+  
+  
+    
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 2c-1.11 0-2 .89-2 2v3c0 1.11.89 2 2 2h1v2H2v2h4v2H5c-1.11 0-2 .89-2 2v3c0 1.11.89 2 2 2h4c1.11 0 2-.89 2-2v-3c0-1.11-.89-2-2-2H8v-2h8v2h-1c-1.11 0-2 .89-2 2v3c0 1.11.89 2 2 2h4c1.11 0 2-.89 2-2v-3c0-1.11-.89-2-2-2h-1v-2h4v-2h-9V9h1c1.11 0 2-.89 2-2V4c0-1.11-.89-2-2-2zm0 2h4v3h-4zM5 17h4v3H5zm10 0h4v3h-4z"/></svg>
+    
+  
+  Web 相关
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../AI/" class="md-tabs__link">
+          
+  
+  
+    
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.33 12.91c.09 1.55-.62 3.04-1.89 3.95l.77 1.49c.23.45.26.98.06 1.45-.19.47-.58.84-1.06 1l-.79.25a1.687 1.687 0 0 1-1.86-.55L14.44 18c-.89-.15-1.73-.53-2.44-1.1-.5.15-1 .23-1.5.23-.88 0-1.76-.27-2.5-.79-.53.16-1.07.23-1.62.22-.79.01-1.57-.15-2.3-.45a4.1 4.1 0 0 1-2.43-3.61c-.08-.72.04-1.45.35-2.11-.29-.75-.32-1.57-.07-2.33C2.3 7.11 3 6.32 3.87 5.82c.58-1.69 2.21-2.82 4-2.7 1.6-1.5 4.05-1.66 5.83-.37.42-.11.86-.17 1.3-.17 1.36-.03 2.65.57 3.5 1.64 2.04.53 3.5 2.35 3.58 4.47.05 1.11-.25 2.2-.86 3.13.07.36.11.72.11 1.09m-5-1.41c.57.07 1.02.5 1.02 1.07a1 1 0 0 1-1 1h-.63c-.32.9-.88 1.69-1.62 2.29.25.09.51.14.77.21 5.13-.07 4.53-3.2 4.53-3.25a2.59 2.59 0 0 0-2.69-2.49 1 1 0 0 1-1-1 1 1 0 0 1 1-1c1.23.03 2.41.49 3.33 1.3.05-.29.08-.59.08-.89-.06-1.24-.62-2.32-2.87-2.53-1.25-2.96-4.4-1.32-4.4-.4-.03.23.21.72.25.75a1 1 0 0 1 1 1c0 .55-.45 1-1 1-.53-.02-1.03-.22-1.43-.56-.48.31-1.03.5-1.6.56-.57.05-1.04-.35-1.07-.9a.97.97 0 0 1 .88-1.1c.16-.02.94-.14.94-.77 0-.66.25-1.29.68-1.79-.92-.25-1.91.08-2.91 1.29C6.75 5 6 5.25 5.45 7.2 4.5 7.67 4 8 3.78 9c1.08-.22 2.19-.13 3.22.25.5.19.78.75.59 1.29-.19.52-.77.78-1.29.59-.73-.32-1.55-.34-2.3-.06-.32.27-.32.83-.32 1.27 0 .74.37 1.43 1 1.83.53.27 1.12.41 1.71.4q-.225-.39-.39-.81a1.038 1.038 0 0 1 1.96-.68c.4 1.14 1.42 1.92 2.62 2.05 1.37-.07 2.59-.88 3.19-2.13.23-1.38 1.34-1.5 2.56-1.5m2 7.47-.62-1.3-.71.16 1 1.25zm-4.65-8.61a1 1 0 0 0-.91-1.03c-.71-.04-1.4.2-1.93.67-.57.58-.87 1.38-.84 2.19a1 1 0 0 0 1 1c.57 0 1-.45 1-1 0-.27.07-.54.23-.76.12-.1.27-.15.43-.15.55.03 1.02-.38 1.02-.92"/></svg>
+    
+  
+  人工智能
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../sciences/" class="md-tabs__link">
+          
+  
+  
+    
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81z"/></svg>
+    
+  
+  数理内容
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Undertree&#39;s 小站" class="md-nav__button md-logo" aria-label="Undertree's 小站" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4zM3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7zm2-2v2h2V5zm0 14h2v-2H5zm0-6h2v-2H5z"/></svg>
+
+    </a>
+    Undertree's 小站
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Undtree/Notes/" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Undtree/Notes
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    主页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 16H3V4h18m0-2H3c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h7v2H8v2h8v-2h-2v-2h7a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    计算机科学
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    计算机科学
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../DS/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据结构与算法分析
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    数据结构与算法分析
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DS/ds_intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    算法的分析
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DS/lineards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    线性数据结构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DS/trees/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    树形结构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DS/graph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    图论
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DS/search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    查找
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DS/sort/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    排序
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    计算机组成原理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../OS/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    操作系统
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    操作系统
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OS/os_intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    概述
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OS/process/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    进程和线程
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OS/schedule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    调度
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OS/sync/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    同步
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OS/memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    内存管理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OS/file/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    文件管理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OS/IO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    输入输出
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TOC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    计算理论
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    编译原理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DBS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据库系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Web/" class="md-nav__link ">
+              
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 2c-1.11 0-2 .89-2 2v3c0 1.11.89 2 2 2h1v2H2v2h4v2H5c-1.11 0-2 .89-2 2v3c0 1.11.89 2 2 2h4c1.11 0 2-.89 2-2v-3c0-1.11-.89-2-2-2H8v-2h8v2h-1c-1.11 0-2 .89-2 2v3c0 1.11.89 2 2 2h4c1.11 0 2-.89 2-2v-3c0-1.11-.89-2-2-2h-1v-2h4v-2h-9V9h1c1.11 0 2-.89 2-2V4c0-1.11-.89-2-2-2zm0 2h4v3h-4zM5 17h4v3H5zm10 0h4v3h-4z"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Web 相关
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Web 相关
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Web/cn/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    计算机网络
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    计算机网络
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../AI/" class="md-nav__link ">
+              
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.33 12.91c.09 1.55-.62 3.04-1.89 3.95l.77 1.49c.23.45.26.98.06 1.45-.19.47-.58.84-1.06 1l-.79.25a1.687 1.687 0 0 1-1.86-.55L14.44 18c-.89-.15-1.73-.53-2.44-1.1-.5.15-1 .23-1.5.23-.88 0-1.76-.27-2.5-.79-.53.16-1.07.23-1.62.22-.79.01-1.57-.15-2.3-.45a4.1 4.1 0 0 1-2.43-3.61c-.08-.72.04-1.45.35-2.11-.29-.75-.32-1.57-.07-2.33C2.3 7.11 3 6.32 3.87 5.82c.58-1.69 2.21-2.82 4-2.7 1.6-1.5 4.05-1.66 5.83-.37.42-.11.86-.17 1.3-.17 1.36-.03 2.65.57 3.5 1.64 2.04.53 3.5 2.35 3.58 4.47.05 1.11-.25 2.2-.86 3.13.07.36.11.72.11 1.09m-5-1.41c.57.07 1.02.5 1.02 1.07a1 1 0 0 1-1 1h-.63c-.32.9-.88 1.69-1.62 2.29.25.09.51.14.77.21 5.13-.07 4.53-3.2 4.53-3.25a2.59 2.59 0 0 0-2.69-2.49 1 1 0 0 1-1-1 1 1 0 0 1 1-1c1.23.03 2.41.49 3.33 1.3.05-.29.08-.59.08-.89-.06-1.24-.62-2.32-2.87-2.53-1.25-2.96-4.4-1.32-4.4-.4-.03.23.21.72.25.75a1 1 0 0 1 1 1c0 .55-.45 1-1 1-.53-.02-1.03-.22-1.43-.56-.48.31-1.03.5-1.6.56-.57.05-1.04-.35-1.07-.9a.97.97 0 0 1 .88-1.1c.16-.02.94-.14.94-.77 0-.66.25-1.29.68-1.79-.92-.25-1.91.08-2.91 1.29C6.75 5 6 5.25 5.45 7.2 4.5 7.67 4 8 3.78 9c1.08-.22 2.19-.13 3.22.25.5.19.78.75.59 1.29-.19.52-.77.78-1.29.59-.73-.32-1.55-.34-2.3-.06-.32.27-.32.83-.32 1.27 0 .74.37 1.43 1 1.83.53.27 1.12.41 1.71.4q-.225-.39-.39-.81a1.038 1.038 0 0 1 1.96-.68c.4 1.14 1.42 1.92 2.62 2.05 1.37-.07 2.59-.88 3.19-2.13.23-1.38 1.34-1.5 2.56-1.5m2 7.47-.62-1.3-.71.16 1 1.25zm-4.65-8.61a1 1 0 0 0-.91-1.03c-.71-.04-1.4.2-1.93.67-.57.58-.87 1.38-.84 2.19a1 1 0 0 0 1 1c.57 0 1-.45 1-1 0-.27.07-.54.23-.76.12-.1.27-.15.43-.15.55.03 1.02-.38 1.02-.92"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    人工智能
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    人工智能
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../sciences/" class="md-nav__link ">
+              
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81z"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    数理内容
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    数理内容
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sciences/Calculus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    微积分
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sciences/Phy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    大学物理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sciences/PaS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    概率论与数理统计
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#io系统基本概念" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I/O系统基本概念（*）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="I/O系统基本概念（*）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#输入输出系统_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        输入/输出系统（*）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#外部设备" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        外部设备（*）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="外部设备（*）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#输入设备" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        输入设备
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#输出设备" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        输出设备
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#外部存储器" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        外部存储器
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io接口" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I/O接口
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="I/O接口">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#io接口的功能" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I/O接口的功能
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#io接口的基本结构" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I/O接口的基本结构
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#io接口的类型" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I/O接口的类型
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#io端口及其编址" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I/O端口及其编址
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="I/O端口及其编址">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#独立编址" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        独立编址
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#统一编址" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        统一编址
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io方式" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I/O方式
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="I/O方式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#程序查询方式" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        程序查询方式
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="程序查询方式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#查询与数据传送流程" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        查询与数据传送流程
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#查询间隔与cpu开销" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        查询间隔与CPU开销
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#程序中断方式" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        程序中断方式
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="程序中断方式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#基本思想与已有知识" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基本思想与已有知识
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#中断请求与响应判优" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        中断请求与响应判优
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cpu响应io中断的条件" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CPU响应I/O中断的条件
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#硬件响应与软件处理" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        硬件响应与软件处理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#多重中断与中断屏蔽字" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        多重中断与中断屏蔽字
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#中断方式的cpu开销" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        中断方式的CPU开销
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dma方式" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DMA方式
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DMA方式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#基本特点" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基本特点
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dma控制器的组成" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DMA控制器的组成
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dma的传送方式" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DMA的传送方式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dma的传送过程" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DMA的传送过程
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dma开销的计算" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DMA开销的计算
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dma与程序中断方式的区别" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DMA与程序中断方式的区别
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#本章小结" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        本章小结
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#常见问题和易混淆知识点" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        常见问题和易混淆知识点
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="常见问题和易混淆知识点">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#开中断后一有请求就立即响应吗" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        开中断后，一有请求就立即响应吗？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#向量中断中断向量和向量地址有什么关系" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        向量中断、中断向量和向量地址有什么关系？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#程序中断与子程序调用有什么区别" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        程序中断与子程序调用有什么区别？
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+                  
+
+
+  
+  
+
+
+<h1 id="输入输出系统">输入/输出系统<a class="headerlink" href="#输入输出系统" title="Permanent link">&para;</a></h1>
+<div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 7471 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 25 分钟</p>
+</div>
+<p>输入/输出系统把主机与外部设备连接起来，使程序能够取得外部信息并输出处理结果。本章先认识设备与接口，再分析程序查询、程序中断和 DMA 三种方式怎样组织数据传送，以及各自需要多少 CPU 时间。</p>
+<h2 id="io系统基本概念">I/O 系统基本概念（*）<a class="headerlink" href="#io系统基本概念" title="Permanent link">&para;</a></h2>
+<p>标题后的“（*）”表示扩展阅读内容。</p>
+<h3 id="输入输出系统_1">输入/输出系统（*）<a class="headerlink" href="#输入输出系统_1" title="Permanent link">&para;</a></h3>
+<p>从主机的角度看，<strong>输入</strong> 是信息从外部设备进入主机，<strong>输出</strong> 是信息从主机送往外部设备。输入/输出系统既要建立传输路径，也要协调传输过程。</p>
+<center>
+<table>
+<thead>
+<tr>
+<th>组成</th>
+<th>主要内容</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>I/O 硬件</td>
+<td>外部设备、设备控制器、I/O 接口、总线等</td>
+<td>提供设备操作与信息交换的物理基础</td>
+</tr>
+<tr>
+<td>I/O 软件</td>
+<td>应用程序、设备驱动程序、I/O 管理程序等</td>
+<td>发出请求、设置控制参数、处理状态与完成结果</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>外部设备包括输入设备、输出设备和通过 I/O 通路访问的外部存储设备。接口面向主机的信息交换，控制器还承担设备的具体控制；这些功能可以集成在同一硬件部件中，接口的详细功能见<a href="#io接口">I/O 接口</a>。</p>
+<h3 id="外部设备">外部设备（*）<a class="headerlink" href="#外部设备" title="Permanent link">&para;</a></h3>
+<h4 id="输入设备">输入设备<a class="headerlink" href="#输入设备" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>键盘</strong> 输入字符、数字和控制命令。</li>
+<li><strong>鼠标</strong> 将用户的定位与选择操作转换为计算机可识别的信息。</li>
+</ul>
+<h4 id="输出设备">输出设备<a class="headerlink" href="#输出设备" title="Permanent link">&para;</a></h4>
+<p>显示器以像素阵列呈现图像。常见显示技术涉及 CRT、液晶和发光二极管等，分析显示数据量时，主要关注以下参数：</p>
+<center>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>屏幕尺寸</td>
+<td>通常以屏幕对角线长度表示</td>
+</tr>
+<tr>
+<td>分辨率</td>
+<td>一帧包含的横向、纵向像素数，例如 <span class="arithmatex">\(W\times H\)</span></td>
+</tr>
+<tr>
+<td>色彩深度</td>
+<td>每像素使用的编码位数 <span class="arithmatex">\(b\)</span>；<span class="arithmatex">\(b\)</span> 位最多表示 <span class="arithmatex">\(2^b\)</span> 种编码</td>
+</tr>
+<tr>
+<td>刷新频率／帧频</td>
+<td>每秒输出或刷新图像的次数 <span class="arithmatex">\(r\)</span></td>
+</tr>
+<tr>
+<td>显示存储器 VRAM</td>
+<td>保存显示图像数据的存储空间</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>在按像素连续保存、一帧不压缩的模型中：</p>
+<div class="arithmatex">\[
+C_{\mathrm{frame}}=WHb\quad(\mathrm{bit}),
+\qquad C_{\mathrm{frame}}=\frac{WHb}{8}\quad(\mathrm{B}).
+\]</div>
+<p>每次刷新读取一帧时，刷新所需的数据带宽为：</p>
+<div class="arithmatex">\[
+B_{\mathrm{refresh}}=\frac{WHbr}{8}\quad(\mathrm{B/s}).
+\]</div>
+<p>如果显存总带宽中只有比例 <span class="arithmatex">\(\alpha\)</span> 可用于刷新，则需满足 <span class="arithmatex">\(B_{\mathrm{total}}\geq B_{\mathrm{refresh}}/\alpha\)</span>。容量描述保存多少数据，带宽描述每秒能够传送多少数据，不能把刷新频率乘进单帧容量。</p>
+<p>打印机按工作原理可以分为：</p>
+<center>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>工作原理</th>
+<th>典型特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>针式打印机</td>
+<td>打印针撞击色带形成点阵</td>
+<td>可多层复写，但噪声大、分辨率和速度较低</td>
+</tr>
+<tr>
+<td>喷墨打印机</td>
+<td>喷射微小墨滴形成文字或图像</td>
+<td>适合彩色输出</td>
+</tr>
+<tr>
+<td>激光打印机</td>
+<td>激光扫描结合静电成像、显影、转印和定影</td>
+<td>输出速度与质量较高</td>
+</tr>
+</tbody>
+</table>
+</center>
+<h4 id="外部存储器">外部存储器<a class="headerlink" href="#外部存储器" title="Permanent link">&para;</a></h4>
+<p>磁表面存储器利用磁化状态保存信息， SSD 通常使用 Flash。它们作为 I/O 设备需要控制器及传输通路，其存储介质和组织方式直接参见<a href="../storage/#磁盘存储器">磁盘存储器</a>与<a href="../storage/#固态硬盘">固态硬盘</a>。</p>
+<p>光盘通过聚焦激光束以非接触方式读写信息。一个光盘系统包括盘片、驱动器和控制器，常见介质类型有 CD、DVD 等。</p>
+<h2 id="io接口">I/O 接口<a class="headerlink" href="#io接口" title="Permanent link">&para;</a></h2>
+<p><strong>I/O 接口</strong>，也称 I/O 控制器，是主机与外部设备交换信息的交接部件。设备的速度、数据格式和电气信号各不相同，接口需要把这些差异转换为主机可控制的访问过程。</p>
+<h3 id="io接口的功能">I/O 接口的功能<a class="headerlink" href="#io接口的功能" title="Permanent link">&para;</a></h3>
+<center>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>要解决的问题</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>地址译码与设备选择</td>
+<td>判断本次访问是否选中本接口及其中哪个寄存器</td>
+</tr>
+<tr>
+<td>通信联络与时序协调</td>
+<td>用状态或握手信息协调主机与设备的操作节奏</td>
+</tr>
+<tr>
+<td>数据缓冲</td>
+<td>暂存正在交换的数据，缓解双方速度差异</td>
+</tr>
+<tr>
+<td>信号与格式转换</td>
+<td>按设备需要完成电平、串并行或其他格式转换</td>
+</tr>
+<tr>
+<td>命令与状态传递</td>
+<td>接收主机的控制命令，报告就绪、忙、错误等状态，按需要发出中断请求</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>接口提供哪些功能取决于设备需求，不要求每一种接口都包含全部转换电路。设备发出中断请求的过程在<a href="#程序中断方式">程序中断方式</a>中进一步讨论。</p>
+<h3 id="io接口的基本结构">I/O 接口的基本结构<a class="headerlink" href="#io接口的基本结构" title="Permanent link">&para;</a></h3>
+<p>主机侧通过总线访问接口，设备侧通过相应信号与外设连接。基本结构包括数据、状态和控制寄存器，以及地址译码和 I/O 控制逻辑。</p>
+<center>
+<table>
+<thead>
+<tr>
+<th>部件</th>
+<th>保存或执行的内容</th>
+<th>基本访问方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据缓冲寄存器</td>
+<td>从设备取得或准备送给设备的数据</td>
+<td>CPU 按输入、输出方向读或写</td>
+</tr>
+<tr>
+<td>状态寄存器</td>
+<td>就绪、忙、完成、错误等状态</td>
+<td>基本模型中由 CPU 读取</td>
+</tr>
+<tr>
+<td>控制寄存器</td>
+<td>启动、停止、传送方向等控制命令字</td>
+<td>基本模型中由 CPU 写入</td>
+</tr>
+<tr>
+<td>地址译码逻辑</td>
+<td>识别接口和内部端口地址</td>
+<td>根据地址选择目标</td>
+</tr>
+<tr>
+<td>I/O 控制逻辑</td>
+<td>解释命令、控制缓冲器传送、采集设备状态</td>
+<td>协调主机侧与设备侧操作</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>在一些设计中，状态与控制寄存器可以使用同一个端口地址：读时选中状态寄存器，写时选中控制寄存器。<strong>地址相同并不表示读写操作访问同一个存储内容</strong>，还需要结合操作方向译码。</p>
+<p>主机侧的三组信号各有分工：</p>
+<ul>
+<li><strong>数据线</strong> 传送数据、状态字、控制命令字，以及某些向量中断模型中的中断类型号。</li>
+<li><strong>地址线</strong> 选择要访问的接口端口。</li>
+<li><strong>控制线</strong> 表明读写操作，并传送中断请求、响应或总线控制等信号。</li>
+</ul>
+<p>命令字是被写入控制寄存器的编码值，“写使能”是控制线路上的信号，二者不能混淆。总线的逻辑分类见<a href="../bus/#总线的分类">系统总线中的数据、地址与控制线</a>。</p>
+<h3 id="io接口的类型">I/O 接口的类型<a class="headerlink" href="#io接口的类型" title="Permanent link">&para;</a></h3>
+<center>
+<table>
+<thead>
+<tr>
+<th>分类角度</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>外设与接口一侧的数据传送</td>
+<td>串行接口、并行接口</td>
+<td>按位依次传送，或多位同时传送</td>
+</tr>
+<tr>
+<td>主机组织传送的控制方式</td>
+<td>查询接口、中断接口、DMA 接口</td>
+<td>按不同方式报告状态并完成交换</td>
+</tr>
+<tr>
+<td>功能能否通过程序配置</td>
+<td>可编程接口、不可编程接口</td>
+<td>能否通过控制字等改变工作模式</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>串行接口描述设备侧的传送方式，不意味着 CPU 也必须逐位读写。接口可以先完成串并转换，再通过并行数据端口与主机交换。</p>
+<h3 id="io端口及其编址">I/O 端口及其编址<a class="headerlink" href="#io端口及其编址" title="Permanent link">&para;</a></h3>
+<p><strong>I/O 端口</strong> 是接口内部可被 CPU 寻址访问的寄存器，如数据端口、状态端口和控制端口。一个接口可以有多个端口，<strong>端口是可访问的位置，接口是包含这些位置及控制逻辑的部件</strong>。</p>
+<h4 id="独立编址">独立编址<a class="headerlink" href="#独立编址" title="Permanent link">&para;</a></h4>
+<p>独立编址，也称 I/O 映射方式，为端口设置与主存分开的地址空间。相同数值可以分别表示一个主存地址和一个端口号，由访问指令及相应控制信号区分。</p>
+<p>CPU 使用专用 I/O 指令访问，例如 <code>IN</code>、<code>OUT</code>。这种方式不占用主存地址空间， I/O 操作易于识别，端口地址译码通常较简单；代价是需要专用指令及控制，可用的 I/O 操作形式受到指令集限制。</p>
+<h4 id="统一编址">统一编址<a class="headerlink" href="#统一编址" title="Permanent link">&para;</a></h4>
+<p>统一编址，也称 <strong>存储器映射 I/O</strong>（ Memory-Mapped I/O ， MMIO ），把统一地址空间的一部分分配给 I/O 端口。CPU 通过普通加载、存储等指令访问端口，地址译码决定目标是主存还是设备。</p>
+<p>这种方式能使用普通访存指令与寻址形式，也便于结合存储管理的保护机制。它占用的是 <strong>地址空间中的一部分范围</strong>，不等于把对应大小的物理 RAM 变成设备寄存器；在受限地址空间内，会减少可直接分配给主存的地址范围。</p>
+<center>
+<table>
+<thead>
+<tr>
+<th>对比项</th>
+<th>独立编址</th>
+<th>统一编址</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>地址空间</td>
+<td>I/O 与主存分开</td>
+<td>I/O 与主存共用</td>
+</tr>
+<tr>
+<td>访问指令</td>
+<td>专用 I/O 指令</td>
+<td>普通访存指令</td>
+</tr>
+<tr>
+<td>主存地址范围</td>
+<td>不被 I/O 端口占用</td>
+<td>部分范围分配给 I/O</td>
+</tr>
+<tr>
+<td>控制与译码</td>
+<td>区分存储器访问和 I/O 访问</td>
+<td>按统一地址范围选择目标</td>
+</tr>
+<tr>
+<td>编程特点</td>
+<td>操作清晰，但指令形式通常较少</td>
+<td>可利用已有访存与寻址能力</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>两种编址方式都需要控制用户程序的访问权限。使用普通访存指令访问 MMIO ，并不意味着普通用户程序自动获得设备访问权，权限的基本机制见<a href="../../OS/os_intro/#priv">特权模式</a>。</p>
+<h2 id="io方式">I/O 方式<a class="headerlink" href="#io方式" title="Permanent link">&para;</a></h2>
+<p>主机与外设交换数据时，需要决定何时传送、由谁搬运、怎样报告完成。下面三种方式的差别集中在这些控制环节。</p>
+<h3 id="程序查询方式">程序查询方式<a class="headerlink" href="#程序查询方式" title="Permanent link">&para;</a></h3>
+<h4 id="查询与数据传送流程">查询与数据传送流程<a class="headerlink" href="#查询与数据传送流程" title="Permanent link">&para;</a></h4>
+<p><strong>程序查询方式</strong> 由 CPU 执行程序读取设备状态，确认就绪后再执行数据传送指令。一次输入可以按以下步骤组织：</p>
+<ol>
+<li>初始化主存起始地址、数据数量等参数，并向接口发送启动命令。</li>
+<li>读取状态端口；未就绪时继续等待或稍后重查。</li>
+<li>就绪后从数据端口读取数据，写入主存。</li>
+<li>修改主存地址与计数，若尚未传完，返回状态检查。</li>
+</ol>
+<p>输出时的数据方向相反： CPU 确认设备能够接收后，把主存中的数据写入数据端口。</p>
+<p>查询策略可以分为：</p>
+<center>
+<table>
+<thead>
+<tr>
+<th>策略</th>
+<th>CPU 的工作方式</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>独占查询</td>
+<td>启动设备后不断读取状态，直到操作完成</td>
+<td>忙等待占用 CPU ，不能在等待期间执行其他程序工作</td>
+</tr>
+<tr>
+<td>定时查询</td>
+<td>按一定间隔检查，检查之间继续执行其他工作</td>
+<td>能与设备准备过程重叠，但必须及时取走或送入数据</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>查询方式的硬件和控制较简单，不过所有状态检查和数据搬运仍由 CPU 完成。独占查询占用整个等待时段；定时查询的开销取决于查询次数和每次执行的指令量，不能把两者都视为持续忙等待。</p>
+<h4 id="查询间隔与cpu开销">查询间隔与 CPU 开销<a class="headerlink" href="#查询间隔与cpu开销" title="Permanent link">&para;</a></h4>
+<p>假定设备持续产生数据、速率为 <span class="arithmatex">\(R\mathrm{B/s}\)</span>，缓冲寄存器一次容纳 <span class="arithmatex">\(g\mathrm{B}\)</span>， CPU 每次取走这一份数据。在该单缓冲模型中，为避免覆盖未处理数据，查询及处理间隔应满足：</p>
+<div class="arithmatex">\[
+\Delta t\leq\frac{g}{R},
+\qquad f_{\mathrm{poll}}\geq\frac{R}{g}.
+\]</div>
+<p>设一次查询及题目计入的处理需要 <span class="arithmatex">\(I\)</span> 条指令，平均 CPI 为 <span class="arithmatex">\(c\)</span>， CPU 主频为 <span class="arithmatex">\(f\)</span>，则用于这些查询操作的 CPU 时间比例为：</p>
+<div class="arithmatex">\[
+U_{\mathrm{poll}}=\frac{f_{\mathrm{poll}}Ic}{f}.
+\]</div>
+<p>例如，<span class="arithmatex">\(R=2\mathrm{MB/s}\)</span>，缓冲寄存器为 32 位，即 <span class="arithmatex">\(g=4\mathrm{B}\)</span>；<span class="arithmatex">\(f=500\mathrm{MHz}\)</span>，每次查询执行 10 条指令， CPI 为 4 ，则：</p>
+<div class="arithmatex">\[
+\Delta t_{\max}=\frac{4}{2\times10^6}=2\mu\mathrm{s},
+\qquad f_{\mathrm{poll,min}}=5\times10^5\mathrm{/s},
+\]</div>
+<div class="arithmatex">\[
+U_{\mathrm{poll,min}}=
+\frac{5\times10^5\times10\times4}{500\times10^6}=4\%.
+\]</div>
+<p>这是假定按最大允许间隔查询、并按给定指令开销计算的比例。若实际查询更频繁，或还有未计入的数据搬运等指令， CPU 开销还会增加。本章速率计算中的 MB/s 按 <span class="arithmatex">\(10^6\mathrm{B/s}\)</span> 使用。</p>
+<h3 id="程序中断方式">程序中断方式<a class="headerlink" href="#程序中断方式" title="Permanent link">&para;</a></h3>
+<h4 id="基本思想与已有知识">基本思想与已有知识<a class="headerlink" href="#基本思想与已有知识" title="Permanent link">&para;</a></h4>
+<p><strong>程序中断方式</strong> 让设备在需要服务时主动通知 CPU。CPU 启动设备后可继续执行其他工作；设备准备就绪后发出请求， CPU 通过中断服务程序完成所需的数据传送，再恢复被打断的程序。</p>
+<p>中断的一般概念及其操作系统用途，参见<a href="../../OS/os_intro/#int">操作系统概述：中断</a>。与本节关联的基础内容直接引用如下：</p>
+<center>
+<table>
+<thead>
+<tr>
+<th>本节用到的概念</th>
+<th>已有说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>异常与外部中断的区别、响应时机</td>
+<td><a href="../CPU/#异常和中断的基本概念">CPU ：异常和中断的基本概念</a></td>
+</tr>
+<tr>
+<td>可屏蔽与不可屏蔽中断</td>
+<td><a href="../../OS/os_intro/#中断的分类">操作系统：中断的分类</a></td>
+</tr>
+<tr>
+<td>故障、自陷和外部中断的返回地址</td>
+<td><a href="../CPU/#返回地址与是否重执行">CPU ：返回地址与是否重执行</a></td>
+</tr>
+<tr>
+<td>关中断、保存断点和程序状态、转入处理程序</td>
+<td><a href="../CPU/#异常和中断响应过程">CPU ：硬件响应过程</a></td>
+</tr>
+<tr>
+<td>中断类型号、中断向量与向量表项地址</td>
+<td><a href="../CPU/#识别事件并转入处理程序">CPU ：识别事件并转入处理程序</a></td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>下面主要讨论 <strong>可屏蔽 I/O 中断</strong>。设备准备与 CPU 执行可以重叠，但接口与主存之间的逐次数据搬运仍依赖 CPU 执行服务程序。发起 I/O 的进程也不一定就是中断到来时正在运行的进程，是否阻塞、何时再次获得 CPU 由操作系统调度决定。</p>
+<h4 id="中断请求与响应判优">中断请求与响应判优<a class="headerlink" href="#中断请求与响应判优" title="Permanent link">&para;</a></h4>
+<p><strong>中断源</strong> 是发出请求的设备或事件。为了记录异步到来的请求，可为每个源设置请求标记触发器；置 1 表示该源存在待处理请求，多个标记可组成请求寄存器。</p>
+<p>设备的请求是否能够参与判优，还要结合设备侧中断允许状态和屏蔽位。在“1 为屏蔽、0 为允许”的模型中，第 <span class="arithmatex">\(i\)</span> 个源可参与判优的条件为：</p>
+<div class="arithmatex">\[
+\mathrm{Eligible}_i=
+\mathrm{Request}_i\land\mathrm{Enable}_i\land\lnot\mathrm{Mask}_i.
+\]</div>
+<p>多个有效请求同时存在时，判优逻辑选择先响应哪一个。硬件排队电路可以完成这种选择，软件查询顺序也可以形成相应优先级。选择时常考虑设备速度和实时性等要求，而非仅按设备编号大小。</p>
+<p>需要区分 <strong>响应优先级与处理优先级</strong>：</p>
+<center>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>决定的事情</th>
+<th>本章基本模型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>响应优先级</td>
+<td>多个未屏蔽请求同时等待时，先选择哪个源</td>
+<td>由硬件判优次序或查询次序决定</td>
+</tr>
+<tr>
+<td>处理优先级</td>
+<td>处理中断时，允许哪些新请求抢占当前服务</td>
+<td>通过服务程序装入的屏蔽字安排嵌套关系</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>在固定判优模型中，屏蔽字改变谁能参加判优，并不改变剩余请求之间的硬件排序。它也不能保证不同到达时刻的中断按同一顺序开始或结束服务，分析轨迹时要结合请求出现时间。</p>
+<h4 id="cpu响应io中断的条件">CPU 响应 I/O 中断的条件<a class="headerlink" href="#cpu响应io中断的条件" title="Permanent link">&para;</a></h4>
+<p>对本节的可屏蔽外部中断， CPU 响应需要同时满足：</p>
+<ol>
+<li>存在已允许、未屏蔽的有效请求。</li>
+<li>CPU 处于开中断状态。</li>
+<li>到达可响应的指令边界，且当前请求被判优逻辑选中。</li>
+</ol>
+<p>设备“已经就绪”不等于 CPU “已经响应”。设备侧允许、源屏蔽和 CPU 全局允许是不同的控制条件；<a href="../CPU/#异常和中断的分类">异常及不可屏蔽中断</a>也不能套用这里的全部条件。</p>
+<h4 id="硬件响应与软件处理">硬件响应与软件处理<a class="headerlink" href="#硬件响应与软件处理" title="Permanent link">&para;</a></h4>
+<p>硬件自动进入服务程序的操作，直接参见<a href="../CPU/#异常和中断响应过程">CPU 的响应过程</a>。教材常把这些操作合称 <strong>中断隐指令</strong>；它是硬件动作序列的名称，并不是 ISA 中一条可由程序员编写的机器指令。</p>
+<p>在传统向量中断模型中，中断请求、响应信号通过控制线传送，中断控制器在响应阶段经数据线提供类型号。类型号与处理入口的关系见<a href="../CPU/#识别事件并转入处理程序">向量说明</a>，不能把请求线本身当成承载服务程序地址的数据线。</p>
+<p>完成硬件响应后，支持嵌套的服务程序通常还要组织以下软件步骤：</p>
+<center>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>软件操作</th>
+<th>目的</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>进入服务程序</td>
+<td>保存将被改写的寄存器和原屏蔽字，装入本层屏蔽字</td>
+<td>保护现场，并设定允许抢占当前服务的请求</td>
+</tr>
+<tr>
+<td>允许嵌套</td>
+<td>在关键保存完成后开中断</td>
+<td>让符合屏蔽规则的更高处理优先级请求进入</td>
+</tr>
+<tr>
+<td>设备服务</td>
+<td>查询或确认设备状态，交换数据，更新地址、计数及请求状态</td>
+<td>完成本次设备服务</td>
+</tr>
+<tr>
+<td>准备返回</td>
+<td>关中断，恢复保存的寄存器和原屏蔽字</td>
+<td>避免恢复过程被打断</td>
+</tr>
+<tr>
+<td>中断返回</td>
+<td>按体系结构约定恢复断点及运行状态</td>
+<td>继续被打断的程序或外层服务程序</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>断点与软件现场的保存分工见<a href="../CPU/#保存断点和程序状态">保存断点和程序状态</a>。开中断必须安排在关键保护之后；返回时也要协调状态恢复，不能在尚未恢复安全现场时随意允许新请求。</p>
+<p>在单重中断模型中，服务期间保持禁止嵌套，因而不需要上表中服务期间开中断的步骤。多重中断则需要保存每层状态，返回时按嵌套的相反顺序恢复。</p>
+<h4 id="多重中断与中断屏蔽字">多重中断与中断屏蔽字<a class="headerlink" href="#多重中断与中断屏蔽字" title="Permanent link">&para;</a></h4>
+<p>单重、多重中断的基本定义见<a href="../CPU/#其他分类维度">CPU 中的分类说明</a>。具体屏蔽字的每一位对应一个中断源：本节约定 <strong>1 表示屏蔽， 0 表示允许</strong>，源请求与屏蔽位关系见<a href="#中断请求与响应判优">前面的逻辑条件</a>。</p>
+<p>通常在服务某个源时，屏蔽自身及处理优先级不高于它的源，允许更高处理优先级的源抢占。装入新屏蔽字前先保存原值，返回时恢复，使外层服务或主程序继续使用原来的规则。</p>
+<div class="admonition note">
+<p class="admonition-title">关中断与源屏蔽的作用不同</p>
+<p><a href="../CPU/#关中断">关中断</a>控制 CPU 是否接受可屏蔽中断；屏蔽字选择哪些源的请求能够通过。即使 CPU 已开中断，某个源也可能仍被屏蔽。屏蔽通常阻止已记录请求参与判优，并不等于删除请求；它在主程序和服务程序中都可生效。</p>
+</div>
+<p>下面给出一个固定响应顺序的例子。4 个可屏蔽源的硬件响应优先级为 <span class="arithmatex">\(A&gt;B&gt;C&gt;D\)</span>，希望嵌套关系按处理优先级 <span class="arithmatex">\(A&gt;D&gt;C&gt;B\)</span> 安排。按位序 <strong>ABCD</strong>，各服务程序的屏蔽字为：</p>
+<center>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">正在服务的源</th>
+<th style="text-align: center;">A</th>
+<th style="text-align: center;">B</th>
+<th style="text-align: center;">C</th>
+<th style="text-align: center;">D</th>
+<th style="text-align: center;">屏蔽字</th>
+<th>允许抢占的源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"><code>1111</code></td>
+<td>无</td>
+</tr>
+<tr>
+<td style="text-align: center;">B</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"><code>0100</code></td>
+<td>A、C、D</td>
+</tr>
+<tr>
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"><code>0110</code></td>
+<td>A、D</td>
+</tr>
+<tr>
+<td style="text-align: center;">D</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"><code>0111</code></td>
+<td>A</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>假定主程序开中断且屏蔽字为 <code>0000</code>， A、C、D 同时请求；在 C 的服务期间 B 又请求，则执行过程为：</p>
+<center>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">步骤</th>
+<th>执行变化</th>
+<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>主程序 → A ， A 完成后返回</td>
+<td>初始有效请求按硬件顺序先选 A ； A 屏蔽全部源</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>主程序 → C</td>
+<td>A 返回后， C、D 中响应顺序先选 C</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td>C → D ， D 完成后返回 C</td>
+<td>C 装入 <code>0110</code> 并开中断，待处理的 D 可抢占 C</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td>C 继续， B 的请求等待</td>
+<td>C 的屏蔽字禁止 B 抢占</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td>C 返回主程序，再进入 B</td>
+<td>恢复主程序的 <code>0000</code> 后， B 可被响应</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>这个例子中， C 先被响应， D 却能在 C 完成前得到服务，体现了两类优先级的区别。画轨迹时还要保留每次返回的外层位置，不能把“返回 C”画成直接返回主程序。</p>
+<h4 id="中断方式的cpu开销">中断方式的 CPU 开销<a class="headerlink" href="#中断方式的cpu开销" title="Permanent link">&para;</a></h4>
+<p>若设备速率为 <span class="arithmatex">\(R\mathrm{B/s}\)</span>，每次中断处理 <span class="arithmatex">\(g\mathrm{B}\)</span>，每次响应与服务总计 <span class="arithmatex">\(C_{\mathrm{int}}\)</span> 个时钟周期， CPU 主频为 <span class="arithmatex">\(f\)</span>，则：</p>
+<div class="arithmatex">\[
+f_{\mathrm{int}}=\frac{R}{g},
+\qquad
+t_{\mathrm{int}}=\frac{C_{\mathrm{int}}}{f},
+\qquad
+U_{\mathrm{int}}=\frac{RC_{\mathrm{int}}}{gf}.
+\]</div>
+<p>单缓冲、连续到达的基本模型还需使服务能够赶上数据到达速度，即 <span class="arithmatex">\(t_{\mathrm{int}}\leq g/R\)</span>；实际还要给请求等待和其他工作留出时间。若计算得 <span class="arithmatex">\(U_{\mathrm{int}}&gt;1\)</span>， CPU 即使全部用于该设备，也不能持续处理数据。</p>
+<p>例如，<span class="arithmatex">\(R=40\mathrm{MB/s}\)</span>，每次中断传送 4 字节，<span class="arithmatex">\(f=500\mathrm{MHz}\)</span>，响应与服务需要 400 周期，则服务时间为 <span class="arithmatex">\(0.8\mu\mathrm{s}\)</span>，新一份数据每 <span class="arithmatex">\(0.1\mu\mathrm{s}\)</span> 到达，所需 CPU 比例为 <span class="arithmatex">\(800\%\)</span>。该配置无法采用逐字中断维持这一速率。</p>
+<p>中断方式减少了查询等待，但每次仍要付出响应、现场保护、数据搬运和返回开销。高速连续传送时，频繁中断可能成为瓶颈，可进一步考虑<a href="#dma方式">DMA</a>。</p>
+<h3 id="dma方式">DMA 方式<a class="headerlink" href="#dma方式" title="Permanent link">&para;</a></h3>
+<h4 id="基本特点">基本特点<a class="headerlink" href="#基本特点" title="Permanent link">&para;</a></h4>
+<p><strong>直接存储器访问</strong>（ Direct Memory Access ， DMA ）由专用控制硬件在外设与主存之间搬运数据。CPU 负责启动前的设置与结束后的处理，块传送期间的数据不经过 CPU 通用寄存器，也不需要 CPU 执行逐字搬运指令。</p>
+<p>DMA 自动生成主存地址、维护传送长度并控制读写。它适合高速、成块的数据交换，减少频繁进入服务程序的开销，但需要相应控制器、主存缓冲区及总线控制能力。</p>
+<p><strong>不执行逐字搬运指令，不等于完全不影响 CPU</strong>。DMA 仍会占用总线与主存；当 CPU 同时需要这些资源时，必须按共享规则安排，具体方式见<a href="#dma的传送方式">下面的访存组织</a>。</p>
+<h4 id="dma控制器的组成">DMA 控制器的组成<a class="headerlink" href="#dma控制器的组成" title="Permanent link">&para;</a></h4>
+<center>
+<table>
+<thead>
+<tr>
+<th>部件</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主存地址计数器 AR</td>
+<td>保存当前传送位置，初始为数据块起始地址，每次传送后更新</td>
+</tr>
+<tr>
+<td>设备地址或选择信息 DAR</td>
+<td>指定参与传送的外设或接口</td>
+</tr>
+<tr>
+<td>传送长度／字计数器 WC</td>
+<td>记录剩余传送量，基本模型中递减到 0 表示完成</td>
+</tr>
+<tr>
+<td>数据缓冲寄存器</td>
+<td>暂存主存与设备之间交换的数据</td>
+</tr>
+<tr>
+<td>DMA 请求触发器</td>
+<td>记录设备提出的传送请求</td>
+</tr>
+<tr>
+<td>控制／状态逻辑</td>
+<td>设置方向，处理总线请求与允许，发出读写命令并修改参数</td>
+</tr>
+<tr>
+<td>中断机构</td>
+<td>在整块完成或出现需要处理的事件时通知 CPU</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>控制器接收设备的 DMA 请求后，申请总线；获得允许后取得主设备资格，输出地址和控制信号完成传送，再按方式释放通路。<a href="../bus/#总线事务">总线主设备</a>与<a href="../bus/#总线仲裁">总线仲裁</a>的概念同样适用。</p>
+<p>地址增量与计数单位要分别判断：按字节编址、每次传送 4 字节时，主存地址通常增加 4 ；若长度计数器以字为单位，则每次减少 1 ，若以字节为单位则减少 4 ，不能只因名为“字计数器”就忽略题目实际约定。</p>
+<h4 id="dma的传送方式">DMA 的传送方式<a class="headerlink" href="#dma的传送方式" title="Permanent link">&para;</a></h4>
+<p>DMA 与 CPU 都可能访问主存，常见的共享方式如下：</p>
+<center>
+<table>
+<thead>
+<tr>
+<th>方式</th>
+<th>总线与主存怎样分配</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>停止 CPU 访存</td>
+<td>DMA 取得控制权后连续传送整块，再交还 CPU</td>
+<td>控制简单、适合高速成块传送，但 CPU 的访存等待时间长</td>
+</tr>
+<tr>
+<td>周期挪用</td>
+<td>每传送一个字占用一个相应的主存周期，然后释放</td>
+<td>可在 CPU 访问间隙穿插，也会推迟冲突的 CPU 访问；有申请与释放开销</td>
+</tr>
+<tr>
+<td>DMA 与 CPU 交替访存</td>
+<td>预先把访问时间划成双方各自的时隙</td>
+<td>无须每次动态申请，但需要主存速度和控制时序支持</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>采用周期挪用时，有三种基本情况： CPU 当前不访存， DMA 可在允许的空闲时段访问； CPU 正在访存，先完成这次访问再转交；双方同时请求，按仲裁规则选择，基本教学模型通常优先满足 DMA ，避免外设缓冲来不及处理。</p>
+<p>“挪用周期”描述占用主存访问机会，不等于让 CPU 执行一条中断服务指令。在依赖主存供指、供数的简单结构中，停止 CPU 访存可能使执行暂停；具有其他可用资源的实现则需按实际数据通路分析。</p>
+<p>交替访存要求预定时隙足够完成访问。例如，一个分配周期为 <span class="arithmatex">\(1.2\mu\mathrm{s}\)</span>，分成两个 <span class="arithmatex">\(0.6\mu\mathrm{s}\)</span> 时隙，就需要相应主存访问和控制操作能在各自时隙内完成。</p>
+<h4 id="dma的传送过程">DMA 的传送过程<a class="headerlink" href="#dma的传送过程" title="Permanent link">&para;</a></h4>
+<center>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>执行者</th>
+<th>主要工作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>预处理</td>
+<td>CPU 执行程序</td>
+<td>设置主存起始地址、设备、方向与传送量，启动 DMA 和设备</td>
+</tr>
+<tr>
+<td>数据传送</td>
+<td>DMA 控制器</td>
+<td>响应设备请求，取得所需通路，搬运数据，修改地址及计数，直到整块完成</td>
+</tr>
+<tr>
+<td>后处理</td>
+<td>CPU 通常通过完成中断执行程序</td>
+<td>检查完成或错误状态，作必要处理并安排后续工作</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>DMA 的“以块为单位”描述一次设置和完成通知所管理的数据量，块内仍可逐字传送。一次 DMA 块传送不要求全程独占总线，是否连续占用取决于<a href="#dma的传送方式">传送方式</a>。</p>
+<p>完成通知使用的仍是中断机制，其响应和状态保护见<a href="../CPU/#异常和中断响应过程">CPU 的中断响应</a>。因此， DMA 数据搬运阶段不需要逐次保存 CPU 现场，而结束后的中断服务仍需要保护现场。</p>
+<h4 id="dma开销的计算">DMA 开销的计算<a class="headerlink" href="#dma开销的计算" title="Permanent link">&para;</a></h4>
+<p>假定速率为 <span class="arithmatex">\(R\mathrm{B/s}\)</span>，每个 DMA 块为 <span class="arithmatex">\(L\mathrm{B}\)</span>，每块预处理与后处理共需 <span class="arithmatex">\(C_{\mathrm{block}}\)</span> 个 CPU 时钟周期，则 CPU 执行这些控制工作的时间比例为：</p>
+<div class="arithmatex">\[
+f_{\mathrm{block}}=\frac{R}{L},
+\qquad U_{\mathrm{DMA}}=\frac{RC_{\mathrm{block}}}{Lf}.
+\]</div>
+<p>例如，<span class="arithmatex">\(R=40\mathrm{MB/s}\)</span>，<span class="arithmatex">\(L=1000\mathrm{B}\)</span>，每块前后处理需要 500 周期， CPU 主频为 <span class="arithmatex">\(500\mathrm{MHz}\)</span>：</p>
+<div class="arithmatex">\[
+f_{\mathrm{block}}=40000\mathrm{/s},
+\qquad U_{\mathrm{DMA}}=\frac{40000\times500}{500\times10^6}=4\%.
+\]</div>
+<p>分母应使用 CPU 每秒可执行的周期数。若开销已经以“时钟周期”给出，就不再乘 CPI ；只有以指令条数给出时才需要换算。</p>
+<p>这个比例计算的是预处理、后处理的 CPU 指令开销。DMA 占用主存导致的 CPU 等待，或题目另外规定的仲裁开销，要按相应时序单独分析，不能把它们自动视为零。</p>
+<h4 id="dma与程序中断方式的区别">DMA 与程序中断方式的区别<a class="headerlink" href="#dma与程序中断方式的区别" title="Permanent link">&para;</a></h4>
+<center>
+<table>
+<thead>
+<tr>
+<th>对比项</th>
+<th>程序中断 I/O</th>
+<th>DMA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据搬运者</td>
+<td>CPU 执行服务程序</td>
+<td>DMA 硬件</td>
+</tr>
+<tr>
+<td>数据通路</td>
+<td>接口与主存之间通过 CPU 搬运</td>
+<td>接口与主存之间直接传送</td>
+</tr>
+<tr>
+<td>请求的主要目的</td>
+<td>让 CPU 执行服务程序</td>
+<td>让控制器取得传送通路</td>
+</tr>
+<tr>
+<td>请求响应时机</td>
+<td>可屏蔽外中断在允许的指令边界响应</td>
+<td>可在当前不可中断的总线访问结束后交接，无须等整条指令结束</td>
+</tr>
+<tr>
+<td>现场保护</td>
+<td>每次进入服务都要按约定保护现场</td>
+<td>数据搬运本身无须切换程序；完成中断仍需保护现场</td>
+</tr>
+<tr>
+<td>CPU 参与程度</td>
+<td>每次服务都要执行搬运及控制指令</td>
+<td>主要参与块开始前和完成后的工作</td>
+</tr>
+<tr>
+<td>适用任务</td>
+<td>需要程序处理的设备服务与一般事件</td>
+<td>高速、大批量数据传送</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>DMA 请求与 DMA 完成中断不是同一种请求：前者申请数据通路，后者通知 CPU 执行软件后处理。两者的控制条件和响应时刻应分别判断。</p>
+<h2 id="本章小结">本章小结<a class="headerlink" href="#本章小结" title="Permanent link">&para;</a></h2>
+<p>可以按以下问题检查 I/O 从寻址到完成通知的过程，已有说明通过链接回顾：</p>
+<center>
+<table>
+<thead>
+<tr>
+<th>检查问题</th>
+<th>对应内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>接口和端口有什么关系， CPU 怎样指定设备寄存器？</td>
+<td><a href="#io端口及其编址">端口与编址</a></td>
+</tr>
+<tr>
+<td>查询间隔需要多短，查询会占用多少 CPU 时间？</td>
+<td><a href="#查询间隔与cpu开销">查询间隔与开销</a></td>
+</tr>
+<tr>
+<td>设备就绪后，哪些条件共同决定能否响应中断？</td>
+<td><a href="#cpu响应io中断的条件">I/O 中断的响应条件</a></td>
+</tr>
+<tr>
+<td>固定响应顺序怎样配合屏蔽字形成嵌套关系？</td>
+<td><a href="#多重中断与中断屏蔽字">屏蔽字与执行轨迹</a></td>
+</tr>
+<tr>
+<td>数据传送和完成通知分别由谁执行？</td>
+<td><a href="#dma的传送过程">DMA 的三个阶段</a></td>
+</tr>
+<tr>
+<td>如何区分软件控制开销与总线、主存等待？</td>
+<td><a href="#dma开销的计算">DMA 开销</a></td>
+</tr>
+</tbody>
+</table>
+</center>
+<h2 id="常见问题和易混淆知识点">常见问题和易混淆知识点<a class="headerlink" href="#常见问题和易混淆知识点" title="Permanent link">&para;</a></h2>
+<h3 id="开中断后一有请求就立即响应吗">开中断后，一有请求就立即响应吗？<a class="headerlink" href="#开中断后一有请求就立即响应吗" title="Permanent link">&para;</a></h3>
+<p>判断“立即”时要区分请求发生时刻与可响应的指令边界。对本节的外部中断，开中断只满足一个条件，还需检查<a href="#cpu响应io中断的条件">有效请求、源屏蔽与判优结果</a>。在基本模型的可响应边界，满足条件并被选中的请求才进入硬件响应。</p>
+<h3 id="向量中断中断向量和向量地址有什么关系">向量中断、中断向量和向量地址有什么关系？<a class="headerlink" href="#向量中断中断向量和向量地址有什么关系" title="Permanent link">&para;</a></h3>
+<p>这三个概念及类型号定位表项的过程，直接参见<a href="../CPU/#识别事件并转入处理程序">CPU ：识别事件并转入处理程序</a>。向量地址用于找到入口信息，处理程序入口是从相应信息中取得的目标，两者不能互相代替。</p>
+<h3 id="程序中断与子程序调用有什么区别">程序中断与子程序调用有什么区别？<a class="headerlink" href="#程序中断与子程序调用有什么区别" title="Permanent link">&para;</a></h3>
+<p>触发方式、服务关系、入口定位与断点保护等基本比较，直接参见<a href="../../OS/os_intro/#中断的处理">操作系统概述中的中断处理与子程序调用</a>。本章补充的嵌套限制见<a href="#多重中断与中断屏蔽字">中断屏蔽字</a>：中断能否抢占当前服务取决于允许和屏蔽规则，不能仅按调用栈还有多少空间判断。</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+
+  <!-- Giscus 评论区开始 -->
+  <h2 id="__comments">评论</h2>
+  <script src="https://giscus.app/client.js"
+        data-repo="Undtree/Notes"
+        data-repo-id="R_kgDOMeUFpA"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOMeUFpM4C0y5E"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+  </script>
+  <!-- Giscus 评论区结束 -->
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["toc.follow", "content.code.copy", "search.share", "search.suggest", "search.highlight", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/fonts.js"></script>
+      
+        <script src="../../../javascripts/katex.js"></script>
+      
+    
+  </body>
+</html>
