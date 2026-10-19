@@ -28,7 +28,7 @@
 
 !!! Question "操作系统究竟和其他软件相比特殊在哪里？"
     在讨论操作系统的设计目标前，我们或许应该首先关注到，操作系统作为一种系统软件，但又和其他的系统软件和应用软件都有显著不同。因此我们需要了解操作系统的一些 **基本特征**。
-    <div class="card" markdown="1">
+    <div class="card card-shadow" markdown="1">
     <div class="card-body" markdown="1">
     
     **并发性（Concurrency）**。
@@ -40,7 +40,7 @@
     </div>
     </div>
 
-    <div class="card" markdown="1">
+    <div class="card card-shadow" markdown="1">
     <div class="card-body" markdown="1">
     
     **共享性（Sharing）**。
@@ -53,7 +53,7 @@
     </div>
     </div>
     
-    <div class="card" markdown="1">
+    <div class="card card-shadow" markdown="1">
     <div class="card-body" markdown="1">
     
     **虚拟性（Virtual）**。
@@ -77,7 +77,7 @@
 
 ### 操作系统的任务执行设计
 
-<div class="card" markdown="1">
+<div class="card card-shadow" markdown="1">
 <div class="card-header">手工操作阶段</div>
 <div class="card-body" markdown="1">
 
@@ -93,7 +93,7 @@
 </div>
 </div>
 
-<div class="card" markdown="1">
+<div class="card card-shadow" markdown="1">
 <div class="card-header">批处理阶段</div>
 <div class="card-body" markdown="1">
 
@@ -117,7 +117,7 @@
 </div>
 </div>
 
-<div class="card" markdown="1">
+<div class="card card-shadow" markdown="1">
 <div class="card-header">分时操作系统</div>
 <div class="card-body" markdown="1">
 
@@ -127,7 +127,7 @@
 </div>
 </div>
 
-<div class="card" markdown="1">
+<div class="card card-shadow" markdown="1">
 <div class="card-header">实时操作系统</div>
 <div class="card-body" markdown="1">
 
@@ -142,7 +142,7 @@
 </div>
 </div>
 
-<div class="card" markdown="1">
+<div class="card card-shadow" markdown="1">
 <div class="card-header">网络操作系统和分布式系统</div>
 <div class="card-body" markdown="1">
 
@@ -156,7 +156,7 @@
 </div>
 </div>
 
-<div class="card" markdown="1">
+<div class="card card-shadow" markdown="1">
 <div class="card-header">微机操作系统及其他操作系统</div>
 <div class="card-body" markdown="1">
 
@@ -174,7 +174,7 @@
 
 随着操作系统功能的不断扩展和代码规模的持续增长，采用合理的结构设计对降低系统复杂度、提升安全性和可靠性至关重要。
 
-<div class="card" markdown="1">
+<div class="card card-shadow" markdown="1">
 <div class="card-header">分层设计</div>
 <div class="card-body" markdown="1">
 
@@ -186,7 +186,7 @@
 </div>
 </div>
 
-<div class="card" markdown="1">
+<div class="card card-shadow" markdown="1">
 <div class="card-header">模块化设计</div>
 <div class="card-body" markdown="1">
 
@@ -203,7 +203,7 @@
 </div>
 </div>
 
-<div class="card" markdown="1">
+<div class="card card-shadow" markdown="1">
 <div class="card-header">宏内核</div>
 <div class="card-body" markdown="1">
 
@@ -218,7 +218,7 @@
 ???+ Question "等等，什么叫内核 (kernel) ？"
     操作系统中最基础最中央的部分是内核。但是我们实在无法给出它的精确范畴，这与操作系统设计的结构有关。尽管如此，我们可以确定的是，内核最明显的一个特点就是自计算机上电后就不停在运行。与硬件紧密相关的模块（如中断处理程序、设备驱动程序）、运行频率较高的模块（如时钟管理、进程调度），以及各模块共用的基础操作，都是现代操作系统的核心组件，它们也就形成了内核。OS 和内核的概念界限不甚清晰，笔者水平实在有限、难以说清，在后面也就避免谈及这两者的“区别”了。
 
-<div class="card" markdown="1">
+<div class="card card-shadow" markdown="1">
 <div class="card-header">微内核</div>
 <div class="card-body" markdown="1">
 
@@ -239,7 +239,7 @@
 </div>
 </div>
 
-<div class="card" markdown="1">
+<div class="card card-shadow" markdown="1">
 <div class="card-header">外核</div>
 <div class="card-body" markdown="1">
 
@@ -343,7 +343,6 @@
 
 <figure markdown>
 ![用户态和内核态的转换](../../images/OS/user_kernel.png){:width="70%"}
-<figcaption></figcaption>
 </figure>
 
 ### 操作系统引导
