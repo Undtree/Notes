@@ -1083,39 +1083,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#内存管理概念" class="md-nav__link">
+  <a href="#内存基础设计与技术" class="md-nav__link">
     <span class="md-ellipsis">
       
-        内存管理概念
+        内存基础设计与技术
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="内存管理概念">
+    <nav class="md-nav" aria-label="内存基础设计与技术">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#内存管理的基本原理和要求" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        内存管理的基本原理和要求
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="内存管理的基本原理和要求">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#程序的链接与装入" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        程序的链接与装入
-      
-    </span>
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#逻辑地址与物理地址" class="md-nav__link">
@@ -1129,10 +1106,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#程序的链接" class="md-nav__link">
+  <a href="#程序的链接与装入" class="md-nav__link">
     <span class="md-ellipsis">
       
-        程序的链接
+        程序的链接与装入
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="程序的链接与装入">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#程序的链接方式" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        程序的链接方式
       
     </span>
   </a>
@@ -1140,13 +1129,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#程序的装入" class="md-nav__link">
+  <a href="#程序的装入方式" class="md-nav__link">
     <span class="md-ellipsis">
       
-        程序的装入
+        程序的装入方式
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1169,22 +1163,6 @@
       
     </span>
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#内存分配与回收" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        内存分配与回收
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1262,17 +1240,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#页表" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        页表
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#基本地址变换机构" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1295,10 +1262,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#两级页表" class="md-nav__link">
+  <a href="#页的共享" class="md-nav__link">
     <span class="md-ellipsis">
       
-        两级页表
+        页的共享
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#页表设计改进" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        页表设计改进
       
     </span>
   </a>
@@ -1314,12 +1292,12 @@
   <a href="#基本分段存储管理" class="md-nav__link">
     <span class="md-ellipsis">
       
-        基本分段存储管理
+        基本分段存储管理（*）
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="基本分段存储管理">
+    <nav class="md-nav" aria-label="基本分段存储管理（*）">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1356,17 +1334,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#分页和分段的对比" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        分页和分段的对比
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#段的共享与保护" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1387,17 +1354,6 @@
     <span class="md-ellipsis">
       
         段页式存储管理
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#本节小结" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        本节小结
       
     </span>
   </a>
@@ -1434,32 +1390,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#传统存储管理方式的特征" class="md-nav__link">
+  <a href="#虚拟存储器" class="md-nav__link">
     <span class="md-ellipsis">
       
-        传统存储管理方式的特征
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#局部性原理" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        局部性原理
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#虚拟存储器的定义和特征" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        虚拟存储器的定义和特征
+        虚拟存储器
       
     </span>
   </a>
@@ -1495,6 +1429,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#调入页面的时机" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        调入页面的时机
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#页表机制" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1506,10 +1451,32 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#调入页面的位置" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        调入页面的位置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#缺页中断机构" class="md-nav__link">
     <span class="md-ellipsis">
       
         缺页中断机构
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#调入页面的步骤" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        调入页面的步骤
       
     </span>
   </a>
@@ -1533,22 +1500,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#页框分配" class="md-nav__link">
+  <a href="#帧分配" class="md-nav__link">
     <span class="md-ellipsis">
       
-        页框分配
+        帧分配
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="页框分配">
+    <nav class="md-nav" aria-label="帧分配">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#最小页框数与驻留集" class="md-nav__link">
+  <a href="#最小帧数与驻留集" class="md-nav__link">
     <span class="md-ellipsis">
       
-        最小页框数与驻留集
+        最小帧数与驻留集
       
     </span>
   </a>
@@ -1567,43 +1534,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#页框调入算法" class="md-nav__link">
+  <a href="#帧调入算法" class="md-nav__link">
     <span class="md-ellipsis">
       
-        页框调入算法
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#调入页面的时机" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        调入页面的时机
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#从何处调入页面" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        从何处调入页面
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#如何调入页面" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        如何调入页面
+        帧调入算法
       
     </span>
   </a>
@@ -1661,10 +1595,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#时钟clock算法" class="md-nav__link">
+  <a href="#lru-的近似算法" class="md-nav__link">
     <span class="md-ellipsis">
       
-        时钟（CLOCK）算法
+        LRU 的近似算法
       
     </span>
   </a>
@@ -1677,18 +1611,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#抖动和工作集" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        抖动和工作集
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="抖动和工作集">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#抖动" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1697,7 +1619,8 @@
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="抖动">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#工作集" class="md-nav__link">
@@ -1710,21 +1633,32 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#其他解决方式" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        其他解决方式
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#页框回收" class="md-nav__link">
+  <a href="#帧回收" class="md-nav__link">
     <span class="md-ellipsis">
       
-        页框回收
+        帧回收
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="页框回收">
+    <nav class="md-nav" aria-label="帧回收">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1739,10 +1673,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#可回收页框与后台回收" class="md-nav__link">
+  <a href="#可回收帧与后台回收" class="md-nav__link">
     <span class="md-ellipsis">
       
-        可回收页框与后台回收
+        可回收帧与后台回收
       
     </span>
   </a>
@@ -1787,30 +1721,8 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#本节小结_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        本节小结
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#本章疑难点" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        本章疑难点
-      
-    </span>
-  </a>
   
 </li>
       
@@ -2382,39 +2294,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#内存管理概念" class="md-nav__link">
+  <a href="#内存基础设计与技术" class="md-nav__link">
     <span class="md-ellipsis">
       
-        内存管理概念
+        内存基础设计与技术
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="内存管理概念">
+    <nav class="md-nav" aria-label="内存基础设计与技术">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#内存管理的基本原理和要求" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        内存管理的基本原理和要求
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="内存管理的基本原理和要求">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#程序的链接与装入" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        程序的链接与装入
-      
-    </span>
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#逻辑地址与物理地址" class="md-nav__link">
@@ -2428,10 +2317,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#程序的链接" class="md-nav__link">
+  <a href="#程序的链接与装入" class="md-nav__link">
     <span class="md-ellipsis">
       
-        程序的链接
+        程序的链接与装入
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="程序的链接与装入">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#程序的链接方式" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        程序的链接方式
       
     </span>
   </a>
@@ -2439,13 +2340,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#程序的装入" class="md-nav__link">
+  <a href="#程序的装入方式" class="md-nav__link">
     <span class="md-ellipsis">
       
-        程序的装入
+        程序的装入方式
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2468,22 +2374,6 @@
       
     </span>
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#内存分配与回收" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        内存分配与回收
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -2561,17 +2451,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#页表" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        页表
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#基本地址变换机构" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2594,10 +2473,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#两级页表" class="md-nav__link">
+  <a href="#页的共享" class="md-nav__link">
     <span class="md-ellipsis">
       
-        两级页表
+        页的共享
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#页表设计改进" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        页表设计改进
       
     </span>
   </a>
@@ -2613,12 +2503,12 @@
   <a href="#基本分段存储管理" class="md-nav__link">
     <span class="md-ellipsis">
       
-        基本分段存储管理
+        基本分段存储管理（*）
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="基本分段存储管理">
+    <nav class="md-nav" aria-label="基本分段存储管理（*）">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2655,17 +2545,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#分页和分段的对比" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        分页和分段的对比
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#段的共享与保护" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2686,17 +2565,6 @@
     <span class="md-ellipsis">
       
         段页式存储管理
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#本节小结" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        本节小结
       
     </span>
   </a>
@@ -2733,32 +2601,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#传统存储管理方式的特征" class="md-nav__link">
+  <a href="#虚拟存储器" class="md-nav__link">
     <span class="md-ellipsis">
       
-        传统存储管理方式的特征
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#局部性原理" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        局部性原理
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#虚拟存储器的定义和特征" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        虚拟存储器的定义和特征
+        虚拟存储器
       
     </span>
   </a>
@@ -2794,6 +2640,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#调入页面的时机" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        调入页面的时机
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#页表机制" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2805,10 +2662,32 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#调入页面的位置" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        调入页面的位置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#缺页中断机构" class="md-nav__link">
     <span class="md-ellipsis">
       
         缺页中断机构
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#调入页面的步骤" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        调入页面的步骤
       
     </span>
   </a>
@@ -2832,22 +2711,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#页框分配" class="md-nav__link">
+  <a href="#帧分配" class="md-nav__link">
     <span class="md-ellipsis">
       
-        页框分配
+        帧分配
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="页框分配">
+    <nav class="md-nav" aria-label="帧分配">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#最小页框数与驻留集" class="md-nav__link">
+  <a href="#最小帧数与驻留集" class="md-nav__link">
     <span class="md-ellipsis">
       
-        最小页框数与驻留集
+        最小帧数与驻留集
       
     </span>
   </a>
@@ -2866,43 +2745,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#页框调入算法" class="md-nav__link">
+  <a href="#帧调入算法" class="md-nav__link">
     <span class="md-ellipsis">
       
-        页框调入算法
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#调入页面的时机" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        调入页面的时机
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#从何处调入页面" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        从何处调入页面
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#如何调入页面" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        如何调入页面
+        帧调入算法
       
     </span>
   </a>
@@ -2960,10 +2806,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#时钟clock算法" class="md-nav__link">
+  <a href="#lru-的近似算法" class="md-nav__link">
     <span class="md-ellipsis">
       
-        时钟（CLOCK）算法
+        LRU 的近似算法
       
     </span>
   </a>
@@ -2976,18 +2822,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#抖动和工作集" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        抖动和工作集
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="抖动和工作集">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#抖动" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2996,7 +2830,8 @@
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="抖动">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#工作集" class="md-nav__link">
@@ -3009,21 +2844,32 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#其他解决方式" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        其他解决方式
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#页框回收" class="md-nav__link">
+  <a href="#帧回收" class="md-nav__link">
     <span class="md-ellipsis">
       
-        页框回收
+        帧回收
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="页框回收">
+    <nav class="md-nav" aria-label="帧回收">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3038,10 +2884,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#可回收页框与后台回收" class="md-nav__link">
+  <a href="#可回收帧与后台回收" class="md-nav__link">
     <span class="md-ellipsis">
       
-        可回收页框与后台回收
+        可回收帧与后台回收
       
     </span>
   </a>
@@ -3086,30 +2932,8 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#本节小结_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        本节小结
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#本章疑难点" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        本章疑难点
-      
-    </span>
-  </a>
   
 </li>
       
@@ -3136,15 +2960,21 @@
 
 <h1 id="内存管理">内存管理<a class="headerlink" href="#内存管理" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 11946 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 40 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 17162 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 7 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 57 分钟</p>
 </div>
+<div class="admonition abstract">
+<p class="admonition-title">概览——内存管理的基本原理和要求</p>
 <p>在多道程序环境中，多个进程共同使用有限的物理内存。我们既希望尽可能多地容纳进程，又需要让它们拥有各自独立、可以安全访问的地址空间。于是，内存管理要回答两个相互关联的问题：<strong>空间如何分配，地址如何解释</strong>。</p>
-<p>这一章先讨论程序全部装入内存时的管理方式，再引入按需调入、页面置换等机制，建立虚拟内存。</p>
-<h2 id="内存管理概念">内存管理概念<a class="headerlink" href="#内存管理概念" title="Permanent link">&para;</a></h2>
-<h3 id="内存管理的基本原理和要求">内存管理的基本原理和要求<a class="headerlink" href="#内存管理的基本原理和要求" title="Permanent link">&para;</a></h3>
-<p>操作系统需要跟踪内存的使用情况，为进程分配和回收空间，完成地址转换，并提供内存共享、存储保护和<a href="#虚拟内存的基本概念">内存空间的扩充</a>。这些功能共同构成 <strong>内存管理（ Memory Management ）</strong>。</p>
-<h4 id="程序的链接与装入">程序的链接与装入<a class="headerlink" href="#程序的链接与装入" title="Permanent link">&para;</a></h4>
-<p>一个源程序通常需要经过三个步骤，才能成为可以执行的程序：</p>
+<p>操作系统需要跟踪内存的使用情况，为进程分配和回收空间，完成<a href="#程序的装入方式">地址转换</a>，并提供<a href="#内存共享">内存共享</a>、<a href="#内存保护">存储保护</a>和<a href="#虚拟内存的基本概念">内存空间的扩充</a>。这些功能共同构成了 <strong>内存管理（ Memory Management ）</strong>。</p>
+</div>
+<h2 id="内存基础设计与技术">内存基础设计与技术<a class="headerlink" href="#内存基础设计与技术" title="Permanent link">&para;</a></h2>
+<h3 id="逻辑地址与物理地址">逻辑地址与物理地址<a class="headerlink" href="#逻辑地址与物理地址" title="Permanent link">&para;</a></h3>
+<p><strong>逻辑地址（ Logical Address ）</strong>，也称虚拟地址，是程序使用的地址。目标模块通常从 0 开始编址，链接时再将各模块的相对地址组织为统一的逻辑地址空间。不同进程拥有独立的地址空间，因此相同的逻辑地址可以表示不同的内容。</p>
+<p><strong>物理地址（ Physical Address ）</strong> 是实际访问主存时使用的地址。逻辑地址到物理地址的转换称为 <strong>地址重定位</strong>；在采用运行时地址转换的系统中，这一工作由 <strong>内存管理单元（ Memory Management Unit ， MMU ）</strong> 根据操作系统维护的映射信息完成。</p>
+<p>用户程序只需使用自己的逻辑地址，具体对应哪个物理位置由内存管理机制决定。逻辑地址与物理地址的位数也不必相同，其容量限制见<a href="#虚拟存储器的定义和特征">虚拟容量与实际存储能力</a>。</p>
+<p>进程地址空间中代码、数据、堆、栈等区域的组织，见<a href="../process/#进程的内存映像">进程的内存映像</a>。后面所说的分页和分段，是对这些地址建立物理映射的方法。</p>
+<h3 id="程序的链接与装入">程序的链接与装入<a class="headerlink" href="#程序的链接与装入" title="Permanent link">&para;</a></h3>
+<p>一个源程序通常需要经过三个步骤，才能成为在内存中的、可以执行的程序：</p>
 <ol>
 <li><strong>编译</strong>。编译程序将源代码翻译为目标模块。</li>
 <li><strong>链接</strong>。链接程序组合目标模块和所需的库，调整地址并解析模块之间的引用，形成装入模块。</li>
@@ -3155,13 +2985,9 @@
 \xrightarrow{\text{链接}}\text{装入模块}
 \xrightarrow{\text{装入}}\text{内存中的程序}
 \]</div>
-<p>这里需要分清：链接主要处理 <strong>模块之间的关系</strong>，装入主要处理 <strong>程序与内存位置的关系</strong>。二者可以在不同阶段完成，并不一定严格分成三个互不交叠的过程。</p>
-<h4 id="逻辑地址与物理地址">逻辑地址与物理地址<a class="headerlink" href="#逻辑地址与物理地址" title="Permanent link">&para;</a></h4>
-<p><strong>逻辑地址（ Logical Address ）</strong>，也称虚拟地址，是程序使用的地址。目标模块通常从 0 开始编址，链接时再将各模块的相对地址组织为统一的逻辑地址空间。不同进程拥有独立的地址空间，因此相同的逻辑地址可以表示不同的内容。</p>
-<p><strong>物理地址（ Physical Address ）</strong> 是实际访问主存时使用的地址。逻辑地址到物理地址的转换称为 <strong>地址重定位</strong>；在采用运行时地址转换的系统中，这一工作由 <strong>内存管理单元（ Memory Management Unit ， MMU ）</strong> 根据操作系统维护的映射信息完成。</p>
-<p>用户程序只需使用自己的逻辑地址，具体对应哪个物理位置由内存管理机制决定。逻辑地址与物理地址的位数也不必相同，其容量限制见<a href="#虚拟存储器的定义和特征">虚拟容量与实际存储能力</a>。</p>
-<p>进程地址空间中代码、数据、堆、栈等区域的组织，见<a href="../process/#进程的内存映像">进程的内存映像</a>。后面所说的分页和分段，是对这些地址建立物理映射的方法。</p>
-<h4 id="程序的链接">程序的链接<a class="headerlink" href="#程序的链接" title="Permanent link">&para;</a></h4>
+<p>更具体地来说，以 C 语言源代码文件为例，编译器首先将若干 <code>.c</code> 源文件编译为若干 <code>.o</code> 文件（这里合并了预处理、编译、汇编步骤）；这些 <code>.o</code> 文件被称为可重定位目标文件，其存在形式为机器码（目标模块）；随后链接器将若干 <code>.o</code> 文件连带所需要的一些库文件（如 <code>.a</code> 文件）链接为一个可执行目标文件（装入模块）。</p>
+<p>链接主要处理 <strong>模块之间的关系</strong>，装入主要处理 <strong>程序与内存位置的关系</strong>。二者可以在不同阶段完成，并不一定严格分成三个互不交叠的过程。</p>
+<h4 id="程序的链接方式">程序的链接方式<a class="headerlink" href="#程序的链接方式" title="Permanent link">&para;</a></h4>
 <p>根据链接发生的时机，可以分为三种方式。</p>
 <center>
 <table>
@@ -3176,7 +3002,7 @@
 <tr>
 <td style="text-align: center;">静态链接</td>
 <td style="text-align: center;">运行之前</td>
-<td style="text-align: center;">将目标模块和所需库代码组合进装入模块，修改模块后通常需要重新链接</td>
+<td style="text-align: center;">将目标模块和所需库代码组合进一个完整的装入模块，修改模块后通常需要重新链接</td>
 </tr>
 <tr>
 <td style="text-align: center;">装入时动态链接</td>
@@ -3196,13 +3022,14 @@
 <li><strong>地址调整</strong>。目标模块各自从 0 编址，组合后需要加上所在位置的偏移。例如，模块 A 长度为 <span class="arithmatex">\(L\)</span>，模块 B 紧接其后，则 B 中原来的地址 <span class="arithmatex">\(x\)</span> 应调整为 <span class="arithmatex">\(L+x\)</span>。</li>
 <li><strong>外部符号解析</strong>。将模块间的函数、变量等符号引用解析为可以使用的地址。例如， A 调用 B 中的函数，需要确定该函数在组合后模块中的位置。</li>
 </ul>
-<p>动态链接库可以供多个进程使用，但“多个程序使用同一个库文件”与“多个进程实际共享同一组物理页面”仍需通过<a href="#内存共享">内存共享</a>机制联系起来。</p>
-<details class="note">
+<p>能被动态链接的库就被称为动态链接库（ DLL ）。动态链接库可以供多个进程使用，但“多个程序使用同一个库文件”与“多个进程实际共享同一组物理页面”仍需通过<a href="#内存共享">内存共享</a>机制联系起来。</p>
+<details class="tip">
 <summary>动态装载与动态链接</summary>
-<p>动态装载是需要某个例程时才加载它；动态链接还需要处理模块间的符号引用。前者可以由程序自行实现，后者需要操作系统支持。</p>
+<p>在多道程序环境下，为了更加灵活地使用内存资源，我们引入动态装载（按需动态装载）机制。如果一个例程还没有被调用，那么它会以可重定位装载格式存储在磁盘上；当它被调用时，就动态地被装载到内存中。</p>
+<p>动态装载是需要某个例程时才加载它；动态链接在此基础上还需要处理模块间的符号引用。前者可以由程序自行实现，后者需要操作系统支持。</p>
 </details>
-<h4 id="程序的装入">程序的装入<a class="headerlink" href="#程序的装入" title="Permanent link">&para;</a></h4>
-<p>装入方式的区别主要在于：<strong>什么时候确定程序中的地址所对应的物理位置</strong>。</p>
+<h4 id="程序的装入方式">程序的装入方式<a class="headerlink" href="#程序的装入方式" title="Permanent link">&para;</a></h4>
+<p>装入方式的区别主要在于：<strong>什么时候确定程序中的地址所对应的物理位置</strong>，或者说何时发生地址转换。</p>
 <center>
 <table>
 <thead>
@@ -3218,7 +3045,7 @@
 <td style="text-align: center;">绝对装入</td>
 <td style="text-align: center;">编译或汇编时确定绝对地址</td>
 <td style="text-align: center;">不能直接移动</td>
-<td style="text-align: center;">已知装入位置，按绝对地址放入内存，常用于简单的单道程序环境</td>
+<td style="text-align: center;">已知装入位置，按绝对地址放入内存，仅适用于简单的单道程序环境</td>
 </tr>
 <tr>
 <td style="text-align: center;">可重定位装入</td>
@@ -3235,59 +3062,77 @@
 </tbody>
 </table>
 </center>
-<p>静态重定位要求在装入前准备好所需空间。转换完成后，地址已与当前位置绑定，因此移动程序不能只搬动它的内容。</p>
-<p>动态重定位则可以通过修改映射信息来适应位置变化。在最简单的连续分配模型中，重定位寄存器保存起始物理地址 <span class="arithmatex">\(B\)</span>，访问逻辑地址 <span class="arithmatex">\(A\)</span> 时得到：</p>
+<p>静态重定位要求在装入前准备好所需空间（根据内存当前的空闲情况为其分配一块连续的内存区域），若内存不足，则无法装入。一旦装入，进程在整个运行期间既不能移动位置，也不能动态申请额外内存。</p>
+<p>动态重定位则可以通过修改映射信息来适应位置变化（装入程序将装入模块载入内存而不立即转换地址）。这种方式使用一个重定位寄存器来完成功能。在最简单的连续分配模型中，重定位寄存器保存起始物理地址 <span class="arithmatex">\(B\)</span>，访问逻辑地址 <span class="arithmatex">\(A\)</span> 时得到：</p>
 <div class="arithmatex">\[
 E=B+A
 \]</div>
-<p>程序移动后更新 <span class="arithmatex">\(B\)</span> 即可。若要支持离散存放，则需要后面的<a href="#页表">页表</a>或<a href="#段表">段表</a>等映射机构，单个基地址寄存器不足以描述任意离散布局。</p>
-<h4 id="内存保护">内存保护<a class="headerlink" href="#内存保护" title="Permanent link">&para;</a></h4>
+<p><span class="arithmatex">\(E\)</span> 就是逻辑地址 <span class="arithmatex">\(A\)</span> 在物理内存中对应的实际地址。每次程序移动后，更新 <span class="arithmatex">\(B\)</span>（重定位寄存器）即可。</p>
+<details class="question">
+<summary>为什么直接加上逻辑地址就可以？</summary>
+<p>我们前面提到过，程序使用的是逻辑地址。在多道程序环境下，编译程序无法预知目标模块在内存中的具体位置，因而经编译和链接生成的装入模块通常从地址 0 开始编址。</p>
+</details>
+<div class="admonition info">
+<p class="admonition-title">若要支持离散存放，则需要后面的<a href="#分页存储的几个基本概念">页表</a>或<a href="#段表">段表</a>等映射机构。单个基地址寄存器不足以描述任意离散布局。</p>
+</div>
+<h3 id="内存保护">内存保护<a class="headerlink" href="#内存保护" title="Permanent link">&para;</a></h3>
 <p>存储保护要阻止进程访问未经授权的区域，包括操作系统区域和其他进程的私有区域。在连续分配模型中，常见的硬件方法有两种。</p>
 <ol>
-<li><strong>上、下限寄存器</strong>。记录进程可以访问的物理地址范围，访问时检查地址是否落在范围内。</li>
-<li><strong>重定位寄存器与界地址寄存器</strong>。前者保存起始物理地址 <span class="arithmatex">\(B\)</span>，后者保存逻辑地址空间长度 <span class="arithmatex">\(C\)</span>。先检查 <span class="arithmatex">\(0\le A&lt;C\)</span>，通过后再计算 <span class="arithmatex">\(E=B+A\)</span>；否则产生越界异常。</li>
+<li>
+<p><strong>上、下限寄存器</strong>。记录进程可以访问的物理地址范围，访问时检查地址是否落在范围内。</p>
+</li>
+<li>
+<p><strong>重定位寄存器与界地址寄存器</strong>。前者（<code>base</code>）保存起始物理地址，后者（<code>limit</code>）保存逻辑地址空间长度。需要访问内存时，先检查访问的地址是否在两个寄存器所框定的范围 <span class="arithmatex">\([\text{base}, \text{base + limit})\)</span> 内；否则产生越界异常而中断程序执行。</p>
+<p><figure markdown="1">
+<img alt="重定位寄存器和界地址寄存器" src="../../../images/OS/base_limit_reg.png" />
+</figure></p>
+</li>
 </ol>
-<div class="admonition tip">
-<p class="admonition-title">一个负责加，一个负责比</p>
-<p>重定位寄存器参与地址相加，界地址寄存器参与范围比较。长度为 <span class="arithmatex">\(C\)</span> 的地址空间，其合法偏移是 <span class="arithmatex">\(0\)</span> 到 <span class="arithmatex">\(C-1\)</span>，因此 <span class="arithmatex">\(A=C\)</span> 已经越界。</p>
-</div>
 <p>这些寄存器只能由内核通过<a href="../os_intro/#priv">特权指令</a>设置，用户程序不能自行扩大权限。分页和分段系统还可以在表项中设置读、写、执行等权限，按相应的管理单位实施保护。</p>
-<h4 id="内存共享">内存共享<a class="headerlink" href="#内存共享" title="Permanent link">&para;</a></h4>
-<p>地址空间相互独立，并不要求所有物理存储内容都各有一份。操作系统可以把同一块物理内存映射到多个进程的地址空间。</p>
+<h3 id="内存共享">内存共享<a class="headerlink" href="#内存共享" title="Permanent link">&para;</a></h3>
+<p>进程的地址空间相互独立，但如果所有物理存储内容每个进程都各有一份，对于多用户系统来说，这是一笔很大的开销。所以，操作系统提供了内存共享机制，可以把同一块物理内存映射到多个进程的地址空间。但显然的是，并非所有进程的内存空间都适合共享。</p>
 <p>共享程序代码时，适合共享的是执行过程中不被修改的代码，即 <strong>可重入代码（纯代码）</strong>。各进程共享一份代码，同时保留各自的私有数据区，以免运行状态相互干扰。</p>
-<p>例如，共有 <span class="arithmatex">\(n\)</span> 个进程使用同一程序，代码区大小为 <span class="arithmatex">\(C\)</span>，每个进程的私有数据区大小为 <span class="arithmatex">\(D\)</span>。不共享时需要 <span class="arithmatex">\(n(C+D)\)</span> 的空间，共享代码后只需要 <span class="arithmatex">\(C+nD\)</span>。这里节省的是物理空间，各进程仍需建立各自的地址映射。</p>
-<p>可写的数据也可以由多个进程共享，用于<a href="../process/#共享存储">共享存储通信</a>，但并发访问需要同步与互斥。不能把“共享代码应保持只读”理解为“所有共享内存都只能读”。共享文件的另一种方式见<a href="#内存映射文件">内存映射文件</a>；进程创建中延迟复制页面的用法，见<a href="../process/#进程的创建">写时复制</a>。</p>
-<h4 id="内存分配与回收">内存分配与回收<a class="headerlink" href="#内存分配与回收" title="Permanent link">&para;</a></h4>
-<p>分配时，系统需要从空闲空间中选择合适的区域；回收时，需要更新管理信息，让释放的空间再次可用。根据一个进程是否必须占用一整块连续的物理空间，可分为 <strong>连续分配</strong> 和 <strong>非连续分配</strong>。</p>
-<p>连续分配的管理信息较简单，但容易受到碎片限制；非连续分配把进程分为多个单元，分别映射到物理空间，能更灵活地使用内存，也需要额外的地址转换机构和映射表。</p>
+<p>假如共有 <span class="arithmatex">\(n\)</span> 个进程使用同一程序，代码区大小为 <span class="arithmatex">\(C\)</span>，每个进程的私有数据区大小为 <span class="arithmatex">\(D\)</span>。不共享时需要 <span class="arithmatex">\(n(C+D)\)</span> 的空间，共享代码后只需要 <span class="arithmatex">\(C+nD\)</span>。这里节省的是物理空间，各进程仍需建立各自的地址映射。</p>
+<p>可写的数据也可以由多个进程共享，用于<a href="../process/#共享存储">共享存储通信</a>，但并发访问需要注意同步与互斥。共享文件的另一种方式见<a href="#内存映射文件">内存映射文件</a>。</p>
 <h3 id="连续分配管理方式">连续分配管理方式<a class="headerlink" href="#连续分配管理方式" title="Permanent link">&para;</a></h3>
 <p>连续分配为一道程序提供一块连续的物理内存。根据分区的划分方式，主要有以下三种。</p>
 <h4 id="单一连续分配">单一连续分配<a class="headerlink" href="#单一连续分配" title="Permanent link">&para;</a></h4>
 <p>内存分为操作系统使用的 <strong>系统区</strong> 和用户程序使用的 <strong>用户区</strong>，用户区同时只容纳一道程序。</p>
-<p>这种方式实现简单，没有外部碎片，但用户程序未使用的空间难以交给其他程序，形成<a href="#固定分区分配">内部碎片</a>，内存利用率低，只适合简单的单用户、单任务环境。虽然无需处理多个用户进程之间的隔离，系统区仍需要防止被用户程序破坏。</p>
+<p>这种方式实现简单，没有外部碎片，但用户程序未使用的空间难以交给其他程序，从而会形成内部碎片。这种方式内存利用率低，只适合简单的单用户、单任务环境。除此之外，虽然无需处理多个用户进程之间的隔离，系统区仍需要防止被用户程序破坏。</p>
 <h4 id="固定分区分配">固定分区分配<a class="headerlink" href="#固定分区分配" title="Permanent link">&para;</a></h4>
-<p>预先把用户区划分成若干大小固定的分区，每个分区至多容纳一道作业。分区可以等大，也可以设置不同大小，以适应不同规模的作业。</p>
-<p>系统维护 <strong>分区使用表</strong>，记录各分区的始址、大小和状态。分配时选择足够大且空闲的分区，并标记为已占用；回收时恢复为空闲状态。</p>
-<p>固定分区支持多道程序，但并发作业数受到分区数量限制。即使各分区的空闲容量总和足够，一个大于任何单独分区的作业也无法装入。此外，分给作业的分区可能比实际需求大，多出的空间无法交给其他作业。</p>
+<p>预先把用户区划分成若干大小固定的分区，每个分区至多容纳一道作业。分区<u>可以等大，也可以设置不同大小</u>，以适应不同规模的作业。</p>
+<p>系统维护一个 <strong>分区使用表</strong>，记录各分区的始址、大小和状态。分配时选择足够大且空闲的分区，并标记为已占用；回收时恢复为空闲状态。</p>
+<p>固定分区是最简单的一种多道程序存储管理方式，但存在几个很显著的问题：</p>
+<ul>
+<li>并发作业数受到分区数量限制；</li>
+<li>即使各分区的空闲容量总和足够，一个大于任何单独分区的作业也无法装入；</li>
+<li>分给作业的分区可能比实际需求大，但多出的空间也无法交给其他作业（内部碎片）；</li>
+<li>无法支持多个进程共享同一内存区域。</li>
+</ul>
+<h4 id="动态分区分配">动态分区分配<a class="headerlink" href="#动态分区分配" title="Permanent link">&para;</a></h4>
+<p>动态分区，也称可变分区，在装入进程时按照需求划出连续区域，分区的数量和大小随分配、释放而变化。</p>
+<p>系统维护空闲分区链或表，记录各空闲区的始址和大小。分配时选择一个足够大的空闲区，划出所需空间，剩余部分继续保留；若剩余部分小到不足以单独管理，则可以一并分配。</p>
+<p>回收时，要检查与待回收区在物理地址上相邻的空闲区：</p>
+<ul>
+<li>只与前面的空闲区相邻，则扩展前面空闲区的长度。</li>
+<li>只与后面的空闲区相邻，则向前扩展后面的这个空闲区，修改始址和长度。</li>
+<li>与前后空闲区都相邻：三者合并，只保留一个表项。</li>
+<li>前后都不相邻：为回收区建立新的空闲表项。</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">紧凑技术</p>
+<p>长期分配和回收后，动态分区容易形成外部碎片。<strong>紧凑（ Compaction ）</strong> 技术可以缓解这一问题。</p>
+<p>操作系统周期性地搬移进程，把分散的空闲区集中起来合并为一个连续区域。但读者朋友们可能会意识到这需要系统支持<a href="#程序的装入方式">动态重定位</a>，且搬移本身有不小的开销。紧凑技术的原理类似于 Windows 的磁盘碎片整理，但后者作用于外存文件系统，紧凑作用于主存。</p>
+</div>
 <div class="admonition note">
 <p class="admonition-title">内部碎片与外部碎片</p>
 <p><strong>内部碎片</strong> 是已经分配给进程、却没有被利用的空间；<strong>外部碎片</strong> 是已分配区域之间分散的空闲空间，可能总量足够，却无法组成所需的连续区域。</p>
-<p>固定分区不产生外部碎片，主要浪费是内部碎片；下面的动态分区主要产生外部碎片。</p>
+<p>读者可以发现内外是相对于进程的区分。固定分区不产生外部碎片，主要浪费在于内部碎片；动态分区主要产生外部碎片。</p>
 </div>
-<h4 id="动态分区分配">动态分区分配<a class="headerlink" href="#动态分区分配" title="Permanent link">&para;</a></h4>
-<p>动态分区，也称可变分区，在装入进程时按照需求划出连续区域，分区的数量和大小随分配、释放而变化。</p>
-<p><strong>分配与回收</strong>。</p>
-<p>系统维护空闲分区链或表，记录各空闲区的始址和大小。分配时选择一个足够大的空闲区，划出所需空间，剩余部分继续保留；若剩余部分小到不足以单独管理，则可以一并分配。</p>
-<p>回收时，要检查与回收区在物理地址上相邻的空闲区：</p>
+<p>接下来介绍在动态分区分配中使用的两类分配算法。</p>
 <ul>
-<li>只与前面的空闲区相邻：扩展前一区的长度。</li>
-<li>只与后面的空闲区相邻：向前扩展后一区，修改始址和长度。</li>
-<li>与前后空闲区都相邻：三者合并，保留一个表项。</li>
-<li>前后都不相邻：为回收区建立新的空闲表项。</li>
-</ul>
-<p>这里的“相邻”指的是 <strong>地址首尾相接</strong>，不能仅凭两个表项在链表中的位置判断。</p>
-<p>长期分配和回收后，动态分区容易形成<a href="#固定分区分配">外部碎片</a>。<strong>紧凑（ Compaction ）</strong> 可以搬移进程，把分散的空闲区集中起来，但需要支持<a href="#程序的装入">动态重定位</a>，且搬移本身有开销。回收时合并相邻空闲区并不搬动进程，和紧凑不是同一操作。</p>
-<p><strong>基于顺序搜索的分配算法</strong>。</p>
+<li>
+<p><strong>基于顺序搜索的分配算法</strong></p>
 <center markdown="1">
 <table>
 <thead>
@@ -3321,63 +3166,134 @@ E=B+A
 </tbody>
 </table>
 </center>
-<p>“最佳”描述的是本次分配所选空间的大小，并不保证整个系统的表现最好。首次适应在查找成本与保留大空闲区之间取得了较好的折中。</p>
-<p><strong>基于索引搜索的分配算法</strong>。</p>
+<div class="admonition warning">
+<p class="admonition-title">“最佳”描述的是本次分配所选空间的大小，并不保证整个系统的表现最好。</p>
+</div>
+<p>综合来看， FF 方法在查找成本与保留大空闲区之间取得了较好的折中。</p>
+</li>
+<li>
+<p><strong>基于索引搜索的分配算法</strong></p>
 <p>空闲区很多时，逐项搜索的成本较高。可以按大小建立多条空闲链，再通过索引快速定位。</p>
 <ul>
 <li><strong>快速适应（ Quick Fit ）</strong>。按常用请求大小建立类别，从合适类别的链首取出空闲块。分配速度快，但回收时识别和合并相邻块较复杂；类别块不一定正好等于请求大小。</li>
-<li><strong>伙伴系统（ Buddy System ）</strong>。空闲块的大小为 <span class="arithmatex">\(2^k\)</span>，分别组织成链。请求大小为 <span class="arithmatex">\(n\)</span> 时，选择不小于 <span class="arithmatex">\(n\)</span> 的最小规格；没有这种块，就从更大的块逐次二分，保留暂不使用的另一半。回收时，若对应伙伴也空闲，就合并并继续向上检查。</li>
-<li><strong>哈希算法</strong>。以空闲块大小为关键字，通过哈希表定位对应空闲链，减少查找开销。</li>
+<li>
+<p><strong>伙伴系统（ Buddy System ）</strong>。分区的大小规格为 <span class="arithmatex">\(2^k\)</span>，并依大小分别组织成链（链上存放这个大小的空闲块）。请求大小为 <span class="arithmatex">\(n\)</span> 时，先选择不小于 <span class="arithmatex">\(n\)</span> 的最小规格的分区链上查找可用的空闲块；若没有这种块，就从更大的块逐次二分直至得到所需的块，期间产生的其余部分加入对应的分区链。</p>
+<p>这一算法名字中的“伙伴”来自于每个大小为 <span class="arithmatex">\(2^k\)</span> 的分区都有一个唯一的、与其大小相同、地址相邻的伙伴分区。</p>
+<p>回收时，若某分区的对应伙伴也空闲，就合并它们，随后并继续向上检查尝试合并。</p>
+</li>
+<li>
+<p><strong>哈希算法</strong>。以空闲块大小为关键字，通过哈希表定位对应空闲链，减少查找开销。</p>
+</li>
 </ul>
 <div class="admonition tip">
-<p class="admonition-title">伙伴关系不只要求等大、相邻</p>
-<p>伙伴必须是 <strong>同一个较大块二分得到的两半</strong>。例如，按 8 KB 边界管理的大块中，<code>[0,4)</code> 和 <code>[4,8)</code> KB 是一对 4 KB 伙伴；<code>[4,8)</code> 和 <code>[8,12)</code> KB 虽然等大且相邻，却不是伙伴。</p>
-<p>伙伴系统方便分裂与合并，但向上取整到 <span class="arithmatex">\(2^k\)</span> 仍会产生内部碎片。申请 21 KB 时需要分配 32 KB ，并非没有空间浪费。</p>
+<p class="admonition-title">有关伙伴系统...</p>
+<p><div class="split-cols" markdown>
+<div class="split-cols__text" markdown>
+-   伙伴必须是 <strong>同一个较大块二分得到的两半</strong>。例如，按 8 KB 边界管理的大块中，<code>[0,4)</code> 和 <code>[4,8)</code> KB 是一对 4 KB 伙伴；<code>[4,8)</code> 和 <code>[8,12)</code> KB 虽然等大且相邻，却不是伙伴。
+-   伙伴系统方便分裂与合并，但向上取整到 <span class="arithmatex">\(2^k\)</span> 仍会产生内部碎片。例如，申请 21 KB 时还是需要分配 32 KB。
 </div>
-<details class="note">
+<div class="split-cols__media" markdown>
+<figure markdown>
+<img alt="伙伴系统示意" src="../../../images/OS/buddy_system.png" />
+<figcaption>伙伴系统示意</figcaption>
+</figure>
+</div>
+</div></p>
+</div>
+</li>
+</ul>
+<details class="info">
 <summary>内核中的小对象分配</summary>
-<p>Slab 按内核对象类型建立缓存，在页框中分配适合对象大小的空间；缓存不足时再向伙伴系统申请，减少反复分配和初始化的开销。</p>
+<p><a href="https://www.kernel.org/doc/gorman/html/understand/understand011.html">Slab</a> 按内核对象类型建立缓存，在帧中分配适合对象大小的空间；缓存不足时再向伙伴系统申请，减少反复分配和初始化的开销。</p>
+</details>
+<details class="question">
+<summary>进程所需要的内存一定要是连续的吗？</summary>
+<p>我们前面介绍了连续分配管理的方式。固定分区会产生内部碎片，动态分区会产生外部碎片，这两种方式对内存的利用率都较低。为了克服外部碎片的问题，提高内存的利用率，人们就想如何能把进程所在的内存“掰成”块。但是太碎也不行，因为这样的话，可以预见的是内存映射关系会过于琐碎。于是我们诞生了下面的方案。</p>
 </details>
 <h3 id="基本分页存储管理">基本分页存储管理<a class="headerlink" href="#基本分页存储管理" title="Permanent link">&para;</a></h3>
-<p>分页把进程的逻辑地址空间划分为等大的 <strong>页（ Page ）</strong>，把物理内存划分为同样大小的 <strong>页框（ Frame ）</strong>，也称页帧、物理块。一个进程的不同页可以装入不相邻的页框，因而不再需要一整块连续的物理空间。</p>
-<p>与固定分区相比，分页不是“一道作业占一个分区”，而是“一道作业占多个页框”。基本分页要求运行前装入全部页面；允许仅装入部分页面的方式见<a href="#请求分页管理方式">请求分页管理</a>。</p>
+<p>分页把进程的逻辑地址空间划分为等大的 <strong>页（ Page ）</strong>，把物理内存划分为和页同样大小的 <strong>帧（ Frame ）</strong>，也称页框、物理块。一个进程的不同页可以装入不相邻的帧，因而不再需要一整块连续的物理空间。</p>
+<p>这样一来，这使得系统可以以帧为单位为进程分配内存、以页为单位进行内存分配，就不会产生外部碎片。</p>
 <h4 id="分页存储的几个基本概念">分页存储的几个基本概念<a class="headerlink" href="#分页存储的几个基本概念" title="Permanent link">&para;</a></h4>
-<p><strong>页面与页面大小</strong>。</p>
-<p>页号和页框号通常从 0 开始。系统按页框分配空间，不产生<a href="#固定分区分配">外部碎片</a>，但进程最后一页可能未填满，产生页内碎片，即内部碎片。在进程长度的余数近似均匀分布的模型中，平均页内碎片约为半页。</p>
-<p>页面大小通常取 <span class="arithmatex">\(2\)</span> 的整数次幂。小页面的内部碎片较少，但页面数量和页表开销较大；大页面减少页表项数量，却可能浪费更多页内空间。调页性能的进一步影响见<a href="#虚拟存储器性能影响因素">虚拟存储器性能影响因素</a>。</p>
-<p><strong>地址结构</strong>。</p>
+<div class="card card-shadow">
+<div class="card-header">页面与页面大小</div>
+<div class="card-body">
+<p>页号和帧号通常从 0 开始。</p>
+<p>因为二进制数和二的整数次幂天然的相合性，页面大小通常取 <span class="arithmatex">\(2\)</span> 的整数次幂以方便地址转换。</p>
+<p>我们刚才提到，分页管理可以避免外部碎片，但由于页的大小是固定的，分配时不免产生页内碎片（内部碎片）。小页面的内部碎片较少，但页面数量和页表开销较大；大页面减少页表项数量，却可能浪费更多页内空间。在进程长度的余数近似均匀分布的模型中，平均页内碎片约为半页。调页性能的进一步影响见<a href="#虚拟存储器性能影响因素">虚拟存储器性能影响因素</a>。</p>
+</div>
+</div>
+<div class="card card-shadow">
+<div class="card-header">地址结构</div>
+<div class="card-body">
 <p>设页面大小为 <span class="arithmatex">\(L=2^d\)</span>，逻辑地址为 <span class="arithmatex">\(A\)</span>，则：</p>
 <div class="arithmatex">\[
 P=\left\lfloor\frac{A}{L}\right\rfloor,\qquad W=A\bmod L
 \]</div>
-<p><span class="arithmatex">\(P\)</span> 是页号，<span class="arithmatex">\(W\)</span> 是页内偏移。若逻辑地址共 <span class="arithmatex">\(v\)</span> 位，则高 <span class="arithmatex">\(v-d\)</span> 位是页号，低 <span class="arithmatex">\(d\)</span> 位是偏移。因此，分页虽然将地址拆成两个字段，程序仍只需要给出一个线性地址，地址空间是 <strong>一维的</strong>。</p>
-<p>例如， 32 位逻辑地址、4 KB 页面时，页内偏移占 12 位，页号占 20 位，完整地址空间共有 <span class="arithmatex">\(2^{20}\)</span> 个页面。</p>
-<h4 id="页表">页表<a class="headerlink" href="#页表" title="Permanent link">&para;</a></h4>
-<p>每个进程维护自己的 <strong>页表（ Page Table ）</strong>，记录页号到物理页框号的映射。在线性页表中，表项按页号顺序存放，因此页号可以由表项位置隐含，不必另占一个字段。</p>
-<p>页表保存在内存中。当前进程的页表始址与长度由页表寄存器提供；也可以分别由页表基址寄存器（ PTBR ）和页表长度寄存器（ PTLR ）保存。进程未运行时，这些信息保存在 PCB 中，<a href="../schedule/#cont_switch">切换进程</a>时由内核更新。</p>
-<p>页表本身也占空间。若按字节编址、逻辑地址为 <span class="arithmatex">\(v\)</span> 位、页面大小为 <span class="arithmatex">\(2^d\)</span> B、页表项大小为 <span class="arithmatex">\(e\)</span> B ，则完整单级页表的大小为：</p>
+<p>其中 <span class="arithmatex">\(P\)</span> 是页号，<span class="arithmatex">\(W\)</span> 是页内偏移。若逻辑地址共 <span class="arithmatex">\(v\)</span> 位，则高 <span class="arithmatex">\(v-d\)</span> 位是页号，低 <span class="arithmatex">\(d\)</span> 位是偏移。因此，分页虽然将地址拆成两个字段，程序仍只需要给出一个线性地址，地址空间是 <strong>一维的</strong>。</p>
+<p>显然，由于帧和页是一一对应的，所以单个页内的连续内存页对应帧上的连续内存；而在两页之间，某页页末地址的下一位地址正好是下一页的第一位（二进制的进位）。</p>
+<div class="admonition note">
+<p class="admonition-title">从这里我们可以看到，分页设计既有进程在逻辑上连续的优势，又有在分配物理内存时的灵活性（可以分为不连续的几帧）的优势。</p>
+</div>
+<p>例如， 32 位逻辑地址、页面大小 4 KB 时，页内偏移占 12 位，页号占 20 位，逻辑地址空间共有 <span class="arithmatex">\(2^{20}\)</span> 个页面。</p>
+</div>
+</div>
+<div class="card card-shadow">
+<div class="card-header">页表</div>
+<div class="card-body">
+<div class="split-cols">
+<div class="split-cols__text">
+<p>每个进程维护自己的 <strong>页表（ Page Table ）</strong>，记录页号到物理帧号的映射。通过建立页号到帧号的映射，系统为进程的每个页面分配物理内存；或者说，帧与页的对应关系，就是通过页表来实现的。</p>
+<p>在线性页表中，表项按页号顺序存放，因此页号可以由表项位置隐含，不必另占一个字段。</p>
+<p>页表本身也占空间。若按字节编址、逻辑地址为 <span class="arithmatex">\(v\)</span> 位、页面大小为 <span class="arithmatex">\(2^d\)</span> B、页表项大小为 <span class="arithmatex">\(e\)</span> B ，易知完整单级页表的大小为：</p>
 <div class="arithmatex">\[
 S_{\mathrm{PT}}=2^{v-d}e\ \mathrm{B}
 \]</div>
-<p>页表项大小则需要考虑 <strong>物理地址</strong>：若物理地址为 <span class="arithmatex">\(p\)</span> 位，页框号需要 <span class="arithmatex">\(p-d\)</span> 位，再加上保护与状态字段，并考虑按字节取整和对齐。不能用逻辑页号的位数直接代替物理页框号的位数。</p>
+</div>
+<div class="split-cols__media">
+<figure>
+<p><img alt="逻辑地址到物理地址的映射" src="../../../images/OS/paging_model.png" /></p>
+<figcaption>逻辑地址到物理地址的映射</figcaption>
+</figure>
+</div>
+</div>
+<p>页表保存在物理内存中，访问页表直接使用物理地址访问。当前进程的页表始址与长度由页表寄存器（ PTR ）提供；也可以分别由页表基址寄存器（ PTBR ）和页表长度寄存器（ PTLR ）保存。进程未运行时，这些信息保存在 PCB 中，<a href="../schedule/#cont_switch">切换进程</a>时由内核更新。</p>
+<div class="admonition info">
+<p class="admonition-title">有关页表保存在物理内存中的原因，可以参考 <a href="https://note.isshikih.top/cour_note/D3QD_OperatingSystem/Unit3-Part1/#%E5%B8%A7--%E9%A1%B5">@Isshiki 修佬在这个问题上的引导和启发</a>。</p>
+</div>
+<p>页表项的大小需要考虑 <strong>物理地址</strong>。沿用前面的符号约定，若物理地址为 <span class="arithmatex">\(p\)</span> 位，则帧号需要 <span class="arithmatex">\(p-d\)</span> 位；再加上保护与状态字段，并考虑按字节取整和对齐。不能用逻辑页号的位数直接代替物理帧号的位数。</p>
+</div>
+</div>
 <h4 id="基本地址变换机构">基本地址变换机构<a class="headerlink" href="#基本地址变换机构" title="Permanent link">&para;</a></h4>
-<p>设页表始址为 <span class="arithmatex">\(F\)</span>，页表项大小为 <span class="arithmatex">\(e\)</span>，页表长度为 <span class="arithmatex">\(M\)</span>，一次地址转换如下：</p>
+<p>设页（帧）大小为 <span class="arithmatex">\(L\)</span>，页表始址为 <span class="arithmatex">\(F\)</span>，页表项大小为 <span class="arithmatex">\(e\)</span>，页表长度为 <span class="arithmatex">\(M\)</span>，一次地址转换如下：</p>
 <ol>
-<li>从逻辑地址 <span class="arithmatex">\(A\)</span> 得到页号 <span class="arithmatex">\(P\)</span> 和偏移 <span class="arithmatex">\(W\)</span>。</li>
-<li>检查 <span class="arithmatex">\(P&lt;M\)</span>；否则产生页号越界异常。这里 <span class="arithmatex">\(M\)</span> 是表项数量，并非最大合法页号。</li>
-<li>访问地址 <span class="arithmatex">\(F+Pe\)</span>，读取对应页表项中的页框号 <span class="arithmatex">\(b\)</span>。</li>
+<li>CPU 给出逻辑地址，从逻辑地址 <span class="arithmatex">\(A\)</span> 得到页号 <span class="arithmatex">\(P\)</span> 和偏移 <span class="arithmatex">\(W\)</span>。</li>
+<li>检查 <span class="arithmatex">\(P&lt;M\)</span>；否则产生页号越界异常。注意这里 <span class="arithmatex">\(M\)</span> 是表项数量，并非最大合法页号。</li>
+<li>访问地址 <span class="arithmatex">\(F+Pe\)</span>（物理地址），读取对应页表项中的帧号 <span class="arithmatex">\(b\)</span>。</li>
 <li>形成物理地址 <span class="arithmatex">\(E=bL+W\)</span>，访问目标内容。</li>
 </ol>
-<p>若页面大小为 <span class="arithmatex">\(2^d\)</span>，最后一步也可以理解为用物理页框号替换逻辑页号，保留低 <span class="arithmatex">\(d\)</span> 位偏移。<strong>页内偏移在地址转换前后不变</strong>。</p>
-<p>例如，页面大小为 1 KB ，逻辑地址为 2500 ，页表记录第 2 页位于第 8 个页框，则 <span class="arithmatex">\(P=2\)</span>、<span class="arithmatex">\(W=452\)</span>，物理地址为 <span class="arithmatex">\(8\times1024+452=8644\)</span>。</p>
-<p>在页表位于主存、没有地址转换缓存、忽略数据 Cache 的模型中，一次目标访问需要 <strong>两次主存访问</strong>：一次查页表，一次访问指令或数据。</p>
+<p>若页面大小为 <span class="arithmatex">\(2^d\)</span>，地址转换也可以理解为用物理帧号替换逻辑页号，保留低 <span class="arithmatex">\(d\)</span> 位偏移。<strong>页内偏移在地址转换前后不变</strong>。</p>
+<p><figure markdown="1">
+<img alt="基本的分页系统地址变换" src="../../../images/OS/address_mapping_paging.png" width="70%" />
+<figurecaption>基本的分页系统地址变换</figurecaption>
+</figure></p>
+<p>例如，页面大小为 1 KB ，逻辑地址为 2500 ，页表记录第 2 页位于第 8 个帧，则 <span class="arithmatex">\(P=2\)</span>、<span class="arithmatex">\(W=452\)</span>，物理地址为 <span class="arithmatex">\(8\times1024+452=8644\)</span>。</p>
+<div class="admonition example">
+<p class="admonition-title">在页表位于主存、没有地址转换缓存、忽略数据 Cache 的模型中，一次目标访问需要两次主存访问：一次查页表，一次访问指令或数据。</p>
+</div>
 <h4 id="具有快表的地址变换机构">具有快表的地址变换机构<a class="headerlink" href="#具有快表的地址变换机构" title="Permanent link">&para;</a></h4>
-<p><strong>快表（ Translation Lookaside Buffer ， TLB ）</strong> 是用于缓存近期活跃地址映射的高速存储器；主存中的页表相应称为慢表。TLB 的作用基于<a href="#局部性原理">局部性原理</a>。</p>
-<ul>
-<li>TLB 命中：直接取得页框号，形成物理地址，再访问目标内容。</li>
-<li>TLB 未命中：查慢表取得映射，再访问目标内容，并把映射补入 TLB ； TLB 已满时，需要替换旧表项。</li>
-</ul>
-<p>这里的命中判定与缺页、数据 Cache 未命中的区别，统一见<a href="#请求分页的地址变换">请求分页的地址变换</a>。</p>
+<p>我们刚刚了解到，若页表全部存放在内存中，则每次访问内存至少需要两次主存访问；这很浪费系统性能。</p>
+<p>你或许会想到像计算机存储的多级架构那样再设置一个“中间人”。<strong>快表（ Translation Lookaside Buffer ， TLB ）</strong>  正是这样的、用于缓存近期活跃地址映射的高速存储器；主存中的页表相应称为慢表。</p>
+<div class="admonition info">
+<p class="admonition-title">TLB 的作用基于<a href="#locality">局部性原理</a>。</p>
+</div>
+<p>TLB 的单个表项由页号和帧号组成，仍然反映进程内页号到物理帧号的映射。</p>
+<p>带 TLB 的一次地址转换中， CPU 给出逻辑地址后，硬件自动提取页号，并将其与快表中所有页号 <strong>并行比较</strong>；
+    -   TLB 命中（表中有匹配页）：直接取得帧号，形成物理地址，再访问目标内容。
+    -   TLB 未命中：查慢表取得映射，再访问目标内容，并把映射补入 TLB ； TLB 已满时，需要替换旧表项。</p>
+<figure>
+<p><img alt="含有 TLB 的地址变换" src="../../../images/OS/address_mapping_with_TLB.png" width="70%" />
+<figurecaption>含有 TLB 的地址变换</figurecaption></p>
+</figure>
 <p>设 TLB 查询时间为 <span class="arithmatex">\(t_T\)</span>，一次主存访问时间为 <span class="arithmatex">\(t_M\)</span>，命中率为 <span class="arithmatex">\(\alpha\)</span>。在 <strong>单级页表、先查 TLB 再查慢表、不计缺页和数据 Cache</strong> 的模型中：</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -3386,15 +3302,22 @@ T_{\mathrm{EAT}}
 &amp;=t_T+(2-\alpha)t_M
 \end{aligned}
 \]</div>
-<p>若 TLB 与慢表并行查询，未命中路径的时间应按题目给定条件重新计算，不能机械套用串行查询公式。</p>
-<details class="note">
+<details class="tip">
 <summary>切换地址空间时的 TLB</summary>
-<p>不同进程可能有相同页号。切换地址空间时需要清除旧映射，或用地址空间标识符 ASID 区分表项；查询时同时匹配 ASID 和页号。</p>
+<p>不同进程可能有相同页号，而 TLB 并不像页表一样每一个进程都拥有一个。因而切换地址空间时需要清除旧映射（ flush 操作）。或者，我们可以用地址空间标识符（ ASID ）区分表项；查询时同时匹配 ASID 和页号。</p>
 </details>
-<h4 id="两级页表">两级页表<a class="headerlink" href="#两级页表" title="Permanent link">&para;</a></h4>
-<p>32 位逻辑地址、4 KB 页面、4 B 页表项时，完整单级页表占 <span class="arithmatex">\(2^{20}\times4\ \mathrm{B}=4\ \mathrm{MB}\)</span>，需要 1024 个页框。既要占用较多空间，又要求整张表连续存放，管理起来并不方便。</p>
-<p>解决思路是：<strong>把页表也分页，再用外层页表记录各页表页的位置</strong>。外层页表也称页目录，内层页表负责映射实际的程序页面。</p>
-<p>在上述条件下，一个页框能容纳 <span class="arithmatex">\(4096/4=1024=2^{10}\)</span> 个页表项，因此 20 位页号拆成两个 10 位字段：</p>
+<h4 id="页的共享">页的共享<a class="headerlink" href="#页的共享" title="Permanent link">&para;</a></h4>
+<p>我们前面说过，物理内存可以映射到多个进程的地址空间。这也就是说，多个页可以对应同一个帧，那这样的页就被称为共享页。前面提到的共享库就是通过共享页来实现的。</p>
+<p>再比如，我们在<a href="../process/#进程通信">进程间通信</a>中提到过通过共享内存来实现进程间通信，在某些操作系统中，共享内存就是通过共享页来实现的。</p>
+<h4 id="页表设计改进">页表设计改进<a class="headerlink" href="#页表设计改进" title="Permanent link">&para;</a></h4>
+<p>设想一个系统具有 32 位逻辑地址、4 KB 页面、4 B 页表项。如果采用单级页表，此时完整单级页表占 <span class="arithmatex">\(2^{20}\times4\ \mathrm{B}=4\ \mathrm{MB}\)</span>，需要 1024 个帧。</p>
+<div class="admonition question">
+<p class="admonition-title">此时，页表已经可以算是非常庞大了，如果我们又要求整张表连续存放，那管理起来并不方便。有没有一个方法控制页表在内存中所占的大小？</p>
+</div>
+<details class="note" open="open">
+<summary>分层页表</summary>
+<p>一个自然的解决思路是：<strong>把页表也分页，再用外层页表记录各页表页的位置</strong>。外层页表也称页目录，内层页表（二级页表）负责映射实际的程序页面。</p>
+<p>回到前面的假定条件，此时一个帧能容纳 <span class="arithmatex">\(4096/4=1024=2^{10}\)</span> 个页表项，因此 20 位页号拆成两个 10 位字段：</p>
 <center markdown="1">
 <table>
 <thead>
@@ -3413,31 +3336,47 @@ T_{\mathrm{EAT}}
 </tbody>
 </table>
 </center>
-<p>转换时，先用 <span class="arithmatex">\(P_1\)</span> 查页目录，得到内层页表的位置；再用 <span class="arithmatex">\(P_2\)</span> 查内层页表，得到目标页框号；最后保留 <span class="arithmatex">\(W\)</span>，形成物理地址。此时页表基址寄存器指向的是 <strong>页目录</strong>。</p>
+<p>转换时，先用 <span class="arithmatex">\(P_1\)</span> 查页目录，得到内层页表的位置；再用 <span class="arithmatex">\(P_2\)</span> 查内层页表，得到目标帧号；最后保留 <span class="arithmatex">\(W\)</span>，形成物理地址。此时页表基址寄存器指向的是 <strong>页目录</strong>。</p>
 <p>两级页表的好处有两个：</p>
 <ul>
-<li>内层页表可以分别存放，不再需要容纳整张页表的大块连续空间。</li>
+<li>内层页表可以分别存放，不再需要容纳整张页表的大块连续空间。（但是每一块内层页表仍然是连续的，因为需要支持随机访问）</li>
 <li>未使用的地址范围不必建立对应内层页表；结合虚拟内存时，也可以按需驻留页表页，减少物理内存占用。</li>
 </ul>
-<p>它的代价是增加查表次数。没有 TLB、且所需页表页都在主存时，二级页表的一次目标访问需要三次主存访问。一般地，<span class="arithmatex">\(k\)</span> 级页表需要 <span class="arithmatex">\(k+1\)</span> 次； TLB 命中时则可以直接使用最终映射。</p>
-<div class="admonition note">
-<p class="admonition-title">多级页表并非总比单级页表小</p>
-<p>节省空间依赖于地址空间的稀疏使用。若所有内层页表都建立，映射表项总量没有减少，还增加了上层索引。主要收益在于 <strong>按需建立</strong> 和 <strong>离散存放</strong>。</p>
+<p>它的代价是增加了查表次数。没有 TLB、且所需页表页都在主存时，二级页表的一次目标访问需要三次主存访问。一般地，<span class="arithmatex">\(k\)</span> 级页表需要 <span class="arithmatex">\(k+1\)</span> 次； TLB 命中时则可以直接使用最终映射。</p>
+<div class="admonition warning">
+<p class="admonition-title">多级页表并非总比单级页表占用的内存少</p>
+<p>节省空间依赖于地址空间的稀疏使用。考虑一种较为极端的情况，若所有内层页表都建立，则此时映射表项总量没有减少，还反而增加了上层索引。</p>
 </div>
-<p>更大的逻辑地址空间可以继续增加层级。计算层数时，需要先确定实际使用的地址位数、页大小和表项大小，不能仅凭“64 位系统”判断。</p>
-<details class="note">
-<summary>其他页表组织</summary>
-<p>哈希页表按虚拟页号查哈希桶，桶中记录页号、页框号和链接，适合稀疏地址空间。反向页表按物理页框组织全局表，记录所属进程和虚拟页号，节省表空间，但查询与共享映射更复杂。</p>
+<p>对于更大的逻辑地址空间，需要继续增加层级。例如，若逻辑地址为 64 位、页面大小为 4KB ，则页号占 52 位。若每页仍可存放 1024 个页表项，则需约 6 级页表才能覆盖整个地址空间。在实际的 64 位系统中，常常将虚拟地址限制为 48 位，这样采用三级或四级页表就可以实现高效管理，取得了应用需求和硬件复杂度的平衡。</p>
+<p>总结来看，建立多级页表的根本目的是 <strong>按需建立</strong>（按需分配页表页），实现了 <strong>离散存放</strong>，避免为未使用的地址空间预留大量无效的页表项。</p>
 </details>
-<h3 id="基本分段存储管理">基本分段存储管理<a class="headerlink" href="#基本分段存储管理" title="Permanent link">&para;</a></h3>
-<p>分页主要从系统管理的角度划分空间；分段则按照程序的逻辑结构组织地址空间，例如主程序段、子程序段、数据段和栈段。</p>
+<details class="note" open="open">
+<summary>哈希页表</summary>
+<div class="admonition tip">
+<p class="admonition-title"><a href="../../DS/search/#哈希表散列表">哈希</a></p>
+</div>
+<p>我们要把页表拆开、离散化，还有一种思路——<strong>哈希页表</strong>。在这种方法中按虚拟页号查哈希桶，每个桶中的每一项（链表项）存放页号、帧号和链表 next 指针。这种方法适合稀疏地址空间（如果地址空间较满，每个哈希桶的槽数就会比较大）。</p>
+</details>
+<details class="note" open="open">
+<summary>反向页表</summary>
+<p>之前的两种方法都是通过维护虚拟地址的有序（虚拟地址是连续的）来组织页表。反向页表则完全把思路反过来，它按物理帧连续组织全局表，记录所属进程和虚拟页号。</p>
+<p>这样做的的确确节省了内存空间，因为整个操作系统只需要维护一张反向页表。但同时，查询与对共享页的支持也变得更加复杂：在地址转换中，我们通常做从虚拟地址到物理地址的查询，所以在这样的实现下，我们只能遍历整个表来找映射关系；对于共享映射来说，索引应该是独一无二的（一个页对应一个物理帧），现在我们反过来从物理帧出发，会产生一对多的情况。</p>
+<p>综合来看，反向页表在性能上并不是一个好方法。</p>
+</details>
+<h3 id="基本分段存储管理">基本分段存储管理（*）<a class="headerlink" href="#基本分段存储管理" title="Permanent link">&para;</a></h3>
+<p>分页主要从系统管理的角度划分空间，其地址转换由硬件自动完成，对用户完全透明；分段则按照程序的逻辑结构组织地址空间。</p>
 <h4 id="分段">分段<a class="headerlink" href="#分段" title="Permanent link">&para;</a></h4>
-<p>各段长度不必相同，段内从 0 开始编址。一个段在物理内存中占连续区域，不同段之间则不要求连续。</p>
-<p>逻辑地址由 <strong>段号 <span class="arithmatex">\(S\)</span> 与段内偏移 <span class="arithmatex">\(W\)</span></strong> 共同确定，地址空间是二维的。高级语言程序通常由编译程序根据逻辑结构形成这种表示，并非要求程序员手工写出每个段号。</p>
-<p>若段号占 <span class="arithmatex">\(s\)</span> 位、偏移占 <span class="arithmatex">\(w\)</span> 位，则最多可以表示 <span class="arithmatex">\(2^s\)</span> 个段，每段的偏移范围最多覆盖 <span class="arithmatex">\(2^w\)</span> 个编址单位；实际段长仍需要查段表确定。</p>
+<p>分段系统将用户进程的逻辑地址空间划分为若干大小不等的段。例如，一个进程可包含主程序段、子程序段、栈段和数据段等。各段长度不必相同，段内从 0 开始编址。一个段在物理内存中占连续区域，不同段之间则不要求连续。</p>
+<p>在分段系统中，逻辑地址由 <strong>段号 <span class="arithmatex">\(S\)</span> 与段内偏移 <span class="arithmatex">\(W\)</span></strong> 共同确定。由于地址空间被组织为两个具有明确语义的段，进程的逻辑地址空间被认为是 <strong>二维的</strong>。</p>
+<p>在页式系统中，逻辑地址中的页号与页内偏移量对用户透明；而在分段系统中，段号和段内偏移量 <strong>必须由用户显式提供</strong>——这一工作在高级语言中由编译程序自动完成。</p>
+<p>若段号占 <span class="arithmatex">\(s\)</span> 位、偏移占 <span class="arithmatex">\(w\)</span> 位，则最多可以表示 <span class="arithmatex">\(2^s\)</span> 个段，每段的偏移范围最多覆盖 <span class="arithmatex">\(2^w\)</span> 个编址单位。</p>
 <h4 id="段表">段表<a class="headerlink" href="#段表" title="Permanent link">&para;</a></h4>
-<p>每个进程有一张 <strong>段表</strong>，每个段表项记录该段的 <strong>基址和段长</strong>，还可以包括存取权限等信息。表项按段号排列，段号作为索引可以隐含。</p>
+<p>每个进程有一张 <strong>段表</strong>，每个段表项记录该段的 <strong>基址（起始地址）和段长</strong>，还可以包括存取权限等信息。表项按段号排列，因此段号作为索引可以隐含而无需额外空间存储。</p>
 <p>段表寄存器保存段表始址和段表长度。若段表始址为 <span class="arithmatex">\(F\)</span>，表项大小为 <span class="arithmatex">\(e_S\)</span>，则第 <span class="arithmatex">\(S\)</span> 项的地址为 <span class="arithmatex">\(F+Se_S\)</span>。需要区分：段表长度是段的数量，表项中的段长是某一段包含的编址单位数。</p>
+<figure>
+![利用段表实现物理内存区映射](../../images/OS/section_table.png)
+</figure>
+
 <h4 id="地址变换机构">地址变换机构<a class="headerlink" href="#地址变换机构" title="Permanent link">&para;</a></h4>
 <p>设段表长度为 <span class="arithmatex">\(M\)</span>，第 <span class="arithmatex">\(S\)</span> 段的基址为 <span class="arithmatex">\(b\)</span>，段长为 <span class="arithmatex">\(C\)</span>，转换过程为：</p>
 <ol>
@@ -3446,9 +3385,14 @@ T_{\mathrm{EAT}}
 <li>查段表，取得 <span class="arithmatex">\(b\)</span> 和 <span class="arithmatex">\(C\)</span>，检查 <span class="arithmatex">\(0\le W&lt;C\)</span>，否则产生段内越界异常。</li>
 <li>检查相应存取权限，通过后按 <span class="arithmatex">\(E=b+W\)</span> 访问内存。</li>
 </ol>
-<p>与分页的页框号拼接不同，<strong>段基址与偏移需要相加</strong>。段长不固定，段基址也不要求按某个统一段大小对齐。</p>
+<p>与分页的帧号拼接不同，<strong>段基址与偏移需要相加</strong>。段长不固定，段基址也不要求按某个统一段大小对齐。</p>
+<p><figure>
+<img alt="基本的分段系统地址变换" src="../../images/OS/address_mapping_sectioning.png.png" width="70%" />
+<figureacaption>基本的分段系统地址变换</figurecaption>
+</figure></p>
 <p>例如，第 2 段基址为 8 KB ，段长为 500 B ，偏移为 100 B ，则物理地址为 <span class="arithmatex">\(8192+100=8292\)</span>；偏移为 500 B 时已越界。没有快表且忽略数据 Cache 时，需要一次访问段表、一次访问目标内容。</p>
-<h4 id="分页和分段的对比">分页和分段的对比<a class="headerlink" href="#分页和分段的对比" title="Permanent link">&para;</a></h4>
+<div class="admonition tip">
+<p class="admonition-title">分页和分段的对比</p>
 <center markdown="1">
 <table>
 <thead>
@@ -3461,8 +3405,8 @@ T_{\mathrm{EAT}}
 <tbody>
 <tr>
 <td style="text-align: center;">划分依据</td>
-<td style="text-align: center;">按固定大小管理空间，主要提高内存利用率</td>
-<td style="text-align: center;">按程序逻辑组织，便于编程、共享和保护</td>
+<td style="text-align: center;">按固定大小管理空间，主要提高内存利用率和系统性能</td>
+<td style="text-align: center;">按程序逻辑（用户需求）组织，便于编程、信息共享和保护、动态增长和动态链接等高级功能</td>
 </tr>
 <tr>
 <td style="text-align: center;">单元大小</td>
@@ -3481,7 +3425,7 @@ T_{\mathrm{EAT}}
 </tr>
 <tr>
 <td style="text-align: center;">映射表的关键信息</td>
-<td style="text-align: center;">页框号</td>
+<td style="text-align: center;">帧号</td>
 <td style="text-align: center;">段基址与段长</td>
 </tr>
 <tr>
@@ -3497,53 +3441,51 @@ T_{\mathrm{EAT}}
 </tbody>
 </table>
 </center>
-<p>这里的“页是管理单位”指系统按固定大小分配和映射空间，并不意味着逻辑页就是物理页框；两者仍由<a href="#页表">页表</a>联系起来。</p>
+</div>
 <h4 id="段的共享与保护">段的共享与保护<a class="headerlink" href="#段的共享与保护" title="Permanent link">&para;</a></h4>
-<p>共享时，各进程的段表项指向同一个物理段；同一共享段在不同进程中可以使用不同段号。共享代码是否适合被并发执行，仍需要满足前面的<a href="#内存共享">内存共享</a>条件。</p>
+<p>和分页系统中页的共享类似，共享时，各进程的段表项指向同一个物理段；同一共享段在不同进程中可以使用不同段号。</p>
+<p>但与分页系统不同的是，若共享模块跨越 <span class="arithmatex">\(N\)</span> 页，分页需要在每个进程中建立相应的 <span class="arithmatex">\(N\)</span> 个页映射；采用分段时，每个进程只需用一个段表项描述这一模块（读者朋友们可以简单思考一下——物理帧是固定的，但段不是）。因此，按逻辑模块共享通常更直接。</p>
 <p>系统还可以维护 <strong>共享段表</strong>，记录段长、内存位置、存在状态、外存位置和共享计数等。进程停止使用共享段时减少计数，只有最后一个使用者释放后，才能回收其空间。</p>
-<p>若共享模块跨越 <span class="arithmatex">\(N\)</span> 页，分页需要在每个进程中建立相应的 <span class="arithmatex">\(N\)</span> 个页映射；采用分段时，每个进程只需用一个段表项描述这一模块。因此，按逻辑模块共享通常更直接。</p>
-<p>段保护包括<a href="#地址变换机构">段号与段内偏移的越界检查</a>，以及通过权限字段限制读、写、执行。共享权限不能破坏各进程私有数据的隔离。</p>
+<p>和分页系统类似，段的保护包括段号与段内偏移的越界检查，以及通过权限字段（权限位）限制读、写、执行。</p>
 <h3 id="段页式存储管理">段页式存储管理<a class="headerlink" href="#段页式存储管理" title="Permanent link">&para;</a></h3>
-<p>段页式先按逻辑结构分段，再对每个段分页，物理内存仍按页框分配。它保留了分段在共享、保护方面的便利，也避免了为整个段寻找连续物理空间。</p>
-<p>内部地址结构包括 <strong>段号 <span class="arithmatex">\(S\)</span>、段内页号 <span class="arithmatex">\(P\)</span> 和页内偏移 <span class="arithmatex">\(W\)</span></strong>。对用户而言，仍是“段号与段内地址”的二维地址；系统再把段内地址拆成页号与偏移，分页细节对用户透明。</p>
-<p>每个进程有一张段表，每个段有自己的页表。段表项记录该段的页表始址和页表长度，页表项记录相应页面的物理页框号。</p>
+<p>分页存储管理能有效提高内存利用率，而分段存储管理能反映程序的逻辑结构，并有利于段的共享与保护。人们自然地想到将二者各自的优势有机结合，于是便形成了段页式存储管理方式。</p>
+<p>在段页式系统中，进程的地址空间先按逻辑结构分段（逻辑段，每个段的段号唯一），再对每个段分页，物理内存仍按帧分配。它保留了分段在共享、保护方面的便利，也避免了为整个段寻找连续物理空间。</p>
+<p>每个进程有一张段表，每个段有自己的页表。段表项记录该段的页表始址和页表长度，页表项记录相应页面的物理帧号。</p>
+<p>进程的逻辑地址结构包括 <strong>段号 <span class="arithmatex">\(S\)</span>、段内页号 <span class="arithmatex">\(P\)</span> 和页内偏移 <span class="arithmatex">\(W\)</span></strong>。对用户而言，地址空间中仍是“段号与段内地址”的二维地址；系统再把段内地址拆成页号与偏移，分页细节对用户透明。</p>
 <p>设段表始址为 <span class="arithmatex">\(F\)</span>，段表项大小为 <span class="arithmatex">\(e_S\)</span>，页表项大小为 <span class="arithmatex">\(e_P\)</span>，页面大小为 <span class="arithmatex">\(L\)</span>：</p>
 <ol>
 <li>检查段号是否小于段表长度；访问 <span class="arithmatex">\(F+Se_S\)</span>，取得该段的页表始址 <span class="arithmatex">\(D\)</span> 和页表长度。</li>
-<li>检查段内页号是否越界；访问 <span class="arithmatex">\(D+Pe_P\)</span>，取得页框号 <span class="arithmatex">\(b\)</span>。</li>
+<li>检查段内页号是否越界；访问 <span class="arithmatex">\(D+Pe_P\)</span>，取得帧号 <span class="arithmatex">\(b\)</span>。</li>
 <li>结合保护信息检查访问是否合法，形成物理地址 <span class="arithmatex">\(E=bL+W\)</span>，访问目标内容。</li>
 </ol>
-<p>不使用快表且忽略数据 Cache 时，需要 <strong>三次主存访问</strong>：段表、页表、目标内容。快表可以用“段号、页号”共同作为查找关键字，缓存最终页框映射。</p>
+<p>不使用快表且忽略数据 Cache 时，需要 <strong>三次主存访问</strong>：段表、页表、目标内容。快表可以用“段号、页号”共同作为查找关键字，缓存最终帧映射。</p>
 <div class="admonition tip">
 <p class="admonition-title">两级页表与段页式不是同一种结构</p>
-<p><a href="#两级页表">两级页表</a>把一个线性页号拆成两级索引；段页式先按程序语义分段，各段再分页。两者虽然都可能查两张表，但上层表项的含义不同。</p>
+<p>两级页表把一个线性页号拆成两级索引；段页式先按程序语义分段，各段再分页。两者虽然都可能查两张表，但上层表项的含义不同。</p>
 </div>
-<p>段页式不要求一个段的所有页框连续，也不要求不同段的页表连续；它仍有<a href="#分页存储的几个基本概念">页内碎片</a>，并增加了表结构和查找开销。</p>
-<h3 id="本节小结">本节小结 <a id="basic-memory-summary"></a><a class="headerlink" href="#本节小结" title="Permanent link">&para;</a></h3>
-<p>可以沿着三个问题回看本节：</p>
-<ul>
-<li>程序中的地址如何获得含义：<a href="#程序的链接与装入">链接与装入</a>、<a href="#逻辑地址与物理地址">逻辑地址与物理地址</a>。</li>
-<li>空闲空间如何交给进程：<a href="#连续分配管理方式">连续分配</a>、<a href="#基本分页存储管理">分页</a>、<a href="#基本分段存储管理">分段</a>、<a href="#段页式存储管理">段页式</a>。</li>
-<li>映射带来的开销如何降低：<a href="#具有快表的地址变换机构">TLB</a>减少查表时间，<a href="#两级页表">多级页表</a>减少大块连续空间需求，并支持按需建立表结构。</li>
-</ul>
+<p>段页式不要求一个段的所有帧连续，也不要求不同段的页表连续；它仍有页内碎片，并增加了表结构和查找开销。</p>
 <h2 id="虚拟内存管理">虚拟内存管理<a class="headerlink" href="#虚拟内存管理" title="Permanent link">&para;</a></h2>
 <h3 id="虚拟内存的基本概念">虚拟内存的基本概念<a class="headerlink" href="#虚拟内存的基本概念" title="Permanent link">&para;</a></h3>
-<h4 id="传统存储管理方式的特征">传统存储管理方式的特征<a class="headerlink" href="#传统存储管理方式的特征" title="Permanent link">&para;</a></h4>
 <p>前面讨论的基本存储管理方式，虽然已经允许进程离散存放，但通常仍有两个约束：</p>
 <ul>
 <li><strong>一次性</strong>。程序运行前，需要把所需的全部程序和数据装入内存。大程序可能无法装入，大量作业也可能因内存不足而等待。</li>
 <li><strong>驻留性</strong>。装入的内容保持在内存中，直到运行结束；暂时不用的内容仍占用空间。</li>
 </ul>
-<p>问题于是变成：程序的所有内容，是否真的需要同时存在于主存？</p>
-<h4 id="局部性原理">局部性原理<a class="headerlink" href="#局部性原理" title="Permanent link">&para;</a></h4>
+<div class="admonition question">
+<p class="admonition-title">许多在程序运行中暂未使用或暂时不用的代码和数据仍占据大量内存空间，而一些急需运行的作业却因内存不足无法装入。程序的所有内容是否真的需要同时存在于主存？</p>
+</div>
+<p><a id="locality"></a></p>
+<div class="admonition info">
+<p class="admonition-title">局部性原理</p>
 <p>程序通常不会均匀地访问整个地址空间，而是在一段时间内集中访问其中的一部分，这就是 <strong>局部性（ Locality ）</strong>。</p>
 <ul>
 <li><strong>时间局部性</strong>。刚访问过的指令或数据，在不久后很可能再次访问，例如循环中的指令和变量。</li>
 <li><strong>空间局部性</strong>。访问一个地址后，邻近地址也很可能被访问，例如顺序执行的指令、连续存放的数组元素。</li>
 </ul>
-<p>这为“只让当前活跃内容留在主存”提供了依据，也是<a href="#具有快表的地址变换机构">TLB</a>和 Cache 能够发挥作用的基础。</p>
-<h4 id="虚拟存储器的定义和特征">虚拟存储器的定义和特征<a class="headerlink" href="#虚拟存储器的定义和特征" title="Permanent link">&para;</a></h4>
-<p><strong>虚拟存储器</strong> 通过部分装入、请求调入和置换，把内存与外存组织为用户可使用的逻辑存储空间：程序启动时只装入当前需要的部分，访问尚未驻留的内容时再调入，空间不足时让暂不需要的内容退出主存。</p>
+<p>这为“只让当前活跃内容留在主存”提供了依据，也是 TLB 和 Cache 能够发挥作用的基础。</p>
+</div>
+<h4 id="虚拟存储器">虚拟存储器<a class="headerlink" href="#虚拟存储器" title="Permanent link">&para;</a></h4>
+<p><strong>虚拟存储器</strong> 通过部分装入、请求调入和置换，把内存与外存组织为用户可使用的逻辑存储空间：程序启动时只将当前需要的部分装入内存（局部性原理），访问尚未驻留的内容时再调入（<a href="#调入页面的时机">请求调页</a>或请求调段），空间不足时让暂不需要的内容退出主存换出到外存（页面置换）。这样一来，系统为用户提供了一个 <strong>逻辑上远大于物理内存的地址空间</strong>。之所以说它“虚拟”，是因为显然它并不是一个机器里的实体。</p>
 <p>它具有三个主要特征：</p>
 <ol>
 <li><strong>多次性</strong>。程序与数据可以分多次装入，而非必须一次全部装入。</li>
@@ -3556,13 +3498,28 @@ T_{\mathrm{EAT}}
 <p>可表示的地址空间不等于已经分配的空间，也不等于已有足够后备存储。实际能够保存和运行多少内容，还受到物理内存、可用外存和系统管理方式的限制。</p>
 </div>
 <h4 id="虚拟内存技术的实现">虚拟内存技术的实现<a class="headerlink" href="#虚拟内存技术的实现" title="Permanent link">&para;</a></h4>
-<p>在离散分配的基础上，增加请求调入和置换机制，可以形成 <strong>请求分页、请求分段或请求段页式</strong> 管理。后面主要讨论请求分页。</p>
-<p>实现需要足够的内存和外存、记录位置及状态的页表或段表、运行时地址变换机构，以及访问未驻留内容时触发异常的机制。硬件负责检测和转换，操作系统负责处理缺页、安排调入和更新映射。</p>
-<p>整进程换入、换出的对换与这里的页面调度，粒度不同。前者与<a href="../schedule/">内存调度</a>有关；请求分页则只处理进程中的部分页面。</p>
+<p>在离散分配的基础上，增加请求调入和置换机制，可以形成 <strong>请求分页、请求分段或请求段页式</strong> 管理。后面主要讨论请求分页的方式。</p>
+<details class="question">
+<summary>读者朋友们可以思考这个问题：为什么要在离散分配的基础上才能实现虚拟内存技术？</summary>
+<p>若采用连续分配方式，则会导致相当一部分内存空间处于暂时甚至“永久”的空闲状态，不仅造成内存资源的严重浪费，也无法从逻辑上扩充内存容量。</p>
+</details>
+<p>无论是哪种管理方式，虚拟内存技术都需要一定的硬件支持：</p>
+<ul>
+<li>足够的内存和外存</li>
+<li>记录位置及状态的页表或段表</li>
+<li>运行时的地址变换机构</li>
+<li>访问未驻留内容时触发异常的机制：硬件负责检测和转换，操作系统负责处理缺页、安排调入和更新映射。</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title"><a href="../schedule/">进程调度</a>里面也涉及了“换入”“换出”类似的概念。这里讨论的请求分页等只涉及处理进程中的部分页面。</p>
+</div>
 <h3 id="请求分页管理方式">请求分页管理方式<a class="headerlink" href="#请求分页管理方式" title="Permanent link">&para;</a></h3>
-<p>请求分页在<a href="#基本分页存储管理">基本分页</a>之上增加请求调页和页面置换，不要求运行前装入所有页面。</p>
+<h4 id="调入页面的时机">调入页面的时机<a class="headerlink" href="#调入页面的时机" title="Permanent link">&para;</a></h4>
+<p><strong>预调页</strong> 预测近期可能使用的页面，在真正访问之前成批调入。根据局部性原理，一次调入若干相邻页面通常比逐页调入更高效。它可以减少逐次调页的开销，但预测错误会占用空间并产生无效 I/O。预调页目前的预测成功率仅约 50%，因此该策略主要用于进程首次调入时，由程序员显式指定应优先加载的页面。</p>
+<p><strong>请求调页</strong> 在访问尚未驻留的页面、触发缺页时调入。目标页面确实已被需要，但进程需要等待缺页处理；若涉及外存读取，还要承担 I/O 开销。当前的虚拟存储器大多采用此策略。</p>
+<p>预调页本质上是在进程运行前完成页面加载，而请求调页则是在运行期间动态调入，即它们的区别在于 <strong>是否等到页面被实际访问后才调入</strong>。</p>
 <h4 id="页表机制">页表机制<a class="headerlink" href="#页表机制" title="Permanent link">&para;</a></h4>
-<p>除了物理页框号和保护信息，请求分页的页表项还需要提供以下信息。</p>
+<p>前面提到过，请求分页是在基本分页之上增加请求调页和页面置换。所以，系统中的页表必然需要提供更多信息。所以，除了物理帧号和保护信息，请求分页的页表项的完整信息如下所示：</p>
 <center>
 <table>
 <thead>
@@ -3573,15 +3530,27 @@ T_{\mathrm{EAT}}
 </thead>
 <tbody>
 <tr>
+<td style="text-align: center;">页号</td>
+<td style="text-align: center;">/</td>
+</tr>
+<tr>
+<td style="text-align: center;">帧号</td>
+<td style="text-align: center;">/</td>
+</tr>
+<tr>
+<td style="text-align: center;">保护信息</td>
+<td style="text-align: center;">主要是访问权限信息，规定页面可以被怎样访问</td>
+</tr>
+<tr>
 <td style="text-align: center;">存在位 <span class="arithmatex">\(P\)</span></td>
-<td style="text-align: center;">判断页面是否驻留主存，未驻留时不能直接使用页框号完成访问</td>
+<td style="text-align: center;">判断页面是否驻留主存，未驻留时不能直接使用帧号完成访问</td>
 </tr>
 <tr>
 <td style="text-align: center;">访问字段 <span class="arithmatex">\(A\)</span></td>
 <td style="text-align: center;">记录最近是否访问、访问次数或访问时间等，供置换算法使用</td>
 </tr>
 <tr>
-<td style="text-align: center;">修改位 <span class="arithmatex">\(M\)</span>，也称脏位</td>
+<td style="text-align: center;">修改位 <span class="arithmatex">\(M\)</span>（脏位 <span class="arithmatex">\(D\)</span>）</td>
 <td style="text-align: center;">标记内容是否被修改，决定淘汰时是否需要保存到外存</td>
 </tr>
 <tr>
@@ -3592,40 +3561,68 @@ T_{\mathrm{EAT}}
 </table>
 </center>
 <p>访问字段的具体形式取决于置换算法： CLOCK 通常只需访问位，精确 LRU 则需要更多历史信息。这里的 <span class="arithmatex">\(P\)</span> 是存在位符号，不是前面公式中的页号。</p>
-<p>对于有有效后备副本的页面，未修改时可以直接释放其驻留副本；已修改时必须先保存新内容，才能安全地把页框交给其他页面。</p>
+<p>对于有有效后备副本的页面，未修改时可以直接释放其驻留副本；已修改时必须先保存新内容，才能安全地把帧交给其他页面。</p>
+<h4 id="调入页面的位置">调入页面的位置<a class="headerlink" href="#调入页面的位置" title="Permanent link">&para;</a></h4>
+<p>外存中的后备内容可以位于 <strong>文件区</strong> 或 <strong>对换区（交换区）</strong>。一般情况下，对换区侧重高效调页，文件区侧重保存文件。</p>
+<ol>
+<li>对换区足够时，可以事先把进程所需的文件内容复制进去，之后从对换区调页，但这会增加初始复制开销。</li>
+<li>对换区不足时，未修改的只读内容可以直接从文件区调入，淘汰时无需写回；需要保存的新内容则写入对换区，后续从那里取回。</li>
+<li>UNIX 方式：初次使用的内容可以从文件区调入，保存过的换出内容可从对换区恢复；共享页面已驻留时，可以复用已有副本。</li>
+</ol>
+<p>无论采用哪种方式，都要找到 <strong>目标页面的有效内容</strong>。代码页可以有文件作为后备，堆、栈等匿名内容则不能简单依靠原始程序文件恢复。</p>
 <h4 id="缺页中断机构">缺页中断机构<a class="headerlink" href="#缺页中断机构" title="Permanent link">&para;</a></h4>
-<p>进程访问合法但未驻留的页面时，硬件触发 <strong>缺页异常（ Page Fault ）</strong>，教材也称缺页中断。它属于由指令执行引起的内中断，基础分类见<a href="../os_intro/#int">中断与异常</a>。</p>
-<p>缺页不表示程序一定出错：页面暂不驻留是虚拟内存中的正常状态。处理时仍需区分它与地址越界、权限不符等非法访问。</p>
-<p>缺页有两个特点：发生在指令的访存过程中；一条指令可能多次缺页，例如取指令、读源操作数和写目标操作数分别访问不同页面。</p>
-<p>处理程序需要保存现场，获取页面所需内容，更新映射，并在条件满足后 <strong>重新执行引发缺页的指令</strong>。完整的调入与置换步骤见<a href="#如何调入页面">如何调入页面</a>。等待外存 I/O 时，进程进入阻塞态； I/O 完成后转为就绪态，并非立即获得 CPU。</p>
+<p>进程访问合法但未驻留的页面时，硬件触发 <strong>缺页异常（ Page Fault ）</strong>，或称缺页中断。它属于由指令执行引起的内中断（详细的分类见<a href="../os_intro/#int">中断与异常</a>）。</p>
+<p>缺页有两个特点：一是发生在指令的访存过程中；二是一条指令可能多次缺页，例如取指令、读源操作数和写目标操作数分别访问不同页面。</p>
 <details class="note">
-<summary>缺页不一定需要读磁盘</summary>
-<p>若所需内容已在共享页或保留页框中，只是当前映射尚未建立，则可以恢复映射而免去外存读取。这与需要外存 I/O 的缺页处理成本不同。</p>
+<summary>缺页不一定需要外存 I/O</summary>
+<p>若所需内容已在共享页或保留帧中，只是当前映射尚未建立，则可以恢复映射而免去外存读取。这与需要外存 I/O 的缺页处理成本不同。</p>
 </details>
+<h4 id="调入页面的步骤">调入页面的步骤<a class="headerlink" href="#调入页面的步骤" title="Permanent link">&para;</a></h4>
+<p>一次需要外存读取的缺页处理可以分为以下步骤：</p>
+<ol>
+<li>保存现场，确认访问的地址和权限合法，定位目标页的后备内容。</li>
+<li>若有可用空闲帧，直接分配；否则根据<a href="#内存分配策略">分配策略</a>确定候选范围，再由<a href="#页面置换算法">置换算法</a>选择淘汰页。</li>
+<li>若淘汰页已修改，先保存其内容；使旧映射失效，并维护相关 TLB 状态。</li>
+<li>将目标页调入得到的帧。等待 I/O 时，缺页进程进入阻塞态，调度其他就绪进程使用 CPU。</li>
+<li>I/O 完成后，更新目标页的帧号、存在状态和有关管理信息；使等待进程就绪。</li>
+<li>该进程再次获得 CPU 后，恢复现场，重新执行原指令。</li>
+</ol>
+<p>若采用<a href="#页面缓冲算法">页面缓冲</a>，保存脏页和准备空闲帧可以提前或批量进行，但不能在内容尚未安全保存时直接覆盖脏页。</p>
 <h4 id="请求分页的地址变换">请求分页的地址变换<a class="headerlink" href="#请求分页的地址变换" title="Permanent link">&para;</a></h4>
-<p>地址范围和权限检查通过后，先查 TLB。命中时取得页框号；未命中时查页表，根据存在位判断页面是否驻留。若已驻留，则补充 TLB 后继续；若未驻留，则进入缺页处理，处理完成后重新执行访问。</p>
-<p>成功访问时需要更新访问状态；写入页面时还需置脏位。页面换出或映射改变后，要同步维护页表与相关 TLB 表项，避免继续使用旧映射。</p>
+<p>请求分页系统的地址变换过程可以描述如下：</p>
+<ul>
+<li>地址范围和权限检查通过后，先查 TLB ；</li>
+<li>TLB 命中时取得帧号；未命中时查页表，根据存在位 <span class="arithmatex">\(P\)</span> 判断页面是否驻留；</li>
+<li>若已驻留，则补充 TLB 后继续；若未驻留，则进入缺页处理，处理完成后重新执行访问。<ul>
+<li>成功访问时需要更新访问状态；写入页面时还需置脏位。</li>
+<li>页面换出或映射改变后，需要同步维护页表与相关 TLB 表项，避免继续使用旧映射。</li>
+</ul>
+</li>
+</ul>
 <div class="admonition tip">
-<p class="admonition-title">三种未命中分别检查</p>
-<p><strong>TLB 未命中</strong>：没有缓存所需映射，去查页表； TLB 缓存的是地址映射，并非目标数据。</p>
-<p><strong>缺页</strong>：所需页面没有可用的驻留映射，由操作系统处理。</p>
-<p><strong>数据 Cache 未命中</strong>：已经确定访问的物理位置，但 Cache 中没有所需指令或数据，继续访问主存。</p>
+<p class="admonition-title">三种未命中的分别检查</p>
+<ul>
+<li><strong>TLB 未命中</strong>：没有缓存所需映射，去查页表； TLB 缓存的是地址映射，并非目标数据。</li>
+<li><strong>缺页</strong>：所需页面没有可用的驻留映射，由操作系统处理。</li>
+<li><strong>数据 Cache 未命中</strong>：已经确定访问的物理位置，但 Cache 中没有所需指令或数据，继续访问主存。</li>
+</ul>
 <p>三者对应不同层次；一次访问可以同时经历其中多种情况。具体过程见<a href="#地址翻译的示例">地址翻译的示例</a>。</p>
 </div>
-<h3 id="页框分配">页框分配<a class="headerlink" href="#页框分配" title="Permanent link">&para;</a></h3>
-<h4 id="最小页框数与驻留集">最小页框数与驻留集<a class="headerlink" href="#最小页框数与驻留集" title="Permanent link">&para;</a></h4>
-<p><strong>最小页框数</strong> 是保证进程能够完成指令执行所需的最少页框数量，由硬件结构、指令格式、寻址方式和跨页情况决定。</p>
-<p>在不跨页的简单模型中，单地址直接寻址指令可能需要指令页和数据页两个页框；加入间接寻址后，还可能需要存放指针的页。若一条指令及两个操作数分别跨越两个页面，最坏情况下则涉及六个不同页面。计算时应统计执行指令必须同时保留的页面，不能只数操作数。</p>
-<p><strong>驻留集（ Resident Set ）</strong> 是进程当前驻留在主存中的页面集合。驻留集太小会提高缺页率；太大则占用更多页框，减少系统可容纳的进程数量。超过能够容纳主要活跃页面的规模后，继续增加页框的收益往往有限。</p>
-<p>硬件要求的最小页框数只是能正常执行的下限，并不保证具有良好的性能；实际活跃页面的需求由后面的<a href="#工作集">工作集</a>描述。</p>
+<h3 id="帧分配">帧分配<a class="headerlink" href="#帧分配" title="Permanent link">&para;</a></h3>
+<h4 id="最小帧数与驻留集">最小帧数与驻留集<a class="headerlink" href="#最小帧数与驻留集" title="Permanent link">&para;</a></h4>
+<p><strong>最小帧数</strong> 是保证进程能够完成指令执行所需的最少帧数量，由硬件结构、指令格式、寻址方式和跨页情况决定。</p>
+<p>在不跨页的简单模型中，单地址直接寻址指令可能需要指令页和数据页两个帧；加入间接寻址后，还可能需要存放指针的页。若一条指令及两个操作数分别跨越两个页面，最坏情况下则涉及六个不同页面。</p>
+<p><strong>驻留集（ Resident Set ）</strong> 是进程当前驻留在主存中的页面集合，或者说分配给该进程的物理帧集合。驻留集太小会提高缺页率；太大则占用更多帧，减少系统可容纳的进程数量。超过能够容纳主要活跃页面的规模后，继续增加帧的收益往往有限。</p>
+<p>需要注意的是，硬件要求的最小帧数只是能正常执行的下限，并不保证具有良好的性能。</p>
 <h4 id="内存分配策略">内存分配策略<a class="headerlink" href="#内存分配策略" title="Permanent link">&para;</a></h4>
-<p><strong>固定分配与可变分配</strong> 讨论进程获得的页框数量是否调整；<strong>局部置换与全局置换</strong> 讨论发生缺页时，从哪些页面中选择淘汰对象。</p>
+<p><strong>固定分配与可变分配</strong> 讨论进程获得的帧数量是否调整；<strong>局部置换与全局置换</strong> 讨论发生缺页时，从哪些页面中选择淘汰对象：局部置换指的是范围限定在该进程自身，全局置换则先查看空闲帧队列并取出一个物理帧，若空闲帧已耗尽则可从所有帧中选择一个换出而不论淘汰页面的归属。</p>
+<p>局部置换和全局置换实际上是权衡局部封闭性和整体灵活性的两种选择。</p>
 <center>
 <table>
 <thead>
 <tr>
 <th style="text-align: center;">策略</th>
-<th style="text-align: center;">页框数量</th>
+<th style="text-align: center;">帧数量</th>
 <th style="text-align: center;">置换范围与特点</th>
 </tr>
 </thead>
@@ -3638,71 +3635,75 @@ T_{\mathrm{EAT}}
 <tr>
 <td style="text-align: center;">可变分配、全局置换</td>
 <td style="text-align: center;">根据需求变化</td>
-<td style="text-align: center;">可获取空闲页框，必要时从其他进程可置换的页面中选择；利用灵活，但进程会相互影响</td>
+<td style="text-align: center;">可获取空闲帧，必要时从其他进程可置换的页面中选择；利用灵活，但进程会相互影响</td>
 </tr>
 <tr>
 <td style="text-align: center;">可变分配、局部置换</td>
 <td style="text-align: center;">由系统另行调整</td>
-<td style="text-align: center;">缺页置换限制在本进程内部，系统根据缺页率增加或回收页框</td>
+<td style="text-align: center;">缺页置换限制在本进程内部，系统根据缺页率增加或回收帧</td>
 </tr>
 </tbody>
 </table>
 </center>
-<p>固定分配要求数量保持不变，全局置换可能改变页框归属，所以在这一分类中没有“固定分配、全局置换”组合。全局置换也不意味着内核中所有页面都可以随意淘汰，可回收范围见<a href="#页框回收">页框回收</a>。</p>
-<h4 id="页框调入算法">页框调入算法<a class="headerlink" href="#页框调入算法" title="Permanent link">&para;</a></h4>
-<p>分配可用页框时，常见方法有：</p>
+<p>固定分配要求数量保持不变，但全局置换可能改变帧归属，这二者是互斥的；所以我们一般不将固定分配与全局置换组合起来。</p>
+<div class="admonition info">
+<p class="admonition-title">当今的操作系统都主要使用全局置换方式。</p>
+</div>
+<h4 id="帧调入算法">帧调入算法<a class="headerlink" href="#帧调入算法" title="Permanent link">&para;</a></h4>
+<p>分配可用帧时，常见方法有：</p>
 <ul>
-<li><strong>平均分配</strong>。若 <span class="arithmatex">\(m\)</span> 个页框分给 <span class="arithmatex">\(n\)</span> 个进程，则每个进程约获得 <span class="arithmatex">\(m/n\)</span> 个；不足整分时需要安排剩余页框。</li>
+<li><strong>平均分配</strong>。若 <span class="arithmatex">\(m\)</span> 个帧分给 <span class="arithmatex">\(n\)</span> 个进程，则每个进程约获得 <span class="arithmatex">\(m/n\)</span> 个；不足整分时需要安排剩余帧。</li>
 <li><strong>按比例分配</strong>。若进程大小为 <span class="arithmatex">\(s_i\)</span>，则其份额约为 <span class="arithmatex">\(a_i=m\dfrac{s_i}{\sum_j s_j}\)</span>。</li>
-<li><strong>优先权分配</strong>。为重要或紧迫的进程分配更多页框，也可以把一部分按大小分配、另一部分按优先权分配。</li>
+<li><strong>优先权分配</strong>。为重要或紧迫的进程分配更多帧，也可以把一部分按大小分配、另一部分按优先权分配。</li>
 </ul>
-<p>实际分配必须取整数，满足各进程的最小页框需求，且总量不能超过可分配页框数；不能对所有份额简单向上取整。</p>
-<h4 id="调入页面的时机">调入页面的时机<a class="headerlink" href="#调入页面的时机" title="Permanent link">&para;</a></h4>
-<p><strong>预调页</strong> 根据局部性预测近期可能使用的页面，在真正访问之前成批调入，常用于首次装入或恢复运行。它可以减少逐次调页的开销，但错误预测会占用空间并产生无效 I/O。</p>
-<p><strong>请求调页</strong> 则在访问非驻留页面、触发缺页时调入。目标页面确实已被需要，实现直接，但进程需要等待处理，逐页 I/O 的成本较高。</p>
-<p>二者也可以配合使用。单次传输效率高，并不表示调入的页面越多越好。</p>
-<h4 id="从何处调入页面">从何处调入页面<a class="headerlink" href="#从何处调入页面" title="Permanent link">&para;</a></h4>
-<p>外存中的后备内容可以位于 <strong>文件区</strong> 或 <strong>对换区（交换区）</strong>。在教材的模型中，对换区侧重高效调页，文件区侧重保存文件。</p>
-<ol>
-<li>对换区足够时，可以事先把进程所需的文件内容复制进去，之后从对换区调页，但这会增加初始复制开销。</li>
-<li>对换区不足时，未修改的只读内容可以直接从文件区调入，淘汰时无需写回；需要保存的新内容则写入对换区，后续从那里取回。</li>
-<li>按教材介绍的 UNIX 方式，初次使用的内容可以从文件区调入，保存过的换出内容可从对换区恢复；共享页面已驻留时，可以复用已有副本。</li>
-</ol>
-<p>无论采用哪种方式，都要找到 <strong>目标页面的有效内容</strong>。代码页可以有文件作为后备，堆、栈等匿名内容则不能简单依靠原始程序文件恢复。</p>
-<h4 id="如何调入页面">如何调入页面<a class="headerlink" href="#如何调入页面" title="Permanent link">&para;</a></h4>
-<p>一次需要外存读取的缺页处理可以分为以下步骤：</p>
-<ol>
-<li>保存现场，确认访问的地址和权限合法，定位目标页的后备内容。</li>
-<li>若有可用空闲页框，直接分配；否则根据<a href="#内存分配策略">分配策略</a>确定候选范围，再由<a href="#页面置换算法">置换算法</a>选择淘汰页。</li>
-<li>若淘汰页已修改，先保存其内容；使旧映射失效，并维护相关 TLB 状态。</li>
-<li>将目标页调入得到的页框。等待 I/O 时，调度其他就绪进程使用 CPU。</li>
-<li>I/O 完成后，更新目标页的页框号、存在状态和有关管理信息；使等待进程就绪。</li>
-<li>该进程再次获得 CPU 后，恢复现场，重新执行原指令。</li>
-</ol>
-<p>若采用<a href="#页面缓冲算法">页面缓冲</a>，保存脏页和准备空闲页框可以提前或批量进行，但不能在内容尚未安全保存时直接覆盖脏页。</p>
+<p>实际分配必须取整数，满足各进程的最小帧需求，且总量不能超过可分配帧数；不能对所有份额简单向上取整。</p>
 <h3 id="页面置换算法">页面置换算法<a class="headerlink" href="#页面置换算法" title="Permanent link">&para;</a></h3>
-<p>置换算法回答的是：需要释放一个页框时，应该淘汰哪个候选页面？候选范围已经由<a href="#内存分配策略">局部或全局置换策略</a>确定。目标是降低缺页率，并兼顾实现与写回成本。</p>
+<p>在前面我们了解到，空闲帧耗尽时需要释放一个帧，也在置换策略中讨论了释放对象的范围。我们的讨论还需要具体到释放范围里的哪一帧，于是人们设计出了页面置换算法。我们希望降低缺页率，并兼顾实现与写回成本，这也是页面置换算法所要关注的目标。</p>
 <h4 id="最佳opt算法">最佳（ OPT ）算法<a class="headerlink" href="#最佳opt算法" title="Permanent link">&para;</a></h4>
-<p><strong>OPT</strong> 淘汰未来最长时间不会再访问的页面；未来不再访问的页面优先淘汰。它在给定访问序列和页框数量的模型中具有最低缺页次数。</p>
-<p>操作系统无法预先知道完整的未来访问序列，所以 OPT 主要作为理论基准，用于评价其他算法。计算示例时，发生置换就从当前位置向后找各候选页的下一次访问。</p>
+<p><strong>OPT</strong> 是理论上最优的算法：即 ① 能带来最低的 page fault rate ，② 绝对不会遭受 Belady 异常。它<u>淘汰未来最长时间不会再访问的页面</u>；特别地，未来不再访问的页面优先淘汰。它在给定访问序列和帧数量的模型中具有最低缺页次数。</p>
+<p>但很显然，操作系统无法预先知道完整的未来访问序列，所以 OPT 主要作为理论基准，用于评价其他算法。</p>
 <h4 id="先进先出fifo算法">先进先出（ FIFO ）算法<a class="headerlink" href="#先进先出fifo算法" title="Permanent link">&para;</a></h4>
-<p><strong>FIFO</strong> 淘汰最早进入内存的页面。可以维护一个按装入顺序排列的队列，淘汰队首，新页进入队尾。</p>
-<p>它实现简单，但页面进入得早并不代表当前不需要。<strong>命中页面时不更新其入队顺序</strong>，这是 FIFO 与 LRU 的关键区别。</p>
-<p>FIFO 可能出现 <strong>Belady 异常</strong>：页框数量增加，缺页次数反而增加。例如，对序列</p>
+<p><strong>FIFO</strong> <u>淘汰最早进入内存的页面</u>。可以在内存中维护一个按装入顺序排列的队列，淘汰队首，新页进入队尾。</p>
+<p>它实现简单，但是并不够好页面进入得早并不代表当前不需要，早些被载入的页面也可能会被频繁的使用。<strong>命中页面时不更新其入队顺序</strong>，这是 FIFO 与 LRU 的关键区别。</p>
+<details class="danger">
+<summary>Belady 异常</summary>
+<p>FIFO 可能出现 <strong>Belady 异常</strong>（ Belady's Anomaly ）：指的是帧数量增加，缺页次数反而增加。例如，对序列</p>
 <div class="arithmatex">\[
 3,2,1,0,3,2,4,3,2,1,0,4
 \]</div>
-<p>从空内存开始， FIFO 在 3 个页框时缺页 9 次，在 4 个页框时缺页 10 次。增加页框通常有益，但不能据此认定任意算法的缺页次数都单调下降。</p>
+<p>从空内存开始， FIFO 在 3 个帧时缺页 9 次，在 4 个帧时缺页 10 次。增加帧通常有益，但不能据此认定任意算法的缺页次数都单调下降。</p>
+</details>
 <h4 id="最近最久未使用lru算法">最近最久未使用（ LRU ）算法<a class="headerlink" href="#最近最久未使用lru算法" title="Permanent link">&para;</a></h4>
-<p><strong>LRU （ Least Recently Used ）</strong> 淘汰距离上次访问时间最久的页面，以过去的访问历史估计近期的使用需求，利用了时间局部性。</p>
-<p>LRU 可以记录最近访问时间，也可以维护按访问先后排列的页面序列。每次访问，包括命中，都要更新记录或移动位置；淘汰时选择序列中最久未访问的页面。因此，精确实现需要较多硬件或维护开销。</p>
-<div class="admonition tip">
-<p class="admonition-title">装入早、过去久未用、未来久不用</p>
-<p>分别对应 <a href="#先进先出fifo算法">FIFO</a>、LRU 和 <a href="#最佳opt算法">OPT</a>。三个时间依据不同，不能因为某一步淘汰结果相同，就认为算法等价。</p>
+<p><strong>LRU （ Least Recently Used ）</strong> 淘汰距离上次访问时间最久的页面，以过去的访问历史估计近期的使用需求，利用了时间局部性，即“很久没被用过的页可能在短期内不太会被再次使用，刚刚用过的页可能在短期被频繁地用”。</p>
+<p>LRU 算法可以记录最近访问时间，也可以维护按访问先后排列的页面序列。</p>
+<div class="admonition note">
+<p class="admonition-title">栈算法</p>
+<p>上面两种实现算法统一归结为“栈算法”<del>（但是和栈好像并没有什么关系）</del>。</p>
+<ol>
+<li>使用一个 <strong>计数器</strong> 来标记一个帧有多久没使用过，对应“记录最近访问时间”的做法。<ul>
+<li>当一个帧被使用的时候将计数器归零；</li>
+<li>每个帧的计数器都要被定期更新；</li>
+<li>需要考虑到计数器可能会产生溢出；</li>
+<li>找 LRU 的时候需要搜索最大值：这要么花费时间，要么增加设计复杂度（额外设计数据结构）。</li>
+</ul>
+</li>
+<li>使用一个 <strong>双向链表</strong> 来维护一个有序的帧序列，从头到尾按照最近访问时间从近到远排列。<ul>
+<li>当一个帧被使用的时候：<ul>
+<li>如果它在链表中，就将它移动到链表头部；</li>
+<li>如果它不在链表中，就将它插入到链表头部；</li>
+</ul>
+</li>
+<li>找 LRU 的时候只需要直接定位到链尾，不再需要额外的搜索时间。</li>
+</ul>
+</li>
+</ol>
 </div>
-<p>OPT 与 LRU 不会出现 Belady 异常。LRU 常有较好的效果，但过去与未来并不完全一致，所以不能保证每个序列都达到 OPT 的表现。</p>
-<p>以 3 个页框、空内存开始，对序列 <span class="arithmatex">\(7,0,1,2,0,3,0,4,2,3,0,3,2,1,2,0,1,7,0,1\)</span>，三种算法的结果为：</p>
-<center>
+<p>可以发现，每次访问，包括命中，都要更新记录或移动位置。因此，精确实现需要较多硬件或维护开销。</p>
+<p>但 LRU 和 OPT 一样不会出现 Belady 异常。LRU 对 OPT 常有较好的拟合效果，但过去与未来并不完全一致，所以不能保证每个序列都达到 OPT 的表现。</p>
+<div class="admonition exmple">
+<p class="admonition-title">一个例子</p>
+<p>以 3 个帧位置、空内存开始，对序列 <span class="arithmatex">\(7,0,1,2,0,3,0,4,2,3,0,3,2,1,2,0,1,7,0,1\)</span>，三种算法的结果为：</p>
+<center markdown="1">
 <table>
 <thead>
 <tr>
@@ -3730,17 +3731,26 @@ T_{\mathrm{EAT}}
 </tbody>
 </table>
 </center>
-<p>开始使用空闲页框时也会缺页，但不需要淘汰已有页面。因此，<strong>缺页次数不等于置换次数</strong>。</p>
-<h4 id="时钟clock算法">时钟（ CLOCK ）算法<a class="headerlink" href="#时钟clock算法" title="Permanent link">&para;</a></h4>
-<p><strong>简单 CLOCK</strong> 用访问位近似表示近期使用情况。将候选页框组织成循环队列，维护一个替换指针；页面装入并被访问后，访问位置 1。</p>
-<p>需要置换时，从指针位置开始检查：</p>
+<p>开始使用空闲帧时也会缺页，因为内存中根本没有存进来的页。</p>
+</div>
+<h4 id="lru-的近似算法">LRU 的近似算法<a class="headerlink" href="#lru-的近似算法" title="Permanent link">&para;</a></h4>
+<p>经过上面的分析，我们发现 LRU 的开销是比较大的。操作系统的设计者尝试了许多算法，试图以较小的开销接近 LRU 算法的性能。</p>
+<div class="admonition note">
+<p class="admonition-title">第二次机会算法/简单 CLOCK</p>
+<p>给每个页面设置一个访问位，用它近似表示近期使用情况。我们将候选帧组织成循环队列，并维护一个替换指针，指向当前检查位置。</p>
+<p>当某个页面被首次装入内存或被访问时，该页的访问位置为 1 ，这样就不用维护队列了。缺页需要置换时，从指针位置开始检查访问位：</p>
 <ol>
 <li>若访问位为 0 ，淘汰该页，装入新页，访问位置 1 ，指针移到下一位置。</li>
 <li>若访问位为 1 ，先清为 0 ，指针前移，继续检查。</li>
 </ol>
-<p>访问位为 1 的页面得到一次暂缓淘汰的机会，因此也称 <strong>第二次机会算法</strong>。若扫描时所有访问位都是 1 ，清零一圈后便可以选出页面。命中页面只需把其访问位置 1 ，不必像精确 LRU 那样维护完整顺序。</p>
-<p><strong>改进型 CLOCK</strong> 同时考虑访问位 <span class="arithmatex">\(A\)</span> 与修改位 <span class="arithmatex">\(M\)</span>，因为淘汰脏页需要额外写回。</p>
-<center>
+<p>所以，更准确地说，访问位表示从上一次检查该页到这一次检查期间，该页有没有被使用过（有 = 1 ）。访问位为 1 的页面得到一次暂缓淘汰的机会，因此也称 <strong>第二次机会算法</strong>。由于指针在队列中循环移动，形如时钟指针，故称 <strong>CLOCK 算法</strong>。</p>
+<p>这一算法最多会遍历一次整个页面集合，即若扫描时所有访问位都是 1 ，清零一圈后再选出页面。从结果来看，这一算法的表现可能会退化为 FIFO 或更差。</p>
+</div>
+<p>我们发现第二次机会算法对“远近”的定义简化成了非此即彼的分类。有没有分得稍微再细一点的方法？</p>
+<div class="admonition note">
+<p class="admonition-title">改进后的第二次机会算法/改进 CLOCK/最近未使用算法</p>
+<p>同时考虑访问位 <span class="arithmatex">\(A\)</span> 与修改位 <span class="arithmatex">\(M\)</span>（脏位），因为淘汰脏页需要额外写回。</p>
+<center markdown="1">
 <table>
 <thead>
 <tr>
@@ -3773,47 +3783,82 @@ T_{\mathrm{EAT}}
 </tbody>
 </table>
 </center>
-<p>按本节采用的扫描规则：</p>
+<p>进行页面置换时，算法采用与简单 CLOCK 类似但略有区别的循环扫描机制，具体而言：</p>
 <ol>
 <li>从当前指针开始扫描一轮，寻找第一项 <span class="arithmatex">\((0,0)\)</span>，这一轮不改变访问位。</li>
-<li>若失败，再扫描一轮，寻找第一项 <span class="arithmatex">\((0,1)\)</span>，扫描经过未选中的页面时将访问位清零。</li>
+<li>若失败，再扫描一轮，寻找第一项 <span class="arithmatex">\((0,1)\)</span>，扫描经过未选中的页面时将访问位 <span class="arithmatex">\(A\)</span> 清零。</li>
 <li>若仍失败，前面的清零已使部分页面改变类别，重新进行第 1、2 步，选出淘汰页。</li>
 </ol>
-<p>它最多需要多轮扫描，目标是同时考虑近期使用与脏页写回成本。手工模拟时，要明确起始指针、每轮寻找的类别，以及哪一轮会清访问位，不能只把四类页面静态排序后直接选一个。</p>
-<h3 id="抖动和工作集">抖动和工作集<a class="headerlink" href="#抖动和工作集" title="Permanent link">&para;</a></h3>
-<h4 id="抖动">抖动<a class="headerlink" href="#抖动" title="Permanent link">&para;</a></h4>
-<p><strong>抖动（ Thrashing ）</strong>，也称颠簸，是进程频繁换入、换出页面，主要时间消耗在调页而非有效计算上的现象。典型表现是刚换出的页很快又被需要。</p>
-<p>根本原因是分配的页框无法容纳当前活跃页面。多道程度过高时，各进程获得的页框减少；全局置换还可能使进程相互夺取活跃页面，进一步加剧缺页。</p>
-<p>CPU 利用率低也可能是因为进程都在等待调页。此时若继续装入更多进程，会形成“页框更少、缺页更多、CPU 更空闲”的循环。应根据实际内存需求调整驻留集，必要时挂起部分进程，降低多道程度。局部置换可以限制相互影响，但不能自动解决本进程页框不足的问题。</p>
+<p>它最多需要 4 轮扫描，但它同时了考虑近期使用与脏页写回成本。事实上，由于修改位也一定程度上反映了页“被使用”的程度，虽然找的不是最久没被用过的页面，但能够尽可能地排除近期使用过的；因此，该算法也叫做 <strong>最近未使用（ NRU, Not Recently Used ）算法</strong>，是时间中比较常见的一种对 LRU 的近似。</p>
+</div>
+<blockquote>
+<p>不过王道中是把没有改进的第二次机会算法称为 NRU。读者朋友们注意指代。</p>
+</blockquote>
+<p>CLOCK 算法都通过访问位描述了大致的页面最近使用时间，为 0 者较远。有没有更精确一点的“远近”表示？</p>
+<div class="admonition note">
+<p class="admonition-title">Additional-Reference-Bits/Aging</p>
+<p>考虑给页面设置一个访问位，同时再维护一个 <span class="arithmatex">\(k\)</span> 位的位串 <span class="arithmatex">\(h\)</span>，使用如下机制：</p>
+<ol>
+<li>定期（可利用时钟中断）去检查访问位；</li>
+<li>将访问位的值移入 <span class="arithmatex">\(h\)</span> 的最高位，并将旧记录右移；</li>
+<li>清零访问位，然后进入下一个周期。</li>
+</ol>
+<p>可以发现 <span class="arithmatex">\(h\)</span> 实际上就代表着历史访问情况，而且值越大说明最后被使用的时间越近。因而，这一算法选择 <span class="arithmatex">\(h\)</span> 的值最小的页面去淘汰。我们这里并不关注 <span class="arithmatex">\(h\)</span> 的初始化情况，因为置换迟早都会发生，而记录一直在进行。</p>
+</div>
+<h3 id="抖动">抖动<a class="headerlink" href="#抖动" title="Permanent link">&para;</a></h3>
+<p><strong>抖动（ Thrashing ）</strong>，也称颠簸，是进程频繁换入、换出页面，主要时间消耗在调页而非有效计算上的现象。典型的也最糟糕的表现是，刚换出的页很快又被需要，而刚刚换入的页又立即被换出。</p>
+<p>抖动产生的根本原因是分配的帧无法容纳当前活跃页面。多道程度过高时，各进程获得的帧减少；全局置换还可能使进程相互夺取活跃页面，进一步加剧缺页。</p>
+<div class="admonition info">
+<p class="admonition-title">早期的分页系统</p>
+<p>早期的设计中，操作系统会监控 CPU 利用率，如果发现 CPU 利用率不够高，就会认为 CPU 太闲了，于是就会尝试增加多道程度。</p>
+<div class="admonition danger">
+<p class="admonition-title">但是！</p>
+<p>CPU 利用率低也可能是因为发生了抖动，进程都在等待调页产生了大量 I/O。此时若继续装入更多进程，会形成“帧更少、缺页更多、CPU 更空闲”的循环。</p>
+</div>
+</div>
+<p>所以，应根据实际内存需求，必要时挂起部分进程，降低多道程度。局部置换可以限制相互影响，但不能自动解决本进程帧不足的问题。于是人们提出了一些解决指导方案。</p>
 <h4 id="工作集">工作集<a class="headerlink" href="#工作集" title="Permanent link">&para;</a></h4>
 <p><strong>工作集（ Working Set ）</strong> 是某一观察窗口内，进程实际访问过的不同页面集合。用 <span class="arithmatex">\(W(t,\Delta)\)</span> 表示时刻 <span class="arithmatex">\(t\)</span>、窗口大小为 <span class="arithmatex">\(\Delta\)</span> 的工作集。</p>
-<p>若窗口按最近 <span class="arithmatex">\(\Delta\)</span> 次页面访问计，最近五次访问是 <span class="arithmatex">\(2,3,2,5,3\)</span>，则工作集为 <span class="arithmatex">\(\{2,3,5\}\)</span>，大小为 3 ，而不是 5。同一页面重复出现只计一次。</p>
-<p>窗口过小会漏掉当前局部性中的页面，窗口过大则可能把已经不活跃的页面包括进来。系统希望让驻留集容纳当前工作集；其预测效果取决于窗口选择和局部性变化，并非只要页框数量相等就保证永不缺页。</p>
-<p>若各进程估计所需的工作集大小为 <span class="arithmatex">\(w_i\)</span>，可用页框数为 <span class="arithmatex">\(m\)</span>，当 <span class="arithmatex">\(\sum_i w_i&gt;m\)</span> 时，系统无法同时满足所有当前需求，应考虑减少并发进程。</p>
-<div class="admonition note">
+<p>若窗口大小设置为 5 ，最近五次访问是 <span class="arithmatex">\(2,3,2,5,3\)</span>，则工作集为 <span class="arithmatex">\(\{2,3,5\}\)</span>。同一页面重复出现只计一次。</p>
+<p>可以发现的是，窗口的选择会影响工作集在“随后一段时间内很可能频繁访问的页面集合”方面的参考价值。过小会漏掉当前局部性中的页面，过大则可能把已经不活跃的页面包括进来。</p>
+<p>系统希望让驻留集容纳当前工作集，即 <strong>驻留集的大小不应小于工作集的大小</strong>。若各进程估计所需的工作集大小为 <span class="arithmatex">\(w_i\)</span>，可用帧数为 <span class="arithmatex">\(m\)</span>，当 <span class="arithmatex">\(\sum_i w_i&gt;m\)</span> 时，系统无法同时满足所有当前需求，应考虑减少并发进程。</p>
+<div class="admonition tip">
 <p class="admonition-title">驻留集与工作集</p>
-<p><a href="#最小页框数与驻留集">驻留集</a>描述 <strong>现在放在主存中的页面</strong>；工作集描述 <strong>观察窗口内实际使用的页面</strong>。前者是当前分配结果，后者用于估计需求，两者不必相同。</p>
+<p><a href="#最小帧数与驻留集">驻留集</a>描述 <strong>现在放在主存中的页面</strong>；工作集描述 <strong>观察窗口内实际使用的页面</strong>。前者是当前分配结果，后者用于估计需求。</p>
 </div>
-<p>也可以根据 <strong>缺页频率（ Page-Fault Frequency ， PFF ）</strong> 调整页框数量：高于上限时增加页框，低于下限时适当回收；如果缺页过高却已无可用页框，则需要降低多道程度。</p>
-<h3 id="页框回收">页框回收<a class="headerlink" href="#页框回收" title="Permanent link">&para;</a></h3>
-<h4 id="页面缓冲算法">页面缓冲算法<a class="headerlink" href="#页面缓冲算法" title="Permanent link">&para;</a></h4>
-<p>页面缓冲在置换算法之外，保留部分被淘汰页面的物理副本，并推迟或合并 I/O ，以减少调页成本。</p>
+<h4 id="其他解决方式">其他解决方式<a class="headerlink" href="#其他解决方式" title="Permanent link">&para;</a></h4>
 <ul>
-<li><strong>空闲页面链表</strong>。未修改页面退出驻留集后，其页框可以加入链尾，旧内容在重新分配前暂时保留。分配新页时从链首取框；若旧页面在被覆盖前又被需要，可以恢复映射，无需重新读盘。</li>
-<li><strong>修改页面链表</strong>。已修改的淘汰页先加入该链，积累后批量写回。只有内容已妥善保存，页框才可以用于覆盖；若写回前再次需要该页，也有机会直接复用保留内容。</li>
+<li>我们可以想到的是，可以通过设置优先级，让一方暂时放弃调页缓解抖动；</li>
+<li>也可以根据 <strong>缺页频率（ Page-Fault Frequency ， PFF ）</strong> 动态调整帧数量：高于上限时增加帧，低于下限时适当回收；如果缺页过高却已无可用帧，则需要降低多道程度。</li>
 </ul>
-<p>这样，选择页面退出驻留集，不一定立即造成磁盘读写。降低实际 I/O 的成本，可以使较简单的置换算法也获得较好的表现。</p>
-<p>“空闲链中暂留旧内容”是给原页面恢复使用的机会，不意味着可以把上个进程的数据直接暴露给新的使用者。</p>
-<h4 id="可回收页框与后台回收">可回收页框与后台回收<a class="headerlink" href="#可回收页框与后台回收" title="Permanent link">&para;</a></h4>
-<p>用户进程的代码、数据、堆栈、文件映射页和共享页通常可以参与回收，但必须保留有效后备内容，并正确处理所有相关映射。内核代码、内核栈等关键区域的很多页框则不能按普通用户页的方式随意回收。</p>
-<p>系统不能等到空闲页框完全耗尽才开始处理：回收脏页需要 I/O ，而 I/O 本身还可能需要缓冲空间。教材以 Linux 的 <code>kswapd</code> 为例，说明在空闲页框低于阈值时提前启动后台回收，为后续分配准备空间。</p>
-<p>回收得到的连续空闲页框，可以按<a href="#动态分区分配">伙伴系统</a>组织，尝试逐级合并伙伴块。要区分 <strong>页框回收</strong> 与 <strong>空闲块合并</strong>：前者让正在使用的页框重新可用，后者重新组织已经空闲的空间。</p>
-<p>基本分页按单个页框分配时没有外部碎片，但若还要求一组页框在物理上连续，例如申请较大的伙伴块，仍可能因连续空间不足而失败。</p>
+<blockquote>
+<p>我们刚才说到抖动发生的根本原因是分配的帧“太少了”。所以还有一种直接的方法：增加物理内存。</p>
+</blockquote>
+<h3 id="帧回收">帧回收<a class="headerlink" href="#帧回收" title="Permanent link">&para;</a></h3>
+<h4 id="页面缓冲算法">页面缓冲算法<a class="headerlink" href="#页面缓冲算法" title="Permanent link">&para;</a></h4>
+<p>页面缓冲是指在置换算法之外，保留部分被淘汰页面的物理副本，等到累积到一定数量时再批量 I/O ，以减少调页所用的成本。所以，系统在内存中维护如下两个专用链表：</p>
+<ul>
+<li><strong>空闲页面链表</strong>。当进程需要读入一个页面时，从该链表头部取出一帧，装入目标页面。<u>未修改页面</u>退出驻留集后，其所在帧可以加入链尾，帧里的原有内容在重新分配前暂时保留；若后续有进程访问相同页面，可以恢复映射（从链表中取下该帧进行复用），无需重新读盘。</li>
+<li><strong>修改页面链表</strong>。已修改的淘汰页先加入该链（加入末尾），积累了足够数量的脏页后，批量写回。只有内容已经被妥善保存，所在帧才可以用于覆盖；当然，若写回前再次需要该页面，所在也有机会直接复用保留内容。</li>
+</ul>
+<p>页面缓冲算法既降低了实际 I/O 的开销，又可以使较简单的置换算法也获得较好的表现。</p>
+<h4 id="可回收帧与后台回收">可回收帧与后台回收<a class="headerlink" href="#可回收帧与后台回收" title="Permanent link">&para;</a></h4>
+<p>系统在可分配内存不足时会回收部分帧，但并不是所有的帧都可以被回收。<u>用户进程的代码、数据、堆栈、文件映射页和共享页所占用的帧</u>通常可以参与回收，但必须保留有效后备内容，并正确处理所有相关映射。<u>属于内核的内核栈、内核代码、内核数据等关键区域</u>的很多帧则不能按普通用户页的方式随意回收。</p>
+<details class="info" open="open">
+<summary>Linux 内核中的帧回收</summary>
+<p>Linux 中设置了一个负责页面换出的守护进程 <code>kswapd</code> 以定期检查内存使用情况。它在空闲帧数量低于阈值时主动发起帧回收操作。系统不能等到空闲帧完全耗尽才开始处理，这是因为回收某些帧（如脏页）时需要写回磁盘，而 I/O 本身还可能需要临时帧缓冲空间。若此时系统已无空闲页框，则既无法分配 I/O 缓冲区，也无法完成页面释放，从而可能导致内核陷入内存分配死锁。</p>
+<p>回收得到的连续空闲帧，可以按<a href="#动态分区分配">伙伴系统</a>组织（伙伴算法的逆操作），尝试逐级二合一合并伙伴块。</p>
+</details>
+<p>分配页框是一个“化整为零”的过程，会产生外部碎片；因此，系统必须具备将零碎页框重新合并为较大连续块的能力。</p>
 <h3 id="内存映射文件">内存映射文件<a class="headerlink" href="#内存映射文件" title="Permanent link">&para;</a></h3>
-<p><strong>内存映射文件（ Memory-Mapped Files ）</strong> 在文件内容与进程虚拟地址空间的某个区域之间建立映射。映射建立后，进程可以通过内存访问读写相应内容，由操作系统负责文件数据与主存之间的传输。</p>
-<p>映射不要求立即把整个文件读入主存。访问某个尚未驻留的文件页时，可以按需加载；共享映射中修改形成的脏页则由系统按相应规则写回文件。</p>
-<p>多个进程以共享方式映射同一文件内容时，可以让各自的虚拟页指向相同的物理页框。映射位置不必相同，进程访问的是各自的虚拟地址，底层内容却可以共享。</p>
-<p>它的主要好处是简化文件访问，并便于多个进程共享文件内容。共享可写映射仍需遵循<a href="../process/#共享存储">共享存储中的同步与互斥要求</a>；访问同一物理副本，并不能保证一组复合操作不会相互干扰。</p>
+<p><strong>内存映射文件（ Memory-Mapped Files ）</strong> 在文件内容与进程虚拟地址空间的某个区域之间建立映射，是一种 <strong>系统调用机制</strong>。映射建立后，进程可以通过内存访问读写相应内容，由操作系统负责文件数据与主存之间的传输。</p>
+<p>进程通过该系统调用，将一个文件映射到其虚拟地址空间的某一区域，此后便可像访问内存一样读/写文件。这种功能将一个文件当作内存中的一个大字符数组来访问，而无须调用传统的文件 I/O 接口，显然更为便捷。磁盘文件的读/写由操作系统负责完成，对进程而言是透明的。</p>
+<p>映射不要求立即把整个文件读入主存。访问某个尚未驻留的文件页时，可以按需加载；当进程退出或显式解除文件映射时，所有被修改的页面才会被写回磁盘文件。</p>
+<p>多个进程以共享方式映射同一文件内容时，可以让各自的虚拟页指向相同的物理帧。映射位置不必相同，进程访问的是各自的虚拟地址，底层内容却可以共享。</p>
+<p>它的主要好处是 ① 简化了文件访问；② 并便于多个进程共享同一个磁盘文件内容。</p>
+<div class="admonition note">
+<p class="admonition-title">这一节的内容可以和<a href="../process/#共享存储">共享存储</a>互相参照。</p>
+</div>
 <h3 id="虚拟存储器性能影响因素">虚拟存储器性能影响因素<a class="headerlink" href="#虚拟存储器性能影响因素" title="Permanent link">&para;</a></h3>
 <p>缺页率是核心因素，但一次缺页要付出的 I/O 和处理成本也同样重要。设缺页概率为 <span class="arithmatex">\(p_f\)</span>，不缺页时完成访问的平均时间为 <span class="arithmatex">\(t_0\)</span>，发生缺页时完成整个访问的平均时间为 <span class="arithmatex">\(t_f\)</span>，则：</p>
 <div class="arithmatex">\[
@@ -3823,7 +3868,7 @@ T_{\mathrm{EAT}}=(1-p_f)t_0+p_ft_f
 <p>影响性能时，应分别考虑：</p>
 <ul>
 <li><strong>页面大小</strong>。较大页面可能更好地覆盖顺序访问并摊薄传输开销，但也可能调入无用内容、增加内部碎片；较小页面减少碎片，却增加页表规模。基本取舍见<a href="#分页存储的几个基本概念">页面与页面大小</a>。</li>
-<li><strong>页框数量</strong>。增加驻留集通常能减少缺页，但收益会逐渐降低，也会影响其他进程。<a href="#先进先出fifo算法">FIFO 的 Belady 异常</a>说明缺页次数并非总随页框增加而下降。</li>
+<li><strong>帧数量</strong>。增加驻留集通常能减少缺页，但收益会逐渐降低，也会影响其他进程。<a href="#先进先出fifo算法">FIFO 的 Belady 异常</a>说明缺页次数并非总随帧增加而下降。</li>
 <li><strong>置换算法</strong>。对活跃页面的估计越合适，通常越能减少无效淘汰；同时需要考虑维护成本和脏页写回成本，见<a href="#页面置换算法">页面置换算法</a>。</li>
 <li><strong>写回与重读频率</strong>。后台回收、批量写回和保留尚未覆盖的页面，可以减少等待外存的次数，见<a href="#页面缓冲算法">页面缓冲算法</a>。</li>
 <li><strong>程序的局部化程度</strong>。访问顺序应尽量贴合数据布局。例如，按行存储的二维数组通常适合按行遍历；按列跨行访问可能不断跨页，但具体缺页数量还取决于页大小、驻留集和置换算法。</li>
@@ -3832,7 +3877,7 @@ T_{\mathrm{EAT}}=(1-p_f)t_0+p_ft_f
 <h3 id="地址翻译的示例">地址翻译的示例<a class="headerlink" href="#地址翻译的示例" title="Permanent link">&para;</a></h3>
 <p>本节采用 <strong>先完成地址转换，再访问物理寻址数据 Cache</strong> 的模型。Cache 的映射规则见<a href="../../CO/storage/#cache-和主存的映射方式">计算机组成中的 Cache</a>，这里重点观察它与 TLB、页表如何配合。</p>
 <p>假设按字节编址，虚拟地址为 14 位，物理地址为 12 位，页面大小为 64 B ； TLB 共 16 项、四路组相联；数据 Cache 直接映射、共 16 行，每行 4 B。</p>
-<p>页面大小 <span class="arithmatex">\(64=2^6\)</span>，所以页内偏移占 6 位，虚拟页号占 8 位，物理页框号占 6 位。TLB 共 <span class="arithmatex">\(16/4=4\)</span> 组，从虚拟页号中拆出 2 位组索引和 6 位标记。Cache 从物理地址中拆出 2 位块内偏移、4 位行索引和 6 位标记。</p>
+<p>页面大小 <span class="arithmatex">\(64=2^6\)</span>，所以页内偏移占 6 位，虚拟页号占 8 位，物理帧号占 6 位。TLB 共 <span class="arithmatex">\(16/4=4\)</span> 组，从虚拟页号中拆出 2 位组索引和 6 位标记。Cache 从物理地址中拆出 2 位块内偏移、4 位行索引和 6 位标记。</p>
 <center>
 <table>
 <thead>
@@ -3858,7 +3903,7 @@ T_{\mathrm{EAT}}=(1-p_f)t_0+p_ft_f
 </tr>
 <tr>
 <td style="text-align: center;">物理地址</td>
-<td style="text-align: center;">物理页框号： 6 位</td>
+<td style="text-align: center;">物理帧号： 6 位</td>
 <td style="text-align: center;">—</td>
 <td style="text-align: center;">页内偏移： 6 位</td>
 </tr>
@@ -3871,7 +3916,7 @@ T_{\mathrm{EAT}}=(1-p_f)t_0+p_ft_f
 </tbody>
 </table>
 </center>
-<p>只取这次访问有关的初始状态： TLB 第 3 组有有效项“标记 <code>0x03</code> → 页框 <code>0x0D</code>”，没有标记 <code>0x00</code>；第 0 组没有标记 <code>0x02</code>。页表中第 <code>0x03</code> 页已驻留于页框 <code>0x02</code>，第 <code>0x08</code> 页未驻留。Cache 第 5 行有效且标记为 <code>0x0D</code>，偏移 0 处数据为 <code>0x36</code>；第 <code>0xC</code> 行无效。</p>
+<p>只取这次访问有关的初始状态： TLB 第 3 组有有效项“标记 <code>0x03</code> → 帧 <code>0x0D</code>”，没有标记 <code>0x00</code>；第 0 组没有标记 <code>0x02</code>。页表中第 <code>0x03</code> 页已驻留于帧 <code>0x02</code>，第 <code>0x08</code> 页未驻留。Cache 第 5 行有效且标记为 <code>0x0D</code>，偏移 0 处数据为 <code>0x36</code>；第 <code>0xC</code> 行无效。</p>
 <p>先做地址转换：</p>
 <center>
 <table>
@@ -3890,7 +3935,7 @@ T_{\mathrm{EAT}}=(1-p_f)t_0+p_ft_f
 <td style="text-align: center;"><code>0x0F</code></td>
 <td style="text-align: center;"><code>0x14</code></td>
 <td style="text-align: center;"><code>0x03</code> / 3</td>
-<td style="text-align: center;">TLB 命中，页框 <code>0x0D</code>，物理地址 <code>0x354</code></td>
+<td style="text-align: center;">TLB 命中，帧 <code>0x0D</code>，物理地址 <code>0x354</code></td>
 </tr>
 <tr>
 <td style="text-align: center;"><code>0x00F1</code></td>
@@ -3939,16 +3984,7 @@ T_{\mathrm{EAT}}=(1-p_f)t_0+p_ft_f
 </tbody>
 </table>
 </center>
-<p>第三个地址需要先完成缺页处理，得到新的页框映射后才能继续确定物理地址和 Cache 结果，不能使用未驻留页的旧页框字段继续计算。</p>
-<h3 id="本节小结_1">本节小结 <a id="virtual-memory-summary"></a><a class="headerlink" href="#本节小结_1" title="Permanent link">&para;</a></h3>
-<p>复习时，可以把三个不同的决策连成一条主线：</p>
-<ul>
-<li>哪些内容值得保留：<a href="#局部性原理">局部性</a>、<a href="#工作集">工作集</a>与<a href="#虚拟存储器性能影响因素">性能因素</a>。</li>
-<li>空间如何分配、何时准备内容：<a href="#页框分配">页框分配</a>与<a href="#页框回收">页框回收</a>。</li>
-<li>缺页时具体怎么办：<a href="#请求分页管理方式">请求分页</a>、<a href="#页面置换算法">页面置换</a>与<a href="#地址翻译的示例">地址翻译示例</a>。</li>
-</ul>
-<h2 id="本章疑难点">本章疑难点<a class="headerlink" href="#本章疑难点" title="Permanent link">&para;</a></h2>
-<p>分页与分段的集中比较见<a href="#分页和分段的对比">分页和分段的对比</a>，包括划分依据、单元大小、地址空间维数和碎片；段页式的二维地址解释见<a href="#段页式存储管理">段页式存储管理</a>。</p>
+<p>第三个地址需要先完成缺页处理，得到新的帧映射后才能继续确定物理地址和 Cache 结果，不能使用未驻留页的旧帧字段继续计算。</p>
 
 
 

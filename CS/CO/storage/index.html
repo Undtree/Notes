@@ -2608,7 +2608,7 @@
 
 <h1 id="存储系统">存储系统<a class="headerlink" href="#存储系统" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 14412 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 2 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 48 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 14513 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 2 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 48 分钟</p>
 </div>
 <p>计算机希望存储器同时具备 <strong>速度快、容量大、成本低</strong> 三个特点，但单一存储介质很难兼顾这三者。因此，我们需要把不同特性的存储器组织起来，让常用的信息靠近 CPU ，让大量暂时用不到的信息存放在容量更大的低速部件中。</p>
 <h2 id="存储器概述">存储器概述<a class="headerlink" href="#存储器概述" title="Permanent link">&para;</a></h2>
@@ -2917,6 +2917,9 @@ C\times w\,\text{bit}.
 <p class="admonition-title">有关 Flash...</p>
 <p>Flash （闪存）是一种在 EPROM 基础上发展而来的非易失性存储器。它兼具断电保存、支持电擦除和可在线重写的特点，常用于保存 BIOS 等启动固件或构建大容量非易失性设备。现代主板普遍采用 Flash 存储器来存储 BIOS ，用户可通过厂商提供的工具直接在系统中擦除重写（早期的 BIOS 是固化在 MROM 或 EPROM 中的）。</p>
 <p>它的 <strong>读写性能不对称</strong>：读取较快（接近 RAM ），写入和擦除较慢，而且擦写次数有限。因此，支持改写不等于能满足 DRAM 主存所需的访问性能。</p>
+<div class="admonition example">
+<p class="admonition-title">U 盘就是一种 Flash 存储器。</p>
+</div>
 </div>
 <h4 id="固态硬盘">固态硬盘<a class="headerlink" href="#固态硬盘" title="Permanent link">&para;</a></h4>
 <p><strong>固态硬盘</strong>（ Solid State Drive ， SSD ）是在闪存芯片阵列之外加入控制单元构成的存储设备。它继承了 Flash 非易失、无机械部件、读取速度快的重要特性。因而它具有功耗低、抗震性能强等优势；但同时其写入寿命受限于闪存的擦写次数。</p>
@@ -2970,7 +2973,8 @@ C\times w\,\text{bit}.
 <p>交叉存储器可以采用轮流启动或同时启动两种方式。</p>
 <details class="note" open="open">
 <summary>轮流启动</summary>
-<p>设单个模块（体）的存储周期为 <span class="arithmatex">\(T\)</span>，总线每隔 <span class="arithmatex">\(\tau\)</span> 可以启动并承接一个字的传输。若每个模块一次模块访问的数据可以用一次总线传输完成，要让 <span class="arithmatex">\(m\)</span> 个模块（体）轮流启动而不间断，同一模块再次被访问时必须已恢复，即需要满足</p>
+<p>若每个模块一次模块访问的数据可以用一次总线传输完成，则可以采用轮流启动。事实上，实际实现轮流启动时总是让一个模块的读/写位数等于数据总线位数，显然，因为如果不相等，总线会出现空闲，带宽收益会下降。</p>
+<p>设单个模块（体）的存储周期为 <span class="arithmatex">\(T\)</span>，总线每隔 <span class="arithmatex">\(\tau\)</span> 可以启动并承接一个字的传输。要让 <span class="arithmatex">\(m\)</span> 个模块（体）轮流启动而不间断，同一模块再次被访问时必须已恢复，即需要满足</p>
 <div class="arithmatex">\[
 m\tau\ge T,\qquad m\ge\left\lceil\frac{T}{\tau}\right\rceil.
 \]</div>
@@ -2988,7 +2992,8 @@ t_{\mathrm{交叉}}=T+(n-1)\tau.
 </details>
 <details class="note" open="open">
 <summary>同时启动</summary>
-<p>若多个模块一次并行读/写的总位数不小于一个数据总线的宽度时，也可以采用同时启动方式。例如， 8 个 <span class="arithmatex">\(16\,\mathrm{M}\times8\)</span> 位芯片共同提供 64 位数据，总容量为 <span class="arithmatex">\(128\,\mathrm{MB}\)</span>。单个芯片每次传输 8 位， 8 个芯片同步工作，就可以一次性提供 64 位数据。</p>
+<p>若多个模块一次并行读/写的总位数不小于一个数据总线的宽度时，也可以采用同时启动方式。当然，实际实现同时启动时并行读/写总位数等于数据总线位数。</p>
+<p>例如， 8 个 <span class="arithmatex">\(16\,\mathrm{M}\times8\)</span> 位芯片共同提供 64 位数据，总容量为 <span class="arithmatex">\(128\,\mathrm{MB}\)</span>。单个芯片每次传输 8 位， 8 个芯片同步工作，就可以一次性提供 64 位数据。</p>
 <div class="admonition tip">
 <p class="admonition-title">地址对齐</p>
 <p>如果将本例放进实际实现的语境下， 8 个芯片实际上是通过<a href="#位扩展">位扩展</a>来共同提供 64 位数据，并共用同一组<a href="#存储芯片的组成">片内地址线</a>。一次基本访问向各芯片提供相同的片内地址 <span class="arithmatex">\(k\)</span>，每个芯片提供一个字节，合起来对应系统中的字节地址 <span class="arithmatex">\(8k\sim8k+7\)</span>。</p>

@@ -1233,22 +1233,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#filesystem-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        文件系统结构
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#directory" class="md-nav__link">
     <span class="md-ellipsis">
       
-        目录、文件控制块与索引节点
+        目录与文件
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="目录、文件控制块与索引节点">
+    <nav class="md-nav" aria-label="目录与文件">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#目录的职责" class="md-nav__link">
+  <a href="#目录的基本概念" class="md-nav__link">
     <span class="md-ellipsis">
       
-        目录的职责
+        目录的基本概念
       
     </span>
   </a>
@@ -1256,10 +1267,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#文件控制块fcb" class="md-nav__link">
+  <a href="#文件控制块与索引节点" class="md-nav__link">
     <span class="md-ellipsis">
       
-        文件控制块（FCB）
+        文件控制块与索引节点
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="文件控制块与索引节点">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#文件控制块" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        文件控制块
       
     </span>
   </a>
@@ -1267,13 +1290,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#将文件名与描述信息分离inode" class="md-nav__link">
+  <a href="#索引节点" class="md-nav__link">
     <span class="md-ellipsis">
       
-        将文件名与描述信息分离：inode
+        索引节点
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1286,52 +1314,14 @@
     </span>
   </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#路径名与当前工作目录" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        路径名与当前工作目录
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#目录操作与实现" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        目录操作与实现
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#file-operations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        文件操作与打开文件表
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="文件操作与打开文件表">
+    <nav class="md-nav" aria-label="目录结构">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#基本操作" class="md-nav__link">
+  <a href="#单级目录" class="md-nav__link">
     <span class="md-ellipsis">
       
-        基本操作
+        单级目录
       
     </span>
   </a>
@@ -1339,10 +1329,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#为什么需要先打开" class="md-nav__link">
+  <a href="#两级目录" class="md-nav__link">
     <span class="md-ellipsis">
       
-        为什么需要先打开
+        两级目录
       
     </span>
   </a>
@@ -1350,10 +1340,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#王道的两级打开文件表模型" class="md-nav__link">
+  <a href="#树形目录" class="md-nav__link">
     <span class="md-ellipsis">
       
-        王道的两级打开文件表模型
+        树形目录
       
     </span>
   </a>
@@ -1361,10 +1351,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#一次读取怎样到达磁盘" class="md-nav__link">
+  <a href="#无环图目录" class="md-nav__link">
     <span class="md-ellipsis">
       
-        一次读取怎样到达磁盘
+        无环图目录
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#一般图目录" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一般图目录
       
     </span>
   </a>
@@ -1375,24 +1376,35 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#sharing-protection" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#目录的操作" class="md-nav__link">
     <span class="md-ellipsis">
       
-        文件共享与保护
+        目录的操作
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="文件共享与保护">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#目录实现" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        目录实现
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="目录实现">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#硬链接与软链接" class="md-nav__link">
+  <a href="#线性列表" class="md-nav__link">
     <span class="md-ellipsis">
       
-        硬链接与软链接
+        线性列表
       
     </span>
   </a>
@@ -1400,32 +1412,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#共享后的并发访问" class="md-nav__link">
+  <a href="#哈希表" class="md-nav__link">
     <span class="md-ellipsis">
       
-        共享后的并发访问
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#文件保护的目标与受控操作" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        文件保护的目标与受控操作
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#acl权限位与目录保护" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ACL、权限位与目录保护
+        哈希表
       
     </span>
   </a>
@@ -1436,24 +1426,24 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#allocation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        文件的物理结构与分配方式
+        文件的物理结构
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="文件的物理结构与分配方式">
+    <nav class="md-nav" aria-label="文件的物理结构">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#块簇与地址换算" class="md-nav__link">
+  <a href="#盘块与簇" class="md-nav__link">
     <span class="md-ellipsis">
       
-        块、簇与地址换算
+        盘块与簇
       
     </span>
   </a>
@@ -1480,34 +1470,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="链接分配">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#隐式链接" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        隐式链接
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#显式链接与-fat" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        显式链接与 FAT
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
           <li class="md-nav__item">
@@ -1515,18 +1477,6 @@
     <span class="md-ellipsis">
       
         索引分配
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="索引分配">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#单级链接索引与多级索引" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        单级、链接索引与多级索引
       
     </span>
   </a>
@@ -1544,11 +1494,50 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
-  <a href="#从偏移定位索引项" class="md-nav__link">
+  <a href="#file-operations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        从偏移定位索引项
+        文件的操作
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="文件的操作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#创建与删除" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        创建与删除
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#数据访问与其他操作" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        数据访问与其他操作
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-file-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        打开文件表
       
     </span>
   </a>
@@ -1561,10 +1550,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#三种分配方式与访盘次数" class="md-nav__link">
+  <a href="#file-sharing" class="md-nav__link">
     <span class="md-ellipsis">
       
-        三种分配方式与访盘次数
+        文件共享
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="文件共享">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hard-link" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        硬链接
       
     </span>
   </a>
@@ -1572,10 +1573,38 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#索引空间容量和文件数量计算" class="md-nav__link">
+  <a href="#软链接" class="md-nav__link">
     <span class="md-ellipsis">
       
-        索引空间、容量和文件数量计算
+        软链接
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sharing-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        文件保护
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="文件保护">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#访问控制列表" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        访问控制列表
       
     </span>
   </a>
@@ -1583,13 +1612,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#常见操作的-io-计算" class="md-nav__link">
+  <a href="#口令与加密" class="md-nav__link">
     <span class="md-ellipsis">
       
-        常见操作的 I/O 计算
+        口令与加密
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1602,19 +1636,31 @@
   <a href="#filesystem-layout" class="md-nav__link">
     <span class="md-ellipsis">
       
-        文件系统的层次与布局
+        文件系统
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="文件系统的层次与布局">
+    <nav class="md-nav" aria-label="文件系统">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#文件系统的组成与分层" class="md-nav__link">
+  <a href="#文件系统布局" class="md-nav__link">
     <span class="md-ellipsis">
       
-        文件系统的组成与分层
+        文件系统布局
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="文件系统布局">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#磁盘中的结构" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        磁盘中的结构
       
     </span>
   </a>
@@ -1622,32 +1668,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#磁盘分区与卷" class="md-nav__link">
+  <a href="#内存中的结构" class="md-nav__link">
     <span class="md-ellipsis">
       
-        磁盘、分区与卷
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#外存中的主要数据结构" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        外存中的主要数据结构
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#内存中的主要数据结构" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        内存中的主要数据结构
+        内存中的结构
       
     </span>
   </a>
@@ -1658,8 +1682,8 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#free-space" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1672,10 +1696,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#空闲表法与计数法" class="md-nav__link">
+  <a href="#空闲表法" class="md-nav__link">
     <span class="md-ellipsis">
       
-        空闲表法与计数法
+        空闲表法
       
     </span>
   </a>
@@ -1694,63 +1718,13 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#位示图位图" class="md-nav__link">
+  <a href="#位示图法" class="md-nav__link">
     <span class="md-ellipsis">
       
-        位示图（位图）
+        位示图法
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="位示图（位图）">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#位图大小" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        位图大小
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#行列与块号的换算" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        行列与块号的换算
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#位图所在磁盘块与块内字节" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        位图所在磁盘块与块内字节
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#与磁盘几何地址的换算" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        与磁盘几何地址的换算
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1765,44 +1739,22 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#空闲管理方法对照" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        空闲管理方法对照
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#vfs-mount" class="md-nav__link">
     <span class="md-ellipsis">
       
-        虚拟文件系统与挂载
+        虚拟文件系统
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="虚拟文件系统与挂载">
+    <nav class="md-nav" aria-label="虚拟文件系统">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#vfs-的作用" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        VFS 的作用
-      
-    </span>
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#四类主要对象" class="md-nav__link">
@@ -1816,7 +1768,23 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#文件系统挂载" class="md-nav__link">
+  <a href="#请求的分发" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        请求的分发
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mount" class="md-nav__link">
     <span class="md-ellipsis">
       
         文件系统挂载
@@ -1844,10 +1812,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fat-系列与长文件名" class="md-nav__link">
+  <a href="#fat-与长文件名" class="md-nav__link">
     <span class="md-ellipsis">
       
-        FAT 系列与长文件名
+        FAT 与长文件名
       
     </span>
   </a>
@@ -1855,32 +1823,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ext-系列" class="md-nav__link">
+  <a href="#ntfs-与主文件表" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ext 系列
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ntfs-与-mft" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        NTFS 与 MFT
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#其他实例与分类边界" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        其他实例与分类边界
+        NTFS 与主文件表
       
     </span>
   </a>
@@ -1896,19 +1842,19 @@
   <a href="#performance-recovery" class="md-nav__link">
     <span class="md-ellipsis">
       
-        文件系统的性能、一致性与恢复
+        文件系统的性能与恢复
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="文件系统的性能、一致性与恢复">
+    <nav class="md-nav" aria-label="文件系统的性能与恢复">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#缓存缓冲与页缓存" class="md-nav__link">
+  <a href="#页缓存" class="md-nav__link">
     <span class="md-ellipsis">
       
-        缓存、缓冲与页缓存
+        页缓存
       
     </span>
   </a>
@@ -1916,10 +1862,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#一致性检查备份与恢复" class="md-nav__link">
+  <a href="#一致性检查与备份" class="md-nav__link">
     <span class="md-ellipsis">
       
-        一致性检查、备份与恢复
+        一致性检查与备份
       
     </span>
   </a>
@@ -1927,71 +1873,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#日志式文件系统与日志结构文件系统" class="md-nav__link">
+  <a href="#日志与崩溃恢复" class="md-nav__link">
     <span class="md-ellipsis">
       
-        日志式文件系统与日志结构文件系统
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#review" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        复习对照与易混点
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="复习对照与易混点">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#从一次文件访问串起各个模块" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        从一次文件访问串起各个模块
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#高频易混点" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        高频易混点
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#王道第-4-章覆盖对照" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        王道第 4 章覆盖对照
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#unit-6-补充主题对照" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Unit 6 补充主题对照
+        日志与崩溃恢复
       
     </span>
   </a>
@@ -2665,22 +2550,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#filesystem-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        文件系统结构
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#directory" class="md-nav__link">
     <span class="md-ellipsis">
       
-        目录、文件控制块与索引节点
+        目录与文件
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="目录、文件控制块与索引节点">
+    <nav class="md-nav" aria-label="目录与文件">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#目录的职责" class="md-nav__link">
+  <a href="#目录的基本概念" class="md-nav__link">
     <span class="md-ellipsis">
       
-        目录的职责
+        目录的基本概念
       
     </span>
   </a>
@@ -2688,10 +2584,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#文件控制块fcb" class="md-nav__link">
+  <a href="#文件控制块与索引节点" class="md-nav__link">
     <span class="md-ellipsis">
       
-        文件控制块（FCB）
+        文件控制块与索引节点
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="文件控制块与索引节点">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#文件控制块" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        文件控制块
       
     </span>
   </a>
@@ -2699,13 +2607,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#将文件名与描述信息分离inode" class="md-nav__link">
+  <a href="#索引节点" class="md-nav__link">
     <span class="md-ellipsis">
       
-        将文件名与描述信息分离：inode
+        索引节点
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2718,52 +2631,14 @@
     </span>
   </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#路径名与当前工作目录" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        路径名与当前工作目录
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#目录操作与实现" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        目录操作与实现
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#file-operations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        文件操作与打开文件表
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="文件操作与打开文件表">
+    <nav class="md-nav" aria-label="目录结构">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#基本操作" class="md-nav__link">
+  <a href="#单级目录" class="md-nav__link">
     <span class="md-ellipsis">
       
-        基本操作
+        单级目录
       
     </span>
   </a>
@@ -2771,10 +2646,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#为什么需要先打开" class="md-nav__link">
+  <a href="#两级目录" class="md-nav__link">
     <span class="md-ellipsis">
       
-        为什么需要先打开
+        两级目录
       
     </span>
   </a>
@@ -2782,10 +2657,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#王道的两级打开文件表模型" class="md-nav__link">
+  <a href="#树形目录" class="md-nav__link">
     <span class="md-ellipsis">
       
-        王道的两级打开文件表模型
+        树形目录
       
     </span>
   </a>
@@ -2793,10 +2668,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#一次读取怎样到达磁盘" class="md-nav__link">
+  <a href="#无环图目录" class="md-nav__link">
     <span class="md-ellipsis">
       
-        一次读取怎样到达磁盘
+        无环图目录
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#一般图目录" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一般图目录
       
     </span>
   </a>
@@ -2807,24 +2693,35 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#sharing-protection" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#目录的操作" class="md-nav__link">
     <span class="md-ellipsis">
       
-        文件共享与保护
+        目录的操作
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="文件共享与保护">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#目录实现" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        目录实现
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="目录实现">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#硬链接与软链接" class="md-nav__link">
+  <a href="#线性列表" class="md-nav__link">
     <span class="md-ellipsis">
       
-        硬链接与软链接
+        线性列表
       
     </span>
   </a>
@@ -2832,32 +2729,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#共享后的并发访问" class="md-nav__link">
+  <a href="#哈希表" class="md-nav__link">
     <span class="md-ellipsis">
       
-        共享后的并发访问
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#文件保护的目标与受控操作" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        文件保护的目标与受控操作
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#acl权限位与目录保护" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ACL、权限位与目录保护
+        哈希表
       
     </span>
   </a>
@@ -2868,24 +2743,24 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#allocation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        文件的物理结构与分配方式
+        文件的物理结构
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="文件的物理结构与分配方式">
+    <nav class="md-nav" aria-label="文件的物理结构">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#块簇与地址换算" class="md-nav__link">
+  <a href="#盘块与簇" class="md-nav__link">
     <span class="md-ellipsis">
       
-        块、簇与地址换算
+        盘块与簇
       
     </span>
   </a>
@@ -2912,34 +2787,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="链接分配">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#隐式链接" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        隐式链接
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#显式链接与-fat" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        显式链接与 FAT
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
           <li class="md-nav__item">
@@ -2947,18 +2794,6 @@
     <span class="md-ellipsis">
       
         索引分配
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="索引分配">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#单级链接索引与多级索引" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        单级、链接索引与多级索引
       
     </span>
   </a>
@@ -2976,11 +2811,50 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
-  <a href="#从偏移定位索引项" class="md-nav__link">
+  <a href="#file-operations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        从偏移定位索引项
+        文件的操作
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="文件的操作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#创建与删除" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        创建与删除
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#数据访问与其他操作" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        数据访问与其他操作
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-file-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        打开文件表
       
     </span>
   </a>
@@ -2993,10 +2867,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#三种分配方式与访盘次数" class="md-nav__link">
+  <a href="#file-sharing" class="md-nav__link">
     <span class="md-ellipsis">
       
-        三种分配方式与访盘次数
+        文件共享
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="文件共享">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hard-link" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        硬链接
       
     </span>
   </a>
@@ -3004,10 +2890,38 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#索引空间容量和文件数量计算" class="md-nav__link">
+  <a href="#软链接" class="md-nav__link">
     <span class="md-ellipsis">
       
-        索引空间、容量和文件数量计算
+        软链接
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sharing-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        文件保护
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="文件保护">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#访问控制列表" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        访问控制列表
       
     </span>
   </a>
@@ -3015,13 +2929,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#常见操作的-io-计算" class="md-nav__link">
+  <a href="#口令与加密" class="md-nav__link">
     <span class="md-ellipsis">
       
-        常见操作的 I/O 计算
+        口令与加密
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -3034,19 +2953,31 @@
   <a href="#filesystem-layout" class="md-nav__link">
     <span class="md-ellipsis">
       
-        文件系统的层次与布局
+        文件系统
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="文件系统的层次与布局">
+    <nav class="md-nav" aria-label="文件系统">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#文件系统的组成与分层" class="md-nav__link">
+  <a href="#文件系统布局" class="md-nav__link">
     <span class="md-ellipsis">
       
-        文件系统的组成与分层
+        文件系统布局
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="文件系统布局">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#磁盘中的结构" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        磁盘中的结构
       
     </span>
   </a>
@@ -3054,32 +2985,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#磁盘分区与卷" class="md-nav__link">
+  <a href="#内存中的结构" class="md-nav__link">
     <span class="md-ellipsis">
       
-        磁盘、分区与卷
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#外存中的主要数据结构" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        外存中的主要数据结构
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#内存中的主要数据结构" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        内存中的主要数据结构
+        内存中的结构
       
     </span>
   </a>
@@ -3090,8 +2999,8 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#free-space" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3104,10 +3013,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#空闲表法与计数法" class="md-nav__link">
+  <a href="#空闲表法" class="md-nav__link">
     <span class="md-ellipsis">
       
-        空闲表法与计数法
+        空闲表法
       
     </span>
   </a>
@@ -3126,63 +3035,13 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#位示图位图" class="md-nav__link">
+  <a href="#位示图法" class="md-nav__link">
     <span class="md-ellipsis">
       
-        位示图（位图）
+        位示图法
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="位示图（位图）">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#位图大小" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        位图大小
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#行列与块号的换算" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        行列与块号的换算
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#位图所在磁盘块与块内字节" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        位图所在磁盘块与块内字节
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#与磁盘几何地址的换算" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        与磁盘几何地址的换算
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -3197,44 +3056,22 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#空闲管理方法对照" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        空闲管理方法对照
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#vfs-mount" class="md-nav__link">
     <span class="md-ellipsis">
       
-        虚拟文件系统与挂载
+        虚拟文件系统
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="虚拟文件系统与挂载">
+    <nav class="md-nav" aria-label="虚拟文件系统">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#vfs-的作用" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        VFS 的作用
-      
-    </span>
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#四类主要对象" class="md-nav__link">
@@ -3248,7 +3085,23 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#文件系统挂载" class="md-nav__link">
+  <a href="#请求的分发" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        请求的分发
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mount" class="md-nav__link">
     <span class="md-ellipsis">
       
         文件系统挂载
@@ -3276,10 +3129,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fat-系列与长文件名" class="md-nav__link">
+  <a href="#fat-与长文件名" class="md-nav__link">
     <span class="md-ellipsis">
       
-        FAT 系列与长文件名
+        FAT 与长文件名
       
     </span>
   </a>
@@ -3287,32 +3140,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ext-系列" class="md-nav__link">
+  <a href="#ntfs-与主文件表" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ext 系列
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ntfs-与-mft" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        NTFS 与 MFT
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#其他实例与分类边界" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        其他实例与分类边界
+        NTFS 与主文件表
       
     </span>
   </a>
@@ -3328,19 +3159,19 @@
   <a href="#performance-recovery" class="md-nav__link">
     <span class="md-ellipsis">
       
-        文件系统的性能、一致性与恢复
+        文件系统的性能与恢复
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="文件系统的性能、一致性与恢复">
+    <nav class="md-nav" aria-label="文件系统的性能与恢复">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#缓存缓冲与页缓存" class="md-nav__link">
+  <a href="#页缓存" class="md-nav__link">
     <span class="md-ellipsis">
       
-        缓存、缓冲与页缓存
+        页缓存
       
     </span>
   </a>
@@ -3348,10 +3179,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#一致性检查备份与恢复" class="md-nav__link">
+  <a href="#一致性检查与备份" class="md-nav__link">
     <span class="md-ellipsis">
       
-        一致性检查、备份与恢复
+        一致性检查与备份
       
     </span>
   </a>
@@ -3359,71 +3190,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#日志式文件系统与日志结构文件系统" class="md-nav__link">
+  <a href="#日志与崩溃恢复" class="md-nav__link">
     <span class="md-ellipsis">
       
-        日志式文件系统与日志结构文件系统
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#review" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        复习对照与易混点
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="复习对照与易混点">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#从一次文件访问串起各个模块" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        从一次文件访问串起各个模块
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#高频易混点" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        高频易混点
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#王道第-4-章覆盖对照" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        王道第 4 章覆盖对照
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#unit-6-补充主题对照" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Unit 6 补充主题对照
+        日志与崩溃恢复
       
     </span>
   </a>
@@ -3458,7 +3228,7 @@
 
 <h1 id="文件管理">文件管理<a class="headerlink" href="#文件管理" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 17314 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M360.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m64.6 136.1c-12.5 12.5-12.5 32.8 0 45.3l73.4 73.4-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l96-96c12.5-12.5 12.5-32.8 0-45.3l-96-96c-12.5-12.5-32.8-12.5-45.3 0zm-274.7 0c-12.5-12.5-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l73.3-73.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg></span> 14 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 58 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 13426 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M360.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m64.6 136.1c-12.5 12.5-12.5 32.8 0 45.3l73.4 73.4-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l96-96c12.5-12.5 12.5-32.8 0-45.3l-96-96c-12.5-12.5-32.8-12.5-45.3 0zm-274.7 0c-12.5-12.5-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l73.3-73.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg></span> 11 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 45 分钟</p>
 </div>
 <h2 id="文件">文件<a class="headerlink" href="#文件" title="Permanent link">&para;</a></h2>
 <p><strong>文件</strong>（ File ）是存储在计算机持久性存储设备（如硬盘、固态盘等）上的 <strong>信息集合</strong>，其内容可以是文本文档、图像、程序代码或其他形式的数据。在操作系统中，系统运行时以进程为基本单位进行资源的调度与分配；而用户在进行输入/输出操作时，则 <strong>通常将文件作为逻辑操作的基本对象</strong>。</p>
@@ -3482,106 +3252,112 @@
 <h3 id="文件属性">文件属性<a class="headerlink" href="#文件属性" title="Permanent link">&para;</a></h3>
 <p>首先，文件必然包含实际的数据，即存储空间中所保存的信息；其次，由于操作系统需要管理大量数据，必须对这些数据进行分类和组织，因此每个文件都关联有用于分类和索引的信息；最后，不同用户对数据的访问权限存在差异，系统还需为文件设置相应的访问控制信息。</p>
 <p>尽管不同的文件系统实现上有所差异，但通常都包含以下基本属性：</p>
+<center>
 <table>
 <thead>
 <tr>
-<th>属性</th>
-<th>内容</th>
+<th style="text-align: center;">属性</th>
+<th style="text-align: center;">内容</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>名称</td>
-<td>供用户使用的名字，在同一目录中必须唯一；不同目录可以重名。</td>
+<td style="text-align: center;">名称</td>
+<td style="text-align: center;">供用户使用的名字，在同一目录中必须唯一；不同目录可以重名。</td>
 </tr>
 <tr>
-<td>标识符</td>
-<td>系统内部标识文件的编号，例如 inode 号；其唯一性通常限定在一个文件系统内。</td>
+<td style="text-align: center;">标识符</td>
+<td style="text-align: center;">系统内部标识文件的编号，例如 inode 号；其唯一性通常限定在一个文件系统内。</td>
 </tr>
 <tr>
-<td>类型</td>
-<td>用于标识文件的种类，供系统决定如何处理或打开该文件。</td>
+<td style="text-align: center;">类型</td>
+<td style="text-align: center;">用于标识文件的种类，供系统决定如何处理或打开该文件。</td>
 </tr>
 <tr>
-<td>创建者</td>
-<td>创建该文件的用户标识（ ID ）。</td>
+<td style="text-align: center;">创建者</td>
+<td style="text-align: center;">创建该文件的用户标识（ ID ）。</td>
 </tr>
 <tr>
-<td>所有者</td>
-<td>当前拥有该文件的用户标识（ ID ），通常有权修改文件属性或访问权限。</td>
+<td style="text-align: center;">所有者</td>
+<td style="text-align: center;">当前拥有该文件的用户标识（ ID ），通常有权修改文件属性或访问权限。</td>
 </tr>
 <tr>
-<td>位置</td>
-<td>指向文件在外存设备上物理存储位置的指针。</td>
+<td style="text-align: center;">位置</td>
+<td style="text-align: center;">指向文件在外存设备上物理存储位置的指针。</td>
 </tr>
 <tr>
-<td>大小</td>
-<td>文件的逻辑长度，通常以字节计；它与实际分配的磁盘空间大小可能不同。</td>
+<td style="text-align: center;">大小</td>
+<td style="text-align: center;">文件的逻辑长度，通常以字节计；它与实际分配的磁盘空间大小可能不同。</td>
 </tr>
 <tr>
-<td>保护</td>
-<td>定义对文件的访问控制策略，包括读/写、执行等权限，用于保障文件安全。</td>
+<td style="text-align: center;">保护</td>
+<td style="text-align: center;">定义对文件的访问控制策略，包括读/写、执行等权限，用于保障文件安全。</td>
 </tr>
 <tr>
-<td>创建时间、最后一次修改时间及最后一次访问时间</td>
-<td>常用于审计、备份或缓存管理。</td>
+<td style="text-align: center;">创建时间、最后一次修改时间及最后一次访问时间</td>
+<td style="text-align: center;">常用于审计、备份或缓存管理。</td>
 </tr>
 </tbody>
 </table>
+</center>
 <p>这些信息也被称为文件的元数据（ meta data ）。</p>
 <h3 id="文件分类与类型识别">文件分类与类型识别<a class="headerlink" href="#文件分类与类型识别" title="Permanent link">&para;</a></h3>
+<center>
 <table>
 <thead>
 <tr>
-<th>分类依据</th>
-<th>主要类型</th>
+<th style="text-align: center;">分类依据</th>
+<th style="text-align: center;">主要类型</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>性质和用途</td>
-<td>系统文件、用户文件、库文件</td>
+<td style="text-align: center;">性质和用途</td>
+<td style="text-align: center;">系统文件、用户文件、库文件</td>
 </tr>
 <tr>
-<td>数据形式</td>
-<td>源文件、目标文件、可执行文件</td>
+<td style="text-align: center;">数据形式</td>
+<td style="text-align: center;">源文件、目标文件、可执行文件</td>
 </tr>
 <tr>
-<td>存取控制属性</td>
-<td>只读、读写、可执行；这些权限可组合</td>
+<td style="text-align: center;">存取控制属性</td>
+<td style="text-align: center;">只读、读写、可执行；这些权限可组合</td>
 </tr>
 <tr>
-<td>组织形式与处理方式</td>
-<td>普通文件、目录文件、特殊文件（如设备文件）</td>
+<td style="text-align: center;">组织形式与处理方式</td>
+<td style="text-align: center;">普通文件、目录文件、特殊文件（如设备文件）</td>
 </tr>
 </tbody>
 </table>
+</center>
 <p>扩展名主要是命名约定和应用程序选择处理方式的依据，改名不会自动改变内容格式。文件头中的 <strong>魔数</strong>（ magic number ）也可帮助识别格式，例如 JPEG 的起始标记为 <code>FF D8</code>。脚本常用 <code>#!/bin/sh</code> 这样的首行指定解释器。操作系统不必理解普通文件的全部内容语义，记录、图像等内部格式可以由应用程序解释。</p>
 <h2 id="logical-structure">文件的逻辑结构与访问方式<a class="headerlink" href="#logical-structure" title="Permanent link">&para;</a></h2>
 <h3 id="无结构文件与有结构文件">无结构文件与有结构文件<a class="headerlink" href="#无结构文件与有结构文件" title="Permanent link">&para;</a></h3>
 <p><strong>无结构文件</strong>又称流式文件，向系统呈现连续的字节序列，没有由文件系统规定的记录边界。这里的“连续”描述逻辑地址，不保证磁盘块物理连续。UNIX 普通文件采用这种视图，应用程序仍可在其中组织复杂的数据。</p>
 <p><strong>有结构文件</strong>又称记录式文件，由若干记录组成；记录中的某个数据项可以作为查找用的关键字。</p>
+<center>
 <table>
 <thead>
 <tr>
-<th>记录形式</th>
-<th>定位方法</th>
-<th>特点</th>
+<th style="text-align: center;">记录形式</th>
+<th style="text-align: center;">定位方法</th>
+<th style="text-align: center;">特点</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>定长记录</td>
-<td>若记录从 0 编号，长度为 <span class="arithmatex">\(L\)</span>，第 <span class="arithmatex">\(i\)</span> 条的起始偏移为 <span class="arithmatex">\(iL\)</span></td>
-<td>容易按记录号直接定位</td>
+<td style="text-align: center;">定长记录</td>
+<td style="text-align: center;">若记录从 0 编号，长度为 <span class="arithmatex">\(L\)</span>，第 <span class="arithmatex">\(i\)</span> 条的起始偏移为 <span class="arithmatex">\(iL\)</span></td>
+<td style="text-align: center;">容易按记录号直接定位</td>
 </tr>
 <tr>
-<td>变长记录</td>
-<td>若无索引，第 <span class="arithmatex">\(i\)</span> 条的偏移为 <span class="arithmatex">\(\sum_{k=0}^{i-1}L_k\)</span></td>
-<td>通常需扫描前面的长度信息；可建立索引加速</td>
+<td style="text-align: center;">变长记录</td>
+<td style="text-align: center;">若无索引，第 <span class="arithmatex">\(i\)</span> 条的偏移为 <span class="arithmatex">\(\sum_{k=0}^{i-1}L_k\)</span></td>
+<td style="text-align: center;">通常需扫描前面的长度信息；可建立索引加速</td>
 </tr>
 </tbody>
 </table>
+</center>
 <div class="admonition warning">
 <p class="admonition-title">按偏移访问与按内容查找不同</p>
 <p>字节流文件可以通过 <code>seek</code> 定位到已知字节偏移。教材所说无结构文件需要顺序查找，主要指缺少记录边界和索引时，按关键字查找内容；不能据此推出“流式文件不支持随机访问”。</p>
@@ -3607,1192 +3383,732 @@ T(m)\approx\frac m2+\frac{N}{2m}.
 <h3 id="直接文件散列文件">直接文件（散列文件）<a class="headerlink" href="#直接文件散列文件" title="Permanent link">&para;</a></h3>
 <p>对记录关键字计算散列值，得到桶或记录的存储位置，再用冲突处理机制定位记录。平均查找快，适合按关键字精确查询；散列冲突、扩容和范围查询需要另行处理。“直接文件”是逻辑组织方式，不等于“连续分配”。</p>
 <h3 id="文件访问方式">文件访问方式<a class="headerlink" href="#文件访问方式" title="Permanent link">&para;</a></h3>
+<center>
 <table>
 <thead>
 <tr>
-<th>访问方式</th>
-<th>基本操作与特点</th>
-<th>适用情形</th>
+<th style="text-align: center;">访问方式</th>
+<th style="text-align: center;">基本操作与特点</th>
+<th style="text-align: center;">适用情形</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>顺序访问</td>
-<td>从当前位置读写下一个字节或记录，指针随操作推进，可复位或跳过若干记录</td>
-<td>文本扫描、批处理、磁带</td>
+<td style="text-align: center;">顺序访问</td>
+<td style="text-align: center;">从当前位置读写下一个字节或记录，指针随操作推进，可复位或跳过若干记录</td>
+<td style="text-align: center;">文本扫描、批处理、磁带</td>
 </tr>
 <tr>
-<td>直接／随机／相对访问</td>
-<td>按文件内的相对块号或字节偏移访问，不必依次读出前面的数据</td>
-<td>磁盘文件、数据库、随机播放</td>
+<td style="text-align: center;">直接／随机／相对访问</td>
+<td style="text-align: center;">按文件内的相对块号或字节偏移访问，不必依次读出前面的数据</td>
+<td style="text-align: center;">磁盘文件、数据库、随机播放</td>
 </tr>
 <tr>
-<td>索引访问</td>
-<td>先查索引得到记录或块的位置，再直接访问</td>
-<td>按关键字查找、变长记录</td>
+<td style="text-align: center;">索引访问</td>
+<td style="text-align: center;">先查索引得到记录或块的位置，再直接访问</td>
+<td style="text-align: center;">按关键字查找、变长记录</td>
 </tr>
 <tr>
-<td>索引顺序访问</td>
-<td>先定位记录组，再组内顺序访问</td>
-<td>兼顾顺序处理和检索</td>
+<td style="text-align: center;">索引顺序访问</td>
+<td style="text-align: center;">先定位记录组，再组内顺序访问</td>
+<td style="text-align: center;">兼顾顺序处理和检索</td>
 </tr>
 </tbody>
 </table>
+</center>
 <p>访问方式是接口能力，逻辑结构是数据组织，物理分配决定其实现代价。随机访问也不表示所有请求耗时严格相同，缓存、索引层数和寻道距离都会影响时间。</p>
-<h2 id="directory">目录、文件控制块与索引节点<a class="headerlink" href="#directory" title="Permanent link">&para;</a></h2>
-<h3 id="目录的职责">目录的职责<a class="headerlink" href="#目录的职责" title="Permanent link">&para;</a></h3>
-<p>目录建立 <strong>文件名到文件元数据的映射</strong>，是“按名存取”的关键。目录管理还应提高检索速度、允许不同目录重名，并支持共享和保护。目录本身通常也是持久保存的特殊文件，其内容是子文件、子目录的目录项。</p>
-<h3 id="文件控制块fcb">文件控制块（ FCB ）<a class="headerlink" href="#文件控制块fcb" title="Permanent link">&para;</a></h3>
-<p>FCB 是操作系统描述和管理一个文件的数据结构，在创建文件时建立。其内容可归为：</p>
+<h2 id="filesystem-structure">文件系统结构<a class="headerlink" href="#filesystem-structure" title="Permanent link">&para;</a></h2>
+<p>文件系统的设计需要同时解决两个问题：向上提供文件、目录和相关操作的接口，向下通过算法和数据结构，把这些逻辑对象映射到外存。将功能分层，可以把命名、权限、空间组织与设备控制分别处理。</p>
+<p>自顶向下，一种常见的划分如下。</p>
+<center>
 <table>
 <thead>
 <tr>
-<th>类别</th>
-<th>典型信息</th>
+<th style="text-align: center;">层次</th>
+<th style="text-align: center;">主要职责</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>基本信息</td>
-<td>文件名、类型、位置、大小、逻辑结构和物理结构</td>
+<td style="text-align: center;">应用程序</td>
+<td style="text-align: center;">通过系统调用提出创建、打开、读写等请求</td>
 </tr>
 <tr>
-<td>存取控制信息</td>
-<td>所有者、组、各类用户的访问权限</td>
+<td style="text-align: center;">逻辑文件系统</td>
+<td style="text-align: center;">管理文件名、目录、FCB、权限等元数据，完成按名存取与文件保护</td>
 </tr>
 <tr>
-<td>使用信息</td>
-<td>创建、修改、访问时间及有关状态</td>
+<td style="text-align: center;">文件组织模块</td>
+<td style="text-align: center;">将文件逻辑块号转换为物理块号，并通过空闲空间管理器分配、回收盘块</td>
+</tr>
+<tr>
+<td style="text-align: center;">基本文件系统</td>
+<td style="text-align: center;">向设备驱动发出通用的物理块读写请求，管理内存缓冲区和缓存</td>
+</tr>
+<tr>
+<td style="text-align: center;">I/O 控制</td>
+<td style="text-align: center;">包含设备驱动程序与中断处理程序，将通用请求转换为设备命令，处理传输与完成通知</td>
+</tr>
+<tr>
+<td style="text-align: center;">设备</td>
+<td style="text-align: center;">执行实际的数据存取</td>
 </tr>
 </tbody>
 </table>
-<p>在传统模型中，目录项就是 FCB ，目录文件是 FCB 的集合。<strong>FCB 不以文件处于打开状态为存在条件</strong>；打开文件表记录的是运行时的打开状态，可包含或引用 FCB 的内存副本。不同系统的具体结构名称并不完全相同。</p>
-<h3 id="将文件名与描述信息分离inode">将文件名与描述信息分离： inode<a class="headerlink" href="#将文件名与描述信息分离inode" title="Permanent link">&para;</a></h3>
-<p>搜索目录时主要比较文件名，扫描完整 FCB 会同时读入大量暂时无用的属性。将描述信息集中到 <strong>索引节点</strong>（ index node ， inode ），目录项缩小为“文件名 + inode 号”，一个盘块就能容纳更多目录项，减少检索的磁盘 I/O。</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>flowchart LR
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    A["目录项：文件名 + inode 号"] --&gt; B["inode：属性、权限、链接计数、块地址"]
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    B --&gt; C[直接数据块]
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    B --&gt; D[间接索引块]
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    D --&gt; E[数据块]
-</span></code></pre></div>
-<p>同一文件系统内，多个目录项可以指向同一个 inode ，这也为硬链接共享提供了基础。inode 通常不保存文件名；跨文件系统标识文件时，需要结合文件系统／设备标识与 inode 号。</p>
-<table>
-<thead>
-<tr>
-<th>形态</th>
-<th>保存的信息</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>磁盘 inode</td>
-<td>所有者与组、文件类型和权限、文件长度、数据块的直接或间接地址、硬链接计数、访问／修改及 inode 状态变化时间</td>
-</tr>
-<tr>
-<td>内存 inode</td>
-<td>磁盘信息的内存表示，加上 inode 号、设备号、锁定／修改状态、运行时引用计数、空闲链或哈希队列指针等</td>
-</tr>
-</tbody>
-</table>
-<p>磁盘 inode 的硬链接计数统计目录引用；内存引用计数用于判断运行时对象是否仍被使用。二者不能混为一谈。inode 地址项的个数由具体实现决定，王道示例为 13 项，其他教材也可能使用 15 项。</p>
-<details class="example">
-<summary>目录项分解如何减少访盘</summary>
-<p>假设盘块为 1 KiB ，目录包含 3200 项，目录项不跨块且全部等概率被查找。</p>
+</center>
+<p>例如，用户给出一个文件路径后，逻辑文件系统先取得文件的描述信息；文件组织模块据此定位数据块；基本文件系统和 I/O 控制再共同完成块的传输。这里的层次描述职责分工，具体实现可以进一步合并或细分。</p>
+<h2 id="directory">目录与文件<a class="headerlink" href="#directory" title="Permanent link">&para;</a></h2>
+<h3 id="目录的基本概念">目录的基本概念<a class="headerlink" href="#目录的基本概念" title="Permanent link">&para;</a></h3>
+<p><strong>文件目录</strong>用于组织文件，建立文件名与文件描述信息之间的联系，是实现 <strong>按名存取</strong> 的关键。用户给出文件名或路径，系统便能定位文件，而不必让用户记住盘块地址。</p>
+<p>目录管理还需要提高检索速度、支持文件共享与访问控制，并允许不同用户或不同目录中的文件重名。目录本身通常也以文件形式存放，其内容是所包含文件和子目录的目录项。</p>
+<h3 id="文件控制块与索引节点">文件控制块与索引节点<a class="headerlink" href="#文件控制块与索引节点" title="Permanent link">&para;</a></h3>
+<h4 id="文件控制块">文件控制块<a class="headerlink" href="#文件控制块" title="Permanent link">&para;</a></h4>
+<p><strong>文件控制块</strong>（ File Control Block ， FCB ）是操作系统描述和管理文件的数据结构。创建文件时，系统为其建立 FCB ，集中保存前面介绍的文件属性，主要包括三类：</p>
 <ul>
-<li>完整 FCB 为 64 B ：每块 16 项，共 200 块；教材近似平均扫描 100 块。</li>
-<li>简化目录项为 16 B ：每块 64 项，共 50 块；近似扫描 25 块。若目标 inode 未缓存，还需读 inode 所在块一次，共约 26 次。</li>
+<li><strong>基本信息</strong>：文件名、物理位置、逻辑结构和物理结构等。</li>
+<li><strong>存取控制信息</strong>：文件主及其他用户的访问权限。</li>
+<li><strong>使用信息</strong>：创建时间、最后修改时间等。</li>
 </ul>
-<p>精确计算且每块装满时，分别为 <span class="arithmatex">\((200+1)/2=100.5\)</span> 和 <span class="arithmatex">\((50+1)/2+1=26.5\)</span>。末块未装满时，各块被命中的概率不同，应使用 <span class="arithmatex">\(E=\sum_k k n_k/N\)</span>，其中 <span class="arithmatex">\(n_k\)</span> 为第 <span class="arithmatex">\(k\)</span> 块的目录项数；然后再加读取 inode 的次数。<strong>查目录、读 inode 和读文件数据是三种不同的 I/O。</strong></p>
-</details>
+<p>在以完整 FCB 作为目录项的组织方式中， FCB 的集合就构成文件目录。<strong>FCB 随文件建立，并不要求文件已被打开</strong>；运行时的打开状态由后面的<a href="#open-file-table">打开文件表</a>管理。</p>
+<h4 id="索引节点">索引节点<a class="headerlink" href="#索引节点" title="Permanent link">&para;</a></h4>
+<p>查找目录时，系统主要需要比较文件名，找到目标后才需要读取其余属性。若每次都读入完整 FCB ，就会在检索阶段传输大量暂时用不到的信息。</p>
+<p>因此，可以把文件名与描述信息分离：将文件描述信息集中存入 <strong>索引节点</strong>（ index node ， inode ，也称 i 节点），目录项只保留 <strong>文件名和索引节点号</strong>。</p>
+<div class="arithmatex">\[
+\text{文件名}\xrightarrow{\text{查目录}}\text{inode 号}\xrightarrow{\text{读 inode}}\text{文件属性与数据块地址}
+\]</div>
+<p>这样，同一个盘块可以容纳更多目录项，减少查找目录时的磁盘 I/O。例如，盘块为 1 KiB 时， 64 B 的 FCB 每块只能放 16 项；分离后若目录项为 16 B ，每块就能放 64 项。这里减少的是 <strong>目录检索的信息量</strong>；取得目标 inode 和读取文件数据仍是后续步骤。</p>
+<p>索引节点有两种形态。</p>
+<center>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">形态</th>
+<th style="text-align: center;">内容与用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">磁盘索引节点</td>
+<td style="text-align: center;">持久保存文件主标识、类型、权限、长度、直接或间接块地址、硬链接计数，以及文件访问、修改和 inode 修改时间</td>
+</tr>
+<tr>
+<td style="text-align: center;">内存索引节点</td>
+<td style="text-align: center;">保存磁盘 inode 的内存表示，并增加 inode 号、逻辑设备号、锁定或修改状态、访问引用计数、空闲链和散列队列指针等运行时信息</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>同一文件系统内的 inode 号用于区分文件；涉及多个文件系统时，还要结合设备或文件系统标识。多个目录项可以指向同一个 inode ，这也是后面<a href="#hard-link">硬链接共享</a>的基础。</p>
+<div class="admonition note">
+<p class="admonition-title">两种计数的含义不同</p>
+<p>磁盘 inode 的 <strong>硬链接计数</strong> 统计有多少目录项指向文件；内存 inode 的 <strong>访问引用计数</strong> 用于判断运行时是否仍有人使用该对象。后者不是累计读写次数，不能用它代替硬链接计数。</p>
+</div>
 <h3 id="目录结构">目录结构<a class="headerlink" href="#目录结构" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>结构</th>
-<th>组织方式</th>
-<th>优点</th>
-<th>局限</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>单级目录</td>
-<td>全系统一张目录表</td>
-<td>简单，能按名存取</td>
-<td>全局不能重名，扫描慢，不便分类与共享</td>
-</tr>
-<tr>
-<td>两级目录</td>
-<td>主文件目录 MFD 指向各用户文件目录 UFD</td>
-<td>用户间可重名，缩小查找范围，便于隔离</td>
-<td>每个 UFD 仍是扁平结构，用户内分类与跨用户共享不便</td>
-</tr>
-<tr>
-<td>树形目录</td>
-<td>根目录下递归包含子目录与文件</td>
-<td>层次清晰，支持分类、重名和分层保护</td>
-<td>纯树中每个节点只有一个父节点，不能直接表达共享；深路径有逐级查找开销</td>
-</tr>
-<tr>
-<td>无环图目录</td>
-<td>在树上增加共享边，但保持无环</td>
-<td>同一文件或子目录可出现在多个位置</td>
-<td>需维护共享计数、处理删除并防止环</td>
-</tr>
-<tr>
-<td>一般图／通用图目录</td>
-<td>允许形成环</td>
-<td>共享关系更自由</td>
-<td>遍历须防重复和无限循环；仅靠引用计数可能回收不了不可达的环</td>
-</tr>
-</tbody>
-</table>
-<p>前三种和无环图目录对应王道的目录结构；一般图是 Unit 6 的补充主题。处理图中的环可使用访问标记、限制跟随链接次数、建链时检查，以及从根出发的可达性检查／垃圾回收。目录共享是抽象设计能力；实际 UNIX 通常限制用户创建目录硬链接，符号链接仍可能形成循环。</p>
-<h3 id="路径名与当前工作目录">路径名与当前工作目录<a class="headerlink" href="#路径名与当前工作目录" title="Permanent link">&para;</a></h3>
+<h4 id="单级目录">单级目录<a class="headerlink" href="#单级目录" title="Permanent link">&para;</a></h4>
+<p>整个文件系统只有一张目录表，所有文件都处于同一级。创建文件前，需要扫描目录，确认不存在同名文件；访问时按文件名查找对应目录项。</p>
+<p>这种结构实现简单，但全系统不能重名，文件增多后查找较慢，也不便分类和共享，适合早期简单的单用户环境。</p>
+<h4 id="两级目录">两级目录<a class="headerlink" href="#两级目录" title="Permanent link">&para;</a></h4>
+<p>目录分为 <strong>主文件目录</strong>（ Master File Directory ， MFD ）和 <strong>用户文件目录</strong>（ User File Directory ， UFD ）： MFD 记录用户名及其 UFD 的位置， UFD 保存该用户的文件目录项。</p>
+<p>查找先定位用户，再查其 UFD。不同用户的文件可以重名，检索范围也随之缩小，便于用户之间的隔离和保护。不过，每个用户的 UFD 仍然是扁平结构，无法继续按项目或文件类别分组。</p>
+<h4 id="树形目录">树形目录<a class="headerlink" href="#树形目录" title="Permanent link">&para;</a></h4>
+<p>允许目录中继续包含子目录，就得到以根目录为起点的 <strong>树形目录</strong>。它能按层次组织文件，在不同分支中使用相同文件名，并对不同目录设置访问权限。</p>
+<p>在纯树形结构中，每个非根节点只有一个父节点，文件由从根出发的路径唯一确定。路径名有两种形式：</p>
 <ul>
-<li><strong>绝对路径</strong>从根开始，例如 <code>/home/student/os/file.md</code>。</li>
-<li><strong>相对路径</strong>从进程的当前工作目录开始，例如当前目录为 <code>/home/student</code> 时，<code>os/file.md</code> 指向同一文件。</li>
-<li><code>.</code> 表示当前目录，<code>..</code> 表示父目录；进程可通过 <code>chdir</code> 改变工作目录， Shell 的 <code>cd</code> 使用这类机制。</li>
+<li><strong>绝对路径</strong>：从根目录开始，如 <code>/home/student/os/file.md</code>。</li>
+<li><strong>相对路径</strong>：从进程的当前工作目录开始。若当前目录为 <code>/home/student</code>，则 <code>os/file.md</code> 指向上述文件。</li>
 </ul>
-<p>当前工作目录既缩短路径输入，也可减少重复解析上层目录的工作；它不改变磁盘本身的数据传输速度。纯树中节点有唯一绝对路径，引入硬链接后，同一文件实体可能有多个路径。</p>
-<p>路径解析按分量逐级查找；中途遇到不存在的分量、非目录分量或权限不足，就不能继续。目录内容、目录 inode 和数据块是否已在缓存中，决定实际访盘次数，不能简单认为“一个斜杠就是一次 I/O”。</p>
-<h3 id="目录操作与实现">目录操作与实现<a class="headerlink" href="#目录操作与实现" title="Permanent link">&para;</a></h3>
-<p>目录支持搜索、创建／删除文件项、创建／删除子目录、重命名／移动、显示内容和改变工作目录。创建前要检查同目录重名；文件名与子目录名共享该目录的命名空间。删除空目录较简单，非空目录通常要求先清空，或由上层工具递归删除。移动同一文件系统内的文件一般更新目录关系即可，跨文件系统移动通常还需要复制数据。</p>
+<p><code>.</code> 表示当前目录，<code>..</code> 表示父目录。进程可以改变当前工作目录，从而缩短路径输入，并减少反复从根解析相同上层目录的工作。</p>
+<p>树形目录便于分类、管理和保护，但深路径需要逐级查找，可能增加磁盘 I/O ；纯树本身也不能直接表示一个文件属于多个目录的共享关系。实际访盘次数还取决于目录和 inode 的缓存情况。</p>
+<h4 id="无环图目录">无环图目录<a class="headerlink" href="#无环图目录" title="Permanent link">&para;</a></h4>
+<p>在树形目录中增加指向已有文件或子目录的共享边，并保持整个结构无环，就得到 <strong>无环图目录</strong>。一个节点可以出现在多个目录下，用户共享同一实体，无须各自保存数据副本。</p>
+<p>共享节点的删除不能直接按普通树节点处理：断开某个目录的共享边时，不能破坏其他用户仍在使用的实体。具体的引用计数与链接机制在后面的<a href="#file-sharing">文件共享</a>中展开。</p>
+<h4 id="一般图目录">一般图目录<a class="headerlink" href="#一般图目录" title="Permanent link">&para;</a></h4>
+<p>如果允许共享边形成环，目录便成为一般图。此时，遍历需要记录访问状态或限制跟随链接的次数，以免无限循环；仅靠引用计数也可能无法回收已经不可达、却相互引用的节点，需要结合可达性检查等回收机制。</p>
+<h3 id="目录的操作">目录的操作<a class="headerlink" href="#目录的操作" title="Permanent link">&para;</a></h3>
+<p>目录操作主要改变命名关系和组织层次。</p>
+<center>
 <table>
 <thead>
 <tr>
-<th>实现方法</th>
-<th>查找与维护</th>
-<th>注意点</th>
+<th style="text-align: center;">操作</th>
+<th style="text-align: center;">主要工作</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>线性列表</td>
-<td>顺序比较文件名；删除项可标空闲、挂空闲链或用末项填补</td>
-<td>实现简单，规模增大时查找慢</td>
+<td style="text-align: center;">搜索</td>
+<td style="text-align: center;">在目录中查找与给定名称匹配的目录项；多级路径需要逐级解析</td>
 </tr>
 <tr>
-<td>有序列表／树形索引</td>
-<td>有序数组可折半查找，平衡树或 B+ 树支持动态检索</td>
-<td>插入、删除需要维护顺序或树结构</td>
+<td style="text-align: center;">创建文件项</td>
+<td style="text-align: center;">检查同目录重名，建立新文件名与其描述信息的联系</td>
 </tr>
 <tr>
-<td>哈希表</td>
-<td>文件名经哈希后定位目录项，再核对名称</td>
-<td>平均查找快；必须处理冲突、负载与扩容，不能只比较哈希值</td>
+<td style="text-align: center;">删除文件项</td>
+<td style="text-align: center;">移除名字；是否同时回收文件实体，要结合共享和使用状态判断</td>
+</tr>
+<tr>
+<td style="text-align: center;">创建目录</td>
+<td style="text-align: center;">建立子目录，使文件能够继续分组和嵌套</td>
+</tr>
+<tr>
+<td style="text-align: center;">删除目录</td>
+<td style="text-align: center;">空目录可直接删除；非空目录需先清空，或由递归删除操作处理其中内容</td>
+</tr>
+<tr>
+<td style="text-align: center;">移动</td>
+<td style="text-align: center;">将文件或子目录的命名关系迁移到另一父目录，改变其路径</td>
+</tr>
+<tr>
+<td style="text-align: center;">显示目录</td>
+<td style="text-align: center;">列出文件和子目录的名称，以及需要显示的相关属性</td>
+</tr>
+<tr>
+<td style="text-align: center;">改变目录</td>
+<td style="text-align: center;">修改进程的当前工作目录，作为后续相对路径的起点</td>
 </tr>
 </tbody>
 </table>
-<p>将活跃目录项缓存到内存可避免重复读盘。目录检索开销与目录项数量、大小、位置及路径有关，与目标文件内容的大小没有直接对应关系。</p>
-<h2 id="file-operations">文件操作与打开文件表<a class="headerlink" href="#file-operations" title="Permanent link">&para;</a></h2>
-<h3 id="基本操作">基本操作<a class="headerlink" href="#基本操作" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>操作</th>
-<th>核心工作</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>创建 <code>create</code></td>
-<td>检查名称与目录权限，分配并初始化 FCB ／ inode ，建立目录项，更新空闲空间等元数据</td>
-</tr>
-<tr>
-<td>打开 <code>open</code></td>
-<td>按路径找到文件，检查打开方式，建立运行时访问上下文，返回描述符或句柄</td>
-</tr>
-<tr>
-<td>读取 <code>read</code></td>
-<td>从当前偏移读取数据到用户缓冲区，按实际读取量推进偏移</td>
-</tr>
-<tr>
-<td>写入 <code>write</code></td>
-<td>从用户缓冲区取数据，必要时分配新块，更新内容、偏移、长度和时间等信息</td>
-</tr>
-<tr>
-<td>定位 <code>seek</code>／<code>lseek</code></td>
-<td>改变下一次访问的偏移，一般不传输文件数据</td>
-</tr>
-<tr>
-<td>截断 <code>truncate</code></td>
-<td>将长度改为指定值；截到 0 时清空内容但保留文件身份，长度、时间等属性会更新</td>
-</tr>
-<tr>
-<td>关闭 <code>close</code></td>
-<td>解除本次打开引用，必要时更新元数据和释放运行时结构</td>
-</tr>
-<tr>
-<td>删除 <code>delete</code>／<code>unlink</code></td>
-<td>移除目录中的名字，减少硬链接计数；满足回收条件时释放 inode、数据块和索引块</td>
-</tr>
-<tr>
-<td>加锁 <code>lock</code></td>
-<td>对文件或记录区间实施并发访问协调</td>
-</tr>
-</tbody>
-</table>
-<p>创建空文件并不必然立即分配数据块，很多系统写入时才按需分配；但仍需建立元数据和目录项。创建与打开是不同动作，有些接口可一次完成两者。删除一个文件也不意味着删除其父目录。</p>
-<h3 id="为什么需要先打开">为什么需要先打开<a class="headerlink" href="#为什么需要先打开" title="Permanent link">&para;</a></h3>
-<p>若每次读写都从路径解析开始，重复查询目录和加载元数据会很昂贵。打开操作把后续访问所需的信息保留在内核中，并返回 <strong>文件描述符</strong>（ file descriptor ， fd ）。fd 通常是进程描述符表的一个非负整数索引（ Windows 中称文件句柄， file handle ），不是磁盘地址，也不是全系统统一的文件编号；不同进程里的同一数值可以表示不同文件。</p>
-<p><strong>打开主要准备元数据和访问状态，不要求把整个文件内容读入内存。</strong> 内容在读取、映射缺页或预读等过程中按需进入缓存。</p>
-<h3 id="王道的两级打开文件表模型">王道的两级打开文件表模型<a class="headerlink" href="#王道的两级打开文件表模型" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>层次</th>
-<th>主要用途</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>进程打开文件表</td>
-<td>保存本进程的访问模式、读写位置等私有访问状态，并指向系统表项； fd 用来查此表</td>
-</tr>
-<tr>
-<td>系统打开文件表</td>
-<td>保存或引用共享的文件属性、磁盘位置、大小等信息，并记录打开计数</td>
-</tr>
-<tr>
-<td>活动 inode ／ FCB</td>
-<td>提供文件本身的属性及块映射，供系统表项引用</td>
-</tr>
-</tbody>
-</table>
-<p>按教材简化模型，多个进程打开同一文件，可以共享系统级信息，同时保有各自访问状态。打开、关闭计数的是仍在使用的打开引用；若题目限定每进程只打开一次，才可直接等同于进程数量。</p>
-<p>打开普通已有文件的过程为：</p>
-<ol>
-<li>根据绝对或相对路径查找目录，取得目标 inode 号；缓存未命中时读取所需目录块和 inode。</li>
-<li>结合用户身份、文件权限与请求的打开方式检查合法性。</li>
-<li>建立或引用系统级文件信息，维护打开计数；在进程表中分配表项，初始化访问状态。</li>
-<li>返回进程表项的索引 fd ，供 <code>read(fd, buf, n)</code>、<code>write</code>、<code>lseek</code>、<code>close</code> 等使用。</li>
-</ol>
-<p>关闭时解除进程表项，递减相应引用计数；最后一个引用消失后，运行时表项才可回收。<strong>正常关闭不删除目录项，也不释放文件的数据块。</strong> 文件元数据可能需要回写；<code>close</code> 也不等同于保证所有数据已持久化到设备。</p>
-<div class="admonition info">
-<p class="admonition-title">与 Linux 实际结构对照</p>
-<p>Linux 更准确的关系是 <code>进程 fd 表 → 打开文件描述（file 对象）→ inode</code>。文件偏移和状态标志在 file 对象中：分别调用两次 <code>open</code> 通常创建两个 file 对象、偏移互不影响；<code>dup</code> 或 <code>fork</code> 继承的描述符可引用同一个 file 对象并共享偏移。它们又可以共享同一个 inode。因而“同一文件只对应一个系统打开表项”“所有进程偏移都独立”仅适用于特定教材模型，不能当作普遍实现规律。参见 <a href="https://man7.org/linux/man-pages/man2/open.2.html">Linux open(2)</a>。</p>
-</div>
-<h3 id="一次读取怎样到达磁盘">一次读取怎样到达磁盘<a class="headerlink" href="#一次读取怎样到达磁盘" title="Permanent link">&para;</a></h3>
-<p>查 fd 并验证可读性 → 根据文件偏移确定逻辑块 → 利用 inode ／分配信息找到物理块 → 查询缓存 → 必要时提交设备 I/O → 将数据交给用户并推进偏移。</p>
-<p><code>read</code> 的参数包含 fd、缓冲区地址和请求字节数。系统调用使 CPU 进入内核态；若数据需要设备 I/O ，同步读取的线程可能阻塞， I/O 完成后再被唤醒。普通读取的缓存未命中不必然产生用户进程的缺页异常，应与 <code>mmap</code> 后访问未驻留页区分。已打开后的读写不再重复按文件名查目录，但删除、重命名等路径操作仍可使用文件名。</p>
-<h2 id="sharing-protection">文件共享与保护<a class="headerlink" href="#sharing-protection" title="Permanent link">&para;</a></h2>
-<h3 id="硬链接与软链接">硬链接与软链接<a class="headerlink" href="#硬链接与软链接" title="Permanent link">&para;</a></h3>
-<p>共享的目标是让多个名字或多个使用者访问同一份数据，避免复制导致空间浪费和内容分歧。</p>
-<table>
-<thead>
-<tr>
-<th>比较项</th>
-<th>硬链接（ hard link ）</th>
-<th>软链接／符号链接（ symbolic link ）</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>本质</td>
-<td>新目录项指向已有 inode</td>
-<td>单独的链接文件，内容记录目标路径</td>
-</tr>
-<tr>
-<td>inode</td>
-<td>与原名字共用 inode</td>
-<td>链接自身有独立 inode</td>
-</tr>
-<tr>
-<td>目标的硬链接计数</td>
-<td>创建时加 1 ，删除该名字时减 1</td>
-<td>不因建立或删除软链接而改变</td>
-</tr>
-<tr>
-<td>删除原名字</td>
-<td>其他硬链接仍可访问同一实体</td>
-<td>若目标路径不再存在，链接悬空，访问失败</td>
-</tr>
-<tr>
-<td>跨文件系统</td>
-<td>通常不允许</td>
-<td>可以指向其他已挂载文件系统中的路径</td>
-</tr>
-<tr>
-<td>指向目录</td>
-<td>实际 UNIX 一般限制用户创建目录硬链接，以避免环等问题</td>
-<td>通常允许，但可能形成路径解析循环</td>
-</tr>
-<tr>
-<td>开销</td>
-<td>解析名字后直接定位共享 inode</td>
-<td>还要读取／解释目标路径并再次解析，缓存可减轻开销</td>
-</tr>
-</tbody>
-</table>
-<p>硬链接共享的是 inode 和数据，并非复制各份文件属性；任一名字下的写入都会作用于同一实体，文件所有者也不会因增加链接自动改变。符号链接访问时重新解释目标路径，目标删除后在相同路径建立新文件，链接可能转而指向新实体。相对目标路径相对于链接所在目录解释。此外，每个目录中还固定存在 <code>.</code> 与 <code>..</code>，分别指向当前目录和父目录；它们常被视为“不允许目录硬链接”这一限制的例外。参见 <a href="https://man7.org/linux/man-pages/man7/symlink.7.html">Linux symlink(7)</a>。</p>
-<p>例如，<code>A</code> 创建后硬链接计数为 1 ；建立其硬链接 <code>B</code> 后计数为 2 ；建立指向 <code>A</code> 的软链接 <code>C</code> 不改变这个 2 ，<code>C</code> 自身通常计数为 1。删除 <code>A</code> 后，共享实体的计数变为 1 ，<code>B</code> 仍可访问，<code>C</code> 则因路径 <code>A</code> 消失而悬空。</p>
-<div class="admonition warning">
-<p class="admonition-title">链接计数为 0 不一定立刻释放数据</p>
-<p>磁盘硬链接计数、打开文件引用计数和内存 inode 引用计数属于不同层次。在 UNIX 中，即使最后一个名字被 <code>unlink</code>，已经打开的描述符仍可继续使用文件；要等有关打开引用等都释放后才能回收数据。删除软链接只删除链接自身，系统不必自动清除悬空软链接。参见 <a href="https://man7.org/linux/man-pages/man2/unlink.2.html">Linux unlink(2)</a>。</p>
-</div>
-<p>教材还用“远程机器标识 + 路径”解释网络共享的命名思想。实际本地符号链接并不会自行执行网络协议；访问远端内容还需要网络文件系统等机制。</p>
-<h3 id="共享后的并发访问">共享后的并发访问<a class="headerlink" href="#共享后的并发访问" title="Permanent link">&para;</a></h3>
-<p>允许多个进程打开文件，不代表系统自动替应用程序把一组读改写操作变成互斥事务。常见控制方式包括共享读锁、独占写锁、整文件锁或记录锁；还要区分由程序自觉遵守的建议锁与系统强制执行的锁。权限回答“可不可以访问”，锁回答“并发访问怎样协调”，调度优先级回答“先让谁运行”。</p>
-<h3 id="文件保护的目标与受控操作">文件保护的目标与受控操作<a class="headerlink" href="#文件保护的目标与受控操作" title="Permanent link">&para;</a></h3>
-<p>保护机制限制未授权访问；备份、冗余与恢复则针对误删、故障或损坏，二者相互补充。受控访问类型包括 <strong>读、写、执行、追加、删除和列目录</strong>，也可扩展到重命名等操作。复制和打印会读取源文件；源文件的读权限并不能保证其内容不会被复制，目标写入或输出设备还可能有各自限制。</p>
-<table>
-<thead>
-<tr>
-<th>方法</th>
-<th>基本思想</th>
-<th>特点</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>口令保护</td>
-<td>访问文件时核对共享口令</td>
-<td>实现简单，但口令分发、保管和撤销不便；教材中的简单存储方式安全性有限</td>
-</tr>
-<tr>
-<td>加密保护</td>
-<td>用密钥加密内容，持有正确密钥才能解密</td>
-<td>提供内容保密性，有计算和密钥管理成本；实际格式还可能需要 nonce、认证标签等元数据</td>
-</tr>
-<tr>
-<td>访问控制</td>
-<td>按用户身份和操作类型决定是否授权</td>
-<td>能细分读、写、执行等权限，是受控共享的主要机制</td>
-</tr>
-</tbody>
-</table>
-<h3 id="acl权限位与目录保护">ACL、权限位与目录保护<a class="headerlink" href="#acl权限位与目录保护" title="Permanent link">&para;</a></h3>
-<p><strong>访问控制列表</strong>（ ACL ）附属于文件或目录，记录用户／用户组及其权限。它表达灵活，但列表可能很长且长度不定。精简方法将用户分为拥有者、所属组和其他用户，为各类保存一组权限位。</p>
-<p>若有 <span class="arithmatex">\(u\)</span> 类用户、<span class="arithmatex">\(v\)</span> 种可独立组合的权限，需要 <span class="arithmatex">\(uv\)</span> 位，而非 <span class="arithmatex">\(\lceil\log_2u\rceil+\lceil\log_2v\rceil\)</span> 位。例如王道的 3 类用户、4 种权限需 12 位； 4 类用户、5 种权限需 20 位。</p>
-<p>UNIX 的基本模式位为三组 <code>rwx</code>，共 9 位。例如 <code>-rw-r-----</code> 的首字符 <code>-</code> 表示普通文件，其后表示拥有者可读写、组可读、其他用户无权限，数值为 <code>640</code>（读 4、写 2、执行 1 ）。<code>d</code> 表示目录，<code>l</code> 表示符号链接。基本模式位按拥有者、组、其他的适用类别选择权限，不是把三组全部相加；扩展 ACL 可表达更细的规则。</p>
-<p>对目录而言，<code>r</code> 表示列出目录项，<code>x</code> 表示搜索／穿过目录，<code>w</code> 表示修改目录项。创建和删除名字通常需要父目录的写与搜索权限；能否删除文件不能仅由文件自身的写权限判断，还可能受 sticky bit 等规则限制。多级目录的路径遍历也要逐级满足搜索权限。参见 <a href="https://man7.org/linux/man-pages/man7/inode.7.html">Linux inode(7)</a>。</p>
-<h2 id="allocation">文件的物理结构与分配方式<a class="headerlink" href="#allocation" title="Permanent link">&para;</a></h2>
-<h3 id="块簇与地址换算">块、簇与地址换算<a class="headerlink" href="#块簇与地址换算" title="Permanent link">&para;</a></h3>
-<p>文件物理结构描述 <strong>已经分配给一个文件的块怎样组织</strong>；空闲空间管理描述 <strong>尚未分配的块怎样登记、分配和回收</strong>。两者有关联，但不是同一个问题。</p>
-<p>磁盘扇区是设备层的单位，文件系统以块或簇分配空间；簇可包含多个相邻扇区或盘块。内存页与文件系统块可能取相同大小，但并非必须相等。程序可以请求读取几个字节，底层仍按设备和缓存的粒度传输。</p>
-<p>本节默认块大小为 <span class="arithmatex">\(B\)</span> 字节，文件偏移 <span class="arithmatex">\(x\)</span>、逻辑块号均 <strong>从 0 开始</strong>。则</p>
+</center>
+<p>创建文件项只是创建文件过程中的一个环节，完整的元数据和空间处理见<a href="#file-operations">文件的操作</a>。</p>
+<h3 id="目录实现">目录实现<a class="headerlink" href="#目录实现" title="Permanent link">&para;</a></h3>
+<p>目录的逻辑层次与目录项在内部如何检索是两个问题。单个目录可以采用以下实现方法。</p>
+<h4 id="线性列表">线性列表<a class="headerlink" href="#线性列表" title="Permanent link">&para;</a></h4>
+<p>将文件名及其定位信息组织成线性表，查找时逐项比较。创建前先确认无重名，再加入目录项；删除后可标记表项为空闲、挂入空闲链，或用末项填补空位。</p>
+<p>优点是实现简单；缺点是目录越大，顺序扫描越慢。若目录项按文件名有序，可采用折半查找，但插入和删除需要维护有序性；也可使用平衡树、B+ 树等索引组织。</p>
+<h4 id="哈希表">哈希表<a class="headerlink" href="#哈希表" title="Permanent link">&para;</a></h4>
+<p>对文件名计算哈希值，定位到相应表项或目录项指针，再核对文件名。平均查找速度较快，但必须处理不同文件名的哈希冲突，还要考虑表容量和扩容。</p>
+<p>无论采用哪种方法，将活跃目录缓存到内存，都能减少重复查目录造成的磁盘读取。</p>
+<h3 id="allocation">文件的物理结构<a class="headerlink" href="#allocation" title="Permanent link">&para;</a></h3>
+<p>文件物理结构描述 <strong>分配给一个文件的盘块如何组织</strong>。它与<a href="#logical-structure">文件的逻辑结构</a>属于不同层次：逻辑上相邻的记录，既可存放在连续盘块中，也可通过链接或索引分散存放；物理实现会影响逻辑访问的效率。</p>
+<p>这里讨论已分配块的组织；未分配块的登记、分配和回收，放在后面的<a href="#free-space">文件存储空间管理</a>中讨论。</p>
+<h4 id="盘块与簇">盘块与簇<a class="headerlink" href="#盘块与簇" title="Permanent link">&para;</a></h4>
+<p>文件系统按固定大小的块组织外存空间，并以块为粒度进行底层数据交换。若以若干连续盘块构成一个分配单元，则称为 <strong>簇</strong>（ cluster ）。簇增大后，需要管理的分配单元和指针变少，但文件尾部未用满的空间可能增大，形成内部碎片。</p>
+<p>设块大小为 <span class="arithmatex">\(B\)</span> 字节，文件内字节偏移为 <span class="arithmatex">\(x\)</span>，逻辑块号和偏移均从 0 开始，则</p>
 <div class="arithmatex">\[
 q=\left\lfloor\frac{x}{B}\right\rfloor,\qquad r=x\bmod B.
 \]</div>
-<p><span class="arithmatex">\(q\)</span> 是文件内逻辑块号，<span class="arithmatex">\(r\)</span> 是块内偏移；物理块号由分配方式决定。题目说“第 <span class="arithmatex">\(k\)</span> 个字节”且从 1 计数时，应先取 <span class="arithmatex">\(x=k-1\)</span>。除非题目另有说明，以下用 KiB、MiB、GiB、TiB 明确表示 <span class="arithmatex">\(2^{10}\)</span>、<span class="arithmatex">\(2^{20}\)</span>、<span class="arithmatex">\(2^{30}\)</span>、<span class="arithmatex">\(2^{40}\)</span> 字节。</p>
-<p>若分配单位为 <span class="arithmatex">\(C\)</span> 字节，普通非稀疏文件长 <span class="arithmatex">\(L\)</span>，仅数据部分至少占</p>
-<div class="arithmatex">\[
-n=\left\lceil\frac LC\right\rceil\text{ 个簇},\qquad S=nC.
-\]</div>
-<p>最后一簇未使用的 <span class="arithmatex">\(S-L\)</span> 是内部碎片。例如 1026 B 的文件、1 KiB 的簇，需要 2 簇，即 2048 B。簇增大可减少管理项和指针数量、改善连续传输，但通常增加小文件的内部碎片。</p>
-<h3 id="连续分配">连续分配<a class="headerlink" href="#连续分配" title="Permanent link">&para;</a></h3>
-<p>为一个文件分配一段连续物理块， FCB 记录 <strong>起始块号 <span class="arithmatex">\(s\)</span> 和块数 <span class="arithmatex">\(n\)</span></strong>。其逻辑块 <span class="arithmatex">\(q\)</span> 对应物理块 <span class="arithmatex">\(s+q\)</span>，因此支持顺序访问和直接访问；连续读取时寻道开销小。</p>
-<p>主要问题是：需要找到足够长的连续空间，容易产生外部碎片；预估文件大小困难，预留过多浪费空间、预留不足则增长可能要迁移；为保持顺序，文件中间插入或删除数据可能引起大量移动。</p>
-<p><strong>紧凑／整理</strong>可搬移文件并合并空闲区，但复制数据的代价很高。<strong>区段</strong>（ extent ）是折中：每个区段保存一段连续块的“起始位置 + 长度”，文件可由多个区段组成，增长时增加区段。区段之间不必连续，组织区段的结构也可以是列表或树，不必固定为链表。</p>
-<h3 id="链接分配">链接分配<a class="headerlink" href="#链接分配" title="Permanent link">&para;</a></h3>
-<h4 id="隐式链接">隐式链接<a class="headerlink" href="#隐式链接" title="Permanent link">&para;</a></h4>
-<p>目录项保存首块号，常同时保存尾块号；每个数据块中保存下一块的指针，末块用结束标记。数据块可以离散分布，不产生要求连续空闲区所导致的外部碎片，增长与整块插入较方便。</p>
-<p>其代价是：要找后面的块，必须从已知块开始沿链读取；每块指针占空间；指针损坏可能使后续链不可达。教材中未加限定的“链接分配”通常指这种方式，因而通常记为 <strong>只适合顺序访问</strong>。</p>
-<p>若块大小 <span class="arithmatex">\(B\)</span>，指针占 <span class="arithmatex">\(p\)</span> 字节，则有效数据容量为 <span class="arithmatex">\(D=B-p\)</span>，应按</p>
-<div class="arithmatex">\[
-q=\left\lfloor\frac{x}{D}\right\rfloor,\qquad r=x\bmod D
-\]</div>
-<p>定位链中的逻辑块及数据区偏移。若指针在块首，实际块内偏移为 <span class="arithmatex">\(p+r\)</span>；若指针在块尾，则为 <span class="arithmatex">\(r\)</span>。增大链节点粒度为簇，可以减少指针开销，但也会增加尾簇内部碎片。</p>
-<h4 id="显式链接与-fat">显式链接与 FAT<a class="headerlink" href="#显式链接与-fat" title="Permanent link">&para;</a></h4>
-<p>将下一块指针集中存入 <strong>文件分配表</strong>（ File Allocation Table ， FAT ）。在教材模型中， FAT 的每个表项与卷中的一个物理分配单元对应；以当前块号为数组下标，表项的值表示下一块号或特殊状态。目录项保存文件首块号。</p>
-<p>例如 <code>FAT[2]=8</code>、<code>FAT[8]=5</code>、<code>FAT[5]=EOF</code>，则从首块 2 得到链 <code>2 → 8 → 5</code>。表项还可标记空闲、坏块等，所以 FAT 同时能够参与空闲空间管理。教材使用的 <code>-1</code>、<code>-2</code> 只是示意，实际格式规定专门编码。</p>
-<p>FAT 持久保存在磁盘上；教材计算通常假设它已经整体调入内存。这时查链无需读取沿途数据块，定位后只需读目标数据块；但 <strong>仍需在内存中沿 FAT 链走到目标，通常不是按逻辑块号一次下标访问</strong>。这就是教材称显式链接支持直接访问时应理解的条件。大卷的 FAT 会占用较多内存，实际系统也可按需缓存。</p>
-<p>设分配单元数为 <span class="arithmatex">\(N\)</span>，每项 <span class="arithmatex">\(p\)</span> 字节，一份 FAT 约占 <span class="arithmatex">\(Np\)</span> 字节；若按位紧凑存储，先求块号至少需要 <span class="arithmatex">\(\lceil\log_2N\rceil\)</span> 位，再计算总位数并向上取整。字节对齐、保留值及 FAT 副本的空间要按题目另计。</p>
-<details class="example">
-<summary>FAT 容量与表长</summary>
-<p>教学模型中，簇号为 2 B、簇大小 4 KiB ，忽略保留簇号和特殊编码，则最多表示 <span class="arithmatex">\(2^{16}\)</span> 个簇：一份 FAT 长 <span class="arithmatex">\(2^{16}\times2=128\)</span> KiB ，链能覆盖的数据空间上限为 <span class="arithmatex">\(2^{16}\times4\)</span> KiB <span class="arithmatex">\(=256\)</span> MiB。</p>
-<p>实际单文件上限还可能受目录项中的文件长度字段约束，不能把真实 FAT 文件系统的所有容量限制都归结为簇号位数。</p>
-</details>
-<h3 id="索引分配">索引分配<a class="headerlink" href="#索引分配" title="Permanent link">&para;</a></h3>
-<p>将 <strong>每个文件自己的数据块号</strong> 按逻辑顺序放入索引块， FCB ／ inode 保存索引块的位置。逻辑块 <span class="arithmatex">\(q\)</span> 对应索引的第 <span class="arithmatex">\(q\)</span> 项，数据块可以离散分配。</p>
-<p>这既支持直接访问，又便于增长，没有外部碎片；代价是索引占用空间，读取未缓存索引也需要 I/O。小文件若必须占用完整索引块，利用率会很低。与 FAT 的主要区别是： FAT 是按全卷物理块组织的链信息，而文件索引按单个文件的逻辑块组织位置映射。</p>
-<h4 id="单级链接索引与多级索引">单级、链接索引与多级索引<a class="headerlink" href="#单级链接索引与多级索引" title="Permanent link">&para;</a></h4>
-<p>设每个块地址占 <span class="arithmatex">\(p\)</span> 字节，一个纯索引块能容纳</p>
-<div class="arithmatex">\[
-K=\left\lfloor\frac Bp\right\rfloor
-\]</div>
-<p>个地址项。注意 <span class="arithmatex">\(K\)</span> 是项数，不能直接拿块的字节数当地址项数。</p>
-<table>
-<thead>
-<tr>
-<th>形式</th>
-<th>组织方法</th>
-<th>可寻址的数据量／代价</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>单级索引</td>
-<td>一个索引块直接列出数据块号</td>
-<td>最大 <span class="arithmatex">\(KB\)</span> 字节</td>
-</tr>
-<tr>
-<td>链接索引</td>
-<td>多个索引块用指针串联</td>
-<td>可扩展，但找后面的索引块仍要沿链；连接指针占用索引空间</td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(m\)</span> 级索引</td>
-<td>上级索引指向下级索引，最末级指向数据</td>
-<td>一个顶级索引块最多覆盖 <span class="arithmatex">\(K^mB\)</span> 字节；未缓存时读目标数据需 <span class="arithmatex">\(m+1\)</span> 次 I/O</td>
-</tr>
-</tbody>
-</table>
-<p>若链接索引的每块预留 <span class="arithmatex">\(p\)</span> 字节保存下一索引块指针，则每块最多有 <span class="arithmatex">\(K'=\lfloor(B-p)/p\rfloor\)</span> 个数据地址；逻辑块 <span class="arithmatex">\(q\)</span> 属于第 <span class="arithmatex">\(\lfloor q/K'\rfloor\)</span> 个索引块，在其中的项号为 <span class="arithmatex">\(q\bmod K'\)</span>。不能忘记逐块定位该索引块的开销。</p>
-<p>例如 <span class="arithmatex">\(B=4\)</span> KiB、<span class="arithmatex">\(p=4\)</span> B ，<span class="arithmatex">\(K=1024\)</span>，单级索引覆盖 4 MiB ，二级覆盖 4 GiB。若 <span class="arithmatex">\(B=1\)</span> KiB、<span class="arithmatex">\(p=4\)</span> B ，则二级覆盖 <span class="arithmatex">\(256^2\times1\)</span> KiB <span class="arithmatex">\(=64\)</span> MiB ；这是 <strong>单文件索引结构的寻址上限</strong>，不是整个文件系统容量。</p>
-<h4 id="混合索引">混合索引<a class="headerlink" href="#混合索引" title="Permanent link">&para;</a></h4>
-<p>在 inode 中同时设置直接地址、一级间接地址、二级间接地址和三级间接地址。小文件直接定位；较大文件按需分配间接索引块，兼顾速度、容量和空间成本。</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>flowchart LR
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    I[inode] --&gt; A[直接地址]
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    A --&gt; DA[数据块]
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    I --&gt; B[一级间接地址]
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    B --&gt; IB[一级索引块]
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    IB --&gt; DB[数据块]
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    I --&gt; C[二级间接地址]
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    C --&gt; IC[二级索引块]
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    IC --&gt; IIC[一级索引块]
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    IIC --&gt; DC[数据块]
-</span></code></pre></div>
-<p>设直接项有 <span class="arithmatex">\(d\)</span> 个，一级、二级、三级间接项分别有 <span class="arithmatex">\(a_1,a_2,a_3\)</span> 个，索引结构最多描述</p>
-<div class="arithmatex">\[
-N_{\max}=d+a_1K+a_2K^2+a_3K^3,\qquad L_{\max}=N_{\max}B.
-\]</div>
-<p>王道示例为 <strong>10 个直接项 + 各 1 个一、二、三级间接项</strong>，共 13 项； Unit 6 举的是 <strong>12 + 1 + 1 + 1</strong>，共 15 项。两种都用于说明混合索引，做题以题目给出的数量为准。</p>
-<p>对王道的 <span class="arithmatex">\(B=4\)</span> KiB、<span class="arithmatex">\(p=4\)</span> B 示例，各部分贡献为：</p>
-<table>
-<thead>
-<tr>
-<th>地址部分</th>
-<th>覆盖的数据块数</th>
-<th>单独贡献的容量</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>10 个直接项</td>
-<td><span class="arithmatex">\(10\)</span></td>
-<td>40 KiB</td>
-</tr>
-<tr>
-<td>一级间接项</td>
-<td><span class="arithmatex">\(1024\)</span></td>
-<td>4 MiB</td>
-</tr>
-<tr>
-<td>二级间接项</td>
-<td><span class="arithmatex">\(1024^2\)</span></td>
-<td>4 GiB</td>
-</tr>
-<tr>
-<td>三级间接项</td>
-<td><span class="arithmatex">\(1024^3\)</span></td>
-<td>4 TiB</td>
-</tr>
-</tbody>
-</table>
-<p>总上限为 <span class="arithmatex">\(4\)</span> TiB <span class="arithmatex">\(+4\)</span> GiB <span class="arithmatex">\(+4\)</span> MiB <span class="arithmatex">\(+40\)</span> KiB。判断一个偏移落在哪一级时要使用 <strong>累积边界</strong>，不能只与单个间接区的容量比较。</p>
-<h4 id="从偏移定位索引项">从偏移定位索引项<a class="headerlink" href="#从偏移定位索引项" title="Permanent link">&para;</a></h4>
-<p>以各级间接入口各一个为例，先算 <span class="arithmatex">\(q=\lfloor x/B\rfloor\)</span> 和 <span class="arithmatex">\(r=x\bmod B\)</span>：</p>
-<ol>
-<li>若 <span class="arithmatex">\(q&lt;d\)</span>，使用直接项 <span class="arithmatex">\(q\)</span>。</li>
-<li>否则减去 <span class="arithmatex">\(d\)</span>，得到 <span class="arithmatex">\(q_1\)</span>；若 <span class="arithmatex">\(q_1&lt;K\)</span>，使用一级索引的第 <span class="arithmatex">\(q_1\)</span> 项。</li>
-<li>否则再减去 <span class="arithmatex">\(K\)</span>，得到 <span class="arithmatex">\(q_2\)</span>；若 <span class="arithmatex">\(q_2&lt;K^2\)</span>，二级路径的两个下标为 <span class="arithmatex">\(\lfloor q_2/K\rfloor\)</span>、<span class="arithmatex">\(q_2\bmod K\)</span>。</li>
-<li>否则再减去 <span class="arithmatex">\(K^2\)</span>，得到 <span class="arithmatex">\(q_3\)</span>；三级路径依次为 <span class="arithmatex">\(\lfloor q_3/K^2\rfloor\)</span>、<span class="arithmatex">\(\lfloor(q_3\bmod K^2)/K\rfloor\)</span>、<span class="arithmatex">\(q_3\bmod K\)</span>。</li>
-</ol>
-<p>最终在目标数据块中使用偏移 <span class="arithmatex">\(r\)</span>。直接项与间接项的分界是半开区间，文件长度恰好等于某一容量时，最后一个字节仍在前一区间。</p>
-<h3 id="三种分配方式与访盘次数">三种分配方式与访盘次数<a class="headerlink" href="#三种分配方式与访盘次数" title="Permanent link">&para;</a></h3>
-<p>下表假设 FCB ／ inode 已在内存、目标数据未缓存，所需间接索引未缓存；<span class="arithmatex">\(n\)</span> 从 1 计数，指文件第 <span class="arithmatex">\(n\)</span> 个数据块。</p>
-<table>
-<thead>
-<tr>
-<th>分配方式</th>
-<th>定位并读目标块的磁盘 I/O</th>
-<th>增长与访问特点</th>
-<th>主要成本</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>连续分配</td>
-<td>1 次</td>
-<td>可直接计算，顺序访问快，增长不便</td>
-<td>外部碎片、预分配和移动成本</td>
-</tr>
-<tr>
-<td>隐式链接</td>
-<td>从首块开始需 <span class="arithmatex">\(n\)</span> 次</td>
-<td>易增长，整块插入方便</td>
-<td>指针空间、沿链读盘、可靠性</td>
-</tr>
-<tr>
-<td>FAT 显式链接</td>
-<td>FAT 全在内存时，目标数据 1 次</td>
-<td>内存中沿链，可避免读沿途数据块</td>
-<td>FAT 内存与磁盘空间</td>
-</tr>
-<tr>
-<td>单级索引</td>
-<td>2 次</td>
-<td>可直接按逻辑块号定位</td>
-<td>1 个索引块和索引读取</td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(m\)</span> 级索引</td>
-<td><span class="arithmatex">\(m+1\)</span> 次</td>
-<td>容量大、可随机访问</td>
-<td>多级索引空间与读取</td>
-</tr>
-<tr>
-<td>混合索引</td>
-<td>直接区 1 次；一、二、三级间接区分别 2、3、4 次</td>
-<td>小文件快，大文件可扩展</td>
-<td>随实际使用的间接层数变化</td>
-</tr>
-</tbody>
-</table>
-<p>若索引已缓存，相应读索引次数应扣除；若 inode 未缓存，则还要加读取 inode 的开销。连续、链接和索引分配都可能有末块内部碎片，“没有外部碎片”不能简写为“没有碎片”。</p>
-<h3 id="索引空间容量和文件数量计算">索引空间、容量和文件数量计算<a class="headerlink" href="#索引空间容量和文件数量计算" title="Permanent link">&para;</a></h3>
-<p><strong>文件长度</strong>只计用户数据；<strong>实际占用</strong>还包括末块余量、索引块和有关元数据。求最大文件长度时不要把索引块当作数据块相加；求占用空间时也不能漏掉它们。</p>
-<p>例如混合索引具有 <span class="arithmatex">\(d\)</span> 个直接项、一个一级入口和一个二级入口，文件占 <span class="arithmatex">\(n&gt;d+K\)</span> 个数据块，则使用的间接索引块数为</p>
-<div class="arithmatex">\[
-I=1+1+\left\lceil\frac{n-d-K}{K}\right\rceil.
-\]</div>
-<p>三个部分依次是一级入口下的索引块、二级根索引块、二级区域所需的叶索引块。只分配实际用到的索引块；尚未进入的间接区域不必分配。</p>
-<details class="example">
-<summary>2 GiB 文件的索引开销</summary>
-<p>使用王道 13 项模型，<span class="arithmatex">\(B=4\)</span> KiB、<span class="arithmatex">\(p=4\)</span> B ，文件长 2 GiB ，则数据块数 <span class="arithmatex">\(n=524288\)</span>，直接区与一级区容纳 <span class="arithmatex">\(10+1024\)</span> 块，剩余 <span class="arithmatex">\(523254\)</span> 块进入二级区域。</p>
-<p>二级区域需 <span class="arithmatex">\(\lceil523254/1024\rceil=511\)</span> 个叶索引块，加上二级根块和一级入口的索引块，共 <strong>513 个索引块</strong>，占 <span class="arithmatex">\(513\times4\)</span> KiB <span class="arithmatex">\(=2\)</span> MiB <span class="arithmatex">\(+4\)</span> KiB。数据块和索引块合计为 <span class="arithmatex">\(2\)</span> GiB <span class="arithmatex">\(+2\)</span> MiB <span class="arithmatex">\(+4\)</span> KiB。</p>
-<p>若题目要求计入 inode ，再加其给定大小。<span class="arithmatex">\(13\times4=52\)</span> B 只是 13 个地址项的大小；只有题目明确把 inode 简化为这些地址项时，才能把 52 B 当整个 inode 的大小。</p>
-</details>
-<p><strong>单文件最大长度</strong>还受块号位宽、长度字段、文件系统规则和可用空间约束。<span class="arithmatex">\(p\)</span> 字节无符号块号理论上最多表示 <span class="arithmatex">\(2^{8p}\)</span> 个编号，实际还可能有保留编号，索引块本身也占空间。求“系统能支持的最大空间”时，应把<strong>索引结构的寻址能力</strong>与<strong>块号位宽的地址范围</strong>分别算出，取较小者。</p>
-<p><strong>文件数量</strong>受 inode ／ FCB 数量和可分配空间限制。设 inode 区为 <span class="arithmatex">\(S_i\)</span> 字节、每个 inode 为 <span class="arithmatex">\(s_i\)</span> 字节，至多有 <span class="arithmatex">\(\lfloor S_i/s_i\rfloor\)</span> 个槽位；若每个文件需要 <span class="arithmatex">\(n\)</span> 个数据及索引块、可用块数为 <span class="arithmatex">\(N\)</span>，简化上限为</p>
-<div class="arithmatex">\[
-F_{\max}\le\min\left(\left\lfloor\frac{S_i}{s_i}\right\rfloor,\left\lfloor\frac Nn\right\rfloor\right).
-\]</div>
-<p>目录和保留元数据也消耗 inode 与空间，实际应按题设扣除。增加索引层级主要增大单文件容量，增加 inode 数量主要增大可保存的文件实体数；硬链接增多并不按名字数量消耗新 inode。</p>
-<h3 id="常见操作的-io-计算">常见操作的 I/O 计算<a class="headerlink" href="#常见操作的-io-计算" title="Permanent link">&para;</a></h3>
-<details class="example">
-<summary>在文件中插入一条记录</summary>
-<p>王道综合题：已有 200 条记录，每块一条，将内存中的新记录插为第 30 条；忽略目录、空闲表和 FCB 回写，只计有关数据块，原数据块未缓存。</p>
+<p>其中，<span class="arithmatex">\(q\)</span> 是文件内逻辑块号，<span class="arithmatex">\(r\)</span> 是块内偏移。接下来还需根据分配方式，将 <span class="arithmatex">\(q\)</span> 转换为物理块号。</p>
+<h4 id="连续分配">连续分配<a class="headerlink" href="#连续分配" title="Permanent link">&para;</a></h4>
+<p>一个文件占据一段连续的盘块，目录项或 FCB 记录 <strong>起始块号和块数</strong>。若起始块为 <span class="arithmatex">\(s\)</span>，长度为 <span class="arithmatex">\(n\)</span> 块，则占据 <span class="arithmatex">\(s\)</span> 到 <span class="arithmatex">\(s+n-1\)</span>，逻辑块 <span class="arithmatex">\(q\)</span> 对应物理块 <span class="arithmatex">\(s+q\)</span>。</p>
+<p>连续分配支持顺序访问和直接访问，连续读写时寻道较少。主要问题是：</p>
 <ul>
-<li><strong>连续分配</strong>，前后都有足够空闲：前移前 29 块比后移后 171 块更少。每块读一次、写一次，再写新记录，共 <span class="arithmatex">\(2\times29+1=59\)</span> 次；起始块号前移一块，文件长度增加。</li>
-<li><strong>隐式链接</strong>：先读前 29 块找到前驱，再写新块、改前驱指针并写回，共 <span class="arithmatex">\(29+1+1=31\)</span> 次；无需移动后续数据。</li>
-<li><strong>索引分配</strong>：可调整索引项顺序，无需搬移后续数据块；仍须写入新记录。索引读取、回写是否计入，取决于题目是否说明索引已在内存及计数范围。</li>
+<li>需要足够大的连续空闲区，容易产生 <strong>外部碎片</strong>。</li>
+<li>文件大小难以预知；后方空间被占用时，增长可能需要迁移整个文件。</li>
+<li>为维持数据的连续排列，中间插入、删除记录可能导致大量数据移动。</li>
 </ul>
-<p>若隐式链每块 1 KiB、链接指针 4 B ，忽略保留编码和元数据占用，链能表达的用户数据理论上限为 <span class="arithmatex">\(2^{32}(1024-4)\)</span> B <span class="arithmatex">\(=4080\)</span> GiB。</p>
-</details>
+<p>整理可以搬移文件、合并零散空闲区，但复制数据的代价较大。另一种改进是 <strong>区段</strong>（ extent ）：文件由若干段连续空间组成，每段记录起始位置和长度，增长时再分配新区段，不要求整个文件始终连续。</p>
+<h4 id="链接分配">链接分配<a class="headerlink" href="#链接分配" title="Permanent link">&para;</a></h4>
+<p>文件的盘块可以分散存放，通过指针确定先后次序。它不要求连续空闲空间，便于按需增长，也便于在已找到的位置插入或删除整块。根据指针位置，可分为隐式链接和显式链接。</p>
+<p><strong>隐式链接</strong> 将下一块的地址保存在当前数据块内，目录项记录首块号，也可记录尾块号。访问后面的块，需要从已知位置沿链逐块读取，因此主要适合顺序访问。</p>
+<p>这种方式每块都要占用指针空间；若指针损坏，后续链可能无法到达。将多个连续盘块组成一个簇后再链接，可以减少指针数量和链长，但会增加尾簇内部碎片的可能。</p>
 <details class="example">
-<summary>记录成组与分解</summary>
-<p>多条逻辑记录可合并到一个物理块中传输，读入后再分解成记录；题目若规定记录不能跨块，必须先向下取整求每块记录数。设块长 <span class="arithmatex">\(B\)</span>、块内指针占 <span class="arithmatex">\(p\)</span>、记录定长 <span class="arithmatex">\(L\)</span>，则每块可放 <span class="arithmatex">\(g=\lfloor(B-p)/L\rfloor\)</span> 条，第 <span class="arithmatex">\(k\)</span> 条记录（从 1 编号）位于第 <span class="arithmatex">\(\lceil k/g\rceil\)</span> 个块。</p>
-<p>例如块 512 B、记录 100 B、链接指针放在余下空间，每块可放 5 条。第 22 条在第 5 块；隐式链从首块开始修改该记录，需要读 5 块、写回目标块 1 次，共 6 次。</p>
+<summary>数据块内有指针时的地址换算</summary>
+<p>若每块 <span class="arithmatex">\(B\)</span> 字节，其中 <span class="arithmatex">\(p\)</span> 字节存指针，则每个链节点的有效数据容量为 <span class="arithmatex">\(B-p\)</span>。应先按</p>
+<div class="arithmatex">\[
+q=\left\lfloor\frac{x}{B-p}\right\rfloor,\qquad r=x\bmod(B-p)
+\]</div>
+<p>得到链中块号和数据区偏移。若指针位于块首，实际块内偏移还要加 <span class="arithmatex">\(p\)</span>；不能把指针占用的字节也算作文件数据。</p>
 </details>
-<details class="example">
-<summary>路径、inode、索引和数据分别计数</summary>
-<p>若父目录内容已缓存，仅知道文件的 inode 号，目标 inode 与数据均未缓存，且目标由 inode 直接地址定位，则还需读取 <strong>inode 所在块 + 数据块</strong>，共 2 次。</p>
-<p>若 inode 已缓存、块大小 1 KiB、直接项 10 个、地址项 4 B ，则偏移 1234 B 位于直接区，只需读数据 1 次；偏移 307400 B 超过 <span class="arithmatex">\((10+256)\times1024\)</span>，进入二级间接区，在索引未缓存时需要读 2 个索引块和 1 个数据块，共 3 次。</p>
-<p>对完整路径题，应逐步列出“尚未缓存的目录块 → 必要的 inode → 间接索引块 → 数据块”。沿不同硬链接访问同一实体时，可复用已缓存的 inode ；修改后的回写则另计。</p>
+<p><a id="fat"></a></p>
+<p><strong>显式链接</strong> 把下一块指针集中放入 <strong>文件分配表</strong>（ File Allocation Table ， FAT ）。一个卷共用一张逻辑上的 FAT ，其表项与物理分配单元对应；目录项只需保存文件的首块号，再沿 FAT 获得后续块号。</p>
+<p>例如，<code>FAT[2]=8</code>、<code>FAT[8]=5</code>、<code>FAT[5]=EOF</code>，表示文件依次占用 <code>2 → 8 → 5</code> 三块。表项还可以用特殊值标记空闲、坏块等状态，因此 FAT 也能用于管理空闲空间。</p>
+<p>FAT 持久保存在磁盘上，常用教学模型假设它已调入内存。访问某个逻辑块时，可以在内存中查链，无须读取沿途的数据块，定位后再读目标块；代价是全卷 FAT 的内存开销随分配单元数量增加。</p>
+<div class="admonition note">
+<p class="admonition-title">FAT 仍然表达链式关系</p>
+<p>显式链接支持直接访问，是指定位目标时不必顺序读取前面的数据块。若只知道首块号，仍需在 FAT 中沿链查找，不能把逻辑块号直接当作 FAT 下标。若分配单元有 <span class="arithmatex">\(N\)</span> 个、每项占 <span class="arithmatex">\(p\)</span> 字节，一份 FAT 的基本表空间约为 <span class="arithmatex">\(Np\)</span> 字节。</p>
+</div>
+<h4 id="索引分配">索引分配<a class="headerlink" href="#索引分配" title="Permanent link">&para;</a></h4>
+<p>为每个文件建立独立的 <strong>索引块</strong>，按逻辑块次序存放数据块的物理块号， FCB 或 inode 保存索引块地址。与 FAT 按全卷物理块组织表项不同，文件索引表的第 <span class="arithmatex">\(q\)</span> 项直接对应该文件的逻辑块 <span class="arithmatex">\(q\)</span>。</p>
+<p>索引分配支持直接访问，数据块可离散分配，不产生要求连续空间所导致的外部碎片；代价是索引本身占用空间，小文件也可能需要一个未用满的索引块。</p>
+<p>设索引块与数据块均为 <span class="arithmatex">\(B\)</span> 字节，块地址占 <span class="arithmatex">\(p\)</span> 字节，则一个索引块能存放</p>
+<div class="arithmatex">\[
+K=\left\lfloor\frac{B}{p}\right\rfloor
+\]</div>
+<p>个地址项。</p>
+<ol>
+<li><strong>单级索引</strong>：一个索引块直接指向最多 <span class="arithmatex">\(K\)</span> 个数据块，文件数据容量上限为 <span class="arithmatex">\(K\times B\)</span>。</li>
+<li><strong>链接索引</strong>：把多个索引块串成链，扩展索引容量。索引块需要为链指针预留空间，访问后面的索引块仍要沿链查找。</li>
+<li><strong>多级索引</strong>：上层索引块保存下层索引块地址，最后一级再指向数据块。若有 <span class="arithmatex">\(m\)</span> 级且各级均能容纳 <span class="arithmatex">\(K\)</span> 项，则最多覆盖 <span class="arithmatex">\(K^m\)</span> 个数据块，数据容量为 <span class="arithmatex">\(K^mB\)</span>。</li>
+</ol>
+<p>例如，<span class="arithmatex">\(B=4\)</span> KiB、<span class="arithmatex">\(p=4\)</span> B 时，<span class="arithmatex">\(K=1024\)</span>；单级索引覆盖 4 MiB ，二级索引覆盖 4 GiB。多级索引能容纳大文件，但未命中缓存时，访问数据需要逐级读取索引。</p>
+<p>二级索引中，逻辑块号 <span class="arithmatex">\(q\)</span> 对应的主索引项为 <span class="arithmatex">\(\lfloor q/K\rfloor\)</span>，下层索引项为 <span class="arithmatex">\(q\bmod K\)</span>；字节在数据块内的偏移仍为 <span class="arithmatex">\(r\)</span>。这与多级页表按字段逐级定位的思想相似。</p>
+<h4 id="混合索引">混合索引<a class="headerlink" href="#混合索引" title="Permanent link">&para;</a></h4>
+<p>在 inode 中同时设置直接地址和多级间接地址，可以兼顾不同大小的文件：小文件通过直接地址访问，超出部分再依次使用一次、二次和三次间址。</p>
+<p>若有 <span class="arithmatex">\(d\)</span> 个直接地址项，各有一个一次、二次和三次间接地址项，则</p>
+<div class="arithmatex">\[
+L_{\max}=(d+K+K^2+K^3)B.
+\]</div>
+<p>下面以 <strong>10 个直接地址项 + 3 个间接地址项</strong>、<span class="arithmatex">\(B=4\)</span> KiB、<span class="arithmatex">\(p=4\)</span> B 为例。</p>
+<center>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">地址部分</th>
+<th style="text-align: center;">inode 中保存的地址指向</th>
+<th style="text-align: center;">此部分新增的数据容量</th>
+<th style="text-align: center;">使用至此的累计容量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">10 个直接地址</td>
+<td style="text-align: center;">数据块</td>
+<td style="text-align: center;">40 KiB</td>
+<td style="text-align: center;">40 KiB</td>
+</tr>
+<tr>
+<td style="text-align: center;">一次间址</td>
+<td style="text-align: center;">存放数据块地址的索引块</td>
+<td style="text-align: center;">4 MiB</td>
+<td style="text-align: center;">4 MiB + 40 KiB</td>
+</tr>
+<tr>
+<td style="text-align: center;">二次间址</td>
+<td style="text-align: center;">指向一次间址块的主索引块</td>
+<td style="text-align: center;">4 GiB</td>
+<td style="text-align: center;">4 GiB + 4 MiB + 40 KiB</td>
+</tr>
+<tr>
+<td style="text-align: center;">三次间址</td>
+<td style="text-align: center;">再增加一层索引的主索引块</td>
+<td style="text-align: center;">4 TiB</td>
+<td style="text-align: center;">4 TiB + 4 GiB + 4 MiB + 40 KiB</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>表中计算的是 <strong>文件数据容量</strong>，不包含索引块占用的空间。不同方案的地址项数量可以不同，例如也有 12 个直接地址加 3 个间接地址的组织；计算时应使用给定的结构参数。</p>
+<p>定位时先判断逻辑块属于哪一段，再减去此前各段覆盖的块数。例如，一次间址段使用 <span class="arithmatex">\(q-d\)</span> 作为索引；二次间址段先取 <span class="arithmatex">\(t=q-d-K\)</span>，再用 <span class="arithmatex">\(\lfloor t/K\rfloor\)</span> 和 <span class="arithmatex">\(t\bmod K\)</span> 逐级定位。</p>
+<div class="admonition tip">
+<p class="admonition-title">访问次数要先说明缓存和计数范围</p>
+<p>假设 FCB ／ inode 已在内存、相关索引未缓存，只统计取得目标数据所需的读盘，且记录与数据块一一对应：连续分配访问第 <span class="arithmatex">\(n\)</span> 块需 1 次；隐式链接从首块查到第 <span class="arithmatex">\(n\)</span> 块需 <span class="arithmatex">\(n\)</span> 次；<span class="arithmatex">\(m\)</span> 级索引需读取 <span class="arithmatex">\(m\)</span> 个索引块和 1 个数据块，共 <span class="arithmatex">\(m+1\)</span> 次。混合索引的直接地址部分只需读数据块。FAT 已在内存时，查链本身不增加磁盘读取。</p>
+<p>若目录、inode 或索引已经缓存，或题目要求统计写回，还需按实际条件调整，不能只套用级数。</p>
+</div>
+<h3 id="file-operations">文件的操作<a class="headerlink" href="#file-operations" title="Permanent link">&para;</a></h3>
+<p>操作系统通过系统调用提供文件操作。这里先说明创建、删除和数据访问，再讨论如何用打开文件表保存访问状态。</p>
+<h4 id="创建与删除">创建与删除<a class="headerlink" href="#创建与删除" title="Permanent link">&para;</a></h4>
+<p><strong>创建文件</strong>通常经过以下步骤：</p>
+<ol>
+<li>检查文件名是否合法、同目录是否重名，以及用户对目标目录是否有相应权限。</li>
+<li>分配 FCB 或 inode ，初始化文件类型、所有者、权限、长度、时间戳和块指针等信息。</li>
+<li>按需要预留或分配数据块，登记其地址。</li>
+<li>在父目录中建立“文件名 → 文件描述信息”的目录项。</li>
+<li>更新空闲 inode、空闲块、目录大小和时间等元数据；若接口同时执行打开，还需建立打开状态并返回描述符。</li>
+</ol>
+<p>创建与打开是两个动作，可以由同一接口组合完成。创建空文件也不一定立即分配数据块，数据空间可以在写入时按需取得。</p>
+<p><strong>删除文件</strong>先按路径找到目录项，检查目录操作权限，再移除该名字并更新引用状态。若仍有其他<a href="#hard-link">硬链接</a>，就保留共享实体；满足回收条件时，系统才根据 inode 释放数据块、索引块和 inode ，并更新空闲空间等信息。</p>
+<h4 id="数据访问与其他操作">数据访问与其他操作<a class="headerlink" href="#数据访问与其他操作" title="Permanent link">&para;</a></h4>
+<center>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">操作</th>
+<th style="text-align: center;">核心工作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">读取 <code>read</code></td>
+<td style="text-align: center;">从当前读写位置取得数据，送到用户缓冲区，并按实际读取量推进位置</td>
+</tr>
+<tr>
+<td style="text-align: center;">写入 <code>write</code></td>
+<td style="text-align: center;">将用户缓冲区中的数据写到当前位置，推进位置；必要时分配新块，更新块地址、文件长度和时间</td>
+</tr>
+<tr>
+<td style="text-align: center;">定位 <code>seek</code>／<code>lseek</code></td>
+<td style="text-align: center;">改变下一次读写的文件内偏移，定位本身通常不传输文件内容</td>
+</tr>
+<tr>
+<td style="text-align: center;">截断 <code>truncate</code></td>
+<td style="text-align: center;">缩短或调整文件长度；截到 0 时清空内容，但保留文件身份及仍适用的属性</td>
+</tr>
+<tr>
+<td style="text-align: center;">加锁 <code>lock</code></td>
+<td style="text-align: center;">协调多个访问者对文件或记录区间的并发操作</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>锁解决并发协调问题，访问权限则决定用户能否执行相应操作。共享读锁和独占写锁的具体例子，参见 <a href="https://man7.org/linux/man-pages/man2/fcntl_locking.2.html">Linux fcntl_locking(2)</a>。</p>
+<h4 id="open-file-table">打开文件表<a class="headerlink" href="#open-file-table" title="Permanent link">&para;</a></h4>
+<p>若每次读写都按文件名重新查找目录、读取元数据，重复开销会很大。<strong>打开</strong>把后续访问所需的信息保留在内核中，并返回一个描述符或句柄，使后续操作可以直接找到访问状态。</p>
+<p><strong>文件描述符</strong>（ file descriptor ， fd ）是进程打开文件表的索引，通常为非负整数； Windows 使用文件句柄（ file handle ）这一概念。它与文件名、inode 号和物理地址属于不同层次，不同进程中的相同 fd 数值也不一定表示同一个文件。</p>
+<p>一种常用的两级打开文件表模型如下。</p>
+<center>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">层次</th>
+<th style="text-align: center;">保存的主要信息</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">进程打开文件表</td>
+<td style="text-align: center;">本进程的读写位置、访问方式、权限及指向系统表项的引用</td>
+</tr>
+<tr>
+<td style="text-align: center;">系统打开文件表</td>
+<td style="text-align: center;">共享的文件位置、大小、访问时间等信息，以及打开计数；可关联活动 FCB ／ inode</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>在这一模型中，多个进程打开同一文件，可以复用系统级文件信息，同时维护各自的访问状态。打开计数用于判断系统表项是否仍被使用；在每个进程只打开一次的简化情形下，可以把它看作打开该文件的进程数。</p>
+<p>打开一个已有文件的过程为：</p>
+<ol>
+<li>根据路径逐级查找目录，取得目标文件的 inode 号。</li>
+<li>查找已有的活动文件信息；必要时将磁盘 inode 载入内存。</li>
+<li>检查请求的打开方式是否符合文件访问权限。</li>
+<li>建立或引用系统表项，维护打开计数，再分配进程表项，初始化本次访问状态。</li>
+<li>将进程表项的索引 fd 返回给调用者。</li>
+</ol>
+<p><strong>打开并不要求把整个文件读入内存</strong>。文件内容通常在实际读取、预读或映射访问时按需载入。</p>
+<p>随后，<code>read(fd, buf, n)</code> 等操作通过 fd 取得访问状态，根据文件偏移和分配结构定位数据，利用缓存或设备 I/O 完成传输，再更新偏移。<code>read</code>、<code>write</code>、<code>lseek</code>、<code>close</code> 使用 fd ；删除、重命名等路径操作仍可使用文件名。</p>
+<p><strong>关闭</strong>时撤销相应进程表项，递减系统表项的打开计数；不再被引用的运行时结构可以释放，修改过的元数据按需更新。正常关闭不会删除文件名，也不会因为关闭而回收仍存在的文件数据。</p>
+<details class="info">
+<summary>Linux 中的打开文件描述</summary>
+<p>Linux 的具体关系是 <code>进程 fd 表 → 打开文件描述（file 对象）→ inode</code>。文件偏移和状态标志保存在打开文件描述中。分别调用两次 <code>open</code> 通常产生两个独立的打开文件描述；<code>dup</code> 或 <code>fork</code> 继承的描述符则可以共享同一打开文件描述和偏移。因此，不能把“同一文件始终只有一个系统表项”或“不同进程的偏移必然独立”当成所有系统的实现规律。参见 <a href="https://man7.org/linux/man-pages/man2/open.2.html">Linux open(2)</a>。</p>
 </details>
-<h2 id="filesystem-layout">文件系统的层次与布局<a class="headerlink" href="#filesystem-layout" title="Permanent link">&para;</a></h2>
-<h3 id="文件系统的组成与分层">文件系统的组成与分层<a class="headerlink" href="#文件系统的组成与分层" title="Permanent link">&para;</a></h3>
-<p>文件系统不仅包括文件管理软件，也包括被管理的文件和支持管理的数据结构。它向用户提供命名、查找、读写、共享与保护，向下完成逻辑到物理的映射、空间分配和设备数据交换。</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>flowchart TD
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    A[应用程序] --&gt; B[逻辑文件系统]
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    B --&gt; C[文件组织模块]
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    C --&gt; D[基本文件系统]
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    D --&gt; E[I/O 控制]
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    E --&gt; F[存储设备]
+<h3 id="file-sharing">文件共享<a class="headerlink" href="#file-sharing" title="Permanent link">&para;</a></h3>
+<p>文件共享使多个用户访问同一份物理数据，避免副本浪费和内容不一致。共享不仅要让不同名字找到相同数据，还要让文件增长、属性变化等更新对各访问者一致可见；因此，不能只是把当时的数据块地址复制到多份目录项中。</p>
+<h4 id="hard-link">硬链接<a class="headerlink" href="#hard-link" title="Permanent link">&para;</a></h4>
+<p><strong>硬链接</strong>通过多个目录项指向同一个 inode。文件块地址和属性只保存在这个公共 inode 中，增加链接不会复制数据，也不会自动改变文件所有者。</p>
+<p>inode 中的硬链接计数记录指向它的目录项数量。新建文件通常为 1 ；增加硬链接时加 1 ；删除一个名字时减 1。只要仍有名字指向该文件，就应保留其 inode 和数据。</p>
+<p>例如，<code>A</code> 的硬链接计数起初为 1 ，建立另一个硬链接 <code>B</code> 后变为 2。删除 <code>A</code> 只把计数减到 1 ，<code>B</code> 仍能访问原来的文件。硬链接之间没有必须长期保留的“原文件名”，各名字都指向同一实体。</p>
+<h4 id="软链接">软链接<a class="headerlink" href="#软链接" title="Permanent link">&para;</a></h4>
+<p><strong>软链接</strong>，也称符号链接，是一个独立的链接文件，内容保存目标文件的路径。访问链接时，系统读取并解析目标路径，再定位实际文件。</p>
+<p>它有自己的 inode ，不增加目标文件的硬链接计数。若目标路径消失，链接便成为 <strong>悬空链接</strong>；删除链接本身不会删除目标。沿用上例，若 <code>C</code> 保存路径 <code>A</code>，删除 <code>A</code> 后即使 <code>B</code> 仍保有原文件，<code>C</code> 也无法再通过路径 <code>A</code> 找到它。</p>
+<p>软链接需要额外存储路径和链接文件的元数据，访问还可能增加路径解析与读盘开销。</p>
+<details class="note">
+<summary>链接的实际使用范围</summary>
+<p>UNIX 中的硬链接通常限制在同一文件系统内，且不允许普通用户随意建立目录硬链接；符号链接可以指向目录，也可以通过路径跨文件系统。相对目标路径以链接所在目录为起点解释，符号链接还可能形成解析循环。参见 <a href="https://man7.org/linux/man-pages/man7/symlink.7.html">Linux symlink(7)</a>。</p>
+<p>在网络共享中，路径还需要通过已建立的远程文件访问机制解释；本地符号链接本身不会执行网络传输。</p>
+</details>
+<div class="admonition note">
+<p class="admonition-title">删除名字与释放实体可以发生在不同时刻</p>
+<p>硬链接计数降到 0 后，如果文件仍被打开，支持延迟回收的系统会保留其数据，直到有关打开引用释放。因而，硬链接计数描述名字关联，打开计数描述运行时使用，判断回收条件时需要同时考虑二者。</p>
+</div>
+<h3 id="sharing-protection">文件保护<a class="headerlink" href="#sharing-protection" title="Permanent link">&para;</a></h3>
+<p>文件保护控制 <strong>谁能对文件执行什么操作</strong>，避免未授权访问或意外修改。常见受控操作有读、写、执行、追加、删除和列目录。其中，追加只允许在末尾增加数据，与任意位置的写入不同。</p>
+<p>复制、打印、编辑等高层操作最终由底层读写等操作完成。例如，读取源文件是复制的基础；单凭源文件读权限，不能保证内容不会被复制或打印。</p>
+<h4 id="访问控制列表">访问控制列表<a class="headerlink" href="#访问控制列表" title="Permanent link">&para;</a></h4>
+<p><strong>访问控制列表</strong>（ Access-Control List ， ACL ）附属于文件或目录，记录用户或用户组及其允许的访问类型。它能表达灵活的授权策略，但列表长度不定，用户很多时管理开销较大。</p>
+<p>一种精简办法是把用户分为 <strong>拥有者、组、其他用户</strong>，再为每类设置独立权限位。例如：</p>
+<center>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">用户类别</th>
+<th style="text-align: center;">读</th>
+<th style="text-align: center;">写</th>
+<th style="text-align: center;">删除</th>
+<th style="text-align: center;">执行</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">拥有者</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: center;">组</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td style="text-align: center;">其他用户</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>每种权限用一位表示，三类用户、四种权限共需 <span class="arithmatex">\(3\times4=12\)</span> 位。检查时先判断是否为拥有者，再判断是否属于相应组，否则使用其他用户权限。</p>
+<p>UNIX 常见的基本权限是三组 <code>rwx</code>，分别表示拥有者、组和其他用户的读、写、执行权限，共 9 位。例如，<code>-rw-r-----</code> 表示普通文件，拥有者可读写，组可读，其他用户无权限；<code>d</code> 开头表示目录。</p>
+<details class="info">
+<summary>目录权限的含义</summary>
+<p>对目录而言，<code>r</code> 允许读取目录项列表，<code>x</code> 允许搜索和穿过目录，<code>w</code> 允许修改目录项。创建和删除名字通常需要父目录的写与搜索权限，不能仅根据目标文件自身的写权限判断；具体还可能受 sticky bit 等规则限制。参见 <a href="https://man7.org/linux/man-pages/man7/inode.7.html">Linux inode(7)</a>。</p>
+</details>
+<h4 id="口令与加密">口令与加密<a class="headerlink" href="#口令与加密" title="Permanent link">&para;</a></h4>
+<center>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">机制</th>
+<th style="text-align: center;">思路</th>
+<th style="text-align: center;">主要代价与局限</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">口令保护</td>
+<td style="text-align: center;">用户提供正确口令后，系统允许访问文件</td>
+<td style="text-align: center;">实现简单，但共享口令的分发、保存和撤销不便，简单存储方式安全性有限</td>
+</tr>
+<tr>
+<td style="text-align: center;">加密保护</td>
+<td style="text-align: center;">文件内容以密文保存，持有正确密钥才能解密</td>
+<td style="text-align: center;">有加解密计算与密钥管理成本</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>口令与加密主要解决访问凭据和内容保密问题，仍需结合访问控制，才能区分读、写、执行等操作。多级目录还需要对目录及其子树提供保护；备份与故障恢复则在后面的<a href="#performance-recovery">一致性与恢复</a>中讨论。</p>
+<h2 id="filesystem-layout">文件系统<a class="headerlink" href="#filesystem-layout" title="Permanent link">&para;</a></h2>
+<h3 id="文件系统布局">文件系统布局<a class="headerlink" href="#文件系统布局" title="Permanent link">&para;</a></h3>
+<p>文件系统不仅有文件管理软件，还包括被管理的文件，以及目录、inode、空闲空间结构等管理数据。本节从持久化存储和运行时管理两个角度观察其布局。</p>
+<h4 id="磁盘中的结构">磁盘中的结构<a class="headerlink" href="#磁盘中的结构" title="Permanent link">&para;</a></h4>
+<p>一个磁盘通常可以划分为多个分区，各分区建立相应的文件系统。以下是传统分区方案下的一种示意布局，各文件系统的实际排列可以不同。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>磁盘：主引导区（含分区表等） | 分区 1 | 分区 2 | ……
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>分区内部的一种布局：
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>引导块 | 超级块 | 空闲空间管理信息 | inode 区 | 根目录 | 其他文件与目录
 </span></code></pre></div>
+<center>
 <table>
 <thead>
 <tr>
-<th>层次</th>
-<th>主要职责</th>
+<th style="text-align: center;">结构</th>
+<th style="text-align: center;">保存的信息与作用</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>逻辑文件系统</td>
-<td>管理文件名、目录、FCB ／ inode、权限等元数据，实现按名存取和保护</td>
+<td style="text-align: center;">主引导记录 MBR</td>
+<td style="text-align: center;">在传统 BIOS/MBR 启动方案中位于磁盘起始扇区，包含主引导代码和分区表等信息</td>
 </tr>
 <tr>
-<td>文件组织模块</td>
-<td>将文件逻辑块映射到物理块；调用空闲空间管理器分配、回收块</td>
+<td style="text-align: center;">引导块／引导控制块</td>
+<td style="text-align: center;">保存卷的启动信息或引导程序，用于继续加载操作系统； Windows 中也称分区引导扇区</td>
 </tr>
 <tr>
-<td>基本文件系统</td>
-<td>发出通用的物理块读写请求，管理缓冲区和缓存，并与下层 I/O 调度协作</td>
+<td style="text-align: center;">超级块／卷控制信息</td>
+<td style="text-align: center;">保存整个文件系统的参数，如总块数、块大小、空闲块与空闲 inode 数量及相关管理位置</td>
 </tr>
 <tr>
-<td>I/O 控制</td>
-<td>设备驱动及中断处理，将通用操作转换成控制器命令，处理传输和完成通知</td>
+<td style="text-align: center;">空闲空间结构</td>
+<td style="text-align: center;">记录哪些分配单元尚未使用，支持后续分配和回收</td>
 </tr>
 <tr>
-<td>设备</td>
-<td>执行实际存储访问</td>
+<td style="text-align: center;">inode 等每文件描述结构</td>
+<td style="text-align: center;">保存单个文件的属性和块定位信息</td>
+</tr>
+<tr>
+<td style="text-align: center;">根目录及其他目录</td>
+<td style="text-align: center;">建立文件命名和组织关系</td>
+</tr>
+<tr>
+<td style="text-align: center;">文件数据区</td>
+<td style="text-align: center;">保存普通文件内容及目录内容等数据</td>
 </tr>
 </tbody>
 </table>
-<p>这是职责划分模型，具体操作系统可能合并或细分这些层次。用户接口与磁盘实现应分开理解；逻辑文件系统管理描述信息，而文件数据的实际传输由更低层协作完成。</p>
-<p>王道教材还给出另一套更贴近请求处理流程的层次结构（自顶向下），并用“删除文件中一条记录”说明各层如何依次工作：</p>
+</center>
+<p>在上述启动模型中， BIOS 读取并执行主引导代码，由其定位活动分区并移交给分区引导程序，继续加载操作系统。引导块保存的是启动所需的信息，不能理解为整个操作系统都放在其中；这一流程也只描述特定启动方案。</p>
+<p>超级块在挂载时被读取，用于建立内存中的文件系统管理信息。它描述整个文件系统， inode 描述单个文件，目录项提供文件名关联，三者职责不同。</p>
+<h4 id="内存中的结构">内存中的结构<a class="headerlink" href="#内存中的结构" title="Permanent link">&para;</a></h4>
+<center>
 <table>
 <thead>
 <tr>
-<th>层次</th>
-<th>在处理“删除一条记录”时的工作</th>
+<th style="text-align: center;">结构</th>
+<th style="text-align: center;">作用</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>用户接口</td>
-<td>用户经操作系统提供的接口发出请求，给出文件路径、记录号等参数</td>
+<td style="text-align: center;">挂载表</td>
+<td style="text-align: center;">记录已挂载文件系统的设备、挂载点、类型及选项</td>
 </tr>
 <tr>
-<td>文件目录系统</td>
-<td>按路径逐级查找目录，找到目标文件的目录项／ FCB</td>
+<td style="text-align: center;">内存中的卷信息</td>
+<td style="text-align: center;">保存超级块等全局信息的运行时表示，支持空间管理与状态维护</td>
 </tr>
 <tr>
-<td>存取控制验证模块</td>
-<td>检查用户对该文件是否具有相应操作的权限</td>
+<td style="text-align: center;">目录缓存</td>
+<td style="text-align: center;">保存近期访问的目录信息，加速路径解析</td>
 </tr>
 <tr>
-<td>逻辑文件系统与文件信息缓冲区</td>
-<td>把用户给出的记录号换算为逻辑地址（记录在文件内的逻辑位置）</td>
+<td style="text-align: center;">活动 inode ／ FCB</td>
+<td style="text-align: center;">保留文件属性及运行时引用状态</td>
 </tr>
 <tr>
-<td>物理文件系统</td>
-<td>把逻辑地址（逻辑块号）转换为实际的物理地址</td>
+<td style="text-align: center;">系统级与进程级打开文件表</td>
+<td style="text-align: center;">关联共享文件信息和进程的访问状态，具体过程见<a href="#open-file-table">打开文件表</a></td>
 </tr>
 <tr>
-<td>设备管理程序模块</td>
-<td>向磁盘设备发出读／写请求，完成数据传输</td>
-</tr>
-<tr>
-<td>辅助分配模块</td>
-<td>管理空闲盘块：删除记录后回收盘块，文件增长时分配新块</td>
+<td style="text-align: center;">数据缓冲区与缓存</td>
+<td style="text-align: center;">暂存盘块内容，协调传输并复用已读入的数据</td>
 </tr>
 </tbody>
 </table>
-<p>两套划分视角不同、并不矛盾： Unit 6 与教材的分层回答“文件系统实现被拆成哪些子层”，王道的层次回答“一次请求依次由哪些功能模块处理”。复习时重点是记住其中的分工——<strong>“记录号 → 逻辑地址”由逻辑文件系统与文件信息缓冲区完成，“逻辑地址 → 物理地址”由物理文件系统完成，设备 I/O 由设备管理程序模块下发，空闲盘块的分配与回收归辅助分配模块。</strong></p>
-<h3 id="磁盘分区与卷">磁盘、分区与卷<a class="headerlink" href="#磁盘分区与卷" title="Permanent link">&para;</a></h3>
-<p>一个磁盘可划分多个分区，分别采用不同文件系统；一个逻辑卷也可能跨越多个物理设备，因此“磁盘、分区、卷、文件系统”不能总视为一一对应。文件系统容量不一定等于整块磁盘容量，部分空间还用于元数据。</p>
-<p>分区在投入使用前需要初始化：<strong>物理格式化</strong>（低级格式化）划分扇区、检测并替换坏扇区；<strong>逻辑格式化</strong>则在分区内建立根目录、超级块和空闲空间管理等结构。完成格式化后，卷才能被挂载并创建文件。</p>
-<p>王道展示的传统布局可概括为：</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>磁盘：主引导扇区（引导代码、分区表等） | 分区 1 | 分区 2 | ...
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>分区中的一种示意布局：
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>引导区 | 超级块 | 空闲空间管理信息 | inode 区 | 根目录 | 其他目录和文件数据
-</span></code></pre></div>
-<h3 id="外存中的主要数据结构">外存中的主要数据结构<a class="headerlink" href="#外存中的主要数据结构" title="Permanent link">&para;</a></h3>
+</center>
+<p>运行期间，内存中的状态会不断变化；需要持久保存的更新还应写回磁盘。运行时表项和缓存不必全部对应某个原样存放的磁盘结构。</p>
+<h3 id="free-space">文件存储空间管理<a class="headerlink" href="#free-space" title="Permanent link">&para;</a></h3>
+<p>空间管理维护外存中 <strong>尚未分配的区域</strong>，按需向文件提供盘块，并在释放时收回。它与前面的<a href="#allocation">文件分配方式</a>配合：前者回答哪些块可用，后者回答取得这些块后如何组织成文件。</p>
+<h4 id="空闲表法">空闲表法<a class="headerlink" href="#空闲表法" title="Permanent link">&para;</a></h4>
+<p>为每个连续空闲区建立一个表项，记录起始盘块号和盘块数，通常按起始块号递增排列。</p>
+<p>分配时，按首次适应、最佳适应等策略选择足够大的空闲区；若只取其中一部分，就更新剩余区的起点和长度。回收时，检查释放区与前后空闲区是否物理相邻，必要时合并。</p>
+<p>它便于寻找连续空间，分配和回收思路类似<a href="../memory/#动态分区分配">动态分区管理</a>。若采用计数方式组织空闲区，同样可以用“起始块号 + 连续块数”压缩逐块记录。</p>
+<h4 id="空闲链表法">空闲链表法<a class="headerlink" href="#空闲链表法" title="Permanent link">&para;</a></h4>
+<p>按链节点的粒度，可分为两种形式。</p>
+<center>
 <table>
 <thead>
 <tr>
-<th>结构</th>
-<th>范围和用途</th>
+<th style="text-align: center;">形式</th>
+<th style="text-align: center;">节点内容</th>
+<th style="text-align: center;">分配与回收</th>
+<th style="text-align: center;">特点</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>主引导记录／主引导扇区（ MBR ）</td>
-<td>传统 BIOS/MBR 分区方案下位于磁盘起始扇区，包含引导代码、分区表和结束标记</td>
+<td style="text-align: center;">空闲盘块链</td>
+<td style="text-align: center;">单个空闲盘块及下一空闲块指针</td>
+<td style="text-align: center;">从链中摘下盘块；回收时重新接入链</td>
+<td style="text-align: center;">单块操作简单，但链长较长，批量分配和寻找连续块不方便</td>
 </tr>
 <tr>
-<td>引导控制块／引导块（ boot control block ）</td>
-<td>与卷有关，保存启动所需的信息或代码；引导代码负责继续加载系统，不是把整个操作系统装在一个块里。UFS 中称引导块， NTFS 中称分区引导扇区</td>
-</tr>
-<tr>
-<td>卷控制块（ volume control block ）／超级块</td>
-<td>描述文件系统全局参数，如块大小、总块数、空闲块和 inode 数量及管理信息的位置； UFS 中即超级块</td>
-</tr>
-<tr>
-<td>空闲空间结构</td>
-<td>位图、空闲链、成组链接信息等，记录可分配空间</td>
-</tr>
-<tr>
-<td>目录结构</td>
-<td>文件名到 FCB ／ inode 等元数据的映射，根目录是文件命名树的入口</td>
-</tr>
-<tr>
-<td>每文件元数据</td>
-<td>FCB、inode 或 NTFS 文件记录，保存文件属性及定位信息</td>
-</tr>
-<tr>
-<td>文件与目录的数据块</td>
-<td>保存普通文件内容及目录内容</td>
+<td style="text-align: center;">空闲盘区链</td>
+<td style="text-align: center;">连续空闲区的起点、长度和下一盘区指针</td>
+<td style="text-align: center;">选择满足需求的盘区，必要时分割；回收时检查相邻区并合并</td>
+<td style="text-align: center;">链较短，适合连续区管理，但分割、合并更复杂</td>
 </tr>
 </tbody>
 </table>
-<p>在传统启动模型中， BIOS 读取并执行主引导代码，再定位活动分区，引导块中的程序继续加载系统。教材的布局示意不意味着所有文件系统都使用同样的固定排列，也不应把 BIOS/MBR 流程泛化到所有启动方案。</p>
-<p>超级块描述的是整个文件系统， inode 描述的是单个文件，目录项提供的是名字关联。NTFS 的 MFT 同时承载大量文件及元数据记录，其职责不能简单等同于一个 UNIX 超级块。</p>
-<h3 id="内存中的主要数据结构">内存中的主要数据结构<a class="headerlink" href="#内存中的主要数据结构" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>结构</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>挂载表</td>
-<td>记录已挂载卷、文件系统类型、设备、挂载点及选项</td>
-</tr>
-<tr>
-<td>内存超级块／卷信息</td>
-<td>支持运行时分配、统计和同步</td>
-</tr>
-<tr>
-<td>目录项缓存</td>
-<td>加速路径分量的查找</td>
-</tr>
-<tr>
-<td>活动 inode ／ FCB 缓存</td>
-<td>缓存文件属性、块映射并维护运行时引用和状态</td>
-</tr>
-<tr>
-<td>系统级打开文件结构</td>
-<td>关联活跃文件与打开实例，具体字段按教材模型或实际实现区分</td>
-</tr>
-<tr>
-<td>进程级描述符表</td>
-<td>fd 到内核文件对象／系统表项的关联</td>
-</tr>
-<tr>
-<td>数据缓存和缓冲区</td>
-<td>缓存已读数据、暂存待写数据，协调 CPU 与设备速度</td>
-</tr>
-</tbody>
-</table>
-<p>文件系统挂载时建立必要的全局状态； inode、目录项和数据通常按需载入，并非挂载时将所有文件全部读入内存。运行时修改要通过适当同步保持内存与磁盘状态一致。</p>
-<h2 id="free-space">文件存储空间管理<a class="headerlink" href="#free-space" title="Permanent link">&para;</a></h2>
-<h3 id="空闲表法与计数法">空闲表法与计数法<a class="headerlink" href="#空闲表法与计数法" title="Permanent link">&para;</a></h3>
-<p>将每个连续空闲区记为“<strong>起始块号 + 块数</strong>”，常按起始地址排列。分配时可使用首次适应、最佳适应等策略，必要时把空闲区切分；回收时检查前后相邻空闲区，可能与前区合并、与后区合并、两边都合并，或独立建立一项。</p>
-<p>它适合寻找连续空间，连续空闲区较多时表示紧凑；碎片很多时表项增多。Unit 6 所述 <strong>计数法</strong>（ counting ）同样利用“许多相邻块一同分配或释放”的特点，以区段起点和长度代替逐块登记。空闲表负责表示空闲区域，本身不能代替文件的物理块映射。</p>
-<h3 id="空闲链表法">空闲链表法<a class="headerlink" href="#空闲链表法" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>节点内容</th>
-<th>分配和回收</th>
-<th>特点</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>空闲盘块链</td>
-<td>一个空闲块及下一空闲块指针</td>
-<td>从链首摘块，释放块接回链中</td>
-<td>单块操作简单；批量分配要沿链读取，不易寻找连续空间</td>
-</tr>
-<tr>
-<td>空闲盘区链</td>
-<td>一段连续空闲区的长度和下一盘区指针</td>
-<td>查找适合盘区，分配时切分、回收时合并</td>
-<td>节点少，适合批量分配；操作比单块链复杂</td>
-</tr>
-</tbody>
-</table>
-<p>这两种链管理的是 <strong>空闲块／区</strong>，不要与将同一文件的 <strong>已分配数据块</strong> 链接起来混淆。</p>
-<h3 id="位示图位图">位示图（位图）<a class="headerlink" href="#位示图位图" title="Permanent link">&para;</a></h3>
-<p>每个分配单元对应一个 bit ，表示空闲或占用。以下沿用王道“0 空闲、1 已分配”的约定；其他资料可能反过来，做题要先看题设。</p>
-<p>分配时找一个或一组 0 ，换算对应块号，再置为 1 ；回收时由块号找到对应位并清零。位图紧凑、可缓存，便于扫描相邻的空闲块；管理很大的卷时也可能分块或分组维护。其大小取决于 <strong>总分配单元数</strong>，与当前有多少空闲块无关。</p>
-<h4 id="位图大小">位图大小<a class="headerlink" href="#位图大小" title="Permanent link">&para;</a></h4>
-<p>卷容量为 <span class="arithmatex">\(V\)</span> 字节，分配单元为 <span class="arithmatex">\(C\)</span> 字节，设可管理单元数为 <span class="arithmatex">\(N\)</span>，则</p>
+</center>
+<p>这里链接的是 <strong>空闲块或空闲区</strong>，与隐式链接分配中串接一个文件的数据块不同。</p>
+<h4 id="位示图法">位示图法<a class="headerlink" href="#位示图法" title="Permanent link">&para;</a></h4>
+<p><strong>位示图</strong>（ bitmap ，也称位图）为每个盘块或簇设置一个比特位，用来表示分配状态。本节约定 <strong>0 表示空闲， 1 表示已分配</strong>；若题目约定相反，置位与清零操作也随之交换。</p>
+<ul>
+<li>分配：扫描空闲位，换算出对应块号，再将这些位置为 1。</li>
+<li>回收：由块号确定对应位，再置为 0。</li>
+</ul>
+<p>相邻位可以表示相邻盘块，因此较容易寻找连续空闲空间。若管理 <span class="arithmatex">\(N\)</span> 个分配单元，位图需 <span class="arithmatex">\(N\)</span> 位，即 <span class="arithmatex">\(\lceil N/8\rceil\)</span> 字节；结构紧凑，但其大小仍随分配单元总数增加。例如， 1 GiB 空间按 4 KiB 块管理，有 <span class="arithmatex">\(2^{18}\)</span> 块，位图需 32 KiB。</p>
+<p>若每行有 <span class="arithmatex">\(w\)</span> 位，块号 <span class="arithmatex">\(b\)</span>、行号 <span class="arithmatex">\(i\)</span>、列号 <span class="arithmatex">\(j\)</span> <strong>均从 0 开始</strong>，则</p>
 <div class="arithmatex">\[
-N=\left\lfloor\frac VC\right\rfloor,\qquad
-S_{\mathrm{bitmap}}=\left\lceil\frac N8\right\rceil\text{ B}.
+b=iw+j,\qquad
+i=\left\lfloor\frac{b}{w}\right\rfloor,\qquad
+j=b\bmod w.
 \]</div>
-<p>若存位图也按 <span class="arithmatex">\(B\)</span> 字节的块分配，其占用块数为</p>
-<div class="arithmatex">\[
-M_{\mathrm{bitmap}}=\left\lceil\frac{N}{8B}\right\rceil.
-\]</div>
-<p>例如 10 GiB 分区、4 KiB 的簇，共有 <span class="arithmatex">\(2621440\)</span> 个簇，位图占 320 KiB ，即 80 个簇。1 GiB、4 KiB 的分配单位则需 32 KiB 位图。位图思想也可用于内存页框， 16 GiB 内存、4 KiB 页需要 512 KiB 位图。</p>
-<h4 id="行列与块号的换算">行列与块号的换算<a class="headerlink" href="#行列与块号的换算" title="Permanent link">&para;</a></h4>
-<p>设每行 <span class="arithmatex">\(w\)</span> 位。<strong>块号、行号、列号都从 0 开始</strong>时：</p>
-<div class="arithmatex">\[
-b=iw+j,\qquad i=\left\lfloor\frac bw\right\rfloor,\qquad j=b\bmod w.
-\]</div>
-<p><strong>三者都从 1 开始</strong>时，王道公式为：</p>
+<p>若三者 <strong>均从 1 开始</strong>，则</p>
 <div class="arithmatex">\[
 b=(i-1)w+j,\qquad
 i=\left\lfloor\frac{b-1}{w}\right\rfloor+1,\qquad
 j=(b-1)\bmod w+1.
 \]</div>
-<p>例如每行 32 位，块号 100 对应第 4 行、第 4 列；第 18 行、第 16 列对应块号 560。若题目混用编号起点，应先转换到从 0 开始的位偏移，再换回题目编号。</p>
-<h4 id="位图所在磁盘块与块内字节">位图所在磁盘块与块内字节<a class="headerlink" href="#位图所在磁盘块与块内字节" title="Permanent link">&para;</a></h4>
-<p>设位图从物理块 <span class="arithmatex">\(s\)</span> 开始连续存放，每块 <span class="arithmatex">\(B\)</span> 字节，用位偏移 <span class="arithmatex">\(b\)</span> 表示待修改位，则</p>
-<div class="arithmatex">\[
-\begin{aligned}
-\text{位图所在物理块}&amp;=s+\left\lfloor\frac{b}{8B}\right\rfloor,\\
-\text{块内字节偏移}&amp;=\left\lfloor\frac{b\bmod(8B)}8\right\rfloor,\\
-\text{该字节内位偏移}&amp;=b\bmod8.
-\end{aligned}
-\]</div>
-<p>例如位图起始块为 32、块长 1024 B、释放的块号为 409612 ，均从 0 编号：<span class="arithmatex">\(409612=50\times8192+12\)</span>，故修改物理块 <strong>82</strong> 的字节偏移 <strong>1</strong>、该字节内位偏移 <strong>4</strong>。实际位掩码还取决于位图对字节内各位的编号约定。</p>
-<h4 id="与磁盘几何地址的换算">与磁盘几何地址的换算<a class="headerlink" href="#与磁盘几何地址的换算" title="Permanent link">&para;</a></h4>
-<p>题目若规定一个块对应一个扇区，每柱面有 <span class="arithmatex">\(H\)</span> 个磁头／磁道、每磁道 <span class="arithmatex">\(S\)</span> 个扇区，且编号均从 0 开始，则</p>
-<div class="arithmatex">\[
-\begin{aligned}
-b&amp;=cHS+hS+s,\\
-c&amp;=\left\lfloor\frac b{HS}\right\rfloor,\quad
-h=\left\lfloor\frac{b\bmod(HS)}S\right\rfloor,\quad
-s=b\bmod S.
-\end{aligned}
-\]</div>
-<p>将位图中的位置先换成线性块号 <span class="arithmatex">\(b\)</span>，再换成柱面、磁头、扇区即可。不要把这一简化题型的编号约定直接套到所有实际设备接口上。</p>
-<h3 id="成组链接法">成组链接法<a class="headerlink" href="#成组链接法" title="Permanent link">&para;</a></h3>
-<p>将空闲块号分组保存：内存保留一组块号和计数，构成 <strong>空闲盘块号栈</strong>；其中一个块兼作连接块，内容保存下一组的块号及数量。它将分组批量处理与链接结合，避免每分配一个空闲块都读取下一个链节点。</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>内存栈：[连接块 G，若干可分配块号]
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>                 |
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>                 v
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>块 G 内容：[下一连接块 H，下一组块号]
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>                 |
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>                 v
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>块 H 内容：[再下一组信息] → ... → 结束标记
+<p>计算前应先确认三种编号的起点；若起点混用，可以先转换为从 0 开始的位偏移，再换回题目要求的编号。</p>
+<h4 id="成组链接法">成组链接法<a class="headerlink" href="#成组链接法" title="Permanent link">&para;</a></h4>
+<p>将空闲块号分组，每组保存一批空闲块号及数量，并利用连接块保存下一组信息。内存中只保留当前一组，构成 <strong>空闲盘块号栈</strong>；跨组时才读取下一组，避免逐块沿长链读取。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>内存中的当前组：[连接块 G，若干空闲块号]
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>                         │
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>                         └→ 块 G 保存：[连接块 H，下一组空闲块号]
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>                                               │
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>                                               └→ …… → 结束标志
 </span></code></pre></div>
-<p><strong>分配：</strong>栈中有普通块号时直接弹出；当要分配连接块时，必须先把该块内保存的下一组信息读入内存，再把连接块交给文件使用。读到结束标记则表明没有下一组。</p>
-<p><strong>回收：</strong>栈未满时直接压入回收块号；若栈已满，则把当前栈的计数和块号写入这次回收的块，使其成为连接块，再让内存栈只保留这个块号。后续空闲块可继续压栈。</p>
-<p>例如王道图中先分配 201–299 号块；轮到连接块 300 时，先读出其保存的下一组信息，再分配 300。组内块号不必物理连续，具体从栈哪一端分配由实现规定；应掌握“<strong>覆盖连接块前先取走下一组信息</strong>”这一不变条件。组数、栈容量和结束标记须以题设为准。</p>
-<p>教材将成组链接与早期 UNIX 的超级块管理联系起来；这不是所有现代 UNIX 文件系统必须使用的唯一方法。</p>
-<h3 id="空闲管理方法对照">空闲管理方法对照<a class="headerlink" href="#空闲管理方法对照" title="Permanent link">&para;</a></h3>
+<p><strong>分配</strong>时，从栈中取出块号；当取到连接块时，先将它保存的下一组块号和数量读入内存，再把这个块分配给文件。否则，一旦覆盖连接块，就会丢失后续空闲组的信息。</p>
+<p><strong>回收</strong>时，若栈未满，直接压入块号；若栈已满，则把当前栈的块号和计数写入新回收的块，让它成为连接块，再在内存栈中保留该块号，后续回收继续压栈。</p>
+<p>组内块号不要求连续；分组容量、栈的分配次序和结束标记由具体方案规定。空闲管理信息需要持久保存，挂载时读入有关信息，并在运行中维护内存与磁盘状态的一致性。</p>
+<h3 id="vfs-mount">虚拟文件系统<a class="headerlink" href="#vfs-mount" title="Permanent link">&para;</a></h3>
+<p><strong>虚拟文件系统</strong>（ Virtual File System ， VFS ）在应用程序与具体文件系统之间提供统一抽象。应用程序使用相同的 <code>open</code>、<code>read</code>、<code>write</code> 等接口， VFS 根据文件所属的实现，将请求分发给 ext、FAT、NTFS 或网络文件系统等。</p>
+<p>VFS 本身是内核中的抽象层，没有需要单独格式化的磁盘布局。它的主要作用是屏蔽实现差异，使不同文件系统共存；文件的实际存储布局和设备访问仍由具体实现处理。</p>
+<h4 id="四类主要对象">四类主要对象<a class="headerlink" href="#四类主要对象" title="Permanent link">&para;</a></h4>
+<p>对象包含通用数据和操作函数，具体文件系统提供相应实现。常见模型包含以下四类对象。</p>
+<center>
 <table>
 <thead>
 <tr>
-<th>方法</th>
-<th>表示粒度</th>
-<th>连续空间查找</th>
-<th>管理开销与特点</th>
+<th style="text-align: center;">对象</th>
+<th style="text-align: center;">表示的内容</th>
+<th style="text-align: center;">关键信息</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>空闲表／计数</td>
-<td>连续空闲区</td>
-<td>方便</td>
-<td>依赖空闲区数量，需分割、合并</td>
+<td style="text-align: center;">超级块对象</td>
+<td style="text-align: center;">一个已挂载的文件系统实例</td>
+<td style="text-align: center;">全局参数、状态，以及分配 inode、同步等操作</td>
 </tr>
 <tr>
-<td>空闲盘块链</td>
-<td>单块</td>
-<td>通常较困难</td>
-<td>链长与空闲块数有关，单块操作简单</td>
+<td style="text-align: center;">V 节点对象（ vnode ）</td>
+<td style="text-align: center;">一个具体的文件或目录实体</td>
+<td style="text-align: center;">通用文件属性、对底层私有元数据的引用及相关操作</td>
 </tr>
 <tr>
-<td>空闲盘区链</td>
-<td>连续空闲区</td>
-<td>较方便</td>
-<td>链较短，需维护区段长度与合并</td>
+<td style="text-align: center;">目录项对象（ dentry ）</td>
+<td style="text-align: center;">路径中的名字及目录关系</td>
+<td style="text-align: center;">名称、父目录关系、对应文件节点，用于路径缓存</td>
 </tr>
 <tr>
-<td>位图</td>
-<td>每块或每簇 1 bit</td>
-<td>便于扫描连续位</td>
-<td>空间由总块数决定，与空闲量无关</td>
-</tr>
-<tr>
-<td>成组链接</td>
-<td>一组空闲块号</td>
-<td>取决于分组和块号组织，不保证连续</td>
-<td>只常驻一组，跨组时读写连接块</td>
-</tr>
-<tr>
-<td>FAT 的空闲标记</td>
-<td>每簇一个 FAT 项</td>
-<td>可以扫描表项</td>
-<td>同时描述文件链和空闲状态，整表较大</td>
+<td style="text-align: center;">文件对象（ file ）</td>
+<td style="text-align: center;">一次打开形成的访问上下文</td>
+<td style="text-align: center;">当前读写位置、访问模式、引用计数及对应节点</td>
 </tr>
 </tbody>
 </table>
-<p>普通文件 inode 保存已分配块的映射，不是全卷空闲块管理表。空闲结构本身也要持久保存；分配状态与文件块指针更新不同步，可能造成块泄漏或重复分配。</p>
-<h2 id="vfs-mount">虚拟文件系统与挂载<a class="headerlink" href="#vfs-mount" title="Permanent link">&para;</a></h2>
-<h3 id="vfs-的作用">VFS 的作用<a class="headerlink" href="#vfs-的作用" title="Permanent link">&para;</a></h3>
-<p><strong>虚拟文件系统</strong>（ Virtual File System ， VFS ）是内核中的统一抽象层。应用程序使用相同的 <code>open</code>、<code>read</code>、<code>write</code> 等接口， VFS 再根据对象所属的具体文件系统，将请求分发给不同实现，支持本地文件系统和网络文件系统共存。</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>flowchart TD
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    A[用户程序的文件系统调用] --&gt; V[VFS 统一接口与对象]
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    V --&gt; E[ext 系列实现]
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    V --&gt; F[FAT 实现]
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    V --&gt; N[NTFS 实现]
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    V --&gt; R[NFS 客户端]
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    E --&gt; D[本地存储设备]
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>    F --&gt; D
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>    N --&gt; D
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>    R --&gt; S[网络与远程服务]
-</span></code></pre></div>
-<p>VFS 的主要目标是接口统一和屏蔽实现差异，而非保证某种访问速度。它不是一种磁盘格式，也不是“在虚拟内存里创建的磁盘文件系统”；运行时对象占用内核内存，但没有需要在每个卷上另行格式化的“VFS 分区”。</p>
-<h3 id="四类主要对象">四类主要对象<a class="headerlink" href="#四类主要对象" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>对象</th>
-<th>描述什么</th>
-<th>关键内容</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>超级块对象（ superblock ）</td>
-<td>一个文件系统实例</td>
-<td>全局参数、状态与相应操作</td>
-</tr>
-<tr>
-<td>文件节点对象（ vnode ／ VFS inode ）</td>
-<td>一个文件或目录实体</td>
-<td>通用元数据及对底层私有元数据的引用</td>
-</tr>
-<tr>
-<td>目录项对象（ dentry ）</td>
-<td>路径中的名字及父子关系</td>
-<td>文件名、父目录关联、对应文件节点，支持路径缓存</td>
-</tr>
-<tr>
-<td>文件对象（ file ）</td>
-<td>一次打开形成的访问上下文</td>
-<td>当前偏移、访问模式、引用计数及相关节点／操作</td>
-</tr>
-</tbody>
-</table>
-<p>王道使用 vnode 解释对不同文件系统节点的统一封装； Linux 通常把对应抽象称为 VFS inode。两者都要与磁盘上具体格式的 inode 区分。dentry 是内存路径对象，也不等于把某个磁盘目录项原封不动复制到内存；多个 dentry 可对应同一个文件节点。参见 <a href="https://docs.kernel.org/filesystems/vfs.html">Linux VFS 文档</a>。</p>
-<p>四类对象配合各自的操作函数，形成类似多态的调用机制。新文件系统实现相应接口后，才能接入。以写入为例：</p>
-<p><code>write(fd, buf, n)</code> → 查进程 fd 表 → 找到 file 对象及有关文件节点 → 经操作接口调用具体文件系统的写方法 → 更新缓存与必要的元数据 → 由底层 I/O 完成设备写入。</p>
-<p>这里的函数分工是概念流程；实际内核的函数名和调用细节可能不同。</p>
-<h3 id="文件系统挂载">文件系统挂载<a class="headerlink" href="#文件系统挂载" title="Permanent link">&para;</a></h3>
-<p><strong>挂载</strong>（ mount ）将一个文件系统接入当前可见的命名空间，使程序可通过指定路径访问其中的文件。接入位置称为 <strong>挂载点</strong>。它和格式化不同：格式化建立磁盘结构，挂载使已有结构进入系统的访问路径。</p>
-<p>挂载通常需要指定设备或文件系统来源、挂载点、类型或自动识别方式，以及访问选项。系统读取并验证必要的文件系统元数据，创建内存管理对象，记录到挂载信息中，并把挂载点与被挂载文件系统的根关联起来。</p>
-<ul>
-<li>UNIX 以 <code>/</code> 为统一根，在启动时建立根文件系统，其他文件系统可在启动配置或手动操作中挂到目录树下。</li>
-<li>Windows 可用 <code>C:</code>、<code>D:</code> 等驱动器号访问不同卷，也支持目录挂载点。</li>
-<li>挂载点下原来的内容通常被新挂载的内容遮蔽，卸载后恢复可见；挂载本身不要求把原内容删除或搬走。</li>
-<li>一个文件系统可以出现在多个挂载位置。教材按“一个挂载点对应一个当前可见文件系统”建模；实际系统还可能存在叠加挂载、绑定挂载及不同挂载命名空间，不能把简化模型理解为所有内核的绝对限制。</li>
-</ul>
-<div class="language-sh highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># 示例：将设备上的 ext2 文件系统接入 /mnt/data</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>mount<span class="w"> </span>-t<span class="w"> </span>ext2<span class="w"> </span>/dev/example<span class="w"> </span>/mnt/data
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1"># 使用完毕后卸载</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>umount<span class="w"> </span>/mnt/data
-</span></code></pre></div>
-<p>卸载需处理未完成写回和有关运行时引用；仍有打开文件、进程工作目录等引用时，常规卸载可能因忙而失败。挂载管理的是整个文件系统与命名空间的关系，打开管理的是具体文件的一次访问，两者粒度不同。</p>
-<h2 id="filesystem-examples">典型文件系统<a class="headerlink" href="#filesystem-examples" title="Permanent link">&para;</a></h2>
-<p>这一部分对应 Unit 6 的实例主题，具体格式细节用于联系前面的通用机制。</p>
-<h3 id="fat-系列与长文件名">FAT 系列与长文件名<a class="headerlink" href="#fat-系列与长文件名" title="Permanent link">&para;</a></h3>
-<p>FAT12、FAT16、FAT32 都以 FAT 记录簇链；目录项提供首簇、长度等信息。经典 FAT 目录项为 32 B ，长文件名通过额外目录项拼接，与保存短文件名、首簇和时间等信息的目录项配合。</p>
+</center>
+<p>V 节点统一封装文件描述信息，与磁盘上的具体 inode 不属于同一层次。目录项对象在路径解析中建立，也不一定原样对应磁盘上的某个目录项；多个名字可以关联同一文件节点。文件对象随打开访问建立，相关引用释放后可以销毁。</p>
 <details class="info">
-<summary>FAT 长文件名目录项</summary>
-<p>每个长文件名项容纳 13 个 16 位字符单元，属性为 <code>0x0F</code>。多个项紧挨短文件名项之前，按片段序号倒序保存；序号从 1 开始，最后片段的序号带 <code>0x40</code> 标志，因此在磁盘上最先出现。</p>
-<p>按从 0 开始的字节偏移： 12 为类型（ 0 ）， 13 为短文件名校验和， 26–27 为置零字段。最后片段若有余位，先放 <code>0x0000</code> 终止，再用 <code>0xFFFF</code> 填充；恰好用满时无须额外终止填充。短项属性 <code>0x20</code> 表示归档位，不能说所有短文件名项的属性都固定为 <code>0x20</code>。字段以 <a href="https://www.scs.stanford.edu/~zyedidia/docs/_other/fat.pdf">Microsoft FAT 规范第 7 节</a> 为准。</p>
+<summary>Linux 的对象命名</summary>
+<p>Linux 通常用 <strong>VFS inode</strong> 表示这里的通用文件节点。它与 superblock、dentry、file 对象协作；其中 file 保存一次打开的访问状态， inode 表示文件实体。这些内存对象通过具体文件系统提供的操作函数完成请求。参见 <a href="https://docs.kernel.org/filesystems/vfs.html">Linux VFS 文档</a>。</p>
 </details>
-<p>exFAT 是 FAT 家族的另一种格式，使用分配位图等结构，不能仅称为“把 FAT 表项扩为 64 位的 FAT”。它的 FAT 项仍为 32 位，文件长度字段可以为 64 位；位图和簇链的职责也要区分。参见 <a href="https://learn.microsoft.com/en-us/windows/win32/fileio/exfat-specification">Microsoft exFAT 规范</a>。</p>
-<h3 id="ext-系列">ext 系列<a class="headerlink" href="#ext-系列" title="Permanent link">&para;</a></h3>
-<p>ext2 的经典 inode 使用直接与多级间接块地址； ext3 引入日志机制； ext4 可使用 extent 树描述连续数据区段，减少大文件的逐块地址记录开销。目录仍通过名字关联 inode ，不必把传统 15 地址项模型当作所有 ext4 文件的实际布局。参见 <a href="https://man7.org/linux/man-pages/man5/ext4.5.html">Linux ext 文件系统说明</a> 与 <a href="https://www.kernel.org/doc/html/v6.12/filesystems/ext4/dynamic.html">ext4 数据结构</a>。</p>
-<h3 id="ntfs-与-mft">NTFS 与 MFT<a class="headerlink" href="#ntfs-与-mft" title="Permanent link">&para;</a></h3>
-<p>NTFS 的 <strong>主文件表</strong>（ Master File Table ， MFT ）由文件记录组成，每个文件和目录至少关联一条记录，需要时可使用扩展记录。常见教学模型采用 1 KiB 记录；实际不能脱离卷格式把它当成所有版本的唯一大小。</p>
-<p>记录以固定格式的头部开始，后面是文件名、数据等属性；前 16 条记录为特殊元数据文件保留，如 MFT 自身、根目录和空闲簇位图。小属性或数据可驻留在记录内，较大数据通过属性中的位置描述引用外部存储。参见 <a href="https://learn.microsoft.com/en-us/windows/win32/devnotes/master-file-table">Microsoft MFT 说明</a> 和 <a href="https://learn.microsoft.com/en-us/troubleshoot/windows-server/backup-and-storage/disk-space-problems-on-ntfs-volumes">NTFS 空间分配说明</a>。</p>
-<h3 id="其他实例与分类边界">其他实例与分类边界<a class="headerlink" href="#其他实例与分类边界" title="Permanent link">&para;</a></h3>
-<p>文件系统实例还包括 UFS、HFS+、APFS、ReFS、ZFS、HPFS、ReiserFS、YAFFS、ISO 9660、LTFS ，以及课程资料列举的 S51K ／ S52K 等。需要特别区分：<strong>NFS</strong> 是网络文件系统；<strong>proc、sysfs</strong> 主要提供内核或系统对象的文件视图；<strong>VFS</strong> 是协调不同实现的抽象层，不能与某一种持久化磁盘格式直接并列理解。</p>
-<h2 id="performance-recovery">文件系统的性能、一致性与恢复<a class="headerlink" href="#performance-recovery" title="Permanent link">&para;</a></h2>
-<h3 id="缓存缓冲与页缓存">缓存、缓冲与页缓存<a class="headerlink" href="#缓存缓冲与页缓存" title="Permanent link">&para;</a></h3>
-<p>常用优化包括缩小目录项、缓存目录和 inode、缓存文件数据、预读相邻数据、合并写入、改善数据布局与磁盘调度。它们分别减少定位所需信息量、实际 I/O 次数或设备访问时间。</p>
-<p><strong>缓存</strong>强调复用已有数据，<strong>缓冲</strong>强调暂存数据并协调传输速度；同一块内存可以同时承担二者作用。<strong>页缓存</strong>（ page cache ）把文件内容纳入内存页管理，使常规读写及文件映射能复用缓存。其收益主要来自避免反复访问存储设备及重复缓存，不能简单归因于“虚拟内存接口一定更快”。参见 <a href="https://docs.kernel.org/mm/page_cache.html">Linux Page Cache</a>。</p>
-<p>脏页表示内存中的内容已修改、尚待写回。延迟写可以合并多次更新，但应用收到写入成功与数据已经持久保存是不同事件。需要持久性保证时，应使用适当的同步接口并考虑设备行为；异步 I/O 则让计算与 I/O 重叠，并不自动减少同一任务所需的磁盘读写次数。</p>
-<h3 id="一致性检查备份与恢复">一致性检查、备份与恢复<a class="headerlink" href="#一致性检查备份与恢复" title="Permanent link">&para;</a></h3>
-<p>创建、删除、扩展文件通常同时修改目录、inode、块分配状态等多个结构。若中途掉电，可能出现“块已分配但没有文件引用”“两个文件错误地拥有同一块”“链接计数与目录不符”等不一致。</p>
-<p>一致性检查工具可比较目录引用、inode、块指针与空闲结构并尝试修复，但不能凭空恢复已丢失的用户内容。备份保存可供恢复的副本，应覆盖所需数据和元数据；全量备份、增量备份及恢复验证解决的是故障后的恢复能力。访问权限、文件锁、日志和备份各有目标，不能相互替代。</p>
-<h3 id="日志式文件系统与日志结构文件系统">日志式文件系统与日志结构文件系统<a class="headerlink" href="#日志式文件系统与日志结构文件系统" title="Permanent link">&para;</a></h3>
-<p><strong>日志式文件系统</strong>（ journaling FS ）将一组相关更新视为事务，先把恢复所需的信息写到日志并提交，再把更新落实到常规位置。崩溃后，系统可依据完整的提交记录重放事务；未完成事务按日志协议处理，避免把一半完成的元数据更新当成完整结果。日志可能只覆盖元数据，也可能覆盖数据；仅有元数据日志不保证所有用户数据都是最新版本。参见 <a href="https://www.kernel.org/doc/html/latest/filesystems/ext4/journal.html">Linux ext4 Journal</a>。</p>
-<p><strong>日志结构文件系统</strong>（ log-structured FS ， LFS ）则把数据与元数据的新版本主要顺序追加写入日志式存储布局，用映射定位最新版本，并通过段清理回收旧版本占用的空间。它是一种整体的数据布局策略，不能等同于“普通文件系统多写一份事务日志”。参见 <a href="https://pages.cs.wisc.edu/~remzi/OSTEP/file-lfs.pdf">OSTEP ： Log-structured File Systems</a>。</p>
-<p>Unit 6 将二者放在相近语境中介绍，复习时应保留上述区别：日志解决崩溃时如何恢复一致更新， LFS 还规定数据主要如何布局及旧空间如何回收。</p>
-<h2 id="review">复习对照与易混点<a class="headerlink" href="#review" title="Permanent link">&para;</a></h2>
-<h3 id="从一次文件访问串起各个模块">从一次文件访问串起各个模块<a class="headerlink" href="#从一次文件访问串起各个模块" title="Permanent link">&para;</a></h3>
-<p>给定路径时，先通过挂载关系确定所经过的文件系统，逐级查目录并取得 inode ；打开时检查权限，建立描述符与文件对象的关系。读写时按文件偏移和分配结构定位数据，优先利用缓存，必要时经过下层 I/O 访问设备。增长时分配空闲块，删除名字时维护硬链接计数，最后释放引用时决定对象能否回收；有关元数据与数据再按同步和恢复协议持久化。</p>
-<h3 id="高频易混点">高频易混点<a class="headerlink" href="#高频易混点" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>容易混淆的概念</th>
-<th>区分依据</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>顺序文件与连续分配</td>
-<td>前者是记录逻辑组织，后者是物理块布局</td>
-</tr>
-<tr>
-<td>记录索引、inode、块索引</td>
-<td>分别用于记录定位、描述文件、定位文件数据块</td>
-</tr>
-<tr>
-<td>文件名、inode 号与 fd</td>
-<td>分别属于目录命名、文件实体标识、进程的打开访问引用</td>
-</tr>
-<tr>
-<td>FCB 与打开文件表</td>
-<td>FCB 随文件存在，打开文件表随运行时打开引用存在</td>
-</tr>
-<tr>
-<td>逻辑文件系统与物理文件系统</td>
-<td>前者负责记录与逻辑地址的换算及元数据，后者负责逻辑地址到物理地址的映射</td>
-</tr>
-<tr>
-<td>硬链接计数与打开计数</td>
-<td>前者对应名字关联，后者对应打开访问，生命周期不同</td>
-</tr>
-<tr>
-<td>关闭与删除</td>
-<td>关闭解除打开引用；删除首先移除名字，满足条件才回收数据</td>
-</tr>
-<tr>
-<td>文件大小与占用空间</td>
-<td>逻辑字节长度与实际分配块、索引和元数据的空间不同</td>
-</tr>
-<tr>
-<td>单文件上限、卷容量与文件数</td>
-<td>分别核对索引／长度字段、卷及块地址范围、inode 和空间数量</td>
-</tr>
-<tr>
-<td>FAT 与文件索引块</td>
-<td>FAT 按卷的物理分配单元记录链；索引块按单文件逻辑块记录地址</td>
-</tr>
-<tr>
-<td>文件链接与空闲链</td>
-<td>前者组织已分配数据块，后者组织尚未分配块</td>
-</tr>
-<tr>
-<td>格式化、挂载与打开</td>
-<td>分别建立文件系统结构、接入命名空间、建立文件访问上下文</td>
-</tr>
-<tr>
-<td>ACL、加锁、日志和备份</td>
-<td>分别针对授权、并发协调、崩溃一致性和数据恢复</td>
-</tr>
-</tbody>
-</table>
-<p>计算题先明确 <strong>编号从 0 还是 1 开始、块／簇与记录大小、指针宽度、缓存状态、读写是否都计数、是否包含元数据回写</strong>。题设采用理想模型时按模型作答；解释实际实现时，应保留条件。</p>
-<h3 id="王道第-4-章覆盖对照">王道第 4 章覆盖对照<a class="headerlink" href="#王道第-4-章覆盖对照" title="Permanent link">&para;</a></h3>
-<p>下表页码为书内印刷页码； PDF 页序比书页大 11。各节小结及习题解析中的可复用结论已并入对应主题，题目不逐题抄录。</p>
-<table>
-<thead>
-<tr>
-<th>王道章节</th>
-<th>书页</th>
-<th>本笔记对应主题</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>4.1.1 文件的基本概念</td>
-<td>251–253</td>
-<td>文件定义、数据项与记录、属性、分类</td>
-</tr>
-<tr>
-<td>4.1.2 文件系统结构</td>
-<td>253</td>
-<td><a href="#filesystem-layout">文件系统的层次与布局</a>，含教材五层与王道七层两套划分</td>
-</tr>
-<tr>
-<td>4.1.3 文件的逻辑结构</td>
-<td>253–255</td>
-<td><a href="#logical-structure">逻辑结构与访问方式</a>，含散列文件及索引顺序查找计算</td>
-</tr>
-<tr>
-<td>4.1.4–4.1.6 小结、习题与解析</td>
-<td>255–257</td>
-<td>逻辑／物理结构辨析、顺序检索平均次数</td>
-</tr>
-<tr>
-<td>4.2.1–4.2.2 目录概念、FCB 与 inode</td>
-<td>257–258</td>
-<td><a href="#directory">目录、FCB 与 inode</a>，含目录项分解与访盘</td>
-</tr>
-<tr>
-<td>4.2.3–4.2.5 目录结构、操作、实现</td>
-<td>258–261</td>
-<td>路径和工作目录，单级、两级、树形、无环图，线性与哈希实现；带星号部分保留</td>
-</tr>
-<tr>
-<td>4.2.6 文件的物理结构</td>
-<td>261–265</td>
-<td><a href="#allocation">文件分配</a>，含 FAT、簇、单级／多级／混合索引</td>
-</tr>
-<tr>
-<td>4.2.7 文件的操作</td>
-<td>266–268</td>
-<td><a href="#file-operations">操作与打开文件表</a>，创建、删除、读写、打开和关闭</td>
-</tr>
-<tr>
-<td>4.2.8–4.2.9 共享与保护</td>
-<td>268–271</td>
-<td><a href="#sharing-protection">共享与保护</a>，软硬链接、ACL、口令与加密</td>
-</tr>
-<tr>
-<td>4.2.10–4.2.12 小结、习题与解析</td>
-<td>271–293</td>
-<td>目录检索、记录成组、FAT 大小、索引容量与开销、插入记录、路径 I/O、链接计数、权限位数和文件数限制</td>
-</tr>
-<tr>
-<td>4.3.1 文件系统布局</td>
-<td>294–295</td>
-<td><a href="#filesystem-layout">层次与布局</a>，磁盘与内存结构</td>
-</tr>
-<tr>
-<td>4.3.2 文件存储空间管理</td>
-<td>295–297</td>
-<td><a href="#free-space">空闲空间管理</a>，空闲表、两种空闲链、位图、成组链接</td>
-</tr>
-<tr>
-<td>4.3.3–4.3.4 VFS 与挂载</td>
-<td>298–300</td>
-<td><a href="#vfs-mount">VFS 与挂载</a>，四类对象和调用过程</td>
-</tr>
-<tr>
-<td>4.3.5–4.3.7 小结、习题与解析</td>
-<td>300–304</td>
-<td>文件系统功能、位图大小及定位、磁盘几何地址、VFS 性质</td>
-</tr>
-<tr>
-<td>4.4 本章疑难点</td>
-<td>304</td>
-<td>三种分配方式及访盘对照、完整打开流程</td>
-</tr>
-</tbody>
-</table>
-<h3 id="unit-6-补充主题对照">Unit 6 补充主题对照<a class="headerlink" href="#unit-6-补充主题对照" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Unit 6 主题</th>
-<th>本笔记位置</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>文件属性、操作、保护、类型、结构</td>
-<td>文件基础、<a href="#file-operations">文件操作</a>、<a href="#sharing-protection">共享与保护</a></td>
-</tr>
-<tr>
-<td>访问方式、各类目录及一般图</td>
-<td><a href="#logical-structure">逻辑结构</a>、<a href="#directory">目录</a></td>
-</tr>
-<tr>
-<td>挂载、分层、磁盘和内存结构</td>
-<td><a href="#filesystem-layout">层次与布局</a>、<a href="#vfs-mount">VFS 与挂载</a></td>
-</tr>
-<tr>
-<td>块组织、extent、链接索引、容量及插入例题</td>
-<td><a href="#allocation">文件分配</a></td>
-</tr>
-<tr>
-<td>位图、空闲链、分组、计数</td>
-<td><a href="#free-space">空闲空间管理</a></td>
-</tr>
-<tr>
-<td>FAT 长文件名、ext、NTFS/MFT 等实例</td>
-<td><a href="#filesystem-examples">典型文件系统</a></td>
-</tr>
-<tr>
-<td>页缓存、恢复、日志</td>
-<td><a href="#performance-recovery">性能、一致性与恢复</a>，区分 journaling 与 LFS</td>
-</tr>
-</tbody>
-</table>
+<h4 id="请求的分发">请求的分发<a class="headerlink" href="#请求的分发" title="Permanent link">&para;</a></h4>
+<p>以 <code>write(fd, buf, n)</code> 为例：系统根据 fd 找到文件对象及对应文件节点，通过其操作接口调用具体文件系统的写方法；具体实现更新缓存和必要的元数据，再由下层 I/O 将数据写向设备。</p>
+<p>同一个接口可以对应不同实现，这与面向对象中的多态类似。新文件系统只有实现相应接口后，才能接入这一统一模型。</p>
+<h3 id="mount">文件系统挂载<a class="headerlink" href="#mount" title="Permanent link">&para;</a></h3>
+<p><strong>挂载</strong>（ mount ）把一个文件系统接入当前可见的文件命名空间。接入位置称为 <strong>挂载点</strong>；用户通过该位置访问被挂载文件系统中的文件。</p>
+<p>挂载需要确定设备或文件系统来源、类型、挂载位置和有关选项，读取并验证必要的元数据，建立内存管理对象，再将其根目录与挂载位置关联，并登记挂载信息。</p>
+<ul>
+<li><strong>UNIX</strong> 以 <code>/</code> 为统一根，启动时挂载根文件系统，其他文件系统可在启动阶段或运行期间接入目录树。</li>
+<li><strong>Windows</strong> 常用 <code>C:</code>、<code>D:</code> 等驱动器号访问不同卷，也支持目录形式的装入点。</li>
+</ul>
+<p>例如，将设备上的 ext2 文件系统挂载到已有目录 <code>/mnt/data</code>：</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>mount<span class="w"> </span>-t<span class="w"> </span>ext2<span class="w"> </span>/dev/example<span class="w"> </span>/mnt/data
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>umount<span class="w"> </span>/mnt/data
+</span></code></pre></div>
+<p>格式化建立文件系统的磁盘结构，挂载建立访问入口，打开则建立某个文件的访问上下文，三者处理的对象和时机不同。</p>
+<h2 id="filesystem-examples">典型文件系统<a class="headerlink" href="#filesystem-examples" title="Permanent link">&para;</a></h2>
+<h3 id="fat-与长文件名">FAT 与长文件名<a class="headerlink" href="#fat-与长文件名" title="Permanent link">&para;</a></h3>
+<p>FAT12、FAT16、FAT32 使用前面的<a href="#fat">文件分配表</a>组织簇链。经典 FAT 目录项为 32 B ，保存短文件名、属性、首簇号、文件大小和时间等信息；长文件名由若干附加目录项配合短文件名项保存。</p>
+<details class="info">
+<summary>长文件名目录项的编码</summary>
+<p>每个长文件名项也是 32 B ，可保存 13 个 16 位字符单元，属性为 <code>0x0F</code>。各片段在短文件名项之前按序号倒序排列，末片段带 <code>0x40</code> 标志。按从 0 开始的字节偏移， 12 为类型， 13 为短文件名校验和， 26–27 为置零字段。末片段有余位时，先用 <code>0x0000</code> 终止，再以 <code>0xFFFF</code> 填充。普通短项的 <code>0x20</code> 是归档属性位，不能把它看成所有短文件名项固定的属性值。参见 <a href="https://www.scs.stanford.edu/~zyedidia/docs/_other/fat.pdf">Microsoft FAT 规范，第 7 节</a>。</p>
+<p>exFAT 使用分配位图管理簇的占用状态， FAT 项仍为 32 位，而文件长度等字段可以为 64 位，不能概括为“64 位 FAT”。参见 <a href="https://learn.microsoft.com/en-us/windows/win32/fileio/exfat-specification">Microsoft exFAT 规范</a>。</p>
+</details>
+<h3 id="ntfs-与主文件表">NTFS 与主文件表<a class="headerlink" href="#ntfs-与主文件表" title="Permanent link">&para;</a></h3>
+<p>NTFS 的 <strong>主文件表</strong>（ Master File Table ， MFT ）由文件记录组成，文件和目录的描述信息都保存在其中，每个文件或目录至少对应一条记录。记录包含固定格式的头部，以及文件名、数据等属性。MFT 的前 16 条记录为特殊元数据文件保留。</p>
+<details class="note">
+<summary>MFT 记录与文件内容</summary>
+<p>常见教学示例使用 1 KiB 的 MFT 记录；具体记录长度可以通过卷信息中的 <code>BytesPerFileRecordSegment</code> 字段查询。单条记录放不下的属性可使用扩展记录。MFT 管理的是大量文件记录，其职责不能直接等同于 UNIX 中仅保存全局参数的超级块。参见 <a href="https://learn.microsoft.com/en-us/windows/win32/devnotes/master-file-table">Microsoft MFT 说明</a>及 <a href="https://learn.microsoft.com/en-us/windows/win32/api/winioctl/ns-winioctl-ntfs_volume_data_buffer">NTFS 卷信息结构</a>。</p>
+</details>
+<h2 id="performance-recovery">文件系统的性能与恢复<a class="headerlink" href="#performance-recovery" title="Permanent link">&para;</a></h2>
+<h3 id="页缓存">页缓存<a class="headerlink" href="#页缓存" title="Permanent link">&para;</a></h3>
+<p><strong>页缓存</strong>（ page cache ）以内存页为单位缓存文件内容，使文件访问能够与虚拟内存管理配合。它的收益来自复用内存中的文件数据、减少实际设备 I/O ，不能仅归因于“虚拟内存接口更快”。<a href="../memory/#内存映射文件">内存映射文件</a>介绍了把文件区域映射到进程地址空间的访问方式。</p>
+<details class="info">
+<summary>页缓存与写回</summary>
+<p>Linux 的普通文件读写和文件映射通常通过页缓存完成。修改后的脏页需要写回存储设备；延迟写回可以合并更新，但写调用成功与数据已经持久保存是不同事件。需要持久性保证时应使用相应同步机制。参见 <a href="https://docs.kernel.org/mm/page_cache.html">Linux Page Cache</a>和 <a href="https://man7.org/linux/man-pages/man2/fsync.2.html">fsync(2)</a>。</p>
+</details>
+<h3 id="一致性检查与备份">一致性检查与备份<a class="headerlink" href="#一致性检查与备份" title="Permanent link">&para;</a></h3>
+<p>文件更新可能同时改变目录、inode、块分配信息等结构。如果在部分更新完成后发生故障，磁盘上的结构可能不再一致，例如块已标为占用，却没有文件引用它。</p>
+<p>一致性检查核对文件描述、目录引用和空闲状态，发现并尝试修复异常；备份则保存可供恢复的数据副本。二者解决的问题不同：修复结构关系不一定能恢复丢失的用户内容，恢复数据还需要可用的备份。</p>
+<h3 id="日志与崩溃恢复">日志与崩溃恢复<a class="headerlink" href="#日志与崩溃恢复" title="Permanent link">&para;</a></h3>
+<p>将相关修改组织为事务并保存恢复信息，可以在崩溃后识别完整更新、恢复一致状态。这里需要区分两类名称相近的机制。</p>
+<details class="info">
+<summary>日志式与日志结构文件系统</summary>
+<p><strong>日志式文件系统</strong>（ journaling file system ）先将恢复所需的信息写入日志，完整提交后再按协议落实到常规位置；崩溃后可重放已提交事务。日志可以只覆盖元数据，因此不能由“有日志”推出用户数据始终为最新版本。参见 <a href="https://www.kernel.org/doc/html/latest/filesystems/ext4/journal.html">Linux ext4 Journal</a>。</p>
+<p><strong>日志结构文件系统</strong>（ log-structured file system ， LFS ）把数据和元数据的新版本主要顺序追加写入，以映射定位最新版本，并通过段清理回收旧版本空间。这是一种整体存储布局策略，区别于在常规布局旁增加事务日志。参见 <a href="https://pages.cs.wisc.edu/~remzi/OSTEP/file-lfs.pdf">OSTEP ： Log-structured File Systems</a>。</p>
+</details>
 
 
 
