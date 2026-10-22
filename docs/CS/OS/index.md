@@ -18,7 +18,7 @@
     - [x] [进程和线程](./process.md)
     - [x] [调度](./schedule.md)
     - [x] [同步](./sync.md)
-    - [ ] [内存管理](./memory.md)
+    - [x] [内存管理](./memory.md)
     - [ ] [文件管理](./file.md)
     - [ ] [输入/输出](./IO.md)
 
