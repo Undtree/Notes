@@ -1710,17 +1710,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#地址翻译的示例" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        地址翻译的示例
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -2921,17 +2910,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#地址翻译的示例" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        地址翻译的示例
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -2960,7 +2938,7 @@
 
 <h1 id="内存管理">内存管理<a class="headerlink" href="#内存管理" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 17162 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 7 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 57 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 17130 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 7 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 57 分钟</p>
 </div>
 <div class="admonition abstract">
 <p class="admonition-title">概览——内存管理的基本原理和要求</p>
@@ -2971,7 +2949,7 @@
 <h3 id="逻辑地址与物理地址">逻辑地址与物理地址<a class="headerlink" href="#逻辑地址与物理地址" title="Permanent link">&para;</a></h3>
 <p><strong>逻辑地址（ Logical Address ）</strong>，也称虚拟地址，是程序使用的地址。目标模块通常从 0 开始编址，链接时再将各模块的相对地址组织为统一的逻辑地址空间。不同进程拥有独立的地址空间，因此相同的逻辑地址可以表示不同的内容。</p>
 <p><strong>物理地址（ Physical Address ）</strong> 是实际访问主存时使用的地址。逻辑地址到物理地址的转换称为 <strong>地址重定位</strong>；在采用运行时地址转换的系统中，这一工作由 <strong>内存管理单元（ Memory Management Unit ， MMU ）</strong> 根据操作系统维护的映射信息完成。</p>
-<p>用户程序只需使用自己的逻辑地址，具体对应哪个物理位置由内存管理机制决定。逻辑地址与物理地址的位数也不必相同，其容量限制见<a href="#虚拟存储器的定义和特征">虚拟容量与实际存储能力</a>。</p>
+<p>用户程序只需使用自己的逻辑地址，具体对应哪个物理位置由内存管理机制决定。逻辑地址与物理地址的位数也不必相同，其容量限制见<a href="#虚拟存储器">虚拟容量与实际存储能力</a>。</p>
 <p>进程地址空间中代码、数据、堆、栈等区域的组织，见<a href="../process/#进程的内存映像">进程的内存映像</a>。后面所说的分页和分段，是对这些地址建立物理映射的方法。</p>
 <h3 id="程序的链接与装入">程序的链接与装入<a class="headerlink" href="#程序的链接与装入" title="Permanent link">&para;</a></h3>
 <p>一个源程序通常需要经过三个步骤，才能成为在内存中的、可以执行的程序：</p>
@@ -3387,7 +3365,7 @@ T_{\mathrm{EAT}}
 </ol>
 <p>与分页的帧号拼接不同，<strong>段基址与偏移需要相加</strong>。段长不固定，段基址也不要求按某个统一段大小对齐。</p>
 <p><figure>
-<img alt="基本的分段系统地址变换" src="../../images/OS/address_mapping_sectioning.png.png" width="70%" />
+<img alt="基本的分段系统地址变换" src="../../../images/OS/address_mapping_sectioning.png" width="70%" />
 <figureacaption>基本的分段系统地址变换</figurecaption>
 </figure></p>
 <p>例如，第 2 段基址为 8 KB ，段长为 500 B ，偏移为 100 B ，则物理地址为 <span class="arithmatex">\(8192+100=8292\)</span>；偏移为 500 B 时已越界。没有快表且忽略数据 Cache 时，需要一次访问段表、一次访问目标内容。</p>
@@ -3463,7 +3441,123 @@ T_{\mathrm{EAT}}
 <p class="admonition-title">两级页表与段页式不是同一种结构</p>
 <p>两级页表把一个线性页号拆成两级索引；段页式先按程序语义分段，各段再分页。两者虽然都可能查两张表，但上层表项的含义不同。</p>
 </div>
-<p>段页式不要求一个段的所有帧连续，也不要求不同段的页表连续；它仍有页内碎片，并增加了表结构和查找开销。</p>
+<p>段页式不要求一个段的所有帧连续，也不要求不同段的页表连续；但是它仍有页内碎片，并增加了表结构和查找开销。</p>
+<hr />
+<details class="example" open="open">
+<summary>地址翻译的示例</summary>
+<p>本节采用 <strong>先完成地址转换，再访问物理寻址数据 Cache</strong> 的模型。Cache 的映射规则见<a href="../../CO/storage/#cache-和主存的映射方式">计算机组成中的 Cache</a>，这里重点观察它与 TLB、页表如何配合。</p>
+<p>假设按字节编址，虚拟地址为 14 位，物理地址为 12 位，页面大小为 64 B ； TLB 共 16 项、四路组相联；数据 Cache 直接映射、共 16 行，每行 4 B。</p>
+<p>接下来我们分析对虚拟地址 <code>0x03d4</code>，<code>0x00f1</code> 和 <code>0x0229</code> 的访问过程。</p>
+<p>页面大小 <span class="arithmatex">\(64=2^6\)</span>，所以页内偏移占 6 位，虚拟页号占 8 位，物理帧号占 6 位。TLB 共 <span class="arithmatex">\(16/4=4\)</span> 组，从虚拟页号中拆出 2 位组索引和 6 位标记。Cache 从物理地址中拆出 2 位块内偏移、4 位行索引和 6 位标记。</p>
+<center markdown="1">
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">用途</th>
+<th style="text-align: center;">高位字段</th>
+<th style="text-align: center;">中间字段</th>
+<th style="text-align: center;">低位字段</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">虚拟地址转换</td>
+<td style="text-align: center;">虚拟页号： 8 位</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">页内偏移： 6 位</td>
+</tr>
+<tr>
+<td style="text-align: center;">TLB 查询</td>
+<td style="text-align: center;">TLB 标记： 6 位</td>
+<td style="text-align: center;">TLB 组索引： 2 位</td>
+<td style="text-align: center;">页内偏移： 6 位，不参与映射匹配</td>
+</tr>
+<tr>
+<td style="text-align: center;">物理地址</td>
+<td style="text-align: center;">物理帧号： 6 位</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">页内偏移： 6 位</td>
+</tr>
+<tr>
+<td style="text-align: center;">Cache 查询</td>
+<td style="text-align: center;">Cache 标记： 6 位</td>
+<td style="text-align: center;">行索引： 4 位</td>
+<td style="text-align: center;">块内偏移： 2 位</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>只取这次访问有关的初始状态： TLB 第 3 组有有效项“标记 <code>0x03</code> → 帧 <code>0x0D</code>”，没有标记 <code>0x00</code>；第 0 组没有标记 <code>0x02</code>。页表中第 <code>0x03</code> 页已驻留于帧 <code>0x02</code>，第 <code>0x08</code> 页未驻留。Cache 第 5 行有效且标记为 <code>0x0D</code>，偏移 0 处数据为 <code>0x36</code>；第 <code>0xC</code> 行无效。</p>
+<p>先做地址转换：</p>
+<center markdown="1">
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">虚拟地址</th>
+<th style="text-align: center;">虚拟页号</th>
+<th style="text-align: center;">页内偏移</th>
+<th style="text-align: center;">TLB 标记 / 组</th>
+<th style="text-align: center;">转换结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>0x03D4</code></td>
+<td style="text-align: center;"><code>0x0F</code></td>
+<td style="text-align: center;"><code>0x14</code></td>
+<td style="text-align: center;"><code>0x03</code> / 3</td>
+<td style="text-align: center;">TLB 命中，帧 <code>0x0D</code>，物理地址 <code>0x354</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>0x00F1</code></td>
+<td style="text-align: center;"><code>0x03</code></td>
+<td style="text-align: center;"><code>0x31</code></td>
+<td style="text-align: center;"><code>0x00</code> / 3</td>
+<td style="text-align: center;">TLB 未命中，页表显示已驻留，物理地址 <code>0x0B1</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>0x0229</code></td>
+<td style="text-align: center;"><code>0x08</code></td>
+<td style="text-align: center;"><code>0x29</code></td>
+<td style="text-align: center;"><code>0x02</code> / 0</td>
+<td style="text-align: center;">TLB 未命中，页表显示未驻留，发生缺页</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>其中，<code>0x354 = 0x0D × 64 + 0x14</code>，<code>0x0B1 = 0x02 × 64 + 0x31</code>。得到物理地址后，再查询 Cache ：</p>
+<center markdown="1">
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">物理地址</th>
+<th style="text-align: center;">Cache 标记</th>
+<th style="text-align: center;">行索引</th>
+<th style="text-align: center;">块内偏移</th>
+<th style="text-align: center;">数据访问结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>0x354</code></td>
+<td style="text-align: center;"><code>0x0D</code></td>
+<td style="text-align: center;"><code>0x5</code></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">命中，读取 <code>0x36</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>0x0B1</code></td>
+<td style="text-align: center;"><code>0x02</code></td>
+<td style="text-align: center;"><code>0xC</code></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">行无效，未命中，需要访问主存</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>第三个地址 <code>0x0229</code> 需要先完成缺页处理，得到新的帧映射后才能继续确定物理地址和 Cache 结果。</p>
+</details>
+<hr />
 <h2 id="虚拟内存管理">虚拟内存管理<a class="headerlink" href="#虚拟内存管理" title="Permanent link">&para;</a></h2>
 <h3 id="虚拟内存的基本概念">虚拟内存的基本概念<a class="headerlink" href="#虚拟内存的基本概念" title="Permanent link">&para;</a></h3>
 <p>前面讨论的基本存储管理方式，虽然已经允许进程离散存放，但通常仍有两个约束：</p>
@@ -3602,11 +3696,10 @@ T_{\mathrm{EAT}}
 <div class="admonition tip">
 <p class="admonition-title">三种未命中的分别检查</p>
 <ul>
-<li><strong>TLB 未命中</strong>：没有缓存所需映射，去查页表； TLB 缓存的是地址映射，并非目标数据。</li>
+<li><strong>TLB 未命中</strong>：没有缓存所需映射，去查页表（ TLB 缓存的是地址映射）。</li>
 <li><strong>缺页</strong>：所需页面没有可用的驻留映射，由操作系统处理。</li>
-<li><strong>数据 Cache 未命中</strong>：已经确定访问的物理位置，但 Cache 中没有所需指令或数据，继续访问主存。</li>
+<li><strong>数据 Cache 未命中</strong>：已经确定访问的物理位置，但 Cache 中没有所需指令或数据，需要继续访问主存。</li>
 </ul>
-<p>三者对应不同层次；一次访问可以同时经历其中多种情况。具体过程见<a href="#地址翻译的示例">地址翻译的示例</a>。</p>
 </div>
 <h3 id="帧分配">帧分配<a class="headerlink" href="#帧分配" title="Permanent link">&para;</a></h3>
 <h4 id="最小帧数与驻留集">最小帧数与驻留集<a class="headerlink" href="#最小帧数与驻留集" title="Permanent link">&para;</a></h4>
@@ -3874,117 +3967,6 @@ T_{\mathrm{EAT}}=(1-p_f)t_0+p_ft_f
 <li><strong>程序的局部化程度</strong>。访问顺序应尽量贴合数据布局。例如，按行存储的二维数组通常适合按行遍历；按列跨行访问可能不断跨页，但具体缺页数量还取决于页大小、驻留集和置换算法。</li>
 </ul>
 <p>没有发生缺页的访问仍有地址转换成本。TLB 命中率与页表层数的影响，应结合<a href="#具有快表的地址变换机构">快表的访问时间模型</a>计算。</p>
-<h3 id="地址翻译的示例">地址翻译的示例<a class="headerlink" href="#地址翻译的示例" title="Permanent link">&para;</a></h3>
-<p>本节采用 <strong>先完成地址转换，再访问物理寻址数据 Cache</strong> 的模型。Cache 的映射规则见<a href="../../CO/storage/#cache-和主存的映射方式">计算机组成中的 Cache</a>，这里重点观察它与 TLB、页表如何配合。</p>
-<p>假设按字节编址，虚拟地址为 14 位，物理地址为 12 位，页面大小为 64 B ； TLB 共 16 项、四路组相联；数据 Cache 直接映射、共 16 行，每行 4 B。</p>
-<p>页面大小 <span class="arithmatex">\(64=2^6\)</span>，所以页内偏移占 6 位，虚拟页号占 8 位，物理帧号占 6 位。TLB 共 <span class="arithmatex">\(16/4=4\)</span> 组，从虚拟页号中拆出 2 位组索引和 6 位标记。Cache 从物理地址中拆出 2 位块内偏移、4 位行索引和 6 位标记。</p>
-<center>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">用途</th>
-<th style="text-align: center;">高位字段</th>
-<th style="text-align: center;">中间字段</th>
-<th style="text-align: center;">低位字段</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">虚拟地址转换</td>
-<td style="text-align: center;">虚拟页号： 8 位</td>
-<td style="text-align: center;">—</td>
-<td style="text-align: center;">页内偏移： 6 位</td>
-</tr>
-<tr>
-<td style="text-align: center;">TLB 查询</td>
-<td style="text-align: center;">TLB 标记： 6 位</td>
-<td style="text-align: center;">TLB 组索引： 2 位</td>
-<td style="text-align: center;">页内偏移： 6 位，不参与映射匹配</td>
-</tr>
-<tr>
-<td style="text-align: center;">物理地址</td>
-<td style="text-align: center;">物理帧号： 6 位</td>
-<td style="text-align: center;">—</td>
-<td style="text-align: center;">页内偏移： 6 位</td>
-</tr>
-<tr>
-<td style="text-align: center;">Cache 查询</td>
-<td style="text-align: center;">Cache 标记： 6 位</td>
-<td style="text-align: center;">行索引： 4 位</td>
-<td style="text-align: center;">块内偏移： 2 位</td>
-</tr>
-</tbody>
-</table>
-</center>
-<p>只取这次访问有关的初始状态： TLB 第 3 组有有效项“标记 <code>0x03</code> → 帧 <code>0x0D</code>”，没有标记 <code>0x00</code>；第 0 组没有标记 <code>0x02</code>。页表中第 <code>0x03</code> 页已驻留于帧 <code>0x02</code>，第 <code>0x08</code> 页未驻留。Cache 第 5 行有效且标记为 <code>0x0D</code>，偏移 0 处数据为 <code>0x36</code>；第 <code>0xC</code> 行无效。</p>
-<p>先做地址转换：</p>
-<center>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">虚拟地址</th>
-<th style="text-align: center;">虚拟页号</th>
-<th style="text-align: center;">页内偏移</th>
-<th style="text-align: center;">TLB 标记 / 组</th>
-<th style="text-align: center;">转换结果</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;"><code>0x03D4</code></td>
-<td style="text-align: center;"><code>0x0F</code></td>
-<td style="text-align: center;"><code>0x14</code></td>
-<td style="text-align: center;"><code>0x03</code> / 3</td>
-<td style="text-align: center;">TLB 命中，帧 <code>0x0D</code>，物理地址 <code>0x354</code></td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>0x00F1</code></td>
-<td style="text-align: center;"><code>0x03</code></td>
-<td style="text-align: center;"><code>0x31</code></td>
-<td style="text-align: center;"><code>0x00</code> / 3</td>
-<td style="text-align: center;">TLB 未命中，页表显示已驻留，物理地址 <code>0x0B1</code></td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>0x0229</code></td>
-<td style="text-align: center;"><code>0x08</code></td>
-<td style="text-align: center;"><code>0x29</code></td>
-<td style="text-align: center;"><code>0x02</code> / 0</td>
-<td style="text-align: center;">TLB 未命中，页表显示未驻留，发生缺页</td>
-</tr>
-</tbody>
-</table>
-</center>
-<p>其中，<code>0x354 = 0x0D × 64 + 0x14</code>，<code>0x0B1 = 0x02 × 64 + 0x31</code>。得到物理地址后，再查询 Cache ：</p>
-<center>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">物理地址</th>
-<th style="text-align: center;">Cache 标记</th>
-<th style="text-align: center;">行索引</th>
-<th style="text-align: center;">块内偏移</th>
-<th style="text-align: center;">数据访问结果</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;"><code>0x354</code></td>
-<td style="text-align: center;"><code>0x0D</code></td>
-<td style="text-align: center;"><code>0x5</code></td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">命中，读取 <code>0x36</code></td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>0x0B1</code></td>
-<td style="text-align: center;"><code>0x02</code></td>
-<td style="text-align: center;"><code>0xC</code></td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">行无效，未命中，需要访问主存</td>
-</tr>
-</tbody>
-</table>
-</center>
-<p>第三个地址需要先完成缺页处理，得到新的帧映射后才能继续确定物理地址和 Cache 结果，不能使用未驻留页的旧帧字段继续计算。</p>
 
 
 

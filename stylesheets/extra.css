@@ -21,6 +21,7 @@
   --md-primary-fg-color--light: #2c4c83; /* 浅色变体 */
   --md-accent-fg-color:         #0097a7;
   --md-typeset-a-color:         #006064; 
+  --md-heading-fg-color:        #245a81;
 } 
 
 [data-md-color-scheme="slate"] {
@@ -29,8 +30,18 @@
   /* 背景色 - 覆盖 Slate 默认的灰色，改为深蓝灰 */
   --md-default-bg-color:        #0d1117; /* GitHub Dark 风格 */
   --md-accent-fg-color:         #4dd0e1; 
+  --md-heading-fg-color:        #8fb9df;
   /* 代码块背景 - 让代码块稍微有点颜色区分 */
   --md-code-bg-color:           #161b22;
+}
+
+/* 分节标题使用主题专属颜色，与正文加粗区分。 */
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  color: var(--md-heading-fg-color);
 }
 
 .md-typeset h1, .md-typeset h2 {
@@ -61,6 +72,11 @@
 .md-typeset__table table:not([class]) {
   display: table;
   overflow: visible;
+}
+
+/* 保留主题的横向滚动，移除居中表格内部的水平留白，避免宽表格偏移。 */
+.md-typeset .centered-table .md-typeset__table {
+  padding-inline: 0;
 }
 
 /* 功能：折叠逻辑 (简化版) */

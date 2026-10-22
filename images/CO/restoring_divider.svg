@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="690" viewBox="0 0 1280 690" role="img" aria-labelledby="title desc" font-family="Times New Roman, Times, Liberation Serif, Noto Serif, serif">
+<title id="title">无符号除法器（恢复余数法）</title>
+<desc id="desc">除数 M 高位补 0 至 n+1 位，R 为 n+1 位保护余数，Q 为 n 位被除数/商。每轮先联合左移，再试减；根据差 T 的符号写入新商位，必要时加回 M。控制逻辑完成 n 轮后，Q 为商、R 为余数。</desc>
+<!-- 复习指导 图 2.12；显式保留试减保护位；位编号统一从 0 开始，寄存器名称与正文一致。 -->
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#4051b5"/></marker>
+<marker id="red-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#d62728"/></marker>
+</defs>
+<rect width="1280" height="690" fill="#ffffff"/>
+<text x="640" y="38" text-anchor="middle" font-size="22" fill="#1a237e" font-weight="700"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">无符号除法器（恢复余数法）</tspan></text>
+<rect x="410" y="75" width="230" height="75" rx="8" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+<text x="525.0" y="112.5" text-anchor="middle" font-size="20" fill="#1a237e" font-weight="700"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">除数寄存器</tspan> M</text>
+<text x="525.0" y="139.5" text-anchor="middle" font-size="16" fill="#1a237e">n + 1 <tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">位；保持不变</tspan></text>
+<path d="M 270 215 H 399.2 L 440.0 240 L 480.8 215 H 610 L 548.8 330 H 331.2 Z" fill="#eaf0ff" stroke="#4051b5" stroke-width="2" stroke-linejoin="round"/>
+<text x="440.0" y="286.3" text-anchor="middle" font-size="21" fill="#1a237e" font-weight="700">n + 1 <tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">位</tspan> ALU</text>
+<path d="M 540 150 V 215" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M 534 186 L 546 174" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round"/>
+<text x="552" y="184" text-anchor="start" font-size="15" fill="#1a237e">n + 1</text>
+<rect x="300" y="450" width="280" height="90" rx="0" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+<text x="440.0" y="495.0" text-anchor="middle" font-size="20" fill="#1a237e" font-weight="700"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">余数</tspan> R</text>
+<text x="440.0" y="522.0" text-anchor="middle" font-size="16" fill="#1a237e">n + 1 <tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">位；初值</tspan> 0</text>
+<rect x="580" y="450" width="260" height="90" rx="0" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+<text x="710.0" y="495.0" text-anchor="middle" font-size="20" fill="#1a237e" font-weight="700"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">被除数／商</tspan> Q</text>
+<text x="710.0" y="522.0" text-anchor="middle" font-size="16" fill="#1a237e">n <tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">位</tspan></text>
+<path d="M 350 540 V 585 H 170 V 180 H 350 V 215" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M 224 591 L 236 579" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round"/>
+<text x="230" y="575" text-anchor="middle" font-size="15" fill="#1a237e">n + 1</text>
+<path d="M 440 330 V 450" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M 434 381 L 446 369" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round"/>
+<text x="452" y="379" text-anchor="start" font-size="15" fill="#1a237e">n + 1</text>
+<rect x="1000" y="225" width="230" height="185" rx="28" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+<text x="1115.0" y="317.5" text-anchor="middle" font-size="20" fill="#1a237e" font-weight="700"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">控制逻辑</tspan></text>
+<text x="1115.0" y="344.5" text-anchor="middle" font-size="16" fill="#1a237e"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">计数器：</tspan>n → 0</text>
+<path d="M 1000 270 H 728 A 8 8 0 0 1 712 270 H 580" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+<text x="795" y="256" text-anchor="middle" font-size="17" fill="#1a237e"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">加</tspan> / <tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">减</tspan></text>
+<path d="M 1000 310 H 930 V 465 H 840" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+<text x="917" y="361" text-anchor="end" font-size="17" fill="#1a237e"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">左移、写使能</tspan></text>
+<path d="M 1115 490 V 410" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="1150" y="510" text-anchor="middle" font-size="17" fill="#1a237e"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">时钟</tspan></text>
+<circle cx="440" cy="350" r="4" fill="#4051b5"/>
+<path d="M 440 350 H 720 V 200 H 960 V 245 H 1000" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="820" y="185" text-anchor="middle" font-size="17" fill="#1a237e"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">试减符号</tspan> T<tspan font-size="11.9" dy="4">n</tspan></text>
+<path d="M 1000 370 H 970 V 575 H 760 V 540" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="870" y="597" text-anchor="middle" font-size="17" fill="#1a237e"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">写入新商位</tspan> q<tspan font-size="11.9" dy="4">0</tspan></text>
+<path d="M 810 415 H 610" fill="none" stroke="#d62728" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#red-arrow)"/>
+<text x="710" y="397" text-anchor="middle" font-size="18" fill="#1a237e">R:Q <tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">联合左移</tspan></text>
+<text x="640" y="637" text-anchor="middle" font-size="18" fill="#1a237e">M <tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">高位补</tspan> 0<tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">；</tspan>R <tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">保留保护位；不够减时加回</tspan> M <tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">恢复余数</tspan></text>
+<text x="640" y="670" text-anchor="middle" font-size="18" fill="#1a237e" font-weight="700">n <tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">轮后：</tspan>Q <tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">为</tspan> n <tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">位商，</tspan>R <tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">的低</tspan> n <tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">位为余数</tspan></text>
+<text x="1140" y="576" text-anchor="middle" font-size="16" fill="#1a237e"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">实线：数据</tspan></text>
+<text x="1140" y="607" text-anchor="middle" font-size="16" fill="#1a237e"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">虚线：控制</tspan></text>
+</svg>

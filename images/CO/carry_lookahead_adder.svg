@@ -1,86 +1,73 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1260 640" width="1260" height="640" role="img" aria-labelledby="title desc" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc" font-family="Times New Roman, Times, Liberation Serif, Noto Serif, serif">
 <title id="title">四位全先行进位加法器</title>
-<desc id="desc">顶部为 4 位 CLA 部件；下方四个全加器 FA 把进位生成函数 G_i 与进位传递函数 P_i 送入 CLA，由 CLA 并行产生各级进位 C_1 至 C_4，其中 C_1、C_2、C_3 分别送回对应位的 FA 作为进位输入，C_4 为最高位向外的进位；最低位 FA 的进位输入 C_0 从右侧引入，并同时送入 CLA；各位本位和 S_i 由对应 FA 输出。</desc>
-
+<desc id="desc">每位的 Gi 和 Pi 送入 CLA；CLA 根据全部 G、P 与 C0 产生 C1、C2、C3、C4。C1 至 C3 分别送入对应高位 FA，各 FA 之间没有串行进位连线。</desc>
+<!-- 复习指导 图 2.5；位编号统一从 0 开始，寄存器名称与正文一致。 -->
 <defs>
-  <!-- 箭头头部 -->
-  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
-    <path d="M 0 0 L 10 5 L 0 10 z" fill="#4051b5"/>
-  </marker>
+<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#4051b5"/></marker>
+<marker id="red-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#d62728"/></marker>
 </defs>
-
-<!-- 背景 -->
-<rect width="1260" height="640" fill="#ffffff"/>
-
-<!-- ============ 4 位 CLA 部件 ============ -->
-<rect x="190" y="90" width="880" height="96" rx="12" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
-<text x="630" y="147" text-anchor="middle" font-size="22" font-weight="700" fill="#283593">4位CLA部件</text>
-
-<!-- 最高位向外的进位 C_4 -->
-<path d="M 190 138 H 116" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
-<text x="110" y="144" text-anchor="end" font-size="17" fill="#1a237e">C<tspan font-size="11" dy="4">4</tspan></text>
-
-<!-- 进位输入 C_0：送入 CLA，并经分支送入最低位 FA -->
-<path d="M 1236 138 H 1074" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
-<text x="1232" y="130" text-anchor="end" font-size="17" fill="#1a237e">C<tspan font-size="11" dy="4">0</tspan></text>
-<path d="M 1120 138 V 450 H 1022" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
-<circle cx="1120" cy="138" r="4.5" fill="#4051b5"/>
-
-<!-- ============ 第 3 位（最高位） ============ -->
-<path d="M 250 390 V 250" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
-<text x="250" y="240" text-anchor="middle" font-size="16" fill="#1a237e">S<tspan font-size="11" dy="4">3</tspan></text>
-<path d="M 316 390 V 188" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
-<path d="M 340 390 V 188" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
-<path d="M 288 186 V 390" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
-<text x="282" y="302" text-anchor="end" font-size="15" fill="#1a237e">C<tspan font-size="11" dy="4">3</tspan></text>
-<text x="348" y="302" font-size="15" fill="#1a237e">G<tspan font-size="11" dy="4">3</tspan><tspan font-size="15" dy="-4"> P</tspan><tspan font-size="11" dy="4">3</tspan></text>
-<rect x="240" y="390" width="120" height="120" rx="12" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
-<text x="300" y="459" text-anchor="middle" font-size="20" font-weight="700" fill="#283593">FA</text>
-<path d="M 278 570 V 510" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
-<text x="278" y="594" text-anchor="middle" font-size="15" fill="#1a237e">A<tspan font-size="11" dy="4">3</tspan></text>
-<path d="M 322 570 V 510" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
-<text x="322" y="594" text-anchor="middle" font-size="15" fill="#1a237e">B<tspan font-size="11" dy="4">3</tspan></text>
-
-<!-- ============ 第 2 位 ============ -->
-<path d="M 470 390 V 250" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
-<text x="470" y="240" text-anchor="middle" font-size="16" fill="#1a237e">S<tspan font-size="11" dy="4">2</tspan></text>
-<path d="M 536 390 V 188" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
-<path d="M 560 390 V 188" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
-<path d="M 508 186 V 390" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
-<text x="502" y="302" text-anchor="end" font-size="15" fill="#1a237e">C<tspan font-size="11" dy="4">2</tspan></text>
-<text x="568" y="302" font-size="15" fill="#1a237e">G<tspan font-size="11" dy="4">2</tspan><tspan font-size="15" dy="-4"> P</tspan><tspan font-size="11" dy="4">2</tspan></text>
-<rect x="460" y="390" width="120" height="120" rx="12" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
-<text x="520" y="459" text-anchor="middle" font-size="20" font-weight="700" fill="#283593">FA</text>
-<path d="M 498 570 V 510" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
-<text x="498" y="594" text-anchor="middle" font-size="15" fill="#1a237e">A<tspan font-size="11" dy="4">2</tspan></text>
-<path d="M 542 570 V 510" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
-<text x="542" y="594" text-anchor="middle" font-size="15" fill="#1a237e">B<tspan font-size="11" dy="4">2</tspan></text>
-
-<!-- ============ 第 1 位 ============ -->
-<path d="M 690 390 V 250" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
-<text x="690" y="240" text-anchor="middle" font-size="16" fill="#1a237e">S<tspan font-size="11" dy="4">1</tspan></text>
-<path d="M 756 390 V 188" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
-<path d="M 780 390 V 188" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
-<path d="M 728 186 V 390" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
-<text x="722" y="302" text-anchor="end" font-size="15" fill="#1a237e">C<tspan font-size="11" dy="4">1</tspan></text>
-<text x="788" y="302" font-size="15" fill="#1a237e">G<tspan font-size="11" dy="4">1</tspan><tspan font-size="15" dy="-4"> P</tspan><tspan font-size="11" dy="4">1</tspan></text>
-<rect x="680" y="390" width="120" height="120" rx="12" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
-<text x="740" y="459" text-anchor="middle" font-size="20" font-weight="700" fill="#283593">FA</text>
-<path d="M 718 570 V 510" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
-<text x="718" y="594" text-anchor="middle" font-size="15" fill="#1a237e">A<tspan font-size="11" dy="4">1</tspan></text>
-<path d="M 762 570 V 510" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
-<text x="762" y="594" text-anchor="middle" font-size="15" fill="#1a237e">B<tspan font-size="11" dy="4">1</tspan></text>
-
-<!-- ============ 第 0 位（最低位，进位输入来自 C_0） ============ -->
-<path d="M 910 390 V 250" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
-<text x="910" y="240" text-anchor="middle" font-size="16" fill="#1a237e">S<tspan font-size="11" dy="4">0</tspan></text>
-<path d="M 976 390 V 188" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
-<path d="M 1000 390 V 188" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
-<text x="1008" y="302" font-size="15" fill="#1a237e">G<tspan font-size="11" dy="4">0</tspan><tspan font-size="15" dy="-4"> P</tspan><tspan font-size="11" dy="4">0</tspan></text>
-<rect x="900" y="390" width="120" height="120" rx="12" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
-<text x="960" y="459" text-anchor="middle" font-size="20" font-weight="700" fill="#283593">FA</text>
-<path d="M 938 570 V 510" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
-<text x="938" y="594" text-anchor="middle" font-size="15" fill="#1a237e">A<tspan font-size="11" dy="4">0</tspan></text>
-<path d="M 982 570 V 510" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
-<text x="982" y="594" text-anchor="middle" font-size="15" fill="#1a237e">B<tspan font-size="11" dy="4">0</tspan></text>
+<rect width="1200" height="560" fill="#ffffff"/>
+<text x="600" y="42" text-anchor="middle" font-size="21" fill="#1a237e" font-weight="700"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">四位全先行进位加法器</tspan></text>
+<rect x="145" y="85" width="880" height="85" rx="8" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+<text x="585.0" y="134.5" text-anchor="middle" font-size="20" fill="#1a237e" font-weight="700">4 <tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">位</tspan> CLA <tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">部件</tspan></text>
+<path d="M 145 127 H 60" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="85" y="110" text-anchor="middle" font-size="18" fill="#1a237e">C<tspan font-size="12.6" dy="4">4</tspan></text>
+<path d="M 1140 127 H 1025" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="1130" y="107" text-anchor="middle" font-size="18" fill="#1a237e">C<tspan font-size="12.6" dy="4">0</tspan></text>
+<path d="M 1090 127 V 405 H 1010" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<circle cx="1090" cy="127" r="4" fill="#4051b5"/>
+<rect x="870" y="350" width="140" height="110" rx="8" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+<text x="940.0" y="412.0" text-anchor="middle" font-size="20" fill="#1a237e" font-weight="700">FA<tspan font-size="14" dy="4">0</tspan></text>
+<path d="M 885 350 V 225" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="885" y="210" text-anchor="middle" font-size="17" fill="#1a237e">S<tspan font-size="11.9" dy="4">0</tspan></text>
+<path d="M 942 350 V 170" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="942" y="290" text-anchor="middle" font-size="16" fill="#1a237e">G<tspan font-size="11.2" dy="4">0</tspan></text>
+<path d="M 983 350 V 170" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="983" y="290" text-anchor="middle" font-size="16" fill="#1a237e">P<tspan font-size="11.2" dy="4">0</tspan></text>
+<path d="M 905 505 V 460" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="905" y="535" text-anchor="middle" font-size="17" fill="#1a237e">A<tspan font-size="11.9" dy="4">0</tspan></text>
+<path d="M 975 505 V 460" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="975" y="535" text-anchor="middle" font-size="17" fill="#1a237e">B<tspan font-size="11.9" dy="4">0</tspan></text>
+<rect x="640" y="350" width="140" height="110" rx="8" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+<text x="710.0" y="412.0" text-anchor="middle" font-size="20" fill="#1a237e" font-weight="700">FA<tspan font-size="14" dy="4">1</tspan></text>
+<path d="M 655 350 V 225" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="655" y="210" text-anchor="middle" font-size="17" fill="#1a237e">S<tspan font-size="11.9" dy="4">1</tspan></text>
+<path d="M 712 350 V 170" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="712" y="290" text-anchor="middle" font-size="16" fill="#1a237e">G<tspan font-size="11.2" dy="4">1</tspan></text>
+<path d="M 753 350 V 170" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="753" y="290" text-anchor="middle" font-size="16" fill="#1a237e">P<tspan font-size="11.2" dy="4">1</tspan></text>
+<path d="M 807 170 V 405 H 780" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="818" y="325" text-anchor="start" font-size="16" fill="#1a237e">C<tspan font-size="11.2" dy="4">1</tspan></text>
+<path d="M 675 505 V 460" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="675" y="535" text-anchor="middle" font-size="17" fill="#1a237e">A<tspan font-size="11.9" dy="4">1</tspan></text>
+<path d="M 745 505 V 460" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="745" y="535" text-anchor="middle" font-size="17" fill="#1a237e">B<tspan font-size="11.9" dy="4">1</tspan></text>
+<rect x="410" y="350" width="140" height="110" rx="8" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+<text x="480.0" y="412.0" text-anchor="middle" font-size="20" fill="#1a237e" font-weight="700">FA<tspan font-size="14" dy="4">2</tspan></text>
+<path d="M 425 350 V 225" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="425" y="210" text-anchor="middle" font-size="17" fill="#1a237e">S<tspan font-size="11.9" dy="4">2</tspan></text>
+<path d="M 482 350 V 170" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="482" y="290" text-anchor="middle" font-size="16" fill="#1a237e">G<tspan font-size="11.2" dy="4">2</tspan></text>
+<path d="M 523 350 V 170" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="523" y="290" text-anchor="middle" font-size="16" fill="#1a237e">P<tspan font-size="11.2" dy="4">2</tspan></text>
+<path d="M 577 170 V 405 H 550" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="588" y="325" text-anchor="start" font-size="16" fill="#1a237e">C<tspan font-size="11.2" dy="4">2</tspan></text>
+<path d="M 445 505 V 460" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="445" y="535" text-anchor="middle" font-size="17" fill="#1a237e">A<tspan font-size="11.9" dy="4">2</tspan></text>
+<path d="M 515 505 V 460" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="515" y="535" text-anchor="middle" font-size="17" fill="#1a237e">B<tspan font-size="11.9" dy="4">2</tspan></text>
+<rect x="180" y="350" width="140" height="110" rx="8" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+<text x="250.0" y="412.0" text-anchor="middle" font-size="20" fill="#1a237e" font-weight="700">FA<tspan font-size="14" dy="4">3</tspan></text>
+<path d="M 195 350 V 225" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="195" y="210" text-anchor="middle" font-size="17" fill="#1a237e">S<tspan font-size="11.9" dy="4">3</tspan></text>
+<path d="M 252 350 V 170" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="252" y="290" text-anchor="middle" font-size="16" fill="#1a237e">G<tspan font-size="11.2" dy="4">3</tspan></text>
+<path d="M 293 350 V 170" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="293" y="290" text-anchor="middle" font-size="16" fill="#1a237e">P<tspan font-size="11.2" dy="4">3</tspan></text>
+<path d="M 347 170 V 405 H 320" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="358" y="325" text-anchor="start" font-size="16" fill="#1a237e">C<tspan font-size="11.2" dy="4">3</tspan></text>
+<path d="M 215 505 V 460" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="215" y="535" text-anchor="middle" font-size="17" fill="#1a237e">A<tspan font-size="11.9" dy="4">3</tspan></text>
+<path d="M 285 505 V 460" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="285" y="535" text-anchor="middle" font-size="17" fill="#1a237e">B<tspan font-size="11.9" dy="4">3</tspan></text>
 </svg>
