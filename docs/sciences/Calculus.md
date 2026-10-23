@@ -4,3672 +4,6225 @@
 
 ### §1 函数
 
-#### 函数的概念与表示
+#### §1.1 函数的概念
 
-函数 $f:D\to \mathbb R$ 给定义域 $D$ 中每个 $x$ 唯一确定一个值 $f(x)$。**定义域与对应法则共同确定函数**；自变量使用哪个字母不影响函数。值域是 $\{f(x):x\in D\}$。
+**常量与变量：** 在所研究的过程中保持不变的量称为常量，可以取不同数值的量称为变量。
 
-常用表示有解析式、表格和图像。分段函数要连同分段条件一起理解；隐函数由关系式 $F(x,y)=0$ 局部确定；参数式 $x=\varphi(t),y=\psi(t)$ 同时描述两个坐标随参数的变化。
+**函数：** 设 $D,B$ 为非空实数集，若对应法则 $f$ 使每个 $x\in D$ 都有唯一的 $y\in B$ 与之对应，则称 $f:D\to B$ 为定义在 $D$ 上的函数，记为 $y=f(x)$。$x$ 为自变量，$y$ 为因变量；$D$ 为定义域，值域为
 
-复合函数 $(f\circ g)(x)=f(g(x))$ 要求 $x\in D_g$ 且 $g(x)\in D_f$。反函数 $f^{-1}$ 存在的前提是 $f$ 在所取定义域上为 **一一映射**；其定义域是原函数的值域，图像与原函数关于 $y=x$ 对称。
+$$
+R(f)=\{f(x):x\in D\}.
+$$
 
-#### 基本初等函数
+函数由定义域和对应法则确定，函数图形为点集 $\{(x,f(x)):x\in D\}$。函数的表示方法有表格法、图像法和公式法。分段函数是在定义域的不同部分用不同数学表达式表示的函数。
 
-| 类型 | 典型形式 | 需要注意的定义域或性质 |
-| --- | --- | --- |
-| 幂函数 | $x^\alpha$ | 任意实数指数时先在 $x>0$ 定义；能否延伸到负数或零由指数决定 |
-| 指数函数 | $a^x$，$a>0,a\ne 1$ | 定义域为 $\mathbb R$，值域为 $(0,+\infty)$ |
-| 对数函数 | $\log_a x$ | $x>0$；是 $a^x$ 的反函数 |
-| 三角函数 | $\sin x,\cos x,\tan x,\cot x$ | 注意周期与分母为零的点 |
-| 反三角函数 | $\arcsin x,\arccos x,\arctan x,\operatorname{arccot}x$ | 由限制三角函数的单调区间获得主值 |
+**邻域与去心邻域：** 对 $\delta>0$，
 
-通常取 $\arcsin x\in[-\pi/2,\pi/2]$、$\arccos x\in[0,\pi]$、$\arctan x\in (-\pi/2,\pi/2)$、$\operatorname{arccot}x\in (0,\pi)$。基本初等函数经有限次四则运算与复合得到初等函数。
+$$
+U(x_0,\delta)=(x_0-\delta,x_0+\delta),\qquad
+\mathring U(x_0,\delta)=\{x:0<|x-x_0|<\delta\}.
+$$
 
-#### 函数的四种常见特性
+相应的左、右去心邻域分别为 $(x_0-\delta,x_0)$、$(x_0,x_0+\delta)$。
 
-- **有界性：** 在集合 $D$ 上存在统一的 $M$，使 $|f(x)|\le M$。有界总是相对于一个集合而言。
-- **单调性：** 对任意 $x_1<x_2$，比较 $f(x_1),f(x_2)$；严格单调函数可在其值域上定义反函数。
-- **奇偶性：** 先检查定义域关于原点对称，再判断 $f(-x)=f(x)$ 或 $f(-x)=-f(x)$。
-- **周期性：** 存在 $T>0$，使平移后仍在定义域且 $f(x+T)=f(x)$。并非每个周期函数都存在最小正周期，例如常数函数。
+**复合函数：** 由 $y=f(u)$、$u=\varphi(x)$ 组成的函数为 $y=f(\varphi(x))$，其中 $u$ 是中间变量，定义域为
 
-!!! example "例 1.1：定义域决定能否复合"
+$$
+\{x:x\in D(\varphi),\ \varphi(x)\in D(f)\}.
+$$
 
-    设 $f(u)=\ln(1-u)$，$g(x)=\sqrt x$，求 $f(g(x))$ 的定义域。
+**反函数：** 若对每个 $y\in R(f)$，都存在唯一的 $x\in D$ 满足 $y=f(x)$，则由这一对应关系得到的函数称为 $f$ 的反函数，记为 $f^{-1}:R(f)\to D$。按以 $x$ 为自变量的记法，反函数为 $y=f^{-1}(x)$。
 
-    **解：** 根号要求 $x\ge 0$，对数要求 $1-\sqrt x>0$，合并得 $0\le x<1$。不能只检查最外层或最内层函数。
+**基本初等函数：** 常值函数、幂函数、指数函数、对数函数、三角函数和反三角函数统称为基本初等函数。
+
+| 类型 | 数学表示与定义域 |
+| --- | --- |
+| 常值函数 | $y=C$，$C$ 为常数，$x\in\mathbb R$ |
+| 幂函数 | $y=x^a$，$a$ 为常数，定义域由 $a$ 决定，包含 $(0,+\infty)$ |
+| 指数函数 | $y=a^x$，$a>0$、$a\ne1$，$x\in\mathbb R$ |
+| 对数函数 | $y=\log_a x$，$a>0$、$a\ne1$，$x>0$ |
+| 三角函数 | $\sin x,\cos x$；$\tan x$（$x\ne k\pi+\pi/2$）；$\cot x$（$x\ne k\pi$），$k\in\mathbb Z$ |
+| 反三角函数 | $\arcsin x,\arccos x$（$-1\le x\le1$）；$\arctan x,\operatorname{arccot}x$（$x\in\mathbb R$） |
+
+由基本初等函数经过有限次四则运算和复合运算得到的函数称为初等函数；不是初等函数的函数称为非初等函数。
+
+#### §1.2 具有某些特性的函数
+
+**奇函数与偶函数：** 定义域 $D$ 关于原点对称时，对所有 $x\in D$，若 $f(-x)=-f(x)$，称 $f$ 为奇函数；若 $f(-x)=f(x)$，称 $f$ 为偶函数。
+
+**周期函数：** 若存在非零常数 $T$，使每个 $x\in D$ 都满足 $x+T\in D$ 且 $f(x+T)=f(x)$，则称 $f$ 为周期函数，$T$ 为其周期。若正周期中存在最小值，称为基本周期。
+
+**单调函数：** 对定义域中的任意 $x_1<x_2$，
+
+| 关系 | 名称 |
+| --- | --- |
+| $f(x_1)\le f(x_2)$ | 递增函数 |
+| $f(x_1)\ge f(x_2)$ | 递减函数 |
+| $f(x_1)<f(x_2)$ | 严格递增函数 |
+| $f(x_1)>f(x_2)$ | 严格递减函数 |
+
+严格单调函数存在反函数，且反函数具有相同的严格单调性。
+
+**有界集、确界原理 \***
+
+对非空数集 $A\subset\mathbb R$，若存在 $M$（或 $N$），使所有 $x\in A$ 满足 $x\le M$（或 $x\ge N$），则称 $A$ 有上界（或下界）。既有上界又有下界的数集称为有界集。
+
+$\alpha=\sup A$ 表示 $A$ 的上确界，即
+
+$$
+\forall x\in A,\ x\le\alpha;\qquad
+\forall\varepsilon>0,\ \exists x_0\in A,\ x_0>\alpha-\varepsilon.
+$$
+
+$\beta=\inf A$ 表示 $A$ 的下确界，即
+
+$$
+\forall x\in A,\ x\ge\beta;\qquad
+\forall\varepsilon>0,\ \exists x_0\in A,\ x_0<\beta+\varepsilon.
+$$
+
+非空有上界（下界）的实数集存在上确界（下确界）。
+
+**有界函数、无界函数**
+
+设函数 $f$ 的定义域为 $D$。若存在常数 $M$（或 $N$），使所有 $x\in D$ 满足 $f(x)\le M$（或 $f(x)\ge N$），则称 $f$ 在 $D$ 上有上界（或下界）。
+
+若存在 $M>0$，使所有 $x\in D$ 满足 $|f(x)|\le M$，则称 $f$ 在 $D$ 上有界；若对任意 $M>0$，总存在 $x_0\in D$，使 $|f(x_0)|>M$，则称 $f$ 在 $D$ 上无界。
+
+!!! warning "提示"
+
+    -   **奇偶性先看定义域**：只有定义域关于原点对称，才谈得上奇偶性；否则函数既不是奇函数也不是偶函数。若奇函数在 $x=0$ 有定义，则必有 $f(0)=0$。
+
+        ??? example "奇偶性判断"
+            <!-- 待补充 -->
+
+    -   **周期不唯一，基本周期未必存在**：任一周期 $T$ 的整数倍仍是周期，"最小正周期"存在时才叫基本周期；验证 $f(x+T)=f(x)$ 时还要确认 $x+T$ 仍在定义域内。
+
+        ??? example "周期性与基本周期"
+            <!-- 待补充 -->
+
+    -   **单调性离不开区间**：同一函数在不同区间上可能有不同的单调性；严格单调是存在反函数的充分条件，反函数保持相同的严格单调性。
+
+        ??? example "单调性与反函数"
+            <!-- 待补充 -->
+
+    -   **有界与确界的区别**：有界要求同时有上界和下界，即存在 $M>0$ 使 $|f(x)|\le M$；$\sup A$、$\inf A$ 是"最小上界/最大下界"，不一定属于 $A$。无界定义中"对任意 $M>0$，存在 $x_0$"的量词顺序不能颠倒。
+
+        ??? example "有界性与确界"
+            <!-- 待补充 -->
+
+    -   **复合函数的定义域**：不能只取内函数的定义域，而要同时满足 $x\in D(\varphi)$ 与 $\varphi(x)\in D(f)$；复合后的值域通常只是 $R(f)$ 的子集。
+
+        ??? example "复合函数的定义域"
+            <!-- 待补充 -->
 
 ### §2 数列极限
 
-#### 定义与基本性质
+#### §2.1 数列极限的概念
 
-数列 $\{a_n\}$ 收敛到 $A$，是指
+**数列：** 定义域为正整数集 $\mathbb N_+$ 的函数所对应的函数值依次排列为 $a_1,a_2,\ldots,a_n,\ldots$，记为 $\{a_n\}$，$a_n$ 称为通项。
+
+**有界数列：** 若存在 $M>0$，使所有 $n\in\mathbb N_+$ 满足 $|a_n|\le M$，则称 $\{a_n\}$ 为有界数列。
+
+**数列极限：** 若常数 $a$ 满足
 
 $$
-\forall\varepsilon>0,\ \exists N,\ \forall n>N,\qquad |a_n-A|<\varepsilon.
+\forall\varepsilon>0,\ \exists N\in\mathbb N_+,\ \forall n>N,\quad |a_n-a|<\varepsilon,
 $$
 
-这里 $N$ 可以依赖 $\varepsilon$，但不能随后面的 $n$ 改变。极限描述尾部行为，改变有限项不改变极限。
+则称 $\{a_n\}$ 收敛于 $a$，记为 $\lim_{n\to\infty}a_n=a$ 或 $a_n\to a$；不收敛的数列称为发散数列。
 
-| 性质 | 结论及使用范围 |
+#### §2.2 收敛数列的性质
+
+设 $a_n\to a$、$b_n\to b$。
+
+| 性质 | 数学关系 |
 | --- | --- |
 | 唯一性 | 收敛数列的极限唯一 |
-| 有界性 | 收敛数列必有界；有界不保证收敛 |
-| 保号性 | 若 $a_n\to A>0$，则从某项起 $a_n>0$ |
-| 保序性 | 若最终 $a_n\le b_n$ 且二者收敛，则极限仍满足不等式 |
-| 子列 | 收敛数列的每个子列都趋于同一极限 |
-| 四则运算 | 收敛数列可逐项加、减、乘；作商还需分母极限不为零 |
+| 有界性 | 存在 $M>0$，使所有 $n$ 满足 $\lvert a_n\rvert\le M$ |
+| 保号性 | 若 $a>0$（$a<0$），则充分大的 $n$ 满足 $a_n>0$（$a_n<0$） |
+| 不等式性质 | 若充分大的 $n$ 满足 $a_n\le b_n$，则 $a\le b$ |
+| 四则运算 | $\lim(a_n\pm b_n)=a\pm b$，$\lim(a_nb_n)=ab$，$\lim(ca_n)=ca$，$c$ 为常数 |
+| 商的极限 | $\displaystyle\lim\frac{a_n}{b_n}=\frac ab$，其中 $b\ne0$ |
 
-!!! warning "严格不等式取极限后可能变为等号"
+#### §2.3 数列极限存在的准则
 
-    $a_n>0$ 并不保证极限大于零，例如 $\displaystyle\frac{1}{n}\to 0$。反过来，极限大于零可推出最终为正。若两个子列极限不同，原数列一定不收敛，例如 $(-1)^n$。
+**夹逼定理：** 若充分大的 $n$ 满足 $a_n\le c_n\le b_n$，且 $a_n\to a$、$b_n\to a$，则 $c_n\to a$。
 
-#### 极限存在的常用准则
+**单调有界定理：** 单调递增且有上界的数列、单调递减且有下界的数列均收敛。
 
-**夹逼准则：** 最终 $b_n\le a_n\le c_n$，且 $b_n,c_n$ 都趋于 $A$，则 $a_n\to A$。
+**子列：** 按严格递增的正整数下标 $n_1<n_2<\cdots<n_k<\cdots$ 从 $\{a_n\}$ 中抽出的数列 $\{a_{n_k}\}$ 称为其子列。若 $a_n\to a$，则每个子列均满足 $a_{n_k}\to a$。
 
-**单调有界准则：** 单调递增且有上界，或单调递减且有下界的数列，必收敛。
+#### §2.4 数列极限存在的准则（续） \*
 
-递推数列通常按“界限 → 单调性 → 收敛 → 极限方程”的顺序求解。直接设极限并解方程，只得到候选值，尚未证明极限存在。
+**魏尔斯特拉斯定理：** 有界实数列存在收敛子列。
 
-!!! example "例 1.2：递推数列先证收敛"
-
-    设 $a_1=1$，$a_{n+1}=\sqrt{2+a_n}$，求 $\lim a_n$。
-
-    **解：** 归纳可得 $1\le a_n<2$。在 $1\le a_n<2$ 时，$2+a_n-a_n^2=(2-a_n)(a_n+1)>0$，故 $a_{n+1}>a_n$。由单调有界准则，极限 $A$ 存在。
-
-    取极限得 $A=\sqrt{2+A}$，即 $(A-2)(A+1)=0$。由 $A\ge 1$，得 $A=2$。
-
-#### 数列极限存在的准则（续）（\*）
-
-教材第 29 页起补充两个结论。
-
-- **有界数列的子列定理：** 每个有界实数列都有收敛子列。
-- **柯西收敛准则：** 实数列收敛，当且仅当
+**柯西收敛准则：** $\{a_n\}$ 收敛的充要条件为
 
 $$
-\forall\varepsilon>0,\ \exists N,\ \forall m,n>N,\qquad |a_m-a_n|<\varepsilon.
+\forall\varepsilon>0,\ \exists N\in\mathbb N_+,\ \forall m,n>N,\quad |a_m-a_n|<\varepsilon.
 $$
 
-柯西准则不必预先知道极限。注意它要求任意两个足够靠后的项彼此接近，只有 $a_{n+1}-a_n\to 0$ 不够。
+等价形式为：任给 $\varepsilon>0$，存在 $N$，使 $n>N$ 时对所有正整数 $p$ 都有 $|a_{n+p}-a_n|<\varepsilon$。
+
+!!! warning "提示"
+
+    -   **柯西准则的量词**：要求存在 $N$，使 **一切** $m,n>N$ 都有 $|a_m-a_n|<\varepsilon$，不能只对某个固定的 $m$ 或 $n$ 验证；等价形式 $|a_{n+p}-a_n|<\varepsilon$ 也必须对一切正整数 $p$ 成立。
+
+        ??? example "柯西准则的验证"
+            <!-- 待补充 -->
+
+    -   **有界不是收敛的充分条件**：收敛必有界，但有界数列未必收敛，如 $(-1)^n$；魏尔斯特拉斯定理只保证存在收敛子列，不能据此断言原数列收敛。
+
+        ??? example "有界与收敛"
+            <!-- 待补充 -->
+
+    -   **子列的下标必须严格递增**：子列保持原数列的先后次序。若原数列收敛，则所有子列收敛于同一极限；若两个子列极限不同，原数列必发散。
+
+        ??? example "子列与极限"
+            <!-- 待补充 -->
+
+    -   **单调有界定理的方向**：递增需有上界、递减需有下界；仅有单调性（如 $a_n=n$）或仅有有界性（如 $(-1)^n$）都不足以保证收敛。
+
+        ??? example "单调有界定理"
+            <!-- 待补充 -->
 
 ### §3 函数极限
 
-#### 趋近方式与定义
+#### §3.1 函数极限的概念
 
-有限点的双侧极限写成
+设 $f$ 在 $x_0$ 的某个去心邻域内有定义。若常数 $A$ 满足
 
 $$
-\lim_{x\to a}f(x)=L
-\quad \Longleftrightarrow\quad
-\forall\varepsilon>0,\ \exists\delta>0,
-\quad 0<|x-a|<\delta\Rightarrow |f(x)-L|<\varepsilon.
+\forall\varepsilon>0,\ \exists\delta>0,\quad
+0<|x-x_0|<\delta\ \Longrightarrow\ |f(x)-A|<\varepsilon,
 $$
 
-讨论范围限于函数定义域。$0<|x-a|$ 表示去心邻域，因而极限可以与 $f(a)$ 无关，甚至 $f(a)$ 没有定义。
+则称 $A$ 为 $f(x)$ 当 $x\to x_0$ 时的极限，记为 $\lim_{x\to x_0}f(x)=A$。
 
-左、右极限分别限制 $x<a$、$x>a$。在两侧都有定义点趋近 $a$ 时，双侧极限存在当且仅当两侧极限存在且相等。
+左极限 $\lim_{x\to x_0^-}f(x)$、右极限 $\lim_{x\to x_0^+}f(x)$ 分别将条件换为 $x_0-\delta<x<x_0$、$x_0<x<x_0+\delta$。
 
-$x\to+\infty$ 时，把邻域条件换成 $x>M$；$x\to-\infty$ 换成 $x<-M$；$x\to \infty$ 表示 $|x|\to+\infty$，须同时检查正、负两个方向。
+$$
+\lim_{x\to x_0}f(x)=A
+\quad\Longleftrightarrow\quad
+\lim_{x\to x_0^-}f(x)=\lim_{x\to x_0^+}f(x)=A.
+$$
 
-#### 函数极限的性质与判定
+若 $f$ 在相应无穷区间上有定义，则
 
-唯一性、局部保号性、四则运算及夹逼准则与数列类似。有限极限只保证在该点某个去心邻域**局部有界**，不能推出函数在整个定义域有界。
+$$
+\lim_{x\to+\infty}f(x)=A
+\quad\Longleftrightarrow\quad
+\forall\varepsilon>0,\ \exists X>0,\ x>X\Rightarrow|f(x)-A|<\varepsilon.
+$$
 
-**海涅定理：** $\lim_{x\to a}f(x)=L$，当且仅当对任意定义域中的数列 $x_n\to a$、$x_n\ne a$，都有 $f(x_n)\to L$。证明极限不存在，往往只需构造两列趋近点使函数值极限不同。
+$x\to-\infty$、$x\to\infty$ 的定义分别将 $x>X$ 换为 $x<-X$、$|x|>X$，并有
 
-!!! example "例 1.3：振荡与夹逼"
+$$
+\lim_{x\to\infty}f(x)=A
+\quad\Longleftrightarrow\quad
+\lim_{x\to+\infty}f(x)=\lim_{x\to-\infty}f(x)=A.
+$$
 
-    比较 $\sin(\displaystyle\frac{1}{x})$ 与 $x\sin(\displaystyle\frac{1}{x})$ 在 $x\to 0$ 时的极限。
+#### §3.2 函数极限的性质
 
-    **解：** 分别取 $x_n=\displaystyle\frac{1}{2n\pi+\pi/2}$、$y_n=\displaystyle\frac{1}{2n\pi+3\pi/2}$，第一函数值分别为 $1,-1$，所以没有极限。而 $|x\sin(\displaystyle\frac{1}{x})|\le|x|\to 0$，第二函数极限为 $0$。
+设 $\lim_{x\to x_0}f(x)=A$、$\lim_{x\to x_0}g(x)=B$。有限极限具有唯一性；$f$ 在 $x_0$ 的某个去心邻域内有界。
 
-#### 函数极限存在的准则（续）（\*）
+$$
+\lim_{x\to x_0}(f\pm g)=A\pm B,\qquad
+\lim_{x\to x_0}fg=AB,\qquad
+\lim_{x\to x_0}cf=cA,
+$$
 
-教材第 42 页起：单调有界函数在区间端点具有相应的单侧极限；函数的柯西准则要求，在足够小的去心邻域内，任意两点的函数值之差都小于给定的 $\varepsilon$。这两种准则都能在不知道极限值时先证明存在性。
+$$
+\lim_{x\to x_0}\frac fg=\frac AB\qquad(B\ne0).
+$$
 
-#### 无穷小、无穷大与阶的比较
+其中 $c$ 为常数。若 $A>0$（$A<0$），则 $f(x)$ 在某个去心邻域内为正（负）；若该邻域内 $f(x)\le g(x)$，则 $A\le B$。
 
-无穷小是指定趋近过程中趋于 $0$ 的变量；无穷大是绝对值趋于 $+\infty$ 的变量。无穷大不是一个实数极限；无界也不等于趋于无穷大。
+若 $\varphi(x)\to u_0$、$f(u)\to A$（$u\to u_0$），且 $x_0$ 的某个去心邻域内 $\varphi(x)\ne u_0$，则
 
-若 $\alpha\to 0$ 且最终非零，则 $\displaystyle\frac{1}{\alpha}$ 是无穷大，反之亦然。有限个无穷小之和仍为无穷小；有界量乘无穷小仍为无穷小。
+$$
+\lim_{x\to x_0}f(\varphi(x))=A.
+$$
 
-设 $\alpha,\beta$ 都趋于 $0$，且 $\beta$ 最终非零：
+#### §3.3 函数极限存在的准则
 
-| 商的极限或估计 | 记号与含义 |
+**夹逼定理：** 若 $x_0$ 的某个去心邻域内 $f(x)\le h(x)\le g(x)$，且 $\lim_{x\to x_0}f(x)=\lim_{x\to x_0}g(x)=A$，则 $\lim_{x\to x_0}h(x)=A$。
+
+**归结原则（海涅定理）：** $\lim_{x\to x_0}f(x)=A$ 的充要条件是：对于定义域内每个满足 $x_n\to x_0$ 且 $x_n\ne x_0$ 的数列，都有 $f(x_n)\to A$。
+
+#### §3.4 函数极限存在的准则（续） \*
+
+**单调有界准则：** 单调有界函数在区间端点存在相应的单侧极限。
+
+**柯西收敛准则：** 设 $f$ 在 $x_0$ 的某个去心邻域内有定义，其有限极限存在的充要条件为
+
+$$
+\forall\varepsilon>0,\ \exists\delta>0,\quad
+\begin{cases}
+0<|x'-x_0|<\delta,\\
+0<|x''-x_0|<\delta
+\end{cases}
+\Longrightarrow |f(x')-f(x'')|<\varepsilon.
+$$
+
+#### §3.5 无穷小量、无穷大量、阶的比较
+
+**无穷小量：** 在指定变化过程中以 $0$ 为极限的变量。$f(x)\to A$ 等价于 $f(x)=A+\alpha(x)$，其中 $\alpha(x)\to0$。
+
+有限个无穷小量的和、积仍为无穷小量；无穷小量与有界量的积仍为无穷小量。
+
+**无穷大量：** 设 $f$ 在 $x_0$ 的某个去心邻域内有定义，若
+
+$$
+\forall M>0,\ \exists\delta>0,\quad
+0<|x-x_0|<\delta\Rightarrow |f(x)|>M,
+$$
+
+则称 $f$ 为 $x\to x_0$ 时的无穷大量，记为 $f(x)\to\infty$。将 $|f(x)|>M$ 分别换为 $f(x)>M$、$f(x)<-M$，得到正、负无穷大量的定义。
+
+$$
+f(x)\to\infty\ \Longrightarrow\ \frac1{f(x)}\to0;
+\qquad
+f(x)\to0,\ f(x)\ne0\ \Longrightarrow\ \frac1{f(x)}\to\infty.
+$$
+
+第二式要求 $f(x)$ 在某个去心邻域内非零。
+
+设 $\alpha,\beta$ 为同一变化过程中的无穷小量，且 $\beta$ 在所讨论的去心邻域内非零。
+
+| 极限关系 | 概念与记号 |
 | --- | --- |
-| $\displaystyle\frac{\alpha}{\beta}\to 0$ | $\alpha=o(\beta)$，$\alpha$ 是更高阶无穷小 |
-| $\displaystyle\frac{\alpha}{\beta}\to c\ne 0$ | 同阶无穷小 |
-| $\displaystyle\frac{\alpha}{\beta}\to 1$ | $\alpha\sim \beta$，等价无穷小 |
-| $\lvert\displaystyle\frac{\alpha}{\beta}\rvert\to+\infty$ | $\alpha$ 比 $\beta$ 低阶 |
-| $\lvert\alpha\rvert\le C\lvert\beta\rvert$ 最终成立 | $\alpha=O(\beta)$；不要求商有极限 |
+| $\alpha/\beta\to0$ | $\alpha$ 是比 $\beta$ 高阶的无穷小量，记为 $\alpha=o(\beta)$ |
+| $\alpha/\beta\to c\ne0$ | $\alpha,\beta$ 为同阶无穷小量 |
+| $\alpha/\beta\to1$ | $\alpha,\beta$ 为等价无穷小量，记为 $\alpha\sim\beta$ |
 
-当 $x\to 0$ 时，常用等价式为
+若 $k>0$、$c\ne0$，且 $f(x)/(x-x_0)^k\to c$（$x\to x_0^+$），则称 $f(x)$ 为关于 $x-x_0$ 的 $k$ 阶无穷小量。无穷大量的同阶、等价关系也分别由商趋于非零常数、趋于 $1$ 定义；若两个无穷大量之商趋于 $0$，分子称为比分母低阶的无穷大量。
 
-$$
-\sin x\sim \tan x\sim \arcsin x\sim \arctan x\sim x,
-$$
+#### §3.6 两个重要极限
 
 $$
-1-\cos x\sim \frac{x^2}{2},\qquad
-\ln(1+x)\sim x,\qquad e^x-1\sim x,
+\lim_{x\to0}\frac{\sin x}{x}=1,\qquad
+\lim_{x\to\infty}\left(1+\frac1x\right)^x=e.
 $$
 
-$$
-a^x-1\sim x\ln a\quad (a>0,a\ne 1),\qquad
-(1+x)^\alpha-1\sim \alpha x\quad (\alpha\ne 0).
-$$
-
-!!! warning "等价替换要保护相消后的主项"
-
-    在乘积、商中通常可以替换相应因子；在加减中不能任意替换。例如 $\sin x-x$ 不能通过 $\sin x\sim x$ 变为零。应保留更高阶信息：$\sin x-x=-\displaystyle\frac{x^3}{6}+o(x^3)$，这将在第三章用泰勒公式处理。
-
-#### 两个重要极限
+等价形式为
 
 $$
-\lim_{x\to 0}\frac{\sin x}{x}=1,\qquad
-\lim_{x\to 0}(1+x)^{\frac{1}{x}}=e.
+\lim_{x\to0}(1+x)^{1/x}=e,\qquad
+\lim_{n\to\infty}\left(1+\frac1n\right)^n=e.
 $$
 
-第二式也可写成 $\lim_{n\to \infty}(1+\displaystyle\frac{1}{n})^n=e$，或 $\lim_{x\to+\infty}(1+\displaystyle\frac{1}{x})^x=e$。三角函数求极限时，角度采用弧度制。
-
-对于底数最终为正的幂指函数，先写成
+当 $x\to0$ 时，
 
 $$
-u(x)^{v(x)}=\exp\bigl(v(x)\ln u(x)\bigr).
+\sin x\sim x,\qquad \tan x\sim x,\qquad 1-\cos x\sim\frac{x^2}{2}.
 $$
 
-若 $u(x)=1+\alpha(x)$，$\alpha(x)\to 0$，且 $v(x)\alpha(x)\to A$，则 $u(x)^{v(x)}\to e^A$。
+对所有 $x\in\mathbb R$，$|\sin x|\le|x|$。
 
-!!! example "例 1.4：把复合量作为整体"
+若同一变化过程中 $f\sim f_1$、$g\sim g_1$、$h\sim h_1$，且右侧极限存在或为无穷大，则
 
-    求 $\lim_{x\to 0}(1+2x)^{\frac{3}{x}}$。
+$$
+\lim\frac{fg}{h}=\lim\frac{f_1g_1}{h_1}.
+$$
 
-    **解：** 在零点附近底数为正，且 $(\displaystyle\frac{3}{x})\ln(1+2x)\sim (\frac{3}{x})\cdot 2x\to 6$，故原极限为 $e^6$。
+#### §3.7 极限在经济中的应用
 
-#### 极限在经济中的应用
+**复利：** 将利息并入本金参与后续计息。初始本金为 $P$、年利率为 $r$、每年计息 $n$ 次时，$t$ 年后的余额为
 
-本金为 $P$，年利率为 $r$，每年计息 $m$ 次，经过 $t$ 年的本利和模型为 $P(1+\displaystyle\frac{r}{m})^{mt}$。令计息频率趋于无穷，得到连续复利模型 $Pe^{rt}$。这里假定利率固定且不考虑存取款，是重要极限的一个应用。
+$$
+A_t=P\left(1+\frac rn\right)^{nt}.
+$$
+
+年有效收益率为 $\left(1+r/n\right)^n-1$；连续复利的余额为
+
+$$
+B=Pe^{rt}.
+$$
+
+**现值与将来值：** 在年利率 $r$ 下，现值 $P$ 与 $t$ 年后将来值 $S$ 的关系为 $S=P(1+r)^t$；连续复利时为 $S=Pe^{rt}$。
+
+!!! warning "提示"
+
+    -   **名义利率与有效年利率**：$r$ 是名义年利率、$n$ 是每年计息次数，$t$ 年后的复利为 $P(1+r/n)^{nt}$；有效年收益率为 $(1+r/n)^n-1$，比较不同计息频率的产品应使用有效收益率，不能直接比较 $r$。
+
+        ??? example "复利与有效年收益率"
+            <!-- 待补充 -->
+
+    -   **连续复利是极限情形**：$Pe^{rt}$ 是 $n\to\infty$ 时的极限，$e^{rt}-1$ 才是连续复利下的有效收益率；不要把 $r$ 直接当作实际年增长率。
+
+        ??? example "连续复利"
+            <!-- 待补充 -->
+
+    -   **现值与将来值方向**：$S=P(1+r)^t$ 是由现值求将来值，$P=S(1+r)^{-t}$ 才是折现；连续复利下对应 $S=Pe^{rt}$、$P=Se^{-rt}$。
+
+        ??? example "现值与将来值"
+            <!-- 待补充 -->
+
+    -   **时间单位要统一**：年利率必须配年数；若题目给的是月利率、季利率或按季计息，要先换算到同一时间单位，否则指数 $nt$ 会出错。
+
+        ??? example "计息周期换算"
+            <!-- 待补充 -->
 
 ### §4 函数的连续性
 
-#### 连续与间断点
+#### §4.1 函数连续的概念
 
-$f$ 在 $a$ 连续，要求 $f(a)$ 有定义且 $\lim_{x\to a}f(x)=f(a)$。端点使用相应单侧连续性。初等函数在其定义区域内连续，因此在允许的点可直接代入求极限。
+设 $f$ 在 $x_0$ 的某邻域内有定义。**在 $x_0$ 连续**是指
 
-| 类型 | 判断方法 |
+$$
+\lim_{x\to x_0}f(x)=f(x_0).
+$$
+
+等价地，对任意 $\varepsilon>0$，存在 $\delta>0$，使 $|x-x_0|<\delta$ 时 $|f(x)-f(x_0)|<\varepsilon$。
+
+记自变量增量为 $\Delta x=x-x_0$，函数增量为 $\Delta y=f(x_0+\Delta x)-f(x_0)$，则连续也可表示为 $\lim_{\Delta x\to0}\Delta y=0$。
+
+**左、右连续：** 分别满足 $\lim_{x\to x_0^-}f(x)=f(x_0)$、$\lim_{x\to x_0^+}f(x)=f(x_0)$。在内点连续等价于既左连续又右连续。闭区间 $[a,b]$ 上连续是指在 $(a,b)$ 内连续，并在 $a$ 右连续、在 $b$ 左连续。
+
+记 $C[a,b]$ 为在 $[a,b]$ 上连续的函数全体。
+
+**间断点：** 函数不连续的点。
+
+| 类型 | 定义 |
 | --- | --- |
-| 可去间断点 | 左、右极限存在且相等，但函数值未定义或不等于该极限 |
-| 跳跃间断点 | 左、右极限都有限，但不相等 |
-| 无穷间断点 | 至少一侧趋于无穷 |
-| 振荡等其他间断点 | 至少一侧没有有限极限，且不属于前面的情形 |
+| 可去间断点 | $\lim_{x\to x_0}f(x)=A$，但 $f(x_0)$ 无定义或 $f(x_0)\ne A$ |
+| 跳跃间断点 | 左、右极限均存在，但不相等；二者差的绝对值称为跳跃度 |
+| 第一类间断点 | 可去间断点和跳跃间断点 |
+| 第二类间断点 | 左、右极限至少一个不存在有限值 |
 
-可去与跳跃属于第一类间断点，其余为第二类。只改变一个点的函数值能修补可去间断，不能修补跳跃间断。
+在闭区间上只有有限个第一类间断点的函数称为在该区间上按段连续。
 
-#### 连续函数的局部性质与闭区间性质
+#### §4.2 连续函数的局部性质
 
-连续函数可作四则运算和复合，商的分母不能为零；连续且严格单调函数的反函数连续。若 $f(a)>0$，连续性保证在足够小邻域内 $f(x)>0$。
+$f,g$ 在 $x_0$ 连续时，$f\pm g$、$fg$、$cf$ 也在 $x_0$ 连续，其中 $c$ 为常数；$g(x_0)\ne0$ 时，$f/g$ 也连续。
 
-对 $f\in C[a,b]$：
+若 $f$ 在 $x_0$ 连续，则其在某邻域内有界；若 $f(x_0)>0$（$<0$），则在某邻域内 $f(x)>0$（$<0$）。
 
-1. 有界，且一定取得最大值和最小值。
-2. 具有介值性：介于两个函数值之间的每个数都能取到。
-3. 若 $f(a)f(b)<0$，则 $(a,b)$ 内至少存在一个零点。
-
-证明零点“存在且唯一”，通常用连续性和异号证明存在，再用严格单调性证明唯一。
-
-!!! example "例 1.5：分段函数的连续条件"
-
-    设 $f(x)=\displaystyle\frac{e^{2x}-1}{x}$（$x\ne 0$），$f(0)=c$。求使 $f$ 在零点连续的 $c$。
-
-    **解：** 由 $e^{2x}-1\sim 2x$，去心极限为 $2$，因此必须且只需取 $c=2$。
-
-#### 闭区间上连续函数性质的证明（\*）
-
-教材第 65 页起。证明有界性可用反证法：若连续函数在闭区间无界，取点列使函数值无界，再取收敛子列，用连续性推出矛盾。最值的取得也可用趋近上确界的点列证明。零点定理可用不断二分保留异号端点的区间，再对公共极限点使用连续性。
-
-#### 一致连续（\*）
-
-教材第 68 页起。$f$ 在集合 $E$ 上一致连续，是指
+若 $\varphi(x)\to u_0$，且 $f$ 在 $u_0$ 连续，则
 
 $$
-\forall\varepsilon>0,\ \exists\delta>0,\ \forall x,y\in E,
-\quad |x-y|<\delta\Rightarrow |f(x)-f(y)|<\varepsilon.
+\lim_{x\to x_0}f(\varphi(x))=f(u_0)
+=f\left(\lim_{x\to x_0}\varphi(x)\right).
 $$
 
-关键是 $\delta$ 不依赖具体点。闭区间上的连续函数必一致连续。若 $|f(x)-f(y)|\le L|x-y|$，则也一致连续；例如 $\sin x$ 在整个实轴上一致连续。
+#### §4.3 闭区间上连续函数的性质
 
-!!! tip "不要混淆两种‘一致’"
+**最大值与最小值：** 对定义在 $D$ 上的函数，若存在 $x_0\in D$，使所有 $x\in D$ 满足 $f(x)\le f(x_0)$（$f(x)\ge f(x_0)$），则 $f(x_0)$ 称为 $f$ 在 $D$ 上的最大值（最小值）。
 
-    一致连续讨论同一个函数在不同点的变化；第十一章的一致收敛讨论一列函数或部分和对所有点的统一逼近。二者都要求误差控制不依赖具体的点，但讨论对象不同。
+若 $f\in C[a,b]$，则存在 $x_1,x_2\in[a,b]$，使
 
-### 本章自测
+$$
+f(x_1)=M,\qquad f(x_2)=m,\qquad
+m\le f(x)\le M\quad(x\in[a,b]).
+$$
 
-!!! example "自测 1"
+**零点定理：** 若 $f\in C[a,b]$ 且 $f(a)f(b)<0$，则存在 $\xi\in(a,b)$，使 $f(\xi)=0$。
 
-    1. 求 $\ln(x^2-1)$ 的定义域，并判断奇偶性。
-    2. 求 $\lim_{n\to \infty}(\sqrt{n^2+3n}-n)$。
-    3. 设 $a_1=1$，$a_{n+1}=\displaystyle\frac{a_n+3}{2}$，证明数列收敛并求极限。
-    4. 求 $\lim_{x\to 0}\displaystyle\frac{1-\cos2x}{x\sin3x}$。
-    5. 判断 $f(x)=\displaystyle\frac{\sin x}{x}$（$x\ne 0$）、$f(0)=0$ 在零点的间断类型；怎样修改才能连续？
-    6. 证明方程 $e^{-x}=x$ 在 $(0,1)$ 内恰有一根。
+**介值定理：** 若 $f\in C[a,b]$，$f(a)\ne f(b)$，$c$ 严格介于 $f(a),f(b)$ 之间，则存在 $\xi\in(a,b)$ 使 $f(\xi)=c$。因此 $f([a,b])=[m,M]$。
 
-    ??? success "答案与提示"
+#### §4.4 初等函数在其定义域上的连续性
 
-        1. 定义域为 $(-\infty,-1)\cup(1,+\infty)$，是偶函数。
-        2. 有理化得 $\displaystyle\frac{3}{\sqrt{1+\dfrac{3}{n}}+1}\to 3/2$。
-        3. $1\le a_n<3$ 且 $a_{n+1}-a_n=\displaystyle\frac{3-a_n}{2}>0$，故收敛；由 $A=\displaystyle\frac{A+3}{2}$ 得 $A=3$。
-        4. 分子等价于 $2x^2$，分母等价于 $3x^2$，故极限为 $2/3$。
-        5. 去心极限为 $1$，与 $f(0)=0$ 不同，是可去间断点；改为 $f(0)=1$ 即可。
-        6. $g(x)=e^{-x}-x$ 连续，$g(0)>0,g(1)<0$，故至少一根；$e^{-x}$ 严格递减而 $x$ 严格递增，故至多一根。
+在闭区间上连续且严格单调的函数，其反函数在相应值域上连续且具有相同的严格单调性。
+
+基本初等函数在各自定义域上连续；初等函数在其有定义的区间上连续。
+
+#### §4.5 闭区间上连续函数性质的证明 \*
+
+#### §4.6 一致连续 \*
+
+**一致连续：** 若定义在区间 $E$ 上的函数 $f$ 满足
+
+$$
+\forall\varepsilon>0,\ \exists\delta>0,\ \forall x',x''\in E,\quad
+|x'-x''|<\delta\Rightarrow|f(x')-f(x'')|<\varepsilon,
+$$
+
+则称 $f$ 在 $E$ 上一致连续。
+
+闭区间上的连续函数必一致连续。
+
+设 $a,b$ 有限。函数 $f$ 在 $(a,b)$ 上一致连续，当且仅当 $f$ 在 $(a,b)$ 上连续，且有限极限 $\lim_{x\to a^+}f(x)$、$\lim_{x\to b^-}f(x)$ 均存在。
+
+!!! warning "提示"
+
+    -   **$\delta$ 是否依赖于点**：连续是逐点定义，$\delta$ 可以随 $x_0$ 变化；一致连续要求存在只依赖于 $\varepsilon$ 的 $\delta$，对区间内所有 $x',x''$ 同时有效。
+
+        ??? example "一致连续与连续的区别"
+            <!-- 待补充 -->
+
+    -   **闭区间条件不能丢**：$[a,b]$ 上连续的函数必一致连续；开区间或无穷区间上连续不一定一致连续，如 $1/x$ 在 $(0,1)$、$x^2$ 在 $\mathbb R$ 上。
+
+        ??? example "闭区间上的一致连续性"
+            <!-- 待补充 -->
+
+    -   **端点判别法**：对有限区间 $(a,b)$，$f$ 在 $(a,b)$ 上一致连续当且仅当 $f$ 连续且 $\lim_{x\to a^+}f(x)$、$\lim_{x\to b^-}f(x)$ 都存在且有限；端点极限为无穷或振荡时不一致连续（如 $\sin(1/x)$）。
+
+        ??? example "开区间上的一致连续性"
+            <!-- 待补充 -->
+
+    -   **与其他概念的关系**：一致连续必连续，且把柯西列映为柯西列；满足 Lipschitz 条件可推出一致连续，反之不成立（如 $\sqrt x$ 在 $[0,1]$ 上）。
+
+        ??? example "Lipschitz 条件与一致连续"
+            <!-- 待补充 -->
+
+    -   **有界性的适用范围**：在有限区间上一致连续可推出有界；在无穷区间上不一定，如 $f(x)=x$ 在 $\mathbb R$ 上一致连续但无界。
+
+        ??? example "一致连续与有界性"
+            <!-- 待补充 -->
 
 ## 第二章 导数与微分
 
 ### §1 导数
 
-#### 定义、单侧导数与几何意义
+#### §1.1 导数的概念
+
+**导数：** 设 $f$ 在 $x_0$ 的某邻域内有定义，若下列有限极限存在，则称 $f$ 在 $x_0$ 可导，极限值称为在该点的导数：
 
 $$
-f'(x_0)=\lim_{h\to 0}\frac{f(x_0+h)-f(x_0)}h
+f'(x_0)=\lim_{\Delta x\to0}\frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}
 =\lim_{x\to x_0}\frac{f(x)-f(x_0)}{x-x_0}.
 $$
 
-导数要求上式有**有限**极限。分别令 $h\to 0^-,h\to 0^+$ 得左、右导数；内点可导当且仅当二者存在且相等。
+导数也记为 $y'|_{x=x_0}$、$\left.\dfrac{\mathrm dy}{\mathrm dx}\right|_{x=x_0}$。
 
-导数是瞬时变化率，也是曲线切线的斜率。在可导点 $(x_0,y_0)$：
+**左导数与右导数：** 分别为
+
+$$
+f'_-(x_0)=\lim_{h\to0^-}\frac{f(x_0+h)-f(x_0)}h,\qquad
+f'_+(x_0)=\lim_{h\to0^+}\frac{f(x_0+h)-f(x_0)}h.
+$$
+
+内点处可导的充要条件是左右导数均存在且相等。可导函数在该点连续。
+
+**切线与法线：** 割线经过的另一点沿曲线趋于 $P_0(x_0,y_0)$ 时，若割线的极限位置存在且唯一，则该直线称为曲线在 $P_0$ 处的切线；过切点且垂直于切线的直线称为法线。$f'(x_0)$ 是切线斜率，且
 
 $$
 \text{切线：}\quad y-y_0=f'(x_0)(x-x_0),
 $$
 
 $$
-\text{法线：}\quad (x-x_0)+f'(x_0)(y-y_0)=0.
+\text{法线：}\quad y-y_0=-\frac1{f'(x_0)}(x-x_0)\quad(f'(x_0)\ne0).
 $$
 
-法线这一写法也包含 $f'(x_0)=0$ 时的竖直法线。导数无穷时不属于通常的可导，但可能存在竖直切线，应另作几何分析。
+当 $f'(x_0)=0$ 时，切线为 $y=y_0$，法线为 $x=x_0$。
 
-**可导必连续，连续不一定可导。** 例如 $|x|$ 在零点连续，但左右导数为 $-1,1$。分段点应先判断连续，再计算左右差商。
+#### §1.2 导数的基本公式与运算法则
 
-!!! example "例 2.1：从定义判断分段点可导"
+**导函数：** 函数 $f$ 在区间内各点的导数构成的函数，记为 $f'(x)$。求导函数的运算称为求导或微分法。
 
-    设 $f(x)=x^2\sin(\displaystyle\frac{1}{x})$（$x\ne 0$），$f(0)=0$。求 $f'(0)$，并判断导函数是否在零点连续。
-
-    **解：** 差商为 $h\sin(\displaystyle\frac{1}{h})\to 0$，故 $f'(0)=0$。对 $x\ne 0$，
-
-    $$
-    f'(x)=2x\sin(\frac{1}{x})-\cos(\frac{1}{x}),
-    $$
-
-    它在零点没有极限，因此导函数不连续。可导不要求导函数连续。
-
-#### 基本公式与运算法则
-
-| 函数 | 导数 | 条件或提醒 |
+| 函数 | 导数 | 条件 |
 | --- | --- | --- |
-| $x^\alpha$ | $\alpha x^{\alpha-1}$ | 在函数可导的定义区间使用 |
-| $e^x,a^x$ | $e^x,a^x\ln a$ | $a>0,a\ne 1$ |
-| $\ln\lvert x\rvert,\log_a x$ | $\displaystyle\frac{1}{x},\frac{1}{x\ln a}$ | 前者 $x\ne 0$，后者 $x>0$ |
-| $\sin x,\cos x$ | $\cos x,-\sin x$ | 弧度制 |
-| $\tan x,\cot x$ | $\sec^2x,-\csc^2x$ | 排除原函数无定义点 |
-| $\arcsin x,\arccos x$ | $\displaystyle\frac{1}{\sqrt{1-x^2}},-\frac{1}{\sqrt{1-x^2}}$ | $-1<x<1$ |
-| $\arctan x,\operatorname{arccot}x$ | $\displaystyle\frac{1}{1+x^2},-\frac{1}{1+x^2}$ | 按第一章主值约定 |
+| $C$ | $0$ | $C$ 为常数 |
+| $x^\alpha$ | $\alpha x^{\alpha-1}$ | 在其可导区间内 |
+| $\sin x$ | $\cos x$ | $x\in\mathbb R$ |
+| $\cos x$ | $-\sin x$ | $x\in\mathbb R$ |
+| $\tan x$ | $\sec^2x$ | $\cos x\ne0$ |
+| $\cot x$ | $-\csc^2x$ | $\sin x\ne0$ |
+| $\sec x$ | $\sec x\tan x$ | $\cos x\ne0$ |
+| $\csc x$ | $-\csc x\cot x$ | $\sin x\ne0$ |
+| $\arcsin x$ | $\displaystyle\frac1{\sqrt{1-x^2}}$ | $-1<x<1$ |
+| $\arccos x$ | $\displaystyle-\frac1{\sqrt{1-x^2}}$ | $-1<x<1$ |
+| $\arctan x$ | $\displaystyle\frac1{1+x^2}$ | $x\in\mathbb R$ |
+| $\operatorname{arccot}x$ | $\displaystyle-\frac1{1+x^2}$ | $x\in\mathbb R$ |
+| $a^x$ | $a^x\ln a$ | $a>0$、$a\ne1$ |
+| $e^x$ | $e^x$ | $x\in\mathbb R$ |
+| $\log_a x$ | $\displaystyle\frac1{x\ln a}$ | $a>0$、$a\ne1$，$x>0$ |
+| $\ln x$ | $1/x$ | $x>0$ |
+| $\ln\lvert x\rvert$ | $1/x$ | $x\ne0$ |
+
+若 $u,v$ 可导，$c$ 为常数，则
 
 $$
-(uv)'=u'v+uv',\qquad
-\left(\frac uv\right)'=\frac{u'v-uv'}{v^2},\qquad v\ne 0.
+(u\pm v)'=u'\pm v',\qquad (cu)'=cu',\qquad (uv)'=u'v+uv',
 $$
 
-复合函数的链式法则为
-
 $$
-\frac{\mathrm dy}{\mathrm dx}
-=\frac{\mathrm dy}{\mathrm du}\frac{\mathrm du}{\mathrm dx}.
+\left(\frac uv\right)'=\frac{u'v-uv'}{v^2},\qquad
+\left(\frac1v\right)'=-\frac{v'}{v^2}\qquad(v\ne0).
 $$
 
-反函数满足 $\displaystyle\frac{\mathrm dx}{\mathrm dy}\ne 0$ 时，
+**反函数求导：** 若 $y=f(x)$ 的反函数 $x=\varphi(y)$ 可导且 $\varphi'(y)\ne0$，则
 
 $$
-\frac{\mathrm dy}{\mathrm dx}=\frac1{\dfrac{\mathrm dx}{\mathrm dy}},\qquad
-\frac{\mathrm d^2y}{\mathrm dx^2}
-=-\frac{\dfrac{\mathrm d^2x}{\mathrm dy^2}}{\left(\dfrac{\mathrm dx}{\mathrm dy}\right)^3}.
+\frac{\mathrm dy}{\mathrm dx}=\frac1{\dfrac{\mathrm dx}{\mathrm dy}}.
 $$
 
-幂指函数 $y=u(x)^{v(x)}$，在 $u>0$ 时可先取对数：
+**复合函数求导（链式法则）：** $y=f(u)$、$u=\varphi(x)$ 均可导时，
+
+$$
+\frac{\mathrm dy}{\mathrm dx}=\frac{\mathrm dy}{\mathrm du}\frac{\mathrm du}{\mathrm dx}
+=f'(\varphi(x))\varphi'(x).
+$$
+
+**双曲函数：**
+
+$$
+\sinh x=\frac{e^x-e^{-x}}2,\qquad
+\cosh x=\frac{e^x+e^{-x}}2,
+$$
+
+$$
+\tanh x=\frac{e^x-e^{-x}}{e^x+e^{-x}},\qquad
+\coth x=\frac{e^x+e^{-x}}{e^x-e^{-x}}\quad(x\ne0),
+$$
+
+$$
+(\sinh x)'=\cosh x,\qquad
+(\cosh x)'=\sinh x,\qquad
+(\tanh x)'=\frac1{\cosh^2x}.
+$$
+
+#### §1.3 隐函数的导数
+
+**隐函数：** 若二元方程 $F(x,y)=0$ 在集合 $D$ 上对每个 $x$ 都确定唯一的 $y$，则由该方程确定的函数 $y=f(x)$ 称为隐函数，满足 $F(x,f(x))=0$。
+
+隐函数可导时，满足
+
+$$
+\frac{\mathrm d}{\mathrm dx}F(x,y(x))=0.
+$$
+
+对可导且非零的 $y$，有 $(\ln|y|)'=y'/y$。幂指函数 $y=u(x)^{v(x)}$ 在 $u(x)>0$ 时满足
 
 $$
 y'=u^v\left(v'\ln u+v\frac{u'}u\right).
 $$
 
-乘积含多个因子、幂次复杂时，也可使用对数求导；需要取 $\ln|y|$ 的情形，应先限制在有关函数非零的区间。
+#### §1.4 高阶导数
 
-#### 隐函数与参数方程求导
-
-由 $F(x,y)=0$ 定义 $y=y(x)$ 时，对等式两边求导，所有含 $y$ 的项都要使用链式法则。若 $F$ 一阶连续可微且 $F_y\ne 0$，则局部有
+**高阶导数：** $f$ 的 $n-1$ 阶导数的导数称为 $n$ 阶导数，记为
 
 $$
-y'=-\frac{F_x}{F_y}.
+f^{(n)}(x)=\bigl[f^{(n-1)}(x)\bigr]'=\frac{\mathrm d^ny}{\mathrm dx^n}.
 $$
 
-这里 $F_x,F_y$ 表示把另一变量暂视为常量得到的偏导，第八章将系统讨论。二阶导数通常通过对一阶导数关系再次求导获得。
-
-若 $x=\varphi(t),y=\psi(t)$ 且 $\varphi'(t)\ne 0$，则
+对正整数 $n$，在相应可导区间内，
 
 $$
-\frac{\mathrm dy}{\mathrm dx}=\frac{\psi'(t)}{\varphi'(t)},\qquad
-\frac{\mathrm d^2y}{\mathrm dx^2}
-=\frac1{\varphi'(t)}\frac{\mathrm d}{\mathrm dt}
-\left(\frac{\psi'(t)}{\varphi'(t)}\right).
-$$
-
-!!! warning "二阶导数不是两个二阶导数相除"
-
-    参数方程中，$\displaystyle\frac{\mathrm d^2y}{\mathrm dx^2}$ 一般不等于 $\displaystyle\frac{\psi''(t)}{\varphi''(t)}$。每对 $x$ 求一次导数，都应先对 $t$ 求导，再除以 $\displaystyle\frac{\mathrm dx}{\mathrm dt}$。
-
-!!! example "例 2.2：隐函数的二阶导数"
-
-    对单位圆上满足 $y>0$ 的点，将 $y$ 视为 $x$ 的函数，求 $y',y''$。
-
-    **解：** 从 $x^2+y^2=1$ 得 $x+yy'=0$，所以 $y'=-\displaystyle\frac{x}{y}$。再求导得 $1+(y')^2+yy''=0$，于是
-
-    $$
-    y''=-\frac{1+\dfrac{x^2}{y^2}}{y}=-\frac1{y^3}.
-    $$
-
-#### 高阶导数
-
-高阶导数逐次求得，但求一般的 $n$ 阶导数时，应寻找结构：
-
-$$
-\frac{\mathrm d^n}{\mathrm dx^n}e^{ax}=a^ne^{ax},\qquad
-\frac{\mathrm d^n}{\mathrm dx^n}\sin(ax+b)=a^n\sin\left(ax+b+\frac{n\pi}2\right),
+(x^\alpha)^{(n)}=\alpha(\alpha-1)\cdots(\alpha-n+1)x^{\alpha-n},
 $$
 
 $$
-\frac{\mathrm d^n}{\mathrm dx^n}\frac1{x-a}
-=\frac{(-1)^nn!}{(x-a)^{n+1}},\qquad
-\frac{\mathrm d^n}{\mathrm dx^n}\ln x
-=\frac{(-1)^{n-1}(n-1)!}{x^n}\quad (n\ge 1).
+(\ln x)^{(n)}=\frac{(-1)^{n-1}(n-1)!}{x^n}\quad(x>0),
 $$
 
-乘积的莱布尼茨公式为
+$$
+(\sin x)^{(n)}=\sin\left(x+\frac{n\pi}2\right),\qquad
+(\cos x)^{(n)}=\cos\left(x+\frac{n\pi}2\right),
+$$
 
 $$
-(uv)^{(n)}=\sum_{k=0}^n\binom nk u^{(k)}v^{(n-k)}.
+(a^x)^{(n)}=a^x(\ln a)^n\quad(a>0,\ a\ne1),\qquad
+(e^x)^{(n)}=e^x.
 $$
 
-若一个因子是低次多项式，求和中只有少数非零项。
+若 $u,v$ 存在 $n$ 阶导数，$c$ 为常数，则
 
-!!! example "例 2.3：用莱布尼茨公式减少计算"
+$$
+(u\pm v)^{(n)}=u^{(n)}\pm v^{(n)},\qquad
+(cu)^{(n)}=cu^{(n)}.
+$$
 
-    求 $f(x)=x^2e^x$ 的 $n$ 阶导数，$n\ge 1$。
+**莱布尼茨公式：**
 
-    **解：** $x^2$ 的三阶及以上导数为零，所以
+$$
+(uv)^{(n)}=\sum_{k=0}^n\binom nk u^{(n-k)}v^{(k)},\qquad
+u^{(0)}=u,\quad v^{(0)}=v.
+$$
 
-    $$
-    f^{(n)}(x)=e^x[x^2+2nx+n(n-1)].
-    $$
+#### §1.5 导数在实际中的应用
 
-#### 导数在实际中的应用
+导数表示因变量相对于自变量的瞬时变化率。以 $t$ 为时间，位移 $s(t)$、电量 $Q(t)$、人口 $N(t)$ 对应的瞬时速度、电流强度、人口增长率分别为
 
-若 $s(t)$ 为位移，则速度 $v=s'$，加速度 $a=s''$。相关变化率问题应先写各变量之间的关系，再统一对时间求导。
+$$
+v(t)=s'(t),\qquad I(t)=Q'(t),\qquad k(t)=N'(t).
+$$
 
-!!! example "例 2.4：相关变化率"
+!!! warning "提示"
 
-    球的半径以 $\displaystyle\frac{\mathrm dr}{\mathrm dt}=2$ 的速度增加，求半径为 $3$ 时体积的增长率。
+    -   **平均变化率与瞬时变化率**：$\dfrac{\Delta s}{\Delta t}$ 是平均速度，$s'(t)$ 才是瞬时速度；题目问"某时刻"的变化率时必须求导，不能直接用差商。
 
-    **解：** $V=\displaystyle\frac{4\pi r^3}{3}$，因此 $\displaystyle\frac{\mathrm dV}{\mathrm dt}=4\pi r^2\,\frac{\mathrm dr}{\mathrm dt}=72\pi$。若长度单位为厘米、时间单位为秒，结果单位为立方厘米每秒。
+        ??? example "平均速度与瞬时速度"
+            <!-- 待补充 -->
+
+    -   **导数的实际含义与符号**：速度、电流等量的正负表示方向，速率是速度的绝对值；$N'(t)$ 是增长速率，而相对增长率是 $N'(t)/N(t)$，两者单位不同。
+
+        ??? example "变化率的实际意义"
+            <!-- 待补充 -->
+
+    -   **单位随导数一起变化**：导数的单位是"因变量单位/自变量单位"，如 $s$ 以米、$t$ 以秒计时，$s'(t)$ 的单位是米/秒；代入数值前要统一单位。
+
+        ??? example "导数的单位"
+            <!-- 待补充 -->
+
+    -   **端点只能谈单侧导数**：导数定义要求该点的双侧邻域内有定义；实际问题中的时间区间端点处，只能用左导数或右导数描述瞬时变化率。
+
+        ??? example "端点处的变化率"
+            <!-- 待补充 -->
 
 ### §2 微分
 
-#### 可微的定义与线性近似
+#### §2.1 微分的概念
 
-若
-
-$$
-\Delta y=f(x+\Delta x)-f(x)=A\Delta x+o(\Delta x),
-$$
-
-则称 $f$ 在该点可微，$A\Delta x$ 是增量的线性主部。对一元函数，**可微与可导等价**，且
+**可微与微分：** 若函数增量能表示为
 
 $$
-\mathrm dy=f'(x)\,\mathrm dx,\qquad \mathrm dx=\Delta x.
+\Delta y=f(x+\Delta x)-f(x)=A\Delta x+o(\Delta x)\qquad(\Delta x\to0),
 $$
 
-因此 $\Delta y=\mathrm dy+o(\Delta x)$，但 $\Delta y$ 与 $\mathrm dy$ 一般不严格相等。若 $f'(x)=0$，线性主部为零，应关注更高阶项。
+其中 $A$ 与 $\Delta x$ 无关，则称 $f$ 在 $x$ 处可微，线性主部 $A\Delta x$ 称为微分，记为 $\mathrm dy$。
 
-#### 微分法则与形式不变性
-
-$$
-\mathrm d(u\pm v)=\mathrm du\pm \mathrm dv,\quad
-\mathrm d(uv)=v\,\mathrm du+u\,\mathrm dv,\quad
-\mathrm d\left(\frac uv\right)=\frac{v\,\mathrm du-u\,\mathrm dv}{v^2}.
-$$
-
-无论 $u$ 是自变量还是可微的中间变量，$y=f(u)$ 都满足 $\mathrm dy=f'(u)\,\mathrm du$，称为一阶微分的形式不变性。这也是不定积分中“凑微分”的依据。
-
-#### 近似计算与误差估计
+一元函数可微与可导等价，且
 
 $$
-f(x_0+h)\approx f(x_0)+f'(x_0)h.
+A=f'(x),\qquad \mathrm dx=\Delta x,\qquad
+\mathrm dy=f'(x)\,\mathrm dx,\qquad
+\Delta y=\mathrm dy+o(\Delta x).
 $$
 
-绝对误差的一阶估计为 $|\Delta y|\approx|f'(x_0)\Delta x|$；当 $f(x_0)\ne 0$ 时，相对误差约为 $|f'(x_0)\displaystyle\frac{\Delta x}{f(x_0)}|$。这是近似估计，严格误差界需用中值定理或泰勒余项。
+当 $f'(x)\ne0$ 时，$\Delta y\sim\mathrm dy$（$\Delta x\to0$）。微分的几何意义是切线上对应于横坐标增量 $\Delta x$ 的纵坐标增量。
 
-!!! example "例 2.5：线性近似及其误差"
+#### §2.2 微分的基本性质
 
-    估计 $\sqrt{4.04}$。
+$u,v$ 可微，$c$ 为常数时，
 
-    **解：** 在 $x_0=4$ 处线性化，得 $\sqrt{4.04}\approx 2+0.04/4=2.01$。第三章的泰勒公式进一步给出：在 $[4,4.04]$ 上 $|f''(x)|\le 1/32$，故这次近似的绝对误差不超过 $(1/2)(1/32)(0.04)^2=0.000025$。
+$$
+\mathrm d(u\pm v)=\mathrm du\pm\mathrm dv,\qquad
+\mathrm d(cu)=c\,\mathrm du,\qquad
+\mathrm d(uv)=v\,\mathrm du+u\,\mathrm dv,
+$$
 
-#### 高阶微分（\*）
+$$
+\mathrm d\left(\frac uv\right)=\frac{v\,\mathrm du-u\,\mathrm dv}{v^2},\qquad
+\mathrm d\left(\frac1v\right)=-\frac{\mathrm dv}{v^2}\quad(v\ne0).
+$$
 
-教材正文第 112 页将本小节标为选学。自变量 $x$ 的微分视为常量时，
+**一阶微分形式不变性：** 对可微复合函数 $y=f(u)$、$u=\varphi(x)$，仍有
+
+$$
+\mathrm dy=f'(u)\,\mathrm du.
+$$
+
+**参数式函数：** 曲线上点的坐标由 $x=\varphi(t)$、$y=\psi(t)$ 表示时，$t$ 称为参数。若二者可导且 $\varphi'(t)\ne0$，则
+
+$$
+\frac{\mathrm dy}{\mathrm dx}=\frac{\psi'(t)}{\varphi'(t)}.
+$$
+
+二阶可导时，
+
+$$
+\frac{\mathrm d^2y}{\mathrm dx^2}
+=\frac1{\varphi'(t)}\frac{\mathrm d}{\mathrm dt}
+\left(\frac{\psi'(t)}{\varphi'(t)}\right)
+=\frac{\psi''(t)\varphi'(t)-\psi'(t)\varphi''(t)}{[\varphi'(t)]^3}.
+$$
+
+**极坐标：** 以定点 $O$ 为极点、射线为极轴，点 $P$ 到极点的距离 $r$ 为极径，极轴到 $OP$ 的有向角 $\theta$ 为极角。以极点为直角坐标原点、极轴为 $x$ 轴正向时，
+
+$$
+x=r\cos\theta,\qquad y=r\sin\theta,\qquad
+r^2=x^2+y^2,\qquad \tan\theta=\frac yx\quad(x\ne0).
+$$
+
+曲线 $r=r(\theta)$ 的切线斜率为
+
+$$
+\frac{\mathrm dy}{\mathrm dx}
+=\frac{r'(\theta)\sin\theta+r(\theta)\cos\theta}
+{r'(\theta)\cos\theta-r(\theta)\sin\theta},
+$$
+
+其中分母非零。
+
+#### §2.3 近似计算与误差估计
+
+$f$ 在 $x_0$ 可微时，当 $|\Delta x|$ 很小时，
+
+$$
+\Delta y\approx f'(x_0)\Delta x,\qquad
+f(x_0+\Delta x)\approx f(x_0)+f'(x_0)\Delta x.
+$$
+
+当 $|x|$ 很小时，
+
+$$
+\sin x\approx x,\quad \tan x\approx x,\quad
+\ln(1+x)\approx x,\quad e^x\approx1+x,\quad
+(1+x)^\alpha\approx1+\alpha x.
+$$
+
+**误差：** 设 $x_0$ 为准确值，$x^*$ 为近似值，$\Delta x=x^*-x_0$ 为绝对误差；若 $|\Delta x|\le\delta_x$，则 $\delta_x$ 为绝对误差限。相对误差为 $\Delta x/x_0$，相对误差限为 $\delta_x/|x_0|$（$x_0\ne0$）。
+
+对 $y=f(x)$，微分给出的误差估计为
+
+$$
+|\Delta y|\approx |f'(x_0)\Delta x|,\qquad
+\delta_y\approx|f'(x_0)|\delta_x,
+$$
+
+$$
+\frac{\delta_y}{|y|}\approx
+\left|\frac{f'(x_0)}{f(x_0)}\right|\delta_x\qquad(f(x_0)\ne0).
+$$
+
+#### §2.4 高阶微分 \*
+
+以 $x$ 为自变量、$\mathrm dx=\Delta x$ 视为与 $x$ 无关的量时，$n$ 阶微分定义为 $\mathrm d^ny=\mathrm d(\mathrm d^{n-1}y)$，且
 
 $$
 \mathrm d^ny=f^{(n)}(x)(\mathrm dx)^n.
 $$
 
-若 $y=f(u)$、$u=u(x)$，则
+若 $y=f(u)$、$u=\varphi(x)$ 二阶可微，则
 
 $$
 \mathrm d^2y=f''(u)(\mathrm du)^2+f'(u)\,\mathrm d^2u.
 $$
 
-高阶微分一般不具有一阶微分的形式不变性；**高阶导数仍是复习重点**，不能因本小节选学而省略。
+!!! warning "提示"
 
-### 本章自测
+    -   **二阶微分的形式依赖于自变量**：只有当 $x$ 是自变量、$\mathrm dx$ 与 $x$ 无关时，才有 $\mathrm d^2y=f''(x)(\mathrm dx)^2$；对复合函数 $y=f(u)$、$u=\varphi(x)$，必须加上 $f'(u)\,\mathrm d^2u$，即二阶微分不具有形式不变性。
 
-!!! example "自测 2"
+        ??? example "二阶微分与复合函数"
+            <!-- 待补充 -->
 
-    1. 用定义求 $f(x)=\ln(1+x)$ 在零点的导数。
-    2. 设 $f(x)=ax+b$（$x<0$），$f(x)=e^x$（$x\ge 0$），求使其在零点可导的 $a,b$。
-    3. 求 $y=x^{\sin x}$（$x>0$）的导数。
-    4. 设 $x=t^2,y=t^3$（$t>0$），求 $\displaystyle\frac{\mathrm dy}{\mathrm dx}$ 和 $\displaystyle\frac{\mathrm d^2y}{\mathrm dx^2}$。
-    5. 求 $x\cos x$ 的 $n$ 阶导数，$n\ge 1$。
-    6. 求 $y=\ln x$ 在 $x=1$ 处的切线与法线，并用微分估计 $\ln1.02$。
+    -   **记号不要混淆**：$\mathrm d^2y$ 是二阶微分，$(\mathrm dy)^2$ 是一阶微分的平方；$\dfrac{\mathrm d^2y}{\mathrm dx^2}$ 是二阶导数，不能拆成两个微分之商。
 
-    ??? success "答案与提示"
+        ??? example "高阶微分记号"
+            <!-- 待补充 -->
 
-        1. $\lim_{h\to 0}\displaystyle\frac{\ln(1+h)}{h}=1$。
-        2. 连续要求 $b=1$；左右导数相等要求 $a=1$。
-        3. $y'=x^{\sin x}(\cos x\ln x+\displaystyle\frac{\sin x}{x})$。
-        4. $\displaystyle\frac{\mathrm dy}{\mathrm dx}=\frac{3t}{2}$，$\displaystyle\frac{\mathrm d^2y}{\mathrm dx^2}=\frac{3}{4t}$。
-        5. $x\cos(x+\displaystyle\frac{n\pi}{2})+n\cos(x+\frac{(n-1)\pi}{2})$。
-        6. 切线 $y=x-1$，法线 $x+y=1$；$\ln1.02\approx 0.02$。
+    -   **高阶可导的层级**：$n$ 阶导数存在只能推出低阶导数存在，反之不成立；二阶可导也不保证二阶导数连续。
+
+        ??? example "高阶导数的存在性"
+            <!-- 待补充 -->
+
+    -   **参数方程的二阶导数**：$\dfrac{\mathrm d^2y}{\mathrm dx^2}=\dfrac{\psi''\varphi'-\psi'\varphi''}{(\varphi')^3}$，分母是 $(\varphi')^3$；不能分别求 $\dfrac{\mathrm d^2y}{\mathrm dt^2}$、$\dfrac{\mathrm d^2x}{\mathrm dt^2}$ 后直接相除。
+
+        ??? example "参数方程求二阶导数"
+            <!-- 待补充 -->
 
 ## 第三章 微分中值定理及导数的应用
 
 ### §1 微分中值定理
 
-#### 费马定理与极值候选点
+#### §1.1 费马定理、最大（小）值
 
-若 $x_0$ 是定义区间内点，$f$ 在 $x_0$ 可导且取得局部极值，则 $f'(x_0)=0$。导数为零的点称驻点。费马定理是必要条件，驻点不一定是极值点，例如 $x^3$ 的零点。
+**极大值与极小值：** 设函数 $f$ 在 $x_0$ 的某邻域内有定义。若对该邻域内所有 $x$，都有 $f(x)\le f(x_0)$（$f(x)\ge f(x_0)$），则称 $f(x_0)$ 为 $f$ 的一个极大值（极小值），$x_0$ 为极大值点（极小值点）。极大值与极小值统称极值。
 
-区间上求最值时，应检查内部驻点、不可导点和区间端点；最大值、最小值属于全局概念，极大值、极小值属于局部概念。
+**费马定理：** 若 $f$ 在 $x_0$ 处取得极值，且 $f'(x_0)$ 存在，则
 
-#### 罗尔、拉格朗日与柯西定理
+$$
+f'(x_0)=0.
+$$
 
-| 定理 | 条件 | 结论 |
-| --- | --- | --- |
-| 罗尔定理 | $f\in C[a,b]$，在 $(a,b)$ 可导，$f(a)=f(b)$ | 存在 $\xi\in (a,b)$，$f'(\xi)=0$ |
-| 拉格朗日中值定理 | $f\in C[a,b]$，在 $(a,b)$ 可导 | 存在 $\xi\in (a,b)$，$f(b)-f(a)=f'(\xi)(b-a)$ |
-| 柯西中值定理 | $f,g\in C[a,b]$，在 $(a,b)$ 可导 | 存在 $\xi\in (a,b)$，$[f(b)-f(a)]g'(\xi)=[g(b)-g(a)]f'(\xi)$ |
+使 $f'(x_0)=0$ 的点 $x_0$ 称为函数 $f$ 的驻点。
 
-柯西定理若写成商式，需另保证相关分母非零；常用充分条件是 $g'(x)\ne 0$。中值点 $\xi$ 通常依赖区间和函数，不同次使用定理得到的中值点不能擅自视为同一点。
+#### §1.2 罗尔定理
 
-拉格朗日定理的直接推论：区间上导数恒为零则函数为常数；导数恒正则严格递增，导数恒负则严格递减；若 $|f'|\le M$，则 $|f(x)-f(y)|\le M|x-y|$。
+设 $f\in C[a,b]$，在 $(a,b)$ 内可导，且 $f(a)=f(b)$，则存在 $\xi\in(a,b)$，使
 
-!!! tip "证明题怎样找辅助函数"
+$$
+f'(\xi)=0.
+$$
 
-    目标为 $f'(\xi)=0$ 时先找两个相等函数值；目标含 $f'(\xi)-\lambda f(\xi)$ 时，可考虑 $e^{-\lambda x}f(x)$；目标比较函数与割线时，可用 $f(x)-f(a)-(f(b)-f(a))\displaystyle\frac{x-a}{b-a}$。辅助函数应使端点条件可用。
+#### §1.3 拉格朗日定理、函数的单调区间
 
-!!! example "例 3.1：用中值定理证明不等式"
+设 $f\in C[a,b]$，在 $(a,b)$ 内可导，则存在 $\xi\in(a,b)$，使
 
-    证明：对 $x>0$，有 $\displaystyle\frac{x}{1+x}<\ln(1+x)<x$。
+$$
+f(b)-f(a)=f'(\xi)(b-a).
+$$
 
-    **解：** 对 $f(t)=\ln(1+t)$ 在 $[0,x]$ 用拉格朗日定理，得 $\ln(1+x)=\displaystyle\frac{x}{1+\xi}$，其中 $0<\xi<x$。比较分母即可得到两端严格不等式。
+等价地，在满足上述条件的区间内，
 
-#### 单调区间与极值判别
+$$
+f(x_0+h)-f(x_0)=f'(x_0+\theta h)h,\qquad 0<\theta<1.
+$$
 
-在函数连续且相应开区间可导的条件下，用 $f'$ 的符号划分单调区间。在内点 $x_0$ 两侧：$f'$ 由正变负给出极大值，由负变正给出极小值；不变号时不产生极值。
+若 $f$ 在区间 $I$ 上连续、在其内部可导，且 $f'(x)=0$，则 $f$ 在 $I$ 上为常数。
 
-若 $f'(x_0)=0$ 且 $f''(x_0)>0$，则为严格极小值；$f''(x_0)<0$ 时为严格极大值；$f''(x_0)=0$ 时该判别失效，应回到导数变号或泰勒展开。
+#### §1.4 柯西定理
+
+设 $f,g\in C[a,b]$，在 $(a,b)$ 内可导，且对所有 $x\in(a,b)$ 有 $g'(x)\ne0$，则存在 $\xi\in(a,b)$，使
+
+$$
+\frac{f(b)-f(a)}{g(b)-g(a)}=\frac{f'(\xi)}{g'(\xi)}.
+$$
+
+#### §1.5 函数的单调区间与极值
+
+设 $f$ 在区间 $I$ 上连续、在其内部可导，则
+
+| 导数的符号 | 函数在 $I$ 上的性质 |
+| --- | --- |
+| $f'(x)\ge0$ | 递增 |
+| $f'(x)\le0$ | 递减 |
+| $f'(x)>0$ | 严格递增 |
+| $f'(x)<0$ | 严格递减 |
+| $f'(x)=0$ | 为常数 |
+
+若 $f'(x)\ge0$（$f'(x)\le0$），且导数在任意非退化子区间上不恒为零，则 $f$ 严格递增（严格递减）。函数具有单调性的区间称为其单调区间。
+
+设 $f$ 在 $x_0$ 处连续，在 $x_0$ 的某去心邻域内可导，则
+
+| $f'$ 在 $x_0$ 两侧的符号 | $f(x_0)$ 的性质 |
+| --- | --- |
+| 左正右负 | 极大值 |
+| 左负右正 | 极小值 |
+| 两侧同为正或同为负 | 不是极值 |
+
+若 $f'(x_0)=0$，且 $f''(x_0)$ 存在，则
+
+$$
+f''(x_0)>0\Rightarrow f(x_0)\text{ 为极小值},\qquad
+f''(x_0)<0\Rightarrow f(x_0)\text{ 为极大值}.
+$$
+
+!!! warning "提示"
+
+    -   **极值是局部概念**：极值只与某邻域内的函数值比较，极大值不一定大于极小值；最值才是整个区间上的整体比较，端点处也可能取得最值。
+
+        ??? example "极值与最值"
+            <!-- 待补充 -->
+
+    -   **驻点与极值点不能互推**：$f'(x_0)=0$ 只说明 $x_0$ 是驻点，不一定是极值点（如 $x^3$ 在 $0$ 处）；极值点也可能不可导（如 $|x|$ 在 $0$ 处），求极值时要同时检查驻点和不可导点。
+
+        ??? example "驻点与极值点"
+            <!-- 待补充 -->
+
+    -   **二阶导数判别法的适用条件**：$f'(x_0)=0$ 且 $f''(x_0)>0$ 才是极小值，$f''(x_0)<0$ 才是极大值；$f''(x_0)=0$ 时判别法失效，需改用一阶导数符号或更高阶导数。
+
+        ??? example "二阶导数判别法"
+            <!-- 待补充 -->
+
+    -   **单调区间不能跨分界点合并**：先确定定义域，再用 $f'(x)=0$ 和 $f'(x)$ 不存在的点划分区间；$f'\ge0$ 且仅在孤立点为零时仍为严格递增。
+
+        ??? example "求单调区间"
+            <!-- 待补充 -->
 
 ### §2 未定式的极限
 
-#### 洛必达法则
+#### §2.1 $\frac{0}{0}$ 型未定式的极限
 
-对于 $0/0$ 或 $\displaystyle\frac{\infty}{\infty}$ 型商，若在相应去心邻域或无穷区间内 $f,g$ 可导，$g'\ne 0$，且
+当 $x\to x_0$ 时，若 $f(x)\to0$、$g(x)\to0$，则商 $f(x)/g(x)$ 称为 $0/0$ 型未定式。
+
+**洛必达法则：** 设 $f,g$ 在 $x_0$ 的某去心邻域内可导，$g'(x)\ne0$，且
 
 $$
-\lim \frac{f'(x)}{g'(x)}=A
+\lim_{x\to x_0}f(x)=\lim_{x\to x_0}g(x)=0,\qquad
+\lim_{x\to x_0}\frac{f'(x)}{g'(x)}=A,
 $$
 
-存在或为正、负无穷，则在洛必达法则的相应条件下 $\lim \displaystyle\frac{f(x)}{g(x)}=A$。单侧极限可分别应用。
+其中 $A$ 为有限数或无穷大，则
 
-使用顺序是：**确认未定式 → 检查条件 → 分子分母分别求导 → 重新判断类型**。不能对整个商求导来替代分子、分母分别求导。
+$$
+\lim_{x\to x_0}\frac{f(x)}{g(x)}=A.
+$$
 
-#### 其他未定式的转换
+相同结论适用于单侧极限及 $x\to\pm\infty$ 的相应情形。
 
-| 类型 | 常用转换 |
-| --- | --- |
-| $0\cdot \infty$ | 将其中一个因子移到分母，化为商 |
-| $\infty-\infty$ | 通分、有理化、提取主项 |
-| $1^\infty,0^0,\infty^0$ | 底数为正时先取对数，研究 $v\ln u$ |
+#### §2.2 $\frac{\infty}{\infty}$ 型未定式的极限
 
-!!! warning "洛必达法则是充分方法，失效不等于原极限不存在"
+当 $x\to x_0$ 时，若 $|f(x)|\to\infty$、$|g(x)|\to\infty$，则商 $f(x)/g(x)$ 称为 $\infty/\infty$ 型未定式。
 
-    求导后的商没有极限，只说明这次使用未能给出结论。例如 $x\to+\infty$ 时，$\displaystyle\frac{x+\sin x}{x}\to 1$，但导数之商 $1+\cos x$ 没有极限。数列极限也不能直接对下标求导，应先构造相应连续变量函数并证明其极限。
+设 $f,g$ 在 $x_0$ 的某去心邻域内可导，$g'(x)\ne0$，并满足上述无穷大量条件。若
 
-!!! example "例 3.2：先变形，再决定是否求导"
+$$
+\lim_{x\to x_0}\frac{f'(x)}{g'(x)}=A,
+$$
 
-    求 $\lim_{x\to 0^+}x\ln x$。
+其中 $A$ 为有限数或无穷大，则
 
-    **解：** 改写为 $\displaystyle\frac{\ln x}{\dfrac{1}{x}}$，这是无穷比无穷型。由洛必达法则，极限等于 $\lim_{x\to 0^+}\displaystyle\frac{\dfrac{1}{x}}{-\dfrac{1}{x^2}}=\lim (-x)=0$。
+$$
+\lim_{x\to x_0}\frac{f(x)}{g(x)}=A.
+$$
+
+相同结论适用于单侧极限及 $x\to\pm\infty$ 的相应情形。
+
+#### §2.3 其他类型未定式的极限
+
+其他未定式包括 $0\cdot\infty$、$\infty-\infty$、$1^\infty$、$0^0$、$\infty^0$ 型。
+
+在各式有定义时，
+
+$$
+f(x)g(x)=\frac{f(x)}{1/g(x)}=\frac{g(x)}{1/f(x)}.
+$$
+
+对 $f(x)>0$，
+
+$$
+y=f(x)^{g(x)},\qquad \ln y=g(x)\ln f(x),\qquad
+f(x)^{g(x)}=\exp\bigl(g(x)\ln f(x)\bigr).
+$$
+
+!!! warning "提示"
+
+    -   **先化形再洛必达**：洛必达法则只直接适用于 $0/0$ 与 $\infty/\infty$；$0\cdot\infty$、$\infty-\infty$、$1^\infty$、$0^0$、$\infty^0$ 必须先通分、取对数或有理化，化成基本型后再用。
+
+        ??? example "其他未定式化形"
+            <!-- 待补充 -->
+
+    -   **$1^\infty$ 型不能把底数当作 $1$**：应计算 $\lim g(x)\ln f(x)$，再用 $\exp$ 回代；也可利用 $(1+u)^{1/u}\to e$，但必须保证 $u\to0$。
+
+        ??? example "幂指型未定式"
+            <!-- 待补充 -->
+
+    -   **洛必达法则的条件与逆用**：使用前要验证分子分母都趋于 $0$ 或 $\infty$、在去心邻域内可导、$g'(x)\ne0$，且 $\lim f'/g'$ 存在或为无穷大；$\lim f/g$ 存在并不能反推 $\lim f'/g'$ 存在。
+
+        ??? example "洛必达法则的条件"
+            <!-- 待补充 -->
+
+    -   **取对数后的定义域**：$0^0$、$\infty^0$ 型必须保证底数 $f(x)>0$ 才能取 $\ln f(x)$；回代时 $y=e^{L}$，不要漏掉指数运算。
+
+        ??? example "取对数法"
+            <!-- 待补充 -->
 
 ### §3 泰勒定理及应用
 
-#### 两种余项
+#### §3.1 泰勒定理
 
-若 $f$ 在连接 $a$ 与 $x$ 的区间上有足够的连续导数，则
-
-$$
-f(x)=\sum_{k=0}^n\frac{f^{(k)}(a)}{k!}(x-a)^k
-+\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-a)^{n+1},
-$$
-
-其中 $\xi$ 位于 $a,x$ 之间。这是带**拉格朗日余项**的泰勒公式，适合估计误差与证明不等式。
-
-在 $a$ 处具有 $n$ 阶导数时，可使用带**佩亚诺余项**的局部展开
+设 $f$ 在包含 $x_0,x$ 的区间内具有 $n$ 阶连续导数，在区间内部具有 $n+1$ 阶导数，则
 
 $$
-f(x)=\sum_{k=0}^n\frac{f^{(k)}(a)}{k!}(x-a)^k+o((x-a)^n),\qquad x\to a.
+f(x)=\sum_{k=0}^{n}\frac{f^{(k)}(x_0)}{k!}(x-x_0)^k+R_n(x),
 $$
 
-它适合计算极限和比较无穷小阶数。$a=0$ 时称麦克劳林公式。
-
-#### 常用局部展开
-
-以下均指 $x\to 0$，需要更高精度时继续保留后续项：
+其中 $f^{(0)}=f$，$n$ 为非负整数。多项式
 
 $$
-e^x=1+x+\frac{x^2}{2}+\frac{x^3}{6}+\frac{x^4}{24}+o(x^4),
+P_n(x)=\sum_{k=0}^{n}\frac{f^{(k)}(x_0)}{k!}(x-x_0)^k
 $$
 
-$$
-\sin x=x-\frac{x^3}{6}+\frac{x^5}{120}+o(x^5),\qquad
-\cos x=1-\frac{x^2}{2}+\frac{x^4}{24}+o(x^4),
-$$
+称为 $f$ 在 $x_0$ 处的 $n$ 阶泰勒多项式，$R_n(x)=f(x)-P_n(x)$ 为余项。**拉格朗日余项**为
 
 $$
-\ln(1+x)=x-\frac{x^2}{2}+\frac{x^3}{3}-\frac{x^4}{4}+o(x^4),
+R_n(x)=\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_0)^{n+1}
+=\frac{f^{(n+1)}(x_0+\theta(x-x_0))}{(n+1)!}(x-x_0)^{n+1},
+\quad 0<\theta<1,
 $$
 
+其中 $\xi$ 位于 $x_0$ 与 $x$ 之间。当 $x_0=0$ 时，泰勒公式称为麦克劳林公式。
+
+若 $x_0$ 与 $x$ 之间 $|f^{(n+1)}(t)|\le M$，则
+
 $$
-(1+x)^\alpha=1+\alpha x+\frac{\alpha(\alpha-1)}2x^2
-+\frac{\alpha(\alpha-1)(\alpha-2)}6x^3+o(x^3),
+|R_n(x)|\le\frac{M}{(n+1)!}|x-x_0|^{n+1}.
+$$
+
+#### §3.2 几个常用函数的麦克劳林公式
+
+以下各式中的 $0<\theta<1$；$n,m$ 为非负整数。
+
+$$
+e^x=\sum_{k=0}^{n}\frac{x^k}{k!}
++\frac{e^{\theta x}}{(n+1)!}x^{n+1}.
 $$
 
 $$
-\arctan x=x-\frac{x^3}{3}+\frac{x^5}{5}+o(x^5),\qquad
-\tan x=x+\frac{x^3}{3}+o(x^3).
+\sin x=\sum_{k=0}^{m}\frac{(-1)^k x^{2k+1}}{(2k+1)!}
++\frac{\sin(\theta x+(m+1)\pi)}{(2m+2)!}x^{2m+2}.
 $$
 
-!!! example "例 3.3：展开到相消后的首个非零项"
-
-    求 $\lim_{x\to 0}\displaystyle\frac{\ln(1+x)-x+\dfrac{x^2}{2}}{x^3}$。
-
-    **解：** 分子为 $\displaystyle\frac{x^3}{3}+o(x^3)$，所以极限为 $1/3$。只使用 $\ln(1+x)\sim x$ 会丢失决定结果的三阶项。
-
-#### 极值的高阶判别与近似误差
-
-若 $f'(a)=\cdots=f^{(m-1)}(a)=0$、$f^{(m)}(a)\ne 0$，则在相应可展开条件下：$m$ 为偶数时，由 $f^{(m)}(a)$ 的正、负分别判断严格极小、极大；$m$ 为奇数时，不是极值点。
-
-近似计算若使用 $n$ 次泰勒多项式，且区间上 $|f^{(n+1)}|\le M$，则
-
 $$
-|R_n(x)|\le \frac{M}{(n+1)!}|x-a|^{n+1}.
+\cos x=\sum_{k=0}^{m}\frac{(-1)^k x^{2k}}{(2k)!}
++\frac{\cos(\theta x+(m+1)\pi)}{(2m+2)!}x^{2m+2}.
 $$
 
-!!! tip "有限泰勒公式与无穷级数的分工"
+对 $x>-1$、$n\ge1$，
 
-    本章的有限展开只需控制有限阶余项；第十一章要把函数写成无穷级数，还需证明阶数趋于无穷时余项趋于零。有限展开有效，并不自动给出无穷展开等于原函数。
+$$
+\ln(1+x)=\sum_{k=1}^{n}\frac{(-1)^{k-1}}{k}x^k
++\frac{(-1)^n}{(n+1)(1+\theta x)^{n+1}}x^{n+1}.
+$$
+
+对 $x>-1$、$\alpha\in\mathbb R$，
+
+$$
+(1+x)^\alpha=\sum_{k=0}^{n}\binom{\alpha}{k}x^k
++\frac{\alpha(\alpha-1)\cdots(\alpha-n)}{(n+1)!}
+(1+\theta x)^{\alpha-n-1}x^{n+1},
+$$
+
+其中
+
+$$
+\binom{\alpha}{0}=1,\qquad
+\binom{\alpha}{k}=\frac{\alpha(\alpha-1)\cdots(\alpha-k+1)}{k!}\quad(k\ge1).
+$$
+
+#### §3.3 带有佩亚诺余项的泰勒公式
+
+设 $f$ 在 $x_0$ 处具有 $n$ 阶导数，则当 $x\to x_0$ 时，
+
+$$
+f(x)=\sum_{k=0}^{n}\frac{f^{(k)}(x_0)}{k!}(x-x_0)^k
++o\bigl((x-x_0)^n\bigr).
+$$
+
+余项 $o((x-x_0)^n)$ 称为佩亚诺余项。以下各式均在 $x\to0$ 时成立：
+
+$$
+e^x=\sum_{k=0}^{n}\frac{x^k}{k!}+o(x^n),
+$$
+
+$$
+\sin x=\sum_{k=0}^{m}\frac{(-1)^kx^{2k+1}}{(2k+1)!}+o(x^{2m+1}),
+$$
+
+$$
+\cos x=\sum_{k=0}^{m}\frac{(-1)^kx^{2k}}{(2k)!}+o(x^{2m}),
+$$
+
+$$
+\ln(1+x)=\sum_{k=1}^{n}\frac{(-1)^{k-1}}{k}x^k+o(x^n),\qquad n\ge1,
+$$
+
+$$
+(1+x)^\alpha=\sum_{k=0}^{n}\binom{\alpha}{k}x^k+o(x^n).
+$$
+
+#### §3.4 泰勒公式的应用
+
+以泰勒多项式作近似值时，
+
+$$
+f(x)\approx P_n(x),\qquad
+|f(x)-P_n(x)|=|R_n(x)|
+\le\frac{M}{(n+1)!}|x-x_0|^{n+1},
+$$
+
+其中 $M$ 是 $x_0$ 与 $x$ 之间 $|f^{(n+1)}|$ 的上界。
+
+!!! warning "提示"
+
+    -   **余项中的 $\xi$ 不是常数**：拉格朗日余项里的 $\xi$ 依赖于 $x$（也与 $n$ 有关），只能估计 $|f^{(n+1)}(\xi)|\le M$，不能把 $\xi$ 当作固定的展开点代入。
+
+        ??? example "拉格朗日余项估计"
+            <!-- 待补充 -->
+
+    -   **两种余项用途不同**：佩亚诺余项只描述 $x\to x_0$ 时的阶，不能给出具体误差界；要估计近似误差或证明不等式，应使用拉格朗日余项。
+
+        ??? example "佩亚诺余项与拉格朗日余项"
+            <!-- 待补充 -->
+
+    -   **展开阶数要足够高**：同阶无穷小相减时，低阶项会抵消，必须展开到首个不抵消的阶；如计算 $\sin x-x$ 需展开到 $x^3$ 项。
+
+        ??? example "展开阶数的选择"
+            <!-- 待补充 -->
+
+    -   **近似只在展开点附近可靠**：在 $x_0$ 处展开、却在远离 $x_0$ 的 $x$ 处使用，误差会迅速增大；用误差界 $\dfrac{M}{(n+1)!}|x-x_0|^{n+1}$ 检验适用范围。
+
+        ??? example "泰勒近似的适用范围"
+            <!-- 待补充 -->
 
 ### §4 数学建模（一）
 
-最优化建模的一般步骤：确定变量与可行范围，写目标函数，用约束消去多余变量，求候选点，检查端点或边界，最后解释量纲与实际意义。
+**数学模型：** 为了某种目的，对现实中的特定对象作必要的简化和假设，用数学工具得到的数学结构，用于解释对象的状态、预测未来或确定决策与控制。
 
-!!! example "例 3.4：开口圆柱容器的最省材料设计"
+!!! warning "提示"
 
-    制作容积为 $V>0$ 的无盖圆柱容器，底面和侧面单位面积耗材相同，忽略厚度，求最省材料的半径、高度关系。
+    -   **假设决定结论的适用范围**：数学模型建立在简化假设之上，结论只在假设成立的范围内有效；使用模型前要先说明假设，不能把模型结论无条件外推。
 
-    **解：** 由 $\pi r^2h=V$，表面积为 $S(r)=\pi r^2+\displaystyle\frac{2V}{r}$，$r>0$。令 $S'(r)=2\pi r-\displaystyle\frac{2V}{r^2}=0$，得 $r^3=\displaystyle\frac{V}{\pi}$，于是 $h=r$。
+        ??? example "模型假设与适用范围"
+            <!-- 待补充 -->
 
-    $S''(r)=2\pi+\displaystyle\frac{4V}{r^3}>0$，且两端趋于无穷，因此该设计给出全局最小表面积。
+    -   **变量、参数与常量要分清**：建模时要明确自变量、因变量、待定参数和常数，并统一单位；把参数当作变量或单位不一致都会导致错误结论。
+
+        ??? example "变量与参数"
+            <!-- 待补充 -->
+
+    -   **拟合不等于因果**：由数据拟合出的函数只表示相关性，不能仅凭拟合优度断言因果关系；外推预测更要谨慎。
+
+        ??? example "拟合与预测"
+            <!-- 待补充 -->
+
+    -   **建模流程要闭合**：实际问题 → 假设与简化 → 数学结构 → 求解 → 检验与修正，检验环节不能省略；若结果与实际不符，应回到假设或模型修改。
+
+        ??? example "数学建模流程"
+            <!-- 待补充 -->
 
 ### §5 函数图形的凹凸性与拐点
 
-沿用教材的图形约定：曲线在各点切线上方称为**凹**（向上弯，$\cup$），在切线下方称为**凸**（向下弯，$\cap$）。在二阶可导区间内，$f''>0$ 对应凹，$f''<0$ 对应凸。
+**凹与凸：** 设 $f$ 在区间 $I$ 内可导。若曲线 $y=f(x)$ 在 $I$ 内各点的切线之上，则称曲线在 $I$ 上是凹的；若在各点的切线之下，则称曲线在 $I$ 上是凸的。对应关系为
 
-拐点是连续曲线上凹凸性发生改变的点。寻找时先列出 $f''=0$ 或 $f''$ 不存在的候选点，再检查两侧凹凸性。$f''=0$ 既不是充分条件，也不是所有情形下的必要条件。
+$$
+\begin{aligned}
+\text{凹：}&\quad f(x)>f(t)+f'(t)(x-t),\\
+\text{凸：}&\quad f(x)<f(t)+f'(t)(x-t),
+\end{aligned}
+\qquad x,t\in I,\quad x\ne t.
+$$
 
-!!! warning "凹凸名称可能因教材而异"
+对 $x_1,x_2\in I$、$x_1\ne x_2$，凹函数满足
 
-    复习时同时记录“$f''$ 的符号、图像向哪边弯、切线在图像哪一侧”，不要只记名称。$x^4$ 在零点二阶导数为零却没有拐点；$x^3$ 在零点才发生凹凸改变。
+$$
+f\left(\frac{x_1+x_2}{2}\right)
+<\frac{f(x_1)+f(x_2)}{2};
+$$
+
+凸函数满足反向不等式。
+
+若 $f$ 在 $I$ 内二阶可导，则
+
+$$
+f''(x)>0\Rightarrow\text{曲线为凹},\qquad
+f''(x)<0\Rightarrow\text{曲线为凸}.
+$$
+
+**拐点：** 连续曲线上凹凸性发生改变的点。
+
+若 $f$ 在 $x_0$ 的某邻域内二阶可导，$(x_0,f(x_0))$ 是拐点，则 $f''(x_0)=0$。若 $f''$ 在 $x_0$ 两侧异号，则 $(x_0,f(x_0))$ 为拐点；若两侧同号，则不是拐点。
+
+!!! warning "提示"
+
+    -   **凹凸的方向约定**：本教材把曲线位于切线上方称为"凹"（$f''>0$），位于切线下方称为"凸"（$f''<0$）；不同教材或英文术语的凹凸方向可能相反，判断时以定义为准。
+
+        ??? example "凹凸性的判断"
+            <!-- 待补充 -->
+
+    -   **拐点是曲线上的点**：拐点应写成 $(x_0,f(x_0))$，不是 $x_0$；拐点处函数必须连续，且 $f''(x_0)=0$ 或 $f''(x_0)$ 不存在。
+
+        ??? example "拐点的表示"
+            <!-- 待补充 -->
+
+    -   **$f''(x_0)=0$ 不一定是拐点**：还必须要求 $f''$ 在 $x_0$ 两侧异号；如 $f(x)=x^4$ 在 $0$ 处 $f''(0)=0$，但两侧同号，不是拐点。
+
+        ??? example "拐点的判定"
+            <!-- 待补充 -->
+
+    -   **凹凸区间由 $f''$ 的符号划分**：分界点是 $f''=0$ 或 $f''$ 不存在的点；凹凸性与单调性是两个独立概念，不能由 $f'$ 的符号直接判断凹凸。
+
+        ??? example "求凹凸区间"
+            <!-- 待补充 -->
 
 ### §6 函数图形的描绘
 
-#### 渐近线
+#### §6.1 曲线的渐近线
 
-- **竖直渐近线：** 若 $x\to a$ 的某一侧有 $|f(x)|\to+\infty$，则 $x=a$ 为竖直渐近线。
-- **水平渐近线：** 若 $x\to+\infty$ 或 $-\infty$ 时 $f(x)\to b$，则该方向有 $y=b$。
-- **斜渐近线：** 若 $f(x)-(kx+b)\to 0$，$k\ne 0$，则 $y=kx+b$ 是该方向的斜渐近线；可依次计算
+**渐近线：** 当曲线上的点沿曲线趋于无穷远时，该点到某一直线的距离趋于零，则该直线称为曲线的渐近线。
+
+对 $y=f(x)$，若在 $x\to+\infty$ 或 $x\to-\infty$ 的相应方向有
 
 $$
-k=\lim \frac{f(x)}x,\qquad b=\lim[f(x)-kx].
+\lim\bigl(f(x)-ax-b\bigr)=0,
 $$
 
-要求两个极限都有限。正、负无穷方向应分别讨论；曲线可以穿过水平或斜渐近线。
+则 $y=ax+b$ 为该方向的渐近线。其中
 
-#### 作图步骤
+$$
+a=\lim\frac{f(x)}x,\qquad b=\lim\bigl(f(x)-ax\bigr)
+$$
 
-定义域与间断点 → 奇偶性、周期性及交轴点 → 极限与渐近线 → $f'$ 的符号、极值 → $f''$ 的符号、拐点 → 综合画图。
+均为有限数；$a=0$ 时，$y=b$ 为水平渐近线。
 
-!!! example "例 3.5：用结构描绘有理函数"
+若 $x\to x_0$ 的至少一个单侧极限满足 $|f(x)|\to\infty$，则直线 $x=x_0$ 为铅直渐近线。
 
-    分析 $f(x)=x+\displaystyle\frac{1}{x}$ 的主要图形特征。
+#### §6.2 函数图形的描绘
 
-    **解：** 定义域为 $x\ne 0$，函数为奇函数；渐近线为 $x=0$ 和 $y=x$。由 $f'=1-\displaystyle\frac{1}{x^2}$，在 $(-\infty,-1)$、$(1,+\infty)$ 递增，在 $(-1,0)$、$(0,1)$ 递减。
+!!! warning "提示"
 
-    $(-1,-2)$ 是极大值点，$(1,2)$ 是极小值点。$f''=\displaystyle\frac{2}{x^3}$，两侧弯曲方向不同，但原点不在曲线上，因此不能把原点记为拐点。
+    -   **先确定定义域与对称性**：作图前先求定义域、奇偶性、周期性，可减少计算并避免画出定义域外的部分；间断点、零点也要先标出。
 
-### §7 导数在经济中的应用（\*）
+        ??? example "作图前的准备"
+            <!-- 待补充 -->
 
-教材第 164 页起选学。设产量为 $q$，成本 $C(q)$、收入 $R(q)$、利润 $\Pi(q)=R(q)-C(q)$。
+    -   **渐近线要分方向讨论**：斜渐近线要求 $a=\lim f(x)/x$、$b=\lim(f(x)-ax)$ 均为有限数；$x\to+\infty$ 与 $x\to-\infty$ 可能对应不同渐近线，铅直渐近线则考察单侧无穷极限。
 
-- 边际成本、边际收入分别为 $C'(q),R'(q)$，表示产量增加一个小单位时的近似增量。
-- 内部利润极值的候选条件是 $R'(q)=C'(q)$，仍需二阶或变号判别。
-- 平均成本为 $\overline C(q)=\displaystyle\frac{C(q)}{q}$，其内部驻点满足 $C'(q)=\displaystyle\frac{C(q)}{q}$。
-- 对非零的 $y=f(x)$，弹性可写成 $E=x \displaystyle\frac{f'(x)}{f(x)}$，表示相对变化率之比。需求价格弹性常另取负号或绝对值，必须先看定义。
+        ??? example "求渐近线"
+            <!-- 待补充 -->
 
-这些经济专门术语作为应用拓展；导数、最值和相对变化率的计算方法与主线相通。
+    -   **分区间列表不能漏点**：用 $f'=0$、$f''=0$、$f'$ 或 $f''$ 不存在的点以及间断点划分区间，逐段判断单调性、极值、凹凸性和拐点。
+
+        ??? example "列表描绘函数图形"
+            <!-- 待补充 -->
+
+    -   **图形要与分析结果一致**：渐近线只是趋势，不能代替曲线与坐标轴的交点、极值点和拐点；作图后要用单调性、凹凸性检查图形是否合理。
+
+        ??? example "图形与性质的一致性"
+            <!-- 待补充 -->
+
+### §7 导数在经济中的应用 \*
+
+#### §7.1 经济中常用的一些函数
+
+设 $q$ 为产品数量，$p$ 为价格。
+
+**成本函数：** 总成本 $C(q)$ 由固定成本 $C_1$ 和可变成本 $C_2(q)$ 组成；平均成本为 $\overline C(q)$：
+
+$$
+C(q)=C_1+C_2(q),\qquad \overline C(q)=\frac{C(q)}q\quad(q>0).
+$$
+
+**收益函数与利润函数：** 总收益为 $R(q)$，平均收益为单价 $p(q)$；利润为 $L(q)$：
+
+$$
+R(q)=qp(q),\qquad \frac{R(q)}q=p(q),\qquad
+L(q)=R(q)-C(q).
+$$
+
+**需求函数与供给函数：** 在其他因素不变的条件下，需求量 $q=f(p)$ 随价格增加而减少；供给量 $q=\varphi(p)$ 随价格增加而增加。均衡价格 $p^*$ 与均衡数量 $q^*$ 满足
+
+$$
+f(p^*)=\varphi(p^*)=q^*.
+$$
+
+#### §7.2 边际分析
+
+**边际函数：** 经济函数 $y=f(x)$ 的导数 $f'(x)$ 称为其边际函数，表示 $x$ 变化时 $y$ 的瞬时变化率。
+
+$$
+\text{边际成本}=C'(q),\qquad
+\text{边际收益}=R'(q),\qquad
+\text{边际利润}=L'(q)=R'(q)-C'(q).
+$$
+
+在可导的内点 $q_0$ 取得利润极值的必要条件为
+
+$$
+L'(q_0)=0,\qquad R'(q_0)=C'(q_0).
+$$
+
+#### §7.3 弹性分析
+
+**弹性：** 设 $y=f(x)$，$x\ne0$、$f(x)\ne0$。平均弹性为相对增量之比；弹性为其极限：
+
+$$
+\overline E=\frac{\Delta y/y}{\Delta x/x},\qquad
+E_xf(x)=\lim_{\Delta x\to0}\frac{\Delta y/y}{\Delta x/x}
+=\frac{x f'(x)}{f(x)}.
+$$
+
+**需求弹性：** 对需求函数 $q=f(p)$，
+
+$$
+\eta(p)=-\frac{pf'(p)}{f(p)},\qquad
+\overline\eta=-\frac{\Delta q}{\Delta p}\frac{p_0}{q_0}.
+$$
+
+**供给弹性：** 对供给函数 $q=\varphi(p)$，
+
+$$
+\varepsilon(p)=\frac{p\varphi'(p)}{\varphi(p)},\qquad
+\overline\varepsilon=\frac{\Delta q}{\Delta p}\frac{p_0}{q_0}.
+$$
+
+其中 $p_0,q_0$ 为初始价格与数量，$\Delta p,\Delta q$ 为相应增量，公式中的分母均须非零。
+
+!!! warning "提示"
+
+    -   **弹性不是导数**：弹性是相对变化率之比 $E_xf=\dfrac{x f'(x)}{f(x)}$，无量纲；边际 $f'(x)$ 是绝对变化率，两者不能混用。
+
+        ??? example "弹性与边际"
+            <!-- 待补充 -->
+
+    -   **需求弹性与供给弹性的符号**：需求函数单调递减，教材用 $\eta=-p f'(p)/f(p)$ 使其为正；供给弹性 $\varepsilon=p\varphi'(p)/\varphi(p)$ 不加负号，套公式时不要漏掉或误加负号。
+
+        ??? example "需求弹性与供给弹性"
+            <!-- 待补充 -->
+
+    -   **点弹性与平均弹性**：题目给出函数时用点弹性 $E_xf$；只给出离散数据或增量时，用平均弹性 $\dfrac{\Delta y/y}{\Delta x/x}$，两者不能互相替代。
+
+        ??? example "点弹性与弧弹性"
+            <!-- 待补充 -->
+
+    -   **弹性与收益的关系要看符号**：需求弹性 $|\eta|>1$ 时降价可使收益增加，$|\eta|<1$ 时涨价可使收益增加；这里的收益是 $R=pq$，不是 $q$。
+
+        ??? example "弹性与收益"
+            <!-- 待补充 -->
 
 ### §8 曲率
 
-曲率衡量切线方向随弧长改变的快慢：$\kappa=|\displaystyle\frac{\mathrm d\theta}{\mathrm ds}|$。对 $y=f(x)$，
+#### §8.1 曲率
 
-$$
-\kappa=\frac{|f''(x)|}{[1+f'(x)^2]^{3/2}}.
-$$
-
-对正则参数曲线 $x=x(t),y=y(t)$，
-
-$$
-\kappa=\frac{|x'y''-y'x''|}{(x'^2+y'^2)^{3/2}}.
-$$
-
-当 $\kappa\ne 0$ 时，曲率半径 $\rho=\displaystyle\frac{1}{\kappa}$；曲率圆的圆心位于曲线的凹侧法线上。对 $f''\ne 0$，圆心坐标为
-
-$$
-X=x-\frac{f'(1+f'^2)}{f''},\qquad
-Y=f(x)+\frac{1+f'^2}{f''}.
-$$
-
-直线曲率为零，半径为 $R$ 的圆曲率为 $\displaystyle\frac{1}{R}$。
-
-!!! example "例 3.6：曲率与曲率圆"
-
-    求抛物线 $y=x^2$ 在原点的曲率及曲率圆。
-
-    **解：** $f'(0)=0,f''(0)=2$，所以 $\kappa=2,\rho=1/2$。圆心为 $(0,1/2)$，曲率圆为 $x^2+(y-1/2)^2=1/4$。
-
-### §9 方程的近似根（\*）
-
-教材第 180 页起选学。先通过图形、变号与单调性确定隔根区间，再选数值方法。
-
-| 方法 | 基本步骤或迭代式 | 需要关注的条件 |
-| --- | --- | --- |
-| 二分法 | 每次保留端点异号的一半区间 | 函数连续；不适合直接发现偶重根 |
-| 牛顿法（切线法） | $x_{n+1}=x_n-\displaystyle\frac{f(x_n)}{f'(x_n)}$ | 导数不能为零，初值要合适；不保证任意初值都收敛 |
-| 弦截法 | $x_{n+1}=x_n-f(x_n)\displaystyle\frac{x_n-x_{n-1}}{f(x_n)-f(x_{n-1})}$ | 使用割线近似切线；分母非零，需判断收敛 |
-
-二分 $n$ 次后的区间长度为 $\displaystyle\frac{b-a}{2^n}$；若取这个区间的中点，误差不超过 $\displaystyle\frac{b-a}{2^{n+1}}$。光滑函数的单根附近，在导数非零等条件下，牛顿法具有二次收敛速度。
-
-### 本章自测
-
-!!! example "自测 3"
-
-    1. 设 $f\in C[0,1]$，在 $(0,1)$ 可导，$f(0)=f(1)$。证明存在 $\xi\in (0,1)$ 使 $f'(\xi)=0$，并说明用到的条件。
-    2. 求 $\lim_{x\to 0}\displaystyle\frac{\sin x-x\cos x}{x^3}$。
-    3. 求 $f(x)=x^3-3x$ 在 $[-2,2]$ 上的最大、最小值和全部取得点。
-    4. 求 $y=\displaystyle\frac{x}{x-1}$ 的竖直与水平渐近线。
-    5. 判断 $y=x^4$ 的零点是否为极值点、拐点，并说明判据。
-    6. 求 $y=\ln x$ 在 $x=1$ 处的曲率。
-    7. （\*）用牛顿法求 $\sqrt2$，从 $x_0=1$ 出发写出前两次迭代结果。
-
-    ??? success "答案与提示"
-
-        1. 闭区间连续、开区间可导、端点值相等，正好满足罗尔定理。
-        2. 分子为 $\displaystyle\frac{x^3}{3}+o(x^3)$，故极限为 $1/3$。
-        3. 候选点为 $-2,-1,1,2$，函数值分别为 $-2,2,-2,2$。最大值为 $2$，在 $-1,2$ 取得；最小值为 $-2$，在 $-2,1$ 取得。
-        4. 竖直渐近线 $x=1$；正、负无穷方向均有水平渐近线 $y=1$。
-        5. $x^4\ge 0$，零点为严格极小值点；$f''=12x^2$ 在两侧不变号，故不是拐点。
-        6. $\displaystyle\frac{|f''(1)|}{[1+f'(1)^2]^{3/2}}=\frac{1}{2\sqrt2}$。
-        7. $x_{n+1}=\displaystyle\frac{x_n+\dfrac{2}{x_n}}{2}$，$x_1=3/2$，$x_2=17/12$。
-
-## 第四章 不定积分
-
-### §1 不定积分的概念
-
-#### 原函数与不定积分
-
-若在区间 $I$ 上有 $F'(x)=f(x)$，则 $F$ 是 $f$ 的一个原函数。$f$ 的全部原函数构成不定积分：
-
-$$
-\int f(x)\,\mathrm dx=F(x)+C.
-$$
-
-同一区间上的任意两个原函数只差常数，这由“导数恒为零的函数是常数”推出。连续函数一定有原函数，但原函数不一定能用初等函数表示，例如 $e^{-x^2}$ 的原函数。
-
-!!! warning "积分常数与定义区间"
-
-    不定积分必须写任意常数。若定义域分成不相连的区间，各区间上的常数可以独立选取。例如 $\displaystyle\frac{1}{x}$ 在 $(0,+\infty)$ 与 $(-\infty,0)$ 上的原函数可以分别是 $\ln|x|+C_1$、$\ln|x|+C_2$。
-
-#### 基本积分表
-
-以下均在被积函数连续的适当区间上使用，$a>0$：
-
-| 被积函数 | 一个原函数 |
-| --- | --- |
-| $x^\alpha$，$\alpha\ne-1$ | $\displaystyle\frac{x^{\alpha+1}}{\alpha+1}$ |
-| $\displaystyle\frac{1}{x}$ | $\ln\lvert x\rvert$ |
-| $e^x$，$a^x$（$a\ne 1$） | $e^x$，$\displaystyle\frac{a^x}{\ln a}$ |
-| $\sin x$，$\cos x$ | $-\cos x$，$\sin x$ |
-| $\sec^2x$，$\csc^2x$ | $\tan x$，$-\cot x$ |
-| $\sec x\tan x$，$\csc x\cot x$ | $\sec x$，$-\csc x$ |
-| $\displaystyle\frac{1}{a^2+x^2}$ | $a^{-1}\arctan(\displaystyle\frac{x}{a})$ |
-| $\displaystyle\frac{1}{\sqrt{a^2-x^2}}$ | $\arcsin(\displaystyle\frac{x}{a})$ |
-| $\displaystyle\frac{1}{x^2-a^2}$ | $(2a)^{-1}\ln\lvert\displaystyle\frac{x-a}{x+a}\rvert$ |
-| $\displaystyle\frac{1}{\sqrt{x^2+a^2}}$ | $\ln\lvert x+\sqrt{x^2+a^2}\rvert$ |
-| $\displaystyle\frac{1}{\sqrt{x^2-a^2}}$ | $\ln\lvert x+\sqrt{x^2-a^2}\rvert$，$\lvert x\rvert>a$ |
-
-上表省略的任意常数在写不定积分答案时都要补上。还常用
-
-$$
-\int \tan x\,\mathrm dx=-\ln|\cos x|+C,\qquad
-\int \cot x\,\mathrm dx=\ln|\sin x|+C,
-$$
-
-$$
-\int \sec x\,\mathrm dx=\ln|\sec x+\tan x|+C,\qquad
-\int \csc x\,\mathrm dx=\ln|\csc x-\cot x|+C.
-$$
-
-#### 线性性质
-
-$$
-\int[\alpha f(x)+\beta g(x)]\,\mathrm dx
-=\alpha\int f(x)\,\mathrm dx+\beta\int g(x)\,\mathrm dx.
-$$
-
-这里的任意常数最终合并为一个。积分不保持一般乘积或商：$\displaystyle\int fg$ 不能拆成两个积分的乘积。
-
-### §2 不定积分的几种基本方法
-
-#### 凑微分法（第一换元法）
-
-若 $F'=f$，则链式法则反向给出
-
-$$
-\int f(\varphi(x))\varphi'(x)\,\mathrm dx=F(\varphi(x))+C.
-$$
-
-识别一个整体及其导数，例如 $\displaystyle\int \frac{f'}{f}\,\mathrm dx=\ln|f|+C$（在 $f\ne 0$ 的区间）。凑微分时缺少的常数因子必须补偿。
-
-!!! example "例 4.1：把内层函数作为整体"
-
-    求 $\displaystyle\int \frac{x}{1+x^2}\,\mathrm dx$。
-
-    **解：** $\mathrm d(1+x^2)=2x\,\mathrm dx$，所以积分为 $\displaystyle\frac12\ln(1+x^2)+C$。少写 $1/2$ 会使求导结果扩大一倍。
-
-#### 变量代换法（第二换元法）
-
-令 $x=\varphi(t)$，在可逆的合适区间内，
-
-$$
-\int f(x)\,\mathrm dx=\int f(\varphi(t))\varphi'(t)\,\mathrm dt.
-$$
-
-先化简为易积分的形式，求完后再换回 $x$。含根式时可参考：
-
-| 结构 | 常用代换 | 分支提醒 |
-| --- | --- | --- |
-| $\sqrt{a^2-x^2}$ | $x=a\sin t$ | 选择 $\cos t\ge 0$ 的区间化简根号 |
-| $\sqrt{a^2+x^2}$ | $x=a\tan t$ | 可取 $-\pi/2<t<\pi/2$ |
-| $\sqrt{x^2-a^2}$ | 在 $x>a$ 分支取 $x=a\sec t$ | $x<-a$ 的分支另选代换或回代核查 |
-| 同一线性式的分数次幂 | 取共同根式为新变量 | 指数分母的公倍数有助于有理化 |
-
-!!! example "例 4.2：三角代换与回代"
-
-    求 $\displaystyle\int \sqrt{a^2-x^2}\,\mathrm dx$，$a>0$、$|x|<a$。
-
-    **解：** 令 $x=a\sin t$，$-\pi/2<t<\pi/2$，被积式化为 $a^2\cos^2t\,\mathrm dt$。降幂后积分并回代得
-
-    $$
-    \int \sqrt{a^2-x^2}\,\mathrm dx
-    =\frac x2\sqrt{a^2-x^2}+\frac{a^2}{2}\arcsin\frac xa+C.
-    $$
-
-#### 分部积分法
-
-由乘积微分公式得到
-
-$$
-\int u\,\mathrm dv=uv-\int v\,\mathrm du.
-$$
-
-选择 $u$ 时希望它求导后更简单，选择 $\mathrm dv$ 时希望能容易积分。对数、反三角函数常适合作 $u$；多项式乘指数或三角函数可反复分部积分。
-
-!!! example "例 4.3：两类分部积分"
-
-    分别求 $\displaystyle\int \ln x\,\mathrm dx$（$x>0$）与 $\displaystyle\int e^x\sin x\,\mathrm dx$。
-
-    **解：** 第一题取 $u=\ln x,\mathrm dv=\mathrm dx$，得 $x\ln x-x+C$。
-
-    第二题连续两次分部积分。记原积分为 $I$，得到 $I=e^x\sin x-e^x\cos x-I$，整理为
-
-    $$
-    I=\frac{e^x}{2}(\sin x-\cos x)+C.
-    $$
-
-!!! tip "先看结构，再选方法"
-
-    内层函数及其导数成对出现时先凑微分；根式或复杂复合式可尝试换元；两类函数相乘且一类求导后变简单时考虑分部积分。方法可以组合，求完后对结果求导是直接的数学核对方式。
-
-### §3 某些特殊类型函数的不定积分
-
-#### 有理函数：多项式除法与部分分式
-
-对 $\displaystyle\frac{P(x)}{Q(x)}$，若分子次数不小于分母次数，先作多项式除法。对剩下的真分式，把分母在实数范围分解为一次因式与不可约二次因式，再配部分分式。
-
-- 因子 $(x-a)^m$ 对应 $\displaystyle\frac{A_1}{x-a}+\cdots+\frac{A_m}{(x-a)^m}$。
-- 不可约二次因子 $(x^2+px+q)^m$ 对应 $\sum_{k=1}^m\displaystyle\frac{B_kx+C_k}{(x^2+px+q)^k}$。
-
-二次式分母常通过“分子拆成分母导数的一部分 + 常数”、配方和递推处理，最后化为有理式、对数与反正切。
-
-!!! example "例 4.4：先拆分，避免盲目换元"
-
-    求 $\displaystyle\int \frac{1}{x(x+1)}\,\mathrm dx$。
-
-    **解：** $\displaystyle\frac{1}{x(x+1)}=\frac{1}{x}-\frac{1}{x+1}$，所以结果为 $\ln|x|-\ln|x+1|+C$，在不跨越 $-1,0$ 的区间理解。
-
-#### 三角函数有理式
-
-对 $R(\sin x,\cos x)$，万能代换 $t=\tan(\displaystyle\frac{x}{2})$ 给出
-
-$$
-\sin x=\frac{2t}{1+t^2},\qquad
-\cos x=\frac{1-t^2}{1+t^2},\qquad
-\mathrm dx=\frac{2\,\mathrm dt}{1+t^2}.
-$$
-
-它把三角有理式转成有理函数，但需在代换有效的区间内使用，计算量也可能增大。更简单的结构应优先利用：
-
-- $\sin x$ 为奇数次幂时，留出 $\sin x\,\mathrm dx$，其余用 $\sin^2x=1-\cos^2x$。
-- $\cos x$ 为奇数次幂时，类似地用 $u=\sin x$。
-- 两者均为偶数次幂时，用降幂与倍角公式。
-- 含 $\sec^2x\,\mathrm dx$ 或 $\csc^2x\,\mathrm dx$ 时，考虑 $\tan x$ 或 $\cot x$。
-
-#### 某些无理函数：先消去根式
-
-根式中的二次多项式先配方，再选择三角代换；若涉及 $\sqrt[m]{x}$ 与 $\sqrt[n]{x}$，常取 $x=t^k$，其中 $k$ 为 $m,n$ 的公倍数。代换必须记录实数范围，尤其是偶次根的符号。
-
-!!! example "例 4.5：根式有理化"
-
-    求 $\displaystyle\int \frac{\sqrt x}{1+\sqrt x}\,\mathrm dx$，$x>0$。
-
-    **解：** 令 $t=\sqrt x$，则 $\mathrm dx=2t\,\mathrm dt$，得到
-
-    $$
-    \int \frac{2t^2}{1+t}\,\mathrm dt
-    =\int 2\left(t-1+\frac1{t+1}\right)\mathrm dt
-    =x-2\sqrt x+2\ln(1+\sqrt x)+C.
-    $$
-
-### 本章自测
-
-!!! example "自测 4"
-
-    1. 求 $\displaystyle\int (3x^2-\frac{2}{x})\,\mathrm dx$。
-    2. 求 $\displaystyle\int x e^{x^2}\,\mathrm dx$。
-    3. 求 $\displaystyle\int x\ln x\,\mathrm dx$（$x>0$）。
-    4. 求 $\displaystyle\int \frac{x^2}{1+x^2}\,\mathrm dx$。
-    5. 求 $\displaystyle\int \sin^3x\cos x\,\mathrm dx$。
-    6. 求 $\displaystyle\int \frac{1}{x\sqrt{\ln x}}\,\mathrm dx$（$x>1$），说明选择哪个整体换元。
-
-    ??? success "答案与提示"
-
-        1. $x^3-2\ln|x|+C$。
-        2. 令 $u=x^2$，结果为 $\displaystyle\frac{e^{x^2}}{2}+C$。
-        3. 分部积分得 $\displaystyle\frac{x^2}{2}\ln x-\frac{x^2}{4}+C$。
-        4. 分拆成 $1-\displaystyle\frac{1}{1+x^2}$，得 $x-\arctan x+C$。
-        5. 令 $u=\sin x$，得 $\displaystyle\frac{\sin^4x}{4}+C$。
-        6. 令 $u=\ln x$，积分为 $\displaystyle\int u^{-1/2}\,\mathrm du=2\sqrt{\ln x}+C$。
-
-## 第五章 定积分及其应用
-
-### §1 定积分概念
-
-#### 分割、取点、求和与极限
-
-将 $[a,b]$ 分成 $a=x_0<x_1<\cdots<x_n=b$，在每段任取 $\xi_i$，记 $\Delta x_i=x_i-x_{i-1}$、$\lambda=\max_i\Delta x_i$。若
-
-$$
-\lim_{\lambda\to 0}\sum_{i=1}^nf(\xi_i)\Delta x_i=I
-$$
-
-与分割及取点方式无关，则 $f$ 在 $[a,b]$ 上黎曼可积，记 $I=\displaystyle\int_a^bf(x)\,\mathrm dx$。积分是数值，积分变量是哑变量，可以更换字母。
-
-当 $f\ge 0$ 时，它表示曲边梯形面积；一般情况下表示上、下区域面积的带符号之差。几何面积应对绝对值积分或按符号分段。
-
-#### 可积函数类
-
-黎曼可积必有界，有界不一定可积。闭区间上的连续函数、单调函数，以及有界且只有有限个间断点的函数都可积。
-
-可积不要求连续；可积也不保证有原函数。例如阶跃函数可积，但跳跃点使它不能在整个区间上作为某个可导函数的导数。相反，有原函数与是否黎曼可积也不能脱离有界性等条件混为一谈。
-
-!!! example "例 5.1：把数列和式识别为定积分"
-
-    求 $\lim_{n\to \infty}\sum_{k=1}^n \displaystyle\frac{n}{n^2+k^2}$。
-
-    **解：** 改写为 $\displaystyle\frac1n\sum_{k=1}^n[1+(\frac{k}{n})^2]^{-1}$，这是 $[0,1]$ 上等分、取右端点的黎曼和，因此极限为 $\displaystyle\int_0^1\frac{\mathrm dx}{1+x^2}=\pi/4$。
-
-### §2 定积分的性质和基本定理
-
-#### 基本性质
-
-$$
-\int_a^af=0,\qquad \int_b^af=-\int_a^bf,\qquad
-\int_a^bf=\int_a^cf+\int_c^bf.
-$$
-
-线性性质仍成立。以下保序与估值默认 $a<b$ 且函数可积：
-
-$$
-f\le g\Rightarrow\int_a^bf\le \int_a^bg,\qquad
-\left|\int_a^bf\right|\le \int_a^b|f|.
-$$
-
-若 $m\le f\le M$，则 $m(b-a)\le \displaystyle\int_a^bf\le M(b-a)$。若 $f$ 连续，积分中值定理给出某个 $\xi\in[a,b]$，使
-
-$$
-\int_a^bf(x)\,\mathrm dx=f(\xi)(b-a).
-$$
-
-积分平均值为 $(b-a)^{-1}\displaystyle\int_a^bf$。连续非负函数若在某一点为正，则在整个非退化区间上的积分为正；连续非负函数积分为零，当且仅当它恒为零。
-
-#### 微积分学基本定理
-
-若 $f$ 连续，定义 $F(x)=\displaystyle\int_a^xf(t)\,\mathrm dt$，则
-
-$$
-F'(x)=f(x).
-$$
-
-更一般地，被积函数可积且在 $x_0$ 连续时，变上限积分在该点的导数等于 $f(x_0)$。
-
-若 $\alpha,\beta$ 可导、$f$ 连续，则
-
-$$
-\frac{\mathrm d}{\mathrm dx}\int_{\alpha(x)}^{\beta(x)}f(t)\,\mathrm dt
-=f(\beta(x))\beta'(x)-f(\alpha(x))\alpha'(x).
-$$
-
-若 $F'=f$ 且 $f$ 连续，则牛顿—莱布尼茨公式为
-
-$$
-\int_a^bf(x)\,\mathrm dx=F(b)-F(a).
-$$
-
-!!! warning "区分积分变量与外部变量"
-
-    对 $\displaystyle\int_0^xf(t)\,\mathrm dt$ 求导，结果为 $f(x)$；若被积函数还显含外部变量，例如 $\displaystyle\int_0^x(x-t)f(t)\,\mathrm dt$，不能只把 $t=x$ 代入。可先拆成 $x\displaystyle\int_0^xf(t)\,\mathrm dt-\int_0^xtf(t)\,\mathrm dt$，再求导，结果为 $\displaystyle\int_0^xf(t)\,\mathrm dt$。
-
-!!! example "例 5.2：变限积分与链式法则"
-
-    求 $G(x)=\displaystyle\int_x^{x^2}\sin(t^2)\,\mathrm dt$ 的导数。
-
-    **解：** 上限与下限分别贡献一项，$G'(x)=2x\sin(x^4)-\sin(x^2)$。不需要先找到 $\sin(t^2)$ 的初等原函数。
-
-### §3 定积分的计算方法
-
-#### 换元与分部积分
-
-在相应连续、可导条件下，令 $x=\varphi(t)$，$\varphi(\alpha)=a,\varphi(\beta)=b$，有
-
-$$
-\int_a^bf(x)\,\mathrm dx
-=\int_\alpha^\beta f(\varphi(t))\varphi'(t)\,\mathrm dt.
-$$
-
-换元时同时改变被积函数、微分和上下限。按新上下限计算完，不必再换回旧变量；递减代换的负号与反向积分限应配套处理。
-
-$$
-\int_a^bu(x)v'(x)\,\mathrm dx
-=[u(x)v(x)]_a^b-\int_a^bu'(x)v(x)\,\mathrm dx.
-$$
-
-#### 利用对称性、周期性和区间变换
-
-| 结构 | 简化公式 |
-| --- | --- |
-| 奇函数、对称区间 | $\displaystyle\int_{-a}^af(x)\,\mathrm dx=0$ |
-| 偶函数、对称区间 | $\displaystyle\int_{-a}^af(x)\,\mathrm dx=2\int_0^af(x)\,\mathrm dx$ |
-| 区间反射 | $\displaystyle\int_a^bf(x)\,\mathrm dx=\int_a^bf(a+b-x)\,\mathrm dx$ |
-| 周期为 $T>0$ | 一个完整周期的积分与起点无关；整周期数可提取倍数 |
-| $f(a+b-x)=f(x)$ | $\displaystyle\int_a^bxf(x)\,\mathrm dx=\frac{a+b}{2}\int_a^bf(x)\,\mathrm dx$ |
-
-这些公式都要在积分存在的前提下使用；反常积分不能仅凭奇偶性越过奇点相消。
-
-!!! example "例 5.3：区间反射省去求原函数"
-
-    求 $I=\displaystyle\int_0^{\pi/2}\frac{\sin x}{\sin x+\cos x}\,\mathrm dx$。
-
-    **解：** 作 $x=\pi/2-t$，得到 $I=\displaystyle\int_0^{\pi/2}\frac{\cos t}{\sin t+\cos t}\,\mathrm dt$。两式相加得 $2I=\pi/2$，所以 $I=\pi/4$。
-
-### §4 定积分的应用
-
-#### 微元法
-
-把总量分成小块，找出小块的一阶近似 $\mathrm dQ$，再按几何范围积分。先确定“积累什么、沿哪个变量切片、每片厚度是什么”，再写公式。
-
-#### 平面面积与立体体积
-
-| 对象 | 公式与条件 |
-| --- | --- |
-| 两曲线之间的面积 | $A=\displaystyle\int_a^b\lvert f(x)-g(x)\rvert\,\mathrm dx$；交点处分段 |
-| 用水平截线算面积 | $A=\displaystyle\int_c^d[x_{\rm right}(y)-x_{\rm left}(y)]\,\mathrm dy$ |
-| 极坐标面积 | $A=\displaystyle\frac12\int_\alpha^\beta[r_2(\theta)^2-r_1(\theta)^2]\,\mathrm d\theta$，要求 $0\le r_1\le r_2$ 且区域不重复覆盖 |
-| 已知截面积的体积 | $V=\displaystyle\int_a^bA(x)\,\mathrm dx$ |
-| 绕轴旋转的垫片法 | $V=\pi\displaystyle\int_a^b[R(x)^2-r(x)^2]\,\mathrm dx$，内外半径是到旋转轴的距离 |
-| 绕 $y$ 轴的柱壳法 | $V=2\pi\displaystyle\int_a^bxh(x)\,\mathrm dx$，适用于 $0\le a<b$ 且旋转壳层不重复覆盖 |
-
-旋转区域跨越轴时，不能直接把带符号的坐标当半径；应先画出旋转后的截面，确定真实内外半径或避免重叠的壳层。
-
-!!! example "例 5.4：同一区域的面积与旋转体积"
-
-    区域由 $y=x$、$y=x^2$ 围成，求面积及绕 $x$ 轴旋转所得体积。
-
-    **解：** 交点为 $x=0,1$，在其间 $x\ge x^2$，故面积为 $\displaystyle\int_0^1(x-x^2)\,\mathrm dx=1/6$。外半径为 $x$，内半径为 $x^2$，体积为
-
-    $$
-    V=\pi\int_0^1(x^2-x^4)\,\mathrm dx=\frac{2\pi}{15}.
-    $$
-
-#### 弧长与旋转曲面面积
-
-弧长元始终非负。按参数从小到大积分：
-
-$$
-L=\int_a^b\sqrt{1+f'(x)^2}\,\mathrm dx,
-$$
-
-$$
-L=\int_\alpha^\beta\sqrt{x'(t)^2+y'(t)^2}\,\mathrm dt,
-\qquad
-L=\int_\alpha^\beta\sqrt{r(\theta)^2+r'(\theta)^2}\,\mathrm d\theta.
-$$
-
-若平面曲线绕一条轴旋转且曲面没有被重复计入，表面积为
-
-$$
-S=\int_L2\pi\,\operatorname{dist}(P,\text{旋转轴})\,\mathrm ds.
-$$
-
-例如 $y=f(x)\ge 0$ 绕 $x$ 轴旋转，$S=2\pi\displaystyle\int_a^bf(x)\sqrt{1+f'(x)^2}\,\mathrm dx$。面积、体积、弧长与曲面面积的积分元不同，不能只凭图形相似套公式。
-
-#### 物理应用
-
-| 物理量 | 微元与积分 |
-| --- | --- |
-| 直线上的变力做功 | $W=\displaystyle\int_a^bF(x)\,\mathrm dx$，$F$ 取沿位移方向的有符号分量 |
-| 线密度为 $\rho(x)$ 的细杆质量 | $M=\displaystyle\int_a^b\rho(x)\,\mathrm dx$ |
-| 细杆质心与转动惯量 | $\bar x=M^{-1}\displaystyle\int_a^bx\rho(x)\,\mathrm dx$；$I=\displaystyle\int_a^bd(x,\text{轴})^2\rho(x)\,\mathrm dx$ |
-| 竖直平板所受静水压力 | $F=\displaystyle\int \rho g h\,w(h)\,\mathrm dh$；$h$ 为液面下深度，$w(h)$ 为该深度的水平宽度 |
-| 引力 | 对每个质量元使用 $\displaystyle\frac{Gm\,\mathrm dm}{r^2}$，再取所需方向的分量积分 |
-
-例如，均匀细杆位于 $[0,L]$，线密度为 $\rho$，质量 $m$ 的质点位于杆外 $a>L$，引力大小为
-
-$$
-Gm\rho\int_0^L\frac{\mathrm dx}{(a-x)^2}
-=Gm\rho\left(\frac1{a-L}-\frac1a\right),
-$$
-
-方向指向细杆。更一般的质量分布将在第九章统一处理。
-
-#### 经济应用
-
-边际量积分还原总量的变化，例如 $C(q_2)-C(q_1)=\displaystyle\int_{q_1}^{q_2}C'(q)\,\mathrm dq$；绝对成本还需固定成本或一个初始值。连续收入流 $R(t)$、固定连续贴现率 $r$ 下，区间 $[0,T]$ 的现值模型为 $\displaystyle\int_0^TR(t)e^{-rt}\,\mathrm dt$。经济模型作为应用阅读，重点理解累计量与变化率的对应。
-
-### §5 反常积分
-
-#### 无穷区间上的反常积分
-
-$$
-\int_a^{+\infty}f(x)\,\mathrm dx
-=\lim_{A\to+\infty}\int_a^Af(x)\,\mathrm dx.
-$$
-
-极限有限则收敛，否则发散。对整个实轴，应任取有限分点 $c$，分别要求
-
-$$
-\int_{-\infty}^cf(x)\,\mathrm dx,\qquad
-\int_c^{+\infty}f(x)\,\mathrm dx
-$$
-
-都收敛，才把二者相加。不能用对称截断代替这两个独立极限。
-
-#### 无界函数的反常积分
-
-若 $b$ 是奇点，则定义 $\displaystyle\int_a^bf=\lim_{t\to b^-}\int_a^tf$；若 $a$ 是奇点，则取右侧截断。区间内部有奇点 $c$ 时，必须拆成两段且两段分别收敛。
-
-基本的 $p$ 型结论为
-
-$$
-\int_1^{+\infty}\frac{\mathrm dx}{x^p}\text{ 收敛}\iff p>1,
-\qquad
-\int_0^1\frac{\mathrm dx}{x^p}\text{ 收敛}\iff p<1.
-$$
-
-两类积分的判断方向相反，因为一类看无穷远尾部，另一类看零点附近。
-
-!!! warning "主值存在不等于反常积分收敛"
-
-    $\displaystyle\int_{-1}^1\frac{\mathrm dx}{x}$ 的左右两段分别发散，因此反常积分发散。对称删去 $(-\varepsilon,\varepsilon)$ 得到的和虽恒为零，只是柯西主值，不能当作本章定义下的积分值。
-
-#### 反常积分敛散性的判别法（\*）
-
-教材第 278 页起选学。对非负函数，若在反常端附近 $0\le f\le g$，则 $\displaystyle\int g$ 收敛推出 $\displaystyle\int f$ 收敛；$\displaystyle\int f$ 发散推出 $\displaystyle\int g$ 发散。若 $\displaystyle\frac{f}{g}\to c\in (0,+\infty)$，则二者同敛散。
-
-对变号函数，绝对收敛即 $\displaystyle\int|f|<\infty$，它能推出原积分收敛；反之未必成立。比较时应分别分析每个反常端点，正常区间上的有限积分不影响尾部敛散性。
-
-!!! info "选学标记与复习方法"
-
-    教材把一般判别法的系统讨论列为选学；反常积分的定义、计算及 $p$ 型判断仍要掌握。比较法能帮助判断某个积分是否有意义，也与第十一章正项级数的比较、积分判别法相联系。
-
-!!! example "例 5.5：同时检查零点与无穷远"
-
-    判断 $\displaystyle\int_0^{+\infty}\frac{x^{-p}}{1+x}\,\mathrm dx$ 的收敛范围。
-
-    **解：** 在 $0$ 附近，被积函数等价于 $x^{-p}$，要求 $p<1$；在无穷远等价于 $x^{-p-1}$，要求 $p+1>1$，即 $p>0$。合并得 $0<p<1$。
-
-#### Γ 函数（\*）
-
-教材第 283 页起选学。定义
-
-$$
-\Gamma(s)=\int_0^{+\infty}x^{s-1}e^{-x}\,\mathrm dx,\qquad s>0.
-$$
-
-它满足 $\Gamma(s+1)=s\Gamma(s)$、$\Gamma(n+1)=n!$ 和 $\Gamma(1/2)=\sqrt\pi$。它把阶乘推广到连续参数；相关参数求导、$B$ 函数及两者关系见第十二章。
-
-### §6 定积分的近似计算（\*）
-
-教材第 286 页起选学。设等分步长 $h=\displaystyle\frac{b-a}{n}$，$x_i=a+ih$。
-
-**矩形法**可用左、右端点或中点近似函数高度；中点公式为
-
-$$
-M_n=h\sum_{i=1}^nf\left(\frac{x_{i-1}+x_i}2\right).
-$$
-
-**梯形公式：**
-
-$$
-T_n=h\left[\frac{f(a)+f(b)}2+\sum_{i=1}^{n-1}f(x_i)\right].
-$$
-
-**辛普森公式（抛物线法）：** $n$ 必须是偶数，
-
-$$
-S_n=\frac h3\left[f(x_0)+f(x_n)
-+4\sum_{\substack{1\le i\le n-1\\i\text{ 为奇数}}}f(x_i)
-+2\sum_{\substack{2\le i\le n-2\\i\text{ 为偶数}}}f(x_i)\right].
-$$
-
-在相应导数连续条件下，若 $|f''|\le M_2$、$|f^{(4)}|\le M_4$，则
-
-$$
-|I-M_n|\le \frac{b-a}{24}h^2M_2,\qquad
-|I-T_n|\le \frac{b-a}{12}h^2M_2,\qquad
-|I-S_n|\le \frac{b-a}{180}h^4M_4.
-$$
-
-这些误差界不直接适用于有奇点的反常积分，必须先分析端点或另作处理。
-
-### 本章自测
-
-!!! example "自测 5"
-
-    1. 求 $\lim_{n\to \infty}(\displaystyle\frac{1}{n})\sum_{k=1}^n(\frac{k}{n})^2$。
-    2. 求 $F(x)=\displaystyle\int_{x}^{2x}\ln(1+t^2)\,\mathrm dt$ 的导数。
-    3. 计算 $\displaystyle\int_0^\pi x\sin x\,\mathrm dx$，尝试用区间反射简化。
-    4. 求 $y=x^2$、$y=4$ 围成的面积及该区域绕 $y$ 轴旋转所得体积。
-    5. 求 $y=x^{3/2}$ 在 $0\le x\le 4$ 上的弧长。
-    6. 判断并计算 $\displaystyle\int_0^1\ln x\,\mathrm dx$；再判断 $\displaystyle\int_{-1}^1\frac{1}{x^2}\,\mathrm dx$ 是否收敛。
-    7. 高 $H$、宽 $b$ 的竖直矩形平板，上边缘在液面处，液体密度为 $\rho$。求一侧静水压力的大小。
-
-    ??? success "答案与提示"
-
-        1. $\displaystyle\int_0^1x^2\,\mathrm dx=1/3$。
-        2. $F'(x)=2\ln(1+4x^2)-\ln(1+x^2)$。
-        3. $\sin(\pi-x)=\sin x$，所以原积分为 $(\pi/2)\displaystyle\int_0^\pi\sin x\,\mathrm dx=\pi$。
-        4. 面积为 $\displaystyle\int_{-2}^2(4-x^2)\,\mathrm dx=32/3$。旋转后在高度 $y$ 的截面半径为 $\sqrt y$，故体积为 $\pi\displaystyle\int_0^4y\,\mathrm dy=8\pi$。
-        5. $L=\displaystyle\int_0^4\sqrt{1+\dfrac{9x}{4}}\,\mathrm dx=\frac8{27}(10\sqrt{10}-1)$。
-        6. 第一积分等于 $\lim_{\varepsilon\to 0^+}[x\ln x-x]_\varepsilon^1=-1$。第二积分在零点两侧均发散，故发散。
-        7. 深度 $h$ 的微元压力为 $\rho ghb\,\mathrm dh$，所以 $F=\displaystyle\frac{\rho gbH^2}{2}$。
-
-## 第六章 常微分方程
-
-本章求的是未知函数。已知 $y=x^2$ 求 $y'=2x$ 是求导；已知 $y'=2x$ 求 $y$，则要找出所有满足这个导数关系的函数，得到 $y=x^2+C$。微分方程把这种问题推广到同时含有 $x,y,y',y''$ 等量的情形。
-
-学习时先掌握一阶方程的分类与求解，再学习二阶方程。每种方法都要分清三件事：原方程满足什么条件、变换后求的是哪个函数、怎样还原并检验原方程的解。
-
-### §1 基本概念
-
-!!! tip "这一章的主线"
-
-    先观察未知函数及其导数怎样出现在方程中，再判断能否分离变量、是否线性、是否缺少某个变量。分类的目的是选择适用的方法；同一方程也可能有不止一种解法。
-
-    配套两个习惯：一是**解完要检验**，代回原方程或对结果求导都能核对；二是**交代解所在区间**，初值条件、分母不为零、对数与根式的限制都要一并写清。分离变量时除掉的常数解容易漏，需要单独回代检查。
-
-常微分方程是含未知函数及其对一个自变量的导数的关系式；出现的最高阶导数决定方程的阶。把函数及所需导数代回后，在某区间上恒成立，就称该函数为该区间上的解。
-
-- **通解：** 通常含与阶数相同个数的独立任意常数，但还须注意换元可能遗漏的解。
-- **特解：** 确定任意常数后得到的解。
-- **初值问题：** 除方程外，指定同一点的函数值及必要的导数值。
-- **积分曲线：** 解函数的图像；方程可用方向场描述其局部斜率。
-
-这里的“阶”按最高阶导数判断，不按幂次判断。例如 $(y')^2+y=0$ 是一阶方程，$y''+y=0$ 是二阶方程。只在某一个 $x$ 值处满足等式，还不足以称为解；解必须在所讨论区间内处处满足方程。
-
-!!! example "例 6.1：通解、特解与初值条件"
-
-    求 $y'=2x$ 且 $y(1)=3$ 的解。
-
-    **解：** 先积分得到 $y=x^2+C$。每一个固定的 $C$ 都给出一个解，含任意常数的表达式给出通解。再代入初值，$3=1+C$，得 $C=2$，所以初值问题的解为 $y=x^2+2$。
-
-    二阶方程通常需要两个初值。例如 $y''=2$ 积分两次得 $y=x^2+C_1x+C_2$；给出 $y(0)$ 和 $y'(0)$ 后，才能分别确定 $C_2$ 和 $C_1$。
-
-线性方程中，未知函数及其各阶导数只以一次线性组合出现，系数只能依赖自变量。例如 $y''+xy'+y=\sin x$ 是线性的，$yy'+x=0$ 不是。$x$ 的次数不影响线性判断；$y^2$、$(y')^2$、$yy'$ 或 $\sin y$ 等项则不符合线性形式。
-
-把所有含 $y$ 及其导数的项移到左边后，右边不含未知函数的项叫**自由项**。自由项恒为零，称为线性齐次方程；否则称为线性非齐次方程。
-
-!!! info "解的局部存在与唯一性"
-
-    对 $y'=f(x,y)$，若 $f$ 与 $f_y$ 在初始点附近连续，则初值问题在足够小的区间内有唯一解。这是常用充分条件；不能据此断言解在整个实轴存在，也不能在条件失效时直接断言无解。
-
-### §2 可分离变量方程
-
-#### 直接分离变量
-
-分离变量要求右端能够写成“只含 $x$ 的函数”与“只含 $y$ 的函数”的乘积。例如 $y'=x(1+y^2)$ 符合这种形式；$y'=x+y$ 不能直接按此法分离。
-
-设 $g(y)\ne0$，原方程可写成 $\displaystyle\frac{y'}{g(y)}=f(x)$。若 $G'(y)=\displaystyle\frac{1}{g(y)}$，由链式法则，左端就是 $\displaystyle\frac{\mathrm d[G(y(x))]}{\mathrm dx}$。因此两边对 $x$ 积分得到 $G(y(x))=\int f(x)\,\mathrm dx+C$。这说明分离后的积分有链式法则作为依据。
-
-若 $y'=f(x)g(y)$，在 $g(y)\ne 0$ 的区间上有
-
-$$
-\frac{\mathrm dy}{g(y)}=f(x)\,\mathrm dx,
-\qquad
-\int \frac{\mathrm dy}{g(y)}=\int f(x)\,\mathrm dx+C.
-$$
-
-若 $g(c)=0$，常数函数 $y=c$ 可能是解，应代回原方程检查。解可能以隐式形式给出，还需限定对应的分支与存在区间。
-
-!!! example "例 6.2：初值确定常数与分支"
-
-    解 $y'=2x(1+y^2)$，$y(0)=0$。
-
-    **解：** 因为 $1+y^2>0$，除以它不会漏解。先把两种变量分开：
-
-    $$
-    \frac{\mathrm dy}{1+y^2}=2x\,\mathrm dx.
-    $$
-
-    两边积分得 $\arctan y=x^2+C$。代入 $x=0,y=0$ 得 $C=0$，再解出 $y=\tan(x^2)$。
-
-    还要确定包含 $0$ 的解区间：从 $x=0$ 出发，最先遇到的极点满足 $x^2=\pi/2$，故最大解区间为 $|x|<\sqrt{\pi/2}$。在此区间内，$y'=2x\sec^2(x^2)=2x(1+y^2)$，且 $y(0)=0$，检验完成。
-
-#### 齐次微分方程
-
-有些方程暂时不能分离，但右端只含 $\displaystyle\frac{y}{x}$。例如 $y'=1+(\displaystyle\frac{y}{x})^2$ 中，$x,y$ 总以同一个比值出现。令这个比值等于新函数 $u(x)$，就可以减少右端的变量种类。注意 $u$ 随 $x$ 变化，所以 $y=xu(x)$ 求导时必须使用乘积法则。
-
-一阶齐次型方程指 $y'=F(\displaystyle\frac{y}{x})$，在 $x\ne 0$ 的区间令 $u=\displaystyle\frac{y}{x}$，即 $y=ux$，则
-
-$$
-y'=u+xu',\qquad xu'=F(u)-u.
-$$
-
-这时可分离变量。若 $F(c)=c$，直线 $y=cx$ 可能因除以 $F(u)-u$ 而遗漏，应补查。
-
-!!! example "例 6.3：齐次型换元后的回代"
-
-    解 $y'=1+\displaystyle\frac{y}{x}$，讨论 $x>0$。
-
-    **解：** 令 $u=\displaystyle\frac{y}{x}$，则 $y=xu$、$y'=u+xu'$。代回得
-
-    $$
-    u+xu'=1+u,\qquad u'=\frac1x.
-    $$
-
-    积分得到的是 $u=\ln x+C$，而题目要求的是 $y$，因此还须回代：$y=x(\ln x+C)$。代回可得 $y'=\ln x+C+1=1+\displaystyle\frac{y}{x}$。
-
-!!! warning "两个‘齐次’含义不同"
-
-    一阶齐次型是指右端可以写成 $\displaystyle\frac{y}{x}$ 的函数；线性齐次方程是指自由项为零，例如 $y'+P(x)y=0$。应先识别具体结构，再选方法。
-
-### §3 一阶线性微分方程
-
-#### 积分因子与常数变易
-
-对标准形式 $y'+P(x)y=Q(x)$，假设 $P,Q$ 在所讨论区间连续。可以通过乘上适当的函数，将左端化成一个乘积的导数。设乘上的函数为 $\mu(x)$，比较
-
-$$
-\mu y'+\mu P y
-\quad\text{与}\quad
-(\mu y)'=\mu y'+\mu' y,
-$$
-
-可知只要 $\mu'=P\mu$，两式就相等。解这个可分离变量方程，可取 $\mu=e^{\int P(x)\,\mathrm dx}$，它称为**积分因子**。这里任取 $P$ 的一个原函数即可；原函数相差的常数只会让 $\mu$ 多一个非零常数倍，不影响求解。
-
-因此，取积分因子
-
-$$
-\mu(x)=e^{\int P(x)\,\mathrm dx},
-$$
-
-则 $(\mu y)'=\mu Q$，因此
-
-$$
-y=e^{-\int P(x)\,\mathrm dx}
-\left[\int Q(x)e^{\int P(x)\,\mathrm dx}\,\mathrm dx+C\right].
-$$
-
-另一种方法是先解 $y'+Py=0$，得到 $y=Ce^{-\int P}$，再设非齐次解为 $y=C(x)e^{-\int P}$。代入后含 $C(x)$ 的两项抵消，只剩 $C'(x)e^{-\int P}=Q$；积分求出 $C(x)$，仍得到上面的通解。这叫**常数变易法**。
-
-若原方程不是标准式，先除以最高阶导数的系数，并排除该系数为零的点后分区间讨论。例如 $xy'+2y=x^2$ 在 $x\ne0$ 时应先化为 $y'+(\displaystyle\frac{2}{x})y=x$，此时 $P=\displaystyle\frac{2}{x},Q=x$。
-
-!!! example "例 6.4：一阶线性初值问题"
-
-    解 $y'+2y=e^{-x}$，$y(0)=0$。
-
-    **解：** 这里 $P=2,Q=e^{-x}$，所以积分因子为 $e^{2x}$。两边同乘它，得到
-
-    $$
-    e^{2x}y'+2e^{2x}y=e^x,
-    \qquad (e^{2x}y)'=e^x.
-    $$
-
-    积分得 $e^{2x}y=e^x+C$，再除以 $e^{2x}$，得 $y=e^{-x}+Ce^{-2x}$。代入 $y(0)=0$，有 $0=1+C$，故所求解为 $y=e^{-x}-e^{-2x}$。系数在全实轴连续，该解也在全实轴上成立。
-
-#### 伯努利方程
-
-伯努利方程右端含 $y^m$，一般不是线性方程。先除以 $y^m$，会出现 $y^{-m}y'$ 和 $y^{1-m}$。因为 $(y^{1-m})'=(1-m)y^{-m}y'$，这两项可以同时用一个新函数及其导数表示。
-
-对 $y'+P(x)y=Q(x)y^m$，$m\ne 0,1$，在幂函数及除法有意义的非零解区间内令 $z=y^{1-m}$，得到
-
-$$
-z'+(1-m)P(x)z=(1-m)Q(x).
-$$
-
-先解一阶线性方程，再还原 $y$。$m=0,1$ 本身就是线性方程；$y=0$ 是否为解由原方程决定，不能在换元时丢掉。
-
-!!! example "例 6.5：伯努利方程的零解不能漏"
-
-    解 $y'+y=xy^2$。
-
-    **解：** 先处理非零解。两边除以 $y^2$ 得 $\displaystyle\frac{y'}{y^2}+\frac{1}{y}=x$。令 $z=\displaystyle\frac{1}{y}$，注意 $z'=-\displaystyle\frac{y'}{y^2}$，所以 $-z'+z=x$，即 $z'-z=-x$。
-
-    这个一阶线性方程的积分因子为 $e^{-x}$，于是
-
-    $$
-    (e^{-x}z)'=-xe^{-x},\qquad e^{-x}z=(x+1)e^{-x}+C.
-    $$
-
-    因而 $z=x+1+Ce^x$。回代得到非零解
-
-    $$
-    y=\frac1{x+1+Ce^x},
-    $$
-
-    定义在分母不为零的区间。此外 $y\equiv 0$ 也满足原方程。
-
-### §4 全微分方程（\*）
-
-本节用到第八章的偏导数与全微分，可以在学过那里后回看。记 $u_x,u_y$ 分别为固定另一变量时的导数；全微分写为 $\mathrm du=u_x\,\mathrm dx+u_y\,\mathrm dy$。如果方程左端就是这个形式，那么沿解曲线有 $\mathrm du=0$，故 $u$ 保持为常数。
-
-教材第 310 页起选学，正文提示可结合下册知识再学。若
-
-$$
-M(x,y)\,\mathrm dx+N(x,y)\,\mathrm dy=0
-$$
-
-的左端恰为某个函数 $u(x,y)$ 的全微分，则解可表示为 $u(x,y)=C$。在单连通开区域内，$M,N$ 有连续一阶偏导时，存在这样的 $u$ 的充要条件是 $M_y=N_x$。
-
-求 $u$ 可先对 $x$ 积分：$u=\displaystyle\int M\,\mathrm dx+\varphi(y)$，再用 $u_y=N$ 确定 $\varphi$。第八章的全微分和第十章的路径无关性提供其理论依据；这个关联中的原函数与全微分概念仍需掌握。
-
-!!! example "例 6.6：识别一个全微分"
-
-    解 $(2xy+1)\,\mathrm dx+(x^2+2y)\,\mathrm dy=0$。
-
-    **解：** $M_y=N_x=2x$。对 $M$ 关于 $x$ 积分，得 $u=x^2y+x+\varphi(y)$；由 $u_y=x^2+\varphi'=x^2+2y$，得 $\varphi=y^2+C_0$。积分曲线为 $x^2y+x+y^2=C$。
-
-### §5 可降阶的二阶微分方程
-
-| 类型 | 代换 | 降阶后的方程 |
-| --- | --- | --- |
-| $y''=f(x)$ | 连续积分两次 | $y'=\displaystyle\int f(x)\,\mathrm dx+C_1$，再积分 |
-| $y''=f(x,y')$，不显含 $y$ | $p(x)=y'$ | $p'=f(x,p)$，解出后再由 $y'=p$ 积分 |
-| $y''=f(y,y')$，不显含 $x$ | 局部取 $p(y)=y'$ | $p\,\displaystyle\frac{\mathrm dp}{\mathrm dy}=f(y,p)$，再由 $\displaystyle\frac{\mathrm dy}{\mathrm dx}=p(y)$ 求解 |
-
-第三种代换用到 $y''=(\displaystyle\frac{\mathrm dp}{\mathrm dy})(\frac{\mathrm dy}{\mathrm dx})$，在能把 $y$ 作为局部变量的区间使用。常数解和转折点处要另外检查，尤其不能除以 $p$ 后就丢掉 $p=0$ 的解。
-
-“降阶”是先求一个辅助函数，再求原来的 $y$。尤其要区分 $p(x)$ 与 $p(y)$：前者对 $x$ 求导就是 $y''$；后者还需乘上 $y'=p$。
-
-!!! example "例 6.7：不显含 y 时，先求 y'"
-
-    解 $y''=2xy'$，并满足 $y(0)=0,y'(0)=1$。
-
-    **解：** 方程没有直接出现 $y$，令 $p(x)=y'$，则 $p'=2xp$。由初值 $p(0)=1$ 得 $p=e^{x^2}$。再由 $y'=e^{x^2}$ 及 $y(0)=0$ 得
-
-    $$
-    y(x)=\int_0^x e^{t^2}\,\mathrm dt.
-    $$
-
-    这个定积分定义的函数就是解，不要求一定写成初等函数。求导可验证 $y'=e^{x^2}$、$y''=2xe^{x^2}=2xy'$。
-
-对于不显含 $x$ 的情形，例如 $y''=(y')^2$，在 $y'\ne0$ 的局部区间令 $p=p(y)$，得 $p\,\displaystyle\frac{\mathrm dp}{\mathrm dy}=p^2$。除以 $p$ 后有 $\displaystyle\frac{\mathrm dp}{\mathrm dy}=p$，故 $p=Ce^y$，再解 $y'=Ce^y$，得到 $e^{-y}=C_1-Cx$，即 $y=-\ln(C_1-Cx)$，取 $C_1-Cx>0$ 的区间。上述非零分支中 $C\ne0$；除法排除的 $p=0$ 对应任意常数解，须另行保留。
-
-### §6 二阶线性微分方程解的结构
-
-先看一个不需要线性代数的例子：$y''-y=0$ 有两个解 $e^x,e^{-x}$。将 $C_1e^x+C_2e^{-x}$ 代入，仍有 $y''-y=0$，因为求导和相减都遵守线性运算规则。
-
-对 $y''-y=2$，常数函数 $y_p=-2$ 是一个特解。若再加上任意齐次解 $y_h$，则 $(y_p+y_h)''-(y_p+y_h)=2+0=2$。反过来，任意两个非齐次解相减，右端的 $2$ 抵消，差就满足齐次方程。这给出下面的解的结构。
-
-对
-
-$$
-y''+p(x)y'+q(x)y=f(x),
-$$
-
-假设 $p,q,f$ 在所讨论区间连续。
-
-- 齐次方程的解可作线性组合。
-- 若 $y_1,y_2$ 是线性无关的齐次解，则齐次通解为 $C_1y_1+C_2y_2$。
-- 非齐次通解为**对应齐次通解 + 任一非齐次特解**。
-- 同一非齐次方程两个解的差是齐次解。
-- 不同右端对应的特解可按右端的线性组合叠加。
-
-这里的**线性无关**是指：若常数 $c_1,c_2$ 使 $c_1y_1(x)+c_2y_2(x)$ 在整个区间恒为零，则只能有 $c_1=c_2=0$。对两个非零解，这也就是不能由其中一个乘固定常数得到另一个。例如 $e^x$ 与 $2e^x$ 不能提供两个独立的任意常数，而 $e^x$ 与 $e^{-x}$ 可以。
-
-对同一个二阶齐次方程的两个解，可用朗斯基行列式
-
-$$
-W(x)=\begin{vmatrix}y_1&y_2\\y_1'&y_2'\end{vmatrix}
-=y_1y_2'-y_1'y_2
-$$
-
-判断独立性：在某一点 $W\ne 0$，则构成基本解组；连续系数条件下 $W'= -pW$，所以此时在整个区间都不为零。
-
-??? info "与线性代数的联系"
-
-    记 $L[y]=y''+p(x)y'+q(x)y$。由于 $L[c_1y_1+c_2y_2]=c_1L[y_1]+c_2L[y_2]$，$L$ 是一个线性算子。在上述连续系数条件下，二阶齐次方程的解构成二维线性空间，两个线性无关的解是一组基；非齐次解集则由一个特解加上全部齐次解得到。这与线性方程组的解的结构一致。
-
-!!! warning "非齐次方程的解不能任意线性组合"
-
-    记 $L[y]=y''+p(x)y'+q(x)y$。若 $L[y_1]=L[y_2]=f$，则 $L[c_1y_1+c_2y_2]=(c_1+c_2)f$。当 $f\not\equiv 0$ 时，只有 $c_1+c_2=1$ 才仍对应原来的右端；不要把齐次方程的叠加原则直接照搬。
-
-### §7 二阶常系数线性微分方程的解法
-
-#### 齐次方程：特征根
-
-常系数意味着 $p,q$ 是固定数。试设 $y=e^{rx}$，则 $y'=re^{rx}$、$y''=r^2e^{rx}$；代入齐次方程后得到 $(r^2+pr+q)e^{rx}=0$。由于 $e^{rx}\ne0$，只须求解关于 $r$ 的代数方程。
-
-对 $y''+py'+qy=0$，特征方程为 $r^2+pr+q=0$。
-
-| 特征根 | 实通解 |
-| --- | --- |
-| 不同实根 $r_1,r_2$ | $C_1e^{r_1x}+C_2e^{r_2x}$ |
-| 二重实根 $r$ | $(C_1+C_2x)e^{rx}$ |
-| 共轭复根 $\alpha\pm i\beta$，$\beta>0$ | $e^{\alpha x}(C_1\cos\beta x+C_2\sin\beta x)$ |
-
-简单高阶常系数齐次方程同样使用特征多项式：$m$ 重实根 $r$ 对应 $e^{rx},xe^{rx},\ldots,x^{m-1}e^{rx}$；复根对应的实解由指数、正弦余弦及相应的 $x$ 次幂组成。
-
-例如 $y''-3y'+2y=0$ 的特征方程是 $(r-1)(r-2)=0$，故 $y=C_1e^x+C_2e^{2x}$。若给定 $y(0)=1,y'(0)=0$，则 $C_1+C_2=1,C_1+2C_2=0$，解得 $y=2e^x-e^{2x}$。
-
-重根时，只写两个 $e^{rx}$ 不能得到两个线性无关的解，需使用 $e^{rx}$ 和 $xe^{rx}$。复根 $\alpha\pm i\beta$ 则利用 $e^{i\beta x}=\cos\beta x+i\sin\beta x$，得到表中的两个实值解。
-
-#### 非齐次方程：待定系数与共振
-
-先求对应齐次方程的通解，再找一个非齐次特解。待定系数法适用于右端是多项式、指数函数、正弦余弦及其有限乘积、和的情形；它不是任意右端都适用的方法。
-
-例如右端为 $x$，可先试 $y_p=Ax+B$，因为求导后仍是多项式。把它代回原方程，比较同次幂的系数，即可确定 $A,B$。如果试探形式已经全部属于齐次解，代回左端恒为零，就必须调整形式。下表中的 $x^k$ 正是为此引入；与特征根重复的情形也称为共振。无阻尼振动中的同频外力是其物理应用之一。
-
-对 $y''+py'+qy=f(x)$，设一个与右端结构匹配的特解：
-
-| 右端 | 特解试探形式 |
-| --- | --- |
-| $e^{\lambda x}P_m(x)$ | $x^ke^{\lambda x}Q_m(x)$ |
-| $e^{\alpha x}[P_m(x)\cos\beta x+Q_n(x)\sin\beta x]$ | $x^ke^{\alpha x}[A_s(x)\cos\beta x+B_s(x)\sin\beta x]$，$s=\max (m,n)$ |
-
-第一行 $k$ 是 $\lambda$ 作为特征根的重数，非根时 $k=0$；第二行 $\beta>0$，$k$ 是 $\alpha+i\beta$ 的重数。待定多项式应保留从常数到最高次的全部系数。即使右端只含正弦，也通常要同时设正弦和余弦两部分。
-
-!!! example "例 6.8：先求齐次解，再比较系数"
-
-    解 $y''-3y'+2y=x$。
-
-    **解：** 齐次通解为 $C_1e^x+C_2e^{2x}$。右端是一次多项式，且 $0$ 不是特征根，设 $y_p=Ax+B$。由 $y_p'=A,y_p''=0$ 得
-
-    $$
-    2Ax+(2B-3A)=x.
-    $$
-
-    比较一次项与常数项，$2A=1,2B-3A=0$，得 $A=1/2,B=3/4$。因此通解为 $y=C_1e^x+C_2e^{2x}+\displaystyle\frac{x}{2}+3/4$。
-
-!!! example "例 6.9：二重共振要乘二次幂"
-
-    解 $y''-2y'+y=e^x$。
-
-    **解：** 特征根 $r=1$ 为二重根，齐次通解为 $(C_1+C_2x)e^x$。特解设为 $Ax^2e^x$，代入左端得 $2Ae^x=e^x$，故 $A=1/2$。
-
-    通解为 $y=(C_1+C_2x+\displaystyle\frac{x^2}{2})e^x$。若误设 $Ae^x$ 或 $Axe^x$，它们都已属于齐次解，无法产生所需右端。
-
-#### 欧拉方程
-
-对 $x>0$ 上的
-
-$$
-x^2y''+axy'+by=g(x),
-$$
-
-令 $t=\ln x$、$Y(t)=y(e^t)$，则
-
-$$
-xy'=Y',\qquad x^2y''=Y''-Y',
-$$
-
-从而得到常系数方程 $Y''+(a-1)Y'+bY=g(e^t)$。齐次情形也可直接试 $y=x^m$，得到 $m(m-1)+am+b=0$。
-
-在 $x<0$ 的区间可用 $t=\ln|x|$ 分别处理；$x=0$ 往往是奇点，不能自动跨越。
-
-### §8 常系数线性微分方程组
-
-对
-
-$$
-\begin{cases}
-x'=ax+by+f(t),\\
-y'=cx+dy+g(t),
-\end{cases}
-$$
-
-常用消元法：对一个方程求导，再用原方程消去另一个未知函数。若 $b\ne 0$，可得
-
-$$
-x''-(a+d)x'+(ad-bc)x=f'(t)-df(t)+bg(t),
-$$
-
-解出 $x$ 后，通过 $y=\displaystyle\frac{x'-ax-f(t)}{b}$ 还原。此方法要求所用右端具有必要的可导性；$b=0$ 时可先解第一式，或改从另一式消元。
-
-!!! info "与线性代数的联系"
-
-    方程组可以写成 $\mathbf X'=A\mathbf X+\mathbf F$。齐次情形中，若 $A\mathbf v=\lambda\mathbf v$，则 $e^{\lambda t}\mathbf v$ 是一个解。这将特征值与微分方程联系起来。本节教材未标星，备考时可在标量方程熟练后补充，不把它与一阶线性方程混为同一题型。
-
-!!! example "例 6.10：相加、相减直接解方程组"
-
-    解 $x'=x+y,y'=x+y$。
-
-    **解：** 令 $u=x+y,v=x-y$，有 $u'=2u,v'=0$。回代并重命名常数，得到
-
-    $$
-    x=C_1e^{2t}+C_2,\qquad y=C_1e^{2t}-C_2.
-    $$
-
-### §9 二阶变系数线性微分方程的一般解法
-
-教材第 337 页起介绍降阶法与常数变易法。本节作为一般方法保留，复习先保证能处理前面的常用类型。
-
-#### 已知一个齐次解时的降阶
-
-对 $y''+p(x)y'+q(x)y=f(x)$，若已知对应齐次方程的非零解 $y_1$，在 $y_1\ne 0$ 的区间令 $y=y_1v$，代回得
-
-$$
-y_1v''+(2y_1'+py_1)v'=f.
-$$
-
-这里用了 $y'=y_1'v+y_1v'$、$y''=y_1''v+2y_1'v'+y_1v''$。代入后，$v$ 的系数恰好是 $y_1''+py_1'+qy_1=0$，所以新方程只含 $v',v''$，实现了降阶。
-
-再令 $w=v'$，便成为一阶线性方程。齐次情形可直接得到第二个解
-
-$$
-y_2=y_1\int \frac{e^{-\int p(x)\,\mathrm dx}}{y_1^2}\,\mathrm dx.
-$$
-
-#### 二阶方程的常数变易法
-
-一阶常数变易法把一个常数换成函数，二阶情形则把 $C_1,C_2$ 分别换成 $u_1(x),u_2(x)$。一个待求的 $y_p$ 用两个函数表示，允许附加一个辅助条件。选择 $u_1'y_1+u_2'y_2=0$ 后，$y_p'=u_1y_1'+u_2y_2'$，再次求导并代入原方程，便只需解下面关于 $u_1',u_2'$ 的二元线性方程组。
-
-设 $y_1,y_2$ 是齐次方程的一组基本解，$W=y_1y_2'-y_1'y_2\ne 0$。令特解 $y_p=u_1y_1+u_2y_2$，并要求
-
-$$
-\begin{cases}
-u_1'y_1+u_2'y_2=0,\\
-u_1'y_1'+u_2'y_2'=f.
-\end{cases}
-$$
-
-解得
-
-$$
-y_p=-y_1\int \frac{y_2f}{W}\,\mathrm dx
-+y_2\int \frac{y_1f}{W}\,\mathrm dx.
-$$
-
-先把方程化成最高阶导数系数为 $1$ 的形式，再使用此公式。非齐次通解仍为 $C_1y_1+C_2y_2+y_p$。
-
-### §10 数学建模（二）——微分方程在几何、物理中的应用举例
-
-建模的基本步骤是选变量、写变化率关系、补初始条件、解方程、检验实际范围。常见模型如下：
-
-| 场景 | 方程 | 假设与含义 |
-| --- | --- | --- |
-| 几何曲线 | 将切线斜率条件写成 $y'=f(x,y)$ | 曲线上已知点提供初值 |
-| 指数增长或衰减 | $N'=kN$ | 瞬时变化率与当前量成正比 |
-| 牛顿冷却 | $T'=-k(T-T_a)$，$k>0$ | 环境温度 $T_a$ 固定，温差控制变化率 |
-| 受力运动 | $m s''=F(t,s,s')$ | 由受力分析确定方向与正负号 |
-| 弹簧振动 | $m s''+c s'+ks=F(t)$ | $s$ 从平衡位置量起；$c$ 为阻尼系数 |
-| 串联 RLC 电路 | $Lq''+Rq'+\displaystyle\frac{q}{C}=E(t)$ | $q$ 为电荷，电流为 $q'$ |
-
-无阻尼自由振动满足 $s''+\omega_0^2s=0$；周期外力频率与固有频率相同，可能产生共振，对应待定系数法中需要补乘 $t$ 的情形。
-
-!!! example "例 6.11：由一次测量确定模型参数"
-
-    环境温度为 $20$，物体初温为 $80$，按牛顿冷却模型，10 分钟后温度为 $50$。求 20 分钟后的温度。
-
-    **解：** 模型解为 $T(t)=20+60e^{-kt}$。由 $T(10)=50$，得 $e^{-10k}=1/2$。所以 $T(20)=20+60/4=35$。
-
-    温差按指数衰减，温度本身并非每 10 分钟减半。
-
-### §11 差分方程（\*）
-
-微分方程求随连续变量变化的函数，差分方程求按整数下标排列的数列。比如 $u_{n+1}=2u_n+1$ 规定了相邻两项的关系；给定 $u_0$ 后，可以逐项计算，也可以求出直接表示 $u_n$ 的通项公式。
-
-教材第 348 页起选学。差分方程描述离散序列之间的关系，正向差分为 $\Delta u_n=u_{n+1}-u_n$，二阶差分为 $\Delta^2u_n=u_{n+2}-2u_{n+1}+u_n$。
-
-#### 一阶线性差分方程
-
-一般形式为 $u_{n+1}=a_nu_n+b_n$。逐次迭代可得
-
-$$
-u_n=\left(\prod_{k=0}^{n-1}a_k\right)u_0
-+\sum_{j=0}^{n-1}\left(\prod_{k=j+1}^{n-1}a_k\right)b_j,
-$$
-
-其中空乘积取 $1$。特别地，对常系数 $u_{n+1}=au_n+b$，$n\ge 1$ 时
-
-$$
-u_n=
-\begin{cases}
-a^nu_0+\dfrac{b(1-a^n)}{1-a},&a\ne 1,\\
-u_0+nb,&a=1.
-\end{cases}
-$$
-
-若 $|a|<1$，序列趋于平衡值 $\displaystyle\frac{b}{1-a}$；这把第一章的递推极限与差分方程联系起来。
-
-#### 二阶常系数线性差分方程
-
-对 $u_{n+2}+pu_{n+1}+qu_n=0$，令 $u_n=r^n$ 得特征方程 $r^2+pr+q=0$。在 $q\ne 0$ 时，根的分类与微分方程平行：
-
-| 特征根 | 解的形式 |
-| --- | --- |
-| 不同实根 $r_1,r_2$ | $C_1r_1^n+C_2r_2^n$ |
-| 二重根 $r$ | $(C_1+C_2n)r^n$ |
-| 共轭复根 $\rho e^{\pm i\theta}$ | $\rho^n(C_1\cos n\theta+C_2\sin n\theta)$ |
-
-非齐次解仍可由齐次通解加一个特解组成。出现零根或退化形式时，可直接从原递推式处理，避免机械使用含 $0^0$ 的表达式。
-
-### 本章自测
-
-!!! example "自测 6"
-
-    1. 解 $y'=xy$，$y(0)=2$。
-    2. 解 $y'=1+\displaystyle\frac{y}{x}$，$y(1)=0$，讨论 $x>0$。
-    3. 解 $y'+y=x$，$y(0)=0$。
-    4. 解 $y''=y'$，$y(0)=0,y'(0)=1$。
-    5. 求 $y''+y=\sin x$ 的通解，说明特解为什么需要乘 $x$。
-    6. 求 $x^2y''-xy'+y=0$（$x>0$）的通解。
-    7. 单位质量物体作无阻尼弹簧运动，弹性系数为 $4$，从平衡位置正向位移 $1$ 处静止释放。建立并求解运动方程。
-    8. （\*）解差分方程 $u_{n+1}=2u_n+1$，$u_0=0$。
-
-    ??? success "答案与提示"
-
-        1. $y=2e^{\frac{x^2}{2}}$。
-        2. 令 $u=\displaystyle\frac{y}{x}$，得 $xu'=1$，所以 $y=x(\ln x+C)$；由初值 $C=0$。
-        3. 积分因子为 $e^x$，解为 $y=x-1+e^{-x}$。
-        4. 令 $p=y'$，则 $p'=p,p(0)=1$，故 $p=e^x$，再积分得 $y=e^x-1$。
-        5. $y=C_1\cos x+C_2\sin x-(\displaystyle\frac{x}{2})\cos x$。右端频率对应特征根 $i$，与齐次解发生共振。
-        6. 欧拉特征方程为 $(m-1)^2=0$，故 $y=x(C_1+C_2\ln x)$。
-        7. $s''+4s=0,s(0)=1,s'(0)=0$，解为 $s=\cos2t$。
-        8. $u_n=2^n-1$，可用通式或令 $v_n=u_n+1$ 化成等比数列。
-
-## 第七章 矢量代数与空间解析几何
-
-### §1 二阶、三阶行列式及线性方程组
-
-二阶行列式及三阶行列式按第一行展开分别为
-
-$$
-\begin{vmatrix}a&b\\c&d\end{vmatrix}=ad-bc,
-$$
-
-$$
-\begin{vmatrix}a_1&a_2&a_3\\b_1&b_2&b_3\\c_1&c_2&c_3\end{vmatrix}
-=a_1(b_2c_3-b_3c_2)-a_2(b_1c_3-b_3c_1)+a_3(b_1c_2-b_2c_1).
-$$
-
-常用性质：交换两行变号；某行乘 $k$，行列式乘 $k$；一行加上另一行的倍数，行列式不变；两行成比例则为零。列也有同样性质。
-
-对方程组 $A\mathbf x=\mathbf b$，若系数行列式 $D\ne 0$，则由克拉默法则
-
-$$
-x_i=\frac{D_i}{D},
-$$
-
-其中 $D_i$ 是把系数矩阵第 $i$ 列换为常数列后的行列式。$D\ne 0$ 意味着唯一解；$D=0$ 时应继续消元，不能据此判断无解还是无穷多解。
-
-!!! tip "行列式的几何用途"
-
-    二阶行列式对应平面有向面积，三阶行列式对应空间有向体积。后面的矢量积、混合积，都可以借助行列式统一记忆。
-
-### §2 矢量概念及矢量的线性运算
-
-矢量同时具有大小和方向。记 $\mathbf a$ 的模为 $\lVert\mathbf a\rVert$，非零矢量对应的单位矢量为 $\displaystyle\frac{\mathbf a}{\lVert\mathbf a\rVert}$。
-
-- 加法用平行四边形法则或首尾相接法则；减法看成加上相反矢量。
-- 数乘 $\lambda\mathbf a$ 的模是 $|\lambda|\lVert\mathbf a\rVert$，方向由 $\lambda$ 的符号决定。
-- 非零矢量平行，当且仅当其中一个是另一个的数倍。
-- 三个不共面的矢量构成空间的一组基底，任意空间矢量可唯一表示为它们的线性组合。
-
-### §3 空间直角坐标系与矢量的坐标表达式
-
-采用右手直角坐标系。若 $A(x_1,y_1,z_1)$、$B(x_2,y_2,z_2)$，则
-
-$$
-\overrightarrow{AB}=(x_2-x_1,y_2-y_1,z_2-z_1),\qquad
-|AB|=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2}.
-$$
-
-矢量加减与数乘按分量进行。若 $\mathbf a=(a_1,a_2,a_3)\ne \mathbf0$ 与三个正坐标轴的夹角分别为 $\alpha,\beta,\gamma$，则其**方向余弦**为
-
-$$
-(\cos\alpha,\cos\beta,\cos\gamma)
-=\frac{(a_1,a_2,a_3)}{\sqrt{a_1^2+a_2^2+a_3^2}},\qquad
-\cos^2\alpha+\cos^2\beta+\cos^2\gamma=1.
-$$
-
-### §4 两矢量的数量积与矢量积
-
-#### 数量积：投影与垂直
-
-$$
-\mathbf a\cdot \mathbf b
-=\lVert\mathbf a\rVert\lVert\mathbf b\rVert\cos\theta
-=a_1b_1+a_2b_2+a_3b_3.
-$$
-
-两非零矢量垂直等价于数量积为零。$\mathbf a$ 在非零矢量 $\mathbf b$ 方向上的**标量投影**与**矢量投影**分别为
-
-$$
-\operatorname{comp}_{\mathbf b}\mathbf a
-=\frac{\mathbf a\cdot \mathbf b}{\lVert\mathbf b\rVert},\qquad
-\operatorname{proj}_{\mathbf b}\mathbf a
-=\frac{\mathbf a\cdot \mathbf b}{\lVert\mathbf b\rVert^2}\mathbf b.
-$$
-
-#### 矢量积：法向量与面积
-
-$$
-\mathbf a\times \mathbf b
-=\begin{vmatrix}\mathbf i&\mathbf j&\mathbf k\\a_1&a_2&a_3\\b_1&b_2&b_3\end{vmatrix},\qquad
-\lVert\mathbf a\times \mathbf b\rVert
-=\lVert\mathbf a\rVert\lVert\mathbf b\rVert\sin\theta.
-$$
-
-方向按从 $\mathbf a$ 转向 $\mathbf b$ 的右手法则确定；结果垂直于两矢量。其模是两矢量所张平行四边形的面积，三角形面积再除以 $2$。
-
-$$
-\mathbf a\times \mathbf b=-\mathbf b\times \mathbf a.
-$$
-
-两非零矢量平行等价于矢量积为零。
-
-!!! warning "两种乘积不能混用"
-
-    数量积输出一个数，矢量积输出一个矢量。矢量积不满足交换律，也不满足一般的结合律；计算三重乘积时必须保留括号。
-
-### §5 矢量的混合积与二重矢积
-
-**混合积**为
-
-$$
-[\mathbf a,\mathbf b,\mathbf c]
-=\mathbf a\cdot (\mathbf b\times \mathbf c)
-=\begin{vmatrix}a_1&a_2&a_3\\b_1&b_2&b_3\\c_1&c_2&c_3\end{vmatrix}.
-$$
-
-它的绝对值是平行六面体的体积，除以 $6$ 是共顶点三棱锥的体积。三矢量共面，当且仅当混合积为零。循环置换不变，交换任意两个矢量变号。
-
-**二重矢积**可化成线性组合：
-
-$$
-\mathbf a\times (\mathbf b\times \mathbf c)
-=(\mathbf a\cdot \mathbf c)\mathbf b
--(\mathbf a\cdot \mathbf b)\mathbf c.
-$$
-
-!!! example "例 7.1：法向量、面积与体积"
-
-    设 $\mathbf a=(1,1,0)$、$\mathbf b=(0,1,1)$、$\mathbf c=(1,0,1)$。求前两矢量张成平面的一个法向量，以及三矢量张成的平行六面体体积。
-
-    **解：** $\mathbf a\times \mathbf b=(1,-1,1)$ 是所求法向量。平行四边形面积为 $\sqrt3$，体积为
-
-    $$
-    |(\mathbf a\times \mathbf b)\cdot \mathbf c|=2.
-    $$
-
-### §6 平面与直线方程
-
-#### 平面方程
-
-过点 $\mathbf r_0=(x_0,y_0,z_0)$、以 $\mathbf n=(A,B,C)\ne \mathbf0$ 为法向量的平面为
-
-$$
-\mathbf n\cdot (\mathbf r-\mathbf r_0)=0
-\quad \Longleftrightarrow\quad
-A(x-x_0)+B(y-y_0)+C(z-z_0)=0.
-$$
-
-一般式为 $Ax+By+Cz+D=0$。若三个非零截距是 $a,b,c$，截距式为 $\displaystyle\frac{x}{a}+\frac{y}{b}+\frac{z}{c}=1$。过三个不共线点的平面，可先对两条连线矢量作矢量积求法向量。
-
-#### 直线方程
-
-过 $\mathbf r_0$、方向矢量为 $\mathbf s=(l,m,n)\ne \mathbf0$ 的直线为
-
-$$
-\mathbf r=\mathbf r_0+t\mathbf s,
-\qquad
-x=x_0+lt,\quad y=y_0+mt,\quad z=z_0+nt.
-$$
-
-当各分母非零时，可写对称式
-
-$$
-\frac{x-x_0}{l}=\frac{y-y_0}{m}=\frac{z-z_0}{n}.
-$$
-
-若某个方向分量为零，直接把相应坐标写成常数。两个不平行平面的交线也可表示直线，方向矢量为两个法向量的矢量积。
-
-#### 角度与位置关系
-
-下表的直线夹角、平面夹角取不大于 $\pi/2$ 的角，线面夹角在 $[0,\pi/2]$ 内。
-
-| 对象 | 夹角公式 | 平行或垂直的判断 |
-| --- | --- | --- |
-| 两直线，方向为 $\mathbf s_1,\mathbf s_2$ | $\cos\theta=\displaystyle\frac{\lvert\mathbf s_1\cdot \mathbf s_2\rvert}{\lVert\mathbf s_1\rVert\lVert\mathbf s_2\rVert}$ | 方向成比例则平行或重合；数量积为零则方向正交 |
-| 两平面，法向量为 $\mathbf n_1,\mathbf n_2$ | $\cos\theta=\displaystyle\frac{\lvert\mathbf n_1\cdot \mathbf n_2\rvert}{\lVert\mathbf n_1\rVert\lVert\mathbf n_2\rVert}$ | 法向量平行则平面平行或重合；法向量垂直则平面垂直 |
-| 直线与平面 | $\sin\theta=\displaystyle\frac{\lvert\mathbf s\cdot \mathbf n\rvert}{\lVert\mathbf s\rVert\lVert\mathbf n\rVert}$ | $\mathbf s\cdot \mathbf n=0$ 则直线平行于平面或在平面内；二者平行则线面垂直 |
+设曲线上弧段的长度为 $\tau$，弧段两端切线的夹角为 $\theta$（取非负值）。$\theta/\tau$ 为该弧段的平均曲率；当另一端点趋于点 $M$ 时，若极限存在，则点 $M$ 处的曲率为
 
-两条方向不平行的空间直线还可能异面。设其上分别取点 $P_1,P_2$，则共面条件为
-
-$$
-\overrightarrow{P_1P_2}\cdot (\mathbf s_1\times \mathbf s_2)=0.
-$$
-
-共面且不平行时才相交。线面位置关系可把直线参数方程代入平面方程，观察参数方程是唯一解、无解还是恒成立。
-
-#### 距离与平面束
-
-点 $P(x_0,y_0,z_0)$ 到平面 $Ax+By+Cz+D=0$ 的距离为
-
-$$
-d=\frac{|Ax_0+By_0+Cz_0+D|}{\sqrt{A^2+B^2+C^2}}.
-$$
-
-点 $P$ 到直线 $\mathbf r=\mathbf r_0+t\mathbf s$ 的距离为
-
-$$
-d=\frac{\lVert(\mathbf r_P-\mathbf r_0)\times \mathbf s\rVert}{\lVert\mathbf s\rVert}.
-$$
-
-过两个相交平面 $F_1=0,F_2=0$ 的交线的平面束为
-
-$$
-\lambda F_1+\mu F_2=0,\qquad (\lambda,\mu)\ne (0,0).
-$$
-
-写成 $F_1+kF_2=0$ 会漏掉 $F_2=0$，使用单参数形式时须单独检查。
-
-!!! example "例 7.2：由三个点确定平面"
-
-    求过 $A(1,0,0)$、$B(0,2,0)$、$C(0,0,3)$ 的平面，以及原点到该平面的距离。
-
-    **解：** 用截距式得 $x+\displaystyle\frac{y}{2}+\frac{z}{3}=1$，即 $6x+3y+2z-6=0$。法向量为 $(6,3,2)$，故距离为 $6/7$。也可先求 $\overrightarrow{AB}\times \overrightarrow{AC}=(6,3,2)$。
-
-### §7 曲面方程与空间曲线方程
-
-曲面常写成 $F(x,y,z)=0$，空间曲线常写成两曲面的交线
-
-$$
-\begin{cases}F(x,y,z)=0,\\G(x,y,z)=0,\end{cases}
-$$
-
-或参数方程 $\mathbf r(t)=(x(t),y(t),z(t))$。
-
-- **柱面：** 方程缺少某个坐标，就沿该坐标轴方向延伸。例如 $x^2+y^2=R^2$ 在空间中是圆柱面。
-- **旋转曲面：** 把母线上点到旋转轴的距离改写成空间径向距离。例如 $z=\rho^2$ 绕 $z$ 轴旋转得到 $z=x^2+y^2$。
-- **投影：** 将交线向坐标面投影，先消去被投影方向的变量，再核查实数解存在的范围。投影到 $xOy$ 面时，作为空间集合还应写 $z=0$。
-
-!!! warning "消元结果还要检查范围"
-
-    消元可能扩大集合；平方可能引入额外分支。绘图和设置积分限时，应同时保留原方程中的非负条件、参数区间和分支限制。
-
-### §8 二次曲面
-
-下表中 $a,b,c>0$。识图的基本办法是分别令 $x,y,z$ 为常数，观察截痕。
-
-| 标准方程 | 名称与形状 |
-| --- | --- |
-| $\displaystyle\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}=1$ | 椭球面；三个方向均有界 |
-| $\displaystyle\frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}=1$ | 单叶双曲面；负号对应其轴方向 |
-| $\displaystyle\frac{z^2}{c^2}-\frac{x^2}{a^2}-\frac{y^2}{b^2}=1$ | 双叶双曲面；正号对应其轴方向 |
-| $\displaystyle\frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}=0$ | 椭圆锥面；包含上下两叶 |
-| $z=\displaystyle\frac{x^2}{a^2}+\frac{y^2}{b^2}$ | 椭圆抛物面；开口朝 $z$ 正向 |
-| $z=\displaystyle\frac{x^2}{a^2}-\frac{y^2}{b^2}$ | 双曲抛物面；鞍形 |
-
-平移通过 $x-x_0,y-y_0,z-z_0$ 识别；出现交叉项时不能直接套标准式，需要进一步配方或变换坐标。
-
-!!! tip "为后面的积分作准备"
-
-    识别曲面时同时问：投影是什么？沿哪个方向切片最简单？是否适合柱坐标或球坐标？这些信息比只记曲面名称更有助于设置积分限。
-
-### 本章自测
-
-!!! example "自测 7"
-
-    1. 设 $\mathbf a=(1,2,2)$、$\mathbf b=(2,1,-2)$，求数量积、夹角和 $\mathbf a$ 在 $\mathbf b$ 方向上的标量投影。
-    2. 求过 $(1,0,1)$ 且垂直于平面 $x-2y+2z=3$ 的直线。
-    3. 求过平面 $x+y+z=1$ 与 $x-y=0$ 的交线、且过原点的平面。
-    4. 求曲线 $x^2+y^2+z^2=2$、$z=x$ 在 $xOy$ 面上的投影，并给出原曲线的一组参数方程。
-
-    ??? success "答案与提示"
-
-        1. 数量积为 $0$，夹角为 $\pi/2$，标量投影为 $0$。
-        2. $(x,y,z)=(1,0,1)+t(1,-2,2)$，$t\in \mathbb R$。
-        3. 设 $\lambda(x+y+z-1)+\mu(x-y)=0$，代入原点得 $\lambda=0$，故答案是 $x-y=0$。此题正好说明单参数平面束可能漏解。
-        4. 投影为 $2x^2+y^2=2,z=0$。原曲线可取 $x=\cos t,y=\sqrt2\sin t,z=\cos t$，$0\le t\le 2\pi$。
-
-## 第八章 多元函数微分学
-
-一元函数研究一个自变量变化时函数值怎样变化；多元函数允许多个自变量参与。由此产生两个不同的问题：只改变其中一个变量时如何求导，以及多个变量同时改变时如何描述总变化。前者引出偏导数，后者引出全微分与可微性。
-
-本章仍沿用“极限与连续 → 导数与微分 → 求导法则 → 导数的应用”的顺序，但一元函数中若干熟悉的推论不再成立，尤其是“偏导存在”不能直接推出“可微”。
-
-### §1 多元函数的极限与连续性
-
-#### 函数与平面点集
-
-二元函数 $z=f(x,y)$ 对定义域中的每一对有序数 $(x,y)$ 唯一确定一个函数值。例如 $f(x,y)=x^2+xy$ 有 $f(1,2)=3$、$f(2,1)=6$，可见自变量的位置不能随意交换。
-
-二元函数的定义域是平面点集，图形由空间中的点 $(x,y,f(x,y))$ 组成，通常是曲面。定义域与图形不是同一个集合：前者记录允许输入的 $(x,y)$，后者还记录函数值。三元函数 $u=f(x,y,z)$ 的定义域是空间点集，常用等值面 $f(x,y,z)=c$ 描述其取值。
-
-例如 $f(x,y)=\sqrt{1-x^2-y^2}$ 要求 $x^2+y^2\le1$，所以定义域是闭圆盘；将函数关系平方并保留 $z\ge0$，得到图形是单位球面的上半部。
-
-点 $P_0$ 的 $\delta$ 邻域是满足 $\lVert P-P_0\rVert<\delta$ 的点集；在平面内就是以 $P_0$ 为圆心、半径为 $\delta$ 的开圆盘。去心邻域再排除中心点。这里 $\lVert P-P_0\rVert$ 表示两点的距离。
-
-内点拥有完全包含在集合中的邻域；边界点的每个邻域都同时接触集合与补集。开集不含自己的边界点，闭集包含全部边界点。例如 $x^2+y^2<1$ 是开集，$x^2+y^2\le1$ 是闭集，二者的边界都是 $x^2+y^2=1$。若集合能包含在某个有限半径的圆内，则称为有界集；闭有界集上连续函数能取得最大、最小值。
-
-#### 二重极限
-
-$(x,y)\to(x_0,y_0)$ 表示两点间距离趋于零，也就是 $x\to x_0$ 与 $y\to y_0$ 同时发生。它不指定两者变化的速度，也不规定先改变哪个变量。讨论极限时，假定定义域中存在任意接近 $(x_0,y_0)$ 的其他点。
-
-$$
-\lim_{(x,y)\to (x_0,y_0)}f(x,y)=A
-$$
-
-要求：对任意 $\varepsilon>0$，存在 $\delta>0$，使定义域内所有满足
-
-$$
-0<\sqrt{(x-x_0)^2+(y-y_0)^2}<\delta
-$$
-
-的点都满足 $|f(x,y)-A|<\varepsilon$。
-
-**任意路径趋近都必须得到同一个值。** 否定极限只需找到两条路径给出不同结果；证明存在则通常用估计、夹逼或连续函数运算。
-
-例如 $f(x,y)=x^2+y^2$ 在原点的极限为 $0$，因为它恰好等于到原点距离的平方。证明中没有限制 $x,y$ 的关系，因此同时涵盖了所有趋近方式。
-
-若要说明 $\displaystyle\frac{xy}{x^2+y^2}$ 在原点没有极限，沿 $y=0$ 得到 $0$，沿 $y=x$ 得到 $1/2$，已足够产生矛盾。应区分两种任务：**证明不存在可以找反例路径；证明存在需要覆盖所有定义域内的趋近点。**
-
-!!! warning "直线检查不等于所有路径检查"
-
-    沿全部直线的极限相同，仍不能保证二重极限存在。两次累次极限也不能替代二重极限。使用极坐标时，必须得到对角度一致的估计，不能只固定角度令半径趋于零。
-
-!!! example "例 8.1：沿直线都趋于零，极限仍不存在"
-
-    判断 $f(x,y)=\displaystyle\frac{x^2y}{x^4+y^2}$ 在原点的极限。
-
-    **解：** 沿 $y=kx$，$k\ne 0$ 时函数为 $\displaystyle\frac{kx}{x^2+k^2}\to 0$；沿 $y=0$ 或 $x=0$ 也为零。但沿 $y=x^2$，函数恒为 $1/2$，所以二重极限不存在。
-
-#### 连续性
-
-$f$ 在 $P_0$ 连续，是指 $P_0$ 处有定义且 $\lim_{P\to P_0}f(P)=f(P_0)$。初等多元函数在其定义域内的适当点连续；遇到分段定义点，应回到极限检验。
-
-在原点附近，若能估计
-
-$$
-|f(x,y)-A|\le C(x^2+y^2)^{\frac{\alpha}{2}},\qquad \alpha>0,
-$$
-
-便有极限 $A$。这类以距离统一控制的估计，比枚举路径更有证明力。
-
-### §2 偏导数与全微分
-
-#### 偏导数与高阶偏导数
-
-计算 $f_x$ 时，先固定 $y=y_0$，把 $f(x,y_0)$ 当作关于 $x$ 的一元函数求导；计算 $f_y$ 时反过来固定 $x$。下标说明对哪个变量求导，$f_x(x_0,y_0)$ 则表示求出偏导后在指定点取值。
-
-$$
-f_x(x_0,y_0)=\lim_{h\to 0}\frac{f(x_0+h,y_0)-f(x_0,y_0)}h,
-\qquad
-f_y(x_0,y_0)=\lim_{k\to 0}\frac{f(x_0,y_0+k)-f(x_0,y_0)}k.
-$$
-
-求偏导时其余自变量视为常量；在特殊分段点通常必须用定义。二阶偏导包括 $f_{xx},f_{xy},f_{yx},f_{yy}$。本页 $f_{xy}=\partial_y(\partial_x f)$；若混合偏导在点的邻域内连续，则 $f_{xy}=f_{yx}$。
-
-!!! example "例 8.2：偏导数中哪些量是常量"
-
-    设 $f(x,y)=x^2y+\sin y$，求一阶、二阶偏导数。
-
-    **解：** 对 $x$ 求导时，$y$ 与 $\sin y$ 都按常量处理，故 $f_x=2xy$；对 $y$ 求导时，$x^2$ 按常系数处理，故 $f_y=x^2+\cos y$。继续求导得
-
-    $$
-    f_{xx}=2y,\qquad f_{xy}=2x,\qquad
-    f_{yx}=2x,\qquad f_{yy}=-\sin y.
-    $$
-
-    例如 $f_x(1,0)=0$，而 $f_y(1,0)=2$，两个偏导分别描述不同变量的变化，数值不必相等。
-
-在分段定义点，先代入该点附近的分段式不一定能求出偏导。应按定义固定另一变量，计算差商；只有确认所用公式在该点适用后，才能直接代值。
-
-#### 全微分与可微性
-
-固定点 $(x,y)$，让两个变量分别增加 $\Delta x,\Delta y$，全增量是
-
-$$
-\Delta z=f(x+\Delta x,y+\Delta y)-f(x,y).
-$$
-
-偏导数只分别考察一个变量变化的情况，尚未说明两个变量同时变化时的全增量。可微性要求：全增量能写成关于 $\Delta x,\Delta y$ 的一次式，加上相对总位移更小的余项。
-
-设 $\rho=\sqrt{(\Delta x)^2+(\Delta y)^2}$。若
-
-$$
-\Delta z=A\Delta x+B\Delta y+o(\rho),\qquad \rho\to 0,
-$$
-
-则称 $f$ 在该点可微，且 $A=f_x,B=f_y$，全微分为
-
-$$
-\mathrm dz=f_x\,\mathrm dx+f_y\,\mathrm dy.
-$$
-
-这里 $A,B$ 可以依赖所考察的点，但不能依赖增量；$o(\rho)$ 表示余项除以 $\rho$ 后趋于零。只要求余项本身趋于零还不够。取 $\Delta y=0$ 或 $\Delta x=0$ 回到偏导定义，就能分别得到 $A=f_x,B=f_y$。
-
-$\mathrm dz$ 是全增量中的线性部分，通常不等于 $\Delta z$。在自变量独立时约定 $\mathrm dx=\Delta x,\mathrm dy=\Delta y$，从而把这个线性部分记为 $f_x\,\mathrm dx+f_y\,\mathrm dy$。
-
-它给出最佳的一阶线性近似
-
-$$
-f(x_0+\Delta x,y_0+\Delta y)
-\approx f(x_0,y_0)+f_x(x_0,y_0)\Delta x+f_y(x_0,y_0)\Delta y.
-$$
-
-!!! example "例 8.3：把全增量拆成微分与余项"
-
-    对 $f(x,y)=xy$，在 $(1,2)$ 处令 $\Delta x=h,\Delta y=k$，有
-
-    $$
-    \Delta z=(1+h)(2+k)-2=2h+k+hk.
-    $$
-
-    其中 $2h+k$ 是线性部分。令 $\rho=\sqrt{h^2+k^2}$，由 $|hk|\le\displaystyle\frac{h^2+k^2}{2}$ 得
-
-    $$
-    \frac{|hk|}{\rho}\le\frac\rho2\to0.
-    $$
-
-    所以函数在该点可微，$\mathrm dz=2\,\mathrm dx+\mathrm dy$。若要近似计算 $1.01\times1.98$，取 $h=0.01,k=-0.02$，有 $\mathrm dz=0$，近似值为 $2$；实际增量还含 $hk=-0.0002$，实际值为 $1.9998$。
-
-| 条件 | 能推出什么 |
-| --- | --- |
-| 一阶偏导在该点邻域存在且在该点连续 | 该点可微（常用充分条件） |
-| 该点可微 | 该点连续，且两个偏导存在 |
-| 两个偏导存在 | 一般不能推出连续或可微 |
-| 连续且两个偏导存在 | 一般仍不能推出可微 |
-
-直接检验可微性，就是计算
-
-$$
-\frac{f(x_0+h,y_0+k)-f(x_0,y_0)-f_x(x_0,y_0)h-f_y(x_0,y_0)k}
-{\sqrt{h^2+k^2}}
-$$
-
-是否趋于零。
-
-!!! example "例 8.4：连续且偏导存在，为什么还不够"
-
-    设 $f(x,y)=\displaystyle\frac{xy}{\sqrt{x^2+y^2}}$（$(x,y)\ne (0,0)$），$f(0,0)=0$。判断它在原点是否可微。
-
-    **解：** 由 $|xy|\le \displaystyle\frac{x^2+y^2}{2}$，有 $|f(x,y)|\le \displaystyle\frac{\sqrt{x^2+y^2}}{2}\to 0$，故连续。两坐标轴上函数恒为零，故 $f_x(0,0)=f_y(0,0)=0$。
-
-    可微性要求 $\displaystyle\frac{f(x,y)}{\sqrt{x^2+y^2}}\to 0$，但沿 $y=x\ne 0$，这个商恒为 $1/2$，所以不可微。
-
-### §3 复合函数微分法
-
-#### 链式法则
-
-复合函数求偏导时，需要先区分**独立变量**与**中间变量**。若独立变量是 $x,y$，对 $x$ 求偏导就是保持 $y$ 不变，但 $u(x,y),v(x,y)$ 都可能随 $x$ 变化；因此它们引起的变化都要计入。
-
-若 $z=f(u,v)$，$u=u(x,y),v=v(x,y)$，且有关函数可微，则
-
-$$
-z_x=f_u u_x+f_v v_x,\qquad
-z_y=f_u u_y+f_v v_y.
-$$
-
-右端的 $f_u,f_v$ 应在 $(u(x,y),v(x,y))$ 处取值。它们表示 $f$ 对中间变量的偏导，不等于最终的 $z_x,z_y$。
-
-!!! example "例 8.5：先分清两层求导"
-
-    设 $z=u^2+v$，$u=x+y,v=xy$，求 $z_x,z_y$。
-
-    **解：** 外层导数为 $f_u=2u,f_v=1$；内层导数为 $u_x=u_y=1,v_x=y,v_y=x$。因此
-
-    $$
-    z_x=2u\cdot1+1\cdot y=2x+3y,\qquad
-    z_y=2u\cdot1+1\cdot x=3x+2y.
-    $$
-
-    也可先展开 $z=(x+y)^2+xy=x^2+3xy+y^2$，直接求偏导核对。
-
-对于单参数曲线 $u=u(t),v=v(t)$，
-
-$$
-\frac{\mathrm dz}{\mathrm dt}=f_u u'+f_v v'.
-$$
-
-若二阶导数连续，则
-
-$$
-\frac{\mathrm d^2z}{\mathrm dt^2}
-=f_{uu}(u')^2+2f_{uv}u'v'+f_{vv}(v')^2+f_u u''+f_v v''.
-$$
-
-含显式自变量时也要计入所有路径。例如 $z=f(x,u(x,y))$，则 $z_x=f_1+f_2u_x$，$z_y=f_2u_y$，其中 $f_1,f_2$ 是对 $f$ 的第一、第二个自变量求偏导。
-
-#### 全微分形式不变性
-
-无论 $u,v$ 是独立变量还是可微的中间变量，始终有
-
-$$
-\mathrm dz=f_u\,\mathrm du+f_v\,\mathrm dv.
-$$
-
-再把 $\mathrm du,\mathrm dv$ 展开即可。这是一阶全微分的形式不变性；二阶微分还会出现中间变量的二阶微分，不能机械照搬一阶规则。
-
-!!! tip "先画依赖关系，再求导"
-
-    从目标变量出发，沿所有路径走到求导变量：每条路径的导数相乘，不同路径相加。二次求导时，先前得到的每一个系数和每一个中间变量都可能继续变化。
-
-!!! example "例 8.6：复合函数的二阶导数"
-
-    设 $z=f(x+y,x-y)$，$f$ 二阶连续可微，求 $z_{xx}+z_{yy}$。
-
-    **解：** 记 $u=x+y,v=x-y$。先求一阶偏导：$z_x=f_u+f_v$，$z_y=f_u-f_v$。
-
-    再对 $x$ 求导时，$(f_u)_x=f_{uu}u_x+f_{uv}v_x=f_{uu}+f_{uv}$，$(f_v)_x=f_{vu}+f_{vv}$；对 $y$ 求导时同样要计入 $u_y=1,v_y=-1$。利用 $f_{uv}=f_{vu}$，得到
-
-    $$
-    z_{xx}=f_{uu}+2f_{uv}+f_{vv},\qquad
-    z_{yy}=f_{uu}-2f_{uv}+f_{vv},
-    $$
-
-    故 $z_{xx}+z_{yy}=2(f_{uu}+f_{vv})$，右端各偏导均在 $(u,v)=(x+y,x-y)$ 处取值。
-
-### §4 隐函数的偏导数
-
-#### 一个方程确定一个函数
-
-隐函数关系把 $x,y,z$ 联系在一起。若要把 $z$ 看成 $z(x,y)$，对 $x$ 求偏导时，$y$ 不变而 $z$ 随 $x$ 变化，故链式法则给出
-
-$$
-F_x+F_z z_x=0.
-$$
-
-对 $y$ 求导则有 $F_y+F_z z_y=0$。这里 $F_x$ 是把 $y,z$ 都暂时固定时的偏导，而 $z_x$ 是约束关系中 $z$ 对 $x$ 的偏导，两者的求导对象不同。
-
-若 $F(x,y,z)=0$，$F$ 在点附近一阶连续可微，且该点 $F_z\ne 0$，则局部可将 $z$ 视为 $x,y$ 的函数，且
-
-$$
-z_x=-\frac{F_x}{F_z},\qquad z_y=-\frac{F_y}{F_z}.
-$$
-
-再次求导时，$F_x,F_z$ 都依赖于 $z(x,y)$。例如在二阶连续可微条件下
-
-$$
-z_{xx}=-\frac{F_{xx}+2F_{xz}z_x+F_{zz}z_x^2}{F_z},
-$$
-
-$$
-z_{xy}=-\frac{F_{xy}+F_{xz}z_y+F_{yz}z_x+F_{zz}z_xz_y}{F_z}.
-$$
-
-分母为零表示这个定理在该点不能直接使用，并不自动表示隐函数绝不存在。
-
-!!! example "例 8.7：隐函数二阶导数还要考虑 z 的变化"
-
-    在球面 $x^2+y^2+z^2=9$ 的 $z>0$ 部分求 $z_x,z_{xx}$。
-
-    **解：** 对 $x$ 求偏导得 $2x+2zz_x=0$，所以 $z_x=-\displaystyle\frac{x}{z}$。再次对原来的导数关系求导，比直接记忆二阶公式更方便：
-
-    $$
-    2+2z_x^2+2zz_{xx}=0,
-    \qquad z_{xx}=-\frac{1+z_x^2}{z}
-    =-\frac1z-\frac{x^2}{z^3}.
-    $$
-
-    在 $(1,2,2)$ 处，$z_x=-1/2,z_{xx}=-5/8$。条件 $z>0$ 保证本题中除以 $z$ 合法。
-
-#### 方程组确定隐函数组
-
-两个未知函数 $u(x,y),v(x,y)$ 通常需要两个关系式共同确定。求偏导时，对每个关系式都使用链式法则，再联立求解。例如由 $u+v=x$、$u-v=y^2$，对 $x$ 求偏导得 $u_x+v_x=1,u_x-v_x=0$，所以 $u_x=v_x=1/2$；对 $y$ 求偏导得 $u_y+v_y=0,u_y-v_y=2y$，所以 $u_y=y,v_y=-y$。
-
-一般情形中，下面的雅可比行列式 $J$ 就是这些导数方程的系数行列式。条件 $J\ne0$ 保证可以唯一解出待求偏导数，并在函数一阶连续可微的条件下保证局部隐函数存在。
-
-设 $F(x,y,u,v)=0,G(x,y,u,v)=0$。若二者一阶连续可微且
-
-$$
-J=\frac{\partial(F,G)}{\partial(u,v)}
-=\begin{vmatrix}F_u&F_v\\G_u&G_v\end{vmatrix}\ne 0,
-$$
-
-则局部可确定 $u(x,y),v(x,y)$。对 $x$ 求导后解线性方程组
-
-$$
-\begin{pmatrix}F_u&F_v\\G_u&G_v\end{pmatrix}
-\begin{pmatrix}u_x\\v_x\end{pmatrix}
-=-\begin{pmatrix}F_x\\G_x\end{pmatrix}.
-$$
-
-对 $y$ 求导同理。通常边列方程边消元，比记忆四个商式更可靠。
-
-#### 反函数组的偏导数（\*）
-
-教材第 96 页起。设 $u=u(x,y),v=v(x,y)$ 一阶连续可微，且 $J=\displaystyle\frac{\partial(u,v)}{\partial(x,y)}\ne 0$，则局部反函数组满足
-
-$$
-\begin{pmatrix}x_u&x_v\\y_u&y_v\end{pmatrix}
-=\begin{pmatrix}u_x&u_y\\v_x&v_y\end{pmatrix}^{-1}
-=\frac1J\begin{pmatrix}v_y&-u_y\\-v_x&u_x\end{pmatrix}.
-$$
-
-!!! info "与积分换元的联系"
-
-    雅可比矩阵描述坐标变换的局部线性作用，其行列式描述有向面积或体积的伸缩。第九章换元时取其绝对值。
-
-### §5 场的方向导数与梯度
-
-数量场给空间每个点一个数值，例如温度；矢量场给每点一个矢量，例如速度。二元或三元函数沿单位矢量 $\mathbf e$ 的方向导数定义为
-
-$$
-D_{\mathbf e}f(P)=\lim_{t\to 0^+}\frac{f(P+t\mathbf e)-f(P)}t.
-$$
-
-这里采用教材沿射线、$t\to 0^+$ 的约定。若 $f$ 在该点可微，则
-
-$$
-D_{\mathbf e}f=\nabla f\cdot \mathbf e,\qquad
-\nabla f=(f_x,f_y,f_z).
-$$
-
-单位矢量的长度为 $1$，所以 $t$ 正好表示沿指定方向移动的距离；若直接使用非单位矢量，分母 $t$ 就不再等于移动距离。可微时，将 $\Delta\mathbf r=t\mathbf e$ 代入全微分展开，再除以 $t$ 取极限，即得到梯度公式。
-
-二元情形省去第三分量。当 $\nabla f\ne \mathbf0$ 时，梯度方向增长最快，最大方向导数是 $\lVert\nabla f\rVert$；反梯度方向下降最快，最小值为 $-\lVert\nabla f\rVert$。梯度垂直于光滑等值面。
-
-!!! warning "方向必须单位化，公式需要可微性"
-
-    给出方向矢量 $(a,b,c)$ 时，应先除以 $\sqrt{a^2+b^2+c^2}$。只知道偏导存在，不能直接使用梯度公式；各方向导数都存在也不保证可微。
-
-!!! example "例 8.8：给定方向与最大变化率"
-
-    求 $f(x,y)=x^2+3y^2$ 在 $(1,1)$ 沿 $\mathbf v=(3,4)$ 的方向导数。
-
-    **解：** 先单位化，$\mathbf e=(3/5,4/5)$；再求 $\nabla f(1,1)=(2,6)$。因此
-
-    $$
-    D_{\mathbf e}f=2\cdot\frac35+6\cdot\frac45=6.
-    $$
-
-    这是题目指定方向的变化率。若允许选择方向，则最大值为 $\sqrt{2^2+6^2}=2\sqrt{10}$，在单位方向 $(1/\sqrt{10},3/\sqrt{10})$ 取得。
-
-### §6 多元函数的极值及应用
-
-#### 二元泰勒公式
-
-设 $f$ 在 $(a,b)$ 附近二阶连续可微，$h=x-a,k=y-b$，则
-
 $$
-f(a+h,b+k)=f(a,b)+f_xh+f_yk
-+\frac12(f_{xx}h^2+2f_{xy}hk+f_{yy}k^2)+o(h^2+k^2),
+k=\lim_{\tau\to0}\frac{\theta}{\tau}.
 $$
-
-右侧偏导均在 $(a,b)$ 取值。更高阶展开可沿线段设 $g(t)=f(a+th,b+tk)$，使用一元泰勒公式推导。
-
-#### 无约束极值
-
-局部极小值要求：存在该点的一个邻域，使其中所有允许的点都有 $f(x,y)\ge f(x_0,y_0)$；极大值反向。只沿某一条曲线取得最小值，不足以说明它是二元函数的极小值。
-
-内点处若可微且取得极值，必要条件为 $f_x=f_y=0$；这样的点称为驻点。不可微点也可能是极值点，应另查。
-
-在驻点处令 $A=f_{xx},B=f_{xy},C=f_{yy}$，$\Delta=AC-B^2$。若二阶偏导在附近连续，则
-
-| 条件 | 结论 |
-| --- | --- |
-| $\Delta>0,A>0$ | 严格极小值 |
-| $\Delta>0,A<0$ | 严格极大值 |
-| $\Delta<0$ | 鞍点，不是极值点 |
-| $\Delta=0$ | 判别失效，需用定义、高阶项或路径分析 |
 
-在驻点处，一阶项为零，二元泰勒公式的主要变化由 $\frac12(Ah^2+2Bhk+Ck^2)$ 决定。$\Delta>0$ 时这个二次式保持同号，符号由 $A$ 决定；$\Delta<0$ 时能取正、负两种值，所以不是极值点。这是表中判别法的依据。
+半径为 $R$ 的圆的曲率为 $k=1/R$；直线的曲率为零。
 
-例如 $f=x^2+y^2-2x-4y$ 的驻点为 $(1,2)$，$A=C=2,B=0$，所以是严格极小值点。又因 $f=(x-1)^2+(y-2)^2-5$，还能确认它是全平面上的最小值点。相比之下，$x^2-y^2$ 在原点沿 $x$ 轴增大、沿 $y$ 轴减小，对应 $\Delta=-4<0$，是鞍点。
+对二阶可导的曲线 $x=x(t),y=y(t)$，当 $x'(t),y'(t)$ 不同时为零时，
 
-闭有界区域上求连续函数最值，要比较**内部驻点、不可微点、边界各段及边界端点**。局部极值不自动是全局最值。
-
-#### 条件极值与拉格朗日乘数法
-
-条件极值只在满足约束的点中比较函数值。例如在圆周 $x^2+y^2=1$ 上求最值，就不应同时要求所有平面方向上的变化率都为零，因此不能直接套用 $f_x=f_y=0$。
-
-在约束曲线的正则点，极值处 $f$ 沿约束切线的变化率为零，于是 $\nabla f$ 与约束曲线的法向量 $\nabla g$ 平行。用一个待定数 $\lambda$ 表示这个比例关系，就得到拉格朗日乘数法。
-
-在约束 $g(x,y)=0$ 下，若约束正则，即 $\nabla g\ne \mathbf0$，可构造
-
 $$
-\mathcal L=f-\lambda g,
-\qquad f_x=\lambda g_x,\quad f_y=\lambda g_y,\quad g=0.
+k=\frac{|x'y''-x''y'|}{\bigl((x')^2+(y')^2\bigr)^{3/2}}.
 $$
-
-多个独立等式约束时写 $\nabla f=\sum_j\lambda_j\nabla g_j$。解方程只能得到候选点，仍需比较或判别；约束梯度退化处要另外检查。
-
-!!! example "例 8.9：圆周上的条件最值"
-
-    求 $f(x,y)=xy$ 在 $x^2+y^2=1$ 上的最大、最小值。
 
-    **解：** 方程为 $y=2\lambda x,x=2\lambda y,x^2+y^2=1$，得到 $y=x$ 或 $y=-x$。于是最大值为 $1/2$，在 $(\displaystyle\frac{1}{\sqrt2},\frac{1}{\sqrt2})$ 和 $(-\displaystyle\frac{1}{\sqrt2},-\frac{1}{\sqrt2})$ 取得；最小值为 $-1/2$，在另两个异号点取得。
+对曲线 $y=f(x)$，
 
-    也可由 $2|xy|\le x^2+y^2=1$ 直接证明结果是全局最值。
-
-### §7 偏导数在几何上的应用
-
-#### 矢量值函数与曲线的切线、法平面
-
-对 $\mathbf r(t)=(x(t),y(t),z(t))$，逐分量求导。若 $\mathbf r'(t_0)\ne \mathbf0$，它是曲线在 $P=\mathbf r(t_0)$ 的切向量。
-
 $$
-\text{切线：}\quad \mathbf r=\mathbf r(t_0)+s\mathbf r'(t_0),
+k=\frac{|f''(x)|}{\bigl(1+(f'(x))^2\bigr)^{3/2}}.
 $$
-
-$$
-\text{法平面：}\quad \mathbf r'(t_0)\cdot (\mathbf r-\mathbf r(t_0))=0.
-$$
-
-对交线 $F=0,G=0$，若 $\nabla F\times \nabla G\ne \mathbf0$，可取此矢量为切向量。
 
-#### 曲面的切平面与法线
+#### §8.2 曲率圆
 
-对 $F(x,y,z)=0$，若 $F$ 一阶连续可微且 $\nabla F(P)\ne \mathbf0$，则
+**曲率圆：** 在曲线上曲率 $k\ne0$ 的点 $M$，沿法线向曲线凹侧取距离 $R=1/k$ 的点为圆心，以 $R$ 为半径的圆称为曲线在 $M$ 处的曲率圆。其圆心称为曲率中心，$R$ 称为曲率半径。
 
-$$
-\text{切平面：}\quad \nabla F(P)\cdot (\mathbf r-\mathbf r_P)=0,
-$$
+对 $y=f(x)$，$y''\ne0$ 时，曲率半径与曲率中心 $(\xi,\eta)$ 为
 
 $$
-\text{法线：}\quad \mathbf r=\mathbf r_P+t\nabla F(P).
+R=\frac{(1+(y')^2)^{3/2}}{|y''|},\qquad
+\xi=x-\frac{y'(1+(y')^2)}{y''},\qquad
+\eta=y+\frac{1+(y')^2}{y''}.
 $$
 
-对显式曲面 $z=f(x,y)$，切平面为
-
-$$
-z-z_0=f_x(x_0,y_0)(x-x_0)+f_y(x_0,y_0)(y-y_0),
-$$
+曲线 $C$ 的曲率中心的轨迹 $G$ 称为 $C$ 的渐屈线，$C$ 称为 $G$ 的渐伸线。
 
-法向量可取 $(f_x,f_y,-1)$。
+!!! warning "提示"
 
-切平面方程与全微分近似使用相同的系数，只是这里把 $(x,y,z)$ 当作平面上可变的点。例如 $z=x^2+y^2$ 在 $(1,2,5)$ 处有 $f_x=2,f_y=4$，切平面为 $z-5=2(x-1)+4(y-2)$，法线可写成 $(x,y,z)=(1,2,5)+t(2,4,-1)$。
+    -   **曲率圆存在的条件**：只有曲率 $k\ne0$（即 $y''\ne0$）的点才有曲率圆；直线 $k=0$，没有曲率圆。
 
-!!! tip "切线和切平面的联系"
+        ??? example "曲率圆的存在性"
+            <!-- 待补充 -->
 
-    曲线用导数得到切向量，隐式曲面用梯度得到法向量；两个曲面的交线，再对两个法向量作矢量积。最后统一代入第七章的点向式、点法式。
+    -   **曲率中心在凹侧**：曲率中心沿法线指向曲线凹的一侧，$(\xi,\eta)$ 的公式中符号由 $y''$ 决定；不能把圆心画在凸侧。
 
-### 本章自测
+        ??? example "曲率中心的位置"
+            <!-- 待补充 -->
 
-!!! example "自测 8"
+    -   **公式不要漏绝对值与幂次**：$R=\dfrac{(1+(y')^2)^{3/2}}{|y''|}$，分母取绝对值，分子是 $3/2$ 次方；$\xi,\eta$ 的分母是 $y''$，不带绝对值。
 
-    1. 判断 $\displaystyle\frac{x^2y}{x^2+y^2}$ 在原点的极限。
-    2. 设 $z=e^{xy}$，求 $\mathrm dz$ 和 $z_{xy}$。
-    3. 在球面 $x^2+y^2+z^2=9$ 的上半部，将 $z$ 视为 $x,y$ 的函数，求 $(1,2,2)$ 处的 $z_x,z_{xx}$。
-    4. 求 $f=x^2+y^2+z^2$ 在 $(1,0,1)$ 沿 $(1,2,2)$ 方向的方向导数，并求等值面在该点的切平面。
-    5. 求 $f=x^2+y^2-2x-4y$ 在圆盘 $x^2+y^2\le 1$ 上的最大、最小值。
+        ??? example "曲率半径与曲率中心"
+            <!-- 待补充 -->
 
-    ??? success "答案与提示"
+    -   **曲率圆只保证二阶接触**：曲率圆与曲线在该点有相同切线和相同曲率，但不保证更高阶导数相同；渐屈线是曲率中心的轨迹，原曲线是渐屈线的渐伸线。
 
-        1. 绝对值不超过 $|y|$，故极限为 $0$。
-        2. $\mathrm dz=e^{xy}(y\,\mathrm dx+x\,\mathrm dy)$，$z_{xy}=e^{xy}(1+xy)$。
-        3. $z_x=-\displaystyle\frac{x}{z}=-1/2$，$z_{xx}=-\displaystyle\frac{1}{z}-\frac{x^2}{z^3}=-5/8$。
-        4. 单位方向为 $\displaystyle\frac{1,2,2}{3}$，方向导数为 $2$。切平面为 $x+z=2$。
-        5. 内部唯一驻点 $(1,2)$ 不在圆盘内，极值只能在边界。边界上 $f=1-2x-4y$，最大值为 $1+2\sqrt5$，点为 $(-\displaystyle\frac{1}{\sqrt5},-\frac{2}{\sqrt5})$；最小值为 $1-2\sqrt5$，点为 $(\displaystyle\frac{1}{\sqrt5},\frac{2}{\sqrt5})$。
+        ??? example "曲率圆与渐屈线"
+            <!-- 待补充 -->
 
-## 第九章 多元函数积分学
+### §9 方程的近似根 \*
 
-### §1 二重积分的概念
+#### §9.1 图解法
 
-!!! tip "这一章在讲什么"
+方程 $f(x)=0$ 的实根对应于曲线 $y=f(x)$ 与 $x$ 轴交点的横坐标；方程 $f_1(x)=f_2(x)$ 的实根对应于曲线 $y=f_1(x)$ 与 $y=f_2(x)$ 交点的横坐标。
 
-    第五章的定积分是“分割—取点—求和—取极限”的产物，本章把这个套路推广到平面区域、空间区域、曲线和曲面：分割对象从区间换成几何体，$\Delta x$ 换成面积元、体积元、弧长元或面积元，于是多出一个新问题——几何对象该怎么参数化。
+#### §9.2 数值法
 
-    四类积分的定义思想完全相同，区别只在两件事：**区域是什么**（平面、空间、曲线、曲面）与**积分元是什么**（面积、体积、弧长、面积）。到 §5 把它们放进同一个框架后你会发现，剩下的工作只有两步：选坐标、定积分限。
+**根的隔离区间：** 若方程 $f(x)=0$ 在 $(a,b)$ 内恰有一个根，且 $f(a)f(b)\ne0$，则称 $(a,b)$ 为根的隔离区间。若 $f\in C[a,b]$，$f(a)f(b)<0$，且在 $(a,b)$ 内 $f'$ 恒正或恒负，则 $(a,b)$ 为根的隔离区间。
 
-将平面区域 $D$ 分割成小块，在第 $i$ 块任取点 $(\xi_i,\eta_i)$，面积记为 $\Delta\sigma_i$。若小块最大直径趋于零时，和式有与分割、取点无关的极限，便定义
+**二分法：** 设 $f\in C[a,b]$，$f(a)f(b)<0$。连续二分并选取端点函数值异号的子区间 $[a_n,b_n]$，有
 
 $$
-\iint_D f(x,y)\,\mathrm d\sigma
-=\lim \sum_i f(\xi_i,\eta_i)\Delta\sigma_i.
+b_n-a_n=\frac{b-a}{2^n},\qquad
+x_n=\frac{a_n+b_n}{2},\qquad
+|x_n-c|<\frac{b-a}{2^n},
 $$
 
-连续函数在常见有界闭区域上可积。若 $f\ge 0$，积分可表示曲面下的体积；一般函数则产生带符号的累积量。
+其中 $c$ 为所求根。
 
-主要性质包括线性、区域可加性、保序性及估值：若 $m\le f\le M$，则
+**牛顿法（切线法）：** 迭代公式为
 
 $$
-m\,\operatorname{Area}(D)\le \iint_Df\,\mathrm d\sigma
-\le M\,\operatorname{Area}(D),\qquad
-\left|\iint_Df\,\mathrm d\sigma\right|\le \iint_D|f|\,\mathrm d\sigma.
+x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}\qquad(f'(x_n)\ne0).
 $$
-
-若 $D$ 是有界闭连通区域，$f$ 连续，则存在区域内某点使积分等于该点函数值乘面积，这是二重积分中值定理。
-
-### §2 二重积分的计算
-
-#### 直角坐标：先确定一条截线
-
-!!! tip "写积分限的两条检查"
 
-    - 内层积分的上下限可以是外层变量的函数，外层积分的上下限必须是常数；写反过来几乎一定出错。
-    - 写完之后取几个“极端”位置（区域的左端、右端）检验：截线是否恰好扫过整段区域，有没有多扫或漏扫。
+若 $f$ 在 $[a,b]$ 上二阶连续可导，$f(a)f(b)<0$，且 $f',f''$ 在 $[a,b]$ 上均不为零，初值 $x_0\in[a,b]$ 满足 $f(x_0)f''(x_0)>0$，则牛顿迭代单调收敛于区间内的唯一根 $c$。
 
-若区域可写成
+在上述条件下，记
 
 $$
-D=\{(x,y):a\le x\le b,\ \varphi_1(x)\le y\le \varphi_2(x)\},
+m=\min_{x\in[a,b]}|f'(x)|>0,\qquad
+M=\max_{x\in[a,b]}|f''(x)|,
 $$
 
 则
 
 $$
-\iint_Df(x,y)\,\mathrm dx\,\mathrm dy
-=\int_a^b\left[\int_{\varphi_1(x)}^{\varphi_2(x)}f(x,y)\,\mathrm dy\right]\mathrm dx.
+|x_{n+1}-c|\le\frac{M}{2m}|x_n-c|^2,\qquad
+|x_n-c|\le\frac{|f(x_n)|}{m}.
 $$
 
-内层沿竖直截线积分，外层让截线扫过区域。若按水平截线描述更简单，就写成先 $x$ 后 $y$；边界函数在中途变化时应分块。
+!!! warning "提示"
 
-**交换次序的步骤：** 还原区域不等式 → 画边界和交点 → 沿新内层方向切片 → 确定新上下限。不能只交换两个微分符号。
+    -   **二分法的前提**：$f\in C[a,b]$ 且 $f(a)f(b)<0$ 才能保证区间内有根；若区间内有多个根，需先做根的隔离，二分法只收敛到其中一个根。
 
-!!! example "例 9.1：交换次序消去难积分"
+        ??? example "二分法的前提"
+            <!-- 待补充 -->
 
-    计算 $I=\displaystyle\int_0^1\mathrm dx\int_x^1e^{y^2}\,\mathrm dy$。
+    -   **误差界与停机准则**：$n$ 次二分后 $|x_n-c|<\dfrac{b-a}{2^n}$ 是误差上界；停机应按所需精度选 $n$，不能只看 $|f(x_n)|$ 很小就停止。
 
-    **解：** 区域为 $0\le x\le y\le 1$。交换次序后
+        ??? example "二分法的误差估计"
+            <!-- 待补充 -->
 
-    $$
-    I=\int_0^1\mathrm dy\int_0^ye^{y^2}\,\mathrm dx
-    =\int_0^1ye^{y^2}\,\mathrm dy=\frac{e-1}{2}.
-    $$
+    -   **牛顿法的条件**：迭代要求 $f'(x_n)\ne0$；保证单调收敛还需 $f',f''$ 不变号且初值满足 $f(x_0)f''(x_0)>0$，否则可能发散、循环或跳出区间。
 
-#### 极坐标
+        ??? example "牛顿法的收敛条件"
+            <!-- 待补充 -->
 
-面积元中的因子 $\rho$ 值得记一次来历：在极坐标网格下取一小块，径向跨出 $\mathrm d\rho$、角度转过 $\mathrm d\theta$，两邻边长分别是 $\mathrm d\rho$ 与 $\rho\,\mathrm d\theta$，面积近似为 $\rho\,\mathrm d\rho\,\mathrm d\theta$。换句话说，$\rho$ 是半径带来的“伸长”，漏掉它相当于把远处的面积算小了。
+    -   **收敛速度是局部的**：牛顿法在单根附近二阶收敛；重根时通常退化为线性收敛，需要改造迭代公式或先做根的隔离。
 
-要不要用极坐标，看两条线索：区域是圆、圆环、扇形或由 $x^2+y^2$ 描述；被积函数含 $x^2+y^2$ 或 $\sqrt{x^2+y^2}$。圆心不在原点时，先写出边界曲线的极坐标方程，再据此确定角度的分段。
+        ??? example "牛顿法的收敛速度"
+            <!-- 待补充 -->
 
-令 $x=r\cos\theta,y=r\sin\theta$，$r\ge 0$，则
+## 第四章 不定积分
+
+### §1 不定积分的概念
+
+#### §1.1 原函数与不定积分
+
+设 $f$ 在区间 $I$ 上有定义。若可导函数 $F$ 对每个 $x\in I$ 都满足
 
 $$
-\mathrm d\sigma=r\,\mathrm dr\,\mathrm d\theta,
+F'(x)=f(x),\qquad\text{或}\qquad\mathrm dF(x)=f(x)\,\mathrm dx,
 $$
+
+则称 $F$ 为 $f$ 在 $I$ 上的一个原函数。
+
+$f$ 在同一区间上的全部原函数为 $F(x)+C$，称为 $f$ 的不定积分，记为
+
+$$
+\int f(x)\,\mathrm dx=F(x)+C.
+$$
+
+$f$ 为被积函数，$x$ 为积分变量，$f(x)\,\mathrm dx$ 为被积表达式，$C$ 为任意常数，称为积分常数。求原函数的运算称为积分法。
+
+不定积分的图形是一族积分曲线；在横坐标相同的各点处，它们具有相同的切线斜率。
+
+#### §1.2 基本积分
+
+下表各式在被积函数有定义的相应区间内成立，$C$ 为任意常数。
+
+| 不定积分 | 公式 | 条件 |
+| --- | --- | --- |
+| $\int1\,\mathrm dx$ | $x+C$ | |
+| $\int x^\alpha\,\mathrm dx$ | $\displaystyle\frac{x^{\alpha+1}}{\alpha+1}+C$ | $\alpha\ne-1$ |
+| $\int\frac{\mathrm dx}{x}$ | $\ln\lvert x\rvert+C$ | $x\ne0$ |
+| $\int a^x\,\mathrm dx$ | $\displaystyle\frac{a^x}{\ln a}+C$ | $a>0,\ a\ne1$ |
+| $\int e^x\,\mathrm dx$ | $e^x+C$ | |
+| $\int\frac{\mathrm dx}{1+x^2}$ | $\arctan x+C$ 或 $-\operatorname{arccot}x+C$ | |
+| $\int\frac{\mathrm dx}{\sqrt{1-x^2}}$ | $\arcsin x+C$ 或 $-\arccos x+C$ | $-1<x<1$ |
+| $\int\sin x\,\mathrm dx$ | $-\cos x+C$ | |
+| $\int\cos x\,\mathrm dx$ | $\sin x+C$ | |
+| $\int\sec^2x\,\mathrm dx$ | $\tan x+C$ | $\cos x\ne0$ |
+| $\int\csc^2x\,\mathrm dx$ | $-\cot x+C$ | $\sin x\ne0$ |
+| $\int\sec x\tan x\,\mathrm dx$ | $\sec x+C$ | $\cos x\ne0$ |
+| $\int\csc x\cot x\,\mathrm dx$ | $-\csc x+C$ | $\sin x\ne0$ |
+| $\int\sinh x\,\mathrm dx$ | $\cosh x+C$ | |
+| $\int\cosh x\,\mathrm dx$ | $\sinh x+C$ | |
+
+#### §1.3 不定积分的性质
+
+$$
+\frac{\mathrm d}{\mathrm dx}\int f(x)\,\mathrm dx=f(x),\qquad
+\mathrm d\int f(x)\,\mathrm dx=f(x)\,\mathrm dx,
+$$
+
+$$
+\int f'(x)\,\mathrm dx=f(x)+C,\qquad
+\int\mathrm df(x)=f(x)+C.
+$$
+
+若 $f,g$ 的原函数均存在，则
+
+$$
+\int[f(x)\pm g(x)]\,\mathrm dx
+=\int f(x)\,\mathrm dx\pm\int g(x)\,\mathrm dx,
+$$
+
+$$
+\int\alpha f(x)\,\mathrm dx=\alpha\int f(x)\,\mathrm dx,
+\qquad \alpha\ne0\text{ 为常数}.
+$$
+
+!!! warning "提示"
+
+    -   **结果必须带任意常数**：不定积分表示全部原函数 $F(x)+C$，只写一个原函数会漏解；求导与积分互为逆运算，但相差一个常数。
+
+        ??? example "积分常数"
+            <!-- 待补充 -->
+
+    -   **线性性质只对加减和常数倍成立**：$\int(f\pm g)=\int f\pm\int g$、$\int\alpha f=\alpha\int f$，但一般 $\int fg\ne\int f\cdot\int g$，$\int\dfrac fg\ne\dfrac{\int f}{\int g}$。
+
+        ??? example "积分的线性性质"
+            <!-- 待补充 -->
+
+    -   **原函数存在性与可积性不同**：连续函数必有原函数，但原函数存在不要求被积函数连续；初等函数不一定有初等原函数（如 $e^{-x^2}$）。
+
+        ??? example "原函数的存在性"
+            <!-- 待补充 -->
+
+    -   **积分变量要与被积表达式一致**：$\displaystyle\int f(x)\,\mathrm dx$ 中的 $x$ 是哑变量，换元后必须同时换 $\mathrm dx$ 和积分限（定积分）或回代（不定积分）。
+
+        ??? example "积分变量的替换"
+            <!-- 待补充 -->
+
+### §2 不定积分的几种基本方法
+
+#### §2.1 凑微分法（第一换元法）
+
+若 $F'(u)=f(u)$，$u=\varphi(x)$ 可导，则
+
+$$
+\int f(\varphi(x))\varphi'(x)\,\mathrm dx
+=\int f(u)\,\mathrm du
+=F(\varphi(x))+C.
+$$
+
+#### §2.2 变量代换法（第二换元法）
+
+若 $x=\varphi(t)$ 在所用区间内严格单调、可导，$\varphi'(t)\ne0$，且 $G'(t)=f(\varphi(t))\varphi'(t)$，则
+
+$$
+\int f(x)\,\mathrm dx=G(\varphi^{-1}(x))+C.
+$$
+
+等价地，
+
+$$
+\int f(\varphi(t))\varphi'(t)\,\mathrm dt=G(t)+C,
+\qquad t=\varphi^{-1}(x).
+$$
+
+下表中 $a>0$，各变量关系在相应的实数区间内成立。
+
+| 根式 | 变量关系 | 参数范围 |
+| --- | --- | --- |
+| $\sqrt{a^2-x^2}$ | $x=a\sin t$ | $-\pi/2\le t\le\pi/2$ |
+| $\sqrt{a^2+x^2}$ | $x=a\tan t$ | $-\pi/2<t<\pi/2$ |
+| $\sqrt{x^2-a^2}$ | $x=a\sec t$ | $t\in[0,\pi/2)\cup(\pi/2,\pi]$ |
+
+#### §2.3 分部积分法
+
+若 $u,v$ 均可导，且 $\int u'v\,\mathrm dx$ 存在，则
+
+$$
+\int u(x)v'(x)\,\mathrm dx
+=u(x)v(x)-\int u'(x)v(x)\,\mathrm dx,
+$$
+
+或写为
+
+$$
+\int u\,\mathrm dv=uv-\int v\,\mathrm du.
+$$
+
+!!! warning "提示"
+
+    -   **$u$ 的选取决定成败**：一般按"反、对、幂、指、三"的优先级选 $u$，选错会使积分更复杂；$v$ 可取任一原函数，通常省略常数。
+
+        ??? example "$u$ 与 $\mathrm dv$ 的选取"
+            <!-- 待补充 -->
+
+    -   **公式中的负号不能漏**：$\int u\,\mathrm dv=uv-\int v\,\mathrm du$；多次分部时要保持 $u$ 的类型一致，避免来回抵消。
+
+        ??? example "分部积分公式"
+            <!-- 待补充 -->
+
+    -   **循环积分要移项**：对 $\int e^{ax}\sin bx\,\mathrm dx$ 一类，分部两次后出现原积分，应移项解出并补上常数 $C$，不能直接令两边相等。
+
+        ??? example "循环积分"
+            <!-- 待补充 -->
+
+    -   **定积分分部要带上下限**：$\displaystyle\int_a^b u\,\mathrm dv=[uv]_a^b-\int_a^b v\,\mathrm du$，先代上下限再算第二项，避免遗漏边界项。
+
+        ??? example "定积分的分部积分"
+            <!-- 待补充 -->
+
+### §3 某些特殊类型函数的不定积分
+
+#### §3.1 有理函数的不定积分
+
+有理函数是两个多项式的商 $Q(x)/P(x)$。当 $\deg Q<\deg P$ 时称为有理真分式；当 $\deg Q\ge\deg P$ 时称为有理假分式。多项式除法给出
+
+$$
+\frac{Q(x)}{P(x)}=H(x)+\frac{R(x)}{P(x)},\qquad\deg R<\deg P,
+$$
+
+其中 $H,R$ 均为多项式。
+
+实系数多项式在实数范围内可分解为一次因式和不可约二次因式的乘积。对既约有理真分式，部分分式中各因式对应的项为
+
+$$
+(x-a)^m:\qquad\sum_{k=1}^m\frac{A_k}{(x-a)^k},
+$$
+
+$$
+(x^2+px+q)^m:\qquad
+\sum_{k=1}^m\frac{B_kx+C_k}{(x^2+px+q)^k},
+\qquad p^2-4q<0.
+$$
+
+$m$ 为因式的重数，$A_k,B_k,C_k$ 为待定常数。一次因式对应的积分为
+
+$$
+\int\frac{\mathrm dx}{(x-a)^n}
+=\begin{cases}
+\ln|x-a|+C,&n=1,\\[3pt]
+\dfrac1{(1-n)(x-a)^{n-1}}+C,&n>1,
+\end{cases}
+\qquad n\in\mathbb N_+.
+$$
+
+#### §3.2 三角函数有理式的不定积分
+
+由若干函数及常数经有限次四则运算得到的式子称为这些函数的有理式，记为 $R(u_1(x),\ldots,u_k(x))$。三角函数有理式可表示为 $R(\sin x,\cos x)$。
+
+在 $-\pi<x<\pi$ 内，变量关系 $t=\tan(x/2)$ 给出
+
+$$
+\sin x=\frac{2t}{1+t^2},\qquad
+\cos x=\frac{1-t^2}{1+t^2},\qquad
+x=2\arctan t,\qquad\mathrm dx=\frac{2\,\mathrm dt}{1+t^2},
+$$
+
+$$
+\int R(\sin x,\cos x)\,\mathrm dx
+=\int R\left(\frac{2t}{1+t^2},\frac{1-t^2}{1+t^2}\right)
+\frac{2\,\mathrm dt}{1+t^2}.
+$$
+
+#### §3.3 某些无理函数的不定积分
+
+对变量关系
+
+$$
+t=\sqrt[n]{\frac{ax+b}{cx+d}},
+\qquad x=\varphi(t)=\frac{dt^n-b}{a-ct^n},
+$$
+
+其中 $n$ 为正整数、$ad-bc\ne0$，在各式有意义且变换可逆的区间内，有
+
+$$
+\int R\left(x,\sqrt[n]{\frac{ax+b}{cx+d}}\right)\,\mathrm dx
+=\int R(\varphi(t),t)\varphi'(t)\,\mathrm dt.
+$$
+
+含二次根式 $\sqrt{ax^2+bx+c}$ 的欧拉变换为
+
+$$
+\begin{aligned}
+a>0:\quad&\sqrt{ax^2+bx+c}=t\pm\sqrt a\,x,\\
+c>0:\quad&\sqrt{ax^2+bx+c}=xt\pm\sqrt c.
+\end{aligned}
+$$
+
+若 $ax^2+bx+c=a(x-\alpha)(x-\beta)$，$\alpha,\beta$ 为实根，还可使用变量关系
+
+$$
+\sqrt{a(x-\alpha)(x-\beta)}=t(x-\alpha),
+\qquad\text{或}\qquad
+\sqrt{a(x-\alpha)(x-\beta)}=t(x-\beta).
+$$
+
+!!! warning "提示"
+
+    -   **代换必须可逆且分母非零**：$t=\sqrt[n]{\dfrac{ax+b}{cx+d}}$ 要求 $ad-bc\ne0$，回代时 $a-ct^n\ne0$；否则变换不一一对应，积分区间也会出错。
+
+        ??? example "根式代换的条件"
+            <!-- 待补充 -->
+
+    -   **欧拉变换的符号要与根式一致**：取 $\sqrt{ax^2+bx+c}=t\pm\sqrt a\,x$ 或 $=xt\pm\sqrt c$ 时，要根据 $a,c$ 的符号和根式非负的要求选择，不能随意取正负。
+
+        ??? example "欧拉变换"
+            <!-- 待补充 -->
+
+    -   **先配方再选方法**：含 $\sqrt{ax^2+bx+c}$ 时先配方，再根据判别式与 $a$ 的符号决定用三角代换还是欧拉变换；盲目套公式容易把定义域弄错。
+
+        ??? example "二次根式的代换"
+            <!-- 待补充 -->
+
+    -   **回代后要检查定义域**：偶次根号要求被开方式非负，三角代换要满足参数范围（如 $x=a\sin t$ 取 $t\in[-\pi/2,\pi/2]$）以保证可逆；结果只在相应区间上成立。
+
+        ??? example "回代与定义域"
+            <!-- 待补充 -->
+
+## 第五章 定积分及其应用
+
+### §1 定积分概念
+
+#### §1.1 定积分的定义
+
+将 $[a,b]$ 分割为 $a=x_0<x_1<\cdots<x_n=b$，记 $\Delta x_i=x_i-x_{i-1}$、$\lambda=\max_i\Delta x_i$，任取 $\xi_i\in[x_{i-1},x_i]$。若极限
+
+$$
+I=\lim_{\lambda\to0}\sum_{i=1}^n f(\xi_i)\Delta x_i
+$$
+
+存在且与分割及取点方式无关，则称 $f$ 在 $[a,b]$ 上可积，$I$ 称为 $f$ 在 $[a,b]$ 上的定积分，记为
+
+$$
+I=\int_a^b f(x)\,\mathrm dx.
+$$
+
+$f$ 是被积函数，$x$ 是积分变量，$a,b$ 分别是积分下限、积分上限，$f(x)\,\mathrm dx$ 是被积表达式。
+
+$$
+\int_a^a f(x)\,\mathrm dx=0,\qquad
+\int_b^a f(x)\,\mathrm dx=-\int_a^b f(x)\,\mathrm dx.
+$$
+
+当 $f\ge0$ 时，定积分表示曲线 $y=f(x)$、$x$ 轴及直线 $x=a,x=b$ 围成的曲边梯形面积；一般情形表示 $x$ 轴上方与下方面积的代数和。
+
+#### §1.2 可积函数类
+
+$$
+f\text{ 在 }[a,b]\text{ 上可积}\Longrightarrow f\text{ 在 }[a,b]\text{ 上有界}.
+$$
+
+闭区间上的连续函数、有界且只有有限个间断点的函数、单调函数均可积。
+
+!!! warning "提示"
+
+    -   **可积必先有界**：$f$ 在 $[a,b]$ 上可积的必要条件是 $f$ 有界；但有界不一定可积，如 Dirichlet 函数在 $[0,1]$ 上有界却不可积。
+
+        ??? example "有界与可积"
+            <!-- 待补充 -->
+
+    -   **充分条件不是必要条件**：连续、有界且只有有限个间断点、单调都只是可积的充分条件；单调函数即使有无限个间断点仍可积，不能把"有限个间断点"当成可积的必要条件。
+
+        ??? example "可积的充分条件"
+            <!-- 待补充 -->
+
+    -   **区间必须是有限闭区间**：上述可积性结论针对 $[a,b]$；无穷区间或无界函数的积分属于反常积分，需另行判断敛散性。
+
+        ??? example "积分区间的类型"
+            <!-- 待补充 -->
+
+    -   **"有限个间断点"要看是否有界**：有界且只有有限个间断点才保证可积；若函数无界，即使只有一个瑕点也不是常义可积，而是反常积分。
+
+        ??? example "间断点与可积性"
+            <!-- 待补充 -->
+
+### §2 定积分的性质和基本定理
+
+#### §2.1 定积分的基本性质
+
+设以下各函数在相应区间可积，$\alpha,\beta$ 为常数，则
+
+$$
+\int_a^b1\,\mathrm dx=b-a,
+$$
+
+$$
+\int_a^b[\alpha f(x)+\beta g(x)]\,\mathrm dx
+=\alpha\int_a^bf(x)\,\mathrm dx+\beta\int_a^bg(x)\,\mathrm dx,
+$$
+
+$$
+\int_a^bf(x)\,\mathrm dx=\int_a^cf(x)\,\mathrm dx+\int_c^bf(x)\,\mathrm dx.
+$$
+
+当 $a<b$ 时，
+
+$$
+f(x)\ge g(x)\Longrightarrow\int_a^bf(x)\,\mathrm dx\ge\int_a^bg(x)\,\mathrm dx,
+\qquad
+\left|\int_a^bf(x)\,\mathrm dx\right|\le\int_a^b|f(x)|\,\mathrm dx.
+$$
+
+若 $m\le f(x)\le M$，则
+
+$$
+m(b-a)\le\int_a^bf(x)\,\mathrm dx\le M(b-a).
+$$
+
+若 $f$ 连续、$f\ge0$ 且 $f\not\equiv0$，则 $\int_a^bf(x)\,\mathrm dx>0$。若 $f$ 在 $[a,b]$ 连续，则存在 $\xi\in[a,b]$，使积分中值公式成立：
+
+$$
+\int_a^bf(x)\,\mathrm dx=f(\xi)(b-a).
+$$
+
+#### §2.2 微积分学基本定理
+
+设 $f$ 在区间 $I$ 连续，$a\in I$ 为固定点，变上限积分定义的函数
+
+$$
+G(x)=\int_a^xf(t)\,\mathrm dt
+$$
+
+满足
+
+$$
+G'(x)=f(x).
+$$
+
+若 $u,v$ 可导，且 $f$ 在包含其取值的区间连续，则
+
+$$
+\frac{\mathrm d}{\mathrm dx}\int_{v(x)}^{u(x)}f(t)\,\mathrm dt
+=f(u(x))u'(x)-f(v(x))v'(x).
+$$
+
+若 $f$ 在 $[a,b]$ 连续，$F$ 为其一个原函数，则牛顿—莱布尼茨公式为
+
+$$
+\int_a^bf(x)\,\mathrm dx=[F(x)]_a^b=F(b)-F(a).
+$$
+
+!!! warning "提示"
+
+    -   **变上限积分求导要求被积函数连续**：$G(x)=\int_a^x f(t)\,\mathrm dt$ 在 $f$ 连续时才有 $G'(x)=f(x)$；$f$ 仅可积时 $G$ 连续但未必可导。
+
+        ??? example "变上限积分求导"
+            <!-- 待补充 -->
+
+    -   **上下限都是函数时的符号**：$\dfrac{\mathrm d}{\mathrm dx}\displaystyle\int_{v(x)}^{u(x)}f(t)\,\mathrm dt=f(u)u'-f(v)v'$，上限对应 $+$、下限对应 $-$，不要写反。
+
+        ??? example "变限积分的求导"
+            <!-- 待补充 -->
+
+    -   **牛顿—莱布尼茨公式的条件**：$f$ 在 $[a,b]$ 上连续（或可积且有原函数），$F$ 必须是 $f$ 在该区间上的原函数；若 $F$ 在区间内某点无定义或跨过瑕点，不能直接代入。
+
+        ??? example "牛顿—莱布尼茨公式"
+            <!-- 待补充 -->
+
+    -   **被积函数含参数 $x$ 时不能直接套公式**：如 $\int_0^x f(x,t)\,\mathrm dt$，要先换元把 $x$ 从被积函数中分离，再对变上限求导。
+
+        ??? example "含参数的变限积分"
+            <!-- 待补充 -->
+
+### §3 定积分的计算方法
+
+#### §3.1 几种基本的定积分计算方法
+
+若 $f$ 在 $[a,b]$ 连续，$x=\psi(t)$ 具有连续导数，$\psi(\alpha)=a$、$\psi(\beta)=b$，且 $\psi(t)$ 的取值属于 $[a,b]$，则
+
+$$
+\int_a^bf(x)\,\mathrm dx
+=\int_\alpha^\beta f(\psi(t))\psi'(t)\,\mathrm dt.
+$$
+
+若 $u,v$ 在 $[a,b]$ 具有连续导数，则
+
+$$
+\int_a^bu(x)v'(x)\,\mathrm dx
+=[u(x)v(x)]_a^b-\int_a^bv(x)u'(x)\,\mathrm dx.
+$$
+
+#### §3.2 几种简化的定积分计算方法
+
+若 $f$ 在 $[-a,a]$ 连续，$a>0$，则
+
+$$
+\int_{-a}^af(x)\,\mathrm dx=
+\begin{cases}
+0,&f\text{ 为奇函数},\\
+2\displaystyle\int_0^af(x)\,\mathrm dx,&f\text{ 为偶函数},
+\end{cases}
+$$
+
+$$
+\int_{-a}^af(x)\,\mathrm dx=\int_0^a[f(x)+f(-x)]\,\mathrm dx.
+$$
+
+若 $f$ 是连续的周期函数，周期为 $T>0$，则
+
+$$
+\int_a^{a+T}f(x)\,\mathrm dx=\int_0^Tf(x)\,\mathrm dx.
+$$
+
+记 $I_n=\int_0^{\pi/2}\sin^n x\,\mathrm dx$，其中 $n$ 为非负整数，则
+
+$$
+I_n=\int_0^{\pi/2}\cos^n x\,\mathrm dx,
+\qquad I_0=\frac\pi2,\quad I_1=1,\quad
+I_n=\frac{n-1}{n}I_{n-2}\quad(n\ge2),
+$$
+
+当 $n\ge2$ 时，
+
+$$
+I_n=
+\begin{cases}
+\dfrac{n-1}{n}\dfrac{n-3}{n-2}\cdots\dfrac12\dfrac\pi2,&n\text{ 为偶数},\\[4pt]
+\dfrac{n-1}{n}\dfrac{n-3}{n-2}\cdots\dfrac23,&n\text{ 为奇数}.
+\end{cases}
+$$
+
+!!! warning "提示"
+
+    -   **奇偶性公式要求区间对称**：只有 $[-a,a]$ 上才能用奇函数积分为 $0$、偶函数积分为 $2\int_0^a$；区间不对称或函数没有奇偶性时不能套用。
+
+        ??? example "对称区间上的积分"
+            <!-- 待补充 -->
+
+    -   **周期函数积分与起点无关**：若 $f$ 以 $T$ 为周期，则 $\int_a^{a+T}f=\int_0^Tf$ 对任意实数 $a$ 成立；推广到 $n$ 个周期时是 $n\int_0^Tf$。
+
+        ??? example "周期函数的积分"
+            <!-- 待补充 -->
+
+    -   **华里士公式的奇偶结果要分清**：$I_0=\dfrac\pi2$、$I_1=1$，递推 $I_n=\dfrac{n-1}{n}I_{n-2}$；$n$ 为偶数时最后乘 $\dfrac\pi2$，为奇数时最后乘 $1$。
+
+        ??? example "华里士公式"
+            <!-- 待补充 -->
+
+    -   **先拆分再利用对称性**：被积函数整体没有奇偶性时，可拆成奇、偶两部分分别积分；不要因为整体不是奇函数就直接放弃对称性。
+
+        ??? example "拆分后利用对称性"
+            <!-- 待补充 -->
+
+### §4 定积分的应用
+
+#### §4.1 平面图形的面积
+
+连续曲线 $y=f_1(x),y=f_2(x)$ 与直线 $x=a,x=b$ 围成的图形面积为
+
+$$
+S=\int_a^b|f_2(x)-f_1(x)|\,\mathrm dx.
+$$
+
+连续曲线 $x=\psi_1(y),x=\psi_2(y)$ 与直线 $y=c,y=d$ 围成的图形面积为
+
+$$
+S=\int_c^d|\psi_2(y)-\psi_1(y)|\,\mathrm dy.
+$$
+
+#### §4.2 立体及旋转体的体积
+
+设立体位于 $x=a$ 与 $x=b$ 之间，垂直于 $x$ 轴的截面积为连续函数 $A(x)$，则
+
+$$
+V=\int_a^bA(x)\,\mathrm dx.
+$$
+
+曲线 $y=f(x)$、$x$ 轴及直线 $x=a,x=b$ 围成的图形绕 $x$ 轴旋转所得体积为
+
+$$
+V_x=\pi\int_a^bf^2(x)\,\mathrm dx.
+$$
+
+#### §4.3 微元法及应用
+
+微元 $\mathrm dQ=f(x)\,\mathrm dx$ 是部分量增量 $\Delta Q$ 的线性主部：
+
+$$
+\Delta Q=f(x)\Delta x+o(\Delta x),\qquad
+Q=\int_a^bf(x)\,\mathrm dx.
+$$
+
+连续极坐标曲线 $r=r(\theta)$ 与射线 $\theta=\alpha,\theta=\beta$ 围成的曲边扇形面积为
+
+$$
+S=\frac12\int_\alpha^\beta r^2(\theta)\,\mathrm d\theta.
+$$
+
+平面曲线 $x=\varphi(t),y=\psi(t)$，$\alpha\le t\le\beta$，若一阶导数连续，则弧长为
+
+$$
+s=\int_\alpha^\beta\sqrt{\varphi'(t)^2+\psi'(t)^2}\,\mathrm dt.
+$$
+
+相应的弧长微分为
+
+$$
+\mathrm ds=\sqrt{(\mathrm dx)^2+(\mathrm dy)^2}.
+$$
+
+$$
+\begin{aligned}
+y=f(x):\quad&s=\int_a^b\sqrt{1+f'(x)^2}\,\mathrm dx,\\
+x=\psi(y):\quad&s=\int_c^d\sqrt{1+\psi'(y)^2}\,\mathrm dy,\\
+r=r(\theta):\quad&s=\int_\alpha^\beta\sqrt{r^2(\theta)+r'(\theta)^2}\,\mathrm d\theta.
+\end{aligned}
+$$
+
+曲线 $y=f(x)$、$x$ 轴及直线 $x=a,x=b$ 围成的图形，$0\le a<b$，绕 $y$ 轴旋转所得体积为
+
+$$
+V_y=2\pi\int_a^bx|f(x)|\,\mathrm dx.
+$$
+
+曲线 $y=f(x)$ 绕 $x$ 轴旋转所得侧面积为
+
+$$
+S_x=2\pi\int_a^b|f(x)|\sqrt{1+f'(x)^2}\,\mathrm dx.
+$$
+
+#### §4.4 定积分在物理中的应用
+
+液体密度为 $\rho$，深度为 $h$ 时的压强为 $p=\rho gh$，其中 $g$ 为重力加速度。水平窄条宽度为 $w(h)$ 时，竖直平板一侧的静压力为
+
+$$
+F=\int_{h_1}^{h_2}\rho gh\,w(h)\,\mathrm dh.
+$$
+
+变力 $F(x)$ 沿直线运动方向做功：
+
+$$
+W=\int_a^bF(x)\,\mathrm dx.
+$$
+
+相距 $r$ 的质点 $m_1,m_2$ 之间的引力大小为 $Gm_1m_2/r^2$，$G$ 为万有引力常数。质量微元、动能微元与转动惯量微元分别满足
+
+$$
+\mathrm dm=\rho\,\mathrm dV,\qquad
+\mathrm dE=\frac12v^2\,\mathrm dm,\qquad
+\mathrm dJ=r^2\,\mathrm dm,
+$$
+
+其中 $\rho$ 为体密度，$v$ 为速度，$r$ 为质量微元到转轴的距离。
+
+连续函数在 $[a,b]$ 上的平均值为
+
+$$
+\bar y=\frac1{b-a}\int_a^bf(x)\,\mathrm dx.
+$$
+
+#### §4.5 定积分在经济中的应用
+
+收入流 $P(t)$ 表示单位时间流入的收入。以年利率 $r$ 连续复利计算，$[0,T]$ 内收入流的总现值与总将来值为
+
+$$
+V_0=\int_0^TP(t)e^{-rt}\,\mathrm dt,\qquad
+V_T=\int_0^TP(t)e^{r(T-t)}\,\mathrm dt=e^{rT}V_0.
+$$
+
+设需求函数为 $p=D(q)$，供给函数为 $p=S(q)$，平衡价格、平衡数量分别为 $p^*,q^*$，满足 $D(q^*)=S(q^*)=p^*$。消费者剩余是按平衡价格购买所节省的钱的总额；生产者剩余是按平衡价格出售所获得的额外收入：
+
+$$
+\text{消费者剩余}=\int_0^{q^*}D(q)\,\mathrm dq-p^*q^*,
+$$
+
+$$
+\text{生产者剩余}=p^*q^*-\int_0^{q^*}S(q)\,\mathrm dq.
+$$
+
+!!! warning "提示"
+
+    -   **现值与将来值的折现方向**：连续复利下 $V_0=\int_0^TP(t)e^{-rt}\,\mathrm dt$，$V_T=e^{rT}V_0$；由将来值求现值要乘 $e^{-rT}$，不能乘 $e^{rT}$。
+
+        ??? example "收入流的现值"
+            <!-- 待补充 -->
+
+    -   **消费者剩余与生产者剩余的减法方向**：消费者剩余是需求曲线下面积减去实际支出 $p^*q^*$；生产者剩余是实际收入 $p^*q^*$ 减去供给曲线下面积，两者不要写反。
+
+        ??? example "消费者剩余与生产者剩余"
+            <!-- 待补充 -->
+
+    -   **积分上限是均衡数量**：计算剩余时上限取均衡数量 $q^*$，且 $q^*$ 由 $D(q^*)=S(q^*)=p^*$ 确定；不能任意取一个产量。
+
+        ??? example "均衡数量与剩余"
+            <!-- 待补充 -->
+
+    -   **收入流的单位要与利率一致**：$P(t)$ 必须是"单位时间收入"，$r$ 与 $t$ 的时间单位要统一；若 $P(t)$ 已是某段时期的总收入，不能再直接积分。
+
+        ??? example "收入流的单位"
+            <!-- 待补充 -->
+
+### §5 反常积分
+
+#### §5.1 无穷区间上的反常积分
+
+若 $f$ 在 $[a,+\infty)$ 连续，则第一类反常积分定义为
+
+$$
+\int_a^{+\infty}f(x)\,\mathrm dx
+=\lim_{t\to+\infty}\int_a^tf(x)\,\mathrm dx.
+$$
+
+极限为有限数时称积分收敛，否则称积分发散。同理，
+
+$$
+\int_{-\infty}^bf(x)\,\mathrm dx
+=\lim_{t\to-\infty}\int_t^bf(x)\,\mathrm dx.
+$$
+
+对任意有限数 $c$，当右端两积分均收敛时，
+
+$$
+\int_{-\infty}^{+\infty}f(x)\,\mathrm dx
+=\int_{-\infty}^cf(x)\,\mathrm dx+\int_c^{+\infty}f(x)\,\mathrm dx.
+$$
+
+$$
+\int_a^{+\infty}\frac{\mathrm dx}{x^p}\text{ 收敛}\iff p>1\qquad(a>0).
+$$
+
+#### §5.2 无界函数的反常积分
+
+被积函数在端点附近无界时，该端点称为瑕点。$a$ 或 $b$ 为瑕点时，第二类反常积分分别定义为
+
+$$
+\int_a^bf(x)\,\mathrm dx
+=\lim_{\varepsilon\to0^+}\int_{a+\varepsilon}^bf(x)\,\mathrm dx,
+\qquad
+\int_a^bf(x)\,\mathrm dx
+=\lim_{\varepsilon\to0^+}\int_a^{b-\varepsilon}f(x)\,\mathrm dx.
+$$
+
+相应极限为有限数时称收敛，否则称发散。若内部点 $c$ 为瑕点，则
+
+$$
+\int_a^bf(x)\,\mathrm dx=\int_a^cf(x)\,\mathrm dx+\int_c^bf(x)\,\mathrm dx,
+$$
+
+收敛的充要条件是右端两反常积分均收敛。
+
+$$
+\int_a^b\frac{\mathrm dx}{(b-x)^p}\text{ 收敛}\iff p<1,\qquad
+\int_a^b\frac{\mathrm dx}{(x-a)^p}\text{ 收敛}\iff p<1.
+$$
+
+#### §5.3 反常积分敛散性的判别法 \*
+
+设 $f,g$ 连续，且在反常端附近 $0\le f(x)\le g(x)$，比较判别关系为
+
+$$
+\int g\text{ 收敛}\Longrightarrow\int f\text{ 收敛},\qquad
+\int f\text{ 发散}\Longrightarrow\int g\text{ 发散}.
+$$
+
+设 $f\ge0$、$a>0$，$\lim_{x\to+\infty}x^pf(x)=A$，则
+
+| 条件 | $\int_a^{+\infty}f(x)\,\mathrm dx$ |
+| --- | --- |
+| $0<A<+\infty$ | $p>1$ 时收敛，$p\le1$ 时发散 |
+| $A=0,\ p>1$ | 收敛 |
+| $A=+\infty,\ p\le1$ | 发散 |
+
+设 $b$ 为瑕点，$f\ge0$，$\lim_{x\to b^-}(b-x)^pf(x)=A$，则
+
+| 条件 | $\int_a^bf(x)\,\mathrm dx$ |
+| --- | --- |
+| $0<A<+\infty$ | $p<1$ 时收敛，$p\ge1$ 时发散 |
+| $A=0,\ p<1$ | 收敛 |
+| $A=+\infty,\ p\ge1$ | 发散 |
+
+$\int |f|$ 收敛称为绝对收敛；$\int f$ 收敛而 $\int|f|$ 发散称为条件收敛。
+
+$$
+\int|f|\text{ 收敛}\Longrightarrow\int f\text{ 收敛}.
+$$
+
+#### §5.4 Γ函数 \*
+
+$$
+\Gamma(s)=\int_0^{+\infty}x^{s-1}e^{-x}\,\mathrm dx,\qquad s>0.
+$$
+
+$$
+\Gamma(s+1)=s\Gamma(s),\qquad
+\Gamma(1)=1,\qquad \Gamma(n+1)=n!\quad(n\in\mathbb N^+),\qquad
+\Gamma\left(\frac12\right)=\sqrt\pi.
+$$
+
+递推关系可将定义域延拓至除 $0,-1,-2,\ldots$ 以外的实数：
+
+$$
+\Gamma(s)=\frac{\Gamma(s+k)}{s(s+1)\cdots(s+k-1)},\qquad s+k>0.
+$$
+
+其中 $k$ 为正整数。
+
+余元公式为
+
+$$
+\Gamma(s)\Gamma(1-s)=\frac\pi{\sin\pi s},\qquad0<s<1.
+$$
+
+!!! warning "提示"
+
+    -   **定义域与延拓要区分**：$\Gamma(s)=\int_0^{+\infty}x^{s-1}e^{-x}\,\mathrm dx$ 只在 $s>0$ 时收敛；递推公式可把 $\Gamma$ 延拓到 $s\ne0,-1,-2,\ldots$，但不能再把延拓值当作该积分值。
+
+        ??? example "Γ函数的定义域"
+            <!-- 待补充 -->
+
+    -   **阶乘的指标不要错位**：$\Gamma(n+1)=n!$，因此 $\Gamma(n)=(n-1)!$；$\Gamma(1)=1$、$\Gamma(2)=1$。
+
+        ??? example "Γ函数与阶乘"
+            <!-- 待补充 -->
+
+    -   **特殊值要记准**：$\Gamma\left(\dfrac12\right)=\sqrt\pi$，不是 $\dfrac\pi2$；余元公式 $\Gamma(s)\Gamma(1-s)=\dfrac\pi{\sin\pi s}$ 只在 $0<s<1$ 时直接使用。
+
+        ??? example "Γ函数的特殊值"
+            <!-- 待补充 -->
+
+    -   **负整数处是极点**：递推延拓的分母 $s(s+1)\cdots(s+k-1)$ 在 $s=0,-1,\ldots$ 处为零，因此 $\Gamma$ 在这些点无定义，不能约分后强行取值。
+
+        ??? example "Γ函数的极点"
+            <!-- 待补充 -->
+
+### §6 定积分的近似计算 \*
+
+#### §6.1 矩形法
+
+设 $x_i=a+ih$，$h=(b-a)/n$，$y_i=f(x_i)$。左、右矩形公式为
+
+$$
+\int_a^bf(x)\,\mathrm dx\approx h\sum_{i=0}^{n-1}y_i,
+\qquad
+\int_a^bf(x)\,\mathrm dx\approx h\sum_{i=1}^ny_i.
+$$
+
+#### §6.2 梯形法
+
+$$
+\int_a^bf(x)\,\mathrm dx
+\approx h\left(\frac{y_0+y_n}{2}+\sum_{i=1}^{n-1}y_i\right).
+$$
+
+#### §6.3 抛物线法
+
+$n$ 为偶数时，抛物线公式（辛普森公式）为
+
+$$
+\int_a^bf(x)\,\mathrm dx\approx\frac h3
+\left[y_0+y_n+4\sum_{j=1}^{n/2}y_{2j-1}+2\sum_{j=1}^{n/2-1}y_{2j}\right].
+$$
+
+!!! warning "提示"
+
+    -   **$n$ 必须为偶数**：辛普森公式要求把 $[a,b]$ 等分为偶数份，否则无法按"三点一组"配对；使用前先检查 $n$ 的奇偶性。
+
+        ??? example "抛物线法的等分要求"
+            <!-- 待补充 -->
+
+    -   **系数 $4,2$ 交替且端点系数为 $1$**：$\dfrac h3\left[y_0+y_n+4\sum y_{\text{奇}}+2\sum y_{\text{偶}}\right]$，奇数下标乘 $4$、偶数下标（除端点）乘 $2$，整体乘 $\dfrac h3$。
+
+        ??? example "辛普森公式的系数"
+            <!-- 待补充 -->
+
+    -   **代数精度为 $3$ 不等于精确**：抛物线法对次数不超过 $3$ 的多项式精确成立，但对一般函数仍是近似；误差与四阶导数有关，$n$ 越大通常越精确。
+
+        ??? example "抛物线法的精度"
+            <!-- 待补充 -->
+
+    -   **步长与节点要对应**：$h=\dfrac{b-a}{n}$、$x_i=a+ih$，$y_i=f(x_i)$；$n$ 变化后要重新计算全部节点，不能沿用旧步长。
+
+        ??? example "节点与步长"
+            <!-- 待补充 -->
+
+## 第六章 常微分方程
+
+### §1 基本概念
+
+含有未知函数的导数或微分的方程称为微分方程；未知函数为一元函数时称为常微分方程。其一般形式为
+
+$$
+F(x,y,y',\ldots,y^{(n)})=0.
+$$
+
+方程中出现的最高阶导数的阶数称为方程的阶。代入方程后使其成为恒等式的函数称为方程的解；含有与阶数相同个数的独立任意常数的解称为通解，形式为
+
+$$
+y=y(x,C_1,\ldots,C_n).
+$$
+
+将通解中的任意常数确定后所得的解称为特解。初值条件规定同一点的函数值及所需导数值，一阶、二阶方程分别为
+
+$$
+y(x_0)=y_0;\qquad y(x_0)=y_0,\quad y'(x_0)=y'_0.
+$$
+
+!!! warning "提示"
+
+    -   **阶数与次数不同**：方程的阶是最高阶导数的阶数，不是某个导数项的幂次；通解中独立任意常数的个数应等于阶数。
+
+        ??? example "微分方程的阶"
+            <!-- 待补充 -->
+
+    -   **通解未必包含全部解**：通解只包含含任意常数的那一族解，可能存在不能由通解取值的奇解；解题时要检查是否漏掉奇解或特解。
+
+        ??? example "通解与奇解"
+            <!-- 待补充 -->
+
+    -   **初值条件的个数要匹配阶数**：$n$ 阶方程需要 $n$ 个初值条件，且初值点必须在解的定义区间内；条件不足时无法确定唯一特解。
+
+        ??? example "初值条件"
+            <!-- 待补充 -->
+
+    -   **"齐次"在不同语境下含义不同**：一阶线性齐次方程指 $q(x)\equiv0$，而齐次微分方程指可写成 $g(y/x)$ 的方程，两者不是同一概念。
+
+        ??? example "两类“齐次”"
+            <!-- 待补充 -->
+
+### §2 可分离变量方程
+
+#### §2.1 可分离变量方程
+
+可分离变量方程的形式为
+
+$$
+\frac{\mathrm dy}{\mathrm dx}=f(x)g(y),
+$$
+
+其中 $f,g$ 连续。$g(y)\ne0$ 时，其积分关系为
+
+$$
+\frac{\mathrm dy}{g(y)}=f(x)\,\mathrm dx,\qquad
+\int\frac{\mathrm dy}{g(y)}=\int f(x)\,\mathrm dx+C.
+$$
+
+#### §2.2 齐次微分方程
+
+形如
+
+$$
+\frac{\mathrm dy}{\mathrm dx}=g\left(\frac yx\right)
+$$
+
+的一阶方程称为齐次微分方程。$x\ne0$ 时，变量关系
+
+$$
+u=\frac yx,\qquad y=xu,\qquad y'=u+xu'
+$$
+
+给出
+
+$$
+x\frac{\mathrm du}{\mathrm dx}=g(u)-u.
+$$
+
+!!! warning "提示"
+
+    -   **"齐次"指可化为 $g(y/x)$**：它与线性方程中的"齐次"（自由项为零）含义不同，判断时看是否能写成 $\dfrac{\mathrm dy}{\mathrm dx}=g\left(\dfrac yx\right)$。
+
+        ??? example "齐次方程的判定"
+            <!-- 待补充 -->
+
+    -   **代换要求 $x\ne0$**：令 $u=y/x$ 时默认 $x\ne0$；$x=0$ 附近的解要单独讨论，不能直接把 $y=xu$ 代入整个定义域。
+
+        ??? example "代换的定义域"
+            <!-- 待补充 -->
+
+    -   **求导不要漏项**：$y=xu$ 给出 $y'=u+xu'$，代回后得到 $x\dfrac{\mathrm du}{\mathrm dx}=g(u)-u$；漏掉 $xu'$ 或把 $x$ 丢掉都会导致方程错误。
+
+        ??? example "齐次方程代换"
+            <!-- 待补充 -->
+
+    -   **可能漏掉常数解**：分离变量时若除以 $g(u)-u$，要单独检查 $g(u)-u=0$ 对应的解；回代 $u=y/x$ 后还要说明定义区间。
+
+        ??? example "齐次方程的漏解"
+            <!-- 待补充 -->
+
+### §3 一阶线性微分方程
+
+#### §3.1 一阶线性微分方程
+
+一阶线性微分方程的形式为
+
+$$
+y'+p(x)y=q(x),
+$$
+
+其中 $p,q$ 在所讨论区间连续，$q$ 称为自由项。$q\equiv0$ 时称为线性齐次方程，其通解为
+
+$$
+y=Ce^{-\int p(x)\,\mathrm dx}.
+$$
+
+非齐次方程的通解为
+
+$$
+y=e^{-\int p(x)\,\mathrm dx}
+\left[\int q(x)e^{\int p(x)\,\mathrm dx}\,\mathrm dx+C\right].
+$$
+
+#### §3.2 伯努利方程
+
+伯努利方程的形式为
+
+$$
+y'+p(x)y=q(x)y^\alpha,\qquad \alpha\ne0,1.
+$$
+
+在 $y\ne0$ 且幂函数有意义的区间，$z=y^{1-\alpha}$ 满足
+
+$$
+z'+(1-\alpha)p(x)z=(1-\alpha)q(x).
+$$
+
+!!! warning "提示"
+
+    -   **参数范围 $\alpha\ne0,1$**：$\alpha=0$ 时方程退化为线性方程，$\alpha=1$ 时可分离变量；套用伯努利代换前先检查 $\alpha$ 的取值。
+
+        ??? example "伯努利方程的参数"
+            <!-- 待补充 -->
+
+    -   **代换要求 $y\ne0$**：令 $z=y^{1-\alpha}$ 时需要 $y\ne0$ 且幂函数有意义；$y=0$ 可能是原方程的解，必须单独验证。
+
+        ??? example "伯努利代换与 $y=0$"
+            <!-- 待补充 -->
+
+    -   **线性化后的系数不要漏**：代换后得到 $z'+(1-\alpha)p(x)z=(1-\alpha)q(x)$，右端和 $p(x)$ 项都要乘 $1-\alpha$。
+
+        ??? example "伯努利方程线性化"
+            <!-- 待补充 -->
+
+    -   **回代时注意正负分支**：由 $z=y^{1-\alpha}$ 解出 $y=z^{1/(1-\alpha)}$，当 $1-\alpha$ 为偶数分母时要根据 $y$ 的符号取舍，不能只取正支。
+
+        ??? example "伯努利方程的回代"
+            <!-- 待补充 -->
+
+### §4 全微分方程 \*
+
+若方程
+
+$$
+M(x,y)\,\mathrm dx+N(x,y)\,\mathrm dy=0
+$$
+
+的左端是某个函数 $u(x,y)$ 的全微分，即
+
+$$
+\mathrm du=M\,\mathrm dx+N\,\mathrm dy,
+$$
+
+则称为全微分方程，其通解为 $u(x,y)=C$。
+
+设 $M,N$ 在平面单连通区域 $G$ 上具有连续的一阶偏导数，则
+
+$$
+M\,\mathrm dx+N\,\mathrm dy=0\text{ 为全微分方程}
+\iff \frac{\partial M}{\partial y}=\frac{\partial N}{\partial x}.
+$$
+
+此时，取固定点 $(x_0,y_0)\in G$，有
+
+$$
+u(x,y)=\int_{(x_0,y_0)}^{(x,y)}M\,\mathrm dx+N\,\mathrm dy.
+$$
+
+!!! warning "提示"
+
+    -   **判定条件的适用范围**：$\dfrac{\partial M}{\partial y}=\dfrac{\partial N}{\partial x}$ 在单连通区域且 $M,N$ 有连续一阶偏导时才是全微分方程的充要条件；区域不单连通时只能保证局部成立。
+
+        ??? example "全微分方程的判定"
+            <!-- 待补充 -->
+
+    -   **原函数的路径要与区域匹配**：$u(x,y)=\displaystyle\int_{(x_0,y_0)}^{(x,y)}M\,\mathrm dx+N\,\mathrm dy$ 的积分路径必须完全位于区域内，通常取折线路径计算。
+
+        ??? example "求原函数"
+            <!-- 待补充 -->
+
+    -   **通解写成 $u(x,y)=C$**：全微分方程的通解是 $u(x,y)=C$，不是 $u(x,y)=0$；$C$ 由初值条件确定。
+
+        ??? example "全微分方程的通解"
+            <!-- 待补充 -->
+
+    -   **非全微分方程可尝试积分因子**：若判定条件不成立，可寻找积分因子 $\mu(x,y)$ 使 $\mu M\,\mathrm dx+\mu N\,\mathrm dy$ 成为全微分；积分因子不唯一，且可能只在局部存在。
+
+        ??? example "积分因子"
+            <!-- 待补充 -->
+
+### §5 可降阶的二阶微分方程
+
+#### §5.1 $\dfrac{\mathrm d^2y}{\mathrm dx^2}=f(x)$ 型微分方程
+
+$$
+y'=\int f(x)\,\mathrm dx+C_1,\qquad
+y=\int\left[\int f(x)\,\mathrm dx+C_1\right]\mathrm dx+C_2.
+$$
+
+#### §5.2 $\dfrac{\mathrm d^2y}{\mathrm dx^2}=f\left(x,\dfrac{\mathrm dy}{\mathrm dx}\right)$ 型微分方程
+
+该方程不显含 $y$。$p(x)=y'$ 满足
+
+$$
+p'=f(x,p).
+$$
+
+若 $p=\varphi(x,C_1)$，则
+
+$$
+y=\int\varphi(x,C_1)\,\mathrm dx+C_2.
+$$
+
+#### §5.3 $\dfrac{\mathrm d^2y}{\mathrm dx^2}=f\left(y,\dfrac{\mathrm dy}{\mathrm dx}\right)$ 型微分方程
+
+该方程不显含 $x$。以 $y$ 为局部自变量，$p(y)=y'$ 满足
+
+$$
+y''=\frac{\mathrm dp}{\mathrm dy}\frac{\mathrm dy}{\mathrm dx}
+=p\frac{\mathrm dp}{\mathrm dy},\qquad
+p\frac{\mathrm dp}{\mathrm dy}=f(y,p).
+$$
+
+!!! warning "提示"
+
+    -   **$p$ 是 $y$ 的函数**：方程不显含 $x$，令 $p=y'$ 后要把 $p$ 看作 $y$ 的函数，$y''=p\dfrac{\mathrm dp}{\mathrm dy}$，不能写成 $\dfrac{\mathrm dp}{\mathrm dx}$。
+
+        ??? example "不显含 $x$ 的降阶"
+            <!-- 待补充 -->
+
+    -   **先解 $p$ 再积分**：得到 $p\dfrac{\mathrm dp}{\mathrm dy}=f(y,p)$ 后，先求出 $p=\varphi(y,C_1)$，再由 $\dfrac{\mathrm dy}{\mathrm dx}=p$ 积分得到 $y$，两个常数都不能漏。
+
+        ??? example "两次积分"
+            <!-- 待补充 -->
+
+    -   **除以 $p$ 可能漏解**：分离变量时若除以 $p$，要单独检查 $p=0$（即 $y=C$）是否满足原方程；这类常数解常被遗漏。
+
+        ??? example "降阶中的漏解"
+            <!-- 待补充 -->
+
+    -   **注意 $y$ 作为自变量的局部性**：把 $y$ 当作自变量要求所讨论区间内 $y'=p\ne0$；在 $p=0$ 的点附近需另行讨论。
+
+        ??? example "局部自变量"
+            <!-- 待补充 -->
+
+### §6 二阶线性微分方程解的结构
+
+设 $p,q,f$ 在所讨论区间连续。二阶线性方程及其对应齐次方程为
+
+$$
+L[y]=y''+p(x)y'+q(x)y=f(x),\qquad L[y]=0.
+$$
+
+$L$ 是线性微分算子：
+
+$$
+L[C_1y_1+C_2y_2]=C_1L[y_1]+C_2L[y_2].
+$$
+
+若恒等式 $k_1y_1+k_2y_2\equiv0$ 仅在 $k_1=k_2=0$ 时成立，则称 $y_1,y_2$ 线性无关；否则称线性相关。
+
+若 $y_1,y_2$ 是齐次方程的两个线性无关解，$\widetilde y$ 是非齐次方程的一个特解，则
+
+$$
+Y=C_1y_1+C_2y_2,\qquad y=Y+\widetilde y
+$$
+
+分别为齐次、非齐次方程的通解。若 $L[y_1]=f_1$、$L[y_2]=f_2$，则
+
+$$
+L[y_1+y_2]=f_1+f_2.
+$$
+
+若系数为实值函数，$L[y_1+iy_2]=f_1+if_2$，则
+
+$$
+L[y_1]=f_1,\qquad L[y_2]=f_2.
+$$
+
+!!! warning "提示"
+
+    -   **线性无关不能只看形式**：$y_1,y_2$ 线性无关是指 $k_1y_1+k_2y_2\equiv0$ 只能推出 $k_1=k_2=0$；两个函数成比例即线性相关。
+
+        ??? example "线性无关的判定"
+            <!-- 待补充 -->
+
+    -   **非齐次通解的结构**：$y=C_1y_1+C_2y_2+\widetilde y$，其中 $\widetilde y$ 是**一个**特解，不能再乘任意常数；齐次部分才含 $C_1,C_2$。
+
+        ??? example "非齐次方程的通解"
+            <!-- 待补充 -->
+
+    -   **叠加原理只对线性方程成立**：若 $L[y_1]=f_1$、$L[y_2]=f_2$，则 $L[y_1+y_2]=f_1+f_2$；自由项相加时，特解可以相加，但齐次解不能重复计算。
+
+        ??? example "叠加原理"
+            <!-- 待补充 -->
+
+    -   **复值解的实部与虚部**：实系数方程若 $L[y_1+iy_2]=f_1+if_2$，则 $L[y_1]=f_1$、$L[y_2]=f_2$；但复系数方程不能直接这样拆。
+
+        ??? example "复值解"
+            <!-- 待补充 -->
+
+### §7 二阶常系数线性微分方程的解法
+
+#### §7.1 二阶常系数线性齐次方程及其解法
+
+方程
+
+$$
+y''+py'+qy=0\qquad(p,q\text{ 为常数})
+$$
+
+的特征方程为 $r^2+pr+q=0$，其根称为特征根。
+
+| 特征根 | 通解 |
+| --- | --- |
+| 两个不同实根 $r_1,r_2$ | $y=C_1e^{r_1x}+C_2e^{r_2x}$ |
+| 二重实根 $r$ | $y=(C_1+C_2x)e^{rx}$ |
+| 共轭复根 $\alpha\pm i\beta$ | $y=e^{\alpha x}(C_1\cos\beta x+C_2\sin\beta x)$ |
+
+#### §7.2 二阶常系数线性非齐次方程的解法
+
+对 $y''+py'+qy=f(x)$，特解形式为
+
+| 自由项 $f(x)$ | 特解形式 |
+| --- | --- |
+| $P_n(x)e^{\alpha x}$ | $\widetilde y=x^kQ_n(x)e^{\alpha x}$ |
+| $[P_n(x)\cos\beta x+P_l(x)\sin\beta x]e^{\alpha x}$ | $\widetilde y=x^k[R_m(x)\cos\beta x+S_m(x)\sin\beta x]e^{\alpha x}$ |
+
+$P_n,P_l$ 分别是 $n,l$ 次多项式，$m=\max(n,l)$；$Q_n,R_m,S_m$ 为相应次数的待定系数多项式。第一行的 $k$ 为 $\alpha$ 作为特征根的重数，非根时取 $0$；第二行 $\beta\ne0$，$k=0$ 或 $1$，分别对应 $\alpha+i\beta$ 不是特征根或是单根。
+
+#### §7.3 欧拉方程
+
+欧拉方程的一般形式为
+
+$$
+a_0x^ny^{(n)}+a_1x^{n-1}y^{(n-1)}+\cdots+a_{n-1}xy'+a_ny=f(x),
+$$
+
+其中 $a_0,\ldots,a_n$ 为常数，$a_0\ne0$。对二阶方程
+
+$$
+a_0x^2y''+a_1xy'+a_2y=f(x),
+$$
+
+$x>0$ 时，记 $t=\ln x$、$Y(t)=y(e^t)$，则
+
+$$
+xy'=Y',\qquad x^2y''=Y''-Y',
+$$
+
+$$
+a_0Y''+(a_1-a_0)Y'+a_2Y=f(e^t).
+$$
+
+!!! warning "提示"
+
+    -   **$x>0$ 与 $x<0$ 要分开**：$t=\ln x$ 只适用于 $x>0$；$x<0$ 时应取 $t=\ln|x|$ 并注意符号，解的定义区间通常不跨过 $0$。
+
+        ??? example "欧拉方程的定义域"
+            <!-- 待补充 -->
+
+    -   **变换公式不要漏 $-Y'$**：$xy'=Y'$，$x^2y''=Y''-Y'$；代回后常系数方程中 $Y'$ 的系数是 $a_1-a_0$。
+
+        ??? example "欧拉方程化为常系数方程"
+            <!-- 待补充 -->
+
+    -   **自由项也要换元**：$f(x)$ 要写成 $f(e^t)$（或 $f(\pm e^t)$），不能保留原来的 $x$。
+
+        ??? example "自由项的换元"
+            <!-- 待补充 -->
+
+    -   **回代后注明区间**：解出 $Y(t)$ 后用 $t=\ln x$ 回代，得到 $y(x)$；由于 $x=0$ 是奇点，通解只在 $x>0$ 或 $x<0$ 的区间上成立。
+
+        ??? example "欧拉方程的回代"
+            <!-- 待补充 -->
+
+### §8 常系数线性微分方程组
+
+含同一自变量的两个或多个未知函数及其导数的方程组称为常微分方程组；各未知函数及其导数以线性形式出现且系数为常数时，称为常系数线性微分方程组。
+
+!!! warning "提示"
+
+    -   **消元会提高阶数**：从一个方程解出某个未知函数再代入另一个方程，可能得到更高阶的方程，必须补足相应个数的初始条件。
+
+        ??? example "方程组的消元"
+            <!-- 待补充 -->
+
+    -   **解完一个未知函数要回代**：求出 $x(t)$ 后还要代回原方程组求 $y(t)$，只给出一个未知函数不算完成求解。
+
+        ??? example "回代求另一个未知函数"
+            <!-- 待补充 -->
+
+    -   **特征值重数与特征向量数可能不匹配**：用矩阵方法求解时，若特征值重数大于线性无关特征向量的个数，需要引入广义特征向量，不能只写 $e^{\lambda t}v$。
+
+        ??? example "重特征值与广义特征向量"
+            <!-- 待补充 -->
+
+    -   **非齐次方程组的特解要整体代入**：特解形式与单个方程类似，但矩阵乘法不可交换，待定向量要代入原方程组验证，不能逐分量独立处理。
+
+        ??? example "非齐次微分方程组"
+            <!-- 待补充 -->
+
+### §9 二阶变系数线性微分方程的一般解法
+
+#### §9.1 降阶法
+
+若 $y_1$ 是齐次方程 $y''+p(x)y'+q(x)y=0$ 的非零解，$y=y_1u$ 满足
+
+$$
+y_1u''+(2y'_1+py_1)u'=0.
+$$
+
+$y_1\ne0$ 的区间上，刘维尔公式为
+
+$$
+y=y_1\left(C_1+C_2\int\frac{e^{-\int p(x)\,\mathrm dx}}{y_1^2}\,\mathrm dx\right).
+$$
+
+对非齐次方程 $y''+py'+qy=f$，相同代换给出
+
+$$
+y_1u''+(2y'_1+py_1)u'=f.
+$$
+
+#### §9.2 常数变易法
+
+设 $p,q,f$ 连续，$y_1,y_2$ 是对应齐次方程的两个线性无关解，记
+
+$$
+w(x)=y_1y'_2-y_2y'_1\ne0.
+$$
+
+特解 $\widetilde y=u_1y_1+u_2y_2$ 中的函数满足
+
+$$
+\begin{cases}
+y_1u'_1+y_2u'_2=0,\\
+y'_1u'_1+y'_2u'_2=f,
+\end{cases}
+\qquad
+u'_1=-\frac{y_2f}{w},\quad u'_2=\frac{y_1f}{w}.
+$$
+
+非齐次方程的通解为
+
+$$
+y=C_1y_1+C_2y_2-y_1\int\frac{y_2f}{w}\,\mathrm dx+y_2\int\frac{y_1f}{w}\,\mathrm dx.
+$$
+
+!!! warning "提示"
+
+    -   **前提是 $y_1,y_2$ 线性无关**：$w=y_1y_2'-y_2y_1'\ne0$ 才能作分母；$w=0$ 时 $y_1,y_2$ 线性相关，不能使用该公式。
+
+        ??? example "常数变易法的前提"
+            <!-- 待补充 -->
+
+    -   **$u_1',u_2'$ 的符号不要写反**：$u_1'=-\dfrac{y_2f}{w}$、$u_2'=\dfrac{y_1f}{w}$，其中 $w=y_1y_2'-y_2y_1'$；符号写反会得到错误特解。
+
+        ??? example "常数变易公式"
+            <!-- 待补充 -->
+
+    -   **附加条件不能忘**：设 $\widetilde y=u_1y_1+u_2y_2$ 时，需附加 $y_1u_1'+y_2u_2'=0$，否则两个未知函数无法唯一确定。
+
+        ??? example "附加条件的来源"
+            <!-- 待补充 -->
+
+    -   **积分后要加常数并保留齐次部分**：$u_1,u_2$ 积分后各含一个常数，最终通解应写成齐次通解加特解的形式。
+
+        ??? example "常数变易法的通解"
+            <!-- 待补充 -->
+
+### §10 数学建模（二）——微分方程在几何、物理中的应用举例
+
+放射性物质的衰变速度与现存质量成正比。若 $x(t_0)=x_0$，则
+
+$$
+\frac{\mathrm dx}{\mathrm dt}=-kx,\qquad
+x(t)=x_0e^{-k(t-t_0)},\qquad k>0.
+$$
+
+单参数曲线族 $F(x,y,C)=0$ 中，$C$ 为参数。若另一曲线族中的曲线与原曲线族中的曲线在交点处切线垂直，则称为正交轨线。原曲线族满足 $f(x,y,y')=0$ 时，在切线斜率有限且非零处，其正交轨线满足
+
+$$
+f\left(x,y,-\frac1{y'}\right)=0.
+$$
+
+弹簧振动方程为
+
+$$
+m x''+\lambda x'+kx=F(t),
+$$
+
+其中 $m>0$ 为物体质量，$\lambda$ 为阻尼系数，$k>0$ 为弹簧劲度系数，$x$ 为相对平衡位置的位移，$F$ 为外力。记 $2\beta=\lambda/m$、$\omega^2=k/m$、$f=F/m$，则
+
+$$
+x''+2\beta x'+\omega^2x=f(t).
+$$
+
+$f\equiv0$ 时称为自由振动；$f\not\equiv0$ 时称为强迫振动。无阻尼自由振动满足
+
+$$
+x''+\omega^2x=0,\qquad x=A\sin(\omega t+\varphi),
+$$
+
+其中 $A$ 为振幅，$\varphi$ 为初相角。无阻尼强迫振动 $x''+\omega^2x=a\sin\omega_0t$（$\omega>0,\ \omega_0>0$）的通解为
+
+$$
+x=
+\begin{cases}
+A\sin(\omega t+\varphi)+\dfrac{a}{\omega^2-\omega_0^2}\sin\omega_0t,&\omega\ne\omega_0,\\[5pt]
+A\sin(\omega t+\varphi)-\dfrac{at}{2\omega}\cos\omega t,&\omega=\omega_0.
+\end{cases}
+$$
+
+$\omega=\omega_0$ 时，强迫振动的振幅随时间增大，称为共振。
+
+串联 $RLC$ 电路中，电流 $I$ 满足
+
+$$
+L I''+R I'+\frac1CI=E'(t),
+$$
+
+其中 $R,L,C$ 分别为电阻、电感、电容，$E(t)$ 为电动势。
+
+!!! warning "提示"
+
+    -   **衰变方程的负号与半衰期**：$\dfrac{\mathrm dx}{\mathrm dt}=-kx$（$k>0$）的解为 $x=x_0e^{-k(t-t_0)}$；半衰期 $T=\dfrac{\ln2}{k}$，不要漏负号或把 $k$ 与 $T$ 混用。
+
+        ??? example "放射性衰变"
+            <!-- 待补充 -->
+
+    -   **正交轨线的斜率条件**：正交轨线满足 $f\left(x,y,-\dfrac1{y'}\right)=0$，但只在 $y'\ne0$ 且有限时成立；水平切线与垂直切线要单独讨论。
+
+        ??? example "正交轨线"
+            <!-- 待补充 -->
+
+    -   **共振条件与振幅**：无阻尼强迫振动在 $\omega=\omega_0$ 时发生共振，特解含 $t\cos\omega t$，振幅随时间增大；$\omega\ne\omega_0$ 时不会出现这种增长。
+
+        ??? example "共振"
+            <!-- 待补充 -->
+
+    -   **RLC 电路方程不要漏 $E'$**：$LI''+RI'+\dfrac1CI=E'(t)$ 是对电动势求导后的方程；若题目给的是 $E(t)$，要先求导再代入。
+
+        ??? example "RLC 电路"
+            <!-- 待补充 -->
+
+### §11 差分方程 \*
+
+#### §11.1 差分方程的基本概念
+
+定义在非负整数集上的函数 $y_t$ 的差分为
+
+$$
+\Delta y_t=y_{t+1}-y_t,\qquad
+\Delta^2y_t=y_{t+2}-2y_{t+1}+y_t,\qquad
+\Delta^ny_t=\Delta(\Delta^{n-1}y_t).
+$$
+
+$$
+\begin{aligned}
+\Delta(Cy_t)&=C\Delta y_t,\\
+\Delta(y_t+z_t)&=\Delta y_t+\Delta z_t,\\
+\Delta(y_tz_t)&=y_{t+1}\Delta z_t+z_t\Delta y_t,\\
+\Delta\left(\frac{y_t}{z_t}\right)
+&=\frac{z_t\Delta y_t-y_t\Delta z_t}{z_{t+1}z_t}\qquad(z_{t+1}z_t\ne0).
+\end{aligned}
+$$
+
+含未知函数差分的方程称为差分方程；最高差分的阶数，或未知函数附标最大值与最小值之差，称为方程的阶。线性差分方程的形式为
+
+$$
+a_0(t)y_{t+n}+a_1(t)y_{t+n-1}+\cdots+a_n(t)y_t=f(t).
+$$
+
+$f\equiv0$ 时为齐次方程；各系数为常数时为常系数线性差分方程。使方程成为恒等式的函数称为解；含有与阶数相同个数的独立任意常数的解称为通解；满足给定初值条件的解称为特解。
+
+#### §11.2 一阶线性差分方程
+
+对 $y_{t+1}=a_ty_t+f(t)$，给定 $y_0$ 后，
+
+$$
+y_t=y_0\prod_{i=0}^{t-1}a_i
++\sum_{j=0}^{t-1}\left[f(j)\prod_{i=j+1}^{t-1}a_i\right],
+$$
+
+其中空乘积为 $1$。$a_t=a$ 为常数时，
+
+$$
+y_t=a^ty_0+\sum_{i=1}^ta^{i-1}f(t-i).
+$$
+
+齐次方程 $y_{t+1}-ay_t=0$，$a\ne0$，的通解为 $y_t=Ca^t$。
+
+#### §11.3 二阶常系数线性差分方程
+
+$$
+y_{t+2}+ay_{t+1}+by_t=f(t),\qquad b\ne0,
+$$
+
+对应齐次方程的特征方程为 $r^2+ar+b=0$。
+
+| 特征根 | 齐次通解 $Y_t$ |
+| --- | --- |
+| 两个不同实根 $r_1,r_2$ | $C_1r_1^t+C_2r_2^t$ |
+| 二重实根 $r$ | $(C_1+C_2t)r^t$ |
+| 共轭复根 $\rho(\cos\theta\pm i\sin\theta)$ | $\rho^t(C_1\cos\theta t+C_2\sin\theta t)$ |
+
+若 $\widetilde y_t$ 是非齐次方程的一个特解，则通解为
+
+$$
+y_t=Y_t+\widetilde y_t.
+$$
+
+当 $f(t)=P_m(t)A^t$，$P_m$ 为 $m$ 次多项式时，特解形式为
+
+$$
+\widetilde y_t=t^kR_m(t)A^t,
+$$
+
+其中 $R_m$ 为待定系数多项式，$k$ 为 $A$ 作为特征根的重数，非根时取 $0$。
+
+!!! warning "提示"
+
+    -   **通解是指数形式 $r^t$**：差分方程的特征方程为 $r^2+ar+b=0$，齐次通解由 $r_1^t,r_2^t$ 组成；不要与微分方程的 $e^{rx}$ 混淆。
+
+        ??? example "差分方程的特征根"
+            <!-- 待补充 -->
+
+    -   **重根要乘 $t$**：二重实根 $r$ 对应 $(C_1+C_2t)r^t$；共轭复根 $\rho(\cos\theta\pm i\sin\theta)$ 对应 $\rho^t(C_1\cos\theta t+C_2\sin\theta t)$，角度中的 $t$ 不能漏。
+
+        ??? example "重根与复根"
+            <!-- 待补充 -->
+
+    -   **特解中 $k$ 是 $A$ 作为特征根的重数**：对 $f(t)=P_m(t)A^t$，设 $\widetilde y_t=t^kR_m(t)A^t$，$k=0,1,2$ 分别对应 $A$ 不是特征根、是单根、是重根。
+
+        ??? example "差分方程的特解"
+            <!-- 待补充 -->
+
+    -   **初始条件与整数变量**：二阶差分方程需要 $y_0,y_1$ 两个初值；$t$ 只在非负整数上取值，通解不能随意延拓到非整数。
+
+        ??? example "差分方程的初值"
+            <!-- 待补充 -->
+
+## 第七章 矢量代数与空间解析几何
+
+### §1 二阶、三阶行列式及线性方程组
+
+#### §1.1 二阶行列式和二元线性方程组
+
+二阶行列式定义为
+
+$$
+\begin{vmatrix}a_1&b_1\\a_2&b_2\end{vmatrix}
+=a_1b_2-a_2b_1.
+$$
+
+对于二元线性方程组
+
+$$
+\begin{cases}
+a_1x+b_1y=c_1,\\
+a_2x+b_2y=c_2,
+\end{cases}
+$$
+
+记系数行列式与常数列替换所得的行列式为
+
+$$
+D=\begin{vmatrix}a_1&b_1\\a_2&b_2\end{vmatrix},\qquad
+D_x=\begin{vmatrix}c_1&b_1\\c_2&b_2\end{vmatrix},\qquad
+D_y=\begin{vmatrix}a_1&c_1\\a_2&c_2\end{vmatrix}.
+$$
+
+当 $D\ne0$ 时，克拉默法则给出唯一解
+
+$$
+x=\frac{D_x}{D},\qquad y=\frac{D_y}{D}.
+$$
+
+#### §1.2 三阶行列式和三元线性方程组
+
+三阶行列式定义为
+
+$$
+\begin{vmatrix}
+a_1&b_1&c_1\\
+a_2&b_2&c_2\\
+a_3&b_3&c_3
+\end{vmatrix}
+=a_1b_2c_3+b_1c_2a_3+c_1a_2b_3
+-c_1b_2a_3-b_1a_2c_3-a_1c_2b_3.
+$$
+
+记 $a_{ij}$ 为第 $i$ 行、第 $j$ 列的元素。去掉该元素所在的行与列，剩下的行列式称为其余子式，记为 $M_{ij}$；代数余子式为
+
+$$
+A_{ij}=(-1)^{i+j}M_{ij}.
+$$
+
+三阶行列式可按任一行或列展开：
+
+$$
+D=\sum_{j=1}^3a_{ij}A_{ij}\quad\text{（固定第 $i$ 行）},
+\qquad
+D=\sum_{i=1}^3a_{ij}A_{ij}\quad\text{（固定第 $j$ 列）}.
+$$
+
+对于三元线性方程组
+
+$$
+\begin{cases}
+a_1x+b_1y+c_1z=d_1,\\
+a_2x+b_2y+c_2z=d_2,\\
+a_3x+b_3y+c_3z=d_3,
+\end{cases}
+$$
+
+令 $D$ 为系数行列式，$D_x,D_y,D_z$ 分别为将 $D$ 中 $x,y,z$ 的系数列换成常数列 $(d_1,d_2,d_3)^{\mathsf T}$ 所得的行列式。当 $D\ne0$ 时，唯一解为
+
+$$
+x=\frac{D_x}{D},\qquad y=\frac{D_y}{D},\qquad z=\frac{D_z}{D}.
+$$
+
+!!! warning "提示"
+
+    -   **余子式与代数余子式不同**：$A_{ij}=(-1)^{i+j}M_{ij}$，符号由行标与列标之和决定；按行（列）展开时乘的是代数余子式，不是余子式。
+
+        ??? example "代数余子式的符号"
+            <!-- 待补充 -->
+
+    -   **克拉默法则的前提是 $D\ne0$**：只有系数行列式非零时才有唯一解 $x=D_x/D$；$D=0$ 时可能无解或有无穷多解，不能直接相除。
+
+        ??? example "克拉默法则"
+            <!-- 待补充 -->
+
+    -   **对角线法则只适用于二、三阶**：四阶及以上行列式不能套用对角线展开，必须用按行（列）展开或行列变换。
+
+        ??? example "行列式的计算"
+            <!-- 待补充 -->
+
+    -   **行列式的性质要注意符号**：互换两行（列）行列式变号，某行（列）乘 $k$ 则行列式乘 $k$；这些性质常用于化简，但不要与矩阵变换混淆。
+
+        ??? example "行列式的性质"
+            <!-- 待补充 -->
+
+### §2 矢量概念及矢量的线性运算
+
+#### §2.1 矢量概念
+
+只有大小的量称为数量；兼有大小和方向的量称为矢量。矢量可用有向线段 $\overrightarrow{AB}$ 或 $\mathbf a$ 表示，长度称为模，记为 $|\mathbf a|$。
+
+模为零的矢量称为零矢量，记为 $\mathbf0$。大小相等、方向相同的矢量相等；平行移动后得到的矢量与原矢量相等，称为自由矢量。
+
+两非零矢量的夹角记为 $\theta$，$0\le\theta\le\pi$；同向时 $\theta=0$，反向时 $\theta=\pi$。
+
+#### §2.2 矢量的加法
+
+以 $\mathbf a,\mathbf b$ 为邻边构成平行四边形，由共同起点指向对角顶点的矢量称为两矢量的和。等价地，首尾相接的两矢量之和为从第一矢量起点指向第二矢量终点的矢量：
+
+$$
+\overrightarrow{AB}+\overrightarrow{BC}=\overrightarrow{AC}.
+$$
+
+$$
+\mathbf a+\mathbf b=\mathbf b+\mathbf a,\qquad
+(\mathbf a+\mathbf b)+\mathbf c=\mathbf a+(\mathbf b+\mathbf c).
+$$
+
+#### §2.3 矢量的减法
+
+若 $\mathbf b+\mathbf c=\mathbf a$，称 $\mathbf c$ 为 $\mathbf a$ 与 $\mathbf b$ 的差：
+
+$$
+\mathbf c=\mathbf a-\mathbf b,\qquad
+\mathbf a-\mathbf b=\mathbf a+(-\mathbf b).
+$$
+
+其中 $-\mathbf b$ 与 $\mathbf b$ 模相等、方向相反。
+
+#### §2.4 数量与矢量的乘法
+
+数量 $m$ 与矢量 $\mathbf a$ 的乘积 $m\mathbf a$ 满足
+
+$$
+|m\mathbf a|=|m|\,|\mathbf a|.
+$$
+
+$m>0$ 时与 $\mathbf a$ 同向，$m<0$ 时反向，$m=0$ 时为零矢量。数乘运算满足
+
+$$
+(m+n)\mathbf a=m\mathbf a+n\mathbf a,\qquad
+m(\mathbf a+\mathbf b)=m\mathbf a+m\mathbf b,
+$$
+
+$$
+m(n\mathbf a)=(mn)\mathbf a.
+$$
+
+模为 $1$ 的矢量称为单位矢量。非零矢量 $\mathbf a$ 方向上的单位矢量为
+
+$$
+\mathbf e_a=\frac{\mathbf a}{|\mathbf a|},\qquad
+\mathbf a=|\mathbf a|\mathbf e_a.
+$$
+
+#### §2.5 矢量的线性组合与矢量的分解
+
+表达式
+
+$$
+\sum_{i=1}^nm_i\mathbf a_i
+$$
+
+称为矢量 $\mathbf a_1,\ldots,\mathbf a_n$ 的线性组合，其中 $m_i$ 为实数。将一个矢量表示为若干矢量的线性组合，称为矢量的分解。
+
+平行的矢量称为共线矢量。若 $\mathbf b\ne\mathbf0$，则
+
+$$
+\mathbf a\text{ 与 }\mathbf b\text{ 共线}
+\ \Longleftrightarrow\quad
+\exists!m\in\mathbb R:\quad\mathbf a=m\mathbf b.
+$$
+
+平行于同一平面的矢量称为共面矢量。若 $\mathbf b,\mathbf c$ 不共线，则
+
+$$
+\mathbf a\text{ 与 }\mathbf b,\mathbf c\text{ 共面}
+\ \Longleftrightarrow\quad
+\exists!m_1,m_2\in\mathbb R:\quad\mathbf a=m_1\mathbf b+m_2\mathbf c.
+$$
+
+若 $\mathbf e_1,\mathbf e_2,\mathbf e_3$ 不共面，则任一空间矢量均可唯一分解为
+
+$$
+\mathbf a=m_1\mathbf e_1+m_2\mathbf e_2+m_3\mathbf e_3.
+$$
+
+此时 $\mathbf e_1,\mathbf e_2,\mathbf e_3$ 称为空间的一组基。
+
+!!! warning "提示"
+
+    -   **共线表示要求 $\mathbf b\ne\mathbf0$**：$\mathbf a=m\mathbf b$ 的唯一性依赖 $\mathbf b\ne\mathbf0$；零矢量与任何矢量共线，但表示不唯一（任意 $m$ 均可）。
+
+        ??? example "共线矢量的表示"
+            <!-- 待补充 -->
+
+    -   **共面分解要求 $\mathbf b,\mathbf c$ 不共线**：只有 $\mathbf b,\mathbf c$ 不共线时，$\mathbf a=m_1\mathbf b+m_2\mathbf c$ 的系数才唯一；否则不能作为平面的一组基。
+
+        ??? example "共面矢量的分解"
+            <!-- 待补充 -->
+
+    -   **空间分解要求三矢量不共面**：$\mathbf e_1,\mathbf e_2,\mathbf e_3$ 不共面时，任一空间矢量才能唯一分解；共面时表示不唯一或不存在。
+
+        ??? example "空间矢量的分解"
+            <!-- 待补充 -->
+
+    -   **线性组合的系数是数量**：$m_i\mathbf a_i$ 是数乘，不是矢量积；不要把线性组合与数量积、矢量积混为一谈。
+
+        ??? example "线性组合"
+            <!-- 待补充 -->
+
+### §3 空间直角坐标系与矢量的坐标表达式
+
+#### §3.1 空间直角坐标系
+
+空间中三条相互垂直、交于原点 $O$ 的有向数轴构成空间直角坐标系，记为 $Oxyz$。$Ox,Oy,Oz$ 为坐标轴，$Oxy,Oyz,Oxz$ 为坐标平面；三个坐标平面将空间分成八个卦限。
+
+右手坐标系满足：右手四指从 $Ox$ 正向转向 $Oy$ 正向时，拇指指向 $Oz$ 正向。点 $M$ 与有序数组 $(x,y,z)$ 对应，记为 $M(x,y,z)$。
+
+点 $M(x,y,z)$ 关于 $Oxy$ 平面、$Ox$ 轴和原点的对称点分别为
+
+$$
+(x,y,-z),\qquad(x,-y,-z),\qquad(-x,-y,-z).
+$$
+
+#### §3.2 空间两点间的距离
+
+若 $M_1(x_1,y_1,z_1)$、$M_2(x_2,y_2,z_2)$，则
+
+$$
+|M_1M_2|=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2}.
+$$
+
+特别地，点 $M(x,y,z)$ 到原点的距离为
+
+$$
+|OM|=\sqrt{x^2+y^2+z^2}.
+$$
+
+#### §3.3 矢量的坐标表达式
+
+记 $\mathbf i,\mathbf j,\mathbf k$ 为三个坐标轴正向的单位矢量，则
+
+$$
+\mathbf a=a_1\mathbf i+a_2\mathbf j+a_3\mathbf k=(a_1,a_2,a_3),
+\qquad |\mathbf a|=\sqrt{a_1^2+a_2^2+a_3^2}.
+$$
+
+$(a_1,a_2,a_3)$ 为矢量的坐标，也称分量；$\mathbf i,\mathbf j,\mathbf k$ 构成直角坐标系的一组基。
+
+非零矢量与三个坐标轴正向的夹角 $\alpha,\beta,\gamma$ 称为方向角，其余弦称为方向余弦：
+
+$$
+\cos\alpha=\frac{a_1}{|\mathbf a|},\qquad
+\cos\beta=\frac{a_2}{|\mathbf a|},\qquad
+\cos\gamma=\frac{a_3}{|\mathbf a|},
+$$
+
+$$
+\cos^2\alpha+\cos^2\beta+\cos^2\gamma=1,
+\qquad
+\mathbf e_a=(\cos\alpha,\cos\beta,\cos\gamma).
+$$
+
+#### §3.4 矢量的代数运算
+
+设 $\mathbf a=(a_1,a_2,a_3)$、$\mathbf b=(b_1,b_2,b_3)$，则
+
+$$
+\mathbf a\pm\mathbf b=(a_1\pm b_1,a_2\pm b_2,a_3\pm b_3),
+\qquad m\mathbf a=(ma_1,ma_2,ma_3).
+$$
+
+若 $M_1(x_1,y_1,z_1)$、$M_2(x_2,y_2,z_2)$，则
+
+$$
+\overrightarrow{M_1M_2}=(x_2-x_1,y_2-y_1,z_2-z_1).
+$$
+
+!!! warning "提示"
+
+    -   **坐标运算要在同一坐标系下**：只有同一组基下的坐标才能直接加减、数乘；不同坐标系中的坐标不能直接运算。
+
+        ??? example "坐标运算"
+            <!-- 待补充 -->
+
+    -   **向量坐标是终点减起点**：$\overrightarrow{M_1M_2}=(x_2-x_1,y_2-y_1,z_2-z_1)$，不要写成起点减终点，否则方向相反。
+
+        ??? example "由两点求矢量"
+            <!-- 待补充 -->
+
+    -   **方向余弦的平方和为 $1$**：$\cos^2\alpha+\cos^2\beta+\cos^2\gamma=1$，方向角是矢量与三个坐标轴正向的夹角，取值范围为 $[0,\pi]$。
+
+        ??? example "方向余弦"
+            <!-- 待补充 -->
+
+    -   **零矢量不能单位化**：$\mathbf e_a=\dfrac{\mathbf a}{|\mathbf a|}$ 要求 $\mathbf a\ne\mathbf0$；矢量相等要求坐标对应相等，模相等不代表是同一矢量。
+
+        ??? example "单位矢量"
+            <!-- 待补充 -->
+
+### §4 两矢量的数量积与矢量积
+
+#### §4.1 两矢量的数量积
+
+两矢量 $\mathbf a,\mathbf b$ 的数量积定义为
+
+$$
+\mathbf a\cdot\mathbf b=|\mathbf a|\,|\mathbf b|\cos\theta,
+$$
+
+其中 $\theta$ 为两矢量的夹角，结果为数量，也称内积或点积。数量积满足
+
+$$
+\mathbf a\cdot\mathbf b=\mathbf b\cdot\mathbf a,\qquad
+(m\mathbf a)\cdot\mathbf b=m(\mathbf a\cdot\mathbf b)=\mathbf a\cdot(m\mathbf b),
+$$
+
+$$
+\mathbf a\cdot(\mathbf b+\mathbf c)=\mathbf a\cdot\mathbf b+\mathbf a\cdot\mathbf c.
+$$
+
+坐标表达式及夹角公式为
+
+$$
+\mathbf a\cdot\mathbf b=a_1b_1+a_2b_2+a_3b_3,
+\qquad
+|\mathbf a|=\sqrt{\mathbf a\cdot\mathbf a},
+$$
+
+$$
+\cos\theta=\frac{\mathbf a\cdot\mathbf b}{|\mathbf a|\,|\mathbf b|},
+\qquad\mathbf a,\mathbf b\ne\mathbf0.
+$$
+
+$$
+\mathbf a\perp\mathbf b\ \Longleftrightarrow\ \mathbf a\cdot\mathbf b=0.
+$$
+
+矢量 $\mathbf a$ 在单位矢量 $\mathbf e$ 方向上的投影为数量
+
+$$
+(\mathbf a)_{\mathbf e}=\mathbf a\cdot\mathbf e.
+$$
+
+在非零矢量 $\mathbf b$ 方向上的投影为
+
+$$
+(\mathbf a)_{\mathbf b}=\frac{\mathbf a\cdot\mathbf b}{|\mathbf b|}.
+$$
+
+恒力 $\mathbf F$ 使物体发生位移 $\mathbf s$ 时，所做的功为
+
+$$
+W=\mathbf F\cdot\mathbf s.
+$$
+
+#### §4.2 两矢量的矢量积
+
+两矢量 $\mathbf a,\mathbf b$ 的矢量积 $\mathbf a\times\mathbf b$ 为同时垂直于二者的矢量，方向由 $\mathbf a$ 转向 $\mathbf b$ 的右手规则确定，模为
+
+$$
+|\mathbf a\times\mathbf b|=|\mathbf a|\,|\mathbf b|\sin\theta.
+$$
+
+其模等于以 $\mathbf a,\mathbf b$ 为邻边的平行四边形面积。
+
+$$
+\mathbf a\times\mathbf b=-\mathbf b\times\mathbf a,\qquad
+(m\mathbf a)\times\mathbf b=m(\mathbf a\times\mathbf b)=\mathbf a\times(m\mathbf b),
+$$
+
+$$
+\mathbf a\times(\mathbf b+\mathbf c)=\mathbf a\times\mathbf b+\mathbf a\times\mathbf c,
+$$
+
+$$
+(\mathbf a+\mathbf b)\times\mathbf c=\mathbf a\times\mathbf c+\mathbf b\times\mathbf c.
+$$
+
+坐标表达式为
+
+$$
+\mathbf a\times\mathbf b
+=\begin{vmatrix}
+\mathbf i&\mathbf j&\mathbf k\\
+a_1&a_2&a_3\\
+b_1&b_2&b_3
+\end{vmatrix}
+=(a_2b_3-a_3b_2,\ a_3b_1-a_1b_3,\ a_1b_2-a_2b_1).
+$$
+
+$$
+\mathbf a\parallel\mathbf b\ \Longleftrightarrow\ \mathbf a\times\mathbf b=\mathbf0.
+$$
+
+!!! warning "提示"
+
+    -   **矢量积不满足交换律**：$\mathbf a\times\mathbf b=-\mathbf b\times\mathbf a$，方向由右手规则确定；交换顺序会改变符号。
+
+        ??? example "矢量积的方向"
+            <!-- 待补充 -->
+
+    -   **模是平行四边形面积**：$|\mathbf a\times\mathbf b|$ 等于以 $\mathbf a,\mathbf b$ 为邻边的平行四边形面积；三角形面积要再除以 $2$。
+
+        ??? example "矢量积的几何意义"
+            <!-- 待补充 -->
+
+    -   **坐标公式的中间项带负号**：$\mathbf a\times\mathbf b=(a_2b_3-a_3b_2,\ a_3b_1-a_1b_3,\ a_1b_2-a_2b_1)$，按行列式展开时 $\mathbf j$ 分量前有负号。
+
+        ??? example "矢量积的坐标计算"
+            <!-- 待补充 -->
+
+    -   **$\mathbf a\times\mathbf b=\mathbf0$ 等价于共线**：包括其中一个为零矢量的情形；不能由此推出 $\mathbf a=\mathbf0$ 或 $\mathbf b=\mathbf0$。矢量积也不满足结合律。
+
+        ??? example "共线与矢量积"
+            <!-- 待补充 -->
+
+### §5 矢量的混合积与二重矢积
+
+#### §5.1 三矢量的混合积
+
+三矢量 $\mathbf a,\mathbf b,\mathbf c$ 的混合积定义为
+
+$$
+\mathbf a\cdot(\mathbf b\times\mathbf c)
+=\begin{vmatrix}
+a_1&a_2&a_3\\
+b_1&b_2&b_3\\
+c_1&c_2&c_3
+\end{vmatrix}.
+$$
+
+其绝对值等于以三矢量为棱的平行六面体的体积：
+
+$$
+V_{\text{平行六面体}}=|\mathbf a\cdot(\mathbf b\times\mathbf c)|,
+\qquad
+V_{\text{四面体}}=\frac16|\mathbf a\cdot(\mathbf b\times\mathbf c)|,
+$$
+
+后一公式中三矢量为四面体同一顶点出发的三条棱。
+
+$$
+\mathbf a,\mathbf b,\mathbf c\text{ 共面}
+\ \Longleftrightarrow\ \mathbf a\cdot(\mathbf b\times\mathbf c)=0.
+$$
+
+$$
+\mathbf a\cdot(\mathbf b\times\mathbf c)
+=\mathbf b\cdot(\mathbf c\times\mathbf a)
+=\mathbf c\cdot(\mathbf a\times\mathbf b),
+$$
+
+$$
+\mathbf a\cdot(\mathbf b\times\mathbf c)
+=-\mathbf a\cdot(\mathbf c\times\mathbf b).
+$$
+
+#### §5.2 三矢量的二重矢积
+
+三矢量的乘积 $\mathbf a\times(\mathbf b\times\mathbf c)$ 称为二重矢积，满足
+
+$$
+\mathbf a\times(\mathbf b\times\mathbf c)
+=(\mathbf a\cdot\mathbf c)\mathbf b-(\mathbf a\cdot\mathbf b)\mathbf c,
+$$
+
+$$
+(\mathbf a\times\mathbf b)\times\mathbf c
+=(\mathbf c\cdot\mathbf a)\mathbf b-(\mathbf c\cdot\mathbf b)\mathbf a.
+$$
+
+!!! warning "提示"
+
+    -   **公式的括号位置不能换**：$\mathbf a\times(\mathbf b\times\mathbf c)=(\mathbf a\cdot\mathbf c)\mathbf b-(\mathbf a\cdot\mathbf b)\mathbf c$，而 $(\mathbf a\times\mathbf b)\times\mathbf c=(\mathbf c\cdot\mathbf a)\mathbf b-(\mathbf c\cdot\mathbf b)\mathbf a$，两者一般不相等。
+
+        ??? example "二重矢积公式"
+            <!-- 待补充 -->
+
+    -   **结果落在哪个平面内**：$\mathbf a\times(\mathbf b\times\mathbf c)$ 与 $\mathbf b,\mathbf c$ 共面；$(\mathbf a\times\mathbf b)\times\mathbf c$ 与 $\mathbf a,\mathbf b$ 共面，可用来判断分解方向。
+
+        ??? example "二重矢积的几何意义"
+            <!-- 待补充 -->
+
+    -   **二重矢积不满足结合律**：$\mathbf a\times(\mathbf b\times\mathbf c)\ne(\mathbf a\times\mathbf b)\times\mathbf c$，书写时括号不能省略。
+
+        ??? example "二重矢积的结合律"
+            <!-- 待补充 -->
+
+    -   **用"BAC-CAB"记忆时注意顺序**：第一项是 $(\mathbf a\cdot\mathbf c)\mathbf b$，第二项是 $-(\mathbf a\cdot\mathbf b)\mathbf c$，点积的两个矢量不要配错。
+
+        ??? example "二重矢积的记忆"
+            <!-- 待补充 -->
+
+### §6 平面与直线方程
+
+#### §6.1 平面及平面方程
+
+垂直于平面的非零矢量称为平面的法矢量。过点 $P_0(x_0,y_0,z_0)$、法矢量为 $\mathbf n=(A,B,C)\ne\mathbf0$ 的平面的点法式方程为
+
+$$
+\mathbf n\cdot\overrightarrow{P_0P}=0,
+\qquad
+A(x-x_0)+B(y-y_0)+C(z-z_0)=0.
+$$
+
+一般式方程为
+
+$$
+Ax+By+Cz+D=0,\qquad A^2+B^2+C^2>0.
+$$
+
+在三坐标轴上的非零截距分别为 $a,b,c$ 时，截距式方程为
+
+$$
+\frac xa+\frac yb+\frac zc=1.
+$$
+
+两平面法矢量 $\mathbf n_1,\mathbf n_2$ 的夹角 $\theta$ 及其补角称为两平面的夹角，满足
+
+$$
+\cos\theta=\frac{\mathbf n_1\cdot\mathbf n_2}{|\mathbf n_1|\,|\mathbf n_2|}.
+$$
+
+$$
+\text{两平面垂直}\ \Longleftrightarrow\ \mathbf n_1\cdot\mathbf n_2=0,
+$$
+
+$$
+\text{两平面平行或重合}\ \Longleftrightarrow\ \mathbf n_1\times\mathbf n_2=\mathbf0.
+$$
+
+点 $P_0(x_0,y_0,z_0)$ 到平面 $Ax+By+Cz+D=0$ 的距离为
+
+$$
+d=\frac{|Ax_0+By_0+Cz_0+D|}{\sqrt{A^2+B^2+C^2}}.
+$$
+
+#### §6.2 空间直线方程
+
+与直线平行的非零矢量称为直线的方向矢量，其坐标称为方向数。过点 $P_0(x_0,y_0,z_0)$、方向矢量为 $\mathbf v=(l,m,n)$ 的直线，参数式方程为
+
+$$
+x=x_0+lt,\qquad y=y_0+mt,\qquad z=z_0+nt,
+\qquad t\in\mathbb R.
+$$
+
+当 $lmn\ne0$ 时，其点向式或对称式方程为
+
+$$
+\frac{x-x_0}{l}=\frac{y-y_0}{m}=\frac{z-z_0}{n}.
+$$
+
+方向分量为零时，相应坐标恒定；如 $l=0$ 时，$x=x_0$。
+
+过两点 $P_1(x_1,y_1,z_1)$、$P_2(x_2,y_2,z_2)$ 的直线的两点式为
+
+$$
+\frac{x-x_1}{x_2-x_1}=\frac{y-y_1}{y_2-y_1}=\frac{z-z_1}{z_2-z_1},
+$$
+
+其中相应分母非零；一般参数式为 $\overrightarrow{OP}=\overrightarrow{OP_1}+t\overrightarrow{P_1P_2}$。
+
+空间直线也可表示为两个不平行平面的交线：
+
+$$
+\begin{cases}
+A_1x+B_1y+C_1z+D_1=0,\\
+A_2x+B_2y+C_2z+D_2=0,
+\end{cases}
+\qquad \mathbf n_1\times\mathbf n_2\ne\mathbf0.
+$$
+
+其方向矢量可取 $\mathbf v=\mathbf n_1\times\mathbf n_2$。
+
+两直线方向矢量 $\mathbf v_1,\mathbf v_2$ 的夹角 $\theta$ 及其补角称为两直线的夹角，满足
+
+$$
+\cos\theta=\frac{\mathbf v_1\cdot\mathbf v_2}{|\mathbf v_1|\,|\mathbf v_2|}.
+$$
+
+设直线方向矢量 $\mathbf v$ 与平面法矢量 $\mathbf n$ 的夹角为 $\theta$，则线面夹角为
+
+$$
+\varphi=\left|\frac\pi2-\theta\right|.
+$$
+
+$$
+\text{直线垂直于平面}\ \Longleftrightarrow\ \mathbf v\parallel\mathbf n,
+\qquad
+\text{直线方向平行于平面}\ \Longleftrightarrow\ \mathbf v\cdot\mathbf n=0.
+$$
+
+点 $P$ 到直线 $L$ 的距离为
+
+$$
+d(P,L)=\frac{|\overrightarrow{P_0P}\times\mathbf v|}{|\mathbf v|},
+$$
+
+其中 $P_0\in L$，$\mathbf v$ 为 $L$ 的方向矢量。
+
+两异面直线间的距离是其公垂线段的长度，公式为
+
+$$
+d(L_1,L_2)=\frac{|\overrightarrow{P_1P_2}\cdot(\mathbf v_1\times\mathbf v_2)|}
+{|\mathbf v_1\times\mathbf v_2|},
+$$
+
+其中 $P_1\in L_1,P_2\in L_2$，$\mathbf v_1,\mathbf v_2$ 为相应方向矢量。
+
+#### §6.3 平面束方程
+
+通过同一直线 $L$ 的所有平面构成平面束，$L$ 称为平面束的轴。若
+
+$$
+L:\quad F_1(x,y,z)=0,\qquad F_2(x,y,z)=0
+$$
+
+是两个不平行平面的交线，则平面束方程为
+
+$$
+\lambda F_1(x,y,z)+\mu F_2(x,y,z)=0,
+\qquad(\lambda,\mu)\ne(0,0).
+$$
+
+!!! warning "提示"
+
+    -   **$\lambda,\mu$ 不能同时为零**：平面束方程为 $\lambda F_1+\mu F_2=0$，$(\lambda,\mu)\ne(0,0)$；同时为零得到的是恒等式，不是平面。
+
+        ??? example "平面束方程"
+            <!-- 待补充 -->
+
+    -   **单参数形式会漏掉一个平面**：若写成 $F_1+\lambda F_2=0$，则漏掉 $F_2=0$ 这个平面；需要时应用双参数形式或单独补上。
+
+        ??? example "单参数与双参数形式"
+            <!-- 待补充 -->
+
+    -   **交线必须是两不平行的平面**：$F_1=0$ 与 $F_2=0$ 的法矢量不共线时，交线才是一条直线；若两平面平行或重合，不构成平面束的轴。
+
+        ??? example "平面束的轴"
+            <!-- 待补充 -->
+
+    -   **用条件定参数后要归一化**：将所求平面满足的几何条件代入 $\lambda F_1+\mu F_2=0$，解出比值 $\lambda:\mu$ 即可；不要误把 $\lambda,\mu$ 当作唯一确定的值。
+
+        ??? example "求平面束中的平面"
+            <!-- 待补充 -->
+
+### §7 曲面方程与空间曲线方程
+
+#### §7.1 曲面方程
+
+若曲面上任一点的坐标均满足 $F(x,y,z)=0$，而不在曲面上的点不满足该方程，则称它为曲面的方程。
+
+球心为 $C(x_0,y_0,z_0)$、半径为 $R>0$ 的球面方程为
+
+$$
+(x-x_0)^2+(y-y_0)^2+(z-z_0)^2=R^2.
+$$
+
+一条直线沿定曲线平行移动形成的曲面称为柱面，平移的直线称为母线，定曲线称为准线。以 $Oxy$ 平面上的曲线 $F(x,y)=0$ 为准线、母线平行于 $\mathbf v=(a,b,c)$，$c\ne0$，柱面方程为
+
+$$
+F\left(x-\frac acz,\ y-\frac bcz\right)=0.
+$$
+
+特别地，$F(x,y)=0$ 在空间中表示母线平行于 $Oz$ 轴的柱面。
+
+过定点的直线沿不经过该定点的定曲线移动所成的曲面称为锥面；定点称为顶点，移动直线称为母线，定曲线称为准线。以原点为顶点、以平面 $z=h\ne0$ 内的曲线 $F(x,y)=0$ 为准线时，除顶点外的锥面满足
+
+$$
+F\left(\frac{hx}{z},\frac{hy}{z}\right)=0,\qquad z\ne0.
+$$
+
+曲线绕定直线旋转形成的曲面称为旋转曲面，定直线称为旋转轴。$Oyz$ 平面上的曲线 $F(y,z)=0$ 绕 $Oz$ 轴旋转所得曲面为
+
+$$
+F\left(\pm\sqrt{x^2+y^2},z\right)=0.
+$$
+
+绕 $Oy$ 轴旋转所得曲面为
+
+$$
+F\left(y,\pm\sqrt{x^2+z^2}\right)=0.
+$$
+
+#### §7.2 空间曲线方程
+
+空间曲线可表示为两个曲面的交线：
+
+$$
+\begin{cases}
+F(x,y,z)=0,\\
+G(x,y,z)=0.
+\end{cases}
+$$
+
+其参数方程的一般形式为
+
+$$
+x=\varphi(t),\qquad y=\psi(t),\qquad z=\omega(t).
+$$
+
+绕 $Oz$ 轴的圆柱螺线可表示为
+
+$$
+x=R\cos t,\qquad y=R\sin t,\qquad z=kt,
+\qquad R>0,\ k>0,
+$$
+
+其中 $2\pi k$ 为螺距，即绕轴一周沿轴方向上升的距离。
+
+空间曲线在 $Oxy$ 平面上的投影由曲线上各点沿平行于 $Oz$ 轴方向投影所得，其点集为
+
+$$
+\{(x,y,0):\ \exists z,\ F(x,y,z)=G(x,y,z)=0\}.
+$$
+
+!!! warning "提示"
+
+    -   **曲线表示不唯一**：同一条空间曲线可以由不同的两张曲面相交表示；两个方程必须相互独立，不能是同一曲面的倍数或只相差一个方程。
+
+        ??? example "空间曲线的表示"
+            <!-- 待补充 -->
+
+    -   **投影要先消去 $z$**：曲线在 $Oxy$ 平面上的投影，应由两个方程消去 $z$ 得到关于 $x,y$ 的方程，再令 $z=0$；投影柱面与投影曲线不是一回事。
+
+        ??? example "空间曲线的投影"
+            <!-- 待补充 -->
+
+    -   **参数方程要注明范围**：$x=\varphi(t),y=\psi(t),z=\omega(t)$ 必须给出 $t$ 的取值范围，否则可能表示整条曲线或重复绕行。
+
+        ??? example "参数方程的范围"
+            <!-- 待补充 -->
+
+    -   **螺距与旋向**：圆柱螺线 $x=R\cos t,y=R\sin t,z=kt$ 的螺距为 $2\pi|k|$；$k>0$ 为右旋，$k<0$ 为左旋，不要只取 $k>0$。
+
+        ??? example "圆柱螺线"
+            <!-- 待补充 -->
+
+### §8 二次曲面
+
+由关于 $x,y,z$ 的二次方程所确定的曲面称为二次曲面。以下 $a,b,c>0$。
+
+| 曲面 | 标准方程 |
+| --- | --- |
+| 椭球面 | $\displaystyle\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}=1$ |
+| 椭圆抛物面 | $\displaystyle z=\frac{x^2}{a^2}+\frac{y^2}{b^2}$ |
+| 二次锥面 | $\displaystyle\frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}=0$ |
+| 双曲抛物面（马鞍面） | $\displaystyle z=-\frac{x^2}{a^2}+\frac{y^2}{b^2}$ |
+| 单叶双曲面 | $\displaystyle\frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}=1$ |
+| 双叶双曲面 | $\displaystyle\frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}=-1$ |
+
+!!! warning "提示"
+
+    -   **正负号决定曲面类型**：$\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}-\dfrac{z^2}{c^2}=1$ 是单叶双曲面，$=-1$ 是双叶双曲面；椭圆抛物面 $z=\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}$ 与马鞍面 $z=-\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}$ 也靠符号区分。
+
+        ??? example "二次曲面的识别"
+            <!-- 待补充 -->
+
+    -   **$a,b,c$ 是半轴长**：标准方程中 $a,b,c>0$ 是半轴长，不是轴长；比较形状时要看 $a,b,c$ 的相对大小。
+
+        ??? example "半轴长与形状"
+            <!-- 待补充 -->
+
+    -   **截痕法要先找对称性**：用坐标平面或平行平面截曲面，先确定对称轴、顶点和开口方向，再画截痕；不能只凭方程想象。
+
+        ??? example "截痕法"
+            <!-- 待补充 -->
+
+    -   **锥面与双曲面的区别**：二次锥面 $\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}-\dfrac{z^2}{c^2}=0$ 在顶点处退化，不是双曲面；双曲面有渐近锥面，但本身不与锥面重合。
+
+        ??? example "锥面与双曲面"
+            <!-- 待补充 -->
+
+## 第八章 多元函数微分学
+
+### §1 多元函数的极限与连续性
+
+#### §1.1 多元函数的概念
+
+集合 $A,B$ 的直积为
+
+$$
+A\times B=\{(x,y):x\in A,\ y\in B\},\qquad
+\mathbb R^n=\{(x_1,\ldots,x_n):x_i\in\mathbb R\}.
+$$
+
+设 $D\subseteq\mathbb R^n$ 非空。若每个 $P=(x_1,\ldots,x_n)\in D$ 都对应唯一的实数 $u$，则称此对应关系为定义在 $D$ 上的 $n$ 元函数，记为
+
+$$
+u=f(P)=f(x_1,\ldots,x_n).
+$$
+
+$D$ 为定义域，$x_1,\ldots,x_n$ 为自变量，$u$ 为因变量。函数的值域与图形分别为
+
+$$
+R(f)=\{f(P):P\in D\},\qquad
+\Gamma_f=\{(x_1,\ldots,x_n,u):P\in D,\ u=f(P)\}\subseteq\mathbb R^{n+1}.
+$$
+
+#### §1.2 平面点集
+
+平面两点 $P_0=(x_0,y_0)$、$P=(x,y)$ 的距离为
+
+$$
+\rho(P_0,P)=\sqrt{(x-x_0)^2+(y-y_0)^2}.
+$$
+
+$P_0$ 的 $\delta$ 邻域和去心 $\delta$ 邻域分别为
+
+$$
+U(P_0,\delta)=\{P:\rho(P_0,P)<\delta\},\qquad
+\mathring U(P_0,\delta)=\{P:0<\rho(P_0,P)<\delta\}.
+$$
+
+对平面点集 $E$，若存在 $U(P_0,\delta)\subseteq E$，则 $P_0$ 是 $E$ 的内点；若存在 $U(P_0,\delta)\cap E=\varnothing$，则 $P_0$ 是 $E$ 的外点；若 $P_0$ 的任意邻域都同时含有 $E$ 中和 $E$ 外的点，则 $P_0$ 是 $E$ 的边界点。全体内点组成 $E$ 的内部，全体边界点组成边界 $\partial E$。
+
+若 $E$ 的每一点都是内点，则 $E$ 是开集；若 $E$ 的补集是开集，则 $E$ 是闭集。若 $E$ 中任意两点都能用完全位于 $E$ 内的有限折线连接，则称 $E$ 连通。
+
+连通的开集称为开区域；开区域连同其边界组成闭区域。开区域、闭区域及开区域连同部分边界统称为区域。若存在 $r>0$，使 $E\subseteq U(O,r)$，则称 $E$ 有界，否则称其无界。
+
+#### §1.3 二元函数的极限与连续性
+
+设 $f$ 在 $P_0$ 的某去心邻域内有定义。若
+
+$$
+\forall\varepsilon>0,\ \exists\delta>0:\quad
+0<\rho(P,P_0)<\delta\Longrightarrow |f(P)-A|<\varepsilon,
+$$
+
+则称 $A$ 为 $f$ 在 $P\to P_0$ 时的极限，记为
+
+$$
+\lim_{P\to P_0}f(P)=A
+\quad\text{或}\quad
+\lim_{\substack{x\to x_0\\y\to y_0}}f(x,y)=A.
+$$
+
+上述极限称为二重极限；依次对两个变量取极限所得的
+
+$$
+\lim_{x\to x_0}\left[\lim_{y\to y_0}f(x,y)\right],\qquad
+\lim_{y\to y_0}\left[\lim_{x\to x_0}f(x,y)\right]
+$$
+
+称为累次极限。若二重极限及两个累次极限都存在，则三者相等。
+
+若 $f$ 在 $P_0$ 及其某邻域内有定义，且
+
+$$
+\lim_{P\to P_0}f(P)=f(P_0),
+$$
+
+则称 $f$ 在 $P_0$ 连续。函数的全增量与偏增量为
+
+$$
+\Delta z=f(x_0+\Delta x,y_0+\Delta y)-f(x_0,y_0),
+$$
+
+$$
+\Delta_xz=f(x_0+\Delta x,y_0)-f(x_0,y_0),\qquad
+\Delta_yz=f(x_0,y_0+\Delta y)-f(x_0,y_0).
+$$
+
+连续性也可表示为
+
+$$
+\lim_{(\Delta x,\Delta y)\to(0,0)}\Delta z=0.
+$$
+
+!!! warning "提示"
+
+    -   **二重极限要求沿任意路径**：$P\to P_0$ 可以沿任意曲线趋近，只有所有路径都趋于同一值才算极限存在；只验证几条直线（如 $y=kx$）不足以证明极限存在。
+
+        ??? example "二重极限的存在性"
+            <!-- 待补充 -->
+
+    -   **累次极限与二重极限不同**：两个累次极限存在且相等，不能推出二重极限存在；二重极限存在也不保证累次极限存在。只有三者都存在时，它们才相等。
+
+        ??? example "累次极限"
+            <!-- 待补充 -->
+
+    -   **偏导数存在不保证连续**：多元函数中 $f_x,f_y$ 都存在仍可能不连续；连续要求全增量 $\Delta z\to0$，不能用偏增量代替全增量。
+
+        ??? example "偏导数与连续性"
+            <!-- 待补充 -->
+
+    -   **连续与有界闭区域**：最值定理、介值定理要求函数在有界闭区域上连续；区域无界或不闭时结论可能不成立。
+
+        ??? example "有界闭区域上的连续性"
+            <!-- 待补充 -->
+
+### §2 偏导数与全微分
+
+#### §2.1 偏导数
+
+函数 $z=f(x,y)$ 在 $(x_0,y_0)$ 对 $x$、$y$ 的偏导数分别定义为
+
+$$
+f_x(x_0,y_0)=\lim_{h\to0}\frac{f(x_0+h,y_0)-f(x_0,y_0)}h,
+$$
+
+$$
+f_y(x_0,y_0)=\lim_{k\to0}\frac{f(x_0,y_0+k)-f(x_0,y_0)}k.
+$$
+
+偏导函数记为
+
+$$
+f_x=\frac{\partial f}{\partial x}=\frac{\partial z}{\partial x},\qquad
+f_y=\frac{\partial f}{\partial y}=\frac{\partial z}{\partial y}.
+$$
+
+$f_x(x_0,y_0)$ 是曲面 $z=f(x,y)$ 与平面 $y=y_0$ 的交线在对应点的切线斜率；$f_y(x_0,y_0)$ 是曲面与平面 $x=x_0$ 的交线在对应点的切线斜率。
+
+二阶偏导数为
+
+$$
+f_{xx}=\frac{\partial}{\partial x}f_x,\qquad
+f_{xy}=\frac{\partial}{\partial y}f_x,\qquad
+f_{yx}=\frac{\partial}{\partial x}f_y,\qquad
+f_{yy}=\frac{\partial}{\partial y}f_y.
+$$
+
+继续对偏导函数求偏导数，所得为高阶偏导数。若混合偏导数 $f_{xy},f_{yx}$ 在所讨论点连续，则
+
+$$
+f_{xy}=f_{yx}.
+$$
+
+高阶混合偏导数在连续条件下也与求导次序无关。
+
+#### §2.2 全微分
+
+设 $\rho=\sqrt{(\Delta x)^2+(\Delta y)^2}$。若函数的全增量可以表示为
+
+$$
+\Delta z=A\Delta x+B\Delta y+o(\rho),
+$$
+
+其中 $A,B$ 与 $\Delta x,\Delta y$ 无关，则称 $f$ 在该点可微，线性部分称为全微分：
+
+$$
+\mathrm dz=A\Delta x+B\Delta y.
+$$
+
+可微函数在该点连续，两个偏导数存在，且
+
+$$
+A=f_x,\qquad B=f_y,\qquad
+\mathrm dz=f_x\,\mathrm dx+f_y\,\mathrm dy,
+\qquad\mathrm dx=\Delta x,\ \mathrm dy=\Delta y.
+$$
+
+若 $f_x,f_y$ 在该点的某邻域内存在且在该点连续，则 $f$ 在该点可微。
+
+对可微函数 $u,v$ 及常数 $c$，有
+
+$$
+\mathrm d(u\pm v)=\mathrm du\pm\mathrm dv,\qquad
+\mathrm d(cu)=c\,\mathrm du,
+$$
+
+$$
+\mathrm d(uv)=v\,\mathrm du+u\,\mathrm dv,\qquad
+\mathrm d\left(\frac uv\right)=\frac{v\,\mathrm du-u\,\mathrm dv}{v^2}\quad(v\ne0).
+$$
+
+##### 全微分在近似计算和误差估算中的应用 \*
+
+当 $\Delta x,\Delta y$ 较小时，一阶近似公式为
+
+$$
+\Delta z\approx\mathrm dz=f_x(x,y)\Delta x+f_y(x,y)\Delta y,
+$$
+
+$$
+f(x+\Delta x,y+\Delta y)
+\approx f(x,y)+f_x(x,y)\Delta x+f_y(x,y)\Delta y.
+$$
+
+若 $x_0,y_0$ 为测量值，误差限为 $|\Delta x|\le\delta_1$、$|\Delta y|\le\delta_2$，则 $z=f(x,y)$ 的绝对误差限的一阶估计为
+
+$$
+\delta_z\approx |f_x(x_0,y_0)|\delta_1+|f_y(x_0,y_0)|\delta_2.
+$$
+
+当 $f(x_0,y_0)\ne0$ 时，相对误差限的一阶估计为
+
+$$
+\frac{\delta_z}{|f(x_0,y_0)|}
+\approx\frac{|f_x(x_0,y_0)|\delta_1+|f_y(x_0,y_0)|\delta_2}{|f(x_0,y_0)|}.
+$$
+
+!!! warning "提示"
+
+    -   **一阶近似只在增量很小时有效**：$\Delta z\approx f_x\Delta x+f_y\Delta y$ 的误差是 $o(\rho)$，$\Delta x,\Delta y$ 较大时不能用它代替精确增量。
+
+        ??? example "全微分近似"
+            <!-- 待补充 -->
+
+    -   **误差限要加绝对值**：$\delta_z\approx|f_x(x_0,y_0)|\delta_1+|f_y(x_0,y_0)|\delta_2$，各项取绝对值后再相加；直接代数相加可能因符号相消而低估误差。
+
+        ??? example "绝对误差限"
+            <!-- 待补充 -->
+
+    -   **相对误差限的分母**：相对误差限为 $\dfrac{\delta_z}{|f(x_0,y_0)|}$，要求 $f(x_0,y_0)\ne0$；不能把分母写成 $\delta_z$ 或某个偏导数。
+
+        ??? example "相对误差限"
+            <!-- 待补充 -->
+
+    -   **可微的充分条件不是必要条件**：$f_x,f_y$ 在点附近存在且在该点连续可推出可微；但可微只保证偏导数存在，偏导数存在不一定可微。
+
+        ??? example "可微的判定"
+            <!-- 待补充 -->
+
+### §3 复合函数微分法
+
+#### §3.1 复合函数的偏导数
+
+设 $z=f(u,v)$，$u=u(x,y)$、$v=v(x,y)$。若内层函数在所讨论点的偏导数存在，外层函数在对应点可微，则
+
+$$
+\frac{\partial z}{\partial x}
+=\frac{\partial f}{\partial u}\frac{\partial u}{\partial x}
++\frac{\partial f}{\partial v}\frac{\partial v}{\partial x},
+\qquad
+\frac{\partial z}{\partial y}
+=\frac{\partial f}{\partial u}\frac{\partial u}{\partial y}
++\frac{\partial f}{\partial v}\frac{\partial v}{\partial y}.
+$$
+
+若 $u=u(x)$、$v=v(x)$ 可导且 $f$ 可微，则
+
+$$
+\frac{\mathrm dz}{\mathrm dx}
+=\frac{\partial f}{\partial u}\frac{\mathrm du}{\mathrm dx}
++\frac{\partial f}{\partial v}\frac{\mathrm dv}{\mathrm dx}.
+$$
+
+若 $z=f(x,y,u(x,y))$，则
+
+$$
+\frac{\partial z}{\partial x}=f_x+f_u u_x,\qquad
+\frac{\partial z}{\partial y}=f_y+f_u u_y,
+$$
+
+其中 $f_x,f_y,f_u$ 为外层函数对相应自变量的偏导数。
+
+#### §3.2 复合函数的全微分
+
+设 $z=f(x,y)$，$x=x(s,t)$、$y=y(s,t)$ 均有连续偏导数，则
+
+$$
+\mathrm dz=f_x\,\mathrm dx+f_y\,\mathrm dy,
+$$
+
+$$
+\mathrm dx=x_s\,\mathrm ds+x_t\,\mathrm dt,\qquad
+\mathrm dy=y_s\,\mathrm ds+y_t\,\mathrm dt,
+$$
+
+$$
+\mathrm dz=(f_x x_s+f_y y_s)\,\mathrm ds
++(f_x x_t+f_y y_t)\,\mathrm dt
+=z_s\,\mathrm ds+z_t\,\mathrm dt.
+$$
+
+函数的一阶全微分表达式对中间变量仍保持相同形式，称为一阶全微分的形式不变性。
+
+!!! warning "提示"
+
+    -   **一阶形式不变性只对一阶微分成立**：$\mathrm dz=f_x\,\mathrm dx+f_y\,\mathrm dy$ 对中间变量仍成立；二阶及更高阶全微分不具有这种形式不变性。
+
+        ??? example "一阶全微分形式不变性"
+            <!-- 待补充 -->
+
+    -   **链式法则的条件**：外层函数可微、内层函数偏导数存在时才能用 $z_s=f_x x_s+f_y y_s$；仅内层偏导存在而外层不可微时不能直接套。
+
+        ??? example "复合函数求偏导"
+            <!-- 待补充 -->
+
+    -   **$f_x$ 与 $z_x$ 不同**：$z=f(x,y,u(x,y))$ 中，$f_x$ 是外层对第一个位置的偏导，$z_x=f_x+f_u u_x$ 才是对 $x$ 的全偏导，不能混用。
+
+        ??? example "$f_x$ 与 $z_x$"
+            <!-- 待补充 -->
+
+    -   **全微分存在强于偏导存在**：$\mathrm dz$ 存在可推出 $f_x,f_y$ 存在，反之不成立；判断可微时不能只看两个偏导数。
+
+        ??? example "全微分与偏导数"
+            <!-- 待补充 -->
+
+### §4 隐函数的偏导数
+
+#### §4.1 隐函数的偏导数
+
+设 $F(x,y,z)$ 在 $P_0=(x_0,y_0,z_0)$ 的某邻域内有连续偏导数，且
+
+$$
+F(x_0,y_0,z_0)=0,\qquad F_z(x_0,y_0,z_0)\ne0.
+$$
+
+则方程 $F(x,y,z)=0$ 在该点附近唯一确定一个有连续偏导数的隐函数 $z=f(x,y)$，满足 $f(x_0,y_0)=z_0$，且
+
+$$
+\frac{\partial z}{\partial x}=-\frac{F_x}{F_z},\qquad
+\frac{\partial z}{\partial y}=-\frac{F_y}{F_z}.
+$$
+
+各偏导数均在 $(x,y,f(x,y))$ 处取值。
+
+#### §4.2 隐函数组的偏导数
+
+设 $F(x,y,u,v)$、$G(x,y,u,v)$ 在 $P_0=(x_0,y_0,u_0,v_0)$ 的某邻域内有连续偏导数，并满足
+
+$$
+F(P_0)=G(P_0)=0,\qquad
+J(P_0)=\frac{\partial(F,G)}{\partial(u,v)}(P_0)\ne0,
+$$
+
+其中雅可比行列式为
+
+$$
+J=\frac{\partial(F,G)}{\partial(u,v)}
+=\begin{vmatrix}F_u&F_v\\G_u&G_v\end{vmatrix}.
+$$
+
+则方程组 $F=0,G=0$ 在该点附近唯一确定有连续偏导数的函数 $u=u(x,y)$、$v=v(x,y)$，且
+
+$$
+u_x=-\frac{\dfrac{\partial(F,G)}{\partial(x,v)}}J,\qquad
+v_x=-\frac{\dfrac{\partial(F,G)}{\partial(u,x)}}J,
+$$
+
+$$
+u_y=-\frac{\dfrac{\partial(F,G)}{\partial(y,v)}}J,\qquad
+v_y=-\frac{\dfrac{\partial(F,G)}{\partial(u,y)}}J.
+$$
+
+#### §4.3 反函数组的偏导数 \*
+
+若函数组 $x=x(u,v)$、$y=y(u,v)$ 的反函数组为 $u=u(x,y)$、$v=v(x,y)$，两组函数均有连续偏导数，则对应点处
+
+$$
+\frac{\partial(u,v)}{\partial(x,y)}
+\frac{\partial(x,y)}{\partial(u,v)}=1.
+$$
+
+三元函数组的相应公式为
+
+$$
+\frac{\partial(x,y,z)}{\partial(u,v,w)}
+\frac{\partial(u,v,w)}{\partial(x,y,z)}=1.
+$$
+
+!!! warning "提示"
+
+    -   **雅可比行列式非零是局部条件**：$J\ne0$ 只保证在对应点附近存在连续可微的反函数组；$J=0$ 时反函数可能仍存在，但不能用该公式。
+
+        ??? example "反函数组的存在性"
+            <!-- 待补充 -->
+
+    -   **雅可比行列式互为倒数**：$\dfrac{\partial(u,v)}{\partial(x,y)}\cdot\dfrac{\partial(x,y)}{\partial(u,v)}=1$，要求两个雅可比都不为零；不能把每个偏导数分别取倒数。
+
+        ??? example "雅可比行列式"
+            <!-- 待补充 -->
+
+    -   **偏导矩阵是互逆矩阵**：反函数组的偏导矩阵是原函数组偏导矩阵的逆矩阵，非对角元素不能想当然为零。
+
+        ??? example "反函数组的偏导"
+            <!-- 待补充 -->
+
+    -   **整体反函数还需一一对应**：局部可逆不等于整体可逆；要在整个定义域上定义反函数，还需函数组是单射（或区域满足相应条件）。
+
+        ??? example "局部与整体反函数"
+            <!-- 待补充 -->
+
+### §5 场的方向导数与梯度
+
+#### §5.1 场的概念
+
+若空间区域 $V$ 内每一点 $P$ 都对应唯一的数量 $u(P)$，则称 $V$ 上确定了一个数量场，记为
+
+$$
+u=u(P)=u(x,y,z).
+$$
+
+若每一点 $P$ 都对应唯一的矢量 $\boldsymbol A(P)$，则称 $V$ 上确定了一个矢量场，记为
+
+$$
+\boldsymbol A(P)=A_x(x,y,z)\boldsymbol i+A_y(x,y,z)\boldsymbol j+A_z(x,y,z)\boldsymbol k.
+$$
+
+场量不随时间变化的场称为稳定场，否则称为不稳定场。数量场中取相同场值的点组成等值面：
+
+$$
+u(x,y,z)=C.
+$$
+
+平面数量场的相应点集称为等值线。
+
+#### §5.2 场的方向导数
+
+设 $l$ 为从 $P_0$ 出发的有向射线，$P\in l$，$\rho=|P_0P|$。若极限存在，则数量场 $u$ 在 $P_0$ 沿 $l$ 的方向导数为
+
+$$
+\frac{\partial u}{\partial l}(P_0)
+=\lim_{\rho\to0^+}\frac{u(P)-u(P_0)}\rho.
+$$
+
+若 $u$ 在 $P_0$ 可微，$l$ 的单位方向矢量为 $\boldsymbol e_l=(\cos\alpha,\cos\beta,\cos\gamma)$，则
+
+$$
+\frac{\partial u}{\partial l}(P_0)
+=u_x(P_0)\cos\alpha+u_y(P_0)\cos\beta+u_z(P_0)\cos\gamma.
+$$
+
+#### §5.3 梯度
+
+数量场 $u$ 的梯度定义为
+
+$$
+\operatorname{grad}u=\nabla u
+=u_x\boldsymbol i+u_y\boldsymbol j+u_z\boldsymbol k.
+$$
+
+当 $u$ 可微时，
+
+$$
+\frac{\partial u}{\partial l}
+=\nabla u\cdot\boldsymbol e_l
+=|\nabla u|\cos\theta,
+$$
+
+其中 $\theta$ 为梯度与方向 $l$ 的夹角。若 $\nabla u\ne\boldsymbol0$，则梯度方向的方向导数最大，反方向最小，垂直梯度方向的方向导数为零：
+
+$$
+\max_l\frac{\partial u}{\partial l}=|\nabla u|,\qquad
+\min_l\frac{\partial u}{\partial l}=-|\nabla u|.
+$$
+
+!!! warning "提示"
+
+    -   **梯度是矢量，方向导数是数量**：$\nabla u=(u_x,u_y,u_z)$，方向导数 $\dfrac{\partial u}{\partial l}=\nabla u\cdot\boldsymbol e_l$ 是数量；两者不能混淆。
+
+        ??? example "梯度与方向导数"
+            <!-- 待补充 -->
+
+    -   **方向矢量必须单位化**：公式中的 $\boldsymbol e_l=(\cos\alpha,\cos\beta,\cos\gamma)$ 是单位矢量；直接用非单位矢量点乘会多乘一个模长。
+
+        ??? example "方向导数的计算"
+            <!-- 待补充 -->
+
+    -   **最值方向与梯度**：$\nabla u\ne\boldsymbol0$ 时，沿梯度方向方向导数最大，值为 $|\nabla u|$；反方向最小，值为 $-|\nabla u|$；垂直梯度方向为零。
+
+        ??? example "方向导数的最大值"
+            <!-- 待补充 -->
+
+    -   **$\nabla u=\boldsymbol0$ 时方向无定义**：梯度为零时不能谈"梯度方向"，所有方向的方向导数都为 $0$；梯度方向始终指向 $u$ 增加最快的方向，并与等值面垂直。
+
+        ??? example "梯度为零的点"
+            <!-- 待补充 -->
+
+### §6 多元函数的极值及应用
+
+#### §6.1 多元函数的泰勒公式
+
+设 $f$ 在 $(x_0,y_0)$ 的某邻域内有直到 $n+1$ 阶的连续偏导数，$h,k$ 为增量，记
+
+$$
+D=h\frac{\partial}{\partial x}+k\frac{\partial}{\partial y},\qquad
+D^m f=\sum_{j=0}^m\binom mj h^{m-j}k^j
+\frac{\partial^m f}{\partial x^{m-j}\partial y^j}.
+$$
+
+当增量充分小时，存在 $\theta\in(0,1)$，使泰勒公式成立：
+
+$$
+f(x_0+h,y_0+k)
+=\sum_{m=0}^n\frac{D^mf(x_0,y_0)}{m!}+R_n,
+$$
+
+$$
+R_n=\frac{D^{n+1}f(x_0+\theta h,y_0+\theta k)}{(n+1)!},
+\qquad R_n=o(\rho^n),\quad\rho=\sqrt{h^2+k^2}.
+$$
+
+当 $(x_0,y_0)=(0,0)$ 时，称为麦克劳林公式。$n=0$ 时得到中值公式：
+
+$$
+f(x_0+h,y_0+k)-f(x_0,y_0)
+=hf_x(x_0+\theta h,y_0+\theta k)
++kf_y(x_0+\theta h,y_0+\theta k).
+$$
+
+#### §6.2 多元函数的极值
+
+若在 $P_0$ 的某邻域内恒有 $f(P)\le f(P_0)$，则称 $f(P_0)$ 为极大值，$P_0$ 为极大值点；若恒有 $f(P)\ge f(P_0)$，则称 $f(P_0)$ 为极小值，$P_0$ 为极小值点。极大值与极小值统称极值。
+
+若 $f$ 在内点 $(x_0,y_0)$ 取得极值，且两个偏导数存在，则
+
+$$
+f_x(x_0,y_0)=f_y(x_0,y_0)=0.
+$$
+
+满足上述方程的点称为驻点。设 $f$ 在驻点附近有连续的二阶偏导数，记
+
+$$
+A=f_{xx}(x_0,y_0),\quad B=f_{xy}(x_0,y_0),\quad
+C=f_{yy}(x_0,y_0),\quad\Delta=AC-B^2.
+$$
+
+则极值的二阶判别公式为
+
+$$
+\begin{array}{c|c}
+\Delta>0,\ A>0&\text{极小值}\\
+\Delta>0,\ A<0&\text{极大值}\\
+\Delta<0&\text{非极值}\\
+\Delta=0&\text{此判别式不能确定}
+\end{array}
+$$
+
+连续函数在有界闭区域上取得最大值与最小值。在约束条件限制下的极值称为条件极值；没有约束条件的极值称为无条件极值。
+
+设 $f,G$ 有连续偏导数，约束为 $G(x,y,z)=0$，且 $\nabla G\ne\boldsymbol0$。拉格朗日函数为
+
+$$
+L(x,y,z,\lambda)=f(x,y,z)+\lambda G(x,y,z).
+$$
+
+条件极值点满足
+
+$$
+f_x+\lambda G_x=0,\qquad
+f_y+\lambda G_y=0,\qquad
+f_z+\lambda G_z=0,\qquad G=0.
+$$
+
+对 $n$ 个变量、$m<n$ 个独立约束 $\psi_k(x_1,\ldots,x_n)=0$，拉格朗日函数及相应方程为
+
+$$
+L=f+\sum_{k=1}^m\lambda_k\psi_k,\qquad
+\frac{\partial L}{\partial x_i}=0\ (i=1,\ldots,n),\qquad
+\psi_k=0\ (k=1,\ldots,m),
+$$
+
+其中 $\lambda_1,\ldots,\lambda_m$ 为拉格朗日乘子。
+
+##### 数学建模初步（三） \*
+
+对数据 $(x_i,y_i)$（$i=1,\ldots,n$），直线 $y=ax+b$ 的最小二乘拟合以偏差平方和
+
+$$
+\varepsilon(a,b)=\sum_{i=1}^n(y_i-ax_i-b)^2
+$$
+
+为目标函数，其参数满足
+
+$$
+\begin{cases}
+a\displaystyle\sum_{i=1}^n x_i^2+b\displaystyle\sum_{i=1}^n x_i
+=\displaystyle\sum_{i=1}^n x_i y_i,\\
+a\displaystyle\sum_{i=1}^n x_i+nb=\displaystyle\sum_{i=1}^n y_i.
+\end{cases}
+$$
+
+在线性不等式约束下求线性目标函数最大值或最小值的问题称为线性规划问题，其形式为
+
+$$
+z=\sum_{j=1}^n c_jx_j,\qquad
+\sum_{j=1}^n a_{ij}x_j\ge b_i\ (i=1,\ldots,m),\qquad
+x_j\ge0\ (j=1,\ldots,n),
+$$
+
+其中 $a_{ij},b_i,c_j$ 为给定常数，$x_j$ 为待定变量。
+
+!!! warning "提示"
+
+    -   **最小二乘的目标是平方和**：$\varepsilon(a,b)=\sum(y_i-ax_i-b)^2$ 对 $a,b$ 求偏导令零得正规方程；不要误用绝对偏差和或最大偏差。
+
+        ??? example "最小二乘拟合"
+            <!-- 待补充 -->
+
+    -   **正规方程的变量对应**：第一条方程含 $\sum x_i^2$、$\sum x_i$、$\sum x_iy_i$，第二条含 $\sum x_i$、$n$、$\sum y_i$；不要把 $a,b$ 的系数写反。
+
+        ??? example "正规方程"
+            <!-- 待补充 -->
+
+    -   **线性规划的约束方向**：标准形式中 $\sum a_{ij}x_j\ge b_i$、$x_j\ge0$ 的方向要统一；不同方向的约束不能直接套同一套顶点法。
+
+        ??? example "线性规划"
+            <!-- 待补充 -->
+
+    -   **模型检验与外推**：拟合优度高不代表模型正确；要检查残差、异常值和适用范围，外推预测尤其要谨慎。
+
+        ??? example "模型检验"
+            <!-- 待补充 -->
+
+### §7 偏导数在几何上的应用
+
+#### §7.1 矢值函数的微分法
+
+若每个 $t$ 都对应唯一的矢量 $\boldsymbol r(t)$，则称 $\boldsymbol r$ 为矢值函数，可写为
+
+$$
+\boldsymbol r(t)=x(t)\boldsymbol i+y(t)\boldsymbol j+z(t)\boldsymbol k.
+$$
+
+当 $t$ 变化时，$\boldsymbol r(t)$ 的终点轨迹称为矢端曲线。矢值函数的导数定义为
+
+$$
+\boldsymbol r'(t)=\lim_{\Delta t\to0}
+\frac{\boldsymbol r(t+\Delta t)-\boldsymbol r(t)}{\Delta t}
+=x'(t)\boldsymbol i+y'(t)\boldsymbol j+z'(t)\boldsymbol k.
+$$
+
+若 $\boldsymbol r(t)$ 表示运动质点的位置，则速度、速率与加速度分别为
+
+$$
+\boldsymbol v=\boldsymbol r'(t),\qquad
+v=|\boldsymbol r'(t)|=\sqrt{[x'(t)]^2+[y'(t)]^2+[z'(t)]^2},\qquad
+\boldsymbol a=\boldsymbol r''(t).
+$$
+
+#### §7.2 空间曲线的切线与法平面
+
+设曲线 $\boldsymbol r=\boldsymbol r(t)$ 在 $t_0$ 可导，$P_0=\boldsymbol r(t_0)$，且 $\boldsymbol r'(t_0)\ne\boldsymbol0$。$\boldsymbol r'(t_0)$ 是曲线在 $P_0$ 的切向量，切线方程为
+
+$$
+\boldsymbol r=\boldsymbol r(t_0)+s\boldsymbol r'(t_0),\qquad s\in\mathbb R.
+$$
+
+过 $P_0$ 且垂直于切线的平面称为法平面，其方程为
+
+$$
+x'(t_0)(x-x_0)+y'(t_0)(y-y_0)+z'(t_0)(z-z_0)=0.
+$$
+
+#### §7.3 空间曲面的切平面与法线
+
+设曲面方程为 $F(x,y,z)=0$，$F$ 在曲面点 $P_0=(x_0,y_0,z_0)$ 附近有连续偏导数，且 $\nabla F(P_0)\ne\boldsymbol0$。曲面在 $P_0$ 的法向量为
+
+$$
+\boldsymbol n=\nabla F(P_0)=(F_x(P_0),F_y(P_0),F_z(P_0)).
+$$
+
+切平面与法线方程分别为
+
+$$
+F_x(P_0)(x-x_0)+F_y(P_0)(y-y_0)+F_z(P_0)(z-z_0)=0,
+$$
+
+$$
+\boldsymbol r=\boldsymbol r_0+s\nabla F(P_0),\qquad s\in\mathbb R.
+$$
+
+对显式曲面 $z=f(x,y)$，切平面及一个法向量为
+
+$$
+z-z_0=f_x(x_0,y_0)(x-x_0)+f_y(x_0,y_0)(y-y_0),\qquad
+\boldsymbol n=(f_x(x_0,y_0),f_y(x_0,y_0),-1).
+$$
+
+若曲线由 $F(x,y,z)=0$、$G(x,y,z)=0$ 的交线确定，且两法向量不平行，则曲线在 $P_0$ 的切线是两个切平面的交线：
+
+$$
+\begin{cases}
+\nabla F(P_0)\cdot(\boldsymbol r-\boldsymbol r_0)=0,\\
+\nabla G(P_0)\cdot(\boldsymbol r-\boldsymbol r_0)=0.
+\end{cases}
+$$
+
+!!! warning "提示"
+
+    -   **法向量是梯度**：曲面 $F(x,y,z)=0$ 在 $P_0$ 的法向量为 $\nabla F(P_0)$，前提是 $\nabla F(P_0)\ne\boldsymbol0$；梯度为零的点可能是奇点，不能直接写法向量。
+
+        ??? example "曲面的法向量"
+            <!-- 待补充 -->
+
+    -   **显式曲面法向量的符号**：$z=f(x,y)$ 的法向量可取 $(f_x,f_y,-1)$，也可取 $(-f_x,-f_y,1)$，两者方向相反；切平面公式要与所选法向量一致。
+
+        ??? example "显式曲面的切平面"
+            <!-- 待补充 -->
+
+    -   **切平面是线性近似**：$z-z_0=f_x(x_0,y_0)(x-x_0)+f_y(x_0,y_0)(y-y_0)$ 只在 $P_0$ 附近近似曲面，不能把切平面当作曲面本身。
+
+        ??? example "切平面的近似"
+            <!-- 待补充 -->
+
+    -   **交线的切线是两个切平面的交线**：曲线由 $F=G=0$ 给出时，切线同时垂直于 $\nabla F$ 和 $\nabla G$，要求两法向量不平行；否则曲线在该点可能退化。
+
+        ??? example "空间曲线的切线"
+            <!-- 待补充 -->
+
+## 第九章 多元函数积分学
+
+### §1 二重积分的概念
+
+#### §1.1 二重积分的概念
+
+设 $f$ 是有界闭区域 $D$ 上的有界函数。将 $D$ 分成 $n$ 个小区域，第 $i$ 个小区域的面积为 $\Delta\sigma_i$，在其中任取点 $(\xi_i,\eta_i)$；记各小区域直径的最大值为 $\lambda$。若下列极限存在，且与分割和取点无关，则称其为 $f$ 在 $D$ 上的二重积分：
+
+$$
+\iint_D f(x,y)\,\mathrm d\sigma
+=\lim_{\lambda\to0^+}\sum_{i=1}^n f(\xi_i,\eta_i)\Delta\sigma_i.
+$$
+
+$f$ 为被积函数，$D$ 为积分区域，$\mathrm d\sigma$ 为面积元素；在直角坐标系中，$\mathrm d\sigma=\mathrm dx\,\mathrm dy$。连续函数在有界闭区域上可积。
+
+当 $f\ge0$ 时，$\iint_Df\,\mathrm d\sigma$ 是以 $D$ 为底、以 $z=f(x,y)$ 为顶的曲顶柱体的体积。特别地，
+
+$$
+\operatorname{Area}(D)=\iint_D1\,\mathrm d\sigma.
+$$
+
+!!! warning "提示"
+
+    -   **极限与分割、取点无关**：二重积分要求 $\lambda\to0$ 时和式极限存在，且不依赖于如何分割、如何取点；只对某一种分割成立不能说明可积。
+
+        ??? example "二重积分的定义"
+            <!-- 待补充 -->
+
+    -   **$\lambda$ 是最大直径**：$\lambda$ 是所有小区域直径的最大值，不是面积的最大值；$\lambda\to0$ 比"面积趋于零"更强。
+
+        ??? example "分割的细度"
+            <!-- 待补充 -->
+
+    -   **几何意义要看符号**：$f\ge0$ 时是曲顶柱体体积；$f$ 变号时是 $xOy$ 平面上、下部分体积的代数和，不能直接当面积。
+
+        ??? example "二重积分的几何意义"
+            <!-- 待补充 -->
+
+    -   **可积的必要条件是有界**：$f$ 在 $D$ 上可积则 $f$ 有界、$D$ 有界；无界区域或无界函数属于反常二重积分，不能按常义积分处理。
+
+        ??? example "二重积分的可积性"
+            <!-- 待补充 -->
+
+#### §1.2 二重积分的性质
+
+以下各式中有关函数均可积，$\alpha,\beta$ 为常数：
+
+$$
+\iint_D(\alpha f+\beta g)\,\mathrm d\sigma
+=\alpha\iint_Df\,\mathrm d\sigma+\beta\iint_Dg\,\mathrm d\sigma.
+$$
+
+若 $D=D_1\cup D_2$，且 $D_1,D_2$ 无公共内点，则
+
+$$
+\iint_Df\,\mathrm d\sigma
+=\iint_{D_1}f\,\mathrm d\sigma+\iint_{D_2}f\,\mathrm d\sigma.
+$$
+
+$$
+f\le g\ \Longrightarrow\ \iint_Df\,\mathrm d\sigma\le\iint_Dg\,\mathrm d\sigma,
+\qquad
+\left|\iint_Df\,\mathrm d\sigma\right|\le\iint_D|f|\,\mathrm d\sigma.
+$$
+
+若 $m\le f\le M$，则
+
+$$
+m\operatorname{Area}(D)\le\iint_Df\,\mathrm d\sigma
+\le M\operatorname{Area}(D).
+$$
+
+若 $f$ 在有界闭区域 $D$ 上连续，则存在 $(\xi,\eta)\in D$，使
+
+$$
+\iint_Df\,\mathrm d\sigma=f(\xi,\eta)\operatorname{Area}(D).
+$$
+
+$f$ 在 $D$ 上的平均值为
+
+$$
+\bar f=\frac{1}{\operatorname{Area}(D)}\iint_Df\,\mathrm d\sigma.
+$$
+
+!!! warning "提示"
+
+    -   **区域可加性要求无公共内点**：$D=D_1\cup D_2$ 且 $D_1,D_2$ 至多边界相交时才能拆开；若内部有重叠，相加会重复计算。
+
+        ??? example "区域可加性"
+            <!-- 待补充 -->
+
+    -   **不等式性质不能反向使用**：$f\le g$ 只能推出积分不等号同向；$\left|\iint_Df\right|\le\iint_D|f|$ 也不能反推 $f$ 的符号。
+
+        ??? example "积分不等式"
+            <!-- 待补充 -->
+
+    -   **积分中值定理的条件**：要求 $f$ 在有界闭**连通**区域上连续，$\xi,\eta$ 在 $D$ 内；不连续或区域不连通时结论不一定成立。
+
+        ??? example "积分中值定理"
+            <!-- 待补充 -->
+
+    -   **平均值的分母是面积**：$\bar f=\dfrac{1}{\operatorname{Area}(D)}\iint_Df\,\mathrm d\sigma$，不是除以 $1$ 或周长；面积为零的区域不能这样定义平均值。
+
+        ??? example "函数的平均值"
+            <!-- 待补充 -->
+
+### §2 二重积分的计算
+
+#### §2.1 在直角坐标系中计算二重积分
+
+$x$ 型区域与 $y$ 型区域分别表示为
+
+$$
+D_x=\{(x,y):a\le x\le b,\ \varphi_1(x)\le y\le\varphi_2(x)\},
+$$
+
+$$
+D_y=\{(x,y):c\le y\le d,\ \psi_1(y)\le x\le\psi_2(y)\}.
+$$
+
+对连续被积函数，有
+
+$$
+\iint_{D_x}f(x,y)\,\mathrm dx\,\mathrm dy
+=\int_a^b\mathrm dx\int_{\varphi_1(x)}^{\varphi_2(x)}f(x,y)\,\mathrm dy,
+$$
+
+$$
+\iint_{D_y}f(x,y)\,\mathrm dx\,\mathrm dy
+=\int_c^d\mathrm dy\int_{\psi_1(y)}^{\psi_2(y)}f(x,y)\,\mathrm dx.
+$$
+
+在矩形 $[a,b]\times[c,d]$ 上，
+
+$$
+\int_a^b\mathrm dx\int_c^df(x,y)\,\mathrm dy
+=\int_c^d\mathrm dy\int_a^bf(x,y)\,\mathrm dx.
+$$
+
+!!! warning "提示"
+
+    -   **积分次序要与区域类型匹配**：$x$ 型区域先对 $y$ 积分、$y$ 型区域先对 $x$ 积分；内层积分的上下限可以是外层变量的函数，外层上下限必须是常数。
+
+        ??? example "选择积分次序"
+            <!-- 待补充 -->
+
+    -   **上下限不能写反**：内层下限对应区域的下边界、上限对应上边界；写反会得到相反数或错误区域。
+
+        ??? example "积分限的确定"
+            <!-- 待补充 -->
+
+    -   **一般区域交换次序要重新画图**：只有矩形区域在连续条件下可任意交换；一般区域交换 $dx,dy$ 次序时，必须重新用不等式描述区域并重新定限。
+
+        ??? example "交换积分次序"
+            <!-- 待补充 -->
+
+    -   **先画图再分块**：求交点、确定区域边界，必要时把区域分成若干 $x$ 型或 $y$ 型小块；不要只凭被积函数选次序。
+
+        ??? example "分块积分"
+            <!-- 待补充 -->
+
+#### §2.2 在极坐标系中计算二重积分
+
+极坐标变换及面积元素为
+
+$$
+x=r\cos\theta,\qquad y=r\sin\theta,\qquad r\ge0,
+\qquad \mathrm d\sigma=r\,\mathrm dr\,\mathrm d\theta.
+$$
+
+若积分区域表示为
+
+$$
+D=\{(r,\theta):\alpha\le\theta\le\beta,\ r_1(\theta)\le r\le r_2(\theta)\},
+$$
+
+则
 
 $$
 \iint_Df(x,y)\,\mathrm d\sigma
-=\int_\alpha^\beta\int_{r_1(\theta)}^{r_2(\theta)}
-f(r\cos\theta,r\sin\theta)r\,\mathrm dr\,\mathrm d\theta.
+=\int_\alpha^\beta\mathrm d\theta
+\int_{r_1(\theta)}^{r_2(\theta)}f(r\cos\theta,r\sin\theta)r\,\mathrm dr.
 $$
 
-圆、扇形、圆环以及被积函数含 $x^2+y^2$ 的情形，常适合极坐标。区域不一定以原点为圆心，例如 $x^2+y^2\le 2ax$（$a>0$）可写成 $-\pi/2\le \theta\le \pi/2,0\le r\le 2a\cos\theta$。
+!!! warning "提示"
 
-!!! warning "换元同时改变三件事"
+    -   **面积元素不要漏 $r$**：$\mathrm d\sigma=r\,\mathrm dr\,\mathrm d\theta$，这是极坐标换元雅可比为 $r$ 的结果；漏掉 $r$ 是最常见的错误。
 
-    被积函数、积分区域和面积元都要变。极坐标漏掉因子 $r$，或让同一区域被角度范围重复覆盖，都会改变结果。原点处坐标退化不妨碍常规积分，仍应保证区域内部除零面积集合外不重复参数化。
+        ??? example "极坐标的面积元素"
+            <!-- 待补充 -->
 
-#### 一般曲线坐标（\*）
+    -   **被积函数要全部换成极坐标**：$f(x,y)$ 应写成 $f(r\cos\theta,r\sin\theta)$，不能保留 $x,y$。
 
-教材第 149 页起。设 $x=x(u,v),y=y(u,v)$ 在对应区域内一阶连续可微，内部一一对应，且雅可比不为零，则
+        ??? example "极坐标下的被积函数"
+            <!-- 待补充 -->
+
+    -   **积分限要覆盖整个区域**：圆 $x^2+y^2\le R^2$ 对应 $0\le r\le R$、$0\le\theta\le2\pi$；扇形、圆环的 $\theta$ 与 $r$ 范围要按区域确定。
+
+        ??? example "极坐标的积分限"
+            <!-- 待补充 -->
+
+    -   **极点与边界要单独检查**：$r=0$ 处极角无定义，但积分值不受影响；若区域包含极点，$\theta$ 的范围要覆盖一周，不能只取主值区间。
+
+        ??? example "含极点的区域"
+            <!-- 待补充 -->
+
+#### §2.3 在一般曲线坐标中计算二重积分 \*
+
+设变换 $x=x(u,v),y=y(u,v)$ 将区域 $G$ 与 $D$ 对应，具有连续偏导数，且在区域内部一一对应、雅可比行列式不为零。记
+
+$$
+J=\frac{\partial(x,y)}{\partial(u,v)}
+=\begin{vmatrix}x_u&x_v\\y_u&y_v\end{vmatrix}.
+$$
+
+二重积分的换元公式为
 
 $$
 \iint_Df(x,y)\,\mathrm dx\,\mathrm dy
-=\iint_G f(x(u,v),y(u,v))
-\left|\frac{\partial(x,y)}{\partial(u,v)}\right|\mathrm du\,\mathrm dv.
+=\iint_Gf(x(u,v),y(u,v))|J|\,\mathrm du\,\mathrm dv.
 $$
 
-常用线性变换把平行四边形化为矩形；$x=au,y=bv$ 把椭圆化为单位圆，面积元为 $ab\,\mathrm du\,\mathrm dv$（$a,b>0$）。一般理论为教材选学，极坐标换元仍需熟练掌握。
+!!! warning "提示"
+
+    -   **换元要乘 $|J|$**：$\iint_Df\,\mathrm dx\,\mathrm dy=\iint_Gf(x(u,v),y(u,v))|J|\,\mathrm du\,\mathrm dv$，绝对值不能丢；$J$ 为负时只改变符号，面积伸缩比仍为正。
+
+        ??? example "一般换元公式"
+            <!-- 待补充 -->
+
+    -   **变换必须在内部一一对应**：要求 $G$ 与 $D$ 在区域内部一一对应、$J\ne0$；边界上 $J=0$ 可以允许，但内部退化会导致换元失败。
+
+        ??? example "换元的条件"
+            <!-- 待补充 -->
+
+    -   **雅可比的行列顺序要对**：$J=\dfrac{\partial(x,y)}{\partial(u,v)}=\begin{vmatrix}x_u&x_v\\y_u&y_v\end{vmatrix}$，分子是旧变量、分母是新变量，不要写反。
+
+        ??? example "雅可比行列式"
+            <!-- 待补充 -->
+
+    -   **积分区域也要换**：换元后积分区域从 $D$ 变为 $G$，不能仍用原来的 $x,y$ 范围；极坐标就是 $x=r\cos\theta,y=r\sin\theta$ 的特例。
+
+        ??? example "换元后的区域"
+            <!-- 待补充 -->
 
 ### §3 三重积分
 
-#### 定义与直角坐标计算
+#### §3.1 三重积分的概念
 
-三重积分由体积小块上的和式取极限定义：
+设 $f$ 是有界闭区域 $V$ 上的有界函数。将 $V$ 分成体积为 $\Delta V_i$ 的小区域，在各小区域内任取点 $(\xi_i,\eta_i,\zeta_i)$，记小区域直径的最大值为 $\lambda$。若下列极限存在且与分割、取点无关，则称其为三重积分：
 
 $$
-\iiint_\Omega f(x,y,z)\,\mathrm dV
-=\lim \sum_i f(\xi_i,\eta_i,\zeta_i)\Delta V_i.
+\iiint_Vf(x,y,z)\,\mathrm dV
+=\lim_{\lambda\to0^+}\sum_{i=1}^nf(\xi_i,\eta_i,\zeta_i)\Delta V_i.
 $$
 
-性质与二重积分类似。计算可选“先一后二”或“先二后一”。
+$\mathrm dV$ 为体积元素；在直角坐标系中，$\mathrm dV=\mathrm dx\,\mathrm dy\,\mathrm dz$。连续函数在有界闭区域上可积，且
+
+$$
+\operatorname{Vol}(V)=\iiint_V1\,\mathrm dV.
+$$
+
+!!! warning "提示"
+
+    -   **三重积分是体积分**：$\mathrm dV$ 是体积元素，$f=1$ 时积分等于区域体积；它不是"四维体积"，几何意义由 $f$ 的含义决定。
+
+        ??? example "三重积分的意义"
+            <!-- 待补充 -->
+
+    -   **可积的必要条件**：$f$ 在有界闭区域 $V$ 上有界；连续函数一定可积，但可积不要求连续。
+
+        ??? example "三重积分的可积性"
+            <!-- 待补充 -->
+
+    -   **极限与分割、取点无关**：与二重积分类似，$\lambda$ 是所有小区域直径的最大值，极限必须对任意分割和取点都相同。
+
+        ??? example "三重积分的定义"
+            <!-- 待补充 -->
+
+    -   **无界区域或无界函数另作反常积分**：常义三重积分要求区域有界、函数有界；否则需按反常积分定义判断敛散性。
+
+        ??? example "反常三重积分"
+            <!-- 待补充 -->
+
+#### §3.2 在直角坐标系中计算三重积分
 
 若
 
 $$
-\Omega=\{(x,y,z):(x,y)\in D,\ z_1(x,y)\le z\le z_2(x,y)\},
+V=\{(x,y,z):(x,y)\in D,\ z_1(x,y)\le z\le z_2(x,y)\},
 $$
 
-则先沿竖直线积分，再在投影区域积分：
+则
 
 $$
-\iiint_\Omega f\,\mathrm dV
+\iiint_Vf\,\mathrm dV
 =\iint_D\left[\int_{z_1(x,y)}^{z_2(x,y)}f(x,y,z)\,\mathrm dz\right]\mathrm dx\,\mathrm dy.
 $$
 
-若固定 $z$ 时截面为 $D_z$，也可先算截面积分：
+若 $c\le z\le d$，$D_z$ 为 $V$ 在高度 $z$ 处的截面在 $Oxy$ 平面上的投影，则
 
 $$
-\iiint_\Omega f\,\mathrm dV
+\iiint_Vf\,\mathrm dV
 =\int_c^d\left[\iint_{D_z}f(x,y,z)\,\mathrm dx\,\mathrm dy\right]\mathrm dz.
 $$
 
-#### 柱坐标与球坐标
+!!! warning "提示"
 
-选择坐标的依据是**对称性**：区域绕某条轴旋转、边界含圆柱面或圆锥面时用柱坐标；区域由球面与以原点为顶点的锥面围成时用球坐标。球坐标中 $\varphi$ 是与 $z$ 轴正方向的夹角（极角），$\theta$ 是绕 $z$ 轴的方位角，$\rho$ 是到原点的距离，三者不要混用。
+    -   **"先一后二"与"先二后一"要选对**：先 $z$ 后 $xy$ 时，$z$ 的上下限是 $x,y$ 的函数；先 $xy$ 后 $z$ 时，$D_z$ 是高度 $z$ 处的截面投影。
 
-体积元 $\rho^2\sin\varphi\,\mathrm d\rho\,\mathrm d\varphi\,\mathrm d\theta$ 中，$\rho^2$ 来自径向向外扩张时的面积增长，$\sin\varphi$ 来自“纬度圈半径等于 $\rho\sin\varphi$”。自检办法：取整个球体算一遍体积，看结果是不是 $\displaystyle\frac{4\pi R^3}{3}$。
+        ??? example "两种积分次序"
+            <!-- 待补充 -->
 
-| 坐标 | 变换 | 体积元 | 常用场景 |
-| --- | --- | --- | --- |
-| 柱坐标 | $x=r\cos\theta,y=r\sin\theta,z=z$ | $r\,\mathrm dr\,\mathrm d\theta\,\mathrm dz$ | 柱体、绕轴对称、抛物面与锥面围成的区域 |
-| 球坐标 | $x=\rho\sin\varphi\cos\theta,y=\rho\sin\varphi\sin\theta,z=\rho\cos\varphi$ | $\rho^2\sin\varphi\,\mathrm d\rho\,\mathrm d\varphi\,\mathrm d\theta$ | 球、球壳、以原点为顶点的圆锥截球体 |
+    -   **投影区域不要弄错**：$D$ 是 $V$ 在 $Oxy$ 平面上的投影，$D_z$ 是固定 $z$ 时的截面投影；两者不同，不能混用。
 
-本页球坐标中，$\rho\ge 0$，$\varphi\in[0,\pi]$ 是与 $z$ 正轴的夹角，$\theta$ 是方位角。整球可取 $0\le \theta\le 2\pi$；上半球取 $0\le \varphi\le \pi/2$。
+        ??? example "投影区域与截面"
+            <!-- 待补充 -->
 
-一般三维换元中，体积元为三阶雅可比行列式的绝对值乘新坐标体积元。例如
+    -   **内层上下限是函数、外层是常数**：与二重积分类似，最外层积分限必须是常数；写反会导致区域描述错误。
+
+        ??? example "三重积分的积分限"
+            <!-- 待补充 -->
+
+    -   **交换次序要重新描述区域**：$dx,dy,dz$ 的书写顺序可以换，但累次积分的次序不能随意交换；换次序必须重新确定各变量的范围。
+
+        ??? example "交换三重积分次序"
+            <!-- 待补充 -->
+
+#### §3.3 在柱面坐标系、球面坐标系及一般曲面坐标系中计算三重积分
+
+柱面坐标变换为
 
 $$
-x=a\rho\sin\varphi\cos\theta,\quad
-y=b\rho\sin\varphi\sin\theta,\quad z=c\rho\cos\varphi
+x=r\cos\theta,\qquad y=r\sin\theta,\qquad z=z,
+\qquad \mathrm dV=r\,\mathrm dr\,\mathrm d\theta\,\mathrm dz,
 $$
 
-把椭球变为 $0\le \rho\le 1$，体积元为 $abc\rho^2\sin\varphi\,\mathrm d\rho\,\mathrm d\varphi\,\mathrm d\theta$（$a,b,c>0$）。
+其中 $r\ge0$ 为点到 $Oz$ 轴的距离，$\theta$ 为方位角。
 
-!!! info "重积分换元公式的证明（\*）"
+$$
+\iiint_Vf(x,y,z)\,\mathrm dV
+=\iiint_{V'}f(r\cos\theta,r\sin\theta,z)r\,\mathrm dr\,\mathrm d\theta\,\mathrm dz.
+$$
 
-    教材第 167 页起将证明列为选学。核心思想是：光滑坐标变换在很小区域上近似一个线性变换，雅可比行列式的绝对值给出体积伸缩率，再对分割求和取极限。复习计算时应掌握公式的条件、区域对应关系及常用坐标的因子。
+球面坐标变换为
 
-!!! example "例 9.2：圆锥区域的体积与质心"
+$$
+x=\rho\sin\varphi\cos\theta,\quad
+y=\rho\sin\varphi\sin\theta,\quad
+z=\rho\cos\varphi,
+$$
 
-    均匀立体 $\Omega$ 由 $0\le z\le 1$、$x^2+y^2\le z^2$ 确定，求体积和质心。
+$$
+\mathrm dV=\rho^2\sin\varphi\,\mathrm d\rho\,\mathrm d\varphi\,\mathrm d\theta.
+$$
 
-    **解：** 柱坐标中 $0\le \theta\le 2\pi,0\le z\le 1,0\le r\le z$，故
+其中 $\rho\ge0$ 为点到原点的距离，$0\le\varphi\le\pi$ 为与 $Oz$ 正向的夹角，$\theta$ 为方位角。
 
-    $$
-    V=\int_0^1\int_0^{2\pi}\int_0^z r\,\mathrm dr\,\mathrm d\theta\,\mathrm dz
-    =\frac\pi3.
-    $$
+$$
+\iiint_Vf\,\mathrm dV
+=\iiint_{V'}f(\rho\sin\varphi\cos\theta,
+\rho\sin\varphi\sin\theta,\rho\cos\varphi)
+\rho^2\sin\varphi\,\mathrm d\rho\,\mathrm d\varphi\,\mathrm d\theta.
+$$
 
-    对称性给出 $\bar x=\bar y=0$，而
+设一般变换 $x=x(u,v,w),y=y(u,v,w),z=z(u,v,w)$ 具有连续偏导数、在区域内部一一对应，且
 
-    $$
-    \bar z=\frac1V\iiint_\Omega z\,\mathrm dV
-    =\frac{\pi\int_0^1z^3\,\mathrm dz}{\pi/3}=\frac34.
-    $$
+$$
+J=\frac{\partial(x,y,z)}{\partial(u,v,w)}\ne0,
+$$
 
-    质心更靠近面积较大的底面；若锥体顶点和底面位置改变，不能直接背 $\bar z=3/4$。
+则
+
+$$
+\iiint_Vf(x,y,z)\,\mathrm dV
+=\iiint_{V'}f(x(u,v,w),y(u,v,w),z(u,v,w))
+|J|\,\mathrm du\,\mathrm dv\,\mathrm dw.
+$$
+
+##### 四、重积分换元公式的证明 \*
+
+!!! warning "提示"
+
+    -   **证明的核心是局部线性化**：把小块近似为平行四边形（或平行六面体），面积（体积）伸缩比由雅可比行列式的绝对值给出；误差是高阶小量。
+
+        ??? example "换元公式的证明思路"
+            <!-- 待补充 -->
+
+    -   **$|J|$ 的绝对值不能省**：雅可比可能为负，但面积、体积的伸缩比为正；证明中取绝对值，公式中也要取绝对值。
+
+        ??? example "雅可比与伸缩比"
+            <!-- 待补充 -->
+
+    -   **条件不能省**：变换要有连续偏导数、在区域内部一一对应、$J\ne0$；否则局部近似和可加性可能失效。
+
+        ??? example "换元公式的条件"
+            <!-- 待补充 -->
+
+    -   **边界零面积不影响积分**：证明中边界上的退化不影响积分值；但若内部大片区域 $J=0$，换元不成立。
+
+        ??? example "边界与内部退化"
+            <!-- 待补充 -->
 
 ### §4 第一类曲线积分与第一类曲面积分
 
-第一类曲线积分与第一类曲面积分都是“沿几何对象的标量累积”：可以把它们分别想象成一根非均匀细丝的总质量、一张非均匀薄壳的总质量。它们与方向无关，只与几何对象和函数值有关；同一条曲线或同一张曲面，正着走、反着走结果一样。
+#### §4.1 第一类曲线积分
 
-计算的关键动作只有两步：把几何对象参数化，写出配套的“长度因子”或“面积因子”（弧长元 $\mathrm ds$、面积元 $\mathrm dS$）。因子与参数化是合作伙伴，不能拆开记忆，更不能乱搭。
-
-#### 对弧长的曲线积分
-
-第一类曲线积分定义为弧长小段上的标量累积：
+将光滑曲线 $L$ 分成弧长为 $\Delta s_i$ 的小段，各段任取点 $P_i$，记最大弧长为 $\lambda$。若极限存在且与分割、取点无关，定义
 
 $$
-\int_L f\,\mathrm ds=\lim \sum_i f(P_i)\Delta s_i.
+\int_Lf(P)\,\mathrm ds
+=\lim_{\lambda\to0^+}\sum_{i=1}^nf(P_i)\Delta s_i.
 $$
 
-若曲线由 $\mathbf r(t)=(x(t),y(t),z(t))$ 参数化，$a\le t\le b$，则
+$\mathrm ds$ 为弧长元素；第一类曲线积分与曲线方向无关，且
+
+$$
+\operatorname{Length}(L)=\int_L1\,\mathrm ds.
+$$
+
+若 $L$ 的参数方程为 $(x(t),y(t),z(t))$，$\alpha\le t\le\beta$，各分量一阶连续可微且导数不同时为零，则
+
+$$
+\mathrm ds=\sqrt{x'(t)^2+y'(t)^2+z'(t)^2}\,\mathrm dt,
+$$
 
 $$
 \int_Lf\,\mathrm ds
-=\int_a^bf(x(t),y(t),z(t))\sqrt{x'(t)^2+y'(t)^2+z'(t)^2}\,\mathrm dt.
+=\int_\alpha^\beta f(x(t),y(t),z(t))
+\sqrt{x'(t)^2+y'(t)^2+z'(t)^2}\,\mathrm dt.
 $$
 
-常用弧长元为
+平面曲线 $y=\varphi(x)$，$a\le x\le b$，以及极坐标曲线 $r=r(\theta)$，$\alpha\le\theta\le\beta$，分别有
 
 $$
-\mathrm ds=\sqrt{1+y'(x)^2}\,\mathrm dx\quad (x\text{ 从小到大}),
+\int_Lf(x,y)\,\mathrm ds
+=\int_a^bf(x,\varphi(x))\sqrt{1+\varphi'(x)^2}\,\mathrm dx,
 $$
 
 $$
-\mathrm ds=\sqrt{r(\theta)^2+r'(\theta)^2}\,\mathrm d\theta
-\quad (\theta\text{ 从小到大}).
+\int_Lf(x,y)\,\mathrm ds
+=\int_\alpha^\beta f(r(\theta)\cos\theta,r(\theta)\sin\theta)
+\sqrt{r(\theta)^2+r'(\theta)^2}\,\mathrm d\theta.
 $$
 
-第一类曲线积分与曲线方向无关，但参数区间应避免无意的重复走过；若重复走过就重复计入。
+!!! warning "提示"
 
-#### 对面积的曲面积分
+    -   **第一类曲线积分与方向无关**：$\int_Lf\,\mathrm ds$ 只依赖曲线本身，反向不改变符号；第二类曲线积分才与方向有关。
 
-第一类曲面积分定义为曲面小块面积上的累积：
+        ??? example "第一类曲线积分的方向"
+            <!-- 待补充 -->
+
+    -   **弧长元素要乘 $|\boldsymbol r'(t)|$**：$\mathrm ds=\sqrt{x'^2+y'^2+z'^2}\,\mathrm dt$，不是 $\mathrm dt$，也不是 $\boldsymbol r'(t)\,\mathrm dt$。
+
+        ??? example "弧长元素"
+            <!-- 待补充 -->
+
+    -   **参数范围与光滑性**：要求 $\alpha\le t\le\beta$（$\alpha<\beta$）、各分量一阶连续可微且导数不同时为零；否则可能不是光滑曲线。
+
+        ??? example "参数曲线的条件"
+            <!-- 待补充 -->
+
+    -   **被积函数要代入曲线方程**：$f(x,y,z)$ 应写成 $f(x(t),y(t),z(t))$，不能保留原变量；极坐标曲线还要用 $x=r\cos\theta,y=r\sin\theta$。
+
+        ??? example "曲线积分的代入"
+            <!-- 待补充 -->
+
+#### §4.2 第一类曲面积分
+
+将光滑曲面 $S$ 分成面积为 $\Delta S_i$ 的小块，各块任取点 $P_i$，记小块直径的最大值为 $\lambda$。若极限存在且与分割、取点无关，定义
 
 $$
-\iint_S f\,\mathrm dS=\lim \sum_i f(P_i)\Delta S_i.
+\iint_Sf(P)\,\mathrm dS
+=\lim_{\lambda\to0^+}\sum_{i=1}^nf(P_i)\Delta S_i.
 $$
 
-若 $S$ 是 $z=z(x,y)$，投影为 $D$，则
+第一类曲面积分与曲面的侧无关，且
 
 $$
-\iint_Sf(x,y,z)\,\mathrm dS
-=\iint_Df(x,y,z(x,y))\sqrt{1+z_x^2+z_y^2}\,\mathrm dx\,\mathrm dy.
+\operatorname{Area}(S)=\iint_S1\,\mathrm dS.
 $$
 
-若用参数曲面 $\mathbf r(u,v)$，则
+若 $S:z=z(x,y)$，在 $Oxy$ 平面上的投影为 $D_{xy}$，则
 
 $$
-\mathrm dS=\lVert\mathbf r_u\times \mathbf r_v\rVert\,\mathrm du\,\mathrm dv.
+\mathrm dS=\sqrt{1+z_x^2+z_y^2}\,\mathrm dx\,\mathrm dy,
 $$
 
-第一类曲面积分与曲面选哪一侧无关；无法表示成单张函数图像的曲面需要分片。
+$$
+\iint_Sf\,\mathrm dS
+=\iint_{D_{xy}}f(x,y,z(x,y))\sqrt{1+z_x^2+z_y^2}\,\mathrm dx\,\mathrm dy.
+$$
 
-!!! example "例 9.3：曲面积分中的面积因子"
+若 $S:y=y(x,z)$ 或 $S:x=x(y,z)$，则分别有
 
-    求单位上半球面 $S:x^2+y^2+z^2=1,z\ge 0$ 上的 $\displaystyle\iint_Sz\,\mathrm dS$。
+$$
+\iint_Sf\,\mathrm dS
+=\iint_{D_{xz}}f(x,y(x,z),z)\sqrt{1+y_x^2+y_z^2}\,\mathrm dx\,\mathrm dz,
+$$
 
-    **解：** 用球面参数 $\mathbf r(\varphi,\theta)=(\sin\varphi\cos\theta,\sin\varphi\sin\theta,\cos\varphi)$，有 $\mathrm dS=\sin\varphi\,\mathrm d\varphi\,\mathrm d\theta$，故
+$$
+\iint_Sf\,\mathrm dS
+=\iint_{D_{yz}}f(x(y,z),y,z)\sqrt{1+x_y^2+x_z^2}\,\mathrm dy\,\mathrm dz.
+$$
 
-    $$
-    \iint_Sz\,\mathrm dS
-    =\int_0^{2\pi}\int_0^{\pi/2}\cos\varphi\sin\varphi\,\mathrm d\varphi\,\mathrm d\theta=\pi.
-    $$
+!!! warning "提示"
 
-    也可投影到单位圆盘：$z=\sqrt{1-x^2-y^2}$ 时 $\sqrt{1+z_x^2+z_y^2}=\displaystyle\frac{1}{z}$，内部被积函数恰好化为 $1$。赤道处用极限理解。
+    -   **第一类曲面积分与侧无关**：$\iint_Sf\,\mathrm dS$ 不区分曲面的正侧；第二类曲面积分才与侧有关。
+
+        ??? example "第一类曲面积分的侧"
+            <!-- 待补充 -->
+
+    -   **面积元素不要漏根号**：$S:z=z(x,y)$ 时 $\mathrm dS=\sqrt{1+z_x^2+z_y^2}\,\mathrm dx\,\mathrm dy$；漏掉根号会把曲面面积算成投影面积。
+
+        ??? example "曲面的面积元素"
+            <!-- 待补充 -->
+
+    -   **投影区域的选择**：根据曲面方程选择投影到 $Oxy$、$Ozx$ 或 $Oyz$ 平面；投影区域是曲面在该平面上的投影，不是曲面本身。
+
+        ??? example "曲面积分的投影"
+            <!-- 待补充 -->
+
+    -   **被积函数要代入曲面方程**：$f(x,y,z)$ 应写成 $f(x,y,z(x,y))$；曲面面积是 $\iint_S1\,\mathrm dS$，不是 $\iint_S\mathrm dS$ 的误写。
+
+        ??? example "曲面积分的计算"
+            <!-- 待补充 -->
 
 ### §5 点函数积分的概念、性质及应用
 
-本节把二重积分、三重积分、第一类曲线积分与第一类曲面积分写成统一记号 $\displaystyle\int_E f\,\mathrm d\mu$，以说明它们共有的性质及应用。第十章的第二类积分也可通过切向或法向分量，与这里的积分建立联系。
+设 $\Omega$ 为有界闭的空间形体，$f(P)$ 为其上的点函数。以 $\Delta\Omega_i$ 表示分块的度量，$\lambda$ 为各块直径的最大值；若下列极限存在且与分割、取点无关，则定义点函数积分
 
-#### 统一看四种积分
+$$
+\int_\Omega f(P)\,\mathrm d\Omega
+=\lim_{\lambda\to0^+}\sum_{i=1}^nf(P_i)\Delta\Omega_i.
+$$
 
-用 $\mathrm d\mu$ 统一记 $\mathrm ds,\mathrm d\sigma,\mathrm dS,\mathrm dV$，它们分别对应曲线长度、平面面积、曲面面积和空间体积。于是 $\displaystyle\int_Ef\,\mathrm d\mu$ 表示标量 $f$ 在几何对象 $E$ 上的累积。
+$\mathrm d\Omega$ 在区间、曲线、平面区域、曲面和空间区域上，分别表示 $\mathrm dx,\mathrm ds,\mathrm d\sigma,\mathrm dS,\mathrm dV$。$f$ 连续时可积。
 
-| 几何或物理量 | 统一公式 |
-| --- | --- |
-| 长度、面积或体积 | $\displaystyle\int_E1\,\mathrm d\mu$ |
-| 密度为 $\rho$ 的质量 | $M=\displaystyle\int_E\rho\,\mathrm d\mu$ |
-| 质心 | $\bar x=M^{-1}\displaystyle\int_Ex\rho\,\mathrm d\mu$；$\bar y,\bar z$ 同理 |
-| 对 $z$ 轴的转动惯量 | $I_z=\displaystyle\int_E(x^2+y^2)\rho\,\mathrm d\mu$ |
-| 对某轴的一般转动惯量 | $I=\displaystyle\int_Ed(P,\text{轴})^2\rho(P)\,\mathrm d\mu$ |
-| 点 $P_0$ 处质量 $m$ 受到的引力 | $\mathbf F=Gm\displaystyle\int_E\rho(P)\frac{\mathbf r_P-\mathbf r_{P_0}}{\lVert\mathbf r_P-\mathbf r_{P_0}\rVert^3}\,\mathrm d\mu$ |
+$$
+\int_\Omega1\,\mathrm d\Omega=|\Omega|,
+\qquad
+\int_\Omega(\alpha f+\beta g)\,\mathrm d\Omega
+=\alpha\int_\Omega f\,\mathrm d\Omega+\beta\int_\Omega g\,\mathrm d\Omega.
+$$
 
-质心要求 $M>0$。引力公式中方向从受力点指向质量元；这里先考虑 $P_0$ 不在物体上，若存在奇点需另查反常积分的收敛性。平面薄片对原点的极转动惯量满足 $I_O=I_x+I_y$。
+其中 $|\Omega|$ 为相应的长度、面积或体积。对无公共内点的分块，积分具有区域可加性；并有
 
-#### 对称性
+$$
+f\le g\ \Longrightarrow\ \int_\Omega f\,\mathrm d\Omega\le\int_\Omega g\,\mathrm d\Omega,
+\qquad
+\left|\int_\Omega f\,\mathrm d\Omega\right|\le\int_\Omega|f|\,\mathrm d\Omega.
+$$
 
-若区域与相应长度、面积或体积元在反射 $x\mapsto-x$ 下保持不变，则被积函数对 $x$ 为奇函数时积分为零，为偶函数时可化为半区域积分的两倍。变量交换对称也可用于把若干积分平均。
+若 $m\le f\le M$，则
 
-例如在球面或球体的对称区域上，$\displaystyle\int x^2\,\mathrm d\mu=\int y^2\,\mathrm d\mu=\int z^2\,\mathrm d\mu$，可用三者之和简化。**区域、被积函数、积分元**都应纳入对称性判断；质心位于对称轴还要求密度也具有相同对称性。
+$$
+m|\Omega|\le\int_\Omega f\,\mathrm d\Omega\le M|\Omega|.
+$$
 
-!!! tip "积分方法的选择顺序"
+若 $f$ 在有界闭连通区域 $\Omega$ 上连续，则存在 $P^*\in\Omega$，使
 
-    先辨认积分对象及积分元，再用对称性简化，然后选坐标或参数，最后设置积分限。重积分优先看区域，曲线与曲面积分优先看参数化和投影是否简单。
+$$
+\int_\Omega f(P)\,\mathrm d\Omega=f(P^*)|\Omega|,
+\qquad
+\bar f=\frac1{|\Omega|}\int_\Omega f(P)\,\mathrm d\Omega.
+$$
 
-### 本章自测
+若 $\Omega=\Omega_+\cup\Omega_-$ 关于坐标平面 $x=0$ 对称，则
 
-!!! example "自测 9"
+$$
+\int_\Omega f\,\mathrm d\Omega
+=\begin{cases}
+0,&f(-x,y,z)=-f(x,y,z),\\
+2\displaystyle\int_{\Omega_+}f\,\mathrm d\Omega,&f(-x,y,z)=f(x,y,z).
+\end{cases}
+$$
 
-    1. 求单位圆盘 $D$ 上的 $\displaystyle\iint_D(x^2+y^2)\,\mathrm d\sigma$。
-    2. 将 $\displaystyle\int_0^1\mathrm dx\int_{x^2}^{x}f(x,y)\,\mathrm dy$ 交换积分次序。
-    3. 求半径为 $R$ 的球体上 $\displaystyle\iiint_\Omega(x^2+y^2+z^2)\,\mathrm dV$。
-    4. 求单位圆周上 $\displaystyle\int_Lx^2\,\mathrm ds$，并说明反向行走是否改变结果。
-    5. 均匀三角形薄片由 $x\ge 0,y\ge 0,x+y\le 1$ 确定，面密度为 $1$，求质量、质心和对原点的极转动惯量。
+其余坐标平面或平面区域中的坐标轴对应的公式相同。
 
-    ??? success "答案与提示"
+密度为 $\rho(P)$ 的物体的质量与质心为
 
-        1. $\displaystyle\int_0^{2\pi}\int_0^1r^3\,\mathrm dr\,\mathrm d\theta=\pi/2$。
-        2. $\displaystyle\int_0^1\mathrm dy\int_y^{\sqrt y}f(x,y)\,\mathrm dx$。
-        3. 球坐标给出 $4\pi\displaystyle\int_0^R\rho^4\,\mathrm d\rho=4\frac{\pi R^5}{5}$。
-        4. 对称性使积分为圆周长的一半，即 $\pi$；反向不改变第一类曲线积分。
-        5. $M=1/2$，$\displaystyle\int_Dx\,\mathrm d\sigma=\int_Dy\,\mathrm d\sigma=1/6$，故质心为 $(1/3,1/3)$。$I_O=2\displaystyle\int_0^1x^2(1-x)\,\mathrm dx=1/6$。
+$$
+M=\int_\Omega\rho(P)\,\mathrm d\Omega,
+$$
+
+$$
+\bar x=\frac1M\int_\Omega x\rho(P)\,\mathrm d\Omega,\qquad
+\bar y=\frac1M\int_\Omega y\rho(P)\,\mathrm d\Omega,\qquad
+\bar z=\frac1M\int_\Omega z\rho(P)\,\mathrm d\Omega,
+\qquad M>0.
+$$
+
+对轴 $L$ 的转动惯量为
+
+$$
+I_L=\int_\Omega d(P,L)^2\rho(P)\,\mathrm d\Omega,
+$$
+
+其中 $d(P,L)$ 为点到轴的距离。特别地，
+
+$$
+I_x=\int_\Omega(y^2+z^2)\rho\,\mathrm d\Omega,\quad
+I_y=\int_\Omega(z^2+x^2)\rho\,\mathrm d\Omega,\quad
+I_z=\int_\Omega(x^2+y^2)\rho\,\mathrm d\Omega.
+$$
+
+物体对质点 $P_0=(x_0,y_0,z_0)$ 的引力为
+
+$$
+\mathbf F=Gm\int_\Omega\rho(P)
+\frac{(x-x_0)\mathbf i+(y-y_0)\mathbf j+(z-z_0)\mathbf k}{r^3}
+\,\mathrm d\Omega,
+\qquad r=\sqrt{(x-x_0)^2+(y-y_0)^2+(z-z_0)^2},
+$$
+
+其中 $G$ 为万有引力常量，$m$ 为质点质量。
+
+!!! warning "提示"
+
+    -   **不同度量的积分不能混用**：$\mathrm d\Omega$ 在区间、曲线、平面区域、曲面、空间区域上分别是 $\mathrm dx,\mathrm ds,\mathrm d\sigma,\mathrm dS,\mathrm dV$；被积函数与度量要匹配。
+
+        ??? example "点函数积分的类型"
+            <!-- 待补充 -->
+
+    -   **对称性公式要求区域对称且函数奇偶性匹配**：关于 $x=0$ 对称时，$f(-x,y,z)=-f(x,y,z)$ 积分为 $0$，偶函数则为 $2\int_{\Omega_+}$；只对相应变量成立。
+
+        ??? example "对称区域上的积分"
+            <!-- 待补充 -->
+
+    -   **质心公式的分母是质量**：$\bar x=\dfrac1M\int_\Omega x\rho\,\mathrm d\Omega$，要求 $M>0$；均匀物体 $M=\rho|\Omega|$，不能漏密度。
+
+        ??? example "质心"
+            <!-- 待补充 -->
+
+    -   **转动惯量用点到轴的距离平方**：$I_x=\int_\Omega(y^2+z^2)\rho\,\mathrm d\Omega$，$I_y$、$I_z$ 对应交换变量；不要写成到原点的距离。
+
+        ??? example "转动惯量"
+            <!-- 待补充 -->
 
 ## 第十章 第二类曲线积分与第二类曲面积分
 
-第九章的第一类积分使用弧长元 $\mathrm ds$ 或面积元 $\mathrm dS$；本章还要规定曲线的行进方向或曲面的法向方向。方向不是计算完成后附加的信息，而是积分定义的一部分。
-
-本章涉及两种不同的积分对象：沿曲线计算的 $\int_L\mathbf F\cdot\mathrm d\mathbf r$，以及通过曲面计算的 $\iint_S\mathbf F\cdot\mathbf n\,\mathrm dS$。前者常用于计算功或环流，后者称为通量。计算时先确认对象和方向，再选择参数法、投影法或积分公式。
-
 ### §1 第二类曲线积分
 
-设矢量场 $\mathbf F=(P,Q,R)$，即每一点 $(x,y,z)$ 对应一个矢量，三个分量 $P,Q,R$ 都可以是坐标的函数。沿曲线的一小段位移为 $\Delta\mathbf r=(\Delta x,\Delta y,\Delta z)$，力在这一小段上所做的功近似为
+#### §1.1 第二类曲线积分的概念
+
+设有向光滑曲线 $L$ 的单位切矢量为
 
 $$
-\mathbf F\cdot\Delta\mathbf r=P\Delta x+Q\Delta y+R\Delta z.
+\boldsymbol\tau=(\cos\alpha,\cos\beta,\cos\gamma),
 $$
 
-各坐标增量带有正负号；反向行进时，增量的符号改变。这是第二类曲线积分需要规定方向的原因。
-
-#### 定义、方向及参数计算
-
-按曲线方向依次取分点 $A=M_0,M_1,\ldots,M_n=B$，在每段上取一点 $\xi_i$。以 $\Delta x_i,\Delta y_i,\Delta z_i$ 表示该段终点坐标减起点坐标，作和
+矢量函数 $\mathbf A=(P,Q,R)$ 在 $L$ 上连续。$\mathbf A$ 沿 $L$ 的第二类曲线积分定义为
 
 $$
-\sum_{i=1}^{n}\bigl[P(\xi_i)\Delta x_i+Q(\xi_i)\Delta y_i+R(\xi_i)\Delta z_i\bigr].
+\int_L\mathbf A\cdot\boldsymbol\tau\,\mathrm ds
+=\int_L(P\cos\alpha+Q\cos\beta+R\cos\gamma)\,\mathrm ds
+=\int_LP\,\mathrm dx+Q\,\mathrm dy+R\,\mathrm dz.
 $$
 
-当各小段弧长的最大值趋于零，若这个和趋于与分割、取点无关的有限值，就定义为第二类曲线积分。对连续矢量场和分段光滑曲线，可以用下面的参数公式计算。
-
-在有向曲线 $L$ 上，第二类曲线积分为
+有向弧元素为
 
 $$
-\int_LP\,\mathrm dx+Q\,\mathrm dy+R\,\mathrm dz
-=\int_L\mathbf F\cdot \mathrm d\mathbf r,
-\qquad \mathbf F=(P,Q,R).
+\mathrm d\mathbf s=\boldsymbol\tau\,\mathrm ds=(\mathrm dx,\mathrm dy,\mathrm dz).
 $$
 
-它可以表示力沿路径所做的功。若 $\mathbf r(t)$ 在 $a\le t\le b$ 上按指定方向走过 $L$，则
+反向曲线记为 $-L$，则
 
 $$
-\int_L\mathbf F\cdot \mathrm d\mathbf r
-=\int_a^b\mathbf F(\mathbf r(t))\cdot \mathbf r'(t)\,\mathrm dt.
+\int_{-L}\mathbf A\cdot\mathrm d\mathbf s
+=-\int_L\mathbf A\cdot\mathrm d\mathbf s.
 $$
 
-写成坐标形式，就是
+若 $L=L_1+L_2$，两段方向与 $L$ 一致，则
 
 $$
-\int_a^b\bigl[P(x(t),y(t),z(t))x'(t)
-+Q(x(t),y(t),z(t))y'(t)
-+R(x(t),y(t),z(t))z'(t)\bigr]\,\mathrm dt.
+\int_L\mathbf A\cdot\mathrm d\mathbf s
+=\int_{L_1}\mathbf A\cdot\mathrm d\mathbf s+\int_{L_2}\mathbf A\cdot\mathrm d\mathbf s.
 $$
 
-这一步同时完成两种代换：把 $P,Q,R$ 中的坐标换成参数表达式，并把 $\mathrm dx,\mathrm dy,\mathrm dz$ 换成对应的导数乘 $\mathrm dt$。只替换坐标而漏掉微分，是常见错误。平面曲线可省去 $z$ 分量；分段曲线则逐段计算后相加。
-
-**反向变号。** 参数起点、终点必须与曲线方向一致；若方向相反，可交换积分限或整体添负号。
-
-!!! example "例 10.1：从曲线方程到一元定积分"
-
-    沿抛物线 $y=x^2$ 从 $A=(0,0)$ 到 $B=(1,1)$，求 $I=\int_L y\,\mathrm dx+x\,\mathrm dy$。
-
-    **解：** 取 $x=t,y=t^2$，$0\le t\le1$。当 $t$ 增大时，恰好从 $A$ 到 $B$；有 $\mathrm dx=\mathrm dt,\mathrm dy=2t\,\mathrm dt$，所以
-
-    $$
-    I=\int_0^1[t^2+t\cdot2t]\,\mathrm dt
-    =\int_0^1 3t^2\,\mathrm dt=1.
-    $$
-
-    若沿同一段抛物线从 $B$ 到 $A$，取 $t$ 从 $1$ 到 $0$，结果为 $-1$。改变的是路径方向，曲线的点集并没有改变。
-
-#### 两类曲线积分的联系
-
-若单位切向量为 $\mathbf\tau=(\cos\alpha,\cos\beta,\cos\gamma)$，则
-
-$$
-\mathrm dx=\cos\alpha\,\mathrm ds,\quad
-\mathrm dy=\cos\beta\,\mathrm ds,\quad
-\mathrm dz=\cos\gamma\,\mathrm ds,
-$$
+若参数方程为 $\mathbf r(t)=(x(t),y(t),z(t))$，起点、终点对应参数为 $t_A,t_B$，则
 
 $$
 \int_LP\,\mathrm dx+Q\,\mathrm dy+R\,\mathrm dz
-=\int_L(P\cos\alpha+Q\cos\beta+R\cos\gamma)\,\mathrm ds.
+=\int_{t_A}^{t_B}
+\bigl[P(\mathbf r(t))x'(t)+Q(\mathbf r(t))y'(t)+R(\mathbf r(t))z'(t)\bigr]\,\mathrm dt.
 $$
 
-第一类累积标量乘弧长，第二类累积矢量在切向上的分量乘弧长。
+力场 $\mathbf F$ 沿 $L$ 所做的功为
 
-两类积分转换时，方向信息保留在单位切向量中。例如沿线段 $x=t,y=0$，$0\le t\le1$，有 $\int_L\mathrm ds=1$、$\int_L\mathrm dx=1$；反向后，前者仍为 $1$，后者为 $-1$。因此不能在第二类积分中用总为非负的弧长元直接替换 $\mathrm dx$。
+$$
+W=\int_L\mathbf F\cdot\mathrm d\mathbf s.
+$$
 
-#### 格林公式
+!!! warning "提示"
 
-直接参数化需要分别处理各段边界。若曲线恰好是一个平面区域的完整边界，格林公式允许把沿边界的积分改为区域上的二重积分。记号 $\oint$ 中的圆圈表示沿闭曲线积分，$\partial D$ 表示区域 $D$ 的边界。
+    -   **与方向有关**：第二类曲线积分沿反向曲线变号，$\displaystyle\int_{-L}\mathbf A\cdot\mathrm d\mathbf s=-\int_L\mathbf A\cdot\mathrm d\mathbf s$；第一类曲线积分则与方向无关。
 
-设平面区域 $D$ 的边界分段光滑，$P,Q$ 在包含 $\overline D$ 的开集内有连续一阶偏导，则
+        ??? example "第二类曲线积分的方向"
+            <!-- 待补充 -->
+
+    -   **参数化时积分限按起点到终点**：$\displaystyle\int_L P\,\mathrm dx+Q\,\mathrm dy+R\,\mathrm dz=\int_{t_A}^{t_B}[\cdots]\,\mathrm dt$，$t_A$ 是起点参数、$t_B$ 是终点参数，不要求 $t_A<t_B$。
+
+        ??? example "参数化计算"
+            <!-- 待补充 -->
+
+    -   **$\mathrm dx=x'(t)\,\mathrm dt$ 不要漏乘**：代入参数方程时，$P\,\mathrm dx$ 要写成 $P(x(t),y(t),z(t))x'(t)\,\mathrm dt$，每一项都要乘对应的导数。
+
+        ??? example "曲线积分的参数化"
+            <!-- 待补充 -->
+
+    -   **分段曲线方向要一致**：$L=L_1+L_2$ 时，两段都必须沿 $L$ 的方向；若其中一段反向，要单独加负号。
+
+        ??? example "分段曲线的积分"
+            <!-- 待补充 -->
+
+#### §1.2 格林公式
+
+设平面有界闭区域 $D$ 的边界 $\partial D$ 由分段光滑曲线组成，$P,Q$ 在 $D$ 上连续且具有一阶连续偏导数，则
 
 $$
 \oint_{\partial D}P\,\mathrm dx+Q\,\mathrm dy
-=\iint_D\left(Q_x-P_y\right)\,\mathrm dx\,\mathrm dy.
+=\iint_D\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)\,\mathrm dx\,\mathrm dy.
 $$
 
-边界取正向：**沿边界前进时，区域始终在左侧**。单连通区域外边界逆时针；有孔区域外边界逆时针、内边界顺时针。多个边界分量的积分要一起计入。
+边界取正向，即沿边界行进时区域 $D$ 位于左侧。
 
-平面面积可写成
-
-$$
-\operatorname{Area}(D)=\oint_{\partial D}x\,\mathrm dy
-=-\oint_{\partial D}y\,\mathrm dx
-=\frac12\oint_{\partial D}(x\,\mathrm dy-y\,\mathrm dx).
-$$
-
-对非闭合路径，可添一条易计算的辅助路径，使其成为闭合边界，再减去辅助路径积分。
-
-!!! example "例 10.2：用格林公式计算环流"
-
-    设 $L$ 为单位圆周，方向逆时针，求 $\displaystyle\oint_L(-y\,\mathrm dx+x\,\mathrm dy)$。
-
-    **解：** 先辨认 $\mathrm dx$ 与 $\mathrm dy$ 的系数：$P=-y,Q=x$，所以 $P_y=-1,Q_x=1$。两者在整个圆盘及其邻域光滑，曲线方向也与格林公式一致，故
-
-    $$
-    I=\iint_{x^2+y^2\le1}2\,\mathrm dx\,\mathrm dy=2\pi.
-    $$
-
-    可用参数法核对：$x=\cos t,y=\sin t$，$0\le t\le2\pi$，被积式变为 $(\sin^2t+\cos^2t)\,\mathrm dt$，积分同样为 $2\pi$。若圆周改为顺时针，结果为 $-2\pi$。
-
-!!! example "例 10.3：补线时要写清辅助线的方向"
-
-    沿上半圆 $x^2+y^2=1,y\ge0$，从 $(1,0)$ 到 $(-1,0)$，求 $I=\int_L(-y\,\mathrm dx+x\,\mathrm dy)$。
-
-    **解：** 补上直径 $C$，方向取从 $(-1,0)$ 到 $(1,0)$，于是 $L+C$ 是上半圆盘的正向边界。由格林公式，
-
-    $$
-    \int_L(-y\,\mathrm dx+x\,\mathrm dy)
-    +\int_C(-y\,\mathrm dx+x\,\mathrm dy)
-    =2\cdot\frac\pi2=\pi.
-    $$
-
-    在 $C$ 上 $y=0,\mathrm dy=0$，辅助积分为零，因此 $I=\pi$。一般情况下应使用“闭合边界积分减去辅助线积分”，并保持辅助线方向前后一致。
-
-#### 积分与路径无关
-
-一般而言，即使两条路径具有相同的起点和终点，积分也可能不同。所谓路径无关，是指在指定区域内，任意两条连接相同端点的允许路径都有相同积分值。
-
-例如 $\int_L y\,\mathrm dx$ 从 $(0,0)$ 到 $(1,1)$，沿直线 $y=x$ 得 $\int_0^1x\,\mathrm dx=1/2$；先沿 $x$ 轴到 $(1,0)$、再竖直到 $(1,1)$，两段积分都为零。这说明路径无关需要证明，不能仅凭端点已知就使用端点差。
-
-在开连通区域内，连续的 $P,Q$ 满足以下三个条件等价：
-
-1. 任意两点间的曲线积分只由端点决定；
-2. 沿区域内任意闭曲线的积分为零；
-3. 存在原函数 $u$，使 $\mathrm du=P\,\mathrm dx+Q\,\mathrm dy$。
-
-若另外有 $P,Q\in C^1$，则原函数存在必有 $P_y=Q_x$；当区域还**单连通**时，$P_y=Q_x$ 也是充分条件。这里单连通意味着闭曲线能在区域内连续收缩到一点。
-
-这里的 $u$ 同时满足 $u_x=P,u_y=Q$，是二元函数意义下的原函数。若 $\mathbf r(t)=(x(t),y(t))$，链式法则给出
+平面区域的面积公式为
 
 $$
-\frac{\mathrm d}{\mathrm dt}u(x(t),y(t))=P x'(t)+Q y'(t).
+\operatorname{Area}(D)=\frac12\oint_{\partial D}(x\,\mathrm dy-y\,\mathrm dx).
 $$
 
-右端正是参数化后的被积函数，因此可以用一元微积分基本定理计算。单连通是使偏导相等足以保证原函数存在的一项区域条件；它不是路径无关本身的必要条件。有孔区域中的某些场也可以有原函数。
+!!! warning "提示"
 
-找到原函数后，
+    -   **边界方向取正向**：沿 $\partial D$ 行进时区域 $D$ 在左侧；外边界为逆时针，带洞区域的内边界为顺时针，方向反了会差一个负号。
+
+        ??? example "格林公式的方向"
+            <!-- 待补充 -->
+
+    -   **公式中的顺序不能反**：$\displaystyle\oint P\,\mathrm dx+Q\,\mathrm dy=\iint_D\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)\mathrm dx\,\mathrm dy$，是 $Q_x-P_y$，不是 $P_y-Q_x$。
+
+        ??? example "格林公式"
+            <!-- 待补充 -->
+
+    -   **奇点要挖去**：$P,Q$ 在 $D$ 上要有一阶连续偏导；若区域内有奇点（如原点），不能直接对整块区域用格林公式，需挖去小圆并讨论。
+
+        ??? example "含奇点的区域"
+            <!-- 待补充 -->
+
+    -   **面积公式的符号**：$\operatorname{Area}(D)=\dfrac12\displaystyle\oint_{\partial D}(x\,\mathrm dy-y\,\mathrm dx)$ 要求边界取正向；方向取反会得到负面积。
+
+        ??? example "用格林公式求面积"
+            <!-- 待补充 -->
+
+#### §1.3 平面曲线积分与路径无关性
+
+平面区域 $D$ 内任一闭曲线均可在 $D$ 内连续收缩成一点时，称 $D$ 为单连通区域。
+
+设 $D$ 为单连通区域，$P,Q$ 在 $D$ 上具有一阶连续偏导数，则下列条件等价：
 
 $$
-\int_A^B P\,\mathrm dx+Q\,\mathrm dy=u(B)-u(A).
+\oint_LP\,\mathrm dx+Q\,\mathrm dy=0
+\quad\text{（对任一闭的分段光滑曲线 $L\subset D$）};
 $$
 
-一种构造方法是先对 $P$ 关于 $x$ 积分，写成 $u=\displaystyle\int P\,\mathrm dx+\phi(y)$，再用 $u_y=Q$ 确定 $\phi$。也可在适合的矩形邻域内选水平、竖直折线路径求积分。
+$$
+\int_A^BP\,\mathrm dx+Q\,\mathrm dy\text{ 只与起点、终点有关};
+$$
 
-!!! example "例 10.4：求原函数并计算积分"
+$$
+\exists u(x,y):\quad\mathrm du=P\,\mathrm dx+Q\,\mathrm dy;
+\qquad
+\frac{\partial P}{\partial y}=\frac{\partial Q}{\partial x}.
+$$
 
-    设 $P=2xy+e^x,Q=x^2+2y$。求从 $(0,0)$ 到 $(1,1)$ 沿任意分段光滑路径的积分。
+满足 $\mathrm du=P\,\mathrm dx+Q\,\mathrm dy$ 的 $u$ 称为该微分表达式的原函数，且
 
-    **解：** 全平面上 $P_y=Q_x=2x$，故路径无关。由 $u_x=P$ 得 $u=x^2y+e^x+\phi(y)$，再由 $u_y=Q$ 得 $\phi'=2y$，故 $u=x^2y+e^x+y^2+C$。
+$$
+\int_A^BP\,\mathrm dx+Q\,\mathrm dy=u(B)-u(A).
+$$
 
-    所求积分为 $u(1,1)-u(0,0)=(e+2)-1=e+1$。
+若相应折线在 $D$ 内，则
 
-!!! warning "偏导相等时，还要检查区域和奇点"
+$$
+u(x,y)=\int_{x_0}^{x}P(t,y_0)\,\mathrm dt
++\int_{y_0}^{y}Q(x,t)\,\mathrm dt+C.
+$$
 
-    对 $P=-\displaystyle\frac{y}{x^2+y^2},Q=\frac{x}{x^2+y^2}$，原点外虽有 $P_y=Q_x$，但沿逆时针单位圆积分为 $2\pi$。穿孔平面不是单连通区域，原点处又不满足格林公式的光滑条件，不能将积分判为零。
+!!! warning "提示"
+
+    -   **单连通条件不能少**：$P_y=Q_x$ 只保证局部与路径无关；区域有洞时，绕洞的闭曲线积分可能不为零（如 $\dfrac{-y}{x^2+y^2}\,\mathrm dx+\dfrac{x}{x^2+y^2}\,\mathrm dy$ 绕原点）。
+
+        ??? example "单连通区域与路径无关"
+            <!-- 待补充 -->
+
+    -   **四个条件等价的前提**：$P,Q$ 在单连通区域上有一阶连续偏导；缺一不可，不能只验证 $P_y=Q_x$ 就断言路径无关。
+
+        ??? example "路径无关的等价条件"
+            <!-- 待补充 -->
+
+    -   **原函数的积分路径要在区域内**：$u(x,y)=\displaystyle\int_{x_0}^xP(t,y_0)\,\mathrm dt+\int_{y_0}^yQ(x,t)\,\mathrm dt+C$ 的折线路径必须完全位于 $D$ 内，不能穿过洞。
+
+        ??? example "求原函数"
+            <!-- 待补充 -->
+
+    -   **起点固定、终点可变**：路径无关时可选任意方便路径，但起点 $(x_0,y_0)$ 要固定；否则 $u$ 会差一个常数。
+
+        ??? example "选择积分路径"
+            <!-- 待补充 -->
 
 ### §2 第二类曲面积分
 
-曲线通过指定行进方向定向，曲面通过指定连续的法向量定向。光滑曲面在每点有两个相反的单位法向量，选取其中一侧并保持连续，就是选择曲面的方向。本章讨论可定向曲面；封闭曲面常用“外侧、内侧”，图形 $z=z(x,y)$ 常用“上侧、下侧”。
+#### §2.1 第二类曲面积分的概念
 
-若 $\mathbf F$ 是流速，$\mathbf F\cdot\mathbf n$ 是沿所选法向的速度分量。一小块面积 $\Delta S$ 上的有向流量近似为 $(\mathbf F\cdot\mathbf n)\Delta S$；正值表示沿所选法向通过，负值表示反向通过。对各小块求和并取极限，就得到通量积分。
+光滑曲面上选定一点的法线方向，沿曲面任一闭曲线连续移动法线方向，回到原点时方向均保持原向的曲面称为双侧曲面。选定连续法线方向的一侧后，称为定侧曲面。
 
-#### 通量与定向
-
-在可定向曲面 $S$ 上选定连续单位法向量 $\mathbf n=(\cos\alpha,\cos\beta,\cos\gamma)$，定义
+设定侧曲面 $S$ 的单位法矢量为
 
 $$
-\iint_S\mathbf F\cdot \mathbf n\,\mathrm dS
+\mathbf n=(\cos\alpha,\cos\beta,\cos\gamma),
+$$
+
+$\mathbf A=(P,Q,R)$ 在 $S$ 上连续。第二类曲面积分定义为
+
+$$
+\iint_S\mathbf A\cdot\mathbf n\,\mathrm dS
+=\iint_S(P\cos\alpha+Q\cos\beta+R\cos\gamma)\,\mathrm dS
 =\iint_SP\,\mathrm dy\,\mathrm dz+Q\,\mathrm dz\,\mathrm dx+R\,\mathrm dx\,\mathrm dy.
 $$
 
-它可表示流量或通量。此处 $\mathrm dy\,\mathrm dz,\mathrm dz\,\mathrm dx,\mathrm dx\,\mathrm dy$ 是有向投影面积元，分别等于 $\cos\alpha\,\mathrm dS,\cos\beta\,\mathrm dS,\cos\gamma\,\mathrm dS$。换另一侧，积分变号。
-
-下表可以帮助区分面积大小与方向。此处 $S$ 是面积为 $A$ 的水平面片，$\mathbf F=(0,0,c)$ 为常矢量场。
-
-| 选取方向 | 单位法向量 | 通量 |
-| --- | --- | --- |
-| 上侧 | $(0,0,1)$ | $cA$ |
-| 下侧 | $(0,0,-1)$ | $-cA$ |
-
-第一类面积积分 $\iint_S1\,\mathrm dS=A$ 不随选侧改变。第二类积分中的三个有向投影面积元则分别记录法向量的三个分量，不能都视为普通的正面积。
-
-#### 计算公式
-
-先设曲面可以单值表示为 $z=z(x,y)$，投影区域为 $D$。由参数式 $\mathbf r(x,y)=(x,y,z(x,y))$，两个切向量为 $(1,0,z_x)$、$(0,1,z_y)$，它们的矢量积为 $(-z_x,-z_y,1)$，指向上侧。
-
-将单位法向量与面积元分别写出：
+有向面积元素为
 
 $$
-\mathbf n=\frac{(-z_x,-z_y,1)}{\sqrt{1+z_x^2+z_y^2}},\qquad
-\mathrm dS=\sqrt{1+z_x^2+z_y^2}\,\mathrm dx\,\mathrm dy.
+\mathrm d\mathbf S=\mathbf n\,\mathrm dS,
+\qquad
+\mathrm dy\,\mathrm dz=\cos\alpha\,\mathrm dS,\quad
+\mathrm dz\,\mathrm dx=\cos\beta\,\mathrm dS,\quad
+\mathrm dx\,\mathrm dy=\cos\gamma\,\mathrm dS.
 $$
 
-相乘后两个根式约去，这就是下面的投影公式。若整个曲面不能这样单值表示，应分片处理或使用适合的参数化。
-
-若 $S:z=z(x,y)$，取上侧，即法向量的 $z$ 分量为正，则
+若 $-S$ 表示选取相反侧的曲面，则
 
 $$
-\mathbf n\,\mathrm dS=(-z_x,-z_y,1)\,\mathrm dx\,\mathrm dy,
+\iint_{-S}\mathbf A\cdot\mathrm d\mathbf S
+=-\iint_S\mathbf A\cdot\mathrm d\mathbf S.
 $$
 
-$$
-\iint_S\mathbf F\cdot \mathbf n\,\mathrm dS
-=\iint_D[-Pz_x-Qz_y+R]_{z=z(x,y)}\,\mathrm dx\,\mathrm dy.
-$$
-
-取下侧时整体变号。若曲面更适合投影到 $yOz$ 或 $zOx$ 面，循环调整坐标即可。参数曲面则用
+若 $S=S_1\cup S_2$，两片无公共内点且定侧与 $S$ 一致，则
 
 $$
-\mathbf n\,\mathrm dS=\pm (\mathbf r_u\times \mathbf r_v)\,\mathrm du\,\mathrm dv,
+\iint_S\mathbf A\cdot\mathrm d\mathbf S
+=\iint_{S_1}\mathbf A\cdot\mathrm d\mathbf S+\iint_{S_2}\mathbf A\cdot\mathrm d\mathbf S.
 $$
 
-符号根据题目指定侧选择。
-
-!!! example "例 10.5：斜平面的通量直接投影计算"
-
-    设 $S$ 为第一卦限内的平面片 $z=1-x-y$，取上侧，求 $\mathbf F=(x,y,z)$ 的通量。
-
-    **解：** 先确定投影区域：由 $x,y,z\ge0$ 得 $D=\{x\ge0,y\ge0,x+y\le1\}$。再求 $z_x=z_y=-1$，所以
-
-    $$
-    \mathbf F\cdot\mathbf n\,\mathrm dS
-    =(x+y+z)\,\mathrm dx\,\mathrm dy
-    =1\,\mathrm dx\,\mathrm dy.
-    $$
-
-    这里最后一步用了曲面方程 $z=1-x-y$。于是
-
-    $$
-    \iint_S\mathbf F\cdot\mathbf n\,\mathrm dS
-    =\int_0^1\int_0^{1-x}1\,\mathrm dy\,\mathrm dx=\frac12.
-    $$
-
-    若改取下侧，答案为 $-1/2$。这个计算已包含曲面的面积因子，不能再乘 $\sqrt3$。
-
-!!! warning "单位法向量与面积因子配套使用"
-
-    用 $\mathbf F\cdot \mathbf n\,\mathrm dS$ 时，$\mathbf n$ 必须是单位矢量；用 $\mathbf F\cdot (\mathbf r_u\times \mathbf r_v)\,\mathrm du\,\mathrm dv$ 时，矢量积已经包含面积因子，无须再单位化或再乘一次面积因子。
-
-#### 高斯公式
-
-设立体 $\Omega$ 的边界 $S=\partial\Omega$ 分片光滑且取**外侧**，$P,Q,R$ 在包含 $\overline\Omega$ 的开集内有连续一阶偏导，则
+密度为 $\rho$、速度为 $\mathbf v$ 的流体，单位时间内通过 $S$ 指定侧的流量为
 
 $$
-\oiint_{\partial\Omega}\mathbf F\cdot \mathbf n\,\mathrm dS
-=\iiint_\Omega(P_x+Q_y+R_z)\,\mathrm dV.
+Q=\iint_S\rho\mathbf v\cdot\mathbf n\,\mathrm dS.
 $$
 
-这是把封闭曲面的通量化为体积分的工具。对开曲面，常用“补面—封闭—求总体通量—减去补面通量”的方法；补面的方向按所围立体的外侧确定。
+!!! warning "提示"
 
-使用时先检查曲面是否封闭。只有把所围立体的全部边界计入，才有高斯公式中的 $S=\partial\Omega$。对于各面组成的边界，“外侧”是相对于同一个立体而言的，底面法向往往朝下，不能把每个面都取成上侧。
+    -   **与侧有关**：第二类曲面积分换到相反侧要变号，$\displaystyle\iint_{-S}\mathbf A\cdot\mathrm d\mathbf S=-\iint_S\mathbf A\cdot\mathrm d\mathbf S$；第一类曲面积分与侧无关。
 
-!!! tip "立体内部的奇点怎么处理"
+        ??? example "第二类曲面积分的侧"
+            <!-- 待补充 -->
 
-    被积函数在立体内部某点没有定义时，不能直接对整个立体使用高斯公式。标准做法是在奇点周围挖去一个足够小的区域（常取小球）：对挖空后的区域用高斯公式，再单独计算内边界曲面的通量。自测第 5 题就是这种情形——$\mathbf F=\displaystyle\frac{x,y,z}{(x^2+y^2+z^2)^{3/2}}$ 在原点无定义，通过单位球面的通量不为零，而是 $4\pi$。
+    -   **$\mathrm dy\,\mathrm dz,\mathrm dz\,\mathrm dx,\mathrm dx\,\mathrm dy$ 是有向面积元素**：它们分别等于 $\cos\alpha\,\mathrm dS,\cos\beta\,\mathrm dS,\cos\gamma\,\mathrm dS$，符号由法线方向决定，不是普通面积微元。
 
-#### 散度
+        ??? example "有向面积元素"
+            <!-- 待补充 -->
+
+    -   **双侧曲面才能定侧**：法线方向要能沿曲面连续移动且不翻转；单侧曲面（如莫比乌斯带）不能定义第二类曲面积分。
+
+        ??? example "双侧曲面"
+            <!-- 待补充 -->
+
+    -   **流量符号表示流入流出**：$Q=\displaystyle\iint_S\rho\mathbf v\cdot\mathbf n\,\mathrm dS$ 中 $\mathbf n$ 取指定侧；$Q>0$ 表示沿该侧流出，$Q<0$ 表示流入。
+
+        ??? example "流量与侧"
+            <!-- 待补充 -->
+
+#### §2.2 第二类曲面积分的计算
+
+若 $S:z=z(x,y)$，投影区域为 $D_{xy}$，则
 
 $$
-\operatorname{div}\mathbf F=P_x+Q_y+R_z.
+\iint_SP\,\mathrm dy\,\mathrm dz+Q\,\mathrm dz\,\mathrm dx+R\,\mathrm dx\,\mathrm dy
+=\pm\iint_{D_{xy}}[-Pz_x-Qz_y+R]_{z=z(x,y)}\,\mathrm dx\,\mathrm dy,
 $$
 
-散度是标量，表示局部单位体积净流出的强度。散度为零称为无源场；在高斯公式条件下，封闭曲面的净通量为零，但单个开曲面的通量未必为零。
+上侧取 $+$，下侧取 $-$。
 
-例如 $\mathbf F=(0,0,1)$ 的散度为零。对一个圆柱体，顶面的外向通量为底面积，底面的外向通量为其相反数，侧面通量为零，总和为零。可见“净通量为零”允许不同部分的通量互相抵消。
+若 $S:x=x(y,z)$，投影区域为 $D_{yz}$，则
 
-高斯公式中的偏导也应按分量配对：$P$ 对 $x$、$Q$ 对 $y$、$R$ 对 $z$ 求导，再相加。它与格林公式中的 $Q_x-P_y$ 是不同运算。
+$$
+\iint_S\mathbf A\cdot\mathrm d\mathbf S
+=\pm\iint_{D_{yz}}[P-Qx_y-Rx_z]_{x=x(y,z)}\,\mathrm dy\,\mathrm dz,
+$$
 
-!!! example "例 10.6：上半球的通量与补面"
+法线的 $x$ 分量为正时取 $+$，为负时取 $-$。
 
-    对 $\mathbf F=(x,y,z)$，求单位上半球面 $S$ 外侧的通量。
+若 $S:y=y(x,z)$，投影区域为 $D_{xz}$，则
 
-    **解：** 添底面圆盘 $S_0:z=0,x^2+y^2\le 1$，底面外法向朝下。散度为 $3$，半球体体积为 $2\pi/3$，故封闭曲面通量为 $2\pi$。
+$$
+\iint_S\mathbf A\cdot\mathrm d\mathbf S
+=\pm\iint_{D_{xz}}[-Py_x+Q-Ry_z]_{y=y(x,z)}\,\mathrm dx\,\mathrm dz,
+$$
 
-    在底面 $\mathbf F\cdot (0,0,-1)=-z=0$，所以所求通量仍为 $2\pi$。也可在球面直接利用 $\mathbf F=\mathbf n$，把积分化为半球面积。
+法线的 $y$ 分量为正时取 $+$，为负时取 $-$。
+
+!!! warning "提示"
+
+    -   **投影时符号由侧决定**：$S:z=z(x,y)$ 时，上侧取 $+$、下侧取 $-$；$\displaystyle\iint_SR\,\mathrm dx\,\mathrm dy=\pm\iint_{D_{xy}}R(x,y,z(x,y))\,\mathrm dx\,\mathrm dy$，符号不能丢。
+
+        ??? example "投影的符号"
+            <!-- 待补充 -->
+
+    -   **三个投影公式不要混**：投影到 $Oxy$ 时被积式为 $-Pz_x-Qz_y+R$；投影到 $Oyz$、$Ozx$ 时公式中的项和符号不同，要按曲面方程选择。
+
+        ??? example "三种投影公式"
+            <!-- 待补充 -->
+
+    -   **曲面要能写成显式方程**：$z=z(x,y)$、$x=x(y,z)$、$y=y(x,z)$ 三种形式要选曲面能表示的那种；否则要分片处理。
+
+        ??? example "曲面方程的选择"
+            <!-- 待补充 -->
+
+    -   **投影区域可能重叠**：若曲面在投影平面上的投影有重叠，不能直接用一个积分，要把曲面分成投影不重叠的部分。
+
+        ??? example "分片投影"
+            <!-- 待补充 -->
+
+#### §2.3 高斯公式
+
+设空间有界闭区域 $V$ 的边界 $S$ 由分片光滑的双侧曲面组成，$P,Q,R$ 在 $V$ 上连续且具有一阶连续偏导数，则
+
+$$
+\oiint_SP\,\mathrm dy\,\mathrm dz+Q\,\mathrm dz\,\mathrm dx+R\,\mathrm dx\,\mathrm dy
+=\iiint_V\left(\frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y}+\frac{\partial R}{\partial z}\right)\,\mathrm dV,
+$$
+
+其中 $S$ 取外侧。
+
+!!! warning "提示"
+
+    -   **曲面取外侧**：高斯公式要求 $S=\partial V$ 取外侧；若取内侧，右端（或左端）要加负号。
+
+        ??? example "高斯公式的方向"
+            <!-- 待补充 -->
+
+    -   **散度的表达式**：$\operatorname{div}\mathbf A=\dfrac{\partial P}{\partial x}+\dfrac{\partial Q}{\partial y}+\dfrac{\partial R}{\partial z}$，三项都是对相应变量求偏导，不要漏项或写成旋度。
+
+        ??? example "高斯公式与散度"
+            <!-- 待补充 -->
+
+    -   **闭曲面才可直接用**：高斯公式适用于封闭曲面；若曲面不封闭，需要补上一块面使其封闭，再减去补面部分。
+
+        ??? example "补面使用高斯公式"
+            <!-- 待补充 -->
+
+    -   **奇点要挖去**：$P,Q,R$ 在 $V$ 内要有一阶连续偏导；若内部有奇点，需挖去小球并单独计算小球面上的积分。
+
+        ??? example "含奇点的区域"
+            <!-- 待补充 -->
+
+#### §2.4 散度场
+
+矢量场 $\mathbf A=(P,Q,R)$ 的散度定义为
+
+$$
+\operatorname{div}\mathbf A
+=\frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y}+\frac{\partial R}{\partial z}.
+$$
+
+散度作为点的函数构成散度场。高斯公式可写为
+
+$$
+\iiint_V\operatorname{div}\mathbf A\,\mathrm dV
+=\oiint_{\partial V}\mathbf A\cdot\mathbf n\,\mathrm dS.
+$$
+
+散度的通量表示为
+
+$$
+\operatorname{div}\mathbf A(M_0)
+=\lim_{V\to M_0}\frac{1}{\operatorname{Vol}(V)}
+\oiint_{\partial V}\mathbf A\cdot\mathbf n\,\mathrm dS.
+$$
+
+散度表示单位体积的净流出量；若 $\operatorname{div}\mathbf A=0$，称 $\mathbf A$ 为无源场，并有
+
+$$
+\oiint_{\partial V}\mathbf A\cdot\mathbf n\,\mathrm dS=0.
+$$
+
+!!! warning "提示"
+
+    -   **散度是数量**：$\operatorname{div}\mathbf A=P_x+Q_y+R_z$ 是一个数量函数，不是矢量；旋度才是矢量。
+
+        ??? example "散度的计算"
+            <!-- 待补充 -->
+
+    -   **无源不等于无旋**：$\operatorname{div}\mathbf A=0$ 只说明无源，仍可能有旋；反之 $\operatorname{rot}\mathbf A=\mathbf0$ 也不说明无源。
+
+        ??? example "无源场与无旋场"
+            <!-- 待补充 -->
+
+    -   **通量表示的极限**：$\operatorname{div}\mathbf A(M_0)=\lim_{V\to M_0}\dfrac{1}{\operatorname{Vol}(V)}\oiint_{\partial V}\mathbf A\cdot\mathbf n\,\mathrm dS$，要求 $V$ 收缩到 $M_0$，且法线取外侧。
+
+        ??? example "散度的通量意义"
+            <!-- 待补充 -->
+
+    -   **高斯公式的散度形式方向**：$\iiint_V\operatorname{div}\mathbf A\,\mathrm dV=\oiint_{\partial V}\mathbf A\cdot\mathbf n\,\mathrm dS$，右端法线取外侧；内侧要变号。
+
+        ??? example "散度形式的高斯公式"
+            <!-- 待补充 -->
 
 ### §3 斯托克斯公式、空间曲线积分与路径无关性
 
-#### 旋度
+#### §3.1 斯托克斯公式
 
-对 $\mathbf F=(P,Q,R)$，定义
-
-$$
-\operatorname{rot}\mathbf F=\operatorname{curl}\mathbf F
-=(R_y-Q_z,\ P_z-R_x,\ Q_x-P_y).
-$$
-
-旋度是矢量，描述局部环流的强度与轴向。可用形式行列式记忆，但其中各项是微分运算。
-
-#### 斯托克斯公式
-
-斯托克斯公式把沿空间闭曲线的环流，改为跨接这条曲线的曲面上的旋度通量。这里积分的是 $\operatorname{curl}\mathbf F$ 的通量，而不是原场 $\mathbf F$ 的通量；曲面也不必封闭，它的边界应恰好是给定曲线。
-
-格林公式是它在平面上的特殊情形：取 $z=0$ 上的区域及向上法向量，旋度与法向量的数量积就是 $Q_x-P_y$，从而得到格林公式。
-
-设 $S$ 为分片光滑的有向曲面，边界 $L=\partial S$ 分段光滑，$\mathbf F$ 在曲面附近一阶连续可微，则
+设光滑双侧曲面 $S$ 的边界 $L$ 为分段光滑连续曲线，$P,Q,R$ 在 $S$ 及 $L$ 上连续且具有一阶连续偏导数，则
 
 $$
-\oint_L\mathbf F\cdot \mathrm d\mathbf r
-=\iint_S\operatorname{curl}\mathbf F\cdot \mathbf n\,\mathrm dS.
+\oint_LP\,\mathrm dx+Q\,\mathrm dy+R\,\mathrm dz
+=\iint_S
+\left(\frac{\partial R}{\partial y}-\frac{\partial Q}{\partial z}\right)\mathrm dy\,\mathrm dz
++\left(\frac{\partial P}{\partial z}-\frac{\partial R}{\partial x}\right)\mathrm dz\,\mathrm dx
++\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)\mathrm dx\,\mathrm dy.
 $$
 
-边界方向与法向量满足**右手关系**：右手拇指指向法向，四指弯曲方向为边界正向。等价地，从法向量所指的一侧向曲面看，边界为逆时针。
+曲面法线方向与边界方向满足右手规则。
 
-计算时可选择边界相同、方向一致且满足光滑条件的更简单曲面；空间闭曲线若位于某平面，通常选平面片。
+!!! warning "提示"
 
-!!! example "例 10.7：空间闭曲线换成平面片"
+    -   **方向满足右手规则**：曲面法线方向与边界 $L$ 的方向要符合右手规则；方向取反，公式两边同时变号。
 
-    设 $L$ 为柱面 $x^2+y^2=1$ 与平面 $z=x$ 的交线，从 $z$ 轴正向向下看为逆时针。计算
+        ??? example "斯托克斯公式的方向"
+            <!-- 待补充 -->
 
-    $$
-    I=\oint_L(-y\,\mathrm dx+x\,\mathrm dy+z\,\mathrm dz).
-    $$
+    -   **各项符号不要写错**：$\oint P\,\mathrm dx+Q\,\mathrm dy+R\,\mathrm dz=\iint_S(R_y-Q_z)\mathrm dy\,\mathrm dz+(P_z-R_x)\mathrm dz\,\mathrm dx+(Q_x-P_y)\mathrm dx\,\mathrm dy$。
 
-    **解：** 先逐项求旋度：$R_y-Q_z=0$，$P_z-R_x=0$，$Q_x-P_y=2$，故 $\operatorname{curl}\mathbf F=(0,0,2)$。
+        ??? example "斯托克斯公式的展开"
+            <!-- 待补充 -->
 
-    选择由 $L$ 围成的平面片 $z=x$，而不用柱面。它向 $xOy$ 面的投影是单位圆盘。题目给定从上向下看为逆时针，因此应取上侧；由 $z_x=1,z_y=0$ 得面积矢量 $(-1,0,1)\,\mathrm dx\,\mathrm dy$，所以
+    -   **曲面可以任选**：只要 $S$ 以 $L$ 为边界且方向匹配，可选最简单的曲面（如平面片）计算；不必用原曲面。
 
-    $$
-    I=\iint_{x^2+y^2\le 1}(0,0,2)\cdot (-1,0,1)\,\mathrm dx\,\mathrm dy=2\pi.
-    $$
+        ??? example "选择曲面"
+            <!-- 待补充 -->
 
-#### 空间路径无关性
+    -   **奇点要避开**：$P,Q,R$ 要在 $S$ 及 $L$ 上有一阶连续偏导；若 $L$ 围住奇点，不能直接套公式，需要挖洞。
 
-空间情形仍然通过寻找原函数，把曲线积分化为端点处的函数值之差。平面中的条件 $P_y=Q_x$ 扩展为下面三组偏导相等，也就是旋度为零。第六章 §4 的全微分方程与此相联系：它也是先判断并构造一个函数，使其全微分等于给定表达式。
+        ??? example "含奇点的斯托克斯公式"
+            <!-- 待补充 -->
 
-在空间开连通区域中，路径无关、任意闭曲线积分为零、存在 $u$ 使
+#### §3.2 空间曲线积分与路径无关性
 
-$$
-\mathrm du=P\,\mathrm dx+Q\,\mathrm dy+R\,\mathrm dz
-$$
+空间区域 $V$ 内每一闭曲线均可在 $V$ 内连续收缩为一点时，称 $V$ 为空间单连通区域。
 
-三者等价。若 $\mathbf F\in C^1$ 且区域单连通，则又等价于
+设 $V$ 为空间单连通区域，$P,Q,R$ 在 $V$ 上具有一阶连续偏导数，则下列条件等价：
 
 $$
-\operatorname{curl}\mathbf F=\mathbf0
-\quad \Longleftrightarrow\quad
-P_y=Q_x,\quad Q_z=R_y,\quad R_x=P_z.
+\oint_LP\,\mathrm dx+Q\,\mathrm dy+R\,\mathrm dz=0
+\quad\text{（对任一闭的分段光滑曲线 $L\subset V$）};
 $$
 
-此时积分仍为 $u(B)-u(A)$。求原函数可逐次积分并匹配三个偏导。
-
-#### 势量场（\*）
-
-教材第 230 页起。若存在单值函数 $u$，使 $\mathbf F=\nabla u$，则称为势量场或保守场，$u$ 是势函数。对 $C^2$ 的 $u$，必有 $\operatorname{curl}(\nabla u)=\mathbf0$。反向结论需要区域条件，不能漏掉定义域中的孔或奇点。
-
-!!! info "数学势函数与物理势能的符号"
-
-    本页沿用教材数学约定 $\mathbf F=\nabla u$。物理中常把势能或电势记为 $V$，写 $\mathbf F=-\nabla V$。两者可能差一个负号，应以具体定义为准。
-
-#### 向量微分算子（\*）
-
-教材第 232 页起。记
-
 $$
-\nabla=\left(\frac\partial{\partial x},\frac\partial{\partial y},\frac\partial{\partial z}\right),
+\int_A^BP\,\mathrm dx+Q\,\mathrm dy+R\,\mathrm dz\text{ 只与起点、终点有关};
 $$
 
-则梯度、散度、旋度可分别写成 $\nabla u,\nabla\cdot \mathbf F,\nabla\times \mathbf F$。拉普拉斯算子为
-
 $$
-\Delta u=\nabla\cdot \nabla u=u_{xx}+u_{yy}+u_{zz}.
+\exists u(x,y,z):\quad\mathrm du=P\,\mathrm dx+Q\,\mathrm dy+R\,\mathrm dz;
 $$
 
-在有关函数二阶连续可微时，
-
 $$
-\nabla\times (\nabla u)=\mathbf0,\qquad
-\nabla\cdot (\nabla\times \mathbf F)=0.
+P_y=Q_x,\qquad Q_z=R_y,\qquad R_x=P_z.
 $$
 
-这些等式来自混合偏导相等。算子不是普通常矢量，对乘积使用时必须遵守求导法则。
+满足这些条件时，
 
-### 三个积分公式如何选择
+$$
+\int_A^BP\,\mathrm dx+Q\,\mathrm dy+R\,\mathrm dz=u(B)-u(A).
+$$
 
-| 公式 | 左端对象 | 右端对象 | 方向与条件重点 |
-| --- | --- | --- | --- |
-| 格林 | 平面闭曲线上的环流 | 二重积分 $Q_x-P_y$ | 区域在行进方向左侧；洞的边界也要算 |
-| 高斯 | 封闭曲面的通量 | 三重积分 $\operatorname{div}\mathbf F$ | 外侧；检查整个立体内有无奇点 |
-| 斯托克斯 | 空间闭曲线上的环流 | 曲面上的旋度通量 | 边界与法向满足右手关系 |
+若相应折线在 $V$ 内，则
 
-!!! tip "先看闭合，再看微分"
+$$
+u(x,y,z)=\int_{x_0}^xP(t,y_0,z_0)\,\mathrm dt
++\int_{y_0}^yQ(x,t,z_0)\,\mathrm dt
++\int_{z_0}^zR(x,y,t)\,\mathrm dt+C.
+$$
 
-    闭曲线优先考虑格林或斯托克斯，封闭曲面优先考虑高斯；再判断求导是否让被积函数变简单。非闭合对象可考虑补线、补面。若有原函数，直接用端点差往往最省步骤。
+!!! warning "提示"
 
-还可以从所需的区域反查条件：格林公式检查整个平面区域，高斯公式检查整个立体，斯托克斯公式检查所选曲面及其邻域。只检查边界上没有奇点，通常不足以使用前两种公式。若直接参数化已经很简单，也没有必要强行改用积分公式。
+    -   **空间单连通条件不能少**：区域内有洞（如环面内部）时，即使旋度为零，绕洞的闭曲线积分也可能不为零。
 
-### 本章自测
+        ??? example "空间单连通区域"
+            <!-- 待补充 -->
 
-!!! example "自测 10"
+    -   **三个等式要同时成立**：$P_y=Q_x$、$Q_z=R_y$、$R_x=P_z$ 缺一不可；只验证其中两个不能推出路径无关。
 
-    1. 沿单位圆周顺时针计算 $\displaystyle\oint_L(x\,\mathrm dy-y\,\mathrm dx)$。
-    2. 求 $\omega=yz\,\mathrm dx+xz\,\mathrm dy+xy\,\mathrm dz$ 的原函数，并计算从 $(1,1,1)$ 到 $(2,1,3)$ 的积分。
-    3. 求 $\mathbf F=(x,y,z)$ 通过半径为 $R$ 的球面外侧的通量。
-    4. 设 $\mathbf F=(-\displaystyle\frac{y}{2},\frac{x}{2},0)$，$L$ 是平面 $z=1$ 上半径为 $a$ 的圆，从上向下看为逆时针，求其环流。
-    5. 对 $\mathbf F=\displaystyle\frac{x,y,z}{(x^2+y^2+z^2)^{3/2}}$，原点外散度为零。它通过单位球面外侧的通量是否为零？说明理由。
+        ??? example "路径无关的条件"
+            <!-- 待补充 -->
 
-    ??? success "答案与提示"
+    -   **原函数的折线路径要在区域内**：$u(x,y,z)=\displaystyle\int_{x_0}^xP(t,y_0,z_0)\,\mathrm dt+\int_{y_0}^yQ(x,t,z_0)\,\mathrm dt+\int_{z_0}^zR(x,y,t)\,\mathrm dt+C$ 的路径必须完全位于 $V$ 内。
 
-        1. $-2\pi$；顺时针与格林正向相反。
-        2. $u=xyz+C$，积分为 $6-1=5$。
-        3. 散度为 $3$，通量为 $\displaystyle\frac{3\cdot 4\pi R^3}{3}=4\pi R^3$。
-        4. 旋度为 $(0,0,1)$，取向上的圆盘，环流为 $\pi a^2$。
-        5. 不为零。在单位球面上 $\mathbf F=\mathbf n$，通量为 $4\pi$。原点处场无定义，不满足对整个球体使用高斯公式的条件；挖掉一个小球后，内球面按穿孔区域的外侧应取朝向球心的方向。
+        ??? example "求空间原函数"
+            <!-- 待补充 -->
+
+    -   **与平面情形一致**：闭曲线积分为零、路径无关、存在原函数、旋度为零，在单连通区域且偏导连续时等价。
+
+        ??? example "空间路径无关的等价条件"
+            <!-- 待补充 -->
+
+#### §3.3 旋度场
+
+矢量场 $\mathbf A=(P,Q,R)$ 的旋度定义为
+
+$$
+\operatorname{rot}\mathbf A
+=(R_y-Q_z,\ P_z-R_x,\ Q_x-P_y)
+=\begin{vmatrix}
+\mathbf i&\mathbf j&\mathbf k\\
+\partial_x&\partial_y&\partial_z\\
+P&Q&R
+\end{vmatrix}.
+$$
+
+旋度作为点的矢量函数构成旋度场。斯托克斯公式为
+
+$$
+\oint_L\mathbf A\cdot\mathrm d\mathbf s
+=\iint_S\operatorname{rot}\mathbf A\cdot\mathbf n\,\mathrm dS.
+$$
+
+设小平面区域 $D$ 含点 $M_0$，法线为单位矢量 $\mathbf n$，边界取相应正向，则
+
+$$
+\operatorname{rot}\mathbf A(M_0)\cdot\mathbf n
+=\lim_{D\to M_0}\frac1{\operatorname{Area}(D)}
+\oint_{\partial D}\mathbf A\cdot\mathrm d\mathbf s.
+$$
+
+旋度在法线方向的分量表示该方向的环流密度。若 $\operatorname{rot}\mathbf A=\mathbf0$，称 $\mathbf A$ 为无旋场。
+
+!!! warning "提示"
+
+    -   **旋度是矢量**：$\operatorname{rot}\mathbf A=(R_y-Q_z,\ P_z-R_x,\ Q_x-P_y)$，三个分量都不要漏；第二分量是 $P_z-R_x$，不是 $R_x-P_z$。
+
+        ??? example "旋度的计算"
+            <!-- 待补充 -->
+
+    -   **无旋不等于无源**：$\operatorname{rot}\mathbf A=\mathbf0$ 只说明无旋，仍可能有散度；反之散度为零也不说明无旋。
+
+        ??? example "无旋场与无源场"
+            <!-- 待补充 -->
+
+    -   **斯托克斯公式的方向**：$\displaystyle\oint_L\mathbf A\cdot\mathrm d\mathbf s=\iint_S\operatorname{rot}\mathbf A\cdot\mathbf n\,\mathrm dS$，$L$ 的方向与 $S$ 的法线要满足右手规则。
+
+        ??? example "旋度与斯托克斯公式"
+            <!-- 待补充 -->
+
+    -   **旋度的环流意义**：$\operatorname{rot}\mathbf A(M_0)\cdot\mathbf n$ 是沿法线方向的环流密度，不是通量密度；通量密度对应散度。
+
+        ??? example "旋度的意义"
+            <!-- 待补充 -->
+
+#### §3.4 势量场 \*
+
+若矢量场 $\mathbf A$ 可表示为某标量函数 $u$ 的梯度，称 $\mathbf A$ 为势量场，$u$ 为势函数：
+
+$$
+\mathbf A=\operatorname{grad}u=(u_x,u_y,u_z),
+\qquad
+\mathbf A\cdot\mathrm d\mathbf s=\mathrm du.
+$$
+
+!!! warning "提示"
+
+    -   **势函数不唯一**：若 $\mathbf A=\operatorname{grad}u$，则 $u+C$ 也是势函数；求出的势函数要验证 $\nabla u=\mathbf A$。
+
+        ??? example "势函数"
+            <!-- 待补充 -->
+
+    -   **无旋场在单连通区域才是势量场**：$\operatorname{rot}\mathbf A=\mathbf0$ 只保证局部存在势函数；区域有洞时可能有环流，不能定义整体势函数。
+
+        ??? example "势量场的存在性"
+            <!-- 待补充 -->
+
+    -   **势函数与势能的符号约定不同**：数学中常写 $\mathbf A=\operatorname{grad}u$，物理中势能常写 $\mathbf F=-\operatorname{grad}V$；不要混用符号。
+
+        ??? example "势函数与势能"
+            <!-- 待补充 -->
+
+    -   **求势函数要选区域内路径**：可用路径积分 $\displaystyle u=\int_{P_0}^P\mathbf A\cdot\mathrm d\mathbf s$，路径必须完全位于区域内，起点固定。
+
+        ??? example "用路径积分求势函数"
+            <!-- 待补充 -->
+
+#### §3.5 向量微分算子 \*
+
+向量微分算子定义为
+
+$$
+\nabla=\mathbf i\frac{\partial}{\partial x}
++\mathbf j\frac{\partial}{\partial y}
++\mathbf k\frac{\partial}{\partial z}.
+$$
+
+$$
+\nabla u=\operatorname{grad}u,\qquad
+\nabla\cdot\mathbf A=\operatorname{div}\mathbf A,\qquad
+\nabla\times\mathbf A=\operatorname{rot}\mathbf A.
+$$
+
+拉普拉斯算子及其作用为
+
+$$
+\Delta=\nabla\cdot\nabla
+=\frac{\partial^2}{\partial x^2}
++\frac{\partial^2}{\partial y^2}
++\frac{\partial^2}{\partial z^2},
+\qquad
+\Delta u=u_{xx}+u_{yy}+u_{zz}.
+$$
+
+!!! warning "提示"
+
+    -   **$\nabla$ 是算子，不是普通矢量**：$\nabla u$ 是梯度（矢量），$\nabla\cdot\mathbf A$ 是散度（数量），$\nabla\times\mathbf A$ 是旋度（矢量），三者不能混用。
+
+        ??? example "$\nabla$ 的三种作用"
+            <!-- 待补充 -->
+
+    -   **拉普拉斯算子是二阶算子**：$\Delta=\nabla\cdot\nabla=\partial_x^2+\partial_y^2+\partial_z^2$，作用在标量函数上得到数量；不要与 Hessian 矩阵混淆。
+
+        ??? example "拉普拉斯算子"
+            <!-- 待补充 -->
+
+    -   **算子不能随意交换顺序**：$\nabla\times\nabla u=\mathbf0$、$\nabla\cdot(\nabla\times\mathbf A)=0$ 在二阶偏导连续时成立；但 $\nabla\cdot\nabla u$ 与 $\nabla(\nabla\cdot\mathbf A)$ 是不同的。
+
+        ??? example "算子恒等式"
+            <!-- 待补充 -->
+
+    -   **乘积法则要按算子展开**：$\nabla(uv)=u\nabla v+v\nabla u$，$\nabla\cdot(u\mathbf A)=u\nabla\cdot\mathbf A+\mathbf A\cdot\nabla u$；不能把 $\nabla$ 当作普通数约分。
+
+        ??? example "算子作用于乘积"
+            <!-- 待补充 -->
 
 ## 第十一章 级数
 
-级数用一列有限和的极限描述“无穷项相加”。本章有三条主线：**能不能相加**（收敛性）、**相加得到什么**（和与和函数）、**怎样用有限项近似**（余项与误差）。
+### §1 数项级数的基本概念
 
-| 学习对象 | 核心问题 | 常用工具 |
-| --- | --- | --- |
-| 数项级数 | 部分和是否有有限极限 | 比较、比值、根值、积分、莱布尼茨判别法 |
-| 函数项级数 | 在哪些点收敛，能否交换极限与运算 | 收敛域、一致收敛 |
-| 幂级数 | 收敛半径、和函数、函数展开 | 阿贝尔定理、逐项求导与积分、泰勒公式 |
-| 傅里叶级数 | 用三角函数展开周期函数 | 正交性、傅里叶系数、收敛定理 |
+#### §1.1 数项级数的概念
 
-### §1 数项级数：定义与基本性质
-
-有限个实数相加总有确定结果，无穷多项相加则需要定义。办法是先加前一项、前两项、前三项，得到部分和数列，再考察项数增加时这些部分和是否趋于一个有限数。因此，研究级数的第一步是区分原来的通项与由它构成的部分和。
-
-由此，级数中的运算通常先在有限和上进行，再检查能否取极限。判断敛散时可以先看通项是否趋于零；不趋于零，级数一定发散；趋于零，只通过了必要条件的检查，还不能确定部分和是否收敛。
-
-#### 部分和、收敛与余项
-
-给定数列 $\{u_n\}$，形式表达式 $\sum_{n=1}^{\infty}u_n$ 称为数项级数。它的**前 $N$ 项部分和**为
+给定数列 $\{u_n\}$，表达式
 
 $$
-S_N=\sum_{n=1}^{N}u_n.
+\sum_{n=1}^{\infty}u_n=u_1+u_2+\cdots+u_n+\cdots
 $$
 
-若 $S_N$ 有有限极限 $S$，就称级数收敛，记为 $\sum_{n=1}^{\infty}u_n=S$；否则称为发散。收敛时，**余项**为
+称为数项级数，$u_n$ 为通项，
 
 $$
-r_N=S-S_N=\sum_{n=N+1}^{\infty}u_n,
-\qquad r_N\longrightarrow0.
+S_n=\sum_{k=1}^nu_k
 $$
 
-!!! example "例：通项、部分和与级数的和"
-
-    对 $\sum_{n=1}^{\infty}2^{-n}$，几个量分别是：
-
-    | 项数 N | 第 N 项 $u_N$ | 前 N 项和 $S_N$ |
-    | --- | --- | --- |
-    | $1$ | $1/2$ | $1/2$ |
-    | $2$ | $1/4$ | $3/4$ |
-    | $3$ | $1/8$ | $7/8$ |
-    | $N$ | $2^{-N}$ | $1-2^{-N}$ |
-
-    当 $N\to\infty$，通项趋于 $0$，部分和趋于 $1$，所以级数的和是 $1$。余项为 $r_N=2^{-N}$，它表示用前 $N$ 项代替全部级数时还差多少。
-
-    若要求误差小于 $10^{-3}$，只需使 $2^{-N}<10^{-3}$，取 $N=10$ 即可。这同时用到了收敛、求和与误差估计三个概念。
-
-!!! warning "通项趋于零只是必要条件"
-
-    若 $\sum u_n$ 收敛，则 $u_n=S_n-S_{n-1}\to 0$。反之不成立：$\displaystyle\frac{1}{n}\to 0$，但调和级数 $\sum \displaystyle\frac{1}{n}$ 发散。
-
-    因此，判敛时先检查通项；通项不趋于零可以立即判定发散，趋于零则仍需继续判断。
-
-调和级数为什么发散，可以直接从部分和看出。保留首项 $1$，将其后各项按 $1,2,4,8,\ldots$ 项分组。第 $k$ 组满足
+为第 $n$ 项部分和。若 $\lim_{n\to\infty}S_n=S$ 为有限数，则称级数收敛，$S$ 为其和；否则称级数发散。收敛级数的余项为
 
 $$
-\sum_{n=2^{k-1}+1}^{2^k}\frac1n
-\ge 2^{k-1}\cdot\frac1{2^k}=\frac12.
+R_n=S-S_n=\sum_{k=n+1}^{\infty}u_k.
 $$
 
-因此 $S_{2^m}\ge1+\displaystyle\frac{m}{2}\to+\infty$。虽然单项 $\displaystyle\frac{1}{n}$ 越来越小，每一组的和却仍至少为 $1/2$，部分和就没有统一上界。这里估计的是原级数的有限部分和，并未预先假定无穷和存在。
-
-!!! example "例：几何级数与裂项求和"
-
-    **几何级数**：设 $a\ne 0$，则
-
-    $$
-    \sum_{n=0}^{\infty}aq^n=\frac{a}{1-q},\qquad |q|<1.
-    $$
-
-    这里下标从 $0$ 开始，取至第 $N$ 次幂的和含 $N+1$ 项。记它为 $T_N=a+aq+\cdots+aq^N$，由 $T_N-qT_N=a-aq^{N+1}$，当 $q\ne1$ 时得
-
-    $$
-    T_N=\frac{a(1-q^{N+1})}{1-q}.
-    $$
-
-    若 $|q|<1$，则 $q^{N+1}\to0$，得到上面的和。当 $|q|\ge1$ 时通项不趋于零，级数发散；$a=0$ 时则恒为零。
-
-    **裂项求和**：
-
-    $$
-    \sum_{n=1}^{\infty}\frac1{n(n+1)}
-    =\lim_{N\to \infty}\sum_{n=1}^{N}\left(\frac1n-\frac1{n+1}\right)
-    =\lim_{N\to \infty}\left(1-\frac1{N+1}\right)=1.
-    $$
-
-    先对有限和作运算，再取极限，可以避免对无穷和作不合法的消项。
-
-#### 基本性质
-
-- **有限项不影响敛散性**：增加、删除或改变有限项，只可能改变级数的和。
-- **线性运算**：若 $\sum u_n=U$、$\sum v_n=V$ 都收敛，则 $\sum (\alpha u_n+\beta v_n)=\alpha U+\beta V$。
-- **收敛与发散相加**：一个收敛级数与一个发散级数逐项相加，结果发散；两个发散级数相加则没有统一结论。
-- **保持顺序的分组**：收敛级数任意合并相邻有限项，和不变；分组后收敛，不能反推原级数收敛。例如 $(1-1)+(1-1)+\cdots$ 的分组部分和为零，但原级数部分和在 $1$ 和 $0$ 之间振荡。
-
-**柯西收敛准则**：$\sum u_n$ 收敛，当且仅当
+几何级数满足
 
 $$
-\forall\varepsilon>0,\ \exists N,\ \forall m>n\ge N,
-\quad \left|\sum_{k=n+1}^{m}u_k\right|<\varepsilon.
+\sum_{n=0}^{\infty}aq^n=\frac{a}{1-q},\qquad |q|<1;
 $$
 
-它要求从足够靠后的位置开始，**任意长度的有限尾和**都足够小。
+当 $a\ne0$ 且 $|q|\ge1$ 时发散。
 
-### §2 正项级数：敛散性的判别
-
-以下“正项级数”的结论也适用于非负项级数；涉及商式时要求分母最终为正。
-
-#### 部分和有界准则
-
-若 $u_n\ge 0$，则 $S_N$ 单调不减，因此
-
-$$
-\sum u_n\text{ 收敛}\quad \Longleftrightarrow\quad \{S_N\}\text{ 有上界}.
-$$
-
-正项级数发散时，部分和趋于 $+\infty$。这是比较判别法的基础。
-
-#### 比较判别法
-
-比较判别法把未知级数与已知敛散性的级数联系起来。最常用的基准是几何级数 $\sum q^n$（$0<q<1$）与 $p$ 级数 $\sum \displaystyle\frac{1}{n^p}$，后者的判定会在本节积分判别法中说明。选择比较对象时，先考察 $n\to\infty$ 时通项的主要部分，再用不等式或比值极限作严格判断。
-
-若从某项起 $0\le u_n\le v_n$，则：
-
-- $\sum v_n$ 收敛 $\Rightarrow\sum u_n$ 收敛；
-- $\sum u_n$ 发散 $\Rightarrow\sum v_n$ 发散。
-
-可记为：**用收敛的大项控制小项，用发散的小项推出大项发散。**
-
-比较方向可以由部分和解释：若 $u_n\le v_n$，则 $\sum_{n=1}^{N}u_n\le\sum_{n=1}^{N}v_n$。右边有统一上界，左边便随之有上界；反过来，左边无界，右边必无界。若不等式只从某项起成立，就对相应的尾部作同样比较。
-
-例如 $0<\displaystyle\frac{1}{n^2+1}\le\frac{1}{n^2}$，右侧级数收敛，故左侧也收敛。而 $\displaystyle\frac{1}{n+1}\ge\frac{1}{2n}$（$n\ge1$），右侧级数发散，故左侧发散。若仅找到一个发散的上界或收敛的下界，都不能据此下结论。
-
-若 $u_n,v_n>0$，且 $\lim_{n\to \infty}\displaystyle\frac{u_n}{v_n}=\ell$，则极限比较法给出：
-
-| 比值极限 | 可以得出的结论 |
-| --- | --- |
-| $0<\ell<+\infty$ | 两级数同敛散 |
-| $\ell=0$ | $\sum v_n$ 收敛可推出 $\sum u_n$ 收敛 |
-| $\ell=+\infty$ | $\sum v_n$ 发散可推出 $\sum u_n$ 发散 |
-
-特别地，正项之间 $u_n\sim v_n$ 可以用于判敛。
-
-!!! example "例：有理式与根式的比较"
-
-    因为
-
-    $$
-    \frac{3n+1}{n^3+2}\sim \frac3{n^2},
-    $$
-
-    所以 $\sum \displaystyle\frac{3n+1}{n^3+2}$ 收敛。
-
-    对含根式的项，先有理化：
-
-    $$
-    \sqrt{n^2+1}-n=\frac1{\sqrt{n^2+1}+n}\sim \frac1{2n},
-    $$
-
-    因而 $\sum (\sqrt{n^2+1}-n)$ 发散。
-
-#### 比值与根值判别法
-
-几何级数的相邻项之比是固定数 $q$。对一般正项级数，若相邻项之比最终小于某个固定的 $q<1$，其尾项就可以被一个收敛的几何级数控制。这是比值判别法的依据。根值判别法则直接比较 $u_n$ 与 $q^n$，即比较 $\sqrt[n]{u_n}$ 与 $q$。
-
-因此，阶乘或连乘适合先作相邻两项的比值，以约去公共因子；整体带 $n$ 次幂的项适合先开 $n$ 次方。两种方法都应计算极限后再判断，不能仅凭表达式中含有指数就断言收敛。
-
-对正项级数，若下列极限存在：
-
-$$
-\rho=\lim_{n\to \infty}\frac{u_{n+1}}{u_n}
-\quad \text{或}\quad
-\rho=\lim_{n\to \infty}\sqrt[n]{u_n},
-$$
-
-则 $\rho<1$ 时收敛，$\rho>1$（包括 $+\infty$）时发散，$\rho=1$ 时不能判断。
-
-| 通项特征 | 优先考虑 |
-| --- | --- |
-| 含 $n!$、连续乘积、指数因子 | 比值判别法 |
-| 整体有 $n$ 次幂 | 根值判别法 |
-| 多项式、根式、对数 | 比较或积分判别法 |
-
-!!! example "例：比值法与根值法"
-
-    对 $\sum \displaystyle\frac{n!}{n^n}$，
-
-    $$
-    \frac{u_{n+1}}{u_n}
-    =\frac{(n+1)!}{(n+1)^{n+1}}\frac{n^n}{n!}
-    =\left(\frac n{n+1}\right)^n
-    =\left(1+\frac1n\right)^{-n}\to e^{-1}<1,
-    $$
-
-    所以收敛。对 $\sum[\displaystyle\frac{n}{2n+1}]^n$，根值极限为 $1/2$，所以收敛。
-
-    对 $\sum \displaystyle\frac{1}{n}$ 和 $\sum \displaystyle\frac{1}{n^2}$，比值极限都等于 $1$，但前者发散、后者收敛。
-
-#### 积分判别法与常用基准级数
-
-若 $f$ 非负且单调不增，则对 $n\le x\le n+1$ 有 $f(n+1)\le f(x)\le f(n)$，积分后得到
-
-$$
-f(n+1)\le\int_n^{n+1}f(x)\,\mathrm dx\le f(n).
-$$
-
-把这些不等式相加，就能把级数的部分和与反常积分的截断积分互相比较。两者不必具有相同的值，但在以下条件下具有相同的敛散性。
-
-若 $f(x)$ 在 $[N,+\infty)$ 上连续、非负且单调不增，并且 $u_n=f(n)$，则
-
-$$
-\sum_{n=N}^{\infty}u_n
-\quad \text{与}\quad
-\int_N^{+\infty}f(x)\,\mathrm dx
-\quad \text{同敛散}.
-$$
-
-由此得到两个常用结论：
+$p$ 级数满足
 
 $$
 \sum_{n=1}^{\infty}\frac1{n^p}
 \begin{cases}
 \text{收敛},&p>1,\\
-\text{发散},&p\le 1,
+\text{发散},&p\le1.
 \end{cases}
+$$
+
+!!! warning "提示"
+
+    -   **收敛看部分和极限**：级数收敛是指 $\lim S_n$ 存在且有限，不是通项 $u_n\to0$；$u_n\to0$ 只是必要条件，调和级数就是反例。
+
+        ??? example "级数的收敛性"
+            <!-- 待补充 -->
+
+    -   **几何级数的首项与条件**：$\displaystyle\sum_{n=0}^{\infty}aq^n=\frac{a}{1-q}$ 仅在 $|q|<1$ 时成立；若级数从 $n=1$ 开始，首项是 $aq$，不要代错。
+
+        ??? example "几何级数"
+            <!-- 待补充 -->
+
+    -   **$p$ 级数的分界是 $p=1$**：$p>1$ 收敛，$p\le1$ 发散；$p=1$ 是调和级数，不能误判为收敛。
+
+        ??? example "$p$ 级数"
+            <!-- 待补充 -->
+
+    -   **余项只对收敛级数有定义**：$R_n=S-S_n$ 是收敛级数的尾部，收敛时 $R_n\to0$；发散级数不能谈余项。
+
+        ??? example "级数的余项"
+            <!-- 待补充 -->
+
+#### §1.2 数项级数的基本性质
+
+若 $\sum u_n=A$、$\sum v_n=B$ 均收敛，$\alpha,\beta$ 为常数，则
+
+$$
+\sum_{n=1}^{\infty}(\alpha u_n+\beta v_n)=\alpha A+\beta B.
+$$
+
+改变有限项、去掉或添加有限项不改变级数的敛散性。收敛级数任意加括号后仍收敛，且和不变。
+
+收敛的必要条件为
+
+$$
+\sum_{n=1}^{\infty}u_n\text{ 收敛}\ \Longrightarrow\ \lim_{n\to\infty}u_n=0.
+$$
+
+柯西收敛准则为
+
+$$
+\sum_{n=1}^{\infty}u_n\text{ 收敛}
+\ \Longleftrightarrow\quad
+\forall\varepsilon>0,\ \exists N,\ \forall n>N,\ \forall p\in\mathbb N_+:
+\left|\sum_{k=n+1}^{n+p}u_k\right|<\varepsilon.
+$$
+
+!!! warning "提示"
+
+    -   **加括号保持收敛，但不能反推**：收敛级数任意加括号后仍收敛且和不变；但加括号后收敛，原级数不一定收敛（如 $(1-1)+(1-1)+\cdots$）。
+
+        ??? example "加括号"
+            <!-- 待补充 -->
+
+    -   **改变有限项只改变和**：去掉、添加或改变有限项不影响敛散性，但会改变收敛级数的和；不能因此认为所有项都可以随意改动。
+
+        ??? example "有限项的影响"
+            <!-- 待补充 -->
+
+    -   **线性运算要求两个级数都收敛**：$\sum(\alpha u_n+\beta v_n)=\alpha A+\beta B$ 需要 $\sum u_n,\sum v_n$ 都收敛；一收敛一发散时和发散，两个发散时和可能收敛。
+
+        ??? example "级数的线性运算"
+            <!-- 待补充 -->
+
+    -   **柯西准则的量词**：要求存在 $N$，使 $n>N$ 时对**一切** $p\in\mathbb N_+$，$|u_{n+1}+\cdots+u_{n+p}|<\varepsilon$；不能只验证某个 $p$。
+
+        ??? example "级数的柯西准则"
+            <!-- 待补充 -->
+
+### §2 正项级数敛散性的判别法
+
+通项满足 $u_n\ge0$ 的级数称为正项级数。其收敛的充要条件为部分和数列有上界：
+
+$$
+\sum_{n=1}^{\infty}u_n\text{ 收敛}
+\ \Longleftrightarrow\quad
+\exists M,\ \forall n:\quad S_n\le M.
+$$
+
+**比较判别法。** 若 $0\le u_n\le v_n$，则
+
+$$
+\sum v_n\text{ 收敛}\ \Longrightarrow\ \sum u_n\text{ 收敛},
 \qquad
-\sum_{n=2}^{\infty}\frac1{n(\ln n)^p}
-\begin{cases}
-\text{收敛},&p>1,\\
-\text{发散},&p\le 1.
-\end{cases}
+\sum u_n\text{ 发散}\ \Longrightarrow\ \sum v_n\text{ 发散}.
 $$
 
-第一个结论可由反常积分直接核对：当 $p\ne1$ 时，
+**比较判别法的极限形式。** 若 $u_n,v_n>0$ 且 $\lim u_n/v_n=l$，则
 
 $$
-\int_1^A x^{-p}\,\mathrm dx=\frac{A^{1-p}-1}{1-p};
+\begin{aligned}
+0<l<+\infty&\ \Longrightarrow\ \sum u_n,\sum v_n\text{ 同敛散};\\
+l=0,\ \sum v_n\text{ 收敛}&\ \Longrightarrow\ \sum u_n\text{ 收敛};\\
+l=+\infty,\ \sum v_n\text{ 发散}&\ \Longrightarrow\ \sum u_n\text{ 发散}.
+\end{aligned}
 $$
 
-只有 $p>1$ 时能趋于有限值。$p=1$ 时积分为 $\ln A\to+\infty$。对于 $p\le0$，级数通项本身已经不趋于零，无须使用积分判别法。
-
-第二个结论在积分中作代换 $t=\ln x$ 即可得到。对上述满足单调条件且收敛的级数，还有余项估计
+**比值判别法。** 若 $u_n>0$ 且 $\lim u_{n+1}/u_n=q$，则
 
 $$
-\int_{N+1}^{+\infty}f(x)\,\mathrm dx
-\le r_N\le
-\int_N^{+\infty}f(x)\,\mathrm dx.
+q<1\ \Longrightarrow\ \sum u_n\text{ 收敛},\qquad
+q>1\text{ 或 }q=+\infty\ \Longrightarrow\ \sum u_n\text{ 发散}.
 $$
 
-### §3 一般数项级数：符号变化与绝对收敛
-
-#### 交错级数与莱布尼茨判别法
-
-交错级数的正负号交替出现，但判断收敛仍要回到部分和。在下面的单调条件下，从足够靠后的项起，偶数项部分和单调不减，奇数项部分和单调不增；两者的差是一项趋于零的 $b_n$，所以趋向同一个极限。
-
-对交错级数 $\sum_{n=1}^{\infty}(-1)^{n-1}b_n$，若 $b_n\ge 0$、从某项起单调不增，且 $b_n\to 0$，则级数收敛。
-
-在单调性成立的尾部，截断误差满足
+**根值判别法。** 若 $u_n\ge0$ 且 $\lim\sqrt[n]{u_n}=q$，则
 
 $$
-|r_N|\le b_{N+1},
+q<1\ \Longrightarrow\ \sum u_n\text{ 收敛},\qquad
+q>1\text{ 或 }q=+\infty\ \Longrightarrow\ \sum u_n\text{ 发散}.
 $$
 
-余项的符号与第一个被舍去的项相同。证明思路是分别考察奇数项、偶数项部分和：它们从两侧趋向同一个极限。
-
-例如 $1-1/2+1/3-1/4+\cdots$ 中，$b_n=\displaystyle\frac{1}{n}$ 单调趋于零，故级数收敛。其和 $S$ 满足 $S_{2m}\le S\le S_{2m+1}$。若取前 $100$ 项，则 $|S-S_{100}|\le1/101$，且 $S_{100}$ 不超过真实的和。判别法和误差界都不要求先求出 $S$ 的具体值。
-
-!!! warning "不能省略单调条件"
-
-    仅有“正负交替、通项趋于零”不足以保证收敛。例如令 $b_{2k-1}=\displaystyle\frac{1}{\sqrt{k}}$、$b_{2k}=\displaystyle\frac{1}{\sqrt{k}}-\frac{1}{k}$，则 $b_n\to 0$，但每对带符号项之和为 $\displaystyle\frac{1}{k}$，偶数项部分和发散。
-
-#### 绝对收敛与条件收敛
-
-对变号级数，可以进一步考察：去掉正负号后是否仍收敛？若仍收敛，原级数的收敛不依赖正负项之间的抵消；若去掉符号后发散，而原级数收敛，则正负项的抵消对收敛有实质作用。这就产生下面两种分类。
-
-- 若 $\sum|u_n|$ 收敛，称 $\sum u_n$ **绝对收敛**。
-- 若 $\sum u_n$ 收敛，而 $\sum|u_n|$ 发散，称其**条件收敛**。
-
-**绝对收敛必然推出收敛**，可由柯西准则与 $|\sum u_k|\le \sum|u_k|$ 证明。
-
-判断时可以先检查 $\sum|u_n|$。它若收敛，便已证明原级数绝对收敛；它若发散，还需要另判原级数，不能立即断言原级数发散。只有同时确认“原级数收敛”和“绝对值级数发散”，才是条件收敛。
-
-!!! example "例：带参数的交错 p 级数"
-
-    考察 $\sum_{n=1}^{\infty}\displaystyle\frac{(-1)^{n-1}}{n^p}$。
-
-    - $p>1$：绝对值级数是收敛的 $p$ 级数，因此绝对收敛。
-    - $0<p\le 1$：由莱布尼茨判别法收敛，但绝对值级数发散，因此条件收敛。
-    - $p\le 0$：通项不趋于零，因此发散。
-
-对任意实数项或复数项级数，也可对 $|u_n|$ 使用比值法、根值法：极限小于 $1$ 时绝对收敛，大于 $1$ 时原级数发散，等于 $1$ 时仍需另判。
-
-#### 绝对收敛级数的运算（\*）
-
-**重排**：绝对收敛级数任意重排后仍收敛到原来的和。条件收敛级数不能任意重排；重排可能改变和，也可能使其发散。
-
-**柯西乘积**：若 $\sum_{n=0}^{\infty}a_n=A$、$\sum_{n=0}^{\infty}b_n=B$ 都绝对收敛，令
+**积分判别法。** 若 $f(x)$ 在 $[1,+\infty)$ 上非负、连续、单调递减，$u_n=f(n)$，则
 
 $$
-c_n=\sum_{k=0}^{n}a_kb_{n-k},
+\sum_{n=1}^{\infty}u_n\text{ 与 }\int_1^{+\infty}f(x)\,\mathrm dx\text{ 同敛散}.
 $$
 
-则 $\sum_{n=0}^{\infty}c_n$ 绝对收敛，且其和为 $AB$。这里按下标和相同的项归并，不能把无穷乘法当作不需条件的有限乘法。
+!!! warning "提示"
 
-### §4 函数项级数与一致收敛（\*）
+    -   **正项级数看部分和是否有上界**：$\sum u_n$ 收敛 $\iff$ 部分和数列 $\{S_n\}$ 有上界；这是正项级数特有的充要条件，一般级数不适用。
 
-!!! info "教材选学与考试基础的交叉"
+        ??? example "部分和有界"
+            <!-- 待补充 -->
 
-    教材第 263 页起整节标为选学。但函数项级数的收敛点、收敛域和和函数仍属于数学一复习内容；本节的一致收敛定义、判别法及一般交换定理则用于加深理解。幂级数的连续性、逐项求导与积分性质应掌握。
+    -   **比较判别法的方向**：$0\le u_n\le v_n$ 时，大级数收敛可推小级数收敛，小级数发散可推大级数发散；方向不能反。
 
-#### 逐点收敛、收敛域与和函数
+        ??? example "比较判别法"
+            <!-- 待补充 -->
 
-对于 $\sum u_n(x)$，固定 $x$ 后得到一个数项级数。使该数项级数收敛的点构成**收敛域**；在收敛域上定义
+    -   **极限形式的三种情形**：$0<l<+\infty$ 时同敛散；$l=0$ 只能用"$\sum v_n$ 收敛 $\Rightarrow\sum u_n$ 收敛"；$l=+\infty$ 只能用"$\sum v_n$ 发散 $\Rightarrow\sum u_n$ 发散"。
 
-$$
-S(x)=\sum_{n=1}^{\infty}u_n(x),
-\qquad S_N(x)=\sum_{n=1}^{N}u_n(x),
-\qquad r_N(x)=S(x)-S_N(x).
-$$
+        ??? example "比较判别法的极限形式"
+            <!-- 待补充 -->
 
-以 $\sum_{n=0}^{\infty}x^n$ 为例：固定 $x=1/2$ 得到和为 $2$ 的数项级数，固定 $x=-1/2$ 得到和为 $2/3$ 的数项级数，固定 $x=1$ 则发散。将所有收敛的 $x$ 收集起来得到 $(-1,1)$，而 $S(x)=\displaystyle\frac{1}{1-x}$ 记录每一个收敛点上的级数和。
+    -   **比值、根值判别法的 $q=1$ 失效**：$q<1$ 收敛、$q>1$ 或 $+\infty$ 发散；$q=1$ 时不能判定，需改用其他方法。积分判别法要求 $f$ 非负、连续、单调递减。
 
-逐点都能求和之后，还要研究能否对和函数交换极限、积分或求导。有限和具有的性质不一定自动传到无穷和；一致收敛正是常用的附加条件。
+        ??? example "比值与根值判别法"
+            <!-- 待补充 -->
 
-**逐点收敛**允许达到同样误差所需的项数依赖于 $x$。**一致收敛**要求一个项数门槛同时适用于集合 $D$ 内所有点：
+### §3 一般数项级数收敛性的判别法
 
-$$
-\forall\varepsilon>0,\ \exists N,\ \forall n\ge N,\ \forall x\in D,
-\quad |r_n(x)|<\varepsilon.
-$$
+#### §3.1 交错级数
 
-等价地，$\sup_{x\in D}|r_n(x)|\to 0$。逐点收敛中量词的次序则是 $\forall x\in D,\forall\varepsilon>0,\exists N=N(x,\varepsilon)$。
-
-??? example "例：同一个级数在不同集合上的一致收敛性"
-
-    对 $\sum_{n=0}^{\infty}x^n$，部分和取至 $x^N$，余项为
-
-    $$
-    r_N(x)=\frac{x^{N+1}}{1-x}.
-    $$
-
-    在 $[0,1)$ 上逐点收敛，但每个固定 $N$ 都有 $\sup_{0\le x<1}|r_N(x)|=+\infty$，所以不一致收敛。
-
-    在任意固定的 $[-q,q]$（$0<q<1$）上，
-
-    $$
-    |r_N(x)|\le \frac{q^{N+1}}{1-q}\to 0,
-    $$
-
-    因而一致收敛。讨论一致收敛时必须指明集合。
-
-#### 一致收敛的判别法
-
-一致收敛要求误差上界对整个集合统一成立。证明时常寻找不依赖 $x$ 的数列 $\eta_N\to0$，使所有 $x\in D$ 都满足 $|r_N(x)|\le\eta_N$；前例中的 $\displaystyle\frac{q^{N+1}}{1-q}$ 就是这样的上界。若只能对每个固定的 $x$ 分别证明余项趋于零，得到的仍只是逐点收敛。
-
-**一致柯西准则**：对任意 $\varepsilon>0$，存在与 $x$ 无关的 $N$，使所有 $m>n\ge N$、$x\in D$ 都满足
+设 $u_n>0$，级数
 
 $$
-\left|\sum_{k=n+1}^{m}u_k(x)\right|<\varepsilon.
+\sum_{n=1}^{\infty}(-1)^{n-1}u_n
 $$
 
-**魏尔斯特拉斯判别法（M 判别法）**：若对所有 $x\in D$ 有 $|u_n(x)|\le M_n$，而数项级数 $\sum M_n$ 收敛，则 $\sum u_n(x)$ 在 $D$ 上绝对且一致收敛。
-
-例如 $|\displaystyle\frac{\sin nx}{n^2}|\le \frac{1}{n^2}$，所以 $\sum \displaystyle\frac{\sin nx}{n^2}$ 在 $\mathbb R$ 上一致收敛。M 判别法是充分条件，找不到这样的控制级数不能直接判定不一致收敛。
-
-以下两种判别法可处理带振荡因子的 $\sum a_n(x)b_n(x)$，这里 $b_n(x)$ 为实值函数：
-
-- **狄利克雷判别法**：$\sum_{n=1}^{N}a_n(x)$ 对 $N,x$ 一致有界；对每个 $x$，$b_n(x)$ 关于 $n$ 单调，并且 $b_n\to 0$ 在 $D$ 上一致成立。
-- **阿贝尔判别法**：$\sum a_n(x)$ 在 $D$ 上一致收敛；对每个 $x$，$b_n(x)$ 关于 $n$ 单调，且存在常数 $M$ 使所有 $n,x$ 都有 $|b_n(x)|\le M$。
-
-满足相应条件时，乘积级数在 $D$ 上一致收敛。令 $D$ 只含一个点，也得到相应的数项级数判别法。
-
-#### 一致收敛与运算交换
-
-| 想进行的操作 | 一组常用的充分条件 | 结论 |
-| --- | --- | --- |
-| 保持连续性 | 各 $u_n$ 在 $D$ 上连续，级数在 $D$ 上一致收敛 | 和函数在 $D$ 上连续 |
-| 逐项积分 | 各 $u_n$ 在 $[a,b]$ 上连续，级数在该区间一致收敛 | $\displaystyle\int_a^b\sum u_n=\sum \int_a^b u_n$ |
-| 逐项求导 | 各 $u_n\in C^1[a,b]$；$\sum u_n'$ 一致收敛；$\sum u_n(x_0)$ 在某一点收敛 | 原级数一致收敛，且 $S'=\sum u_n'$ |
-
-!!! warning "原级数一致收敛不自动保证可逐项求导"
-
-    求导需要单独控制导数级数。积分和求导的条件不可混用。
-
-### §5 幂级数：收敛半径与和函数
-
-#### 收敛半径
-
-幂级数是函数项级数中的一种特殊形式：每项由一个固定系数乘以 $x-x_0$ 的整数次幂组成。$x_0$ 是展开中心，$a_n$ 只随下标 $n$ 变化，不随 $x$ 变化。研究收敛性时，仍然先固定 $x$，把它当作数项级数。
-
-例如 $1+(x-2)+(x-2)^2+\cdots$ 的中心是 $2$。令 $t=x-2$ 后就是几何级数，收敛条件 $|t|<1$ 换回为 $1<x<3$。
-
-以 $x_0$ 为中心的幂级数为
+称为交错级数。若
 
 $$
-\sum_{n=0}^{\infty}a_n(x-x_0)^n.
+u_1\ge u_2\ge\cdots,\qquad\lim_{n\to\infty}u_n=0,
 $$
 
-阿贝尔定理的基本结论：若它在 $x_1\ne x_0$ 处收敛，则在 $|x-x_0|<|x_1-x_0|$ 内绝对收敛；若在某点发散，则在距中心更远处也发散。
-
-因此存在收敛半径 $R\in[0,+\infty]$：
-
-- $|x-x_0|<R$：绝对收敛；
-- $|x-x_0|>R$：发散；
-- $|x-x_0|=R$：需要分别代入左右端点判断。
-
-“半径”只给出距离中心多远以内必收敛，不包含端点结论。中心处 $x=x_0$ 只剩常数项 $a_0$，总是收敛；$R=0$ 表示仅中心收敛，$R=+\infty$ 表示所有实数处都收敛。$0<R<\infty$ 时，两个端点 $x_0-R,x_0+R$ 要分别代入原级数检验。
-
-相邻系数比值公式来自完整通项的比值：对固定的 $x\ne x_0$，
+则级数收敛，且其和与余项满足
 
 $$
-\left|\frac{a_{n+1}(x-x_0)^{n+1}}{a_n(x-x_0)^n}\right|
-=\left|\frac{a_{n+1}}{a_n}\right||x-x_0|.
+0\le S\le u_1,\qquad |R_n|\le u_{n+1}.
 $$
 
-它的极限小于 $1$ 时绝对收敛，大于 $1$ 时发散，恰好等于 $1$ 时不能判断；因此端点必须另判。
+!!! warning "提示"
 
-若系数最终非零，且比值极限存在，可用
+    -   **莱布尼茨判别法的两个条件**：$u_n$ 单调不增且 $\lim u_n=0$，缺一不可；仅通项趋于 $0$ 不能保证交错级数收敛。
+
+        ??? example "莱布尼茨判别法"
+            <!-- 待补充 -->
+
+    -   **余项估计只对满足条件的级数**：$|R_n|\le u_{n+1}$ 是在莱布尼茨条件下得到的；对一般交错级数不能直接套用。
+
+        ??? example "交错级数的余项"
+            <!-- 待补充 -->
+
+    -   **收敛不等于绝对收敛**：交错级数可能条件收敛（如 $\sum(-1)^{n-1}/n$）；判断绝对收敛要另看 $\sum u_n$。
+
+        ??? example "条件收敛"
+            <!-- 待补充 -->
+
+    -   **先检查通项是否趋于 $0$**：若 $u_n\not\to0$，交错级数必发散，不必再验证单调性。
+
+        ??? example "通项检验"
+            <!-- 待补充 -->
+
+#### §3.2 绝对收敛级数与条件收敛级数
+
+若 $\sum|u_n|$ 收敛，称 $\sum u_n$ 绝对收敛；若 $\sum u_n$ 收敛而 $\sum|u_n|$ 发散，称其条件收敛。
 
 $$
-R=\lim_{n\to \infty}\left|\frac{a_n}{a_{n+1}}\right|.
+\sum|u_n|\text{ 收敛}\ \Longrightarrow\ \sum u_n\text{ 收敛}.
 $$
 
-更一般地，柯西—阿达马公式为
+若 $\lim |u_{n+1}/u_n|=q$ 或 $\lim\sqrt[n]{|u_n|}=q$，则
 
 $$
-\frac1R=\limsup_{n\to \infty}\sqrt[n]{|a_n|},
+q<1\ \Longrightarrow\ \sum u_n\text{ 绝对收敛},\qquad
+q>1\text{ 或 }q=+\infty\ \Longrightarrow\ \sum u_n\text{ 发散}.
 $$
 
-其中右端为 $0$ 时 $R=+\infty$，右端为 $+\infty$ 时 $R=0$。
+!!! warning "提示"
 
-!!! tip "收敛半径不等于收敛域"
+    -   **绝对收敛强于收敛**：$\sum|u_n|$ 收敛可推出 $\sum u_n$ 收敛；反之不成立，收敛但绝对值级数发散的是条件收敛。
 
-    求收敛域应按“半径 → 开区间 → 两个端点”完成。缺少奇数次或偶数次项时，不要直接对相邻非零系数套用半径公式；可以对完整通项作比值检验，或先代换变量。
+        ??? example "绝对收敛与条件收敛"
+            <!-- 待补充 -->
 
-!!! example "例：同时判断端点和收敛类型"
+    -   **比值、根值判别法判的是绝对收敛**：由 $\lim|u_{n+1}/u_n|=q$ 或 $\lim\sqrt[n]{|u_n|}=q$ 得 $q<1$ 时绝对收敛，$q>1$ 时发散；$q=1$ 不能判定。
 
-    求 $\sum_{n=1}^{\infty}\displaystyle\frac{(x-2)^n}{n3^n}$ 的收敛域。
+        ??? example "用比值法判断绝对收敛"
+            <!-- 待补充 -->
 
-    对绝对值通项作比值检验，极限为 $\displaystyle\frac{|x-2|}{3}$，故 $R=3$，先得到 $-1<x<5$。
+    -   **条件收敛级数不能随意重排**：重排可能改变和，甚至得到不同的和；只有绝对收敛级数才能任意重排。
 
-    - $x=-1$：得到 $\sum \displaystyle\frac{(-1)^n}{n}$，条件收敛。
-    - $x=5$：得到 $\sum \displaystyle\frac{1}{n}$，发散。
+        ??? example "重排级数"
+            <!-- 待补充 -->
 
-    所以收敛域为 $[-1,5)$，其中 $(-1,5)$ 内绝对收敛。
+    -   **判断条件收敛要两步**：先证 $\sum u_n$ 收敛，再证 $\sum|u_n|$ 发散；只证其中一步不够。
 
-!!! example "例：只有偶数次幂时，对完整通项作判断"
+        ??? example "判断条件收敛"
+            <!-- 待补充 -->
 
-    求 $\sum_{n=1}^{\infty}\displaystyle\frac{x^{2n}}{n}$ 的收敛域。
+#### §3.3 绝对收敛级数的性质 \*
 
-    **解：** 对 $x\ne0$，相邻非零项的绝对值之比为 $\displaystyle\frac{|x|^2n}{n+1}\to|x|^2$，故 $|x|<1$ 时收敛；$x=0$ 也收敛。两端 $x=\pm1$ 都得到调和级数，均发散，所以收敛域为 $(-1,1)$。
+若 $\varphi:\mathbb N_+\to\mathbb N_+$ 为一一对应，称 $\sum u_{\varphi(n)}$ 为 $\sum u_n$ 的重排级数。绝对收敛级数的任一重排仍绝对收敛，且
 
-    也可令 $t=x^2$，先研究 $\sum \displaystyle\frac{t^n}{n}$。但最后必须把关于 $t$ 的条件换回 $x$，不能把 $t$ 的收敛半径直接当成关于 $x$ 的结论。
+$$
+\sum_{n=1}^{\infty}u_{\varphi(n)}=\sum_{n=1}^{\infty}u_n.
+$$
 
-#### 幂级数的性质与运算
+若 $\sum u_n$ 条件收敛，则对任意给定实数 $\xi$，存在重排使其和为 $\xi$。
 
-幂级数在收敛区间内部的每个闭子区间上一致收敛；这称为**内闭一致收敛**，不意味着在整个开区间上一致收敛。
+若 $\sum_{n=0}^{\infty}u_n=A$、$\sum_{n=0}^{\infty}v_n=B$ 均绝对收敛，令
 
-在 $|x-x_0|<R$ 内，可以逐项求导和积分：
+$$
+c_n=\sum_{k=0}^nu_kv_{n-k},
+$$
+
+则柯西乘积级数绝对收敛，且
+
+$$
+\sum_{n=0}^{\infty}c_n=AB.
+$$
+
+!!! warning "提示"
+
+    -   **重排保持和不变的前提是绝对收敛**：绝对收敛级数任意重排仍绝对收敛且和不变；条件收敛级数重排可得到任意实数（黎曼定理）。
+
+        ??? example "绝对收敛级数的重排"
+            <!-- 待补充 -->
+
+    -   **柯西乘积要求两个级数都绝对收敛**：只有这样 $\sum c_n=AB$ 才成立；条件收敛时柯西乘积不一定收敛到 $AB$。
+
+        ??? example "柯西乘积"
+            <!-- 待补充 -->
+
+    -   **重排必须是一一对应**：$\varphi:\mathbb N_+\to\mathbb N_+$ 要为双射，不能遗漏或重复项；否则不是重排。
+
+        ??? example "重排的定义"
+            <!-- 待补充 -->
+
+    -   **绝对收敛级数的柯西乘积绝对收敛**：这是比"乘积收敛"更强的结论，可用于证明幂级数乘法的合理性。
+
+        ??? example "柯西乘积的绝对收敛"
+            <!-- 待补充 -->
+
+### §4 函数项级数与一致收敛性 \*
+
+#### §4.1 函数项级数的基本概念
+
+设 $u_n(x)$ 定义在集合 $E$ 上，称
+
+$$
+\sum_{n=1}^{\infty}u_n(x),\qquad x\in E
+$$
+
+为函数项级数，其部分和为 $S_n(x)=\sum_{k=1}^nu_k(x)$。使数项级数 $\sum u_n(x_0)$ 收敛的 $x_0$ 称为收敛点，全部收敛点构成收敛域 $D$。和函数与余项为
+
+$$
+S(x)=\lim_{n\to\infty}S_n(x),\qquad
+R_n(x)=S(x)-S_n(x),\qquad x\in D.
+$$
+
+!!! warning "提示"
+
+    -   **收敛域是逐点定义的**：$D$ 是所有使数项级数 $\sum u_n(x_0)$ 收敛的 $x_0$ 的集合；和函数 $S(x)$ 在 $D$ 上逐点定义。
+
+        ??? example "收敛域"
+            <!-- 待补充 -->
+
+    -   **逐点收敛与一致收敛不同**：逐点收敛只保证每个 $x$ 有自己的 $N$；一致收敛要求 $N$ 与 $x$ 无关。
+
+        ??? example "逐点收敛"
+            <!-- 待补充 -->
+
+    -   **余项依赖 $x$**：$R_n(x)=S(x)-S_n(x)$ 是 $x$ 的函数；逐点收敛只说明对每个固定的 $x$，$R_n(x)\to0$。
+
+        ??? example "函数项级数的余项"
+            <!-- 待补充 -->
+
+    -   **收敛域可能包含端点**：求收敛域时先求收敛区间，再单独判断端点；不要漏掉端点。
+
+        ??? example "收敛域的端点"
+            <!-- 待补充 -->
+
+#### §4.2 函数项级数一致收敛的概念
+
+若对任意 $\varepsilon>0$，存在与 $x$ 无关的正整数 $N$，使当 $n>N$ 时，对一切 $x\in D$ 均有
+
+$$
+|S_n(x)-S(x)|<\varepsilon,
+$$
+
+则称 $\sum u_n(x)$ 在 $D$ 上一致收敛于 $S(x)$。
+
+!!! warning "提示"
+
+    -   **$N$ 与 $x$ 无关**：一致收敛要求存在只依赖于 $\varepsilon$ 的 $N$，使 $n>N$ 时对**一切** $x\in D$ 都有 $|S_n(x)-S(x)|<\varepsilon$。
+
+        ??? example "一致收敛的定义"
+            <!-- 待补充 -->
+
+    -   **一致收敛强于逐点收敛**：一致收敛可推出逐点收敛；逐点收敛不能推出一致收敛（如 $x^n$ 在 $[0,1]$ 上）。
+
+        ??? example "一致收敛与逐点收敛"
+            <!-- 待补充 -->
+
+    -   **上确界判别法**：$\sum u_n$ 在 $D$ 上一致收敛 $\iff$ $\lim_{n\to\infty}\sup_{x\in D}|S(x)-S_n(x)|=0$；需要先知道和函数。
+
+        ??? example "上确界判别法"
+            <!-- 待补充 -->
+
+    -   **柯西准则中的 $N$ 与 $x$ 无关**：$\left|\sum_{k=n+1}^{n+p}u_k(x)\right|<\varepsilon$ 要对一切 $x\in D$、$p$ 同时成立。
+
+        ??? example "一致收敛的柯西准则"
+            <!-- 待补充 -->
+
+#### §4.3 函数项级数一致收敛性的判别法
+
+一致收敛的柯西准则为
+
+$$
+\forall\varepsilon>0,\ \exists N,\ \forall n>N,\ \forall p\in\mathbb N_+,\ \forall x\in D:
+\left|\sum_{k=n+1}^{n+p}u_k(x)\right|<\varepsilon.
+$$
+
+对已有和函数的级数，
+
+$$
+\sum u_n(x)\text{ 在 }D\text{ 上一致收敛}
+\ \Longleftrightarrow\quad
+\lim_{n\to\infty}\sup_{x\in D}|S(x)-S_n(x)|=0.
+$$
+
+魏尔斯特拉斯判别法：若对所有 $x\in D$，有 $|u_n(x)|\le M_n$，且正项级数 $\sum M_n$ 收敛，则 $\sum u_n(x)$ 在 $D$ 上一致收敛。
+
+!!! warning "提示"
+
+    -   **魏尔斯特拉斯判别法是充分条件**：若 $|u_n(x)|\le M_n$ 且 $\sum M_n$ 收敛，则 $\sum u_n(x)$ 一致收敛；反之不成立。
+
+        ??? example "魏尔斯特拉斯判别法"
+            <!-- 待补充 -->
+
+    -   **控制级数要与 $x$ 无关**：$M_n$ 必须是常数，不能依赖 $x$；否则不能保证一致收敛。
+
+        ??? example "控制级数的选择"
+            <!-- 待补充 -->
+
+    -   **柯西准则可用于否定一致收敛**：若能找到 $x$ 和 $p$ 使部分和超过 $\varepsilon$，则可判定不一致收敛。
+
+        ??? example "用柯西准则否定一致收敛"
+            <!-- 待补充 -->
+
+    -   **先确定收敛域再谈一致收敛**：一致收敛是在某个集合 $D$ 上说的；在不同区间上结论可能不同。
+
+        ??? example "一致收敛的区间"
+            <!-- 待补充 -->
+
+#### §4.4 一致收敛级数的性质
+
+若各 $u_n$ 在区间 $I$ 上连续，且级数在 $I$ 上一致收敛于 $S$，则 $S$ 连续，并有
+
+$$
+\lim_{x\to x_0}\sum_{n=1}^{\infty}u_n(x)
+=\sum_{n=1}^{\infty}\lim_{x\to x_0}u_n(x).
+$$
+
+在同样条件下，任取 $a,b\in I$，有逐项积分公式
+
+$$
+\int_a^b\left[\sum_{n=1}^{\infty}u_n(x)\right]\mathrm dx
+=\sum_{n=1}^{\infty}\int_a^bu_n(x)\,\mathrm dx.
+$$
+
+若各 $u_n$ 在 $I$ 上有连续导数，$\sum u_n$ 在 $I$ 上收敛，且 $\sum u_n'$ 在 $I$ 上一致收敛，则
+
+$$
+S'(x)=\left[\sum_{n=1}^{\infty}u_n(x)\right]'
+=\sum_{n=1}^{\infty}u_n'(x).
+$$
+
+!!! warning "提示"
+
+    -   **连续函数的和**：各项连续且级数一致收敛时，和函数连续，并可逐项求极限。
+
+        ??? example "和函数的连续性"
+            <!-- 待补充 -->
+
+    -   **逐项积分要求一致收敛**：仅有逐点收敛不够；一致收敛保证积分与求和可交换。
+
+        ??? example "逐项积分"
+            <!-- 待补充 -->
+
+    -   **逐项求导的条件更强**：需要 $\sum u_n$ 收敛、$\sum u_n'$ 一致收敛，且各项有连续导数；缺一不可。
+
+        ??? example "逐项求导"
+            <!-- 待补充 -->
+
+    -   **积分区间要在收敛区间内**：逐项积分对 $I$ 内任意 $a,b$ 成立；超出 $I$ 不能保证。
+
+        ??? example "逐项积分的区间"
+            <!-- 待补充 -->
+
+### §5 幂级数及其和函数
+
+#### §5.1 幂级数及其收敛半径
+
+形如
+
+$$
+\sum_{n=0}^{\infty}a_n(x-x_0)^n
+$$
+
+的函数项级数称为幂级数，$a_n$ 为常数，$x_0$ 为展开中心。
+
+阿贝尔定理：若 $\sum a_nx^n$ 在 $x=x_1\ne0$ 收敛，则在 $|x|<|x_1|$ 内绝对收敛；若在 $x=x_1$ 发散，则在 $|x|>|x_1|$ 处发散。
+
+幂级数存在收敛半径 $R\in[0,+\infty]$，满足
+
+$$
+|x-x_0|<R\ \Longrightarrow\ \text{绝对收敛},\qquad
+|x-x_0|>R\ \Longrightarrow\ \text{发散}.
+$$
+
+$(x_0-R,x_0+R)$ 称为收敛区间，收敛域由收敛区间及收敛的边界点构成。
+
+当下列极限存在时，收敛半径为
+
+$$
+R=\lim_{n\to\infty}\left|\frac{a_n}{a_{n+1}}\right|,
+\qquad\text{或}\qquad
+R=\lim_{n\to\infty}\frac1{\sqrt[n]{|a_n|}}.
+$$
+
+!!! warning "提示"
+
+    -   **阿贝尔定理的方向**：在 $x_1$ 收敛则 $|x|<|x_1|$ 内绝对收敛；在 $x_1$ 发散则 $|x|>|x_1|$ 处发散；边界点要单独判断。
+
+        ??? example "阿贝尔定理"
+            <!-- 待补充 -->
+
+    -   **收敛半径可能为 $0$ 或 $+\infty$**：$R=0$ 时只在中心收敛，$R=+\infty$ 时在全实轴收敛；不要把 $R$ 当作一定有限。
+
+        ??? example "收敛半径的特殊值"
+            <!-- 待补充 -->
+
+    -   **收敛区间与收敛域不同**：收敛区间是 $(x_0-R,x_0+R)$，收敛域还要加上使级数收敛的端点。
+
+        ??? example "收敛域"
+            <!-- 待补充 -->
+
+    -   **收敛半径公式的极限要存在**：$R=\lim|a_n/a_{n+1}|$ 或 $R=1/\lim\sqrt[n]{|a_n|}$ 在极限存在时使用；否则用根值或定义判断。
+
+        ??? example "求收敛半径"
+            <!-- 待补充 -->
+
+#### §5.2 幂级数的性质及运算
+
+设 $S(x)=\sum_{n=0}^{\infty}a_n(x-x_0)^n$ 的收敛半径为 $R>0$。在收敛区间内，$S$ 连续，可逐项求导与积分，所得幂级数的收敛半径仍为 $R$：
 
 $$
 S'(x)=\sum_{n=1}^{\infty}na_n(x-x_0)^{n-1},
@@ -3677,797 +6230,1295 @@ $$
 
 $$
 \int_{x_0}^{x}S(t)\,\mathrm dt
-=\sum_{n=0}^{\infty}\frac{a_n}{n+1}(x-x_0)^{n+1}.
-$$
-
-求导、积分后的幂级数具有相同的收敛半径，但**端点敛散性可能变化**。收敛区间内部可以任意有限次逐项求导，且
-
-$$
-a_n=\frac{S^{(n)}(x_0)}{n!},
-$$
-
-说明给定中心的幂级数展开系数是唯一的。
-
-例如 $\sum_{n=1}^{\infty}\displaystyle\frac{x^n}{n}$ 在 $x=-1$ 条件收敛、在 $x=1$ 发散；逐项求导后成为 $\sum_{n=1}^{\infty}x^{n-1}$，两端都发散。两级数的收敛半径同为 $1$，收敛域却不同。
-
-两个同中心幂级数可以在共同收敛区间内部相加或作柯西乘积；所得级数的实际半径可能因抵消而扩大，不能一概说等于原半径的较小值。
-
-若 $0<R<\infty$，且原幂级数在某个端点收敛，则其和函数从区间内部趋向该端点时，极限等于端点级数的和。这一端点连续性结论常称为阿贝尔第二定理。
-
-#### 求和函数：从几何级数出发
-
-求和函数常用的方法是把所求级数变换为已知级数，再对相应的函数作同样运算。系数带 $n$ 时可考虑求导，系数带 $\displaystyle\frac{1}{n}$ 时可考虑积分，幂次不一致时可先乘一个 $x$ 或作代换。每一步都应注明所在的收敛区间；通过积分恢复函数时，还要确定积分常数。
-
-由 $\sum_{n=0}^{\infty}x^n=\displaystyle\frac{1}{1-x}$（$\lvert x\rvert<1$），逐项求导、乘以 $x$ 或积分得到
-
-$$
-\sum_{n=1}^{\infty}nx^{n-1}=\frac1{(1-x)^2},
-\qquad
-\sum_{n=1}^{\infty}nx^n=\frac{x}{(1-x)^2},
+=\sum_{n=0}^{\infty}\frac{a_n}{n+1}(x-x_0)^{n+1},
+\qquad |x-x_0|<R.
 $$
 
 $$
-\sum_{n=1}^{\infty}\frac{x^n}{n}=-\ln(1-x),\qquad |x|<1.
+a_n=\frac{S^{(n)}(x_0)}{n!}.
 $$
 
-以系数中的 $\displaystyle\frac{1}{n}$ 为例，在 $|x|<1$ 内，将几何级数从 $0$ 到 $x$ 逐项积分：
+若 $A(x)=\sum a_nx^n$、$B(x)=\sum b_nx^n$ 的收敛半径分别为 $R_a,R_b$，$R=\min\{R_a,R_b\}$，则在 $|x|<R$ 内，
 
 $$
-\int_0^x\frac1{1-t}\,\mathrm dt
-=\sum_{n=0}^{\infty}\int_0^x t^n\,\mathrm dt
-=\sum_{n=0}^{\infty}\frac{x^{n+1}}{n+1}.
-$$
-
-左端为 $-\ln(1-x)$；右端令 $k=n+1$，就是 $\sum_{k=1}^{\infty}\displaystyle\frac{x^k}{k}$。取下限为 $0$，既符合幂级数的积分性质，又自动确定了常数。负的 $x$ 也适用，因为 $x$ 与 $0$ 之间的闭区间仍在 $(-1,1)$ 内。
-
-!!! example "例：用积分求和，再回到原级数"
-
-    设 $S(x)=\sum_{n=1}^{\infty}\displaystyle\frac{x^n}{n(n+1)}$。利用 $\displaystyle\frac{1}{n(n+1)}=\frac{1}{n}-\frac{1}{n+1}$，有
-
-    $$
-    \begin{aligned}
-    S(x)
-    &=-\ln(1-x)-\frac{-\ln(1-x)-x}{x}\\
-    &=1+\frac{1-x}{x}\ln(1-x),\qquad 0<|x|<1.
-    \end{aligned}
-    $$
-
-    $x=0$ 处由原级数得 $S(0)=0$，也等于上式的极限。
-
-    两端点均绝对收敛。利用端点连续性，$S(1)=1$、$S(-1)=1-2\ln2$。不能在没有检验收敛性的情况下直接把端点代入区间内部的推导。
-
-### §6 函数的幂级数展开
-
-#### 泰勒级数与余项
-
-函数在 $x_0$ 处的形式泰勒级数为
-
-$$
-\sum_{n=0}^{\infty}\frac{f^{(n)}(x_0)}{n!}(x-x_0)^n.
-$$
-
-$x_0=0$ 时称为麦克劳林级数。泰勒公式写成
-
-$$
-f(x)=\sum_{n=0}^{N}\frac{f^{(n)}(x_0)}{n!}(x-x_0)^n+R_N(x).
-$$
-
-当区间内有足够阶连续导数时，拉格朗日余项为
-
-$$
-R_N(x)=\frac{f^{(N+1)}(\xi)}{(N+1)!}(x-x_0)^{N+1},
-$$
-
-其中 $\xi$ 介于 $x_0$ 与 $x$ 之间。函数等于其泰勒级数的关键条件是 **$R_N(x)\to 0$**。
-
-这里要区分两个极限过程：第三章的有限阶泰勒近似通常固定阶数 $N$，让 $x\to x_0$；把函数展开成无穷级数，则固定一个 $x$，让 $N\to\infty$。前者的局部误差结论不能直接代替后者的余项检验。
-
-例如 $e^x$ 的各阶导数仍是 $e^x$，在 $0$ 处都为 $1$，所以候选展开为 $\sum \displaystyle\frac{x^n}{n!}$。对每个固定的实数 $x$，
-
-$$
-|R_N(x)|\le e^{|x|}\frac{|x|^{N+1}}{(N+1)!}\to0,
-$$
-
-因为右端中相邻幂阶项的比为 $\displaystyle\frac{|x|}{N+2}\to0$。因此这一展开确实等于 $e^x$，而不仅是形式上写出的级数。
-
-!!! warning "无穷次可导不等于可以展开成自身的泰勒级数"
-
-    例如 $f(x)=e^{-\frac{1}{x^2}}$（$x\ne 0$）、$f(0)=0$ 在零点无穷次可导，且所有阶导数均为零。其零点泰勒级数恒为零，却在任何零点邻域内都不等于原函数。
-
-#### 常用麦克劳林展开
-
-| 函数 | 展开式 | 实数范围 |
-| --- | --- | --- |
-| $\dfrac1{1-x}$ | $\displaystyle\sum_{n=0}^{\infty}x^n$ | $\lvert x\rvert<1$ |
-| $e^x$ | $\displaystyle\sum_{n=0}^{\infty}\frac{x^n}{n!}$ | $x\in \mathbb R$ |
-| $\sin x$ | $\displaystyle\sum_{n=0}^{\infty}(-1)^n\frac{x^{2n+1}}{(2n+1)!}$ | $x\in \mathbb R$ |
-| $\cos x$ | $\displaystyle\sum_{n=0}^{\infty}(-1)^n\frac{x^{2n}}{(2n)!}$ | $x\in \mathbb R$ |
-| $\ln(1+x)$ | $\displaystyle\sum_{n=1}^{\infty}(-1)^{n-1}\frac{x^n}{n}$ | $-1<x\le 1$ |
-| $\arctan x$ | $\displaystyle\sum_{n=0}^{\infty}(-1)^n\frac{x^{2n+1}}{2n+1}$ | $-1\le x\le 1$ |
-| $(1+x)^\alpha$ | $\displaystyle\sum_{n=0}^{\infty}\binom\alpha n x^n$ | 一般先取 $\lvert x\rvert<1$；端点另判 |
-
-这里 $\alpha\in \mathbb R$，且
-
-$$
-\binom\alpha0=1,\qquad
-\binom\alpha n=\frac{\alpha(\alpha-1)\cdots (\alpha-n+1)}{n!}.
-$$
-
-若 $\alpha$ 为非负整数，二项式展开终止，成为对所有实数成立的多项式等式。若 $\alpha$ 不是非负整数，则 $x=1$ 在 $\alpha>-1$ 时收敛，$x=-1$ 在 $\alpha>0$ 时收敛；其余相应端点发散。
-
-上表中 $\ln(1+x)$ 在 $x=1$ 条件收敛，$\arctan x$ 在两个端点都条件收敛。
-
-#### 间接展开方法
-
-直接计算高阶导数往往繁琐，可用已有展开式进行代换、四则运算、求导或积分。每次代换都要同步变换收敛条件。
-
-!!! example "例：代换并逐项积分"
-
-    先由几何级数得到
-
-    $$
-    \frac1{1+t^2}=\sum_{n=0}^{\infty}(-1)^nt^{2n},\qquad |t|<1.
-    $$
-
-    从 $0$ 到 $x$ 积分：
-
-    $$
-    \arctan x=\sum_{n=0}^{\infty}(-1)^n\frac{x^{2n+1}}{2n+1},\qquad |x|<1.
-    $$
-
-    再用莱布尼茨判别法与端点连续性，将等式延伸到 $x=\pm 1$。
-
-!!! example "例：在非零中心展开"
-
-    在 $x_0=1$ 展开 $\ln x$，令 $h=x-1$，则
-
-    $$
-    \ln x=\ln(1+h)
-    =\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}n(x-1)^n.
-    $$
-
-    由 $-1<h\le 1$ 得 $0<x\le 2$。展开中心为 $1$，收敛半径为 $1$；不能把它当作以零点为中心的展开。
-
-### §7 幂级数的应用（\*）
-
-教材第 289 页起列为选学。近似计算可在主线掌握后补充；利用展开求极限、求和，以及逐项积分的技能仍与核心内容密切相关。
-
-#### 近似公式与误差控制
-
-在零点附近，常用
-
-$$
-e^x=1+x+\frac{x^2}{2}+O(x^3),\qquad
-\sin x=x-\frac{x^3}{6}+O(x^5),
+\alpha A(x)+\beta B(x)=\sum_{n=0}^{\infty}(\alpha a_n+\beta b_n)x^n,
 $$
 
 $$
-\ln(1+x)=x-\frac{x^2}{2}+O(x^3),\qquad
-(1+x)^\alpha=1+\alpha x+\frac{\alpha(\alpha-1)}2x^2+O(x^3).
+A(x)B(x)=\sum_{n=0}^{\infty}c_nx^n,
+\qquad c_n=\sum_{k=0}^na_kb_{n-k}.
 $$
 
-这里 $O(x^k)$ 描述 $x\to 0$ 时的误差阶；实际数值计算仍应给出余项上界。
+!!! warning "提示"
 
-??? example "例：计算 sin 0.1，并保证误差"
+    -   **逐项求导、积分后半径不变**：在收敛区间内操作后收敛半径仍为 $R$，但端点的敛散性可能改变。
 
-    取 $\sin0.1\approx 0.1-\displaystyle\frac{0.1^3}{6}=0.099833333\ldots$。
+        ??? example "逐项求导与积分"
+            <!-- 待补充 -->
 
-    由交错级数余项估计，截断误差不超过
+    -   **端点处不能随意逐项求导**：幂级数在收敛区间内部可逐项求导、积分；端点处需要单独讨论。
 
-    $$
-    \frac{0.1^5}{5!}=8.333\ldots \times 10^{-8}.
-    $$
+        ??? example "端点处的性质"
+            <!-- 待补充 -->
 
-    若另外将结果四舍五入，还应将舍入误差计入总误差。
+    -   **系数公式的适用范围**：$a_n=\dfrac{S^{(n)}(x_0)}{n!}$ 要求 $S$ 在 $x_0$ 的邻域内能展开为幂级数；不能对任意函数直接使用。
 
-#### 积分计算
+        ??? example "系数与导数"
+            <!-- 待补充 -->
 
-有些函数没有初等原函数，但其幂级数可以逐项积分。
+    -   **乘积的收敛半径至少为 $\min\{R_a,R_b\}$**：可能更大；柯西乘积的系数 $c_n=\sum a_kb_{n-k}$ 不要漏项。
 
-??? example "例：用级数近似非初等积分"
+        ??? example "幂级数的乘法"
+            <!-- 待补充 -->
 
-    由于 $e^{-x^2}=\sum_{n=0}^{\infty}(-1)^n\displaystyle\frac{x^{2n}}{n!}$ 在 $[0,1]$ 上一致收敛，
+#### §5.3 幂级数的和函数
 
-    $$
-    \int_0^1e^{-x^2}\,\mathrm dx
-    =\sum_{n=0}^{\infty}\frac{(-1)^n}{n!(2n+1)}.
-    $$
-
-    取至 $n=5$ 得
-
-    $$
-    1-\frac13+\frac1{10}-\frac1{42}+\frac1{216}-\frac1{1320}
-    \approx 0.7467291967.
-    $$
-
-    截断误差不超过首个舍去项 $\displaystyle\frac{1}{6!\cdot 13}\approx 1.07\times 10^{-4}$。
-
-!!! example "例：用展开求极限"
-
-    处理极限时，展开到**抵消之后的首个非零项**即可。例如
-
-    $$
-    \lim_{x\to 0}\frac{e^x-1-x}{x^2}
-    =\lim_{x\to 0}\frac{\dfrac{x^2}{2}+O(x^3)}{x^2}=\frac12.
-    $$
-
-### §8 傅里叶级数：用三角函数展开
-
-#### 正交性与傅里叶系数
-
-幂级数按 $1,x,x^2,\ldots$ 展开函数；傅里叶级数则使用常数、正弦和余弦。对周期为 $2L$ 的函数，选取 $\cos(\displaystyle\frac{n\pi x}{L})$、$\sin(\displaystyle\frac{n\pi x}{L})$，是因为这些函数平移 $2L$ 后都保持不变。
-
-傅里叶展开要分别解决两个问题：怎样由给定函数计算系数，以及这些系数组成的级数收敛到什么。下面先定义系数，再说明收敛条件，不能把写出系数当作已经证明级数处处等于原函数。
-
-设 $f$ 是周期为 $2L$ 的实值函数，在 $[-L,L]$ 上可积。考虑三角级数
+幂级数在收敛域内的和 $S(x)$ 称为其和函数。下列和函数公式成立：
 
 $$
-f(x)\sim \frac{a_0}{2}
-+\sum_{n=1}^{\infty}\left(a_n\cos\frac{n\pi x}{L}
-+b_n\sin\frac{n\pi x}{L}\right).
-$$
-
-符号 $\sim$ 在这里表示“对应的傅里叶级数”，不是渐近等价，也不预先断言处处等于 $f$。
-
-系数为
-
-$$
-a_0=\frac1L\int_{-L}^{L}f(x)\,\mathrm dx,
+\sum_{n=0}^{\infty}x^n=\frac1{1-x},\qquad |x|<1,
 $$
 
 $$
-a_n=\frac1L\int_{-L}^{L}f(x)\cos\frac{n\pi x}{L}\,\mathrm dx,
-\qquad
-b_n=\frac1L\int_{-L}^{L}f(x)\sin\frac{n\pi x}{L}\,\mathrm dx.
-$$
-
-这些公式来自三角函数的正交性。对正整数 $m,n$，
-
-$$
-\int_{-L}^{L}\cos\frac{m\pi x}{L}\cos\frac{n\pi x}{L}\,\mathrm dx
-=\begin{cases}L,&m=n,\\0,&m\ne n,\end{cases}
-$$
-
-正弦与正弦有同样的关系，正弦与余弦的积分为零。常数函数的平方积分为 $2L$，因此常数项是 $\displaystyle\frac{a_0}{2}$。
-
-正交性在计算中用于分离系数。先看有限三角和：两边乘以 $\cos(\displaystyle\frac{m\pi x}{L})$ 后积分，不同频率的乘积积分为零，正弦项与常数项也为零，只留下 $La_m$。所以对 $f$ 作相同积分，再除以 $L$，就得到上面的 $a_m$。求 $b_m$ 时改乘正弦即可。
-
-若只对有限三角和本身积分，所有正弦、余弦项的积分都为零，仅余常数项乘区间长度，即 $(\displaystyle\frac{a_0}{2})\cdot2L=La_0$。这也说明 $\displaystyle\frac{a_0}{2}$ 是函数在一个周期上的平均值。无穷级数的逐项积分仍需要条件；本节的系数公式可以直接作为傅里叶系数的定义。
-
-周期为 $2\pi$ 时取 $L=\pi$，便得到通常的 $\cos nx$、$\sin nx$ 形式。
-
-#### 收敛到哪里：先看周期延拓
-
-一组常用的狄利克雷充分条件是：在一个周期内，函数只有有限个第一类间断点，并且可划分成有限个单调区间。此时傅里叶级数在每点收敛到
-
-$$
-\frac{f(x-0)+f(x+0)}2.
-$$
-
-- 在连续点，级数和等于 $f(x)$。
-- 在跳跃点，级数和等于左右极限的平均值，与人为指定的单点函数值无关。
-- 在周期边界，要用**周期延拓后**的左右极限；例如 $x=L$ 处取 $\displaystyle\frac{f(L-0)+f(-L+0)}{2}$。
-
-!!! warning "傅里叶级数不是泰勒级数"
-
-    泰勒系数由一个点的各阶导数决定；傅里叶系数由整个周期上的积分决定。傅里叶展开允许跳跃间断，且在跳跃点通常不等于指定的函数值。
-
-#### 奇偶性与周期函数展开
-
-| 函数性质 | 为零的系数 | 剩余系数的简化 |
-| --- | --- | --- |
-| $f$ 为偶函数 | $b_n=0$ | $a_n=\dfrac2L\displaystyle\int_0^Lf(x)\cos\frac{n\pi x}{L}\,\mathrm dx$，含 $n=0$ |
-| $f$ 为奇函数 | $a_0=a_n=0$ | $b_n=\dfrac2L\displaystyle\int_0^Lf(x)\sin\frac{n\pi x}{L}\,\mathrm dx$ |
-
-!!! example "例：锯齿波 f(x)=x 的展开"
-
-    令 $f(x)=x$（$-\pi<x<\pi$），再作 $2\pi$ 周期延拓。函数为奇函数，因此只需计算
-
-    $$
-    \begin{aligned}
-    b_n&=\frac2\pi\int_0^\pi x\sin nx\,\mathrm dx\\
-    &=\frac2\pi\left[-\frac{x\cos nx}{n}\right]_0^\pi
-    +\frac{2}{n\pi}\int_0^\pi\cos nx\,\mathrm dx\\
-    &=-\frac{2(-1)^n}{n}=\frac{2(-1)^{n+1}}n.
-    \end{aligned}
-    $$
-
-    故
-
-    $$
-    x=2\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}n\sin nx,
-    \qquad -\pi<x<\pi.
-    $$
-
-    在 $x=\pm \pi$ 处，级数和为 $0$，等于周期延拓左右极限的平均值。代入 $x=\pi/2$ 可得
-
-    $$
-    1-\frac13+\frac15-\frac17+\cdots=\frac\pi4.
-    $$
-
-!!! info "吉布斯现象"
-
-    在跳跃点附近，有限部分和常出现振荡和过冲。增加项数会使明显振荡的区域变窄，但最大过冲相对跳跃高度的比例不会趋于零；不能据此期待在跳跃点附近一致逼近。
-
-#### 有限区间上的展开：正弦级数与余弦级数
-
-对于只给定在 $(0,L)$ 上的函数，负半区间的函数值还没有规定。可以先延拓到 $(-L,L)$，再作 $2L$ 周期延拓。常用的两种规定是
-
-$$
-F_{\mathrm{odd}}(x)=
-\begin{cases}f(x),&0<x<L,\\-f(-x),&-L<x<0,\end{cases}
-\qquad
-F_{\mathrm{even}}(x)=
-\begin{cases}f(x),&0<x<L,\\f(-x),&-L<x<0.\end{cases}
-$$
-
-前者使延拓函数成为奇函数，后者使其成为偶函数，因而分别只保留正弦项或余弦项。$0,\pm L$ 处的指定值不影响系数积分；级数在这些点的和仍由延拓后的左右极限决定。
-
-**奇延拓**得到正弦级数：
-
-$$
-f(x)\sim \sum_{n=1}^{\infty}b_n\sin\frac{n\pi x}{L},
-\qquad
-b_n=\frac2L\int_0^Lf(x)\sin\frac{n\pi x}{L}\,\mathrm dx.
-$$
-
-**偶延拓**得到余弦级数：
-
-$$
-f(x)\sim \frac{a_0}{2}+\sum_{n=1}^{\infty}a_n\cos\frac{n\pi x}{L},
-\qquad
-a_n=\frac2L\int_0^Lf(x)\cos\frac{n\pi x}{L}\,\mathrm dx,
-\quad n\ge 0.
-$$
-
-同一函数在开区间内可以有这两种展开，因为采用了不同的延拓。正弦级数在 $x=0,L$ 逐项均为零；端点是否等于原函数值必须另看延拓。
-
-!!! example "例：常数函数的半区间展开"
-
-    设 $f(x)=1$，$0<x<L$。奇延拓时
-
-    $$
-    b_n=\frac{2[1-(-1)^n]}{n\pi},
-    $$
-
-    因而
-
-    $$
-    1=\frac4\pi\sum_{k=0}^{\infty}\frac1{2k+1}
-    \sin\frac{(2k+1)\pi x}{L},\qquad 0<x<L.
-    $$
-
-    两端点级数和为零。偶延拓则仍是常数函数，只有 $a_0=2$，其余系数全为零。
-
-若函数给定在任意有限区间 $(a,b)$，也可直接以 $b-a$ 为周期延拓；这与半区间奇、偶延拓采用的周期不同，写系数前应先确定周期和基函数。
-
-#### 复数形式（\*）
-
-利用欧拉公式，实数形式可以改写为
-
-$$
-f(x)\sim \sum_{n=-\infty}^{\infty}c_ne^{i\frac{n\pi x}{L}},
-\qquad
-c_n=\frac1{2L}\int_{-L}^{L}f(x)e^{-i\frac{n\pi x}{L}}\,\mathrm dx.
-$$
-
-这里级数按对称部分和 $\sum_{n=-N}^{N}$ 理解，且
-
-$$
-c_0=\frac{a_0}{2},\qquad
-c_n=\frac{a_n-ib_n}{2},\qquad
-c_{-n}=\frac{a_n+ib_n}{2}\quad (n\ge 1).
-$$
-
-当 $f$ 为实值函数时，$c_{-n}=\overline{c_n}$。
-
-#### 矩形区域上的二元展开（\*）
-
-在矩形 $(-L,L)\times (-H,H)$ 上，对两个变量分别使用傅里叶基函数。复数形式为
-
-$$
-f(x,y)\sim \sum_{m,n\in \mathbb Z}c_{mn}
-e^{i(\frac{m\pi x}{L}+\frac{n\pi y}{H})},
+\sum_{n=1}^{\infty}\frac{x^n}{n}=-\ln(1-x),\qquad -1\le x<1,
 $$
 
 $$
-c_{mn}=\frac1{4LH}\int_{-L}^{L}\int_{-H}^{H}
-f(x,y)e^{-i(\frac{m\pi x}{L}+\frac{n\pi y}{H})}\,\mathrm dy\,\mathrm dx.
+\sum_{n=1}^{\infty}nx^{n-1}=\frac1{(1-x)^2},\qquad |x|<1.
 $$
 
-部分和可取 $|m|\le M$、$|n|\le N$ 的矩形截断。若只在 $(0,L)\times (0,H)$ 给定函数，并对两个变量均作奇延拓，则得到双重正弦展开
+!!! warning "提示"
+
+    -   **公式的成立范围要记准**：$\displaystyle\sum_{n=0}^{\infty}x^n=\frac1{1-x}$（$|x|<1$）；$\displaystyle\sum_{n=1}^{\infty}\frac{x^n}{n}=-\ln(1-x)$（$-1\le x<1$）。
+
+        ??? example "和函数公式"
+            <!-- 待补充 -->
+
+    -   **下标起点影响首项**：从 $n=0$ 与从 $n=1$ 开始的和函数不同，使用公式前先对齐下标。
+
+        ??? example "下标与首项"
+            <!-- 待补充 -->
+
+    -   **可用逐项求导、积分构造和函数**：但要注意操作后的收敛域和端点变化。
+
+        ??? example "构造和函数"
+            <!-- 待补充 -->
+
+    -   **和函数在收敛域内连续**：端点处要单独判断；不能把收敛区间内的公式直接外推到端点。
+
+        ??? example "和函数的连续性"
+            <!-- 待补充 -->
+
+### §6 函数展成幂级数
+
+#### §6.1 泰勒级数
+
+若 $f$ 在 $x_0$ 的邻域内具有任意阶导数，则
 
 $$
-f(x,y)\sim \sum_{m=1}^{\infty}\sum_{n=1}^{\infty}
-B_{mn}\sin\frac{m\pi x}{L}\sin\frac{n\pi y}{H},
+\sum_{n=0}^{\infty}\frac{f^{(n)}(x_0)}{n!}(x-x_0)^n
+$$
+
+称为 $f$ 在 $x_0$ 处的泰勒级数。$x_0=0$ 时称为麦克劳林级数。
+
+若该级数在 $|x-x_0|<R$ 内收敛，则它等于 $f(x)$ 的充要条件为泰勒余项趋于零：
+
+$$
+f(x)=\sum_{n=0}^{\infty}\frac{f^{(n)}(x_0)}{n!}(x-x_0)^n
+\ \Longleftrightarrow\quad
+\lim_{n\to\infty}R_n(x)=0,
 $$
 
 $$
-B_{mn}=\frac4{LH}\int_0^L\int_0^H
-f(x,y)\sin\frac{m\pi x}{L}\sin\frac{n\pi y}{H}\,\mathrm dy\,\mathrm dx.
+R_n(x)=\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_0)^{n+1},
 $$
 
-核心是**基函数取乘积，系数作二重积分**。例如 $f(x,y)=g(x)h(y)$ 时，$B_{mn}$ 等于两个一维正弦系数的乘积；相应矩形部分和也等于两个一维部分和的乘积。
+其中 $\xi$ 位于 $x_0$ 与 $x$ 之间。
 
-这些公式首先定义展开系数。二元级数的收敛与换序需要额外条件，不能直接照搬一维逐点收敛定理。对连续的双周期函数，若其系数满足 $\sum_{m,n}|c_{mn}|<\infty$，则展开绝对且一致收敛到该函数；例如，无穷次连续可微的双周期函数满足这一条件；此处要求周期延拓后也保持光滑。有关系数衰减与收敛的补充说明，见 [MIT 18.117 讲义第 4 节](https://math.mit.edu/~vwg/classnotes-spring05.pdf)。
+!!! warning "提示"
 
-### 复习：判别步骤与易错点
+    -   **泰勒级数收敛不一定等于 $f(x)$**：需要余项 $R_n(x)\to0$（或 $f$ 在展开点解析）；仅算出级数并验证收敛还不够。
 
-#### 按题型选择入口
+        ??? example "泰勒级数与函数"
+            <!-- 待补充 -->
 
-1. **数项级数**：先看通项是否趋于零，再判断正项、交错或一般变号；区分“收敛”和“绝对收敛”。
-2. **正项级数**：先找几何级数、$p$ 级数等比较对象；阶乘用比值法，$n$ 次幂用根值法，含对数时考虑积分法。
-3. **函数项级数**：先确定讨论集合；一致收敛要找与 $x$ 无关的尾和或余项控制。
-4. **幂级数**：求半径，检查端点，再写收敛域；求和时优先从几何级数通过代换、求导、积分得到。
-5. **泰勒展开**：确定中心，选直接或间接展开，写出有效范围；数值近似附上余项估计。
-6. **傅里叶展开**：确定周期与延拓，检查奇偶性，计算系数，最后说明连续点、跳跃点和端点的级数和。
+    -   **余项中的 $\xi$ 依赖 $x,n$**：拉格朗日余项不能把 $\xi$ 当作固定点；估计误差时要取上界。
 
-#### 易错结论对照
+        ??? example "泰勒余项"
+            <!-- 待补充 -->
 
-| 容易误用的说法 | 正确判断 |
-| --- | --- |
-| 通项趋于零，所以级数收敛 | 通项趋于零只是必要条件 |
-| 比值或根值极限为 $1$，所以发散 | 此时判别法失效，需要换方法 |
-| 交错且通项趋于零，所以收敛 | 应检查莱布尼茨判别法的单调条件，或另用其他方法 |
-| 原级数收敛，所以绝对值级数也收敛 | 条件收敛就是反例 |
-| 逐点收敛，所以可以逐项积分 | 应核查一致收敛或其他可交换积分的条件 |
-| 幂级数在整个收敛区间一致收敛 | 一般先保证内闭一致收敛 |
-| 求导后半径不变，所以收敛域不变 | 端点敛散性可能变化 |
-| 无穷次可导，所以等于泰勒级数 | 还需泰勒余项趋于零 |
-| 傅里叶级数在所有点都等于函数值 | 跳跃处取周期延拓左右极限的平均值 |
+    -   **收敛半径由奇点决定**：泰勒级数的收敛半径受复平面上的奇点限制，可能小于函数定义域。
 
-### 本章自测
+        ??? example "收敛半径"
+            <!-- 待补充 -->
 
-!!! example "自测 11"
+    -   **麦克劳林级数是 $x_0=0$ 的特例**：一般泰勒级数以 $x_0$ 为中心，不要混用系数中的 $x_0$。
 
-    1. 判断 $\sum_{n=1}^{\infty}\displaystyle\frac{n}{n^3+1}$ 的敛散性。
-    2. 判断 $\sum_{n=1}^{\infty}\displaystyle\frac{(-1)^{n-1}}{\sqrt n}$ 是绝对收敛、条件收敛还是发散。
-    3. 求 $\sum_{n=1}^{\infty}\displaystyle\frac{x^n}{n^2}$ 的收敛域，并判断它在 $[-1,1]$ 上是否一致收敛（\*）。
-    4. 求 $\sum_{n=1}^{\infty}nx^n$ 的和函数与收敛域。
-    5. 在 $x=1$ 处将 $\displaystyle\frac{1}{x}$ 展开为幂级数，并给出收敛域。
-    6. 将 $f(x)=x^2$（$-\pi\le x\le \pi$）作 $2\pi$ 周期延拓，求傅里叶展开，并据此求 $\sum_{n=1}^{\infty}\displaystyle\frac{1}{n^2}$。
+        ??? example "麦克劳林级数"
+            <!-- 待补充 -->
 
-    ??? success "答案与提示"
+#### §6.2 基本初等函数的幂级数展开
 
-        1. $\displaystyle\frac{n}{n^3+1}\sim \frac{1}{n^2}$，由极限比较法收敛。
-        2. 由莱布尼茨判别法收敛，但 $\sum \displaystyle\frac{1}{\sqrt n}$ 发散，因此条件收敛。
-        3. 半径为 $1$，两个端点均绝对收敛，收敛域为 $[-1,1]$。由 $|\displaystyle\frac{x^n}{n^2}|\le \frac{1}{n^2}$ 及 M 判别法，在该闭区间上一致收敛。
-        4. 和函数为 $\displaystyle\frac{x}{(1-x)^2}$，收敛域为 $(-1,1)$；两个端点的通项都不趋于零。
-        5. $\displaystyle\frac{1}{x}=\frac{1}{1+(x-1)}=\sum_{n=0}^{\infty}(-1)^n(x-1)^n$，收敛域为 $(0,2)$。
-        6. 偶函数只含余弦项。分部积分两次得 $a_0=2\pi^2/3$、$a_n=4\displaystyle\frac{(-1)^n}{n^2}$，于是
+$$
+e^x=\sum_{n=0}^{\infty}\frac{x^n}{n!},\qquad x\in\mathbb R,
+$$
 
-            $$
-            x^2=\frac{\pi^2}{3}+4\sum_{n=1}^{\infty}\frac{(-1)^n}{n^2}\cos nx,
-            \qquad -\pi\le x\le \pi.
-            $$
+$$
+\sin x=\sum_{n=0}^{\infty}(-1)^n\frac{x^{2n+1}}{(2n+1)!},\qquad x\in\mathbb R,
+$$
 
-            周期延拓在端点连续，代入 $x=\pi$ 得 $\sum_{n=1}^{\infty}\displaystyle\frac{1}{n^2}=\pi^2/6$。
+$$
+\cos x=\sum_{n=0}^{\infty}(-1)^n\frac{x^{2n}}{(2n)!},\qquad x\in\mathbb R,
+$$
 
-## 第十二章 含参量积分（\*）
+$$
+\ln(1+x)=\sum_{n=1}^{\infty}(-1)^{n-1}\frac{x^n}{n},\qquad -1<x\le1,
+$$
 
-本章把积分看成参数的函数，核心问题是：参数变化时，积分是否连续、可导，以及能否把极限或导数移入积分号。
+$$
+(1+x)^\alpha=\sum_{n=0}^{\infty}\binom{\alpha}{n}x^n,\qquad |x|<1,
+$$
 
-### §1 含参量的常义积分
+$$
+\binom{\alpha}{0}=1,\qquad
+\binom{\alpha}{n}=\frac{\alpha(\alpha-1)\cdots(\alpha-n+1)}{n!}.
+$$
 
-#### 连续性与积分号下求导
+$$
+\frac1{1-x}=\sum_{n=0}^{\infty}x^n,\qquad
+\frac1{1+x}=\sum_{n=0}^{\infty}(-1)^nx^n,\qquad |x|<1.
+$$
+
+!!! warning "提示"
+
+    -   **各展开式的成立范围不同**：$e^x,\sin x,\cos x$ 对 $x\in\mathbb R$ 成立；$\ln(1+x)$ 为 $-1<x\le1$；$(1+x)^\alpha$ 为 $|x|<1$（端点视 $\alpha$ 而定）。
+
+        ??? example "展开式的收敛域"
+            <!-- 待补充 -->
+
+    -   **符号与阶乘不要写错**：$\sin x$ 只有奇次项且符号交替，$\cos x$ 只有偶次项；分母是对应阶乘。
+
+        ??? example "正弦与余弦的展开"
+            <!-- 待补充 -->
+
+    -   **$\ln(1+x)$ 的端点**：$x=1$ 时收敛（交错调和级数），$x=-1$ 时发散；不能笼统写 $|x|<1$。
+
+        ??? example "对数函数的展开"
+            <!-- 待补充 -->
+
+    -   **二项式系数**：$\binom{\alpha}{n}=\dfrac{\alpha(\alpha-1)\cdots(\alpha-n+1)}{n!}$，$\alpha$ 为整数时可能退化为有限项。
+
+        ??? example "二项式展开"
+            <!-- 待补充 -->
+
+#### §6.3 函数展成幂级数的其他方法
+
+$$
+\frac1{1+x^2}=\sum_{n=0}^{\infty}(-1)^nx^{2n},\qquad |x|<1,
+$$
+
+$$
+\arctan x=\sum_{n=0}^{\infty}(-1)^n\frac{x^{2n+1}}{2n+1},\qquad -1\le x\le1,
+$$
+
+$$
+\frac1{\sqrt{1+x}}
+=\sum_{n=0}^{\infty}(-1)^n\frac{(2n-1)!!}{(2n)!!}x^n,\qquad |x|<1,
+$$
+
+$$
+\frac1{\sqrt{1-x^2}}
+=\sum_{n=0}^{\infty}\frac{(2n-1)!!}{(2n)!!}x^{2n},\qquad |x|<1,
+$$
+
+$$
+\arcsin x=\sum_{n=0}^{\infty}
+\frac{(2n-1)!!}{(2n)!!}\frac{x^{2n+1}}{2n+1},\qquad |x|<1.
+$$
+
+其中 $(2n)!!=2\cdot4\cdots2n$，$(2n-1)!!=1\cdot3\cdots(2n-1)$，约定 $0!!=(-1)!!=1$。
+
+!!! warning "提示"
+
+    -   **逐项求导、积分后端点可能改变**：收敛半径不变，但端点的敛散性要重新判断；如 $\arctan x$ 的展开在 $x=\pm1$ 处条件收敛。
+
+        ??? example "逐项积分得到的展开"
+            <!-- 待补充 -->
+
+    -   **先变形再套公式**：如 $\dfrac1{1+x^2}=\displaystyle\sum(-1)^nx^{2n}$ 是由 $\dfrac1{1+t}$ 令 $t=x^2$ 得到，注意 $|x|<1$。
+
+        ??? example "变形后展开"
+            <!-- 待补充 -->
+
+    -   **双阶乘约定**：$(2n)!!=2\cdot4\cdots2n$，$(2n-1)!!=1\cdot3\cdots(2n-1)$，并约定 $0!!=(-1)!!=1$。
+
+        ??? example "双阶乘"
+            <!-- 待补充 -->
+
+    -   **$\arcsin x$ 的收敛域**：$|x|<1$ 内展开成立，端点 $x=\pm1$ 需单独讨论；不能直接写全体实数。
+
+        ??? example "反正弦的展开"
+            <!-- 待补充 -->
+
+### §7 幂级数的应用 \*
+
+#### §7.1 函数的近似公式
+
+当 $|x|$ 很小时，
+
+$$
+\sin x\approx x,\qquad
+\sin x\approx x-\frac{x^3}{3!},\qquad
+\sin x\approx x-\frac{x^3}{3!}+\frac{x^5}{5!},
+$$
+
+$$
+\cos x\approx1,\qquad
+\cos x\approx1-\frac{x^2}{2!},\qquad
+\cos x\approx1-\frac{x^2}{2!}+\frac{x^4}{4!},
+$$
+
+$$
+\ln(1+x)\approx x,\qquad
+\ln(1+x)\approx x-\frac{x^2}{2},\qquad
+\ln(1+x)\approx x-\frac{x^2}{2}+\frac{x^3}{3}.
+$$
+
+!!! warning "提示"
+
+    -   **误差阶要清楚**：$\sin x\approx x$ 的误差为 $O(x^3)$，$\sin x\approx x-\dfrac{x^3}{3!}$ 的误差为 $O(x^5)$；截断到更高阶通常更精确。
+
+        ??? example "近似阶数与误差"
+            <!-- 待补充 -->
+
+    -   **近似只在 $|x|$ 小时可靠**：$|x|$ 较大时误差迅速增大，不能把局部近似外推到整个定义域。
+
+        ??? example "近似的适用范围"
+            <!-- 待补充 -->
+
+    -   **交替级数可用首个舍项估计误差**：若满足莱布尼茨条件，截断误差不超过第一个被舍去的项。
+
+        ??? example "截断误差"
+            <!-- 待补充 -->
+
+    -   **不要混用不同阶的近似**：同一表达式中的各项应保持相同阶数，否则误差阶无法控制。
+
+        ??? example "近似阶数的一致性"
+            <!-- 待补充 -->
+
+#### §7.2 数值计算
 
 设
 
 $$
-I(t)=\int_a^bf(x,t)\,\mathrm dx.
+A=\sum_{n=1}^{\infty}a_n,\qquad A_N=\sum_{n=1}^Na_n,
 $$
 
-如果 $f$ 在矩形 $[a,b]\times[c,d]$ 上连续，则 $I$ 在 $[c,d]$ 上连续，并可交换参数极限与积分。若 $f_t$ 也在该矩形上连续，则在参数区间内部
+截尾误差为
 
 $$
-I'(t)=\int_a^bf_t(x,t)\,\mathrm dx.
+R_N=A-A_N=\sum_{n=N+1}^{\infty}a_n.
 $$
 
-在连续性条件下还可以对参数再积分并交换次序：
+若满足莱布尼茨判别法的条件，则
 
 $$
-\int_c^dI(t)\,\mathrm dt
-=\int_a^b\left[\int_c^df(x,t)\,\mathrm dt\right]\mathrm dx.
+|R_N|\le|a_{N+1}|.
 $$
 
-#### 上下限也含参数：莱布尼茨公式
-
-设 $\alpha,\beta$ 可导，$f,f_t$ 在包含有关积分区域的矩形上连续，则
+若 $0\le a_n\le b_n$ 且 $\sum b_n$ 收敛，则
 
 $$
-\frac{\mathrm d}{\mathrm dt}\int_{\alpha(t)}^{\beta(t)}f(x,t)\,\mathrm dx
-=f(\beta(t),t)\beta'(t)-f(\alpha(t),t)\alpha'(t)
-+\int_{\alpha(t)}^{\beta(t)}f_t(x,t)\,\mathrm dx.
+0\le R_N\le\sum_{n=N+1}^{\infty}b_n.
 $$
 
-它包含三种变化：上限移动、下限移动、被积函数本身变化。普通变限积分是 $f$ 不显含 $t$ 的特殊情形。
+!!! warning "提示"
 
-!!! example "例 12.1：三部分都要求导"
+    -   **截尾误差与舍入误差不同**：$R_N=A-A_N$ 是截断级数产生的误差；实际计算还要考虑浮点舍入误差。
 
-    对 $t>0$，设 $I(t)=\displaystyle\int_0^{t^2}e^{tx}\,\mathrm dx$，求 $I'(t)$。
+        ??? example "截尾误差"
+            <!-- 待补充 -->
 
-    **解：** 上限贡献 $2t e^{t^3}$，下限不变，被积函数的偏导为 $xe^{tx}$，故
+    -   **莱布尼茨级数的误差估计**：满足莱布尼茨条件时 $|R_N|\le|a_{N+1}|$；不满足时不能直接用。
 
-    $$
-    I'(t)=2t e^{t^3}+\int_0^{t^2}xe^{tx}\,\mathrm dx.
-    $$
+        ??? example "交错级数的数值计算"
+            <!-- 待补充 -->
 
-    也可先算 $I(t)=\displaystyle\frac{e^{t^3}-1}{t}$，求导核对结果。
+    -   **比较法估计余项**：$0\le a_n\le b_n$ 且 $\sum b_n$ 收敛时，$0\le R_N\le\sum_{n=N+1}^{\infty}b_n$；需要先找到可求和的控制级数。
+
+        ??? example "余项估计"
+            <!-- 待补充 -->
+
+    -   **先保证级数收敛再谈数值计算**：发散级数不能通过截断得到可靠近似；计算前先判断敛散性。
+
+        ??? example "数值计算的前提"
+            <!-- 待补充 -->
+
+#### §7.3 积分计算
+
+$$
+\int\frac{\sin x}{x}\,\mathrm dx
+=\sum_{n=0}^{\infty}(-1)^n
+\frac{x^{2n+1}}{(2n+1)(2n+1)!}+C,
+$$
+
+其中 $\sin x/x$ 在 $x=0$ 处补充定义为 $1$。
+
+欧拉公式为
+
+$$
+e^{ix}=\cos x+i\sin x,\qquad e^{-ix}=\cos x-i\sin x,
+$$
+
+$$
+\sin x=\frac{e^{ix}-e^{-ix}}{2i},\qquad
+\cos x=\frac{e^{ix}+e^{-ix}}2,
+\qquad i^2=-1.
+$$
+
+!!! warning "提示"
+
+    -   **逐项积分要求一致收敛**：在幂级数的收敛区间内可以逐项积分；超出收敛区间不能保证。
+
+        ??? example "逐项积分"
+            <!-- 待补充 -->
+
+    -   **$\dfrac{\sin x}{x}$ 在 $x=0$ 要补充定义**：原函数在 $x=0$ 无定义，但极限为 $1$，积分时按补充定义处理。
+
+        ??? example "$\sin x/x$ 的积分"
+            <!-- 待补充 -->
+
+    -   **欧拉公式的符号**：$e^{ix}=\cos x+i\sin x$，$\sin x=\dfrac{e^{ix}-e^{-ix}}{2i}$，$\cos x=\dfrac{e^{ix}+e^{-ix}}2$；分母的 $i$ 不要漏。
+
+        ??? example "欧拉公式"
+            <!-- 待补充 -->
+
+    -   **不定积分要加 $C$**：定积分则要代入上下限；逐项积分后的常数项不能漏。
+
+        ??? example "积分常数"
+            <!-- 待补充 -->
+
+### §8 函数的傅里叶展开
+
+#### §8.1 傅里叶级数的概念
+
+函数系
+
+$$
+1,\quad\cos\frac{n\pi x}{l},\quad\sin\frac{n\pi x}{l},\qquad n=1,2,\ldots
+$$
+
+在 $[-l,l]$ 上正交：
+
+$$
+\int_{-l}^{l}\cos\frac{m\pi x}{l}\sin\frac{n\pi x}{l}\,\mathrm dx=0,
+$$
+
+$$
+\int_{-l}^{l}\cos\frac{m\pi x}{l}\cos\frac{n\pi x}{l}\,\mathrm dx=0
+\quad(m\ne n),
+$$
+
+$$
+\int_{-l}^{l}\sin\frac{m\pi x}{l}\sin\frac{n\pi x}{l}\,\mathrm dx=0
+\quad(m\ne n),
+$$
+
+$$
+\int_{-l}^{l}\cos^2\frac{n\pi x}{l}\,\mathrm dx
+=\int_{-l}^{l}\sin^2\frac{n\pi x}{l}\,\mathrm dx=l,\qquad n\ge1.
+$$
+
+函数 $f$ 的傅里叶系数为
+
+$$
+a_n=\frac1l\int_{-l}^{l}f(x)\cos\frac{n\pi x}{l}\,\mathrm dx,
+\qquad n=0,1,2,\ldots,
+$$
+
+$$
+b_n=\frac1l\int_{-l}^{l}f(x)\sin\frac{n\pi x}{l}\,\mathrm dx,
+\qquad n=1,2,\ldots.
+$$
+
+以这些系数组成的三角级数称为 $f$ 的傅里叶级数，记为
+
+$$
+f(x)\sim\frac{a_0}{2}+\sum_{n=1}^{\infty}
+\left(a_n\cos\frac{n\pi x}{l}+b_n\sin\frac{n\pi x}{l}\right).
+$$
+
+!!! warning "提示"
+
+    -   **$a_0$ 的系数与级数中的 $\dfrac{a_0}{2}$**：$a_0=\dfrac1l\displaystyle\int_{-l}^{l}f(x)\,\mathrm dx$，级数中写 $\dfrac{a_0}{2}$；不要漏掉 $\dfrac12$。
+
+        ??? example "傅里叶系数 $a_0$"
+            <!-- 待补充 -->
+
+    -   **正交性与区间**：三角函数系在 $[-l,l]$ 上正交，系数中的 $l$ 对应周期 $2l$；区间或周期改变，公式随之改变。
+
+        ??? example "三角函数系的正交性"
+            <!-- 待补充 -->
+
+    -   **$a_n,b_n$ 的下标起点**：$a_n$ 从 $n=0$ 开始，$b_n$ 从 $n=1$ 开始；$b_0$ 不出现。
+
+        ??? example "系数的下标"
+            <!-- 待补充 -->
+
+    -   **傅里叶级数只是形式展开**：$\sim$ 表示形式对应，是否收敛到 $f$ 需分段光滑等条件；不能直接写等号。
+
+        ??? example "傅里叶级数的收敛性"
+            <!-- 待补充 -->
+
+#### §8.2 周期函数的傅里叶展开
+
+设 $f$ 为周期 $2l$ 的周期函数，在 $[-l,l]$ 上分段光滑，则其傅里叶级数在各点收敛，和函数为
+
+$$
+S(x)=\frac{a_0}{2}+\sum_{n=1}^{\infty}
+\left(a_n\cos\frac{n\pi x}{l}+b_n\sin\frac{n\pi x}{l}\right)
+=\frac{f(x-0)+f(x+0)}2.
+$$
+
+分段光滑是指区间可分成有限个子区间，$f$ 在各子区间内部具有连续导数，且 $f,f'$ 在分点处均有有限的相应单侧极限。
+
+若 $f$ 为偶函数，则
+
+$$
+b_n=0,\qquad
+a_n=\frac2l\int_0^lf(x)\cos\frac{n\pi x}{l}\,\mathrm dx.
+$$
+
+若 $f$ 为奇函数，则
+
+$$
+a_n=0,\qquad
+b_n=\frac2l\int_0^lf(x)\sin\frac{n\pi x}{l}\,\mathrm dx.
+$$
+
+当 $2l=2\pi$ 时，
+
+$$
+a_n=\frac1\pi\int_{-\pi}^{\pi}f(x)\cos nx\,\mathrm dx,\qquad
+b_n=\frac1\pi\int_{-\pi}^{\pi}f(x)\sin nx\,\mathrm dx.
+$$
+
+!!! warning "提示"
+
+    -   **间断点取左右极限平均**：傅里叶级数收敛到 $\dfrac{f(x-0)+f(x+0)}2$，不是 $f(x)$；连续点才等于 $f(x)$。
+
+        ??? example "间断点的和"
+            <!-- 待补充 -->
+
+    -   **奇偶性简化系数**：偶函数 $b_n=0$，奇函数 $a_n=0$；非奇非偶时两者都要算，不能想当然消去。
+
+        ??? example "奇偶函数的傅里叶级数"
+            <!-- 待补充 -->
+
+    -   **周期与角频率对应**：周期 $2l$ 对应 $\dfrac{n\pi x}{l}$；周期为 $2\pi$ 时 $l=\pi$，公式中的 $l$ 要替换。
+
+        ??? example "周期与角频率"
+            <!-- 待补充 -->
+
+    -   **分段光滑条件**：$f$ 在 $[-l,l]$ 上分段光滑（分段连续可导、单侧极限有限）时才有收敛定理；不满足时不能保证收敛。
+
+        ??? example "分段光滑条件"
+            <!-- 待补充 -->
+
+#### §8.3 有限区间上的傅里叶展开
+
+设 $f$ 在 $[-l,l]$ 上分段光滑，以周期 $2l$ 延拓，则在 $-l<x<l$ 内，
+
+$$
+\frac{a_0}{2}+\sum_{n=1}^{\infty}
+\left(a_n\cos\frac{n\pi x}{l}+b_n\sin\frac{n\pi x}{l}\right)
+=\frac{f(x-0)+f(x+0)}2.
+$$
+
+在端点处，
+
+$$
+S(-l)=S(l)=\frac{f(-l+0)+f(l-0)}2.
+$$
+
+对一般区间 $[a,b]$，令 $T=b-a$，则
+
+$$
+f(x)\sim\frac{a_0}{2}+\sum_{n=1}^{\infty}
+\left(a_n\cos\frac{2n\pi x}{T}+b_n\sin\frac{2n\pi x}{T}\right),
+$$
+
+$$
+a_n=\frac2T\int_a^bf(x)\cos\frac{2n\pi x}{T}\,\mathrm dx,
+\qquad
+b_n=\frac2T\int_a^bf(x)\sin\frac{2n\pi x}{T}\,\mathrm dx.
+$$
+
+帕塞瓦尔等式为
+
+$$
+\frac{a_0^2}{2}+\sum_{n=1}^{\infty}(a_n^2+b_n^2)
+=\frac1l\int_{-l}^{l}f(x)^2\,\mathrm dx,
+$$
+
+其中 $f$ 与 $f^2$ 均可积，$a_n,b_n$ 为其傅里叶系数。
+
+对 $[0,l]$ 上分段光滑的函数，奇延拓所对应的正弦级数与偶延拓所对应的余弦级数分别为
+
+$$
+f(x)\sim\sum_{n=1}^{\infty}b_n\sin\frac{n\pi x}{l},\qquad
+b_n=\frac2l\int_0^lf(x)\sin\frac{n\pi x}{l}\,\mathrm dx,
+$$
+
+$$
+f(x)\sim\frac{a_0}{2}+\sum_{n=1}^{\infty}a_n\cos\frac{n\pi x}{l},\qquad
+a_n=\frac2l\int_0^lf(x)\cos\frac{n\pi x}{l}\,\mathrm dx.
+$$
+
+!!! warning "提示"
+
+    -   **有限区间要先周期延拓**：在 $[-l,l]$ 上展开需以 $2l$ 为周期延拓；端点处的和是左右极限平均。
+
+        ??? example "周期延拓"
+            <!-- 待补充 -->
+
+    -   **奇延拓与偶延拓的选择**：奇延拓得到正弦级数，偶延拓得到余弦级数；选择不同，系数公式不同。
+
+        ??? example "奇延拓与偶延拓"
+            <!-- 待补充 -->
+
+    -   **一般区间的周期与系数**：$[a,b]$ 上周期 $T=b-a$，角频率 $\dfrac{2n\pi}{T}$，系数前乘 $\dfrac2T$；不要与 $[-l,l]$ 的公式混用。
+
+        ??? example "一般区间的傅里叶展开"
+            <!-- 待补充 -->
+
+    -   **帕塞瓦尔等式的系数匹配**：$\dfrac{a_0^2}{2}+\sum(a_n^2+b_n^2)=\dfrac1l\int_{-l}^{l}f^2\,\mathrm dx$；$a_0$ 项要除以 $2$。
+
+        ??? example "帕塞瓦尔等式"
+            <!-- 待补充 -->
+
+#### §8.4 复数形式的傅里叶级数 \*
+
+设 $f$ 为周期 $2l$ 的分段光滑周期函数，其复数形式的傅里叶级数为
+
+$$
+f(x)\sim\sum_{n=-\infty}^{\infty}c_ne^{in\pi x/l},
+\qquad
+c_n=\frac1{2l}\int_{-l}^{l}f(x)e^{-in\pi x/l}\,\mathrm dx.
+$$
+
+与实数形式系数的关系为
+
+$$
+c_0=\frac{a_0}{2},\qquad
+c_n=\frac{a_n-ib_n}{2},\qquad
+c_{-n}=\frac{a_n+ib_n}{2},\qquad n\ge1.
+$$
+
+级数的和为 $[f(x-0)+f(x+0)]/2$。
+
+!!! warning "提示"
+
+    -   **指数上的负号**：$c_n=\dfrac1{2l}\displaystyle\int_{-l}^{l}f(x)e^{-in\pi x/l}\,\mathrm dx$，求系数时是指数负号，级数中是正号。
+
+        ??? example "复数形式的系数"
+            <!-- 待补充 -->
+
+    -   **系数之间的关系**：$c_0=\dfrac{a_0}{2}$，$c_n=\dfrac{a_n-ib_n}{2}$，$c_{-n}=\dfrac{a_n+ib_n}{2}$；不要漏 $\dfrac12$ 或共轭。
+
+        ??? example "实系数与复系数"
+            <!-- 待补充 -->
+
+    -   **级数从 $-\infty$ 到 $+\infty$**：复数形式是双边级数，不能只写 $n\ge0$；负频率项对应 $c_{-n}$。
+
+        ??? example "双边级数"
+            <!-- 待补充 -->
+
+    -   **收敛和仍取平均**：在间断点处复数形式也收敛到 $\dfrac{f(x-0)+f(x+0)}2$。
+
+        ??? example "复数形式的收敛性"
+            <!-- 待补充 -->
+
+#### §8.5 矩形区域上二元函数的傅里叶展开 \*
+
+设 $f$ 定义在矩形 $G=[-l,l]\times[-h,h]$ 上，可按 $x,y$ 逐次作傅里叶展开，其复数形式为
+
+$$
+f(x,y)\sim\sum_{n=-\infty}^{\infty}
+\left[\sum_{m=-\infty}^{\infty}c_{mn}e^{im\pi y/h}\right]e^{in\pi x/l},
+$$
+
+$$
+c_{mn}=\frac1{4hl}\int_{-h}^{h}\mathrm dy\int_{-l}^{l}
+f(x,y)e^{-i(n\pi x/l+m\pi y/h)}\,\mathrm dx,
+\qquad m,n\in\mathbb Z.
+$$
+
+!!! warning "提示"
+
+    -   **归一化因子是 $\dfrac1{4hl}$**：$c_{mn}=\dfrac1{4hl}\displaystyle\int_{-h}^{h}\mathrm dy\int_{-l}^{l}f(x,y)e^{-i(n\pi x/l+m\pi y/h)}\,\mathrm dx$，两个方向的周期分别为 $2l,2h$。
+
+        ??? example "二元傅里叶系数"
+            <!-- 待补充 -->
+
+    -   **指数中的符号与顺序**：$e^{-i(n\pi x/l+m\pi y/h)}$，$n$ 对应 $x$、$m$ 对应 $y$；不要写反。
+
+        ??? example "二元指数因子"
+            <!-- 待补充 -->
+
+    -   **逐次展开要保证一致收敛**：先对 $x$ 或先对 $y$ 展开，结果应一致；需要相应的连续性/分段光滑条件。
+
+        ??? example "逐次展开"
+            <!-- 待补充 -->
+
+    -   **不连续点的收敛和**：二元情形在间断点处取各方向极限的平均，不能直接代入 $f(x,y)$。
+
+        ??? example "二元展开的收敛性"
+            <!-- 待补充 -->
+
+## 第十二章 含参量积分 \*
+
+### §1 含参量的常义积分
+
+设 $f(x,y)$ 在矩形 $[a,b]\times[c,d]$ 上连续，则
+
+$$
+\varphi(y)=\int_a^bf(x,y)\,\mathrm dx,\qquad y\in[c,d]
+$$
+
+为含参量 $y$ 的常义积分。$\varphi$ 在 $[c,d]$ 上连续，且
+
+$$
+\lim_{y\to y_0}\int_a^bf(x,y)\,\mathrm dx
+=\int_a^b\lim_{y\to y_0}f(x,y)\,\mathrm dx.
+$$
+
+$$
+\int_c^d\left[\int_a^bf(x,y)\,\mathrm dx\right]\mathrm dy
+=\int_a^b\left[\int_c^df(x,y)\,\mathrm dy\right]\mathrm dx.
+$$
+
+若 $f,f_y$ 均在上述矩形上连续，则
+
+$$
+\varphi'(y)=\frac{\mathrm d}{\mathrm dy}\int_a^bf(x,y)\,\mathrm dx
+=\int_a^b\frac{\partial f}{\partial y}(x,y)\,\mathrm dx.
+$$
+
+若上下限 $g_1(y),g_2(y)$ 在 $[c,d]$ 上可导，且 $a\le g_1(y)\le g_2(y)\le b$，则
+
+$$
+\frac{\mathrm d}{\mathrm dy}\int_{g_1(y)}^{g_2(y)}f(x,y)\,\mathrm dx
+=\int_{g_1(y)}^{g_2(y)}f_y(x,y)\,\mathrm dx
++f(g_2(y),y)g_2'(y)-f(g_1(y),y)g_1'(y).
+$$
+
+!!! warning "提示"
+
+    -   **连续性与极限交换**：$f(x,y)$ 在闭矩形 $[a,b]\times[c,d]$ 上连续时，$\varphi(y)=\int_a^bf(x,y)\,\mathrm dx$ 连续，积分与极限可以交换。
+
+        ??? example "含参量积分的连续性"
+            <!-- 待补充 -->
+
+    -   **积分次序交换的条件**：$f$ 在矩形上连续时，$\int_c^d\mathrm dy\int_a^bf\,\mathrm dx=\int_a^b\mathrm dx\int_c^df\,\mathrm dy$；区域不是矩形时要重新处理。
+
+        ??? example "交换积分次序"
+            <!-- 待补充 -->
+
+    -   **求导公式的前提**：$\varphi'(y)=\int_a^bf_y(x,y)\,\mathrm dx$ 要求 $f,f_y$ 在矩形上连续；仅有 $f$ 连续不够。
+
+        ??? example "含参量积分求导"
+            <!-- 待补充 -->
+
+    -   **变上下限的边界项**：$\dfrac{\mathrm d}{\mathrm dy}\int_{g_1(y)}^{g_2(y)}f\,\mathrm dx=\int_{g_1}^{g_2}f_y\,\mathrm dx+f(g_2,y)g_2'-f(g_1,y)g_1'$，上下限的符号不要写反。
+
+        ??? example "变限含参量积分"
+            <!-- 待补充 -->
 
 ### §2 含参量的反常积分
 
-#### 收敛与一致收敛
+#### §2.1 含参量的反常积分
 
-考虑
-
-$$
-I(t)=\int_a^{+\infty}f(x,t)\,\mathrm dx
-=\lim_{A\to+\infty}\int_a^Af(x,t)\,\mathrm dx.
-$$
-
-逐点收敛允许截断位置 $A$ 随参数 $t$ 而变；在参数集合 $T$ 上一致收敛则要求
+若对每个 $x\in[a,b]$，反常积分均收敛，则
 
 $$
-\sup_{t\in T}\left|\int_A^{+\infty}f(x,t)\,\mathrm dx\right|\longrightarrow0.
+I(x)=\int_c^{+\infty}f(x,y)\,\mathrm dy
+=\lim_{A\to+\infty}\int_c^Af(x,y)\,\mathrm dy
 $$
 
-等价的柯西条件是：对任意 $\varepsilon>0$，存在与 $t$ 无关的 $A_0$，使 $B>A\ge A_0$ 时，对所有 $t\in T$ 都有
+称为含参量的无穷限反常积分。
+
+若对任意 $\varepsilon>0$，存在与 $x$ 无关的 $M>c$，当 $A>M$ 时，对所有 $x\in[a,b]$ 均有
 
 $$
-\left|\int_A^Bf(x,t)\,\mathrm dx\right|<\varepsilon.
+\left|\int_A^{+\infty}f(x,y)\,\mathrm dy\right|<\varepsilon,
 $$
 
-瑕积分的情形类似，只需把无穷远尾部换成奇点附近的小区间；有多个反常端点时要分别检查。
+则称该积分在 $[a,b]$ 上一致收敛。
 
-#### M 判别法
-
-若对所有 $t\in T$，有 $|f(x,t)|\le M(x)$，且 $\displaystyle\int_a^{+\infty}M(x)\,\mathrm dx$ 收敛，则原积分在 $T$ 上一致收敛，同时各参数下绝对收敛。控制函数必须**不依赖参数**。
-
-!!! example "例 12.2：参数范围决定一致收敛"
-
-    讨论 $I(t)=\displaystyle\int_0^{+\infty}e^{-tx}\,\mathrm dx$，$t>0$。
-
-    **解：** $I(t)=\displaystyle\frac{1}{t}$。在 $t\ge \delta>0$ 上，$e^{-tx}\le e^{-\delta x}$，由 M 判别法一致收敛。
-
-    但在整个 $(0,+\infty)$ 上，尾积分 $\displaystyle\frac{e^{-tA}}{t}$ 对每个固定 $A$ 都随 $t\to 0^+$ 无界，故不一致收敛。逐点有积分值，不能替代对参数统一的尾部控制。
-
-#### 与连续、求导、积分交换的条件
-
-以下给出常用的充分条件，参数先取有限闭区间 $[c,d]$。
-
-| 要进行的运算 | 一组常用充分条件 |
-| --- | --- |
-| 把参数极限移入积分号 | $f$ 连续，且反常积分对参数一致收敛 |
-| 在积分号下对参数求导 | $f,f_t$ 连续，原积分对每个参数收敛，$\displaystyle\int_a^\infty f_t(x,t)\,\mathrm dx$ 对参数一致收敛 |
-| 交换有限参数积分与反常积分 | $f$ 连续，原反常积分在 $[c,d]$ 上一致收敛 |
-
-在上述求导条件下，
+一致收敛的柯西准则为
 
 $$
-I'(t)=\int_a^{+\infty}f_t(x,t)\,\mathrm dx.
+\forall\varepsilon>0,\ \exists M>c,\ \forall A_1,A_2>M,\ \forall x\in[a,b]:
+\left|\int_{A_1}^{A_2}f(x,y)\,\mathrm dy\right|<\varepsilon.
 $$
 
-局部性质可以在任意内闭参数区间上验证，例如对 $t>0$，固定 $0<c<d$ 后估计。若两个积分区间都无界，应另外验证换序条件；常用办法是证明绝对可积。对非负可测函数可使用非负积分换序，但还需另证所得值有限，才能断言反常积分收敛。
+魏尔斯特拉斯判别法：若 $|f(x,y)|\le g(y)$，且 $\int_c^{+\infty}g(y)\,\mathrm dy$ 收敛，则含参积分在 $[a,b]$ 上一致收敛。
 
-!!! warning "求导合法性要检查导数的积分"
+若 $f(x,y)$ 在 $a\le x\le b,c\le y<d$ 上有定义，且对各 $x$，$y=d$ 是瑕点，则
 
-    原反常积分一致收敛，并不单独保证可以对参数求导。积分号下求导要控制 $f_t$ 的反常积分；“把导数移进去之后算得出来”不是合法性的证明。
+$$
+\int_c^df(x,y)\,\mathrm dy
+=\lim_{A\to d^-}\int_c^Af(x,y)\,\mathrm dy
+$$
 
-!!! tip "与级数的联系"
+称为含参量的无界函数反常积分。
 
-    第十一章用统一尾和控制交换运算，本章用统一尾积分控制。可把 $[a,+\infty)$ 分成小区间，将各区间积分组成函数项级数，从而理解两套定理为什么形式相似。
+!!! warning "提示"
 
-!!! example "例 12.3：先对参数求导，再积分回来"
+    -   **一致收敛的 $M$ 与 $x$ 无关**：逐点收敛只保证每个 $x$ 有自己的 $M$；一致收敛要求存在对所有 $x\in[a,b]$ 都有效的 $M$。
 
-    求 $J(t)=\displaystyle\int_0^1\frac{x^t-1}{\ln x}\,\mathrm dx$，$t>-1$，其中 $x=1$ 处用极限补定义。
+        ??? example "含参量反常积分的一致收敛"
+            <!-- 待补充 -->
 
-    **解：** 先说明积分存在：在 $0$ 附近，用 $\displaystyle\frac{1}{|\ln x|}\le 1$（$x\le e^{-1}$）可由 $x^t+1$ 控制；在 $1$ 附近，商趋于 $t$。对参数求导后被积函数为 $x^t$。
+    -   **魏尔斯特拉斯判别法的控制函数与 $x$ 无关**：若 $|f(x,y)|\le g(y)$ 且 $\int_c^{+\infty}g(y)\,\mathrm dy$ 收敛，则一致收敛；$g$ 不能依赖 $x$。
 
-    在任意内闭区间 $t\in[c,d]\subset (-1,+\infty)$ 上，$x^t\le x^c$（$0<x<1$），而 $\displaystyle\int_0^1x^c\,\mathrm dx<\infty$，可在积分号下求导：
+        ??? example "魏尔斯特拉斯判别法"
+            <!-- 待补充 -->
 
-    $$
-    J'(t)=\int_0^1x^t\,\mathrm dx=\frac1{t+1}.
-    $$
+    -   **柯西准则的量词**：要对一切 $A_1,A_2>M$ 和一切 $x\in[a,b]$ 都有 $\left|\int_{A_1}^{A_2}f\,\mathrm dy\right|<\varepsilon$。
 
-    因此 $J(t)=\ln(t+1)+C$，利用 $J(0)=0$ 得 $C=0$。参数求导给出的是导数，最后不要漏掉确定常数。
+        ??? example "一致收敛的柯西准则"
+            <!-- 待补充 -->
 
-### §3 Γ 函数和 B 函数
+    -   **无穷限与瑕点要区分**：$y\to+\infty$ 是无穷限反常积分，$y\to d^-$ 是无界函数反常积分；两者的一致收敛定义类似，但极限过程不同。
 
-#### Γ 函数：把阶乘推广到连续参数
+        ??? example "两类含参量反常积分"
+            <!-- 待补充 -->
+
+#### §2.2 含参量的反常积分的性质
+
+设 $f$ 在 $a\le x\le b,c\le y<+\infty$ 上连续，且
+
+$$
+I(x)=\int_c^{+\infty}f(x,y)\,\mathrm dy
+$$
+
+在 $[a,b]$ 上一致收敛，则 $I$ 连续，并有
+
+$$
+\lim_{x\to x_0}\int_c^{+\infty}f(x,y)\,\mathrm dy
+=\int_c^{+\infty}\lim_{x\to x_0}f(x,y)\,\mathrm dy,
+$$
+
+$$
+\int_a^b\mathrm dx\int_c^{+\infty}f(x,y)\,\mathrm dy
+=\int_c^{+\infty}\mathrm dy\int_a^bf(x,y)\,\mathrm dx.
+$$
+
+若 $f,f_x$ 连续，$\int_c^{+\infty}f(x,y)\,\mathrm dy$ 在 $[a,b]$ 上收敛，且 $\int_c^{+\infty}f_x(x,y)\,\mathrm dy$ 在 $[a,b]$ 上一致收敛，则
+
+$$
+I'(x)=\int_c^{+\infty}f_x(x,y)\,\mathrm dy.
+$$
+
+设 $f$ 在 $a\le x<+\infty,c\le y<+\infty$ 上连续，$\int_a^{+\infty}f(x,y)\,\mathrm dx$ 关于 $y$ 在每一有限区间上一致收敛，$\int_c^{+\infty}f(x,y)\,\mathrm dy$ 关于 $x$ 在每一有限区间上一致收敛；若下列两个积分中至少一个收敛，
+
+$$
+\int_a^{+\infty}\mathrm dx\int_c^{+\infty}|f(x,y)|\,\mathrm dy,
+\qquad
+\int_c^{+\infty}\mathrm dy\int_a^{+\infty}|f(x,y)|\,\mathrm dx,
+$$
+
+则
+
+$$
+\int_a^{+\infty}\mathrm dx\int_c^{+\infty}f(x,y)\,\mathrm dy
+=\int_c^{+\infty}\mathrm dy\int_a^{+\infty}f(x,y)\,\mathrm dx.
+$$
+
+!!! warning "提示"
+
+    -   **连续性要求一致收敛**：$f$ 连续且 $\int_c^{+\infty}f(x,y)\,\mathrm dy$ 在 $[a,b]$ 上一致收敛时，$I(x)$ 连续，积分与极限可交换。
+
+        ??? example "含参量反常积分的连续性"
+            <!-- 待补充 -->
+
+    -   **积分次序交换的条件**：逐项积分/交换次序需要一致收敛（或绝对收敛加一致收敛）；仅有逐点收敛不够。
+
+        ??? example "交换积分次序"
+            <!-- 待补充 -->
+
+    -   **求导公式的三个条件**：$f,f_x$ 连续、$\int f$ 收敛、$\int f_x$ 一致收敛；缺一不可。
+
+        ??? example "含参量反常积分求导"
+            <!-- 待补充 -->
+
+    -   **两个无穷积分交换次序**：除了各自关于另一变量在有限区间上一致收敛外，还要至少一个绝对收敛的累次积分；条件不能省。
+
+        ??? example "二重反常积分交换次序"
+            <!-- 待补充 -->
+
+### §3 Γ函数和B函数
+
+#### §3.1 Γ函数
+
+Γ函数定义为
 
 $$
 \Gamma(s)=\int_0^{+\infty}x^{s-1}e^{-x}\,\mathrm dx,\qquad s>0.
 $$
 
-在 $0$ 附近依靠 $s>0$ 保证可积，在无穷远依靠指数衰减。分部积分得
+它在 $s>0$ 上连续且具有任意阶导数：
+
+$$
+\Gamma^{(n)}(s)=\int_0^{+\infty}x^{s-1}e^{-x}(\ln x)^n\,\mathrm dx.
+$$
 
 $$
 \Gamma(s+1)=s\Gamma(s),\qquad
-\Gamma(1)=1,\qquad \Gamma(n+1)=n!.
+\Gamma(1)=1,\qquad
+\Gamma(n+1)=n!,\qquad
+\Gamma\left(\frac12\right)=\sqrt\pi.
 $$
 
-由高斯积分得
+其他积分表示为
 
 $$
-\Gamma\left(\frac12\right)=\sqrt\pi,\qquad
-\Gamma\left(n+\frac12\right)=\frac{(2n)!}{4^n n!}\sqrt\pi
-\quad (n=0,1,\ldots).
+\Gamma(s)=2\int_0^{+\infty}y^{2s-1}e^{-y^2}\,\mathrm dy,
 $$
 
-在 $s>0$ 内可逐次对参数求导：
-
 $$
-\Gamma^{(k)}(s)=\int_0^{+\infty}x^{s-1}e^{-x}(\ln x)^k\,\mathrm dx.
-$$
-
-证明可在任意 $0<c\le s\le d$ 上，将积分分为 $(0,1]$ 与 $[1,+\infty)$，分别用可积函数控制。尺度代换还给出
-
-$$
-\int_0^{+\infty}x^{s-1}e^{-ax}\,\mathrm dx=\frac{\Gamma(s)}{a^s},\qquad a>0, s>0.
+\Gamma(s)=p^s\int_0^{+\infty}y^{s-1}e^{-py}\,\mathrm dy,
+\qquad s>0,\ p>0.
 $$
 
-#### B 函数：两端都有幂次的积分
+!!! warning "提示"
+
+    -   **定义域是 $s>0$**：$\Gamma(s)=\displaystyle\int_0^{+\infty}x^{s-1}e^{-x}\,\mathrm dx$ 只在 $s>0$ 收敛；递推延拓后的值不等于该积分在负值处的值。
+
+        ??? example "Γ函数的定义域"
+            <!-- 待补充 -->
+
+    -   **阶乘指标**：$\Gamma(n+1)=n!$，所以 $\Gamma(n)=(n-1)!$；$\Gamma(1)=1$、$\Gamma(2)=1$。
+
+        ??? example "Γ函数与阶乘"
+            <!-- 待补充 -->
+
+    -   **特殊值与余元公式**：$\Gamma\left(\dfrac12\right)=\sqrt\pi$；$\Gamma(s)\Gamma(1-s)=\dfrac\pi{\sin\pi s}$（$0<s<1$）。
+
+        ??? example "Γ函数的特殊值"
+            <!-- 待补充 -->
+
+    -   **求导可在积分号下进行**：$\Gamma^{(n)}(s)=\displaystyle\int_0^{+\infty}x^{s-1}e^{-x}(\ln x)^n\,\mathrm dx$（$s>0$），因为相应积分一致收敛。
+
+        ??? example "Γ函数的导数"
+            <!-- 待补充 -->
+
+#### §3.2 B函数
+
+B函数定义为
 
 $$
-B(p,q)=\int_0^1x^{p-1}(1-x)^{q-1}\,\mathrm dx,\qquad p,q>0.
+B(p,q)=\int_0^1x^{p-1}(1-x)^{q-1}\,\mathrm dx,
+\qquad p>0,\ q>0.
 $$
 
-两个正数条件分别保证 $0$、$1$ 附近可积。通过 $x\mapsto1-x$ 可得对称性
+$B$ 在 $p>0,q>0$ 内连续，且
 
 $$
 B(p,q)=B(q,p).
 $$
 
-常用递推式为
+递推公式为
 
 $$
-B(p+1,q)=\frac p{p+q}B(p,q),\qquad
-B(p,q+1)=\frac q{p+q}B(p,q).
+B(p,q)=\frac{q-1}{p+q-1}B(p,q-1),\qquad p>0,\ q>1,
 $$
 
-代换 $x=\displaystyle\frac{t}{1+t}$ 或 $x=\sin^2\theta$ 得到
-
 $$
-B(p,q)=\int_0^{+\infty}\frac{t^{p-1}}{(1+t)^{p+q}}\,\mathrm dt
-=2\int_0^{\pi/2}\sin^{2p-1}\theta\cos^{2q-1}\theta\,\mathrm d\theta.
+B(p,q)=\frac{p-1}{p+q-1}B(p-1,q),\qquad p>1,\ q>0,
 $$
 
-#### 两个函数的关系
+$$
+B(p,q)=\frac{(p-1)(q-1)}{(p+q-1)(p+q-2)}B(p-1,q-1),
+\qquad p>1,\ q>1.
+$$
+
+其他积分表示为
+
+$$
+B(p,q)=2\int_0^{\pi/2}\sin^{2p-1}\theta\cos^{2q-1}\theta\,\mathrm d\theta,
+$$
+
+$$
+B(p,q)=\int_0^{+\infty}\frac{t^{p-1}}{(1+t)^{p+q}}\,\mathrm dt,
+\qquad p,q>0.
+$$
+
+!!! warning "提示"
+
+    -   **定义域是 $p,q>0$**：$B(p,q)=\displaystyle\int_0^1t^{p-1}(1-t)^{q-1}\,\mathrm dt$ 在 $p,q>0$ 时收敛；参数不满足时积分可能发散。
+
+        ??? example "B函数的定义域"
+            <!-- 待补充 -->
+
+    -   **对称性**：$B(p,q)=B(q,p)$，由换元 $t\mapsto1-t$ 得到；不要漏掉这个性质。
+
+        ??? example "B函数的对称性"
+            <!-- 待补充 -->
+
+    -   **三角形式**：$B(p,q)=2\displaystyle\int_0^{\pi/2}\sin^{2p-1}\theta\cos^{2q-1}\theta\,\mathrm d\theta$，指数是 $2p-1,2q-1$，不是 $p,q$。
+
+        ??? example "B函数的三角形式"
+            <!-- 待补充 -->
+
+    -   **与 Γ 函数的关系**：$B(p,q)=\dfrac{\Gamma(p)\Gamma(q)}{\Gamma(p+q)}$（$p,q>0$）；分母是 $\Gamma(p+q)$，不要写成 $\Gamma(p)\Gamma(q)$ 相加。
+
+        ??? example "B函数与Γ函数"
+            <!-- 待补充 -->
+
+#### §3.3 Γ函数与B函数的关系
 
 $$
 B(p,q)=\frac{\Gamma(p)\Gamma(q)}{\Gamma(p+q)},\qquad p,q>0.
 $$
 
-一种推导是把 $\Gamma(p)\Gamma(q)$ 写成第一象限的二重积分，再令 $x=ru,y=r(1-u)$，其中 $r>0,0<u<1$，雅可比绝对值为 $r$；积分分离成 $\Gamma(p+q)B(p,q)$。
-
-对正整数 $m,n$，有 $B(m,n)=(m-1)!\displaystyle\frac{(n-1)!}{(m+n-1)!}$。对实数 $\alpha,\beta>-1$，有
-
 $$
-\int_0^{\pi/2}\sin^\alpha x\cos^\beta x\,\mathrm dx
-=\frac12 B\left(\frac{\alpha+1}2,\frac{\beta+1}2\right).
+B(p,1-p)=\Gamma(p)\Gamma(1-p)=\frac\pi{\sin\pi p},\qquad0<p<1.
 $$
 
-!!! info "欧拉反射公式"
+!!! warning "提示"
 
-    教材还利用 $\Gamma(p)\Gamma(1-p)=\displaystyle\frac{\pi}{\sin(\pi p)}$（$0<p<1$）得到 $B(p,1-p)=\displaystyle\frac{\pi}{\sin(\pi p)}$。本页限于积分定义适用的实参数范围；特殊函数的更广泛延拓不在此展开。
+    -   **关系式的参数范围**：$B(p,q)=\dfrac{\Gamma(p)\Gamma(q)}{\Gamma(p+q)}$ 要求 $p,q>0$；负参数或极点处不能直接套用。
 
-!!! example "例 12.4：将反常积分化为 B 函数"
+        ??? example "Γ与B的关系"
+            <!-- 待补充 -->
 
-    求 $I=\displaystyle\int_0^{+\infty}\frac{\sqrt x}{(1+x)^3}\,\mathrm dx$。
+    -   **分母是 $\Gamma(p+q)$**：不要把 $\Gamma(p+q)$ 与 $\Gamma(p)\Gamma(q)$ 混淆；B函数是对称的，Γ(p+q) 不是。
 
-    **解：** 与 B 函数的无穷区间形式比较，有 $p=3/2,p+q=3$，故 $q=3/2$，两者均为正。
+        ??? example "分母的选择"
+            <!-- 待补充 -->
 
-    $$
-    I=B\left(\frac32,\frac32\right)
-    =\frac{\Gamma(3/2)^2}{\Gamma(3)}
-    =\frac{\left(\dfrac{\sqrt\pi}{2}\right)^2}{2}=\frac\pi8.
-    $$
+    -   **可用于计算 B 函数**：把 B 积分化为 Γ 函数，能简化计算；但要先确认 $p,q>0$ 且 Γ 值有意义。
 
-### 本章自测（\*）
+        ??? example "用Γ函数计算B函数"
+            <!-- 待补充 -->
 
-!!! example "自测 12"
+    -   **由关系推出递推**：$B(p,q+1)=\dfrac{q}{p+q}B(p,q)$ 等递推式可由 Γ 函数的递推得到；注意参数位置。
 
-    1. 对 $t>0$，求 $I(t)=\displaystyle\int_t^{2t}e^{tx}\,\mathrm dx$ 的导数，保留积分形式即可。
-    2. $\displaystyle\int_1^{+\infty}x^{-t}\,\mathrm dx$ 对哪些 $t$ 收敛？它在 $[1+\delta,+\infty)$（$\delta>0$）及 $(1,+\infty)$ 上分别是否一致收敛？
-    3. 求 $\displaystyle\int_0^{+\infty}x^2e^{-3x}\,\mathrm dx$ 和 $\Gamma(5/2)$。
-    4. 求 $\displaystyle\int_0^1\sqrt{x(1-x)}\,\mathrm dx$。
-    5. 设 $a>0$，利用 $\displaystyle\int_0^{+\infty}e^{-ax}\,\mathrm dx=\frac{1}{a}$，推导 $\displaystyle\int_0^{+\infty}x^ne^{-ax}\,\mathrm dx$（$n$ 为非负整数），并说明交换求导的依据。
+        ??? example "B函数的递推"
+            <!-- 待补充 -->
 
-    ??? success "答案与提示"
+## 附录 I 基本初等函数与极坐标方程的图形
 
-        1. $I'(t)=2e^{2t^2}-e^{t^2}+\displaystyle\int_t^{2t}xe^{tx}\,\mathrm dx$。
-        2. 当且仅当 $t>1$ 收敛，积分为 $\displaystyle\frac{1}{t-1}$。在 $[1+\delta,+\infty)$ 上由 $x^{-t}\le x^{-1-\delta}$ 一致收敛；在 $(1,+\infty)$ 上，尾积分 $\displaystyle\frac{A^{1-t}}{t-1}$ 随 $t\to 1^+$ 无界，故不一致收敛。
-        3. $\displaystyle\frac{\Gamma(3)}{3^3}=2/27$；$\Gamma(5/2)=\displaystyle\frac{3\sqrt\pi}{4}$。
-        4. $B(3/2,3/2)=\pi/8$。
-        5. 对 $a$ 求 $n$ 次导数，有 $\displaystyle\int_0^\infty x^ne^{-ax}\,\mathrm dx=\frac{n!}{a^{n+1}}$。在 $a\ge a_0>0$ 上，每次求导后的绝对值由相应的 $x^ke^{-a_0x}$ 控制，后者在 $[0,+\infty)$ 可积，故可在任意内闭参数区间逐次求导。
+| 函数 | 表达式 | 定义域 | 值域 |
+| --- | --- | --- | --- |
+| 指数函数 | $y=a^x$，$a>0,\ a\ne1$ | $\mathbb R$ | $(0,+\infty)$ |
+| 对数函数 | $y=\log_a x$，$a>0,\ a\ne1$ | $(0,+\infty)$ | $\mathbb R$ |
+| 正弦函数 | $y=\sin x$ | $\mathbb R$ | $[-1,1]$ |
+| 余弦函数 | $y=\cos x$ | $\mathbb R$ | $[-1,1]$ |
+| 正切函数 | $y=\tan x$ | $x\ne k\pi+\pi/2,\ k\in\mathbb Z$ | $\mathbb R$ |
+| 余切函数 | $y=\cot x$ | $x\ne k\pi,\ k\in\mathbb Z$ | $\mathbb R$ |
+| 反正弦函数 | $y=\arcsin x$ | $[-1,1]$ | $[-\pi/2,\pi/2]$ |
+| 反余弦函数 | $y=\arccos x$ | $[-1,1]$ | $[0,\pi]$ |
+| 反正切函数 | $y=\arctan x$ | $\mathbb R$ | $(-\pi/2,\pi/2)$ |
+| 反余切函数 | $y=\operatorname{arccot}x$ | $\mathbb R$ | $(0,\pi)$ |
 
-## 上册附录：图形、线性结构与积分工具
+幂函数为 $y=x^\mu$，其中 $\mu$ 为常数；其定义域随 $\mu$ 而定，在 $(0,+\infty)$ 上均有定义。
 
-### 附录 I 基本初等函数与极坐标方程的图形
+极坐标 $(r,\theta)$ 与直角坐标 $(x,y)$ 的关系为
 
-基本初等函数应结合定义域、奇偶性、单调性、零点与渐近线记图。例如指数与对数图像关于 $y=x$ 对称；$\arcsin$、$\arccos$ 的图像来自三角函数的单调分支；$\arctan x$ 的水平渐近线为 $y=\pm \pi/2$。
+$$
+x=r\cos\theta,\qquad y=r\sin\theta.
+$$
 
-极坐标与直角坐标的关系是 $x=r\cos\theta,y=r\sin\theta$。下表设 $a>0$：
+下表中 $a>0$。
 
-| 极坐标方程 | 图形特征 |
+| 曲线 | 极坐标方程 |
 | --- | --- |
-| $r=a$ | 以原点为圆心、半径为 $a$ 的圆 |
-| $r=2a\cos\theta$ | $(x-a)^2+y^2=a^2$ |
-| $r=2a\sin\theta$ | $x^2+(y-a)^2=a^2$ |
-| $r=a(1+\cos\theta)$ | 关于极轴对称的心形线，尖点在原点 |
-| $r=a\cos n\theta$ 或 $a\sin n\theta$ | 玫瑰线；正整数 $n$ 为奇数时 $n$ 瓣，为偶数时 $2n$ 瓣 |
-| $r^2=a^2\cos2\theta$ | 双纽线，沿水平轴伸展；只在右端非负的角度范围有实点 |
+| 圆 | $r=a$ |
+| 圆 $x^2+(y-a)^2=a^2$ | $r=2a\sin\theta$ |
+| 圆 $(x-a)^2+y^2=a^2$ | $r=2a\cos\theta$ |
+| 射线 | $\theta=\alpha$，$r\ge0$ |
+| 心形线 | $r=a(1+\sin\theta)$，$r=a(1+\cos\theta)$ |
+| 阿基米德螺线 | $r=a\theta$ |
+| 对数螺线（等角螺线） | $r=ae^{k\theta}$ |
+| 双纽线 | $r^2=2a^2\cos2\theta$，$r^2=a^2\sin2\theta$ |
+| 玫瑰线 | $r=a\sin3\theta$，$r=a\cos3\theta$，$r=a\sin2\theta$，$r=a\cos2\theta$ |
 
-作图时允许负的极径表示反向点，但计算区域面积时通常选择 $r\ge 0$ 的范围，并确认每一瓣只计算一次。角度区间长度为 $2\pi$ 不保证曲线恰好描绘一遍。
+!!! warning "提示"
 
-!!! example "例 A.1：先找一瓣，再计算面积"
+    -   **反三角函数取主值**：$\arcsin x\in[-\pi/2,\pi/2]$，$\arccos x\in[0,\pi]$，$\arctan x\in(-\pi/2,\pi/2)$，$\operatorname{arccot}x\in(0,\pi)$；不要与多值反函数混淆。
 
-    求玫瑰线 $r=a\cos3\theta$ 右侧一瓣的面积。
+        ??? example "反三角函数的值域"
+            <!-- 待补充 -->
 
-    **解：** 该瓣对应 $-\pi/6\le \theta\le \pi/6$，在此范围极径非负，且两端回到原点。因此
+    -   **幂函数的定义域随指数变化**：$y=x^\mu$ 的定义域取决于 $\mu$（整数、分数、无理数时不同），不能一律写成 $\mathbb R$ 或 $(0,+\infty)$。
 
-    $$
-    A=\frac12\int_{-\pi/6}^{\pi/6}a^2\cos^2(3\theta)\,\mathrm d\theta
-    =\frac{\pi a^2}{12}.
-    $$
+        ??? example "幂函数的定义域"
+            <!-- 待补充 -->
 
-    三瓣的总面积为 $\displaystyle\frac{\pi a^2}{4}$，可由对称性直接得到。
+    -   **极坐标方程的图形要结合 $r\ge0$**：$r=a$ 是圆，$r=2a\sin\theta$ 是圆，$r=a(1+\cos\theta)$ 是心形线；作图时注意 $\theta$ 的范围和 $r$ 的符号约定。
 
-### 附录 II 线性空间与映射
+        ??? example "极坐标曲线"
+            <!-- 待补充 -->
 
-笛卡儿乘积 $A\times B$ 是所有有序对 $(a,b)$ 的集合；$\mathbb R^2,\mathbb R^3$ 分别对应平面、空间坐标。
+    -   **对称性与周期**：玫瑰线、双纽线的花瓣数和对称轴由方程决定；先判断周期性、对称性，再取一个周期内的点作图。
 
-线性空间是对加法和数乘封闭、满足相应运算规律的集合。元素不一定是几何箭头，也可以是数列、函数或多项式。一个非空子集若对加法和数乘封闭，就是子空间。
+        ??? example "极坐标曲线的对称性"
+            <!-- 待补充 -->
 
-映射 $T:V\to W$ 若满足
+## 附录 II 线性空间与映射
 
-$$
-T(\alpha u+\beta v)=\alpha T(u)+\beta T(v),
-$$
+### §II.1 笛卡儿乘积集合
 
-则称为线性映射或线性算子；若输出为标量，则称为线性泛函。线性映射必满足 $T(0)=0$。
-
-!!! tip "用线性结构串起各章"
-
-    在合适的函数空间上，求导 $D[f]=f'$ 是线性算子，定积分 $I[f]=\displaystyle\int_a^bf$ 是线性泛函，收敛数列的极限也是线性泛函。线性微分方程 $L[y]=f$ 的齐次解空间与“通解 = 齐次通解 + 特解”，正是这种结构的体现。
-
-!!! example "例 A.2：有常数项为什么通常不线性"
-
-    判断 $T[f]=f'+f$ 与 $S[f]=f'+1$ 是否为线性算子。
-
-    **解：** $T[\alpha f+\beta g]=\alpha T[f]+\beta T[g]$，所以 $T$ 线性。$S[0]=1\ne 0$，因此 $S$ 不线性。
-
-### 附录 III 可积函数类的证明
-
-对 $[a,b]$ 上的有界函数，给定分割 $P$，令每个子区间上函数的上、下确界为 $M_i,m_i$，定义大和与小和（达布上、下和）
+非空集合 $A,B$ 的笛卡儿乘积（直积）为
 
 $$
-U(P)=\sum_iM_i\Delta x_i,\qquad L(P)=\sum_im_i\Delta x_i.
+A\times B=\{(x,y):x\in A,\ y\in B\}.
 $$
 
-任何同一分割的黎曼和都位于 $L(P),U(P)$ 之间。增加分点时，上和不增、下和不减。上积分 $\inf_PU(P)$ 与下积分 $\sup_PL(P)$ 相等，当且仅当函数可积。
-
-等价的可积准则是：对任意 $\varepsilon>0$，存在分割 $P$，使
+$n$ 维笛卡儿坐标空间为
 
 $$
-U(P)-L(P)=\sum_i(M_i-m_i)\Delta x_i<\varepsilon.
+\mathbb R^n=\{(x_1,\ldots,x_n):x_i\in\mathbb R,\ i=1,\ldots,n\}.
 $$
 
-$M_i-m_i$ 是子区间内的振幅，所以上式控制的是“振幅乘区间长度”的总和。
+### §II.2 线性空间
 
-三类可积性证明的思路：
+非空集合 $V$ 对加法和实数数乘封闭，且对任意 $\alpha,\beta,\gamma\in V$、$k,\tau\in\mathbb R$ 满足以下规律，则称 $V$ 为实线性空间：
 
-- 连续函数在闭区间一致连续，足够细的分割使每段振幅统一变小。
-- 有界且只有有限间断点时，用总长度很小的区间包住间断点，在其余部分使用连续性。
-- 单调函数的上、下和之差，可用最大网格长度乘端点函数值之差控制。
+$$
+\begin{gathered}
+\alpha+\beta=\beta+\alpha,\qquad
+(\alpha+\beta)+\gamma=\alpha+(\beta+\gamma),\\
+\exists\,0\in V:\ \alpha+0=\alpha,\qquad
+\forall\alpha\in V,\ \exists(-\alpha)\in V:\ \alpha+(-\alpha)=0,\\
+1\alpha=\alpha,\qquad k(\tau\alpha)=(k\tau)\alpha,\\
+(k+\tau)\alpha=k\alpha+\tau\alpha,\qquad
+k(\alpha+\beta)=k\alpha+k\beta.
+\end{gathered}
+$$
 
-!!! info "有界仍可能不可积"
+$V$ 的非空子集 $W$ 在同样的加法与数乘下构成线性空间时，称为 $V$ 的线性子空间；其条件为
 
-    狄利克雷函数在有理点取 $1$、无理点取 $0$。每个非退化区间同时含有理数和无理数，故在 $[0,1]$ 上任何分割都满足 $U(P)=1,L(P)=0$，不能达到可积准则。这说明第五章中“可积必有界”的逆命题不成立。
+$$
+\alpha,\beta\in W,\ k\in\mathbb R
+\ \Longrightarrow\ \alpha+\beta\in W,\quad k\alpha\in W.
+$$
 
-### 附录 IV 积分表
+### §II.3 映射
 
-积分表用于识别结构，不能替代对定义域、参数、常数和奇点的检查。第四章已列出核心基本积分；另记几组常用组合式（均需补任意常数）：
+映射 $f:A\to B$ 给 $A$ 中每个元素 $x$ 唯一确定一个 $B$ 中的元素 $y=f(x)$。$A$ 为定义域，$f(A)$ 为值域；$y$ 为 $x$ 的像，满足 $f(x)=y$ 的所有 $x$ 为 $y$ 的原像。
+
+对 $C\subseteq A$，集合 $C$ 的像为
+
+$$
+f(C)=\{f(x):x\in C\}.
+$$
+
+若 $A_1\subseteq A$ 且对任意 $x\in A_1$ 有 $f_1(x)=f(x)$，则 $f$ 是 $f_1$ 在 $A$ 上的延拓，$f_1$ 为 $f$ 在 $A_1$ 上的限制，记为 $f_1=f|_{A_1}$。
+
+设 $A,B$ 为实线性空间，映射 $T:A\to B$ 满足
+
+$$
+T(\alpha x+\beta y)=\alpha T(x)+\beta T(y),
+\qquad x,y\in A,\quad\alpha,\beta\in\mathbb R,
+$$
+
+则称 $T$ 为线性算子；当取值为实数时，称为线性泛函。
+
+### §II.4 线性算子与线性泛函
+
+在各自的定义域上，数列极限、函数极限、定点求导和定积分对应线性泛函：
+
+$$
+T_1(\{a_n\})=\lim_{n\to\infty}a_n,\qquad
+T_2(f)=\lim_{x\to x_0}f(x),
+$$
+
+$$
+T_3(f)=f'(x_0),\qquad T_4(f)=\int_a^b f(x)\,\mathrm dx.
+$$
+
+求导算子为 $D(f)=f'$，满足
+
+$$
+D(\alpha f+\beta g)=\alpha D(f)+\beta D(g).
+$$
+
+!!! warning "提示"
+
+    -   **线性算子的定义**：$T(\alpha x+\beta y)=\alpha T(x)+\beta T(y)$ 要对任意 $x,y$ 和任意实数 $\alpha,\beta$ 成立；只验证可加性或齐次性之一不够。
+
+        ??? example "线性算子的判定"
+            <!-- 待补充 -->
+
+    -   **泛函是取值为实数的线性算子**：线性泛函是线性算子的特例，不能把所有线性算子都叫泛函。
+
+        ??? example "线性泛函"
+            <!-- 待补充 -->
+
+    -   **定义域要选对**：求导算子 $D(f)=f'$ 只能定义在可导函数空间上；极限、积分算子也要在相应的收敛/可积空间上定义。
+
+        ??? example "算子的定义域"
+            <!-- 待补充 -->
+
+    -   **线性不等于连续**：有限维空间上的线性算子自动连续，无限维空间则不一定；讨论连续性需要额外的有界性条件。
+
+        ??? example "线性算子的连续性"
+            <!-- 待补充 -->
+
+## 附录 III 可积函数类的证明
+
+### §III.1 大和与小和的性质
+
+设 $f$ 在 $[a,b]$ 上有界，分割 $T$ 为 $a=x_0<x_1<\cdots<x_n=b$。记
+
+$$
+\Delta x_i=x_i-x_{i-1},\qquad
+\lambda=\max_{1\le i\le n}\Delta x_i,
+$$
+
+$$
+M_i=\sup_{x\in[x_{i-1},x_i]}f(x),\qquad
+m_i=\inf_{x\in[x_{i-1},x_i]}f(x).
+$$
+
+大和（达布上和）与小和（达布下和）分别为
+
+$$
+S(T)=\sum_{i=1}^n M_i\Delta x_i,\qquad
+s(T)=\sum_{i=1}^n m_i\Delta x_i.
+$$
+
+任取 $\xi_i\in[x_{i-1},x_i]$，有
+
+$$
+s(T)\le\sum_{i=1}^n f(\xi_i)\Delta x_i\le S(T).
+$$
+
+若 $T'$ 为 $T$ 的加细分割，则
+
+$$
+s(T)\le s(T'),\qquad S(T')\le S(T).
+$$
+
+下积分与上积分定义为
+
+$$
+\underline I=\sup_T s(T),\qquad \overline I=\inf_T S(T),
+$$
+
+并满足
+
+$$
+\lim_{\lambda\to0}s(T)=\underline I,\qquad
+\lim_{\lambda\to0}S(T)=\overline I.
+$$
+
+### §III.2 可积判断准则
+
+有界函数 $f$ 在 $[a,b]$ 上可积的等价条件为
+
+$$
+\underline I=\overline I,
+$$
+
+或
+
+$$
+\forall\varepsilon>0,\ \exists T:\quad S(T)-s(T)<\varepsilon.
+$$
+
+记 $\omega_i=M_i-m_i$ 为 $f$ 在第 $i$ 个子区间上的振幅，则后一条件也写为
+
+$$
+\forall\varepsilon>0,\ \exists T:\quad
+\sum_{i=1}^n\omega_i\Delta x_i<\varepsilon.
+$$
+
+### §III.3 可积类函数
+
+以下各类函数在 $[a,b]$ 上可积：连续函数；有界且只有有限个间断点的函数；单调函数。
+
+!!! warning "提示"
+
+    -   **三类充分条件**：连续函数、有界且只有有限个间断点的函数、单调函数都可积；它们不是可积的必要条件。
+
+        ??? example "可积函数类"
+            <!-- 待补充 -->
+
+    -   **单调函数可以有无限个间断点**：单调函数的间断点至多可数，但仍可积；不要误以为间断点必须有限。
+
+        ??? example "单调函数的可积性"
+            <!-- 待补充 -->
+
+    -   **无界函数不是常义可积**：常义积分要求函数有界；无界函数的积分属于反常积分，即使只有一个瑕点也不能按常义积分处理。
+
+        ??? example "无界函数"
+            <!-- 待补充 -->
+
+    -   **可积必有界，有界不一定可积**：Dirichlet 函数在 $[0,1]$ 上有界但不可积；判断可积要用振幅和或上下积分，不能只看有界。
+
+        ??? example "有界与可积"
+            <!-- 待补充 -->
+
+## 附录 IV 积分表
+
+$C$ 表示任意常数。下列公式在被积函数有定义的区间内成立。
+
+当 $a\ne0$ 时，
+
+$$
+\int\frac{\mathrm dx}{ax+b}=\frac1a\ln|ax+b|+C,
+$$
+
+$$
+\int(ax+b)^\mu\,\mathrm dx
+=\frac{(ax+b)^{\mu+1}}{a(\mu+1)}+C,\qquad\mu\ne-1.
+$$
+
+当 $a>0$ 时，
+
+$$
+\int\frac{\mathrm dx}{x^2+a^2}=\frac1a\arctan\frac xa+C,
+\qquad
+\int\frac{\mathrm dx}{x^2-a^2}=\frac1{2a}\ln\left|\frac{x-a}{x+a}\right|+C,
+$$
+
+$$
+\int\frac{\mathrm dx}{\sqrt{x^2+a^2}}
+=\ln\left(x+\sqrt{x^2+a^2}\right)+C,
+$$
+
+$$
+\int\frac{\mathrm dx}{\sqrt{x^2-a^2}}
+=\ln\left|x+\sqrt{x^2-a^2}\right|+C,\qquad |x|>a,
+$$
+
+$$
+\int\frac{\mathrm dx}{\sqrt{a^2-x^2}}=\arcsin\frac xa+C,\qquad |x|<a,
+$$
+
+$$
+\int\sqrt{x^2+a^2}\,\mathrm dx
+=\frac12\left[x\sqrt{x^2+a^2}+a^2\ln\left(x+\sqrt{x^2+a^2}\right)\right]+C,
+$$
+
+$$
+\int\sqrt{x^2-a^2}\,\mathrm dx
+=\frac12\left[x\sqrt{x^2-a^2}-a^2\ln\left|x+\sqrt{x^2-a^2}\right|\right]+C,
+\qquad |x|>a,
+$$
+
+$$
+\int\sqrt{a^2-x^2}\,\mathrm dx
+=\frac12\left[x\sqrt{a^2-x^2}+a^2\arcsin\frac xa\right]+C,\qquad |x|<a.
+$$
+
+当 $a^2+b^2>0$ 时，
 
 $$
 \int e^{ax}\cos bx\,\mathrm dx
@@ -4476,41 +7527,41 @@ $$
 
 $$
 \int e^{ax}\sin bx\,\mathrm dx
-=\frac{e^{ax}}{a^2+b^2}(a\sin bx-b\cos bx)+C,
-\qquad a^2+b^2>0.
+=\frac{e^{ax}}{a^2+b^2}(a\sin bx-b\cos bx)+C.
 $$
 
-对 $a>0$，
+三角函数的递推积分公式为
 
 $$
-\int \sqrt{x^2+a^2}\,\mathrm dx
-=\frac12\left[x\sqrt{x^2+a^2}+a^2\ln\left|x+\sqrt{x^2+a^2}\right|\right]+C,
+\int\sin^nx\,\mathrm dx
+=-\frac{\sin^{n-1}x\cos x}{n}
++\frac{n-1}{n}\int\sin^{n-2}x\,\mathrm dx,\qquad n\ge2,
 $$
 
 $$
-\int \sqrt{x^2-a^2}\,\mathrm dx
-=\frac12\left[x\sqrt{x^2-a^2}-a^2\ln\left|x+\sqrt{x^2-a^2}\right|\right]+C,
-\qquad |x|>a.
+\int\cos^nx\,\mathrm dx
+=\frac{\cos^{n-1}x\sin x}{n}
++\frac{n-1}{n}\int\cos^{n-2}x\,\mathrm dx,\qquad n\ge2.
 $$
 
-定积分中常用的递推关系为
+!!! warning "提示"
 
-$$
-J_n=\int_0^{\pi/2}\sin^nx\,\mathrm dx
-=\frac{n-1}{n}J_{n-2}\quad (n\ge 2),\qquad
-J_0=\frac\pi2,\quad J_1=1.
-$$
+    -   **公式的条件不能忽略**：如 $\displaystyle\int\frac{\mathrm dx}{\sqrt{x^2-a^2}}$ 要求 $|x|>a$，$\displaystyle\int\frac{\mathrm dx}{a^2-x^2}$ 类公式要求 $|x|<a$；忽略条件会得到无意义的对数。
 
-这由分部积分和 $\cos^2x=1-\sin^2x$ 推得；余弦的同次幂在该区间有相同积分值。
+        ??? example "积分公式的适用条件"
+            <!-- 待补充 -->
 
-!!! info "复习安排与参考资料"
+    -   **跨过奇点不能直接套公式**：积分表公式只在被积函数有定义的区间内成立；若积分区间跨过瑕点，必须分段按反常积分处理。
 
-    本页按《微积分》（第三版）上、下册章节顺序整理，选学标记（\*）沿用教材。笔记为归纳改写，例题和自测题为另选或自拟，不沿用教材习题编号。
+        ??? example "跨瑕点的积分"
+            <!-- 待补充 -->
 
-    备考目标为 **2027 年数学一（301）**。截至 2026-09-30，已核实高等教育出版社列有[2027 年数学考试大纲书目](https://xuanshu.hep.com.cn/front/book/findBookDetails?bookId=6aa1910be119ac97297a608f)，但尚未取得可逐条比对的考纲正文；复习重点暂以下列 2026 年考纲转载为核对基线，不据此断言 2027 年考纲没有增删。
+    -   **不定积分要加 $C$**：表中每个公式都是不定积分，结果必须带任意常数 $C$；定积分则要代入上下限。
 
-    - 苏德矿、吴明华、童雯雯：《微积分》（第三版）（上），高等教育出版社，2021 年，ISBN 978-7-04-054816-7。以用户提供的扫描版为正文参考；上册正文第 1–358 页，附录第 359–384 页。
-    - 苏德矿、吴明华、童雯雯：《微积分》（第三版）（下），高等教育出版社，2021 年。以用户提供的扫描版为正文参考，按印刷页码标注范围；[出版社书目信息与目录](https://xuanshu.hep.com.cn/front/book/findBookDetails?bookId=5fde33475710f1bcc39a1b92)。
-    - [2026 年考研数学一考试大纲转载（文都，2025-10-17）](https://kaoyan.wendu.com/m/2025/1017/212673.shtml)：用于本页的备考范围对照，转载材料不替代 2027 年正式考纲。
-    - [教育部教育考试院考试用书目录](https://www.neea.edu.cn/html1/category/1509/6235-1.htm)：正式考试用书信息的核验入口。
-    - [MIT 18.117 讲义](https://math.mit.edu/~vwg/classnotes-spring05.pdf)：仅用于第十一章二元傅里叶展开的补充说明。
+        ??? example "积分常数"
+            <!-- 待补充 -->
+
+    -   **递推公式的 $n$ 范围**：$\displaystyle\int\sin^nx\,\mathrm dx$、$\displaystyle\int\cos^nx\,\mathrm dx$ 的递推公式要求 $n\ge2$；$n=0,1$ 时要单独计算。
+
+        ??? example "递推积分公式"
+            <!-- 待补充 -->

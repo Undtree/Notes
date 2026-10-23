@@ -1244,20 +1244,3 @@ UTM 是现代计算机“存储程序”思想的起源。
     *   **语言视角**：递归语言、R.E. 语言。
     *   **函数视角**：$\mu$-递归函数。
     *   **逻辑视角**：莱斯定理（语义性质不可判定）。
-
-<script src="https://giscus.app/client.js"
-        data-repo="Undtree/Notes"
-        data-repo-id="R_kgDOMeUFpA"
-        data-category="Announcements"
-        data-category-id="DIC_kwDOMeUFpM4C0y5E"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="top"
-        data-theme="preferred_color_scheme"
-        data-lang="zh-CN"
-        data-loading="lazy"
-        crossorigin="anonymous"
-        async>
-</script>

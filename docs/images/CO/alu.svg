@@ -1,62 +1,41 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 580" width="1120" height="580" role="img" aria-labelledby="title desc" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">
-<title id="title">算术逻辑单元（ALU）的组成</title>
-<desc id="desc">ALU 内部包含带标志加法器、逻辑运算与移位等部件：操作数 A、B 同时送入各部件，操作控制信号决定各部件执行的操作并通过多路选择器选出一路结果作为输出 F；带标志加法器还向上输出 CF、OF、SF、ZF 标志。</desc>
-
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="490" viewBox="0 0 960 490" role="img" aria-labelledby="title desc" font-family="Times New Roman, Times, Liberation Serif, Noto Serif, serif">
+<title id="title">算术逻辑单元的基本结构</title>
+<desc id="desc">ALU 使用专用凹口轮廓。输入为两个 n 位操作数 A、B，进位输入 Cin 与 k 位操作控制 ALUop；输出为 n 位结果 F、Cout 和 ZF、OF、SF、CF。</desc>
+<!-- 复习指导 图 2.7；位编号统一从 0 开始，寄存器名称与正文一致。 -->
 <defs>
-  <!-- 箭头头部 -->
-  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
-    <path d="M 0 0 L 10 5 L 0 10 z" fill="#4051b5"/>
-  </marker>
+<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#4051b5"/></marker>
+<marker id="red-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#d62728"/></marker>
 </defs>
-
-<!-- 背景 -->
-<rect width="1120" height="580" fill="#ffffff"/>
-
-<!-- ============ ALU 专用轮廓（内部展开为功能模块） ============ -->
-<path d="M 300 80 L 860 180 V 380 L 300 480 V 300 L 370 280 L 300 260 Z" fill="#f7f9fe" stroke="#4051b5" stroke-width="2"/>
-<text x="580" y="62" text-anchor="middle" font-size="20" font-weight="700" fill="#1a237e">算术逻辑单元（ALU）</text>
-
-<!-- 内部：带标志加法器 -->
-<rect x="345" y="130" width="200" height="110" rx="12" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
-<text x="445" y="191" text-anchor="middle" font-size="16" font-weight="700" fill="#283593">带标志加法器</text>
-
-<!-- 内部：逻辑运算与移位 -->
-<rect x="345" y="290" width="200" height="110" rx="12" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
-<text x="445" y="348" text-anchor="middle" font-size="16" font-weight="700" fill="#283593">逻辑运算与移位</text>
-<text x="445" y="376" text-anchor="middle" font-size="13" fill="#4051b5">与、或、非、异或等</text>
-
-<!-- 内部：多路选择器，梯形窄边为输出端 -->
-<path d="M 640 150 L 770 185 V 315 L 640 350 Z" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
-<text x="705" y="242" text-anchor="middle" font-size="22" font-weight="700" fill="#283593">MUX</text>
-<text x="705" y="272" text-anchor="middle" font-size="13" fill="#4051b5">多路选择器</text>
-
-<!-- 操作数 A、B 与分支 -->
-<line x1="200" y1="150" x2="341" y2="150" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
-<text x="194" y="156" text-anchor="end" font-size="16" fill="#1a237e">A</text>
-<line x1="240" y1="190" x2="341" y2="190" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
-<text x="234" y="196" text-anchor="end" font-size="16" fill="#1a237e">B</text>
-<circle cx="220" cy="150" r="4.5" fill="#4051b5"/>
-<circle cx="310" cy="190" r="4.5" fill="#4051b5"/>
-<path d="M 220 150 L 220 330 L 341 330" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
-<path d="M 310 190 V 370 H 345" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
-
-<!-- 内部连线到多路选择器 -->
-<line x1="545" y1="185" x2="636" y2="185" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
-<path d="M 545 345 L 590 345 L 590 315 L 636 315" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
-
-<!-- 结果输出 F -->
-<line x1="770" y1="250" x2="906" y2="250" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
-<text x="914" y="256" font-size="16" fill="#1a237e">F</text>
-
-<!-- 标志输出 -->
-<line x1="420" y1="130" x2="420" y2="44" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
-<text x="420" y="32" text-anchor="middle" font-size="15" fill="#1a237e">CF、OF、SF、ZF</text>
-
-<!-- 操作控制信号 -->
-<text x="548" y="540" text-anchor="end" font-size="15" fill="#1a237e">操作控制信号</text>
-<path d="M 560 545 V 450 H 705 V 332.5" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
-<path d="M 560 450 V 353 A 8 8 0 0 1 560 337 V 265 H 500 V 240" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
-<path d="M 560 420 H 500 V 400" fill="none" stroke="#4051b5" stroke-width="3.5" marker-end="url(#arrow)"/>
-<circle cx="560" cy="450" r="4.5" fill="#4051b5"/>
-<circle cx="560" cy="420" r="4.5" fill="#4051b5"/>
+<rect width="960" height="490" fill="#ffffff"/>
+<text x="480" y="40" text-anchor="middle" font-size="21" fill="#1a237e" font-weight="700"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">算术逻辑单元（</tspan>ALU<tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">）的基本结构</tspan></text>
+<path d="M 340 130 L 540 175 V 355 L 340 400 V 289.29999999999995 L 365 265.0 L 340 240.7 Z" fill="#eaf0ff" stroke="#4051b5" stroke-width="2" stroke-linejoin="round"/>
+<text x="450.0" y="271.0" text-anchor="middle" font-size="21" fill="#1a237e" font-weight="700">ALU</text>
+<path d="M 140 185 H 340" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="115" y="191" text-anchor="middle" font-size="22" fill="#1a237e">A</text>
+<path d="M 224 191 L 236 179" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round"/>
+<text x="230" y="175" text-anchor="middle" font-size="15" fill="#1a237e">n</text>
+<path d="M 140 345 H 340" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="115" y="351" text-anchor="middle" font-size="22" fill="#1a237e">B</text>
+<path d="M 224 351 L 236 339" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round"/>
+<text x="230" y="335" text-anchor="middle" font-size="15" fill="#1a237e">n</text>
+<path d="M 390 70 V 141" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="350" y="65" text-anchor="middle" font-size="18" fill="#1a237e">ALUop</text>
+<path d="M 384 105 L 396 93" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round"/>
+<text x="402" y="103" text-anchor="start" font-size="15" fill="#1a237e">k</text>
+<path d="M 480 70 V 161.5" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="500" y="65" text-anchor="middle" font-size="18" fill="#1a237e">C<tspan font-size="12.6" dy="4">in</tspan></text>
+<path d="M 540 205 H 670" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="700" y="211" text-anchor="middle" font-size="18" fill="#1a237e">ZF</text>
+<path d="M 540 235 H 670" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="700" y="241" text-anchor="middle" font-size="18" fill="#1a237e">OF</text>
+<path d="M 540 295 H 670" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="700" y="301" text-anchor="middle" font-size="18" fill="#1a237e">SF</text>
+<path d="M 540 325 H 670" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="700" y="331" text-anchor="middle" font-size="18" fill="#1a237e">CF</text>
+<path d="M 540 265 H 825" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M 754 271 L 766 259" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round"/>
+<text x="760" y="255" text-anchor="middle" font-size="15" fill="#1a237e">n</text>
+<text x="860" y="272" text-anchor="middle" font-size="22" fill="#1a237e" font-weight="700">F</text>
+<path d="M 440 377.5 V 440" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="478" y="456" text-anchor="middle" font-size="18" fill="#1a237e">C<tspan font-size="12.6" dy="4">out</tspan></text>
 </svg>

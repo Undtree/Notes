@@ -74,6 +74,11 @@
   overflow: visible;
 }
 
+/* 保留主题的横向滚动，移除居中表格内部的水平留白，避免宽表格偏移。 */
+.md-typeset .centered-table .md-typeset__table {
+  padding-inline: 0;
+}
+
 /* 功能：折叠逻辑 (简化版) */
 
 /* 默认状态：
