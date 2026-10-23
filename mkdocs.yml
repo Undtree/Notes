@@ -33,7 +33,7 @@ nav:
       - 文件管理: CS/OS/file.md
       - 输入输出: CS/OS/IO.md
     - 计算理论: CS/TOC.md
-    - 编译原理: CS/CP.md
+    # - 编译原理: CS/CP.md
     - 数据库系统: CS/DBS.md
     # - 软件工程: CS/SE/index.md
     # - 多媒体技术: CS/multimedia.md

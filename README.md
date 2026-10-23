@@ -10,7 +10,7 @@
     
     本仓库中用于构建网站的配置文件（如 `mkdocs.yml`）、自定义脚本、样式表（CSS/JS）以及主题覆写文件，均采用 GNU General Public License v3.0 许可证。
     
-    *本站使用 MkDocs 构建，MkDocs 本身遵循 BSD-2-Clause 许可证。本站使用主题 Mkdocs-Material，该主题使用 MIT 许可证。*
+    *本站使用 MkDocs 构建，MkDocs 遵循 BSD-2-Clause 许可证。本站使用主题 Mkdocs-Material，该主题使用 MIT 许可证。*
 
 2.  笔记内容
     
