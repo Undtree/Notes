@@ -4,6 +4,8 @@ icon: material/brain
 
 # 人工智能
 
+⚠️ 待建设区 ⚠️
+
 <!-- !!! Note "目录"
 
     - [自然语言处理导论](./NLP/index.md)
