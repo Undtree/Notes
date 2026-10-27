@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 670" width="1280" height="670" role="img" aria-label="混合索引示意。inode 有 10 个直接地址项，以及一次、二次、三次间接地址项，分别经过 0、1、2、3 层索引到达数据块。每个索引块有 K 个地址项，仅展开一条分支。" font-family="Source Han Sans SC, Noto Sans SC, Microsoft YaHei, sans-serif">
+<desc>混合索引示意。inode 有 10 个直接地址项，以及一次、二次、三次间接地址项，分别经过 0、1、2、3 层索引到达数据块。每个索引块有 K 个地址项，仅展开一条分支。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#4051b5"/></marker></defs>
+<rect width="1280" height="670" fill="#fff"/>
+<text x="144" y="36" font-size="22" fill="#24364b" text-anchor="middle" font-weight="600">inode</text>
+<text x="1185" y="36" font-size="22" fill="#00897b" text-anchor="middle" font-weight="600">数据块</text>
+<rect x="28" y="60" width="232" height="550" rx="7" fill="#f5f7fb" stroke="#cbd5e1" stroke-width="1.5"/>
+<line x1="28" y1="135" x2="260" y2="135" stroke="#cbd5e1" stroke-width="1.4"/>
+<line x1="28" y1="163" x2="260" y2="163" stroke="#cbd5e1" stroke-width="1.4"/>
+<line x1="28" y1="238" x2="260" y2="238" stroke="#cbd5e1" stroke-width="1.4"/>
+<line x1="28" y1="360" x2="260" y2="360" stroke="#cbd5e1" stroke-width="1.4"/>
+<line x1="28" y1="480" x2="260" y2="480" stroke="#cbd5e1" stroke-width="1.4"/>
+<text x="144" y="104" font-size="20" fill="#24364b" text-anchor="middle" font-weight="600">直接地址 0</text>
+<text x="144" y="207" font-size="20" fill="#24364b" text-anchor="middle" font-weight="600">直接地址 9</text>
+<text x="144" y="307" font-size="20" fill="#24364b" text-anchor="middle" font-weight="600">一次间接地址</text>
+<text x="144" y="427" font-size="20" fill="#24364b" text-anchor="middle" font-weight="600">二次间接地址</text>
+<text x="144" y="547" font-size="20" fill="#24364b" text-anchor="middle" font-weight="600">三次间接地址</text>
+<text x="144" y="155" font-size="23" fill="#65748b" text-anchor="middle" font-weight="400">⋮</text>
+<rect x="1120" y="76" width="130" height="44" rx="7" fill="#e8f7f3" stroke="#00897b" stroke-width="1.5"/>
+<text x="1185" y="105" font-size="20" fill="#00897b" text-anchor="middle" font-weight="600">逻辑块 0</text>
+<rect x="1120" y="179" width="130" height="44" rx="7" fill="#e8f7f3" stroke="#00897b" stroke-width="1.5"/>
+<text x="1185" y="208" font-size="20" fill="#00897b" text-anchor="middle" font-weight="600">逻辑块 9</text>
+<text x="1185" y="157" font-size="23" fill="#00897b" text-anchor="middle" font-weight="400">⋮</text>
+<path d="M 260 98 H 1116" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 260 201 H 1116" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<text x="639" y="152" font-size="20" fill="#65748b" text-anchor="middle" font-weight="400">10 个直接地址 → 10 个数据块</text>
+<path d="M 260 300 H 846" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<rect x="850" y="260" width="150" height="86" rx="7" fill="#eef1ff" stroke="#4051b5" stroke-width="1.5"/>
+<line x1="850" y1="289" x2="1000" y2="289" stroke="#4051b5" stroke-width="1.4"/>
+<line x1="850" y1="316" x2="1000" y2="316" stroke="#cbd5e1" stroke-width="1.4"/>
+<text x="925" y="281" font-size="18" fill="#4051b5" text-anchor="middle" font-weight="600">一级索引块</text>
+<text x="925" y="309" font-size="17" fill="#24364b" text-anchor="middle" font-weight="400">地址项</text>
+<text x="925" y="338" font-size="21" fill="#65748b" text-anchor="middle" font-weight="400">⋮</text>
+<path d="M 1000 300 H 1116" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<rect x="1120" y="278" width="130" height="44" rx="7" fill="#e8f7f3" stroke="#00897b" stroke-width="1.5"/>
+<text x="1185" y="307" font-size="20" fill="#00897b" text-anchor="middle" font-weight="600">数据</text>
+<text x="1250" y="375" font-size="19" fill="#00897b" text-anchor="end" font-weight="400">此部分最多 K 个数据块</text>
+<path d="M 260 420 H 606" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<rect x="610" y="380" width="150" height="86" rx="7" fill="#eef1ff" stroke="#4051b5" stroke-width="1.5"/>
+<line x1="610" y1="409" x2="760" y2="409" stroke="#4051b5" stroke-width="1.4"/>
+<line x1="610" y1="436" x2="760" y2="436" stroke="#cbd5e1" stroke-width="1.4"/>
+<text x="685" y="401" font-size="18" fill="#4051b5" text-anchor="middle" font-weight="600">二级索引块</text>
+<text x="685" y="429" font-size="17" fill="#24364b" text-anchor="middle" font-weight="400">地址项</text>
+<text x="685" y="458" font-size="21" fill="#65748b" text-anchor="middle" font-weight="400">⋮</text>
+<path d="M 760 420 H 846" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<rect x="850" y="380" width="150" height="86" rx="7" fill="#eef1ff" stroke="#4051b5" stroke-width="1.5"/>
+<line x1="850" y1="409" x2="1000" y2="409" stroke="#4051b5" stroke-width="1.4"/>
+<line x1="850" y1="436" x2="1000" y2="436" stroke="#cbd5e1" stroke-width="1.4"/>
+<text x="925" y="401" font-size="18" fill="#4051b5" text-anchor="middle" font-weight="600">一级索引块</text>
+<text x="925" y="429" font-size="17" fill="#24364b" text-anchor="middle" font-weight="400">地址项</text>
+<text x="925" y="458" font-size="21" fill="#65748b" text-anchor="middle" font-weight="400">⋮</text>
+<path d="M 1000 420 H 1116" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<rect x="1120" y="398" width="130" height="44" rx="7" fill="#e8f7f3" stroke="#00897b" stroke-width="1.5"/>
+<text x="1185" y="427" font-size="20" fill="#00897b" text-anchor="middle" font-weight="600">数据</text>
+<text x="1250" y="495" font-size="19" fill="#00897b" text-anchor="end" font-weight="400">此部分最多 K² 个数据块</text>
+<path d="M 260 540 H 366" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<rect x="370" y="500" width="150" height="86" rx="7" fill="#eef1ff" stroke="#4051b5" stroke-width="1.5"/>
+<line x1="370" y1="529" x2="520" y2="529" stroke="#4051b5" stroke-width="1.4"/>
+<line x1="370" y1="556" x2="520" y2="556" stroke="#cbd5e1" stroke-width="1.4"/>
+<text x="445" y="521" font-size="18" fill="#4051b5" text-anchor="middle" font-weight="600">三级索引块</text>
+<text x="445" y="549" font-size="17" fill="#24364b" text-anchor="middle" font-weight="400">地址项</text>
+<text x="445" y="578" font-size="21" fill="#65748b" text-anchor="middle" font-weight="400">⋮</text>
+<path d="M 520 540 H 606" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<rect x="610" y="500" width="150" height="86" rx="7" fill="#eef1ff" stroke="#4051b5" stroke-width="1.5"/>
+<line x1="610" y1="529" x2="760" y2="529" stroke="#4051b5" stroke-width="1.4"/>
+<line x1="610" y1="556" x2="760" y2="556" stroke="#cbd5e1" stroke-width="1.4"/>
+<text x="685" y="521" font-size="18" fill="#4051b5" text-anchor="middle" font-weight="600">二级索引块</text>
+<text x="685" y="549" font-size="17" fill="#24364b" text-anchor="middle" font-weight="400">地址项</text>
+<text x="685" y="578" font-size="21" fill="#65748b" text-anchor="middle" font-weight="400">⋮</text>
+<path d="M 760 540 H 846" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<rect x="850" y="500" width="150" height="86" rx="7" fill="#eef1ff" stroke="#4051b5" stroke-width="1.5"/>
+<line x1="850" y1="529" x2="1000" y2="529" stroke="#4051b5" stroke-width="1.4"/>
+<line x1="850" y1="556" x2="1000" y2="556" stroke="#cbd5e1" stroke-width="1.4"/>
+<text x="925" y="521" font-size="18" fill="#4051b5" text-anchor="middle" font-weight="600">一级索引块</text>
+<text x="925" y="549" font-size="17" fill="#24364b" text-anchor="middle" font-weight="400">地址项</text>
+<text x="925" y="578" font-size="21" fill="#65748b" text-anchor="middle" font-weight="400">⋮</text>
+<path d="M 1000 540 H 1116" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<rect x="1120" y="518" width="130" height="44" rx="7" fill="#e8f7f3" stroke="#00897b" stroke-width="1.5"/>
+<text x="1185" y="547" font-size="20" fill="#00897b" text-anchor="middle" font-weight="600">数据</text>
+<text x="1250" y="615" font-size="19" fill="#00897b" text-anchor="end" font-weight="400">此部分最多 K³ 个数据块</text>
+</svg>

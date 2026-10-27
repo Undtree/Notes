@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 505" width="1160" height="505" role="img" aria-labelledby="title desc" font-family="Times New Roman, Times, Liberation Serif, Noto Serif, serif">
+<title id="title">传统 MBR 分区方案下的磁盘与文件系统布局</title>
+<desc id="desc">整个磁盘起始处为包含分区表的主引导记录 MBR，随后是多个磁盘分区。将其中的分区 2 放大，依次显示引导块、超级块、空闲空间管理、i 节点、根目录、文件和目录。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#4051b5"/></marker></defs>
+<rect width="1160" height="505" fill="#fff"/>
+<text x="580" y="49" text-anchor="middle" font-size="24" fill="#24364b" font-weight="600"><tspan font-family="Source Han Sans SC, Noto Sans SC, Microsoft YaHei, sans-serif">整个磁盘</tspan></text>
+<path d="M 494 41 H 40" fill="none" stroke="#4051b5" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M 666 41 H 1120" fill="none" stroke="#4051b5" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="143" y="111" text-anchor="middle" font-size="22" fill="#24364b" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Microsoft YaHei, sans-serif">分区表</tspan></text>
+<path d="M 156 123 L 195 155" fill="none" stroke="#4051b5" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="650" y="111" text-anchor="middle" font-size="22" fill="#24364b" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Microsoft YaHei, sans-serif">磁盘分区</tspan></text>
+<path d="M 605 124 L 333 155" fill="none" stroke="#4051b5" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M 635 124 L 592 155" fill="none" stroke="#4051b5" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M 665 124 L 868 155" fill="none" stroke="#4051b5" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M 695 124 L 1062 155" fill="none" stroke="#4051b5" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="40" y="160" width="170" height="60" fill="#f5f7fb" stroke="none" stroke-width="1.5"/>
+<rect x="210" y="160" width="245" height="60" fill="#fff" stroke="none" stroke-width="1.5"/>
+<rect x="455" y="160" width="275" height="60" fill="#eef1ff" stroke="none" stroke-width="1.5"/>
+<rect x="730" y="160" width="275" height="60" fill="#fff" stroke="none" stroke-width="1.5"/>
+<rect x="1005" y="160" width="115" height="60" fill="#fff" stroke="none" stroke-width="1.5"/>
+<rect x="182" y="160" width="28" height="60" fill="#dfe5ff" stroke="none" stroke-width="1.5"/>
+<path d="M 182 160 V 220" fill="none" stroke="#4051b5" stroke-width="1.1" stroke-linejoin="round"/>
+<path d="M 189 160 V 220" fill="none" stroke="#4051b5" stroke-width="1.1" stroke-linejoin="round"/>
+<path d="M 196 160 V 220" fill="none" stroke="#4051b5" stroke-width="1.1" stroke-linejoin="round"/>
+<path d="M 203 160 V 220" fill="none" stroke="#4051b5" stroke-width="1.1" stroke-linejoin="round"/>
+<path d="M 210 160 V 220" fill="none" stroke="#4051b5" stroke-width="1.8" stroke-linejoin="round"/>
+<path d="M 455 160 V 220" fill="none" stroke="#4051b5" stroke-width="1.8" stroke-linejoin="round"/>
+<path d="M 730 160 V 220" fill="none" stroke="#4051b5" stroke-width="1.8" stroke-linejoin="round"/>
+<path d="M 1005 160 V 220" fill="none" stroke="#4051b5" stroke-width="1.8" stroke-linejoin="round"/>
+<rect x="40" y="160" width="1080" height="60" fill="none" stroke="#4051b5" stroke-width="1.8"/>
+<text x="110" y="199" text-anchor="middle" font-size="25" fill="#24364b" font-weight="400">MBR</text>
+<text x="332.5" y="198" text-anchor="middle" font-size="21" fill="#24364b" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Microsoft YaHei, sans-serif">分区</tspan> 1</text>
+<text x="592.5" y="198" text-anchor="middle" font-size="21" fill="#4051b5" font-weight="600"><tspan font-family="Source Han Sans SC, Noto Sans SC, Microsoft YaHei, sans-serif">分区</tspan> 2</text>
+<text x="867.5" y="198" text-anchor="middle" font-size="21" fill="#24364b" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Microsoft YaHei, sans-serif">分区</tspan> 3</text>
+<text x="1062.5" y="198" text-anchor="middle" font-size="25" fill="#24364b" font-weight="400">…</text>
+<path d="M 455 220 L 40 400" fill="none" stroke="#4051b5" stroke-width="1.8" stroke-linejoin="round"/>
+<path d="M 730 220 L 1120 400" fill="none" stroke="#4051b5" stroke-width="1.8" stroke-linejoin="round"/>
+<rect x="40" y="400" width="150" height="68" fill="#eef1ff" stroke="none" stroke-width="1.5"/>
+<text x="115.0" y="443" text-anchor="middle" font-size="22" fill="#24364b" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Microsoft YaHei, sans-serif">引导块</tspan></text>
+<rect x="190" y="400" width="150" height="68" fill="#eef1ff" stroke="none" stroke-width="1.5"/>
+<text x="265.0" y="443" text-anchor="middle" font-size="22" fill="#24364b" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Microsoft YaHei, sans-serif">超级块</tspan></text>
+<rect x="340" y="400" width="240" height="68" fill="#eef1ff" stroke="none" stroke-width="1.5"/>
+<text x="460.0" y="443" text-anchor="middle" font-size="22" fill="#24364b" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Microsoft YaHei, sans-serif">空闲空间管理</tspan></text>
+<rect x="580" y="400" width="150" height="68" fill="#eef1ff" stroke="none" stroke-width="1.5"/>
+<text x="655.0" y="443" text-anchor="middle" font-size="22" fill="#24364b" font-weight="400">i <tspan font-family="Source Han Sans SC, Noto Sans SC, Microsoft YaHei, sans-serif">节点</tspan></text>
+<rect x="730" y="400" width="150" height="68" fill="#e8f7f3" stroke="none" stroke-width="1.5"/>
+<text x="805.0" y="443" text-anchor="middle" font-size="22" fill="#24364b" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Microsoft YaHei, sans-serif">根目录</tspan></text>
+<rect x="880" y="400" width="240" height="68" fill="#e8f7f3" stroke="none" stroke-width="1.5"/>
+<text x="1000.0" y="443" text-anchor="middle" font-size="22" fill="#24364b" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Microsoft YaHei, sans-serif">文件和目录</tspan></text>
+<path d="M 190 400 V 468" fill="none" stroke="#4051b5" stroke-width="1.8" stroke-linejoin="round"/>
+<path d="M 340 400 V 468" fill="none" stroke="#4051b5" stroke-width="1.8" stroke-linejoin="round"/>
+<path d="M 580 400 V 468" fill="none" stroke="#4051b5" stroke-width="1.8" stroke-linejoin="round"/>
+<path d="M 730 400 V 468" fill="none" stroke="#4051b5" stroke-width="1.8" stroke-linejoin="round"/>
+<path d="M 880 400 V 468" fill="none" stroke="#4051b5" stroke-width="1.8" stroke-linejoin="round"/>
+<rect x="40" y="400" width="1080" height="68" fill="none" stroke="#4051b5" stroke-width="1.8"/>
+</svg>

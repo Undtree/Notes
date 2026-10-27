@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 500" width="1120" height="500" font-family="Source Han Sans SC, Noto Sans SC, Microsoft YaHei, sans-serif">
+  <title>设备控制器的组成</title>
+  <desc>按参考图重绘：CPU 的数据线分别连接数据寄存器和控制／状态寄存器，两组寄存器均与 I/O 逻辑双向连接；地址线和控制线输入 I/O 逻辑。I/O 逻辑双向连接多个控制器与设备接口。设备侧的数据和状态信号输入接口，控制信号由接口输出。</desc>
+  <defs>
+    <marker id="io-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#4051b5"/>
+    </marker>
+  </defs>
+  <rect width="1120" height="500" fill="#ffffff"/>
+
+  <g fill="#1a237e" text-anchor="middle" font-size="24" font-weight="700">
+    <text x="315" y="35">CPU 与控制器的接口</text>
+    <text x="825" y="35">控制器与设备的接口</text>
+  </g>
+  <rect x="155" y="55" width="825" height="420" rx="12" fill="#ffffff" stroke="#4051b5" stroke-width="2"/>
+  <rect x="185" y="85" width="255" height="365" rx="8" fill="none" stroke="#9aa7bd" stroke-width="1.5" stroke-dasharray="5 4"/>
+
+  <g stroke="#4051b5" stroke-width="2" fill="#f5f7fb">
+    <rect x="245" y="105" width="160" height="70" rx="8"/>
+    <rect x="245" y="205" width="160" height="90" rx="8"/>
+    <rect x="535" y="310" width="125" height="135" rx="8"/>
+    <rect x="760" y="90" width="130" height="130" rx="8"/>
+    <rect x="760" y="315" width="130" height="130" rx="8"/>
+  </g>
+  <g fill="#1a237e" text-anchor="middle" font-size="24" font-weight="700">
+    <text x="325" y="149">数据寄存器</text>
+    <text x="325" y="242">控制／状态</text>
+    <text x="325" y="274">寄存器</text>
+    <text x="597.5" y="386">I/O 逻辑</text>
+    <text x="825" y="127">控制器</text>
+    <text x="825" y="161">与设备</text>
+    <text x="825" y="195">接口 1</text>
+    <text x="825" y="352">控制器</text>
+    <text x="825" y="386">与设备</text>
+    <text x="825" y="420">接口 n</text>
+  </g>
+
+  <g stroke="#4051b5" stroke-width="2" fill="none" marker-end="url(#io-arrow)">
+    <path d="M 20 140 H 245"/>
+    <path d="M 200 140 V 250 H 245"/>
+    <path d="M 405 140 H 640 V 310" marker-start="url(#io-arrow)"/>
+    <path d="M 405 250 H 560 V 310" marker-start="url(#io-arrow)"/>
+    <path d="M 20 332 H 535"/>
+    <path d="M 20 420 H 535"/>
+    <path d="M 660 332 H 710 V 155 H 760" marker-start="url(#io-arrow)"/>
+    <path d="M 660 420 H 710 V 380 H 760" marker-start="url(#io-arrow)"/>
+    <path d="M 1030 115 H 890"/>
+    <path d="M 1030 155 H 890"/>
+    <path d="M 890 195 H 1030"/>
+    <path d="M 1030 340 H 890"/>
+    <path d="M 1030 380 H 890"/>
+    <path d="M 890 420 H 1030"/>
+  </g>
+  <g fill="#4051b5">
+    <circle cx="200" cy="140" r="3.5"/>
+    <circle cx="825" cy="255" r="2.5"/>
+    <circle cx="825" cy="270" r="2.5"/>
+    <circle cx="825" cy="285" r="2.5"/>
+  </g>
+  <g fill="#4051b5" font-size="23">
+    <text x="65" y="127">数据线</text>
+    <text x="65" y="319">地址线</text>
+    <text x="65" y="407">控制线</text>
+    <text x="1045" y="123">数据</text>
+    <text x="1045" y="163">状态</text>
+    <text x="1045" y="203">控制</text>
+    <text x="1045" y="348">数据</text>
+    <text x="1045" y="388">状态</text>
+    <text x="1045" y="428">控制</text>
+  </g>
+</svg>

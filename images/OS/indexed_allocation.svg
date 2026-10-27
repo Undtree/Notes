@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 500" width="1100" height="500" role="img" aria-label="文件 A 的 FCB 或 inode 保存索引块 7 的地址。索引块按逻辑块号 0、1、2、3 保存物理块号 2、8、5、11，各索引项直接指向对应数据块。" font-family="Source Han Sans SC, Noto Sans SC, Microsoft YaHei, sans-serif">
+<desc>文件 A 的 FCB 或 inode 保存索引块 7 的地址。索引块按逻辑块号 0、1、2、3 保存物理块号 2、8、5、11，各索引项直接指向对应数据块。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#4051b5"/></marker></defs>
+<rect width="1100" height="500" fill="#fff"/>
+<rect x="36" y="184" width="234" height="124" rx="7" fill="#f5f7fb" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="153.0" y="213" font-size="19" fill="#24364b" text-anchor="middle" font-weight="600">FCB / inode · 文件 A</text>
+<line x1="36" y1="228" x2="270" y2="228" stroke="#cbd5e1" stroke-width="1.4"/>
+<text x="153.0" y="257" font-size="18" fill="#24364b" text-anchor="middle" font-weight="400">索引块地址：7</text>
+<text x="491" y="60" font-size="21" fill="#24364b" text-anchor="middle" font-weight="600">索引块 7</text>
+<rect x="368" y="85" width="246" height="304" rx="7" fill="#eef1ff" stroke="#4051b5" stroke-width="1.5"/>
+<line x1="491" y1="85" x2="491" y2="389" stroke="#4051b5" stroke-width="1.4"/>
+<line x1="368" y1="141" x2="614" y2="141" stroke="#4051b5" stroke-width="1.4"/>
+<text x="429" y="120" font-size="18" fill="#24364b" text-anchor="middle" font-weight="600">逻辑块号 q</text>
+<text x="552" y="120" font-size="18" fill="#24364b" text-anchor="middle" font-weight="600">物理块号</text>
+<path d="M 270 252 H 321 V 113 H 364" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<text x="940" y="60" font-size="21" fill="#24364b" text-anchor="middle" font-weight="600">分散存放的数据块</text>
+<text x="429" y="179" font-size="22" fill="#24364b" text-anchor="middle" font-weight="400">0</text>
+<text x="552" y="179" font-size="22" fill="#4051b5" text-anchor="middle" font-weight="600">2</text>
+<rect x="826" y="85" width="228" height="66" rx="7" fill="#e8f7f3" stroke="#00897b" stroke-width="1.5"/>
+<text x="940" y="112" font-size="19" fill="#00897b" text-anchor="middle" font-weight="600">物理块 2</text>
+<text x="940" y="137" font-size="17" fill="#00897b" text-anchor="middle" font-weight="400">文件 A · 逻辑块 0</text>
+<path d="M 614 172 C 700 172 737 118 822 118" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<line x1="368" y1="203" x2="614" y2="203" stroke="#cbd5e1" stroke-width="1.4"/>
+<text x="429" y="241" font-size="22" fill="#24364b" text-anchor="middle" font-weight="400">1</text>
+<text x="552" y="241" font-size="22" fill="#4051b5" text-anchor="middle" font-weight="600">8</text>
+<rect x="826" y="173" width="228" height="66" rx="7" fill="#e8f7f3" stroke="#00897b" stroke-width="1.5"/>
+<text x="940" y="200" font-size="19" fill="#00897b" text-anchor="middle" font-weight="600">物理块 8</text>
+<text x="940" y="225" font-size="17" fill="#00897b" text-anchor="middle" font-weight="400">文件 A · 逻辑块 1</text>
+<path d="M 614 234 C 700 234 737 206 822 206" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<line x1="368" y1="265" x2="614" y2="265" stroke="#cbd5e1" stroke-width="1.4"/>
+<text x="429" y="303" font-size="22" fill="#24364b" text-anchor="middle" font-weight="400">2</text>
+<text x="552" y="303" font-size="22" fill="#4051b5" text-anchor="middle" font-weight="600">5</text>
+<rect x="826" y="261" width="228" height="66" rx="7" fill="#e8f7f3" stroke="#00897b" stroke-width="1.5"/>
+<text x="940" y="288" font-size="19" fill="#00897b" text-anchor="middle" font-weight="600">物理块 5</text>
+<text x="940" y="313" font-size="17" fill="#00897b" text-anchor="middle" font-weight="400">文件 A · 逻辑块 2</text>
+<path d="M 614 296 C 700 296 737 294 822 294" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<line x1="368" y1="327" x2="614" y2="327" stroke="#cbd5e1" stroke-width="1.4"/>
+<text x="429" y="365" font-size="22" fill="#24364b" text-anchor="middle" font-weight="400">3</text>
+<text x="552" y="365" font-size="22" fill="#4051b5" text-anchor="middle" font-weight="600">11</text>
+<rect x="826" y="349" width="228" height="66" rx="7" fill="#e8f7f3" stroke="#00897b" stroke-width="1.5"/>
+<text x="940" y="376" font-size="19" fill="#00897b" text-anchor="middle" font-weight="600">物理块 11</text>
+<text x="940" y="401" font-size="17" fill="#00897b" text-anchor="middle" font-weight="400">文件 A · 逻辑块 3</text>
+<path d="M 614 358 C 700 358 737 382 822 382" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<text x="368" y="430" font-size="20" fill="#4051b5" text-anchor="start" font-weight="600">索引表[q] → 目标数据块的物理块号</text>
+</svg>

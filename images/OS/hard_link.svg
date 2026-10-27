@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 390" width="1160" height="390" role="img" aria-labelledby="title desc" font-family="Times New Roman, Times, Liberation Serif, Noto Serif, serif">
+<title id="title">硬链接：多个目录项共享同一个 inode</title>
+<desc id="desc">目录 /docs 中的 A 和 B 都记录 inode 40。两个目录项直接引用同一个普通文件的索引节点，硬链接计数为 2；该 inode 再定位同一份文件数据块。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#4051b5"/></marker></defs>
+<rect width="1160" height="390" fill="#fff"/>
+<text x="580" y="43" text-anchor="middle" font-size="23" fill="#24364b" font-weight="600"><tspan font-family="Source Han Sans SC, Noto Sans SC, Microsoft YaHei, sans-serif">硬链接：多个目录项共享同一个</tspan> inode</text>
+<text x="180" y="101" text-anchor="middle" font-size="22" fill="#24364b" font-weight="600"><tspan font-family="Source Han Sans SC, Noto Sans SC, Microsoft YaHei, sans-serif">目录</tspan> /docs</text>
+<rect x="40" y="125" width="280" height="195" rx="7" fill="#f5f7fb" stroke="#cbd5e1" stroke-width="1.5"/>
+<line x1="180" y1="125" x2="180" y2="320" stroke="#cbd5e1" stroke-width="1.4"/>
+<line x1="40" y1="180" x2="320" y2="180" stroke="#cbd5e1" stroke-width="1.4"/>
+<text x="110" y="160" text-anchor="middle" font-size="20" fill="#24364b" font-weight="600"><tspan font-family="Source Han Sans SC, Noto Sans SC, Microsoft YaHei, sans-serif">文件名</tspan></text>
+<text x="250" y="160" text-anchor="middle" font-size="20" fill="#24364b" font-weight="600">inode <tspan font-family="Source Han Sans SC, Noto Sans SC, Microsoft YaHei, sans-serif">号</tspan></text>
+<text x="110" y="223" text-anchor="middle" font-size="26" fill="#4051b5" font-weight="600">A</text>
+<text x="250" y="223" text-anchor="middle" font-size="25" fill="#4051b5" font-weight="400">40</text>
+<line x1="40" y1="250" x2="320" y2="250" stroke="#cbd5e1" stroke-width="1.4"/>
+<text x="110" y="293" text-anchor="middle" font-size="26" fill="#4051b5" font-weight="600">B</text>
+<text x="250" y="293" text-anchor="middle" font-size="25" fill="#4051b5" font-weight="400">40</text>
+<rect x="480" y="125" width="260" height="205" rx="7" fill="#eef1ff" stroke="#4051b5" stroke-width="1.5"/>
+<text x="610" y="160" text-anchor="middle" font-size="24" fill="#4051b5" font-weight="600">inode 40</text>
+<line x1="480" y1="177" x2="740" y2="177" stroke="#4051b5" stroke-width="1.4"/>
+<text x="610" y="212" text-anchor="middle" font-size="21" fill="#24364b" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Microsoft YaHei, sans-serif">类型：普通文件</tspan></text>
+<text x="610" y="249" text-anchor="middle" font-size="21" fill="#4051b5" font-weight="600"><tspan font-family="Source Han Sans SC, Noto Sans SC, Microsoft YaHei, sans-serif">硬链接计数：</tspan>2</text>
+<text x="610" y="297" text-anchor="middle" font-size="21" fill="#24364b" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Microsoft YaHei, sans-serif">数据块地址</tspan></text>
+<rect x="850" y="125" width="270" height="205" rx="7" fill="#e8f7f3" stroke="#00897b" stroke-width="1.5"/>
+<text x="985" y="160" text-anchor="middle" font-size="22" fill="#00897b" font-weight="600"><tspan font-family="Source Han Sans SC, Noto Sans SC, Microsoft YaHei, sans-serif">文件数据块</tspan></text>
+<line x1="850" y1="177" x2="1120" y2="177" stroke="#00897b" stroke-width="1.4"/>
+<text x="985" y="211" text-anchor="middle" font-size="21" fill="#00897b" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Microsoft YaHei, sans-serif">数据块</tspan> 0</text>
+<line x1="850" y1="228" x2="1120" y2="228" stroke="#a8d6cc" stroke-width="1.4"/>
+<text x="985" y="258" text-anchor="middle" font-size="21" fill="#00897b" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Microsoft YaHei, sans-serif">数据块</tspan> 1</text>
+<line x1="850" y1="275" x2="1120" y2="275" stroke="#a8d6cc" stroke-width="1.4"/>
+<text x="985" y="305" text-anchor="middle" font-size="21" fill="#00897b" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Microsoft YaHei, sans-serif">数据块</tspan> 2</text>
+<path d="M 320 215 C 380 215 420 210 478 210" fill="none" stroke="#4051b5" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 320 285 C 380 285 420 275 478 275" fill="none" stroke="#4051b5" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 740 297 H 790 V 228 H 848" fill="none" stroke="#4051b5" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+</svg>
