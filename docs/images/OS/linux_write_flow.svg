@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 420" width="1160" height="420" role="img" aria-labelledby="write-title write-desc" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">
+  <title id="write-title">Linux 中 write 调用的执行流程：IA-32 传统路径示例</title>
+  <desc id="write-desc">用户态中，用户程序 main 调用标准库 printf，标准库在需要提交输出时调用 write 封装。封装设置调用号及参数后执行 int 0x80，CPU 进入内核态，由系统调用入口 system_call 保存现场并分派给写服务例程 sys_write。写服务例程检查参数与权限，经 VFS 处理写入并按需调用驱动。结果先返回系统调用入口，再经 iret 恢复用户态，从 int 0x80 之后继续执行，随后由 write 封装返回标准库和用户程序。实线箭头表示调用或分派方向，虚线箭头表示返回方向。</desc>
+  <defs>
+    <marker id="write-call-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#4051b5"/>
+    </marker>
+    <marker id="write-return-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b"/>
+    </marker>
+    <style>
+      .heading { fill: #1a237e; font-size: 26px; font-weight: 700; text-anchor: middle; }
+      .node { fill: #f5f7fb; stroke: #4051b5; stroke-width: 2; }
+      .name { fill: #1a237e; font-size: 24px; font-weight: 700; text-anchor: middle; font-family: Consolas, DejaVu Sans Mono, monospace; }
+      .role { fill: #4051b5; font-size: 22px; text-anchor: middle; }
+      .body { fill: #455a64; font-size: 22px; text-anchor: middle; }
+      .code { fill: #1a237e; font-size: 24px; text-anchor: middle; font-family: Consolas, DejaVu Sans Mono, monospace; }
+      .call { fill: none; stroke: #4051b5; stroke-width: 2.5; marker-end: url(#write-call-arrow); }
+      .return { fill: none; stroke: #64748b; stroke-width: 2.2; stroke-dasharray: 6 5; marker-end: url(#write-return-arrow); }
+      .call-label { fill: #4051b5; font-size: 20px; text-anchor: middle; }
+      .return-label { fill: #64748b; font-size: 20px; text-anchor: middle; }
+    </style>
+  </defs>
+  <rect width="1160" height="420" fill="#ffffff"/>
+
+  <text class="heading" x="342" y="38">用户空间 · 用户态</text>
+  <text class="heading" x="918" y="38">内核空间 · 内核态</text>
+  <g fill="#ffffff" stroke="#9aa7bd" stroke-width="1.5" stroke-dasharray="7 6">
+    <rect x="12" y="58" width="660" height="344" rx="14"/>
+    <rect x="688" y="58" width="460" height="344" rx="14"/>
+  </g>
+
+  <g class="node">
+    <rect x="30" y="92" width="160" height="290" rx="10"/>
+    <rect x="238" y="92" width="170" height="290" rx="10"/>
+    <rect x="456" y="92" width="196" height="290" rx="10"/>
+    <rect x="708" y="92" width="196" height="290" rx="10"/>
+    <rect x="952" y="92" width="176" height="290" rx="10"/>
+  </g>
+  <g class="name">
+    <text x="110" y="128">main()</text>
+    <text x="323" y="128">printf()</text>
+    <text x="554" y="128">write()</text>
+    <text x="806" y="128">system_call</text>
+    <text x="1040" y="128">sys_write</text>
+  </g>
+  <g class="role">
+    <text x="110" y="160">用户程序</text>
+    <text x="323" y="160">标准库函数</text>
+    <text x="554" y="160">系统调用封装</text>
+    <text x="806" y="160">系统调用入口</text>
+    <text x="1040" y="160">写服务例程</text>
+  </g>
+  <g stroke="#9aa7bd" stroke-width="1" stroke-dasharray="5 4">
+    <path d="M 42 178 H 178 M 250 178 H 396 M 468 178 H 640 M 720 178 H 892 M 964 178 H 1116"/>
+  </g>
+
+  <g class="body">
+    <text x="110" y="216">准备输出数据</text>
+    <text x="110" y="348">继续执行程序</text>
+    <text x="323" y="216">格式化并缓冲</text>
+    <text x="323" y="246">按需提交输出</text>
+    <text x="323" y="348">返回输出结果</text>
+    <text x="554" y="216">装入调用号</text>
+    <text x="554" y="246">与三个参数</text>
+    <text x="554" y="348">处理返回结果</text>
+    <text x="806" y="216">保存现场</text>
+    <text x="806" y="246">按调用号分派</text>
+    <text x="1040" y="216">检查写请求</text>
+    <text x="1040" y="246">VFS / 文件操作</text>
+    <text x="1040" y="276">按需调用驱动</text>
+    <text x="1040" y="348">返回结果</text>
+  </g>
+  <g class="code">
+    <text x="110" y="276">printf(...)</text>
+    <text x="554" y="276">int 0x80</text>
+    <text x="806" y="348">iret</text>
+  </g>
+
+  <g class="call">
+    <path d="M 190 268 H 238"/>
+    <path d="M 408 268 H 456"/>
+    <path d="M 652 268 H 708"/>
+    <path d="M 904 268 H 952"/>
+  </g>
+  <rect x="655" y="228" width="50" height="28" rx="4" fill="#ffffff"/>
+  <g class="call-label">
+    <text x="214" y="249">调用</text>
+    <text x="432" y="249">提交</text>
+    <text x="680" y="249">陷入</text>
+    <text x="928" y="249">分派</text>
+  </g>
+  <g class="return">
+    <path d="M 238 340 H 190"/>
+    <path d="M 456 340 H 408"/>
+    <path d="M 708 340 H 652"/>
+    <path d="M 952 340 H 904"/>
+  </g>
+  <rect x="655" y="352" width="50" height="28" rx="4" fill="#ffffff"/>
+  <g class="return-label">
+    <text x="214" y="373">返回</text>
+    <text x="432" y="373">返回</text>
+    <text x="680" y="373">返回</text>
+    <text x="928" y="373">返回</text>
+  </g>
+</svg>

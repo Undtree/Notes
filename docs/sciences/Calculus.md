@@ -1,5 +1,9 @@
 # 微积分
 
+!!! abstract "参考教材"
+
+    本文整理自苏德矿、吴明华、童雯雯主编的《微积分》（第3版）上、下册。
+
 ## 第一章 函数与极限
 
 ### §1 函数
@@ -132,6 +136,8 @@ $$
 
 则称 $\{a_n\}$ 收敛于 $a$，记为 $\lim_{n\to\infty}a_n=a$ 或 $a_n\to a$；不收敛的数列称为发散数列。
 
+**说明：** 一般说，$N$ 是随着 $\varepsilon$ 的变小而变大的。$\varepsilon$ 给定以后，确定的 $N$ 不是唯一的，因为对已给的 $\varepsilon$，若 $N=100$ 满足要求，则 $N=101,102,\ldots$ 自然也满足要求。在定义中，只要求存在一个正整数 $N$，而不在乎它的值有多大，只要求对一切 $n>N$ 时，都有 $|a_n-a|<\varepsilon$。至于 $n\le N$ 时，$|a_n-a|$ 是大于或等于 $\varepsilon$ 是无关紧要的，而且 $n>N$ 也可改成 $n\ge N$。
+
 #### §2.2 收敛数列的性质
 
 设 $a_n\to a$、$b_n\to b$。
@@ -145,11 +151,99 @@ $$
 | 四则运算 | $\lim(a_n\pm b_n)=a\pm b$，$\lim(a_nb_n)=ab$，$\lim(ca_n)=ca$，$c$ 为常数 |
 | 商的极限 | $\displaystyle\lim\frac{a_n}{b_n}=\frac ab$，其中 $b\ne0$ |
 
+??? info "唯一性的证明"
+
+    反证法。假设极限值不唯一，即有 $\lim_{n\to\infty}a_n=a$，$\lim_{n\to\infty}a_n=b$，$a\ne b$。
+
+    取 $\varepsilon=\dfrac{|a-b|}{3}>0$，由 $\lim_{n\to\infty}a_n=a$ 知，存在正整数 $N_1$，当 $n>N_1$ 时，有
+
+    $$
+    |a_n-a|<\varepsilon.
+    $$
+
+    同理，由 $\lim_{n\to\infty}a_n=b$ 知，存在正整数 $N_2$，当 $n>N_2$ 时，有
+
+    $$
+    |a_n-b|<\varepsilon.
+    $$
+
+    取 $N=\max\{N_1,N_2\}$，当 $n>N$ 时，都有 $|a_n-a|<\varepsilon$，$|a_n-b|<\varepsilon$。则
+
+    $$
+    |a-b|=|a-a_n+a_n-b|\le|a_n-a|+|a_n-b|
+    <\varepsilon+\varepsilon=2\varepsilon=\frac23|a-b|,
+    $$
+
+    由 $|a-b|>0$，推出 $1<\dfrac23$。矛盾。
+
 #### §2.3 数列极限存在的准则
 
 **夹逼定理：** 若充分大的 $n$ 满足 $a_n\le c_n\le b_n$，且 $a_n\to a$、$b_n\to a$，则 $c_n\to a$。
 
+??? info "夹逼定理的证明"
+
+    由 $\lim_{n\to\infty}a_n=a$ 知，任给 $\varepsilon>0$，存在正整数 $N_1$，当 $n>N_1$ 时，有
+
+    $$
+    |a_n-a|<\varepsilon,\quad\text{即 }a-\varepsilon<a_n<a+\varepsilon.
+    $$
+
+    由 $\lim_{n\to\infty}b_n=a$，对上述的 $\varepsilon>0$，存在正整数 $N_2$，当 $n>N_2$ 时，有
+
+    $$
+    |b_n-a|<\varepsilon,\quad\text{即 }a-\varepsilon<b_n<a+\varepsilon.
+    $$
+
+    又由题意知，当 $n>N_0$ 时，有 $a_n\le c_n\le b_n$。取 $N=\max\{N_0,N_1,N_2\}$，当 $n>N$ 时，有
+
+    $$
+    a-\varepsilon<a_n,\qquad a_n\le c_n\le b_n,\qquad b_n<a+\varepsilon.
+    $$
+
+    于是，有
+
+    $$
+    a-\varepsilon<c_n<a+\varepsilon,\quad\text{即 }|c_n-a|<\varepsilon,
+    $$
+
+    所以数列 $\{c_n\}$ 收敛，且 $\lim_{n\to\infty}c_n=a$。
+
 **单调有界定理：** 单调递增且有上界的数列、单调递减且有下界的数列均收敛。
+
+???+ example "例15"
+
+    求极限 $\displaystyle\lim_{n\to\infty}\frac12\times\frac34\times\frac56\times\cdots\times\frac{2n-1}{2n}$。
+
+    ??? success "解析"
+
+        由于
+
+        $$
+        \frac12\times\frac34\times\cdots\times\frac{2n-1}{2n}
+        <\frac23\times\frac45\times\cdots\times\frac{2n}{2n+1},
+        $$
+
+        所以
+
+        $$
+        \left(\frac12\times\frac34\times\cdots\times\frac{2n-1}{2n}\right)^2
+        <\frac12\times\frac23\times\frac34\times\frac45\times\cdots
+        \times\frac{2n-1}{2n}\times\frac{2n}{2n+1}
+        =\frac1{2n+1},
+        $$
+
+        即
+
+        $$
+        0<\frac12\times\frac34\times\cdots\times\frac{2n-1}{2n}
+        <\frac1{\sqrt{2n+1}}<\frac1{\sqrt n}.
+        $$
+
+        且 $\lim\limits_{n\to\infty}0=0$，$\lim\limits_{n\to\infty}\dfrac1{\sqrt n}=0$，由夹逼定理知
+
+        $$
+        \lim_{n\to\infty}\frac12\times\frac34\times\cdots\times\frac{2n-1}{2n}=0.
+        $$
 
 **子列：** 按严格递增的正整数下标 $n_1<n_2<\cdots<n_k<\cdots$ 从 $\{a_n\}$ 中抽出的数列 $\{a_{n_k}\}$ 称为其子列。若 $a_n\to a$，则每个子列均满足 $a_{n_k}\to a$。
 
@@ -328,6 +422,19 @@ $$
 \lim\frac{fg}{h}=\lim\frac{f_1g_1}{h_1}.
 $$
 
+???+ example "例17"
+
+    求 $\displaystyle\lim_{x\to0}\frac{1-\cos x}{x^2}$。
+
+    ??? success "解析"
+
+        $$
+        \lim_{x\to0}\frac{1-\cos x}{x^2}
+        =\lim_{x\to0}\frac{2\left(\sin\dfrac x2\right)^2}{x^2}
+        =\lim_{x\to0}\frac12\left(\frac{\sin\dfrac x2}{\dfrac x2}\right)^2
+        =\frac12.
+        $$
+
 #### §3.7 极限在经济中的应用
 
 **复利：** 将利息并入本金参与后续计息。初始本金为 $P$、年利率为 $r$、每年计息 $n$ 次时，$t$ 年后的余额为
@@ -431,6 +538,45 @@ $$
 
 #### §4.5 闭区间上连续函数性质的证明 \*
 
+??? info "最大值最小值定理的证明：证法一"
+
+    先证 $f(x)$ 在闭区间 $[a,b]$ 上有界，即存在 $M>0$，对一切 $x\in[a,b]$，都有 $|f(x)|\le M$。若不然，则 $f(x)$ 在 $[a,b]$ 上无界，即任给正整数 $N$，总存在 $x\in[a,b]$，使 $|f(x)|>N$。于是对每一个正整数 $n$，都存在 $x_n\in[a,b]$，使 $|f(x_n)|>n$。
+
+    由于 $\{x_n\}$ 有界，所以由魏尔斯特拉斯定理知，$\{x_n\}$ 必有收敛的子列 $\{x_{n_k}\}$，使
+
+    $$
+    \lim_{k\to\infty}x_{n_k}=x_0.
+    $$
+
+    由于 $a\le x_{n_k}\le b$，所以 $a\le x_0\le b$。又 $f(x)$ 在点 $x_0$ 连续，由归结原则知 $\lim_{k\to\infty}f(x_{n_k})=f(x_0)$，即
+
+    $$
+    \lim_{k\to\infty}|f(x_{n_k})|=|f(x_0)|.
+    $$
+
+    由于 $|f(x_{n_k})|>n_k>k$，所以 $\lim_{k\to\infty}|f(x_{n_k})|=+\infty$，与 $\lim_{k\to\infty}|f(x_{n_k})|=|f(x_0)|$ 相矛盾。因此，假设不成立，故 $f(x)$ 在 $[a,b]$ 上有界。
+
+    由于 $f([a,b])$ 为有界集，所以由确界定理知一定有上、下确界。设
+
+    $$
+    M=\sup_{x\in[a,b]}\{f(x)\},\qquad
+    m=\inf_{x\in[a,b]}\{f(x)\},
+    $$
+
+    先证必存在一点 $x_1\in[a,b]$，使 $f(x_1)=M$。若不然，对一切 $x\in[a,b]$，都有 $f(x)<M$，作函数
+
+    $$
+    h(x)=\frac1{M-f(x)},\qquad x\in[a,b].
+    $$
+
+    由 $M-f(x)\ne0$ 且连续知，$h(x)$ 在 $[a,b]$ 上连续。由上面的证明知，$h(x)$ 在 $[a,b]$ 上有界，当然有上界，即存在 $N>0$，对一切 $x\in[a,b]$，有
+
+    $$
+    h(x)=\frac1{M-f(x)}<N,
+    $$
+
+    即 $M-f(x)>\dfrac1N$，有 $f(x)<M-\dfrac1N$，与 $M$ 是 $f(x)$ 的上确界相矛盾。故必存在 $x_1\in[a,b]$，使 $f(x_1)=M$。同理可证存在 $x_2\in[a,b]$，使 $f(x_2)=m$。
+
 #### §4.6 一致连续 \*
 
 **一致连续：** 若定义在区间 $E$ 上的函数 $f$ 满足
@@ -508,6 +654,42 @@ $$
 $$
 
 当 $f'(x_0)=0$ 时，切线为 $y=y_0$，法线为 $x=x_0$。
+
+**说明：** 应当注意，记号 $\left.\dfrac{\mathrm dy}{\mathrm dx}\right|_{x=x_0}$ 作为一个符号，表示 $f(x)$ 在点 $x_0$ 的导数，看起来却像分数的样子。在后面的几节中，这个“分数”的分子和分母将获得独立的意义，而且它们的比值恰好与导数相等，但现在仍要把 $\dfrac{\mathrm dy}{\mathrm dx}$ 看成一个整体，作为导数的符号。
+
+??? info "可导必连续的证明"
+
+    由于 $f(x)$ 在点 $x_0$ 可导，所以有
+
+    $$
+    \lim_{\Delta x\to0}\frac{\Delta y}{\Delta x}=f'(x_0),
+    $$
+
+    于是
+
+    $$
+    \lim_{\Delta x\to0}\Delta y
+    =\lim_{\Delta x\to0}\frac{\Delta y}{\Delta x}\cdot\Delta x
+    =f'(x_0)\cdot0=0.
+    $$
+
+    因此，$f(x)$ 在点 $x_0$ 连续。
+
+???+ example "例2"
+
+    设 $f(x)=\begin{cases}x^2\sin\dfrac1x,&x\ne0,\\0,&x=0,\end{cases}$，研究 $f(x)$ 在 $x=0$ 处的可导性。
+
+    ??? success "解析"
+
+        按定义，
+
+        $$
+        \lim_{x\to0}\frac{f(x)-f(0)}{x-0}
+        =\lim_{x\to0}\frac{x^2\sin\dfrac1x}{x}
+        =\lim_{x\to0}x\sin\frac1x=0,
+        $$
+
+        因此，$f'(0)=0$。
 
 #### §1.2 导数的基本公式与运算法则
 
@@ -590,6 +772,40 @@ $$
 $$
 y'=u^v\left(v'\ln u+v\frac{u'}u\right).
 $$
+
+???+ example "例13"
+
+    设函数 $y=y(x)$ 由方程 $y-xe^y=1$ 确定，求 $\left.\dfrac{\mathrm dy}{\mathrm dx}\right|_{x=0}$，并求曲线上其横坐标 $x=0$ 处点的切线和法线方程。
+
+    ??? success "解析"
+
+        方程两边同时对 $x$ 求导，有
+
+        $$
+        y'-e^y-xe^y\cdot y'=0.
+        $$
+
+        当 $x=0$ 时，有 $y-0=1$，得 $y=1$。将 $x=0$，$y=1$ 代入上式，得
+
+        $$
+        y'(0)-e=0,
+        $$
+
+        即 $y'(0)=\left.\dfrac{\mathrm dy}{\mathrm dx}\right|_{x=0}=e$。
+
+        因此，切线方程为
+
+        $$
+        y-1=ex,\quad\text{即 }y=ex+1;
+        $$
+
+        法线方程为
+
+        $$
+        y-1=-\frac1e x,\quad\text{即 }y=-\frac1e x+1.
+        $$
+
+**注：** 若求 $\left.\dfrac{\mathrm dy}{\mathrm dx}\right|_{x=x_0}$，不必求出 $\dfrac{\mathrm dy}{\mathrm dx}$，只需把 $x_0,y_0$ 代入式 $y'-e^y-xe^y\cdot y'=0$，解出 $\left.y'\right|_{x=x_0,y=y_0}$ 即可。
 
 #### §1.4 高阶导数
 
@@ -684,6 +900,44 @@ A=f'(x),\qquad \mathrm dx=\Delta x,\qquad
 $$
 
 当 $f'(x)\ne0$ 时，$\Delta y\sim\mathrm dy$（$\Delta x\to0$）。微分的几何意义是切线上对应于横坐标增量 $\Delta x$ 的纵坐标增量。
+
+??? info "可微与可导关系的证明"
+
+    充分性。由 $f(x)$ 在点 $x$ 处可导的定义知
+
+    $$
+    \lim_{\Delta x\to0}\frac{\Delta y}{\Delta x}=f'(x).
+    $$
+
+    于是 $\dfrac{\Delta y}{\Delta x}=f'(x)+\alpha$，其中 $\lim_{\Delta x\to0}\alpha=0$。从而有
+
+    $$
+    \Delta y=f'(x)\Delta x+\alpha\Delta x,
+    $$
+
+    而 $\lim_{\Delta x\to0}\dfrac{\alpha\Delta x}{\Delta x}=0$，即 $\alpha\Delta x=o(\Delta x)$（$\Delta x\to0$）。所以
+
+    $$
+    \Delta y=f'(x)\Delta x+o(\Delta x)\qquad(\Delta x\to0).
+    $$
+
+    因此 $y=f(x)$ 在点 $x$ 处可微且 $f'(x)=A$。
+
+    必要性。由于 $y=f(x)$ 在点 $x$ 处可微，由定义知
+
+    $$
+    \Delta y=A\Delta x+o(\Delta x)\qquad(\Delta x\to0),
+    $$
+
+    其中 $A$ 与 $\Delta x$ 无关。由于
+
+    $$
+    \lim_{\Delta x\to0}\frac{\Delta y}{\Delta x}
+    =\lim_{\Delta x\to0}\left[A+\frac{o(\Delta x)}{\Delta x}\right]
+    =A=f'(x),
+    $$
+
+    所以 $y=f(x)$ 在点 $x$ 处可导。
 
 #### §2.2 微分的基本性质
 
@@ -829,6 +1083,36 @@ $$
 f'(\xi)=0.
 $$
 
+??? info "罗尔定理的证明"
+
+    由于 $f(x)$ 在闭区间 $[a,b]$ 上连续，所以 $f(x)$ 在 $[a,b]$ 上一定可以取到最小值与最大值，分别设为 $m$ 与 $M$。
+
+    （1）当 $m=M$ 时，则 $f(x)$ 在 $[a,b]$ 上是常值函数，即
+
+    $$
+    f(x)=m,\qquad x\in[a,b].
+    $$
+
+    因此，$\xi$ 可取 $(a,b)$ 内任意一点，有 $f'(\xi)=0$。
+
+    （2）当 $m<M$ 时，由于 $f(a)=f(b)$，所以最大值、最小值至少有一个在内部取到（若不然，最大值、最小值都在端点取到，推出 $m=M$，矛盾），不妨设最大值 $M$ 在内部取到，设 $\xi\in(a,b)$，$f(\xi)=M$，则 $f(\xi)$ 为极大值。由 $f(x)$ 在 $(a,b)$ 内可导，知 $f'(\xi)$ 存在。由费马定理知，$f'(\xi)=0$。
+
+???+ example "例2"
+
+    设 $f(x)=a_1\cos x+a_2\cos2x+\cdots+a_n\cos nx$，其中 $a_1,a_2,\ldots,a_n$ 为任意常数，证明至少存在一点 $\xi\in(0,\pi)$，使 $f(\xi)=0$。
+
+    ??? success "解析"
+
+        分析　此题不符合根的存在定理条件。尝试用罗尔定理，要找到一个函数 $F(x)$（我们称 $F(x)$ 是 $f(x)$ 的一个原函数），使 $F'(x)=f(x)$，对 $F(x)$ 在 $[0,\pi]$ 上应用罗尔定理。
+
+        证　设
+
+        $$
+        F(x)=a_1\sin x+\frac{a_2\sin2x}{2}+\cdots+\frac{a_n\sin nx}{n},
+        $$
+
+        知 $F(x)\in C[0,\pi]$，由 $F'(x)=f(x)$ 知 $F(x)\in D(0,\pi)$。又 $F(0)=F(\pi)=0$，由罗尔定理知，至少存在一点 $\xi\in(0,\pi)$，使 $F'(\xi)=0$。由于 $F'(x)=f(x)$，从而推出 $f(\xi)=0$。
+
 #### §1.3 拉格朗日定理、函数的单调区间
 
 设 $f\in C[a,b]$，在 $(a,b)$ 内可导，则存在 $\xi\in(a,b)$，使
@@ -844,6 +1128,32 @@ f(x_0+h)-f(x_0)=f'(x_0+\theta h)h,\qquad 0<\theta<1.
 $$
 
 若 $f$ 在区间 $I$ 上连续、在其内部可导，且 $f'(x)=0$，则 $f$ 在 $I$ 上为常数。
+
+??? info "拉格朗日定理的证明：证法一"
+
+    设
+
+    $$
+    F(x)=f(x)-\frac{f(b)-f(a)}{b-a}(x-a)-f(a),
+    $$
+
+    由于 $F(x)\in C[a,b]$，$F(x)\in D(a,b)$，且 $F(a)=F(b)=0$。所以由罗尔定理知至少存在一点 $\xi\in(a,b)$，使 $F'(\xi)=0$。又
+
+    $$
+    F'(x)=f'(x)-\frac{f(b)-f(a)}{b-a},
+    $$
+
+    所以
+
+    $$
+    f'(\xi)-\frac{f(b)-f(a)}{b-a}=0,
+    $$
+
+    于是
+
+    $$
+    \frac{f(b)-f(a)}{b-a}=f'(\xi).
+    $$
 
 #### §1.4 柯西定理
 
@@ -924,6 +1234,45 @@ $$
 $$
 
 相同结论适用于单侧极限及 $x\to\pm\infty$ 的相应情形。
+
+??? info "洛必达法则 I 的证明"
+
+    构造函数
+
+    $$
+    F(x)=\begin{cases}f(x),&x\ne x_0,\\0,&x=x_0,\end{cases}
+    \qquad
+    G(x)=\begin{cases}g(x),&x\ne x_0,\\0,&x=x_0,\end{cases}
+    $$
+
+    设 $x\in\mathring U(x_0)$，由于 $F(x),G(x)$ 在 $[x_0,x]$（或 $[x,x_0]$）上满足柯西定理的条件，故有
+
+    $$
+    \frac{F(x)-F(x_0)}{G(x)-G(x_0)}=\frac{F'(\xi)}{G'(\xi)},
+    $$
+
+    即 $\dfrac{f(x)}{g(x)}=\dfrac{f'(\xi)}{g'(\xi)}$，其中 $\xi$ 介于 $x_0$ 与 $x$ 之间。且当 $x\to x_0$ 时，有 $\xi\to x_0$，所以
+
+    $$
+    \lim_{x\to x_0}\frac{f(x)}{g(x)}
+    =\lim_{x\to x_0}\frac{f'(\xi)}{g'(\xi)}
+    =\lim_{\xi\to x_0}\frac{f'(\xi)}{g'(\xi)}
+    =\lim_{x\to x_0}\frac{f'(x)}{g'(x)}=A\text{（或 }\infty\text{）}.
+    $$
+
+???+ example "例1"
+
+    求 $\displaystyle\lim_{x\to0}\frac{x-\sin x}{x^3}$。
+
+    ??? success "解析"
+
+        $$
+        \lim_{x\to0}\frac{x-\sin x}{x^3}
+        \overset{0/0\text{ 型}}=\lim_{x\to0}\frac{1-\cos x}{3x^2}
+        \overset{0/0\text{ 型}}=\lim_{x\to0}\frac{\sin x}{6x}=\frac16.
+        $$
+
+**注：** 在用洛必达法则求极限之前，应尽可能把函数化简，或把较复杂的因式用简单等价因式来替换，以达到简化计算的目的。
 
 #### §2.2 $\frac{\infty}{\infty}$ 型未定式的极限
 
@@ -1014,6 +1363,95 @@ $$
 |R_n(x)|\le\frac{M}{(n+1)!}|x-x_0|^{n+1}.
 $$
 
+??? info "泰勒定理的证明：证法一"
+
+    设函数 $f(x)$ 在区间 $I$ 上 $n$ 阶连续可导，在 $I$ 内部存在 $n+1$ 阶导数，$x_0\in I$。
+
+    $\forall x\in I$，$x\ne x_0$，不妨设 $x_0<x$。由 $[x_0,x]\subset I$，知 $f(x)$ 在 $[x_0,x]$ 上 $n$ 阶连续可导，在 $(x_0,x)$ 内存在 $n+1$ 阶导数，现记
+
+    $$
+    R_n(x)=f(x)-P_n(x)
+    =f(x)-\left[f(x_0)+f'(x_0)(x-x_0)+\frac{f''(x_0)}{2!}(x-x_0)^2+\cdots+\frac{f^{(n)}(x_0)}{n!}(x-x_0)^n\right],
+    $$
+
+    $$
+    Q_n(x)=(x-x_0)^{n+1}.
+    $$
+
+    $$
+    R_n'(x)=f'(x)-\left[f'(x_0)+f''(x_0)(x-x_0)+\cdots+\frac{f^{(n)}(x_0)}{(n-1)!}(x-x_0)^{n-1}\right],
+    $$
+
+    $$
+    R_n''(x)=f''(x)-\left[f''(x_0)+f'''(x_0)(x-x_0)+\cdots+\frac{f^{(n)}(x_0)}{(n-2)!}(x-x_0)^{n-2}\right],
+    $$
+
+    $$
+    \cdots,\qquad
+    R_n^{(n)}(x)=f^{(n)}(x)-f^{(n)}(x_0),\qquad
+    R_n^{(n+1)}(x)=f^{(n+1)}(x),
+    $$
+
+    $$
+    Q_n'(x)=(n+1)(x-x_0)^n,\qquad
+    Q_n''(x)=(n+1)n(x-x_0)^{n-1},
+    $$
+
+    $$
+    \cdots,\qquad
+    Q_n^{(n)}(x)=(n+1)n\cdots3\cdot2(x-x_0),\qquad
+    Q_n^{(n+1)}(x)=(n+1)!.
+    $$
+
+    因此
+
+    $$
+    R_n(x_0)=R_n'(x_0)=R_n''(x_0)=\cdots=R_n^{(n)}(x_0)=0,
+    $$
+
+    且
+
+    $$
+    Q_n(x_0)=Q_n'(x_0)=\cdots=Q_n^{(n)}(x_0)=0.
+    $$
+
+    所以在区间 $[x_0,x]$ 上连续运用柯西定理 $n+1$ 次，就有
+
+    $$
+    \begin{aligned}
+    \frac{R_n(x)}{Q_n(x)}
+    &=\frac{R_n(x)-R_n(x_0)}{Q_n(x)-Q_n(x_0)}
+    =\frac{R_n'(\xi_1)}{Q_n'(\xi_1)}
+    =\frac{R_n'(\xi_1)-R_n'(x_0)}{Q_n'(\xi_1)-Q_n'(x_0)}\\
+    &=\frac{R_n''(\xi_2)}{Q_n''(\xi_2)}
+    =\frac{R_n''(\xi_2)-R_n''(x_0)}{Q_n''(\xi_2)-Q_n''(x_0)}
+    =\frac{R_n'''(\xi_3)}{Q_n'''(\xi_3)}=\cdots\\
+    &=\frac{R_n^{(n)}(\xi_n)}{Q_n^{(n)}(\xi_n)}
+    =\frac{R_n^{(n)}(\xi_n)-R_n^{(n)}(x_0)}{Q_n^{(n)}(\xi_n)-Q_n^{(n)}(x_0)}
+    =\frac{R_n^{(n+1)}(\xi)}{Q_n^{(n+1)}(\xi)},
+    \end{aligned}
+    $$
+
+    其中 $x_0<\xi<\xi_n<\xi_{n-1}<\cdots<\xi_3<\xi_2<\xi_1<x$。
+
+    而 $R_n^{(n+1)}(\xi)=f^{(n+1)}(\xi)$，$Q_n^{(n+1)}(\xi)=(n+1)!$，于是
+
+    $$
+    \frac{R_n(x)}{Q_n(x)}=\frac{f^{(n+1)}(\xi)}{(n+1)!},\qquad x_0<\xi<x,
+    $$
+
+    或
+
+    $$
+    R_n(x)=\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_0)^{n+1},
+    $$
+
+    即
+
+    $$
+    f(x)=P_n(x)+\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_0)^{n+1},\qquad x_0<\xi<x.
+    $$
+
 #### §3.2 几个常用函数的麦克劳林公式
 
 以下各式中的 $0<\theta<1$；$n,m$ 为非负整数。
@@ -1085,6 +1523,21 @@ $$
 $$
 (1+x)^\alpha=\sum_{k=0}^{n}\binom{\alpha}{k}x^k+o(x^n).
 $$
+
+???+ example "例2"
+
+    求 $\displaystyle\lim_{x\to0}\frac{e^x\sin x-x(1+x)}{x^3}$。
+
+    ??? success "解析"
+
+        $$
+        \begin{aligned}
+        \lim_{x\to0}\frac{e^x\sin x-x(1+x)}{x^3}
+        &=\lim_{x\to0}\frac{\left(1+x+\dfrac{x^2}{2!}+o(x^2)\right)
+        \left(x-\dfrac{x^3}{3!}+o(x^3)\right)-x(1+x)}{x^3}\\
+        &=\lim_{x\to0}\frac{\dfrac13x^3+o(x^3)}{x^3}=\frac13.
+        \end{aligned}
+        $$
 
 #### §3.4 泰勒公式的应用
 
@@ -1483,6 +1936,30 @@ $f$ 为被积函数，$x$ 为积分变量，$f(x)\,\mathrm dx$ 为被积表达�
 
 不定积分的图形是一族积分曲线；在横坐标相同的各点处，它们具有相同的切线斜率。
 
+??? info "原函数全体的证明"
+
+    设 $A=\{F(x)+C:C\in\mathbb R\text{ 是常数}\}$，$B$ 是 $f(x)$ 在区间 $I$ 上所有原函数组成的集合，我们只要证明 $A=B$ 即可。
+
+    前面已经证明了 $A\subset B$。现证明 $B\subset A$，任给 $G(x)\in B$，有
+
+    $$
+    G'(x)=f(x),\qquad x\in I.
+    $$
+
+    又 $F'(x)=f(x)$，$x\in I$。由于
+
+    $$
+    [G(x)-F(x)]'=G'(x)-F'(x)=f(x)-f(x)=0,\qquad x\in I,
+    $$
+
+    因此，$G(x)-F(x)=C$，$C\in\mathbb R$ 是某一个常数，即
+
+    $$
+    G(x)=F(x)+C,\qquad x\in I,
+    $$
+
+    所以 $G(x)\in A$，于是 $B\subset A$。因此 $A=B$。
+
 #### §1.2 基本积分
 
 下表各式在被积函数有定义的相应区间内成立，$C$ 为任意常数。
@@ -1563,6 +2040,36 @@ $$
 =F(\varphi(x))+C.
 $$
 
+**注：** 运用此定理的关键是被积表达式能否凑成
+
+$$
+f(\varphi(x))\varphi'(x)\,\mathrm dx=f(\varphi(x))\,\mathrm d\varphi(x)
+$$
+
+的形式，并且 $f(u)$ 的原函数能求出。在具体运用此定理时，一般可不引入中间变量 $u$，而直接写出结果，即
+
+$$
+\int g(x)\,\mathrm dx
+=\int f(\varphi(x))\varphi'(x)\,\mathrm dx
+=\int f(\varphi(x))\,\mathrm d\varphi(x)
+=F(\varphi(x))+C.
+$$
+
+???+ example "例1"
+
+    求 $\displaystyle\int\frac1{\sqrt{a^2-x^2}}\,\mathrm dx$（$a>0$）。
+
+    ??? success "解析"
+
+        $$
+        \begin{aligned}
+        \int\frac1{\sqrt{a^2-x^2}}\,\mathrm dx
+        &=\int\frac1{a\sqrt{1-\left(\dfrac xa\right)^2}}\,\mathrm dx\\
+        &=\int\frac1{\sqrt{1-\left(\dfrac xa\right)^2}}\,\mathrm d\left(\frac xa\right)
+        =\arcsin\frac xa+C.
+        \end{aligned}
+        $$
+
 #### §2.2 变量代换法（第二换元法）
 
 若 $x=\varphi(t)$ 在所用区间内严格单调、可导，$\varphi'(t)\ne0$，且 $G'(t)=f(\varphi(t))\varphi'(t)$，则
@@ -1622,6 +2129,32 @@ $$
 
         ??? example "定积分的分部积分"
             <!-- 待补充 -->
+
+??? info "分部积分公式的推导"
+
+    若 $u=u(x)$，$v=v(x)$ 均可导，则 $(uv)'=u'v+uv'$。移项有 $uv'=(uv)'-u'v$，两边求不定积分，得
+
+    $$
+    \int uv'\,\mathrm dx=\int(uv)'\,\mathrm dx-\int u'v\,\mathrm dx.
+    $$
+
+    因此，有下面的结果：
+
+    $$
+    \int u(x)v'(x)\,\mathrm dx=u(x)v(x)-\int u'(x)v(x)\,\mathrm dx.
+    $$
+
+???+ example "例17"
+
+    求 $\displaystyle\int xe^x\,\mathrm dx$。
+
+    ??? success "解析"
+
+        设 $u=x$，$v'=e^x$，于是
+
+        $$
+        \text{原式}=\int x\,\mathrm de^x=xe^x-\int e^x\,\mathrm dx=xe^x-e^x+C.
+        $$
 
 ### §3 某些特殊类型函数的不定积分
 
@@ -1875,6 +2408,68 @@ $$
 
         ??? example "含参数的变限积分"
             <!-- 待补充 -->
+
+??? info "微积分学基本定理的证明"
+
+    任给 $x\in I$，当 $|\Delta x|$ 充分小时，有 $x+\Delta x\in I$，由于
+
+    $$
+    \begin{aligned}
+    \lim_{\Delta x\to0}\frac{G(x+\Delta x)-G(x)}{\Delta x}
+    &=\lim_{\Delta x\to0}\frac{\displaystyle\int_a^{x+\Delta x}f(t)\,\mathrm dt-\int_a^xf(t)\,\mathrm dt}{\Delta x}\\
+    &=\lim_{\Delta x\to0}\frac{\displaystyle\int_a^xf(t)\,\mathrm dt+\int_x^{x+\Delta x}f(t)\,\mathrm dt-\int_a^xf(t)\,\mathrm dt}{\Delta x}\\
+    &=\lim_{\Delta x\to0}\frac{\displaystyle\int_x^{x+\Delta x}f(t)\,\mathrm dt}{\Delta x}\\
+    &=\lim_{\Delta x\to0}\frac{f(\xi)\Delta x}{\Delta x}
+    \quad\text{（$\xi$ 在 $x$ 与 $x+\Delta x$ 之间）}\\
+    &=\lim_{\Delta x\to0}f(\xi)=\lim_{\xi\to x}f(\xi)
+    \quad\text{（当 $\Delta x\to0$ 时，有 $\xi\to x$）},
+    \end{aligned}
+    $$
+
+    且 $f(t)$ 在 $x$ 处连续，所以 $\lim_{\xi\to x}f(\xi)=f(x)$。因此，$G(x)$ 在 $x$ 处可导，且
+
+    $$
+    G'(x)=\frac{\mathrm d}{\mathrm dx}\int_a^xf(t)\,\mathrm dt=f(x).
+    $$
+
+??? info "牛顿—莱布尼茨公式的证明"
+
+    由定理条件知，$F(x)$ 也是 $f(x)$ 在区间 $[a,b]$ 上的一个原函数，而 $\int_a^xf(t)\,\mathrm dt$ 也是 $f(x)$ 在区间 $[a,b]$ 上的一个原函数，则
+
+    $$
+    \int_a^xf(t)\,\mathrm dt-F(x)=C,\qquad C\text{ 是某一个常数},
+    $$
+
+    即
+
+    $$
+    \int_a^xf(t)\,\mathrm dt=F(x)+C.
+    $$
+
+    在上面的恒等式中令 $x=a$，有 $0=\int_a^af(t)\,\mathrm dt=F(a)+C$，即 $C=-F(a)$，于是
+
+    $$
+    \int_a^xf(t)\,\mathrm dt=F(x)-F(a).
+    $$
+
+    再令 $x=b$，就有 $\int_a^bf(t)\,\mathrm dt=F(b)-F(a)$，即
+
+    $$
+    \int_a^bf(x)\,\mathrm dx=F(b)-F(a).
+    $$
+
+**注：** 不定积分的结果是一个函数，定积分的结果是一个数值。
+
+???+ example "例3"
+
+    求 $\displaystyle\frac{\mathrm d}{\mathrm dx}\int_{x^2}^{x^3}\cos t^2\,\mathrm dt$。
+
+    ??? success "解析"
+
+        $$
+        \frac{\mathrm d}{\mathrm dx}\int_{x^2}^{x^3}\cos t^2\,\mathrm dt
+        =3x^2\cos x^6-2x\cos x^4.
+        $$
 
 ### §3 定积分的计算方法
 
@@ -2132,6 +2727,34 @@ $$
 $$
 \int_a^{+\infty}\frac{\mathrm dx}{x^p}\text{ 收敛}\iff p>1\qquad(a>0).
 $$
+
+???+ example "例1"
+
+    讨论 $\displaystyle\int_a^{+\infty}\frac{\mathrm dx}{x^p}$（$a>0$）的敛散性（第一 $p$ 反常积分）。
+
+    ??? success "解析"
+
+        当 $p\ne1$ 时，有
+
+        $$
+        \begin{aligned}
+        \int_a^{+\infty}\frac{\mathrm dx}{x^p}
+        &=\lim_{t\to+\infty}\int_a^t\frac{\mathrm dx}{x^p}
+        =\lim_{t\to+\infty}\left.\frac{x^{-p+1}}{-p+1}\right|_a^t\\
+        &=\lim_{t\to+\infty}\frac1{1-p}\left(t^{-p+1}-a^{-p+1}\right)
+        =\begin{cases}\dfrac{a^{1-p}}{p-1},&p>1,\\+\infty,&p<1.\end{cases}
+        \end{aligned}
+        $$
+
+        当 $p=1$ 时，有
+
+        $$
+        \int_a^{+\infty}\frac{\mathrm dx}{x}
+        =\lim_{t\to+\infty}\int_a^t\frac{\mathrm dx}{x}
+        =\lim_{t\to+\infty}\left.\ln x\right|_a^t=+\infty.
+        $$
+
+        因此，当 $p>1$ 时，反常积分 $\int_a^{+\infty}\dfrac{\mathrm dx}{x^p}$ 收敛；而当 $p\le1$ 时，$\int_a^{+\infty}\dfrac{\mathrm dx}{x^p}$ 发散。
 
 #### §5.2 无界函数的反常积分
 
@@ -2413,6 +3036,73 @@ y=e^{-\int p(x)\,\mathrm dx}
 \left[\int q(x)e^{\int p(x)\,\mathrm dx}\,\mathrm dx+C\right].
 $$
 
+??? info "一阶线性非齐次方程通解公式的推导"
+
+    先求对应齐次方程 $\dfrac{\mathrm dy}{\mathrm dx}+p(x)y=0$ 的通解
+
+    $$
+    y=Ce^{-\int p(x)\,\mathrm dx},
+    $$
+
+    再将上式中的任意常数 $C$ 换为待定函数 $u(x)$，即
+
+    $$
+    y=u(x)e^{-\int p(x)\,\mathrm dx},
+    $$
+
+    并对其关于 $x$ 求导数
+
+    $$
+    \frac{\mathrm dy}{\mathrm dx}
+    =u'(x)e^{-\int p(x)\,\mathrm dx}
+    +u(x)e^{-\int p(x)\,\mathrm dx}(-p(x)),
+    $$
+
+    将 $\dfrac{\mathrm dy}{\mathrm dx}$，$y$ 代入非齐次方程，得
+
+    $$
+    u'(x)e^{-\int p(x)\,\mathrm dx}
+    -p(x)u(x)e^{-\int p(x)\,\mathrm dx}
+    +p(x)u(x)e^{-\int p(x)\,\mathrm dx}=q(x),
+    $$
+
+    化简后为 $u'(x)e^{-\int p(x)\,\mathrm dx}=q(x)$，即
+
+    $$
+    u'(x)=q(x)e^{\int p(x)\,\mathrm dx}.
+    $$
+
+    积分得 $u(x)=\int q(x)e^{\int p(x)\,\mathrm dx}\,\mathrm dx+C$，其中 $C$ 为任意常数。于是得到一阶线性非齐次方程的通解为
+
+    $$
+    y=e^{-\int p(x)\,\mathrm dx}
+    \left[\int q(x)e^{\int p(x)\,\mathrm dx}\,\mathrm dx+C\right].
+    $$
+
+???+ example "例2：解法二"
+
+    求方程 $\displaystyle\frac{\mathrm dy}{\mathrm dx}-\frac1x y=2x^2$ 的通解。
+
+    ??? success "解析"
+
+        先求对应的齐次方程 $\dfrac{\mathrm dy}{\mathrm dx}-\dfrac1x y=0$ 的通解，得 $y=Cx$。用常数变易法，设 $y=u(x)x$，则
+
+        $$
+        \frac{\mathrm dy}{\mathrm dx}=u(x)+xu'(x),
+        $$
+
+        代入原方程，得
+
+        $$
+        u(x)+xu'(x)-\frac1xu(x)x=2x^2,
+        $$
+
+        即 $u'(x)=2x$，得 $u(x)=x^2+C$，从而原非齐次方程的通解
+
+        $$
+        y=x^3+Cx.
+        $$
+
 #### §3.2 伯努利方程
 
 伯努利方程的形式为
@@ -2611,6 +3301,24 @@ $$
         ??? example "复值解"
             <!-- 待补充 -->
 
+??? info "非齐次方程通解结构的证明"
+
+    因为 $\widetilde y$ 是方程 $y''+p(x)y'+q(x)y=f(x)$ 的一个特解，所以有 $L[\widetilde y]=f(x)$。又因为 $Y=C_1y_1+C_2y_2$ 是对应齐次方程的通解，所以有 $L[C_1y_1+C_2y_2]=0$，于是
+
+    $$
+    L[C_1y_1+C_2y_2+\widetilde y]=0+f(x)=f(x),
+    $$
+
+    从而 $C_1y_1+C_2y_2+\widetilde y$ 是非齐次方程的解。
+
+    又由于其含有两个相互独立的任意常数 $C_1,C_2$，所以
+
+    $$
+    y=C_1y_1+C_2y_2+\widetilde y
+    $$
+
+    是非齐次方程的通解。
+
 ### §7 二阶常系数线性微分方程的解法
 
 #### §7.1 二阶常系数线性齐次方程及其解法
@@ -2639,6 +3347,40 @@ $$
 | $[P_n(x)\cos\beta x+P_l(x)\sin\beta x]e^{\alpha x}$ | $\widetilde y=x^k[R_m(x)\cos\beta x+S_m(x)\sin\beta x]e^{\alpha x}$ |
 
 $P_n,P_l$ 分别是 $n,l$ 次多项式，$m=\max(n,l)$；$Q_n,R_m,S_m$ 为相应次数的待定系数多项式。第一行的 $k$ 为 $\alpha$ 作为特征根的重数，非根时取 $0$；第二行 $\beta\ne0$，$k=0$ 或 $1$，分别对应 $\alpha+i\beta$ 不是特征根或是单根。
+
+???+ example "例3"
+
+    求 $\displaystyle\frac{\mathrm d^2y}{\mathrm dx^2}+\frac{\mathrm dy}{\mathrm dx}+2y=x^2-3$ 的一个特解。
+
+    ??? success "解析"
+
+        自由项 $f(x)=x^2-3$，$P_n(x)$ 是一个二次多项式，$\alpha=0$，又
+
+        $$
+        \alpha^2+p\alpha+q=2\ne0,
+        $$
+
+        则可设方程的特解为
+
+        $$
+        \widetilde y=a_0x^2+a_1x+a_2,
+        $$
+
+        求导数 $\widetilde y'=2a_0x+a_1$，$\widetilde y''=2a_0$，代入方程有
+
+        $$
+        2a_0x^2+(2a_0+2a_1)x+(2a_0+a_1+2a_2)=x^2-3,
+        $$
+
+        比较同次幂项系数，得
+
+        $$
+        \begin{cases}2a_0=1,\\2a_0+2a_1=0,\\2a_0+a_1+2a_2=-3,\end{cases}
+        \qquad
+        \begin{cases}a_0=\dfrac12,\\a_1=-\dfrac12,\\a_2=-\dfrac74.\end{cases}
+        $$
+
+        所以特解 $\widetilde y=\dfrac12x^2-\dfrac12x-\dfrac74$。
 
 #### §7.3 欧拉方程
 
@@ -3317,6 +4059,45 @@ $$
 W=\mathbf F\cdot\mathbf s.
 $$
 
+??? info "数量积坐标表达式的推导"
+
+    下面我们利用数量积的性质和运算规律来推导数量积坐标表达式。设 $\mathbf a=a_1\mathbf i+a_2\mathbf j+a_3\mathbf k$，$\mathbf b=b_1\mathbf i+b_2\mathbf j+b_3\mathbf k$，则
+
+    $$
+    \begin{aligned}
+    \mathbf a\cdot\mathbf b
+    &=(a_1\mathbf i+a_2\mathbf j+a_3\mathbf k)\cdot(b_1\mathbf i+b_2\mathbf j+b_3\mathbf k)\\
+    &=a_1b_1\mathbf i\cdot\mathbf i+a_1b_2\mathbf i\cdot\mathbf j+a_1b_3\mathbf i\cdot\mathbf k
+    +a_2b_1\mathbf j\cdot\mathbf i+a_2b_2\mathbf j\cdot\mathbf j+a_2b_3\mathbf j\cdot\mathbf k\\
+    &\quad+a_3b_1\mathbf k\cdot\mathbf i+a_3b_2\mathbf k\cdot\mathbf j+a_3b_3\mathbf k\cdot\mathbf k.
+    \end{aligned}
+    $$
+
+    因为 $\mathbf i,\mathbf j,\mathbf k$ 是互相垂直的单位矢量，所以有
+
+    $$
+    \begin{cases}\mathbf i\cdot\mathbf j=\mathbf j\cdot\mathbf k=\mathbf k\cdot\mathbf i=0,\\
+    \mathbf i\cdot\mathbf i=\mathbf j\cdot\mathbf j=\mathbf k\cdot\mathbf k=1.
+    \end{cases}
+    $$
+
+    从而 $\mathbf a\cdot\mathbf b=a_1b_1+a_2b_2+a_3b_3$。
+
+???+ example "例1"
+
+    设 $|\mathbf a|=3$，$|\mathbf b|=5$，且两矢量的夹角 $\theta=\dfrac\pi3$，试求 $(\mathbf a-2\mathbf b)\cdot(3\mathbf a+2\mathbf b)$。
+
+    ??? success "解析"
+
+        $$
+        \begin{aligned}
+        (\mathbf a-2\mathbf b)\cdot(3\mathbf a+2\mathbf b)
+        &=3\mathbf a\cdot\mathbf a-6\mathbf b\cdot\mathbf a+2\mathbf a\cdot\mathbf b-4\mathbf b\cdot\mathbf b\\
+        &=3|\mathbf a|^2-4|\mathbf a||\mathbf b|\cos\frac\pi3-4|\mathbf b|^2\\
+        &=3\times9-4\times3\times5\times\frac12-4\times25=-103.
+        \end{aligned}
+        $$
+
 #### §4.2 两矢量的矢量积
 
 两矢量 $\mathbf a,\mathbf b$ 的矢量积 $\mathbf a\times\mathbf b$ 为同时垂直于二者的矢量，方向由 $\mathbf a$ 转向 $\mathbf b$ 的右手规则确定，模为
@@ -3498,6 +4279,54 @@ $$
 $$
 d=\frac{|Ax_0+By_0+Cz_0+D|}{\sqrt{A^2+B^2+C^2}}.
 $$
+
+**注：** 在平面解析几何中，一次方程表示一条直线；在空间解析几何中，一次方程表示一张平面。例如 $x+y=1$ 在平面解析几何中表示一条直线，而在空间解析几何中表示一张平面。
+
+???+ example "例2：解法一"
+
+    求过三点 $M_1(1,1,2)$，$M_2(3,2,3)$，$M_3(2,0,3)$ 的平面方程。
+
+    ??? success "解析"
+
+        先求平面的法矢量 $\mathbf n$，因为 $\overrightarrow{M_1M_2}=2\mathbf i+\mathbf j+\mathbf k$，$\overrightarrow{M_1M_3}=\mathbf i-\mathbf j+\mathbf k$，故所求平面的法矢量为
+
+        $$
+        \mathbf n=\overrightarrow{M_1M_2}\times\overrightarrow{M_1M_3}
+        =\begin{vmatrix}\mathbf i&\mathbf j&\mathbf k\\2&1&1\\1&-1&1\end{vmatrix}
+        =2\mathbf i-\mathbf j-3\mathbf k,
+        $$
+
+        又平面过点 $M_1(1,1,2)$，从而所求平面方程为
+
+        $$
+        2(x-1)-(y-1)-3(z-2)=0,\quad\text{或 }2x-y-3z+5=0.
+        $$
+
+??? info "点到平面距离公式的推导"
+
+    求空间一点 $P_0(x_0,y_0,z_0)$ 到平面 $Ax+By+Cz+D=0$ 的距离。设 $P(x_1,y_1,z_1)$ 为平面 $Ax+By+Cz+D=0$ 上的任一点，则有 $Ax_1+By_1+Cz_1+D=0$。作矢量
+
+    $$
+    \overrightarrow{P_0P}=(x_1-x_0)\mathbf i+(y_1-y_0)\mathbf j+(z_1-z_0)\mathbf k,
+    $$
+
+    则该矢量在平面法矢量上的投影的绝对值就是点 $P_0$ 到平面的距离：
+
+    $$
+    d=|\overrightarrow{P_0P}|\cdot|\cos(\overrightarrow{P_0P},\mathbf n)|
+    =|\overrightarrow{P_0P}\cdot\mathbf e_n|,
+    $$
+
+    由 $\mathbf n=A\mathbf i+B\mathbf j+C\mathbf k$，得
+
+    $$
+    \begin{aligned}
+    d&=\frac{|A(x_1-x_0)+B(y_1-y_0)+C(z_1-z_0)|}{\sqrt{A^2+B^2+C^2}}\\
+    &=\frac{|Ax_0+By_0+Cz_0+D|}{\sqrt{A^2+B^2+C^2}}.
+    \end{aligned}
+    $$
+
+    注意：$Ax_1+By_1+Cz_1=-D$。
 
 #### §6.2 空间直线方程
 
@@ -3853,6 +4682,22 @@ $$
         ??? example "有界闭区域上的连续性"
             <!-- 待补充 -->
 
+**说明：** 必须注意这个极限值与点 $P(x,y)$ 趋于点 $P_0(x_0,y_0)$ 的方式无关，即不论 $P$ 以什么方向和路径（也可以是跳跃式地，忽上忽下地）趋向 $P_0$，只要 $P$ 与 $P_0$ 充分接近，就能使 $f(P)$ 与 $A$ 接近到预先任意指定的程度。
+
+???+ example "例7"
+
+    研究函数 $f(x,y)=\begin{cases}\dfrac{2xy}{x^2+y^2},&x^2+y^2\ne0,\\0,&x^2+y^2=0,\end{cases}$ 在点 $(0,0)$ 处的极限是否存在。
+
+    ??? success "解析"
+
+        当 $x^2+y^2\ne0$ 时，我们研究函数 $f(x,y)$ 沿 $x\to0$，$y=kx\to0$ 这一方式趋于 $(0,0)$ 的极限，有
+
+        $$
+        \lim_{x\to0}\frac{2x\cdot kx}{x^2+k^2x^2}=\frac{2k}{1+k^2}.
+        $$
+
+        很显然，对于不同的 $k$ 值，可得到不同的极限值，所以极限 $\lim_{x\to0,y\to0}f(x,y)$ 不存在。
+
 ### §2 偏导数与全微分
 
 #### §2.1 偏导数
@@ -3928,6 +4773,91 @@ $$
 \mathrm d(uv)=v\,\mathrm du+u\,\mathrm dv,\qquad
 \mathrm d\left(\frac uv\right)=\frac{v\,\mathrm du-u\,\mathrm dv}{v^2}\quad(v\ne0).
 $$
+
+??? info "可微的充分条件的证明"
+
+    全增量
+
+    $$
+    \begin{aligned}
+    \Delta z&=f(x_0+\Delta x,y_0+\Delta y)-f(x_0,y_0)\\
+    &=[f(x_0+\Delta x,y_0+\Delta y)-f(x_0,y_0+\Delta y)]
+    +[f(x_0,y_0+\Delta y)-f(x_0,y_0)],
+    \end{aligned}
+    $$
+
+    在上面两个中括号中分别应用一元函数微分中值定理，有
+
+    $$
+    \Delta z=f_x(x_0+\theta_1\Delta x,y_0+\Delta y)\Delta x
+    +f_y(x_0,y_0+\theta_2\Delta y)\Delta y,\qquad0<\theta_1,\theta_2<1.
+    $$
+
+    由给定条件知
+
+    $$
+    \lim_{\Delta x\to0,\Delta y\to0}f_x(x_0+\theta_1\Delta x,y_0+\Delta y)=f_x(x_0,y_0),
+    $$
+
+    有
+
+    $$
+    f_x(x_0+\theta_1\Delta x,y_0+\Delta y)=f_x(x_0,y_0)+\varepsilon_1,
+    \qquad\lim_{\Delta x\to0,\Delta y\to0}\varepsilon_1=0.
+    $$
+
+    同理
+
+    $$
+    f_y(x_0,y_0+\theta_2\Delta y)=f_y(x_0,y_0)+\varepsilon_2,
+    \qquad\lim_{\Delta x\to0,\Delta y\to0}\varepsilon_2=0.
+    $$
+
+    于是
+
+    $$
+    \Delta z=f_x(x_0,y_0)\Delta x+f_y(x_0,y_0)\Delta y+\varepsilon_1\Delta x+\varepsilon_2\Delta y.
+    $$
+
+    而
+
+    $$
+    \lim_{\Delta x\to0,\Delta y\to0}\frac{\varepsilon_1\Delta x+\varepsilon_2\Delta y}{\rho}
+    =\lim_{\Delta x\to0,\Delta y\to0}\left(
+    \varepsilon_1\frac{\Delta x}{\sqrt{(\Delta x)^2+(\Delta y)^2}}
+    +\varepsilon_2\frac{\Delta y}{\sqrt{(\Delta x)^2+(\Delta y)^2}}\right)
+    =0+0=0,
+    $$
+
+    即 $\varepsilon_1\Delta x+\varepsilon_2\Delta y=o(\rho)$（$\rho\to0$），从而
+
+    $$
+    \Delta z=f_x(x_0,y_0)\Delta x+f_y(x_0,y_0)\Delta y+o(\rho)\qquad(\rho\to0).
+    $$
+
+    因此，$z=f(x,y)$ 在点 $(x_0,y_0)$ 处可微。
+
+???+ example "例11"
+
+    研究函数 $f(x,y)=\begin{cases}\dfrac{2xy}{\sqrt{x^2+y^2}},&x^2+y^2\ne0,\\0,&x^2+y^2=0,\end{cases}$ 在原点的可微性。
+
+    ??? success "解析"
+
+        $$
+        f_x(0,0)=\lim_{x\to0}\frac{f(x,0)-f(0,0)}x=\lim_{x\to0}\frac0x=0,
+        $$
+
+        同理 $f_y(0,0)=0$。要验证函数 $f$ 在原点是否可微，只需看极限 $\lim\dfrac{\Delta z-(A\Delta x+B\Delta y)}\rho$ 是否为 $0$。由于
+
+        $$
+        \begin{aligned}
+        \lim\frac{\Delta z-(A\Delta x+B\Delta y)}\rho
+        &=\lim\frac{\dfrac{2\Delta x\Delta y}{\sqrt{(\Delta x)^2+(\Delta y)^2}}-(0\cdot\Delta x+0\cdot\Delta y)}\rho\\
+        &=\lim_{\Delta x\to0,\Delta y\to0}\frac{2\Delta x\Delta y}{(\Delta x)^2+(\Delta y)^2},
+        \end{aligned}
+        $$
+
+        由本章 §1 例7 知此极限不存在，所以函数 $f$ 在原点不可微。
 
 ##### 全微分在近似计算和误差估算中的应用 \*
 
@@ -4009,6 +4939,62 @@ $$
 $$
 
 其中 $f_x,f_y,f_u$ 为外层函数对相应自变量的偏导数。
+
+??? info "复合函数偏导公式的证明"
+
+    设 $\Delta y=0$，$\Delta x\ne0$，得到 $u,v$ 对 $x$ 的偏增量
+
+    $$
+    \Delta_xu=u(x+\Delta x,y)-u(x,y),\qquad
+    \Delta_xv=v(x+\Delta x,y)-v(x,y).
+    $$
+
+    由于 $z=f(u,v)$ 在点 $(u,v)$ 处可微，所以由全增量公式，有
+
+    $$
+    \Delta z=\frac{\partial z}{\partial u}\Delta u+\frac{\partial z}{\partial v}\Delta v
+    +\varepsilon_1\Delta u+\varepsilon_2\Delta v,
+    $$
+
+    其中 $\lim_{\Delta u\to0,\Delta v\to0}\varepsilon_1=0$，$\lim_{\Delta u\to0,\Delta v\to0}\varepsilon_2=0$。把 $\Delta_xu,\Delta_xv$ 代入上式，得到 $z$ 对 $x$ 的偏增量，有
+
+    $$
+    \Delta_xz=\frac{\partial z}{\partial u}\Delta_xu+\frac{\partial z}{\partial v}\Delta_xv
+    +\varepsilon_1\Delta_xu+\varepsilon_2\Delta_xv.
+    $$
+
+    等式两边同除以 $\Delta x$（$\ne0$），得
+
+    $$
+    \frac{\Delta_xz}{\Delta x}
+    =\frac{\partial z}{\partial u}\frac{\Delta_xu}{\Delta x}
+    +\frac{\partial z}{\partial v}\frac{\Delta_xv}{\Delta x}
+    +\varepsilon_1\frac{\Delta_xu}{\Delta x}+\varepsilon_2\frac{\Delta_xv}{\Delta x},
+    $$
+
+    由 $\dfrac{\partial u}{\partial x}$，$\dfrac{\partial v}{\partial x}$ 存在，知
+
+    $$
+    \lim_{\Delta x\to0}\frac{\Delta_xu}{\Delta x}=\frac{\partial u}{\partial x},\qquad
+    \lim_{\Delta x\to0}\frac{\Delta_xv}{\Delta x}=\frac{\partial v}{\partial x}.
+    $$
+
+    所以，当 $\Delta x\to0$ 时，有 $\Delta_xu\to0$，$\Delta_xv\to0$，从而 $\varepsilon_1\to0$，$\varepsilon_2\to0$。于是
+
+    $$
+    \lim_{\Delta x\to0}\frac{\Delta_xz}{\Delta x}
+    =\frac{\partial z}{\partial x}
+    =\frac{\partial z}{\partial u}\frac{\partial u}{\partial x}
+    +\frac{\partial z}{\partial v}\frac{\partial v}{\partial x},
+    $$
+
+    同理可得
+
+    $$
+    \frac{\partial z}{\partial y}
+    =\frac{\partial z}{\partial u}\frac{\partial u}{\partial y}
+    +\frac{\partial z}{\partial v}\frac{\partial v}{\partial y}.
+    $$
 
 #### §3.2 复合函数的全微分
 
@@ -4617,7 +5603,37 @@ $$
         ??? example "分块积分"
             <!-- 待补充 -->
 
+???+ example "例3"
+
+    计算积分 $\displaystyle\int_0^1x^2\,\mathrm dx\int_x^1e^{-y^2}\,\mathrm dy$。
+
+    ??? success "解析"
+
+        显然这个累次积分不能直接计算出来，因为 $e^{-y^2}$ 的原函数不能用初等函数表示。因此，有必要把它还原成二重积分，转化为另一顺序的累次积分进行求解。
+
+        由题意知，$\sigma=\{(x,y):x\le y\le1,\ 0\le x\le1\}$。由于 $\sigma$ 可写成 $y$ 型区域：$0\le x\le y,\ 0\le y\le1$，所以
+
+        $$
+        \begin{aligned}
+        \int_0^1x^2\,\mathrm dx\int_x^1e^{-y^2}\,\mathrm dy
+        &=\iint_\sigma x^2e^{-y^2}\,\mathrm dx\,\mathrm dy
+        =\int_0^1\mathrm dy\int_0^y x^2e^{-y^2}\,\mathrm dx\\
+        &=\int_0^1\left[\left.e^{-y^2}\frac{x^3}{3}\right|_0^y\right]\mathrm dy
+        =\frac13\int_0^1e^{-y^2}y^3\,\mathrm dy\\
+        &=\frac16\int_0^1e^{-y^2}y^2\,\mathrm d(y^2)
+        \overset{y^2=t}{=}\frac16\int_0^1e^{-t}t\,\mathrm dt.
+        \end{aligned}
+        $$
+
+        由分部积分法，可得
+
+        $$
+        \text{原式}=\frac16-\frac1{3e}.
+        $$
+
 #### §2.2 在极坐标系中计算二重积分
+
+当被积函数中含有 $x^2+y^2$ 的表达式和积分区域是圆域或圆域的一部分时，利用极坐标变换可以简化计算。
 
 极坐标变换及面积元素为
 
@@ -4661,6 +5677,25 @@ $$
 
         ??? example "含极点的区域"
             <!-- 待补充 -->
+
+???+ example "例7"
+
+    计算积分 $\displaystyle\iint_\sigma e^{-(x^2+y^2)}\,\mathrm d\sigma$，其中 $\sigma$ 是由圆 $x^2+y^2=R^2$ 所围成的区域。
+
+    ??? success "解析"
+
+        经极坐标变换 $x=r\cos\theta,\ y=r\sin\theta$，得 $\sigma:0\le\theta\le2\pi,\ 0\le r\le R$，于是
+
+        $$
+        \begin{aligned}
+        \iint_\sigma e^{-(x^2+y^2)}\,\mathrm d\sigma
+        &=\int_0^{2\pi}\mathrm d\theta\int_0^R e^{-r^2}r\,\mathrm dr\\
+        &=2\pi\int_0^R e^{-r^2}r\,\mathrm dr
+        =-\pi\int_0^R e^{-r^2}\,\mathrm d(-r^2)\\
+        &=-\pi\left.e^{-r^2}\right|_0^R
+        =\pi(1-e^{-R^2}).
+        \end{aligned}
+        $$
 
 #### §2.3 在一般曲线坐标中计算二重积分 \*
 
@@ -4834,7 +5869,162 @@ $$
 |J|\,\mathrm du\,\mathrm dv\,\mathrm dw.
 $$
 
+???+ example "例5：解法二"
+
+    计算 $\displaystyle\iiint_V z\,\mathrm dV$，其中 $V$ 是由球面 $x^2+y^2+z^2=4$ 及抛物面 $3z=x^2+y^2$ 所围成（在抛物面内的那一部分）的立体区域。
+
+    ??? success "解析"
+
+        经柱面坐标变换，上曲面方程为 $r^2+z^2=4$，即 $z=\sqrt{4-r^2}$；下曲面为 $3z=r^2$，即 $z=\dfrac{r^2}{3}$。有
+
+        $$
+        V:\frac{r^2}{3}\le z\le\sqrt{4-r^2},\qquad
+        0\le\theta\le2\pi,\quad0\le r\le\sqrt3,
+        $$
+
+        于是
+
+        $$
+        \begin{aligned}
+        \iiint_V z\,\mathrm dV
+        &=\int_0^{2\pi}\mathrm d\theta\int_0^{\sqrt3}r\,\mathrm dr
+        \int_{r^2/3}^{\sqrt{4-r^2}}z\,\mathrm dz\\
+        &=\int_0^{2\pi}\mathrm d\theta\int_0^{\sqrt3}
+        \frac12r\left(4-r^2-\frac{r^4}{9}\right)\,\mathrm dr\\
+        &=\pi\int_0^{\sqrt3}\left(4r-r^3-\frac{r^5}{9}\right)\,\mathrm dr
+        =\frac{13}{4}\pi.
+        \end{aligned}
+        $$
+
+通常利用柱面坐标变换时，首先求出 $V$ 在 $Oxy$ 平面上的投影区域 $\sigma_{xy}$，确定上曲面、下曲面，然后用柱面坐标变换，把上曲面、下曲面表示成 $r,\theta$ 的函数，投影区域用 $r,\theta$ 的不等式来表示。
+
 ##### 四、重积分换元公式的证明 \*
+
+??? info "二重积分换元公式的推导"
+
+    在平面上，设由函数组 $u=u(x,y),\ v=v(x,y)$（$u,v$ 是单值函数且有连续的偏导数）可以唯一地确定一对单值反函数
+
+    $$
+    x=x(u,v),\qquad y=y(u,v).
+    $$
+
+    现在来考虑二重积分 $\displaystyle\iint_\sigma f(x,y)\,\mathrm d\sigma$ 在曲线坐标 $(u,v)$ 下的表达式。
+
+    用两族坐标曲线将区域 $\sigma$ 分成若干个小区域，再求其中规则的小区域的面积。
+
+    设小区域 $M_1M_2M_4M_3$ 是由两对邻近坐标线所围成，因 $\mathrm du,\mathrm dv$ 很小，所以可将该小区域看成是一个平行四边形。这个平行四边形的顶点 $M_4,M_2,M_3$ 的坐标（不计高阶无穷小）分别是
+
+    $$
+    \begin{aligned}
+    M_4:&\quad x_1=x(u,v),\quad y_1=y(u,v);\\
+    M_2:&\quad x_2=x(u+\mathrm du,v)=x(u,v)+x_u\,\mathrm du,\\
+    &\quad y_2=y(u+\mathrm du,v)=y(u,v)+y_u\,\mathrm du;\\
+    M_3:&\quad x_3=x(u,v+\mathrm dv)=x(u,v)+x_v\,\mathrm dv,\\
+    &\quad y_3=y(u,v+\mathrm dv)=y(u,v)+y_v\,\mathrm dv.
+    \end{aligned}
+    $$
+
+    因此
+
+    $$
+    \overrightarrow{M_4M_2}=x_u\,\mathrm du\,\mathbf i+y_u\,\mathrm du\,\mathbf j,
+    \qquad
+    \overrightarrow{M_4M_3}=x_v\,\mathrm dv\,\mathbf i+y_v\,\mathrm dv\,\mathbf j,
+    $$
+
+    $$
+    \overrightarrow{M_4M_2}\times\overrightarrow{M_4M_3}
+    =\begin{vmatrix}x_u&y_u\\x_v&y_v\end{vmatrix}
+    \mathrm du\,\mathrm dv\,\mathbf k.
+    $$
+
+    通常记
+
+    $$
+    \frac{\partial(x,y)}{\partial(u,v)}
+    =\begin{vmatrix}x_u&x_v\\y_u&y_v\end{vmatrix},
+    $$
+
+    叫做 $x,y$ 关于 $u,v$ 的雅可比行列式。于是，小区域 $M_1M_2M_4M_3$ 的面积取为
+
+    $$
+    \left|\overrightarrow{M_4M_2}\times\overrightarrow{M_4M_3}\right|
+    =\left|\frac{\partial(x,y)}{\partial(u,v)}\right|\mathrm du\,\mathrm dv.
+    $$
+
+    又由 $f(x,y)=f(x(u,v),y(u,v))$，得
+
+    $$
+    \iint_\sigma f(x,y)\,\mathrm d\sigma
+    =\iint_{\sigma'}f(x(u,v),y(u,v))
+    \left|\frac{\partial(x,y)}{\partial(u,v)}\right|\mathrm du\,\mathrm dv,
+    $$
+
+    其中右边的 $\sigma'$ 用 $u,v$ 的不等式来表示。
+
+??? info "三重积分换元公式的推导"
+
+    在空间中，设由函数组 $u=u(x,y,z),\ v=v(x,y,z),\ w=w(x,y,z)$（单值函数且有连续偏导数）可以唯一地确定一组单值反函数
+
+    $$
+    x=x(u,v,w),\quad y=y(u,v,w),\quad z=z(u,v,w).
+    $$
+
+    用三族坐标曲面将立体 $V$ 分成若干个小立体区域，再求其中规则的小立体区域的体积。
+
+    设小区域是由三对相邻的坐标曲面所围成。因 $\mathrm du,\mathrm dv,\mathrm dw$ 很小，故可将该小区域看成一个平行六面体。这个平行六面体的顶点 $M_1$ 与相邻的三个顶点 $M_2,M_4,M_5$ 的坐标（不计高阶无穷小）分别是
+
+    $$
+    \begin{aligned}
+    M_1:&\quad (x,y,z),\\
+    M_2:&\quad (x+x_u\,\mathrm du,\ y+y_u\,\mathrm du,\ z+z_u\,\mathrm du),\\
+    M_4:&\quad (x+x_v\,\mathrm dv,\ y+y_v\,\mathrm dv,\ z+z_v\,\mathrm dv),\\
+    M_5:&\quad (x+x_w\,\mathrm dw,\ y+y_w\,\mathrm dw,\ z+z_w\,\mathrm dw).
+    \end{aligned}
+    $$
+
+    因此
+
+    $$
+    \begin{aligned}
+    \overrightarrow{M_1M_2}&=(x_u\mathbf i+y_u\mathbf j+z_u\mathbf k)\,\mathrm du,\\
+    \overrightarrow{M_1M_4}&=(x_v\mathbf i+y_v\mathbf j+z_v\mathbf k)\,\mathrm dv,\\
+    \overrightarrow{M_1M_5}&=(x_w\mathbf i+y_w\mathbf j+z_w\mathbf k)\,\mathrm dw,
+    \end{aligned}
+    $$
+
+    $$
+    (\overrightarrow{M_1M_2}\times\overrightarrow{M_1M_4})\cdot\overrightarrow{M_1M_5}
+    =\begin{vmatrix}x_u&x_v&x_w\\y_u&y_v&y_w\\z_u&z_v&z_w\end{vmatrix}
+    \mathrm du\,\mathrm dv\,\mathrm dw.
+    $$
+
+    我们把
+
+    $$
+    \frac{\partial(x,y,z)}{\partial(u,v,w)}
+    =\begin{vmatrix}x_u&x_v&x_w\\y_u&y_v&y_w\\z_u&z_v&z_w\end{vmatrix}
+    $$
+
+    称为 $x,y,z$ 关于 $u,v,w$ 的三阶雅可比行列式。于是规则小立体区域的体积
+
+    $$
+    \mathrm dV=
+    \left|(\overrightarrow{M_1M_2}\times\overrightarrow{M_1M_4})\cdot\overrightarrow{M_1M_5}\right|
+    =\left|\frac{\partial(x,y,z)}{\partial(u,v,w)}\right|
+    \mathrm du\,\mathrm dv\,\mathrm dw.
+    $$
+
+    又 $f(x,y,z)=f(x(u,v,w),y(u,v,w),z(u,v,w))$，于是可以得到三重积分从直角坐标 $(x,y,z)$ 变换为曲面坐标 $(u,v,w)$ 的换元公式
+
+    $$
+    \iiint_V f(x,y,z)\,\mathrm dV
+    =\iiint_{V'}f(x(u,v,w),y(u,v,w),z(u,v,w))
+    \left|\frac{\partial(x,y,z)}{\partial(u,v,w)}\right|
+    \mathrm du\,\mathrm dv\,\mathrm dw,
+    $$
+
+    其中右边的立体 $V'$ 用含 $u,v,w$ 的不等式来表示区域。
 
 !!! warning "提示"
 
@@ -4921,6 +6111,27 @@ $$
 
         ??? example "曲线积分的代入"
             <!-- 待补充 -->
+
+???+ example "例2"
+
+    计算 $\displaystyle\int_Lx^2\,\mathrm ds$，其中 $L$ 为球面 $x^2+y^2+z^2=a^2$ 被平面 $x+y+z=0$ 所截得的圆周。
+
+    ??? success "解析"
+
+        由对称性知
+
+        $$
+        \int_Lx^2\,\mathrm ds=\int_Ly^2\,\mathrm ds=\int_Lz^2\,\mathrm ds,
+        $$
+
+        所以
+
+        $$
+        \int_Lx^2\,\mathrm ds
+        =\frac13\int_L(x^2+y^2+z^2)\,\mathrm ds
+        =\frac{a^2}{3}\int_L\mathrm ds
+        =\frac23\pi a^3.
+        $$
 
 #### §4.2 第一类曲面积分
 
@@ -5181,6 +6392,55 @@ $$
 
 边界取正向，即沿边界行进时区域 $D$ 位于左侧。
 
+??? info "格林公式的证明：单条边界曲线"
+
+    这里 $\Gamma$ 为区域 $D$ 的边界曲线，并取正向。
+
+    若区域 $D$ 既是 $x$ 型区域又是 $y$ 型区域，这时区域 $D$ 可表示为
+
+    $$
+    \varphi_1(x)\le y\le\varphi_2(x),\quad a\le x\le b,
+    $$
+
+    或
+
+    $$
+    \psi_1(y)\le x\le\psi_2(y),\quad c\le y\le d.
+    $$
+
+    于是
+
+    $$
+    \begin{aligned}
+    \iint_D\frac{\partial Q}{\partial x}\,\mathrm dx\,\mathrm dy
+    &=\int_c^d\mathrm dy\int_{\psi_1(y)}^{\psi_2(y)}
+    \frac{\partial Q}{\partial x}\,\mathrm dx\\
+    &=\int_c^d Q(\psi_2(y),y)\,\mathrm dy
+    -\int_c^d Q(\psi_1(y),y)\,\mathrm dy\\
+    &=\oint_\Gamma Q(x,y)\,\mathrm dy,
+    \end{aligned}
+    $$
+
+    $$
+    \begin{aligned}
+    -\iint_D\frac{\partial P}{\partial y}\,\mathrm dx\,\mathrm dy
+    &=-\int_a^b\mathrm dx\int_{\varphi_1(x)}^{\varphi_2(x)}
+    \frac{\partial P}{\partial y}\,\mathrm dy\\
+    &=-\int_a^b P(x,\varphi_2(x))\,\mathrm dx
+    +\int_a^b P(x,\varphi_1(x))\,\mathrm dx\\
+    &=\oint_\Gamma P(x,y)\,\mathrm dx.
+    \end{aligned}
+    $$
+
+    因此，
+
+    $$
+    \iint_D\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)
+    \,\mathrm dx\,\mathrm dy=\oint_\Gamma P\,\mathrm dx+Q\,\mathrm dy.
+    $$
+
+    若区域 $D$ 由一条按段光滑的闭曲线 $\Gamma$ 围成，则可用几段光滑曲线将 $D$ 分成有限个既是 $x$ 型区域又是 $y$ 型区域的区域，然后逐块用上面的方法推得它的格林公式，再相加就得格林公式。区域的共同边界，因取向相反，它们的积分值正好互相抵消。
+
 平面区域的面积公式为
 
 $$
@@ -5208,6 +6468,23 @@ $$
 
         ??? example "用格林公式求面积"
             <!-- 待补充 -->
+
+???+ example "例4"
+
+    求 $\displaystyle\oint_Cxy^2\,\mathrm dy-x^2y\,\mathrm dx$，其中 $C$ 为圆周 $x^2+y^2=R^2$，依逆时针方向。
+
+    ??? success "解析"
+
+        由题意知，$P=-x^2y,\ Q=xy^2$，$C$ 为区域边界曲线正向。由格林公式知，
+
+        $$
+        \begin{aligned}
+        \oint_Cxy^2\,\mathrm dy-x^2y\,\mathrm dx
+        &=\iint_D(y^2+x^2)\,\mathrm dx\,\mathrm dy\\
+        &=\int_0^{2\pi}\mathrm d\theta\int_0^R r^2r\,\mathrm dr
+        =\frac{\pi R^4}{2}.
+        \end{aligned}
+        $$
 
 #### §1.3 平面曲线积分与路径无关性
 
@@ -5399,6 +6676,58 @@ $$
 
 其中 $S$ 取外侧。
 
+??? info "高斯公式的证明"
+
+    下面只证
+
+    $$
+    \iiint_V\frac{\partial R}{\partial z}\,\mathrm dx\,\mathrm dy\,\mathrm dz
+    =\oiint_S R\,\mathrm dx\,\mathrm dy.
+    $$
+
+    读者可类似地证明
+
+    $$
+    \iiint_V\frac{\partial P}{\partial x}\,\mathrm dV=\oiint_S P\,\mathrm dy\,\mathrm dz,
+    \qquad
+    \iiint_V\frac{\partial Q}{\partial y}\,\mathrm dV=\oiint_S Q\,\mathrm dz\,\mathrm dx.
+    $$
+
+    这些结果相加便得到了高斯公式。
+
+    先设 $V$ 是一个 $xy$ 型区域，即其边界曲面 $S$ 由曲面 $S_2$（上侧）：$z=z_2(x,y),\ (x,y)\in D_{xy}$，$S_1$（下侧）：$z=z_1(x,y),\ (x,y)\in D_{xy}$，及垂直于 $D_{xy}$ 的边界的柱面 $S_3$（外侧）组成，其中 $z_1(x,y)\le z_2(x,y)$。于是按三重积分的计算方法有
+
+    $$
+    \begin{aligned}
+    \iiint_V\frac{\partial R}{\partial z}\,\mathrm dV
+    &=\iint_{D_{xy}}\mathrm dx\,\mathrm dy
+    \int_{z_1(x,y)}^{z_2(x,y)}\frac{\partial R}{\partial z}\,\mathrm dz\\
+    &=\iint_{D_{xy}}[R(x,y,z_2(x,y))-R(x,y,z_1(x,y))],\mathrm d\sigma\\
+    &=\iint_{S_2}R(x,y,z)\,\mathrm dx\,\mathrm dy
+    +\iint_{S_1}R(x,y,z)\,\mathrm dx\,\mathrm dy.
+    \end{aligned}
+    $$
+
+    其中 $S_2$ 取上侧，$S_1$ 取下侧。又由于 $S_3$ 上每一点的法矢量与 $Oz$ 轴正向夹角全为 $\dfrac\pi2$，或者说它在坐标面 $Oxy$ 上的投影区域面积为零，所以
+
+    $$
+    \iint_{S_3}R(x,y,z)\,\mathrm dx\,\mathrm dy=0.
+    $$
+
+    因此
+
+    $$
+    \begin{aligned}
+    \iiint_V\frac{\partial R}{\partial z}\,\mathrm dV
+    &=\iint_{S_2}R\,\mathrm dx\,\mathrm dy
+    +\iint_{S_1}R\,\mathrm dx\,\mathrm dy
+    +\iint_{S_3}R\,\mathrm dx\,\mathrm dy\\
+    &=\oiint_S R(x,y,z)\,\mathrm dx\,\mathrm dy,
+    \end{aligned}
+    $$
+
+    其中 $S$ 取外侧。对于不是 $xy$ 型区域的情形，则用有限个光滑曲面将它分成若干个 $xy$ 型区域来讨论。与推导格林公式过程类似，请读者自证。
+
 !!! warning "提示"
 
     -   **曲面取外侧**：高斯公式要求 $S=\partial V$ 取外侧；若取内侧，右端（或左端）要加负号。
@@ -5420,6 +6749,42 @@ $$
 
         ??? example "含奇点的区域"
             <!-- 待补充 -->
+
+???+ example "例4"
+
+    计算 $\displaystyle\iint_S(x^2\cos\alpha+y^2\cos\beta+z^2\cos\gamma)\,\mathrm dS$，式中 $S$ 为圆锥面 $x^2+y^2=z^2\ (0\le z\le h)$ 的一部分，$\cos\alpha,\cos\beta,\cos\gamma$ 为此曲面外法线的方向余弦。
+
+    ??? success "解析"
+
+        设曲面 $S_1:z=h,\ x^2+y^2\le h^2$（法线朝上侧），则
+
+        $$
+        \begin{aligned}
+        \oiint_{S+S_1}(x^2\cos\alpha+y^2\cos\beta+z^2\cos\gamma)\,\mathrm dS
+        &=2\iiint_V(x+y+z)\,\mathrm dV\\
+        &=2\int_0^{2\pi}\mathrm d\theta\int_0^h r\,\mathrm dr\int_r^h z\,\mathrm dz\\
+        &=4\pi\int_0^h\frac r2(h^2-r^2)\,\mathrm dr\\
+        &=2\pi\int_0^h(h^2r-r^3)\,\mathrm dr
+        =\frac{\pi h^4}{2}.
+        \end{aligned}
+        $$
+
+        又
+
+        $$
+        \begin{aligned}
+        \iint_{S_1}(x^2\cos\alpha+y^2\cos\beta+z^2\cos\gamma)\,\mathrm dS
+        &=\iint_{S_1}z^2\cos0\,\mathrm dS\\
+        &=\iint_{S_1}h^2\,\mathrm dS=\pi h^4,
+        \end{aligned}
+        $$
+
+        于是
+
+        $$
+        \iint_S(x^2\cos\alpha+y^2\cos\beta+z^2\cos\gamma)\,\mathrm dS
+        =\frac{\pi h^4}{2}-\pi h^4=-\frac{\pi h^4}{2}.
+        $$
 
 #### §2.4 散度场
 
@@ -5489,6 +6854,80 @@ $$
 
 曲面法线方向与边界方向满足右手规则。
 
+??? info "斯托克斯公式的证明"
+
+    先证
+
+    $$
+    \iint_S\frac{\partial P}{\partial z}\,\mathrm dz\,\mathrm dx
+    -\frac{\partial P}{\partial y}\,\mathrm dx\,\mathrm dy
+    =\oint_LP\,\mathrm dx.
+    $$
+
+    其中曲面 $S$ 由方程 $z=z(x,y)$ 确定，它的正侧法线矢量方向矢量为 $(-z_x,-z_y,1)$，单位矢量为
+
+    $$
+    \left(\frac{-z_x}{\sqrt{1+z_x^2+z_y^2}},
+    \frac{-z_y}{\sqrt{1+z_x^2+z_y^2}},
+    \frac1{\sqrt{1+z_x^2+z_y^2}}\right),
+    $$
+
+    又方向余弦为 $(\cos\alpha,\cos\beta,\cos\gamma)$，得 $\cos\alpha=-z_x\cos\gamma,\ \cos\beta=-z_y\cos\gamma$，而 $\cos\gamma=\dfrac1{\sqrt{1+z_x^2+z_y^2}}$，所以
+
+    $$
+    \frac{\partial z}{\partial x}=-\frac{\cos\alpha}{\cos\gamma},\qquad
+    \frac{\partial z}{\partial y}=-\frac{\cos\beta}{\cos\gamma}.
+    $$
+
+    若 $S$ 在 $Oxy$ 平面上的投影区域为 $D_{xy}$，$L$ 在 $Oxy$ 平面上的投影曲线记为 $\Gamma$，现由第二类曲线积分定义及格林公式有
+
+    $$
+    \oint_LP(x,y,z)\,\mathrm dx
+    =\oint_\Gamma P(x,y,z(x,y))\,\mathrm dx
+    =-\iint_{D_{xy}}\frac{\partial}{\partial y}P(x,y,z(x,y))\,\mathrm dx\,\mathrm dy.
+    $$
+
+    因为
+
+    $$
+    \frac{\partial}{\partial y}P(x,y,z(x,y))
+    =\frac{\partial P}{\partial y}+\frac{\partial P}{\partial z}\frac{\partial z}{\partial y},
+    $$
+
+    所以
+
+    $$
+    \begin{aligned}
+    \oint_LP\,\mathrm dx
+    &=-\iint_{D_{xy}}\left(\frac{\partial P}{\partial y}
+    +\frac{\partial P}{\partial z}\frac{\partial z}{\partial y}\right)\,\mathrm dx\,\mathrm dy\\
+    &=-\iint_S\left(\frac{\partial P}{\partial y}
+    -\frac{\partial P}{\partial z}\frac{\cos\beta}{\cos\gamma}\right)\,\mathrm dx\,\mathrm dy\\
+    &=-\iint_S\left(\frac{\partial P}{\partial y}\cos\gamma
+    -\frac{\partial P}{\partial z}\cos\beta\right)\,\mathrm dS\\
+    &=\iint_S\frac{\partial P}{\partial z}\,\mathrm dz\,\mathrm dx
+    -\frac{\partial P}{\partial y}\,\mathrm dx\,\mathrm dy.
+    \end{aligned}
+    $$
+
+    同样对于曲面 $S$ 表示 $x=x(y,z)$ 和 $y=y(z,x)$，可得
+
+    $$
+    \iint_S\frac{\partial Q}{\partial x}\,\mathrm dx\,\mathrm dy
+    -\frac{\partial Q}{\partial z}\,\mathrm dy\,\mathrm dz
+    =\oint_LQ\,\mathrm dy,
+    $$
+
+    $$
+    \iint_S\frac{\partial R}{\partial y}\,\mathrm dy\,\mathrm dz
+    -\frac{\partial R}{\partial x}\,\mathrm dz\,\mathrm dx
+    =\oint_LR\,\mathrm dz.
+    $$
+
+    将以上三式相加即得斯托克斯公式。如果曲面 $S$ 不能以 $z=z(x,y)$ 的形式给出，则用一些光滑曲线把 $S$ 分割为若干个小块，使每一小块都能用这种形式来表示，这时斯托克斯公式也能成立。
+
+**注：** 由证明过程可知，对于以 $\Gamma$ 为边界且符合定理条件的曲面 $S$，结论都成立。从而我们利用斯托克斯公式时，寻找以 $\Gamma$ 为边界较简单的曲面 $S$，有利于解决问题。
+
 !!! warning "提示"
 
     -   **方向满足右手规则**：曲面法线方向与边界 $L$ 的方向要符合右手规则；方向取反，公式两边同时变号。
@@ -5510,6 +6949,39 @@ $$
 
         ??? example "含奇点的斯托克斯公式"
             <!-- 待补充 -->
+
+???+ example "例1"
+
+    计算 $\displaystyle\oint_C(y-z)\,\mathrm dx+(z-x)\,\mathrm dy+(x-y)\,\mathrm dz$，其中 $C$ 为椭圆
+
+    $$
+    x^2+y^2=a^2,\qquad\frac xa+\frac zh=1\quad(a>0,\ h>0),
+    $$
+
+    若从 $Ox$ 轴正向看去，此椭圆是沿逆时针方向前进的。
+
+    ??? success "解析"
+
+        把平面 $\dfrac xa+\dfrac zh=1$ 上 $C$ 所包围的区域记为 $S$，则 $S$ 的法线方向为 $(h,0,a)$。注意到 $S$ 的法线和曲线 $C$ 的方向是正向关系的，可知 $S$ 的法线与 $Oz$ 轴正向的夹角为锐角，因此，
+
+        $$
+        \mathbf e_n=\left(\frac h{\sqrt{h^2+a^2}},\ 0,\ \frac a{\sqrt{h^2+a^2}}\right).
+        $$
+
+        于是，由斯托克斯公式知
+
+        $$
+        \begin{aligned}
+        &\oint_C(y-z)\,\mathrm dx+(z-x)\,\mathrm dy+(x-y)\,\mathrm dz\\
+        &=-2\iint_S\mathrm dy\,\mathrm dz+\mathrm dz\,\mathrm dx+\mathrm dx\,\mathrm dy\\
+        &=-2\iint_S(\cos\alpha+\cos\beta+\cos\gamma)\,\mathrm dS\\
+        &=-2\frac{h+a}{\sqrt{h^2+a^2}}\iint_S\mathrm dS\\
+        &=-2\frac{h+a}{\sqrt{h^2+a^2}}
+        \iint_{x^2+y^2\le a^2}\sqrt{1+\frac{h^2}{a^2}}\,\mathrm d\sigma\\
+        &=-2\frac{h+a}{\sqrt{h^2+a^2}}\cdot\frac{\sqrt{a^2+h^2}}a\pi a^2
+        =-2\pi a(h+a).
+        \end{aligned}
+        $$
 
 #### §3.2 空间曲线积分与路径无关性
 
@@ -5833,6 +7305,20 @@ $$
 \sum u_n\text{ 发散}\ \Longrightarrow\ \sum v_n\text{ 发散}.
 $$
 
+??? info "比较判别法的证明"
+
+    设 $\displaystyle\sum_{n=1}^\infty v_n$ 的前 $n$ 项和为 $B_n$，$\displaystyle\sum_{n=1}^\infty u_n$ 的前 $n$ 项和为 $A_n$，由条件知
+
+    $$
+    A_n=u_1+u_2+\cdots+u_n\le v_1+v_2+\cdots+v_n=B_n.
+    $$
+
+    （1）若 $\sum v_n$ 收敛，存在常数 $M$，对一切正整数 $n$，都有 $B_n\le M$。因此，$A_n\le M$，由正项级数收敛的充要条件知 $\sum u_n$ 收敛。
+
+    （2）若 $\sum u_n$ 发散，则 $\sum v_n$ 发散。假若不然，$\sum v_n$ 收敛，则由（1）知 $\sum u_n$ 也收敛，与条件 $\sum u_n$ 发散相矛盾。故 $\sum v_n$ 发散。
+
+**注：** 此定理的条件可减弱为 $u_n\le v_n\ (n=k,k+1,\ldots)$。$u_n\le v_n$ 也可以改成 $u_n\le Cv_n$（$C>0$，为常数）（$n=k,k+1,\ldots$），结论依然成立。
+
 **比较判别法的极限形式。** 若 $u_n,v_n>0$ 且 $\lim u_n/v_n=l$，则
 
 $$
@@ -5885,6 +7371,35 @@ $$
         ??? example "比值与根值判别法"
             <!-- 待补充 -->
 
+???+ example "例2"
+
+    判断下列正项级数的敛散性：
+
+    $$
+    \text{（1）}\ \sum_{n=1}^\infty\frac1{\sqrt n}\sin\frac1n;
+    \qquad
+    \text{（2）}\ \sum_{n=1}^\infty\left(1-\cos\frac an\right)\quad(a>0).
+    $$
+
+    ??? success "解析"
+
+        （1）因为
+
+        $$
+        0<\frac1{\sqrt n}\sin\frac1n<\frac1{\sqrt n}\cdot\frac1n=\frac1{n^{3/2}},
+        $$
+
+        且 $\displaystyle\sum_{n=1}^\infty\frac1{n^{3/2}}$ 收敛，故由比较判别法知，$\displaystyle\sum_{n=1}^\infty\frac1{\sqrt n}\sin\frac1n$ 收敛。
+
+        （2）因为
+
+        $$
+        0\le1-\cos\frac an=2\sin^2\frac a{2n}
+        \le2\cdot\frac{a^2}{4n^2}=\frac{a^2}{2}\frac1{n^2},
+        $$
+
+        而 $\displaystyle\sum_{n=1}^\infty\frac1{n^2}$ 收敛，且 $\dfrac{a^2}{2}>0$，由比较判别法知 $\displaystyle\sum_{n=1}^\infty\left(1-\cos\frac an\right)$ 收敛。
+
 ### §3 一般数项级数收敛性的判别法
 
 #### §3.1 交错级数
@@ -5906,6 +7421,44 @@ $$
 $$
 0\le S\le u_1,\qquad |R_n|\le u_{n+1}.
 $$
+
+??? info "莱布尼茨定理及余项估计的证明"
+
+    设级数的前 $n$ 项和为 $S_n$，
+
+    $$
+    0\le S_{2m}=(u_1-u_2)+(u_3-u_4)+\cdots+(u_{2m-1}-u_{2m}),
+    $$
+
+    由于
+
+    $$
+    S_{2m+2}=S_{2m}+(u_{2m+1}-u_{2m+2})\ge S_{2m},
+    $$
+
+    并且
+
+    $$
+    S_{2m}=u_1-(u_2-u_3)-\cdots-(u_{2m-2}-u_{2m-1})-u_{2m}\le u_1,
+    $$
+
+    即数列 $\{S_{2m}\}$ 递增有上界，所以其极限存在。设 $\lim\limits_{m\to\infty}S_{2m}=S$，又
+
+    $$
+    \lim_{m\to\infty}S_{2m+1}
+    =\lim_{m\to\infty}(S_{2m}+u_{2m+1})=S+0=S,
+    $$
+
+    因此 $\lim\limits_{n\to\infty}S_n=S$，所以级数收敛。对 $S_{2m}\le u_1$ 两边令 $m\to\infty$，有 $S\le u_1$。
+
+    交错级数 $\displaystyle\sum_{n=1}^\infty(-1)^{n-1}u_n$ 的余项绝对值
+
+    $$
+    \begin{aligned}
+    |R_n|&=|(-1)^nu_{n+1}+(-1)^{n+1}u_{n+2}+\cdots|\\
+    &=u_{n+1}-u_{n+2}+u_{n+3}-u_{n+4}+\cdots\le u_{n+1}.
+    \end{aligned}
+    $$
 
 !!! warning "提示"
 
@@ -5937,6 +7490,17 @@ $$
 \sum|u_n|\text{ 收敛}\ \Longrightarrow\ \sum u_n\text{ 收敛}.
 $$
 
+??? info "绝对收敛级数收敛的证明"
+
+    由于 $0\le u_n+|u_n|\le2|u_n|$，且 $\sum|u_n|$ 收敛，故由比较判别法知 $\sum(u_n+|u_n|)$ 收敛，又
+
+    $$
+    \sum_{n=1}^\infty u_n
+    =\sum_{n=1}^\infty[(u_n+|u_n|)-|u_n|],
+    $$
+
+    根据收敛级数的线性运算性质知 $\sum u_n$ 收敛。
+
 若 $\lim |u_{n+1}/u_n|=q$ 或 $\lim\sqrt[n]{|u_n|}=q$，则
 
 $$
@@ -5965,6 +7529,19 @@ $$
 
         ??? example "判断条件收敛"
             <!-- 待补充 -->
+
+???+ example "例2"
+
+    判别 $\displaystyle\sum_{n=1}^\infty(-1)^{n-1}\frac1{n^p}$ 的敛散性。
+
+    ??? success "解析"
+
+        $$
+        \sum_{n=1}^\infty\left|(-1)^{n-1}\frac1{n^p}\right|
+        =\sum_{n=1}^\infty\frac1{n^p},
+        $$
+
+        当 $p>1$ 时收敛。因此，当 $p>1$ 时，$\displaystyle\sum_{n=1}^\infty(-1)^{n-1}\frac1{n^p}$ 绝对收敛；当 $0<p\le1$ 时，由莱布尼茨定理知 $\displaystyle\sum_{n=1}^\infty(-1)^{n-1}\frac1{n^p}$ 收敛，但 $\displaystyle\sum_{n=1}^\infty\frac1{n^p}$ 发散，故原级数条件收敛；当 $p\le0$ 时，$(-1)^{n-1}\dfrac1{n^p}$ 不趋于零，这时级数发散。
 
 #### §3.3 绝对收敛级数的性质 \*
 
@@ -6122,6 +7699,40 @@ $$
         ??? example "一致收敛的区间"
             <!-- 待补充 -->
 
+??? info "魏尔斯特拉斯判别法的证明"
+
+    正项级数 $\sum M_n$ 收敛，由数项级数的柯西准则知，$\forall\varepsilon>0$，$\exists$ 正整数 $N>0\ (N>k)$，当 $n>N$ 时，对一切正整数 $p$，都有
+
+    $$
+    |M_{n+1}+M_{n+2}+\cdots+M_{n+p}|<\varepsilon,
+    $$
+
+    则对一切 $x\in D$，都有
+
+    $$
+    \begin{aligned}
+    |u_{n+1}(x)+u_{n+2}(x)+\cdots+u_{n+p}(x)|
+    &\le|M_{n+1}+M_{n+2}+\cdots+M_{n+p}|\\
+    &<\varepsilon.
+    \end{aligned}
+    $$
+
+    由函数项级数一致收敛的柯西准则，级数 $\sum u_n(x)$ 在 $D$ 上一致收敛。
+
+???+ example "例6（1）"
+
+    证明函数项级数 $\displaystyle\sum_{n=1}^\infty\frac{\sin nx}{\sqrt[3]{n^4+x^4}}$ 在 $|x|<+\infty$ 上一致收敛。
+
+    ??? success "解析"
+
+        由于当 $|x|<+\infty$ 时，
+
+        $$
+        \left|\frac{\sin nx}{\sqrt[3]{n^4+x^4}}\right|\le\frac1{n^{4/3}},
+        $$
+
+        且 $\displaystyle\sum_{n=1}^\infty\frac1{n^{4/3}}$ 收敛，故由 $M$ 判别法知，级数 $\displaystyle\sum_{n=1}^\infty\frac{\sin nx}{\sqrt[3]{n^4+x^4}}$ 当 $|x|<+\infty$ 时一致收敛。
+
 #### §4.4 一致收敛级数的性质
 
 若各 $u_n$ 在区间 $I$ 上连续，且级数在 $I$ 上一致收敛于 $S$，则 $S$ 连续，并有
@@ -6181,6 +7792,38 @@ $$
 
 阿贝尔定理：若 $\sum a_nx^n$ 在 $x=x_1\ne0$ 收敛，则在 $|x|<|x_1|$ 内绝对收敛；若在 $x=x_1$ 发散，则在 $|x|>|x_1|$ 处发散。
 
+??? info "阿贝尔定理的证明"
+
+    先设 $x_1$ 是幂级数 $\sum a_nx^n$ 的收敛点，即级数
+
+    $$
+    a_0+a_1x_1+a_2x_1^2+\cdots+a_nx_1^n+\cdots
+    $$
+
+    收敛。根据级数收敛的必要条件，这时有
+
+    $$
+    \lim_{n\to\infty}a_nx_1^n=0,
+    $$
+
+    于是存在一个常数 $M$，使得
+
+    $$
+    |a_nx_1^n|\le M\quad(n=0,1,2,\ldots).
+    $$
+
+    这样级数 $\sum a_nx^n$ 的一般项的绝对值
+
+    $$
+    |a_nx^n|=\left|a_nx_1^n\cdot\frac{x^n}{x_1^n}\right|
+    =|a_nx_1^n|\cdot\left|\frac x{x_1}\right|^n
+    \le M\left|\frac x{x_1}\right|^n.
+    $$
+
+    因为当 $|x|<|x_1|$ 时，等比级数 $\displaystyle\sum_{n=0}^\infty M\left|\dfrac x{x_1}\right|^n$ 收敛（公比 $\left|\dfrac x{x_1}\right|<1$），所以级数 $\sum|a_nx^n|$ 收敛，也就是幂级数 $\sum a_nx^n$ 绝对收敛。
+
+    定理的第二部分可用反证法证明。假设幂级数当 $x=x_1$ 时发散而有一点 $x_2$ 适合 $|x_2|>|x_1|$ 使级数收敛，则根据本定理的第一部分，级数当 $x=x_1$ 时应收敛，这与假设矛盾。定理得证。
+
 幂级数存在收敛半径 $R\in[0,+\infty]$，满足
 
 $$
@@ -6219,6 +7862,30 @@ $$
 
         ??? example "求收敛半径"
             <!-- 待补充 -->
+
+???+ example "例1（4）"
+
+    求幂级数 $\displaystyle\sum_{n=1}^\infty\frac{(x-1)^{2n}}{n\cdot4^n}$ 的收敛半径、收敛区间及收敛域。
+
+    ??? success "解析"
+
+        此级数缺项，我们可直接利用绝对值的比值判别法。由于
+
+        $$
+        \begin{aligned}
+        \lim_{n\to\infty}\frac{|u_{n+1}|}{|u_n|}
+        &=\lim_{n\to\infty}\left(\frac{|x-1|^{2n+2}}{(n+1)4^{n+1}}
+        \bigg/\frac{|x-1|^{2n}}{n4^n}\right)\\
+        &=\lim_{n\to\infty}\frac{(x-1)^2}{4}\cdot\frac n{n+1}
+        =\frac{|x-1|^2}{4},
+        \end{aligned}
+        $$
+
+        当 $\dfrac{|x-1|^2}{4}<1$，即 $|x-1|<2$ 时，幂级数绝对收敛；当 $|x-1|>2$ 时，幂级数发散。
+
+        所以收敛半径 $R=2$，收敛区间是 $(-1,3)$。
+
+        当 $x=-1$ 时，幂级数为 $\displaystyle\sum_{n=1}^\infty\frac{(-2)^{2n}}{n4^n}=\sum_{n=1}^\infty\frac1n$，发散；当 $x=3$ 时，幂级数为 $\displaystyle\sum_{n=1}^\infty\frac{2^{2n}}{n4^n}=\sum_{n=1}^\infty\frac1n$，也发散。故收敛域是 $(-1,3)$。
 
 #### §5.2 幂级数的性质及运算
 
@@ -6308,6 +7975,43 @@ $$
 
         ??? example "和函数的连续性"
             <!-- 待补充 -->
+
+???+ example "例2（1）"
+
+    求幂级数 $\displaystyle\sum_{n=1}^\infty\frac{x^n}{n}$ 的收敛半径、收敛区间、收敛域及和函数。
+
+    ??? success "解析"
+
+        设 $S(x)=\displaystyle\sum_{n=1}^\infty\frac{x^n}{n},\ x\in(-R,R)$，$S(0)=0$。由幂级数逐项求导的性质知
+
+        $$
+        S'(x)=\left(\sum_{n=1}^\infty\frac{x^n}{n}\right)'
+        =\sum_{n=1}^\infty x^{n-1}=\frac1{1-x},\qquad |x|<1.
+        $$
+
+        所以 $R=1$，收敛区间为 $(-1,1)$。当 $x=-1$ 时，$\displaystyle\sum_{n=1}^\infty\frac{(-1)^n}{n}$ 收敛；当 $x=1$ 时，$\displaystyle\sum_{n=1}^\infty\frac1n$ 发散，故收敛域为 $[-1,1)$。由
+
+        $$
+        \int_0^x S'(x)\,\mathrm dx=S(x)-S(0),
+        $$
+
+        知
+
+        $$
+        S(x)=S(0)+\int_0^x S'(x)\,\mathrm dx.
+        $$
+
+        由于 $S(0)=0$，于是
+
+        $$
+        S(x)=\int_0^x\frac1{1-x}\,\mathrm dx=-\ln(1-x),\qquad x\in(-1,1).
+        $$
+
+        由于级数在 $x=-1$ 处收敛，$-\ln(1-x)$ 在 $x=-1$ 处连续，所以
+
+        $$
+        \sum_{n=1}^\infty\frac{x^n}{n}=-\ln(1-x),\qquad x\in[-1,1).
+        $$
 
 ### §6 函数展成幂级数
 
@@ -6725,6 +8429,58 @@ $$
         ??? example "分段光滑条件"
             <!-- 待补充 -->
 
+$f(x)$ 为周期函数，周期 $T=2l$，由周期函数的性质 $f(x+T)=f(x)$，得
+
+$$
+\frac{f(l-0)+f(l+0)}2
+=\frac{f(l-0)+f(-l+0)}2,
+$$
+
+$$
+\frac{f(-l-0)+f(-l+0)}2
+=\frac{f(l-0)+f(-l+0)}2.
+$$
+
+所以在 $x=\pm l$ 处，$S(\pm l)=\dfrac{f(-l+0)+f(l-0)}2$（左端点的右极限与右端点的左极限的平均值）。这是因为周期函数常常只给一个周期内的表达式，我们利用一个周期内的表达式就可计算出在端点处傅里叶级数的和。
+
+???+ example "例2"
+
+    将 $f(x)=\arcsin(\sin x)$ 展开成傅里叶级数。
+
+    ??? success "解析"
+
+        $f(x)$ 是以 $2\pi$ 为周期的连续周期函数，$l=\pi$，且
+
+        $$
+        f(-x)=\arcsin(\sin(-x))=-\arcsin(\sin x)=-f(x),
+        $$
+
+        即 $f(x)$ 为奇函数，从而 $a_n=0,\ n=0,1,2,\ldots$。而
+
+        $$
+        \begin{aligned}
+        b_n&=\frac2\pi\int_0^\pi\arcsin(\sin x)\sin nx\,\mathrm dx\\
+        &=\frac2\pi\left[\int_0^{\pi/2}x\sin nx\,\mathrm dx
+        +\int_{\pi/2}^\pi(\pi-x)\sin nx\,\mathrm dx\right]\\
+        &=\frac2\pi\left[\left.\left(-\frac x n\cos nx+\frac1{n^2}\sin nx\right)\right|_0^{\pi/2}
+        +\left.\left(-\frac\pi n\cos nx+\frac x n\cos nx-\frac1{n^2}\sin nx\right)\right|_{\pi/2}^\pi\right]\\
+        &=\frac4{n^2\pi}\sin\frac{n\pi}{2}
+        =\begin{cases}0,&n=2k,\\
+        (-1)^k\dfrac4{\pi(2k+1)^2},&n=2k+1.
+        \end{cases}
+        \end{aligned}
+        $$
+
+        由狄利克雷定理知
+
+        $$
+        \begin{aligned}
+        \sum_{n=1}^\infty\frac4{n^2\pi}\sin\frac{n\pi}{2}\sin nx
+        &=\frac4\pi\sum_{k=0}^\infty\frac{(-1)^k}{(2k+1)^2}\sin(2k+1)x\\
+        &=\arcsin(\sin x),\qquad x\in(-\infty,+\infty).
+        \end{aligned}
+        $$
+
 #### §8.3 有限区间上的傅里叶展开
 
 设 $f$ 在 $[-l,l]$ 上分段光滑，以周期 $2l$ 延拓，则在 $-l<x<l$ 内，
@@ -6905,6 +8661,28 @@ $$
 =\int_a^b\frac{\partial f}{\partial y}(x,y)\,\mathrm dx.
 $$
 
+??? info "含参量常义积分求导公式的证明"
+
+    设 $g(y)=\displaystyle\int_a^b\frac{\partial}{\partial y}f(x,y)\,\mathrm dx$。$\dfrac{\partial}{\partial y}f(x,y)$ 在 $D$ 上连续，由含参量积分的连续性知 $g(y)$ 在 $[c,d]$ 上连续。由积分次序交换公式知，当 $v\in[c,d]$ 时，
+
+    $$
+    \begin{aligned}
+    \int_c^v g(y)\,\mathrm dy
+    &=\int_c^v\left[\int_a^b\frac{\partial}{\partial y}f(x,y)\,\mathrm dx\right]\mathrm dy\\
+    &=\int_a^b\left[\int_c^v\frac{\partial}{\partial y}f(x,y)\,\mathrm dy\right]\mathrm dx\\
+    &=\int_a^b[f(x,v)-f(x,c)]\,\mathrm dx\\
+    &=\int_a^b f(x,v)\,\mathrm dx-\int_a^b f(x,c)\,\mathrm dx\\
+    &=\varphi(v)-\varphi(c).
+    \end{aligned}
+    $$
+
+    两边同时对 $v$ 求导，有 $g(v)=\varphi'(v)$，即 $g(y)=\varphi'(y)$。于是 $\dfrac{\mathrm d}{\mathrm dy}\varphi(y)=g(y)$，所以
+
+    $$
+    \frac{\mathrm d}{\mathrm dy}\int_a^b f(x,y)\,\mathrm dx
+    =\int_a^b\frac{\partial}{\partial y}f(x,y)\,\mathrm dx.
+    $$
+
 若上下限 $g_1(y),g_2(y)$ 在 $[c,d]$ 上可导，且 $a\le g_1(y)\le g_2(y)\le b$，则
 
 $$
@@ -6934,6 +8712,43 @@ $$
 
         ??? example "变限含参量积分"
             <!-- 待补充 -->
+
+???+ example "例2"
+
+    计算定积分 $\displaystyle I=\int_0^1\frac{\ln(1+x)}{1+x^2}\,\mathrm dx$。
+
+    ??? success "解析"
+
+        考虑含参变量 $a$ 的积分
+
+        $$
+        \Phi(a)=\int_0^1\frac{\ln(1+ax)}{1+x^2}\,\mathrm dx.
+        $$
+
+        由于 $\Phi(0)=0,\ \Phi(1)=I$，故由含参量积分求导公式知
+
+        $$
+        \begin{aligned}
+        \Phi'(a)
+        &=\int_0^1\frac{\partial}{\partial a}\left[\frac{\ln(1+ax)}{1+x^2}\right]\mathrm dx
+        =\int_0^1\frac{x}{(1+ax)(1+x^2)}\,\mathrm dx\\
+        &=\frac1{1+a^2}\left[\int_0^1\frac{x\,\mathrm dx}{1+x^2}
+        +\int_0^1\frac{a\,\mathrm dx}{1+x^2}-\int_0^1\frac{a\,\mathrm dx}{1+ax}\right]\\
+        &=\frac1{1+a^2}\left[\frac12\ln2+\frac{a\pi}{4}-\ln(1+a)\right],\qquad0\le a\le1.
+        \end{aligned}
+        $$
+
+        $$
+        \begin{aligned}
+        \Phi(1)-\Phi(0)
+        &=\int_0^1\Phi'(a)\,\mathrm da\\
+        &=\frac12\ln2\int_0^1\frac{\mathrm da}{1+a^2}
+        +\frac\pi4\int_0^1\frac{a\,\mathrm da}{1+a^2}
+        -\int_0^1\frac{\ln(1+a)}{1+a^2}\,\mathrm da,
+        \end{aligned}
+        $$
+
+        得 $I=\dfrac\pi8\ln2+\dfrac\pi8\ln2-I$，于是 $I=\dfrac\pi8\ln2$。
 
 ### §2 含参量的反常积分
 
@@ -7059,6 +8874,29 @@ $$
         ??? example "二重反常积分交换次序"
             <!-- 待补充 -->
 
+???+ example "例2"
+
+    从等式 $\displaystyle\frac{e^{-ax}-e^{-bx}}x=\int_a^b e^{-xy}\,\mathrm dy$ 出发计算积分
+
+    $$
+    \int_0^{+\infty}\frac{e^{-ax}-e^{-bx}}x\,\mathrm dx\qquad(0<a<b).
+    $$
+
+    ??? success "解析"
+
+        由 $e^{-xy}$ 在区域 $\{(x,y):0\le x<+\infty,\ a\le y\le b\}$ 上连续，当 $x\ge0,\ a\le y\le b$ 时，$0<e^{-xy}\le e^{-ax}$，且积分 $\displaystyle\int_0^{+\infty}e^{-ax}\,\mathrm dx$ 收敛，故积分 $\displaystyle\int_0^{+\infty}e^{-xy}\,\mathrm dx$ 一致收敛。于是利用积分次序交换公式，有
+
+        $$
+        \begin{aligned}
+        \int_0^{+\infty}\frac{e^{-ax}-e^{-bx}}x\,\mathrm dx
+        &=\int_0^{+\infty}\mathrm dx\int_a^b e^{-xy}\,\mathrm dy\\
+        &=\int_a^b\mathrm dy\int_0^{+\infty}e^{-xy}\,\mathrm dx\\
+        &=\int_a^b\left(-\frac1y\right)\left.e^{-xy}\right|_0^{+\infty}\,\mathrm dy\\
+        &=\int_a^b\frac1y\,\mathrm dy
+        =\left.\ln y\right|_a^b=\ln\frac ba.
+        \end{aligned}
+        $$
+
 ### §3 Γ函数和B函数
 
 #### §3.1 Γ函数
@@ -7094,11 +8932,6 @@ $$
 $$
 
 !!! warning "提示"
-
-    -   **定义域是 $s>0$**：$\Gamma(s)=\displaystyle\int_0^{+\infty}x^{s-1}e^{-x}\,\mathrm dx$ 只在 $s>0$ 收敛；递推延拓后的值不等于该积分在负值处的值。
-
-        ??? example "Γ函数的定义域"
-            <!-- 待补充 -->
 
     -   **阶乘指标**：$\Gamma(n+1)=n!$，所以 $\Gamma(n)=(n-1)!$；$\Gamma(1)=1$、$\Gamma(2)=1$。
 
@@ -7210,6 +9043,73 @@ $$
         ??? example "B函数的递推"
             <!-- 待补充 -->
 
+??? info "Γ函数与B函数关系的证明"
+
+    由
+
+    $$
+    \Gamma(s)=p^s\int_0^{+\infty}y^{s-1}e^{-py}\,\mathrm dy,
+    $$
+
+    $s$ 用 $p$ 代换，$p$ 用 $t$ 代换，有
+
+    $$
+    \frac{\Gamma(p)}{t^p}=\int_0^{+\infty}y^{p-1}e^{-ty}\,\mathrm dy.
+    $$
+
+    $p$ 用 $p+q$ 代换，$t$ 用 $1+t$ 代换，有
+
+    $$
+    \frac{\Gamma(p+q)}{(1+t)^{p+q}}
+    =\int_0^{+\infty}y^{p+q-1}e^{-(1+t)y}\,\mathrm dy.
+    $$
+
+    两边乘 $t^{p-1}$，并在 $[0,+\infty)$ 上对 $t$ 积分，
+
+    $$
+    \int_0^{+\infty}\Gamma(p+q)\frac{t^{p-1}}{(1+t)^{p+q}}\,\mathrm dt
+    =\int_0^{+\infty}\mathrm dt\int_0^{+\infty}t^{p-1}y^{p+q-1}e^{-(1+t)y}\,\mathrm dy.
+    $$
+
+    左端由 $B$ 函数的另一种形式，有
+
+    $$
+    \begin{aligned}
+    \Gamma(p+q)\int_0^{+\infty}\frac{t^{p-1}}{(1+t)^{p+q}}\,\mathrm dt
+    &=\Gamma(p+q)B(p,q)\\
+    &=\int_0^{+\infty}\mathrm dt\int_0^{+\infty}t^{p-1}y^{p+q-1}e^{-(1+t)y}\,\mathrm dy\\
+    &=\int_0^{+\infty}y^{p+q-1}e^{-y}
+    \left[\int_0^{+\infty}t^{p-1}e^{-ty}\,\mathrm dt\right]\mathrm dy\\
+    &=\int_0^{+\infty}y^{p+q-1}e^{-y}\Gamma(p)y^{-p}\,\mathrm dy\\
+    &=\Gamma(p)\int_0^{+\infty}y^{q-1}e^{-y}\,\mathrm dy
+    =\Gamma(p)\Gamma(q),
+    \end{aligned}
+    $$
+
+    故
+
+    $$
+    B(p,q)=\frac{\Gamma(p)\Gamma(q)}{\Gamma(p+q)}\qquad(p>0,\ q>0).
+    $$
+
+???+ example "例1"
+
+    计算积分 $\displaystyle I=\int_0^{\pi/2}\sin^m x\cos^n x\,\mathrm dx$。
+
+    ??? success "解析"
+
+        令 $t=\sin^2x$，则
+
+        $$
+        \begin{aligned}
+        I&=\int_0^1 t^{m/2}(1-t)^{n/2}\frac12t^{-1/2}(1-t)^{-1/2}\,\mathrm dt\\
+        &=\frac12\int_0^1t^{(m-1)/2}(1-t)^{(n-1)/2}\,\mathrm dt\\
+        &=\frac12 B\left(\frac{m+1}{2},\frac{n+1}{2}\right)\\
+        &=\frac12\frac{\Gamma\left(\frac{m+1}{2}\right)\Gamma\left(\frac{n+1}{2}\right)}
+        {\Gamma\left(\frac{m+n}{2}+1\right)}\qquad(m>-1,\ n>-1).
+        \end{aligned}
+        $$
+
 ## 附录 I 基本初等函数与极坐标方程的图形
 
 | 函数 | 表达式 | 定义域 | 值域 |
@@ -7246,28 +9146,6 @@ $$
 | 对数螺线（等角螺线） | $r=ae^{k\theta}$ |
 | 双纽线 | $r^2=2a^2\cos2\theta$，$r^2=a^2\sin2\theta$ |
 | 玫瑰线 | $r=a\sin3\theta$，$r=a\cos3\theta$，$r=a\sin2\theta$，$r=a\cos2\theta$ |
-
-!!! warning "提示"
-
-    -   **反三角函数取主值**：$\arcsin x\in[-\pi/2,\pi/2]$，$\arccos x\in[0,\pi]$，$\arctan x\in(-\pi/2,\pi/2)$，$\operatorname{arccot}x\in(0,\pi)$；不要与多值反函数混淆。
-
-        ??? example "反三角函数的值域"
-            <!-- 待补充 -->
-
-    -   **幂函数的定义域随指数变化**：$y=x^\mu$ 的定义域取决于 $\mu$（整数、分数、无理数时不同），不能一律写成 $\mathbb R$ 或 $(0,+\infty)$。
-
-        ??? example "幂函数的定义域"
-            <!-- 待补充 -->
-
-    -   **极坐标方程的图形要结合 $r\ge0$**：$r=a$ 是圆，$r=2a\sin\theta$ 是圆，$r=a(1+\cos\theta)$ 是心形线；作图时注意 $\theta$ 的范围和 $r$ 的符号约定。
-
-        ??? example "极坐标曲线"
-            <!-- 待补充 -->
-
-    -   **对称性与周期**：玫瑰线、双纽线的花瓣数和对称轴由方程决定；先判断周期性、对称性，再取一个周期内的点作图。
-
-        ??? example "极坐标曲线的对称性"
-            <!-- 待补充 -->
 
 ## 附录 II 线性空间与映射
 
@@ -7439,9 +9317,158 @@ $$
 \sum_{i=1}^n\omega_i\Delta x_i<\varepsilon.
 $$
 
+??? info "上积分等于下积分的可积准则的证明"
+
+    必要性。$f(x)$ 在 $[a,b]$ 上可积，由积分定义，存在常数 $I$，任给 $\varepsilon>0$，存在正数 $\delta$，当 $\lambda<\delta$ 时，有
+
+    $$
+    \left|\sum_{i=1}^n f(\xi_i)\Delta x_i-I\right|<\varepsilon.
+    $$
+
+    由于
+
+    $$
+    s(T)=\inf\left\{\sum_{i=1}^n f(\xi_i)\Delta x_i\right\},\qquad
+    S(T)=\sup\left\{\sum_{i=1}^n f(\xi_i)\Delta x_i\right\},
+    $$
+
+    于是
+
+    $$
+    |s(T)-I|\le\varepsilon,\qquad |S(T)-I|\le\varepsilon,
+    $$
+
+    从而
+
+    $$
+    \underline I=\lim_{\lambda\to0}s(T)=I,\qquad
+    \overline I=\lim_{\lambda\to0}S(T)=I,
+    $$
+
+    即 $\underline I=\overline I$。
+
+    充分性。设 $\underline I=\overline I=I$，由达布定理知 $\lim\limits_{\lambda\to0}S(T)=\lim\limits_{\lambda\to0}s(T)=I$，再由大和与小和的性质知
+
+    $$
+    s(T)\le\sum_{i=1}^n f(\xi_i)\Delta x_i\le S(T),
+    $$
+
+    而 $\lim\limits_{\lambda\to0}s(T)=\lim\limits_{\lambda\to0}S(T)=I$。从而由夹逼定理知
+
+    $$
+    \lim_{\lambda\to0}\sum_{i=1}^n f(\xi_i)\Delta x_i=I,
+    $$
+
+    即 $f(x)$ 在 $[a,b]$ 上可积。
+
+??? info "大和与小和之差的可积准则的证明"
+
+    必要性。由于 $f(x)$ 在 $[a,b]$ 上可积，由上积分等于下积分的可积准则知
+
+    $$
+    \lim_{\lambda\to0}[S(T)-s(T)]=0.
+    $$
+
+    于是，任给 $\varepsilon>0$，存在正数 $\delta$，当 $\lambda<\delta$ 时，有
+
+    $$
+    S(T)-s(T)<\varepsilon.
+    $$
+
+    即存在分割 $T$，使 $S(T)-s(T)<\varepsilon$。
+
+    充分性。存在分割 $T$，使 $S(T)-s(T)<\varepsilon$，由于 $s(T)\le\underline I\le\overline I\le S(T)$，所以
+
+    $$
+    0\le\overline I-\underline I\le S(T)-s(T)<\varepsilon,
+    $$
+
+    其中 $\overline I,\underline I$ 为常数，由 $\varepsilon$ 的任意性知，必有 $\overline I=\underline I$。
+
 ### §III.3 可积类函数
 
 以下各类函数在 $[a,b]$ 上可积：连续函数；有界且只有有限个间断点的函数；单调函数。
+
+??? info "闭区间上连续函数可积的证明"
+
+    由于 $f(x)$ 在闭区间 $[a,b]$ 上连续，由康托尔定理知，$f(x)$ 在 $[a,b]$ 上一致连续。于是，对任给正数 $\varepsilon$，存在正数 $\delta$，对于 $[a,b]$ 上任意两点 $x',x''$，当 $|x'-x''|<\delta$ 时，都有
+
+    $$
+    |f(x')-f(x'')|<\frac\varepsilon{b-a}.
+    $$
+
+    当 $\lambda<\delta$ 时，有 $\omega_i=M_i-m_i\le\dfrac\varepsilon{b-a}$，从而
+
+    $$
+    \sum_{i=1}^n\omega_i\Delta x_i
+    \le\sum_{i=1}^n\frac\varepsilon{b-a}\Delta x_i
+    =\frac\varepsilon{b-a}\sum_{i=1}^n\Delta x_i
+    =\frac\varepsilon{b-a}(b-a)=\varepsilon.
+    $$
+
+    由振幅和的可积准则知，$f(x)$ 在 $[a,b]$ 上可积。
+
+??? info "有界且只有有限个间断点的函数可积的证明"
+
+    设函数 $f(x)$ 在 $[a,b]$ 上有界。由确界原理知，它在 $[a,b]$ 上存在上、下确界，分别记为 $M,m$，即
+
+    $$
+    M=\sup_{x\in[a,b]}f(x),\qquad m=\inf_{x\in[a,b]}f(x).
+    $$
+
+    不妨设 $f(x)$ 在 $[a,b]$ 上有 $K$ 个间断点，$a<x_1<x_2<\cdots<x_K<b$。对任给 $\varepsilon>0$，令
+
+    $$
+    0<\delta'<\frac\varepsilon{4K(M-m)}
+    $$
+
+    （由于 $f(x)$ 在 $[a,b]$ 上有间断点，所以有 $m\ne M$），并且使 $a\le x_1-\delta',\ x_K+\delta'\le b$。设 $\Delta_i'=[x_i-\delta',x_i+\delta'],\ i=1,2,\ldots,K$，取 $\delta'$ 充分小，使 $\Delta_i'\cap\Delta_j'=\varnothing,\ i\ne j$。
+
+    现在 $[a,b]$ 上取分割 $T'$，使得上述 $\Delta_i'\ (i=1,2,\ldots,K)$ 是它所属的一部分小区间。于是 $T'$ 所属的全部小区间可分成以下两类：一类是含有间断点的 $K$ 个小区间 $\Delta_i'$，其总长度不超过
+
+    $$
+    \frac\varepsilon{4K(M-m)}\cdot2K=\frac\varepsilon{2(M-m)};
+    $$
+
+    另一类是不含间断点的小区间 $\Delta_i''$，$f(x)$ 在这些 $\Delta_i''$ 上连续。由振幅和的可积准则的必要性知，对所给 $\varepsilon>0$，存在关于所有 $\Delta_i''$ 的一个分割 $T''$，使
+
+    $$
+    \sum_{T''}\omega_i\Delta x_i<\frac\varepsilon2.
+    $$
+
+    设 $T=T'+T''$，它是 $[a,b]$ 上的一个分割。对于 $T$，有
+
+    $$
+    \begin{aligned}
+    \sum\omega_i\Delta x_i
+    &=\sum_{\Delta_i'}\omega_i\Delta x_i
+    +\sum_{T-\Delta_i'}\omega_i\Delta x_i\\
+    &\le\sum_{\Delta_i'}\omega_i\Delta x_i+\sum_{T''}\omega_i\Delta x_i\\
+    &\le(M-m)\sum_{\Delta_i'}\Delta x_i+\frac\varepsilon2\\
+    &<(M-m)\frac\varepsilon{2(M-m)}+\frac\varepsilon2=\varepsilon.
+    \end{aligned}
+    $$
+
+    由振幅和的可积准则知 $f(x)$ 在 $[a,b]$ 上可积。
+
+??? info "闭区间上单调函数可积的证明"
+
+    不妨设 $f(x)$ 在 $[a,b]$ 上递增，
+
+    $$
+    \begin{aligned}
+    \sum_{i=1}^n\omega_i\Delta x_i
+    &=\sum_{i=1}^n[f(x_i)-f(x_{i-1})]\Delta x_i\\
+    &\le\sum_{i=1}^n[f(x_i)-f(x_{i-1})]\lambda
+    =[f(b)-f(a)]\lambda.
+    \end{aligned}
+    $$
+
+    （1）当 $f(a)\ne f(b)$ 时，有 $f(a)<f(b)$。于是，对任给 $\varepsilon>0$，只要 $\lambda<\dfrac\varepsilon{f(b)-f(a)}$，就有 $\displaystyle\sum_{i=1}^n\omega_i\Delta x_i<\varepsilon$。由振幅和的可积准则知，$f(x)$ 在 $[a,b]$ 上可积。
+
+    （2）当 $f(a)=f(b)$ 时，有 $\displaystyle\sum_{i=1}^n\omega_i\Delta x_i=0<\varepsilon$。由振幅和的可积准则知，$f(x)$ 在 $[a,b]$ 上可积。
+
+    当 $f(x)$ 递减时，同理可证 $f(x)$ 在 $[a,b]$ 上可积。
 
 !!! warning "提示"
 
@@ -7543,25 +9570,3 @@ $$
 =\frac{\cos^{n-1}x\sin x}{n}
 +\frac{n-1}{n}\int\cos^{n-2}x\,\mathrm dx,\qquad n\ge2.
 $$
-
-!!! warning "提示"
-
-    -   **公式的条件不能忽略**：如 $\displaystyle\int\frac{\mathrm dx}{\sqrt{x^2-a^2}}$ 要求 $|x|>a$，$\displaystyle\int\frac{\mathrm dx}{a^2-x^2}$ 类公式要求 $|x|<a$；忽略条件会得到无意义的对数。
-
-        ??? example "积分公式的适用条件"
-            <!-- 待补充 -->
-
-    -   **跨过奇点不能直接套公式**：积分表公式只在被积函数有定义的区间内成立；若积分区间跨过瑕点，必须分段按反常积分处理。
-
-        ??? example "跨瑕点的积分"
-            <!-- 待补充 -->
-
-    -   **不定积分要加 $C$**：表中每个公式都是不定积分，结果必须带任意常数 $C$；定积分则要代入上下限。
-
-        ??? example "积分常数"
-            <!-- 待补充 -->
-
-    -   **递推公式的 $n$ 范围**：$\displaystyle\int\sin^nx\,\mathrm dx$、$\displaystyle\int\cos^nx\,\mathrm dx$ 的递推公式要求 $n\ge2$；$n=0,1$ 时要单独计算。
-
-        ??? example "递推积分公式"
-            <!-- 待补充 -->

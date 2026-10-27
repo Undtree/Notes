@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1560 1000" width="1560" height="1000" role="img" aria-labelledby="io-flow-title io-flow-desc" font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">
+  <title id="io-flow-title">三种 I/O 控制方式的输入操作流程</title>
+  <desc id="io-flow-desc">左列为程序直接控制：CPU 发出读命令后反复读取并检查状态，未就绪时继续查询，出错时转入错误处理；就绪后从控制器读取一个字，再写入主存。请求未完成则发出下一次读命令，完成后执行下一条指令。中列为中断驱动：CPU 发出读命令后可以执行其他工作，由设备中断通知 CPU 读取状态，再逐字读取并写入主存。右列为 DMA：CPU 设置参数并发出读块命令后执行其他工作，由 DMA 控制器搬运数据，完成中断到达后 CPU 读取状态，再执行下一条指令。</desc>
+  <defs>
+    <marker id="io-flow-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#4051b5"/>
+    </marker>
+    <style>
+      .panel { fill: #ffffff; stroke: #d8e1f1; stroke-width: 1.5; }
+      .heading { fill: #1a237e; font-size: 27px; font-weight: 700; text-anchor: middle; }
+      .node { fill: #f5f7fb; stroke: #4051b5; stroke-width: 2; }
+      .decision { fill: #eaf0ff; stroke: #4051b5; stroke-width: 2; }
+      .node-label { fill: #1a237e; font-size: 23px; text-anchor: middle; }
+      .flow { fill: none; stroke: #4051b5; stroke-width: 2.2; stroke-linejoin: round; marker-end: url(#io-flow-arrow); }
+      .async { stroke-dasharray: 5 5; }
+      .signal { fill: #4051b5; font-size: 20px; }
+      .label { fill: #455a64; font-size: 22px; }
+    </style>
+
+    <g id="io-word-input">
+      <rect class="node" x="110" y="100" width="210" height="84" rx="10"/>
+      <rect class="node" x="110" y="246" width="210" height="84" rx="10"/>
+      <path class="decision" d="M 215 386 L 315 430 L 215 474 L 115 430 Z"/>
+      <rect class="node" x="110" y="540" width="210" height="84" rx="10"/>
+      <rect class="node" x="110" y="694" width="210" height="84" rx="10"/>
+      <path class="decision" d="M 215 822 L 315 866 L 215 910 L 115 866 Z"/>
+
+      <g class="node-label">
+        <text x="215" y="134">向 I/O 控制器</text>
+        <text x="215" y="165">发出读命令</text>
+        <text x="215" y="280">读取 I/O 控制器</text>
+        <text x="215" y="311">的状态</text>
+        <text x="215" y="438">检查状态</text>
+        <text x="215" y="574">从 I/O 控制器</text>
+        <text x="215" y="605">读取一个字</text>
+        <text x="215" y="728">向主存写入</text>
+        <text x="215" y="759">一个字</text>
+        <text x="215" y="874">完成？</text>
+        <text x="215" y="970">下一条指令</text>
+      </g>
+      <g class="flow">
+        <path d="M 215 184 V 246"/>
+        <path d="M 215 330 V 386"/>
+        <path d="M 215 474 V 540"/>
+        <path d="M 315 430 H 347"/>
+        <path d="M 215 624 V 694"/>
+        <path d="M 215 778 V 822"/>
+        <path d="M 115 866 H 40 V 142 H 110"/>
+        <path d="M 215 910 V 942"/>
+      </g>
+      <g class="signal">
+        <text x="335" y="125">CPU → I/O</text>
+        <text x="335" y="312">I/O → CPU</text>
+        <text x="335" y="591">I/O → CPU</text>
+        <text x="335" y="745">CPU → 主存</text>
+      </g>
+      <g class="label">
+        <text x="359" y="438">错误处理</text>
+        <text x="234" y="514">就绪</text>
+        <text x="56" y="850">否</text>
+        <text x="234" y="937">是</text>
+      </g>
+    </g>
+  </defs>
+
+  <rect width="1560" height="1000" fill="#ffffff"/>
+
+  <g>
+    <rect class="panel" x="10" y="12" width="500" height="976" rx="14"/>
+    <text class="heading" x="260" y="58">程序直接控制方式</text>
+    <use href="#io-word-input"/>
+    <path class="flow" d="M 115 430 H 70 V 214 H 215"/>
+    <text class="label" x="82" y="368">未就绪</text>
+    <circle cx="215" cy="214" r="3.5" fill="#4051b5"/>
+  </g>
+
+  <g transform="translate(520 0)">
+    <rect class="panel" x="10" y="12" width="500" height="976" rx="14"/>
+    <text class="heading" x="260" y="58">中断驱动方式</text>
+    <use href="#io-word-input"/>
+    <path class="flow async" d="M 320 164 H 347"/>
+    <path class="flow async" d="M 347 266 H 320"/>
+    <text class="signal" x="359" y="172">执行其他工作</text>
+    <text class="signal" x="359" y="274">中断</text>
+  </g>
+
+  <g transform="translate(1040 0)">
+    <rect class="panel" x="10" y="12" width="500" height="976" rx="14"/>
+    <text class="heading" x="260" y="58">DMA 方式</text>
+    <rect class="node" x="110" y="100" width="210" height="84" rx="10"/>
+    <rect class="node" x="110" y="246" width="210" height="84" rx="10"/>
+    <g class="node-label">
+      <text x="215" y="134">设置参数并发出</text>
+      <text x="215" y="165">读块命令</text>
+      <text x="215" y="280">读取 DMA 控制器</text>
+      <text x="215" y="311">的状态</text>
+      <text x="215" y="432">下一条指令</text>
+    </g>
+    <g class="flow">
+      <path d="M 215 184 V 246"/>
+      <path d="M 215 330 V 404"/>
+      <path class="async" d="M 320 164 H 347"/>
+      <path class="async" d="M 347 266 H 320"/>
+    </g>
+    <g class="signal">
+      <text x="335" y="125">CPU → DMA</text>
+      <text x="359" y="172">执行其他工作</text>
+      <text x="359" y="274">中断</text>
+      <text x="335" y="312">DMA → CPU</text>
+    </g>
+  </g>
+</svg>
