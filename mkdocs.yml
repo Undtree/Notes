@@ -20,7 +20,15 @@ nav:
       - 图论: CS/DS/graph.md
       - 查找: CS/DS/search.md
       - 排序: CS/DS/sort.md
-    - 计算机组成原理: CS/CO/index.md
+    - 计算机组成原理:
+      - CS/CO/index.md
+      - 计算机系统概述: CS/CO/co_intro.md
+      - 数据的表示与运算: CS/CO/datas.md
+      - 存储系统: CS/CO/storage.md
+      - 指令系统: CS/CO/instr.md
+      - 中央处理器: CS/CO/CPU.md
+      - 总线: CS/CO/bus.md
+      - I/O 系统: CS/CO/co_IO.md
     - 操作系统: 
       - CS/OS/index.md
       - 概述: CS/OS/os_intro.md
