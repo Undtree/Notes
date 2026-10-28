@@ -3054,7 +3054,7 @@
 
 <h1 id="输入输出">输入/输出<a class="headerlink" href="#输入输出" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 13081 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 4 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 44 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 13062 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 4 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 44 分钟</p>
 </div>
 <p>I/O 是计算机与外部世界交换信息的通道。键盘、显示器、磁盘、打印机和网卡的工作方式各不相同，速度也往往与 CPU 相差很大。操作系统需要把这些差异封装起来，让应用程序能够通过统一接口使用设备，同时协调数据传输、设备共享与错误处理。</p>
 <h2 id="io-管理概述">I/O 管理概述<a class="headerlink" href="#io-管理概述" title="Permanent link">&para;</a></h2>
@@ -3387,7 +3387,7 @@ I/O 完成中断如何处理请求进程：<a href="#中断处理程序">中断�
 <li>匹配双方的数据粒度，例如在字符流与数据块之间进行组织和转换。</li>
 <li>提高 CPU 与 I/O 设备的并行程度，减少相互等待。</li>
 </ol>
-<p>缓冲可由硬件缓冲器实现，也可在主存中分配。硬件缓冲器成本较高，通常用于关键部位；下面讨论的是主存中的缓冲区。</p>
+<p>缓冲可由硬件缓冲器实现，也可在主存中分配。硬件缓冲器成本较高，通常用于关键部位；我们下面讨论的是主存中的缓冲区的实现。</p>
 <h5 id="单缓冲">单缓冲<a class="headerlink" href="#单缓冲" title="Permanent link">&para;</a></h5>
 <p>进程请求输入时，操作系统为其分配一个缓冲区，大小通常为一个数据块。以块设备输入为例，把处理过程拆成三个阶段：</p>
 <div class="arithmatex">\[
@@ -3552,25 +3552,33 @@ t_{\mathrm{double}}=T+M+C+(n-1)\max(T,M+C)
 </ul>
 <p>因此， SDT 负责定位设备， DCT、COCT 和 CHCT 负责描述设备及通路的状态。它们由内核在内存中维护；控制器中的数据、状态和控制寄存器则用于硬件交互。</p>
 <h4 id="设备分配时应考虑的因素">设备分配时应考虑的因素<a class="headerlink" href="#设备分配时应考虑的因素" title="Permanent link">&para;</a></h4>
-<p><strong>1. 设备的固有属性</strong></p>
+<ol>
+<li>
+<p><strong>设备的固有属性</strong></p>
 <p>不同<a href="#设备的分类">设备属性</a>对应不同的分配策略：</p>
 <ul>
 <li><strong>独占设备</strong>：分配给某进程后，由该进程独占，直到主动释放或终止。</li>
 <li><strong>共享设备</strong>：允许多个进程使用，通过调度协调访问顺序，如磁盘。</li>
 <li><strong>虚拟设备</strong>：通过 <a href="#spooling-技术假脱机技术">SPOOLing</a> 等技术，为进程安排独立的逻辑使用空间，接受多个进程并发提交的请求。</li>
 </ul>
-<p><strong>2. 设备分配算法</strong></p>
+</li>
+<li>
+<p><strong>设备分配算法</strong></p>
 <ul>
 <li><strong>先来先服务（ FCFS ）</strong>：按请求到达顺序排队，优先分配给队首进程。</li>
 <li><strong>最高优先级优先</strong>：高优先级进程优先，优先级相同时按 FCFS 排队。</li>
 </ul>
 <p>这里安排的是设备使用资格；<a href="#磁盘调度算法">磁盘调度</a>则进一步安排具体读写请求的服务顺序。</p>
-<p><strong>3. 设备分配的安全性</strong></p>
-<p>教材按请求进程能否继续申请资源，区分两种方式：</p>
+</li>
+<li>
+<p><strong>设备分配的安全性</strong></p>
+<p>按请求进程能否继续申请资源，区分两种方式：</p>
 <ul>
 <li><strong>安全分配方式</strong>：进程发出 I/O 请求后立即阻塞，完成本次操作后才继续运行，等待期间停止申请其他资源。按一次使用一台设备、完成后再申请的模型，设备请求串行推进，避免形成循环等待；代价是该进程的计算与 I/O 并行程度较低。该进程等待时， CPU 仍可运行其他就绪进程。</li>
 <li><strong>不安全分配方式</strong>：进程发出 I/O 请求后可以继续运行，并申请其他设备；所请求设备已被占用时才阻塞。一个进程可同时使用多个设备，推进较快，但可能形成<a href="../sync/#死锁发生的条件">循环等待</a>，需要配合死锁预防、避免或检测与解除措施。</li>
 </ul>
+</li>
+</ol>
 <p><strong>4. 设备独立性</strong></p>
 <p>使用逻辑设备名，把“需要某类设备”与“选中哪台设备”分开，系统便可在同类设备中选择可用者。具体的选择过程和映射方式如下。</p>
 <h4 id="设备分配的步骤">设备分配的步骤<a class="headerlink" href="#设备分配的步骤" title="Permanent link">&para;</a></h4>
@@ -3712,7 +3720,7 @@ t_{\mathrm{double}}=T+M+C+(n-1)\max(T,M+C)
 \text{容量}=\text{柱面数}\times\text{记录面数}
 \times\text{每道扇区数}\times\text{每扇区数据字节数}
 \]</div>
-<p>若题目规定逻辑扇区按“同柱面内依次遍历盘面，各盘面内依次遍历扇区”编号，且各字段从 0 开始，设每道 <span class="arithmatex">\(S\)</span> 个扇区、<span class="arithmatex">\(H\)</span> 个记录面，逻辑扇区号为 <span class="arithmatex">\(q\)</span>，则：</p>
+<p>假设逻辑扇区按“同柱面内依次遍历盘面，各盘面内依次遍历扇区”编号，且各字段从 0 开始，设每道 <span class="arithmatex">\(S\)</span> 个扇区、<span class="arithmatex">\(H\)</span> 个记录面，逻辑扇区号为 <span class="arithmatex">\(q\)</span>，则：</p>
 <div class="arithmatex">\[
 c=\left\lfloor\frac{q}{HS}\right\rfloor,\qquad
 h=\left\lfloor\frac{q}{S}\right\rfloor\bmod H,\qquad
@@ -3722,8 +3730,8 @@ s=q\bmod S
 <p>固定头磁盘为各磁道配置位置固定的磁头；活动头磁盘则通过磁头臂移动定位。按盘片能否取换，还可分为固定盘与可换盘。这是两组不同的分类。</p>
 <h3 id="磁盘的管理">磁盘的管理<a class="headerlink" href="#磁盘的管理" title="Permanent link">&para;</a></h3>
 <h4 id="磁盘初始化">磁盘初始化<a class="headerlink" href="#磁盘初始化" title="Permanent link">&para;</a></h4>
-<p><strong>低级格式化（物理格式化）</strong> 建立扇区等物理组织，使控制器能够识别和读写。扇区通常包含头部、数据区域和尾部，其中保存标识、校验等控制信息；用户数据容量只计算数据区域。</p>
-<p>磁盘通常在制造阶段已完成相应的物理格式化，并建立初始坏块和逻辑块映射信息。它与用户建立文件系统时的逻辑格式化不同。</p>
+<p><strong>物理格式化（低级格式化）</strong> 建立扇区等物理组织，使控制器能够识别和读写。扇区通常包含头部、数据区域和尾部，其中保存标识、校验等控制信息；用户数据容量只计算数据区域。</p>
+<p>磁盘通常在制造阶段已完成相应的物理格式化，并建立初始坏块和逻辑块映射信息。</p>
 <h4 id="分区">分区<a class="headerlink" href="#分区" title="Permanent link">&para;</a></h4>
 <p><strong>分区</strong> 把磁盘划分为若干逻辑区域；<strong>逻辑格式化（高级格式化）</strong> 则在相应区域上建立文件系统，初始化目录和空闲空间管理等结构。</p>
 <p>文件系统可以把若干扇区组织成块或簇作为分配单位，减小管理粒度过细的开销。非空文件最后一个分配单位可能没有填满，造成空间浪费；具体分配不能只按文件内容字节数判断。</p>

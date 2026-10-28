@@ -1586,7 +1586,7 @@
   <a href="#常见的总线标准" class="md-nav__link">
     <span class="md-ellipsis">
       
-        常见的总线标准（*）
+        常见的总线标准*
       
     </span>
   </a>
@@ -1695,6 +1695,17 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#总线仲裁" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        总线仲裁
+      
+    </span>
+  </a>
   
 </li>
       
@@ -1815,73 +1826,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#本章小结" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        本章小结
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="本章小结">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#引入总线的收益与代价" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        引入总线的收益与代价
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#总线仲裁" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        总线仲裁
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#常见问题和易混淆知识点" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        常见问题和易混淆知识点
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="常见问题和易混淆知识点">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#同一时刻能有多对主从设备通信吗" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        同一时刻能有多对主从设备通信吗？
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1905,15 +1849,22 @@
 
 <h1 id="总线">总线<a class="headerlink" href="#总线" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 4703 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 16 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 4535 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 15 分钟</p>
 </div>
 <p>CPU、主存和外部设备需要交换信息。若为每一对部件都设置专用连线，部件增加时，连接与扩展就会越来越复杂。<strong>总线</strong>（ Bus ）提供一组公共传输线路，让多个部件按约定使用同一条通信通路。</p>
 <h2 id="总线概述">总线概述<a class="headerlink" href="#总线概述" title="Permanent link">&para;</a></h2>
-<p>总线的两个核心特点是 <strong>分时与共享</strong>：多个部件可以连接到同一组线路上，但在同一时刻，不能让多个发送方驱动同一组共享数据线。接收方则可按选择信号接收信息，广播传输中也可有多个接收方。</p>
+<p>总线的两个核心特点是 <strong>分时与共享</strong>：多个部件连接到同一组线路，发送方按时间轮流使用，接收方按选择信号取得信息；广播时，一个发送方也可以把同一份信息交给多个接收方。共享线路减少了专用连线，便于统一接口、扩展设备和维护系统。</p>
 <p>总线本身不保存信息，暂存数据需要寄存器或缓冲器。CPU 内部利用总线传送操作数的例子，见<a href="../CPU/#单总线结构的数据通路">单总线数据通路</a>。</p>
+<div id="同一时刻能有多对主从设备通信吗"></div>
+
+<div class="admonition question">
+<p class="admonition-title">同一时刻能有多对主从设备通信吗？</p>
+<p>同一组共享数据线按分时规则使用，每一时刻由一个发送方驱动；广播可以把这份数据送给多个接收方。多条独立总线或点对点链路则可以各自传输。</p>
+<p><a href="#分离式定时">分离式事务</a>还允许多个请求同时处于等待应答状态：请求方用过总线后先释放，准备完成的设备再申请返回数据。事务可以重叠等待，共享线路上的实际传送仍逐次安排。</p>
+</div>
 <h3 id="总线的分类">总线的分类<a class="headerlink" href="#总线的分类" title="Permanent link">&para;</a></h3>
 <p>按连接位置和使用范围，可以区分以下类型：</p>
-<center>
+<center class="centered-table">
 <table>
 <thead>
 <tr>
@@ -1946,9 +1897,9 @@
 </tbody>
 </table>
 </center>
-<p>这些名称描述不同的观察角度，具体平台的划分可能有所不同。这里的“内部总线”指片内连接，不能把机箱内部的所有设备连接都归入这一类。</p>
+<p>这些名称按连接位置描述总线：片内总线连接芯片内部部件，系统总线连接 CPU、主存和 I/O 接口，设备通信还要满足距离及电气规范。具体平台可进一步分层。</p>
 <p>在基本系统总线模型中，按传送信息的用途，又可划分为三组：</p>
-<center>
+<center class="centered-table">
 <table>
 <thead>
 <tr>
@@ -1971,17 +1922,17 @@
 <tr>
 <td>控制总线</td>
 <td>读写、时钟、复位、请求、允许、确认等信号</td>
-<td>各信号有各自的方向，不能把整组控制线一律看成单向或双向</td>
+<td>每条控制信号按其用途确定方向，整组可包含不同方向的线路</td>
 </tr>
 </tbody>
 </table>
 </center>
 <p>这里的“数据”是在线路上传送的编码信息，并不限于程序的操作数。例如， I/O 接口的控制命令字通过数据线写入控制寄存器，而“本次是写操作”由控制线表明，具体见<a href="../co_IO/#io接口的基本结构">I/O 接口的基本结构</a>。</p>
-<p>CPU 是常见的总线主设备，但<a href="../co_IO/#dma方式">DMA 控制器</a>也能取得总线控制权并发出地址。因此，“地址总线单向”应结合一次事务的主从关系理解。</p>
-<h3 id="常见的总线标准">常见的总线标准（*）<a class="headerlink" href="#常见的总线标准" title="Permanent link">&para;</a></h3>
-<p><strong>总线标准</strong> 规定互连的电气、机械和传输协议等要求，便于不同部件采用相容的接口。标题后的“（*）”表示扩展阅读内容。</p>
-<p>下表按本节涉及的典型实现整理传统标准与接口。串行、并行描述数据怎样传送；系统、局部或设备接口描述使用位置，属于不同分类维度。</p>
-<center>
+<p>CPU 和 <a href="../co_IO/#dma方式">DMA 控制器</a>都可以成为总线主设备。在一次事务中，当前主设备给出地址，从设备按地址响应，这就是地址信号的主从方向。</p>
+<h3 id="常见的总线标准">常见的总线标准*<a class="headerlink" href="#常见的总线标准" title="Permanent link">&para;</a></h3>
+<p><strong>总线标准</strong> 规定互连的电气、机械和传输协议等要求，便于不同部件采用相容的接口。</p>
+<p>下表整理典型总线与接口。串行、并行说明传送方式，系统、局部和设备接口说明连接位置。</p>
+<center class="centered-table">
 <table>
 <thead>
 <tr>
@@ -1994,11 +1945,11 @@
 <tr>
 <td>ISA</td>
 <td>Industry Standard Architecture</td>
-<td>早期并行系统总线，传输能力较低</td>
+<td>早期并行系统总线，传输能力较低， CPU 占用与中断资源开销较大</td>
 </tr>
 <tr>
 <td>EISA</td>
-<td>Extended ISA</td>
+<td>Extended Industry Standard Architecture</td>
 <td>扩展 ISA ，支持多主控器和突发传送，并兼容 ISA</td>
 </tr>
 <tr>
@@ -2014,7 +1965,7 @@
 <tr>
 <td>AGP</td>
 <td>Accelerated Graphics Port</td>
-<td>为图形卡设置的专用并行接口</td>
+<td>面向图形卡的专用并行接口，支持高效访问系统主存</td>
 </tr>
 <tr>
 <td>PCI Express ／ PCIe</td>
@@ -2048,16 +1999,16 @@
 </tr>
 <tr>
 <td>SATA</td>
-<td>Serial ATA</td>
+<td>Serial Advanced Technology Attachment</td>
 <td>ATA 系列的串行设备接口</td>
 </tr>
 </tbody>
 </table>
 </center>
-<p>局部总线的设计思路，是为高速外围部件提供比传统低速扩展总线更直接的连接。PCIe 的“串行”也不表示整条链路只有一条通道；多条串行通道可共同提供更大的传输能力。</p>
+<p>局部总线为高速外围部件提供更直接的连接，避免它们与传统低速扩展总线竞争。PCIe 可把多条串行通道组合为 ×1、×16 等链路，提高总传输能力。</p>
 <h3 id="总线的性能指标">总线的性能指标<a class="headerlink" href="#总线的性能指标" title="Permanent link">&para;</a></h3>
 <h4 id="时钟传输周期与宽度">时钟、传输周期与宽度<a class="headerlink" href="#时钟传输周期与宽度" title="Permanent link">&para;</a></h4>
-<center>
+<center class="centered-table">
 <table>
 <thead>
 <tr>
@@ -2102,7 +2053,7 @@ B_{\mathrm{peak}}=\frac{w}{8}\times qf_b\quad(\mathrm{B/s}).
 B_{\mathrm{peak}}=\frac{16}{8}\times2\times11\times10^6
 =44\mathrm{MB/s}.
 \]</div>
-<p>这里带宽单位中的 <span class="arithmatex">\(\mathrm{M}\)</span> 按 <span class="arithmatex">\(10^6\)</span> 计算。求字节数前要把位宽除以 8 ，不能混淆 MB/s 与 Mb/s。</p>
+<p>这里带宽单位中的 <span class="arithmatex">\(\mathrm{M}\)</span> 按 <span class="arithmatex">\(10^6\)</span> 计算。位宽除以 8 后得到字节数， MB/s 与 Mb/s 的换算相差 8 倍。</p>
 <p>实际事务还可能包含地址、命令、响应等待和仲裁等开销，因此平均有效传输率应按：</p>
 <div class="arithmatex">\[
 B_{\mathrm{effective}}=
@@ -2111,15 +2062,15 @@ B_{\mathrm{effective}}=
 <p>峰值带宽由物理传输参数决定，平均速率还要结合<a href="#总线事务">总线事务的时序</a>。突发传送减少事务开销，可以提高平均速率，但不改变相同物理参数下的峰值带宽。</p>
 <h4 id="总线复用与寻址能力">总线复用与寻址能力<a class="headerlink" href="#总线复用与寻址能力" title="Permanent link">&para;</a></h4>
 <p><strong>总线复用</strong> 让同一组物理线路在不同时间传送不同信息，例如先送地址、再送数据。这可以减少引脚与连线，但接收方需要按阶段识别，并在必要时锁存先前信息。</p>
-<p>地址与数据复用，不意味着它们在逻辑上没有区别，也不意味着可以同时使用复用线路传送两种不同信息。</p>
+<p>复用线路按阶段承担不同角色：地址阶段用于选中位置，数据阶段用于交换内容。接收方按协议识别阶段，并锁存后续仍需使用的信息。</p>
 <p>若完整地址为 <span class="arithmatex">\(a\)</span> 位，则可区分 <span class="arithmatex">\(2^a\)</span> 个地址。最大寻址容量还要乘以<a href="../storage/#编址单位与寻址范围">编址单位</a>：</p>
 <div class="arithmatex">\[
 \text{最大寻址容量}=2^a\times\text{每地址对应的容量}.
 \]</div>
-<p>地址位数决定地址数量，数据宽度决定一次传送多少位，两者不能互相替代。采用分时复用时，还应区分完整地址位数与物理引脚数量。</p>
+<p>例如， 16 位完整地址可区分 <span class="arithmatex">\(2^{16}=65536\)</span> 个单元，按字节编址时容量为 64 KB。数据宽度另行决定一次传送多少位；分时复用时，完整地址可以分多次经过同一组引脚传入。</p>
 <h3 id="总线的结构">总线的结构<a class="headerlink" href="#总线的结构" title="Permanent link">&para;</a></h3>
 <h4 id="早期共享总线结构">早期共享总线结构<a class="headerlink" href="#早期共享总线结构" title="Permanent link">&para;</a></h4>
-<center>
+<center class="centered-table">
 <table>
 <thead>
 <tr>
@@ -2147,7 +2098,7 @@ B_{\mathrm{effective}}=
 </tbody>
 </table>
 </center>
-<p>总线条数的名称要结合具体结构图理解。三总线结构中的 DMA 通路，解决的是设备与主存的数据交换问题； CPU 内部的三总线数据通路则可能分别传送两个源操作数和一个结果，见<a href="../CPU/#数据通路的组织与分类">数据通路的分类</a>。</p>
+<p>三总线结构中的 DMA 通路负责设备与主存之间的传送。CPU 内部的三总线则可以分别承载两个源操作数和一个运算结果，属于<a href="../CPU/#数据通路的组织与分类">CPU 内部数据通路</a>的组织。</p>
 <h4 id="传统分层总线南北桥结构">传统分层总线：南北桥结构<a class="headerlink" href="#传统分层总线南北桥结构" title="Permanent link">&para;</a></h4>
 <p>南北桥把设备按带宽需求分层连接：</p>
 <ul>
@@ -2163,10 +2114,10 @@ B_{\mathrm{effective}}=
 \text{外围设备}\to\text{设备控制器／南桥}\to\text{北桥}
 \to\text{CPU 或主存通路}.
 \]</div>
-<p>高速部件与低速部件由不同通路连接，缓解了单总线上的直接竞争。不过， CPU 与其他部件之间的通信仍依赖共享 FSB ，前端总线带宽可能成为瓶颈。外设到主存的 DMA 数据不必由 CPU 执行指令逐字中转。</p>
+<p>分层连接把高、低速部件的竞争分散到不同通路； CPU 与其他部件的通信仍共享 FSB ，所以 FSB 带宽可能成为瓶颈。外设到主存的 DMA 数据经设备控制器和存储通路直接传送。</p>
 <h4 id="集成化与点对点互连">集成化与点对点互连<a class="headerlink" href="#集成化与点对点互连" title="Permanent link">&para;</a></h4>
 <p>进一步的设计把内存控制器等功能集成进 CPU ，并为不同通信需求提供相应路径：</p>
-<center>
+<center class="centered-table">
 <table>
 <thead>
 <tr>
@@ -2185,7 +2136,7 @@ B_{\mathrm{effective}}=
 </tr>
 <tr>
 <td>处理器间点对点链路</td>
-<td>为多个处理器提供专用互连，减少单一共享总线的限制</td>
+<td>例如 QPI （ QuickPath Interconnect ）在多 CPU 或 CPU 与 I/O 集线器之间提供高速互连</td>
 </tr>
 <tr>
 <td>高速外设通过 PCIe 接入</td>
@@ -2199,11 +2150,15 @@ B_{\mathrm{effective}}=
 </table>
 </center>
 <p>相同通道条件下，<span class="arithmatex">\(c\)</span> 个独立存储通道的理论总带宽可按单通道的 <span class="arithmatex">\(c\)</span> 倍估算，实际效果仍取决于是否同时使用各通道。多处理器的本地、远程内存访问问题见<a href="../CPU/#uma与numa">UMA 与 NUMA</a>。</p>
+<h2 id="总线仲裁">总线仲裁<a class="headerlink" href="#总线仲裁" title="Permanent link">&para;</a></h2>
+<p><strong>总线仲裁</strong> 在多个主设备同时申请共享通路时，决定由谁取得控制权。获得控制权的主设备才能发起相应传送；仲裁部件负责选择，获选的主设备负责后续事务。</p>
+<p>仲裁可以采用集中式判定，也可由各申请者按协议分布式决定。常见思路包括链式传递允许信号、集中并行判优和分布式自选择。设计时既要考虑优先级，也要考虑公平性，避免某个申请者长期无法取得通路。</p>
+<p>仲裁决定 <strong>谁先使用总线</strong>，<a href="#总线定时">总线定时</a>决定 <strong>取得通路后怎样协调传送</strong>。它与<a href="../co_IO/#中断请求与响应判优">I/O 中断判优</a>的对象不同：后者选择 CPU 接下来响应哪个中断请求。</p>
 <h2 id="总线事务和定时">总线事务和定时<a class="headerlink" href="#总线事务和定时" title="Permanent link">&para;</a></h2>
 <h3 id="总线事务">总线事务<a class="headerlink" href="#总线事务" title="Permanent link">&para;</a></h3>
-<p><strong>总线事务</strong> 是主设备和目标从设备之间的一次完整信息交换。主设备发起并控制事务，例如 CPU 或 DMA 控制器；从设备响应请求，例如主存或 I/O 接口。读写是数据传送方向，主从是控制关系，不能因读操作中从设备输出数据就颠倒二者。</p>
+<p><strong>总线事务</strong> 是主设备与从设备的一次完整信息交换。主设备发起并控制事务，如 CPU、DMA 控制器；从设备响应请求，如主存、I/O 接口。读事务由从设备向主设备返回数据，写事务由主设备向从设备送数据。</p>
 <p>常见事务包括主存读写、I/O 读写和中断响应。取得共享总线使用权的机制见<a href="#总线仲裁">总线仲裁</a>。一个基本读事务可分为：</p>
-<center>
+<center class="centered-table">
 <table>
 <thead>
 <tr>
@@ -2227,7 +2182,7 @@ B_{\mathrm{effective}}=
 </tbody>
 </table>
 </center>
-<p>实际分析时，应按题目给出的阶段时间计算。一次“读数据”不能只计算最后的数据线传送时间，而忽略地址和响应开销。</p>
+<p>计算事务时间时，把地址、数据准备、传送及协议规定的其他阶段相加；有效数据量再除以完整耗时，得到该事务的平均传输率。</p>
 <h4 id="非突发与突发传送">非突发与突发传送<a class="headerlink" href="#非突发与突发传送" title="Permanent link">&para;</a></h4>
 <p><strong>非突发传送</strong> 每次传送一个数据单元，每个单元都重新经历地址、准备和数据传送。<strong>突发传送</strong> 给出一个数据块的首地址后，连续传送多个数据单元，由硬件形成后续地址，摊薄地址和命令开销。</p>
 <p>假设每个数据单元占 <span class="arithmatex">\(d\)</span> 字节，地址阶段为 <span class="arithmatex">\(t_a\)</span>，数据准备为 <span class="arithmatex">\(t_r\)</span>，每次数据传送为 <span class="arithmatex">\(t_d\)</span>。在突发期间可连续供数、只计一次初始准备的模型中，传送 <span class="arithmatex">\(n\)</span> 个单元需要：</p>
@@ -2237,9 +2192,9 @@ T_{\mathrm{nonburst}}=n(t_a+t_r+t_d),
 T_{\mathrm{burst}}=t_a+t_r+nt_d.
 \]</div>
 <p>两者有效数据量均为 <span class="arithmatex">\(nd\)</span>，代入<a href="#总线带宽">平均有效传输率</a>即可比较。如果设备还需要后续等待、分批突发或额外确认，应把这些时间加入对应事务。</p>
-<p>后续地址的增量取决于编址单位和每次传送量。例如，按字节编址并连续传送 4 字节字时，相邻字的地址相差 4 ，不能一律写成“地址加 1”。</p>
+<p>后续地址的增量由编址单位和传送量确定。例如，按字节编址、每次传送 4 字节字时，相邻字的地址相差 4。</p>
 <h4 id="串行与并行传送">串行与并行传送<a class="headerlink" href="#串行与并行传送" title="Permanent link">&para;</a></h4>
-<center>
+<center class="centered-table">
 <table>
 <thead>
 <tr>
@@ -2262,7 +2217,7 @@ T_{\mathrm{burst}}=t_a+t_r+nt_d.
 </tbody>
 </table>
 </center>
-<p>“并行”不保证比“串行”更快，还要比较传输频率、通道数量和协议开销。多个独立串行通道也可以同时工作。</p>
+<p>比较串行与并行的速率，要同时计算传输频率、通道数量和协议开销。多条独立串行通道也可同时传输，形成高带宽链路。</p>
 <p>串行通信按位同步方式又可区分同步与异步。同步串行传送需要收发双方维持位同步；异步字符传送则在每个字符中加入起止标记，让接收方确定采样起点。</p>
 <p>典型异步字符的组成是：</p>
 <div class="arithmatex">\[
@@ -2274,11 +2229,11 @@ T_{\mathrm{burst}}=t_a+t_r+nt_d.
 <p><strong>总线定时</strong> 是主从设备协调地址、命令与数据传送时刻的规则。总线的同步、异步定时讨论事务控制，上一节的同步、异步串行通信讨论串行字符或数据位的组织，分析时要先确认所讨论的层次。</p>
 <h4 id="同步定时">同步定时<a class="headerlink" href="#同步定时" title="Permanent link">&para;</a></h4>
 <p>双方按照统一总线时钟，在预先规定的时刻发送和接收信号。基本固定时序模型中，每次事务占用规定数量的节拍，从设备须在规定期限内完成准备。</p>
-<p>这种方式控制简单、传送较快，适合连接距离短、部件速度相近的系统。但若没有额外就绪反馈，就不能灵活适应从设备响应时间变化，需要按规定的最坏时间安排操作。</p>
+<p>这种方式控制简单、传送较快，适合连接距离短、部件速度相近的系统。固定时序按规定的最坏响应时间安排，各从设备都需在期限内完成。</p>
 <h4 id="异步定时与互锁">异步定时与互锁<a class="headerlink" href="#异步定时与互锁" title="Permanent link">&para;</a></h4>
 <p>异步定时不依赖统一的总线时钟，而是通过 <strong>请求与回答</strong> 协调操作。从设备准备就绪后再回答，使事务时间能够适应不同设备的响应速度。</p>
 <p>按信号撤销是否依赖对方确认，可以分为三种：</p>
-<center>
+<center class="centered-table">
 <table>
 <thead>
 <tr>
@@ -2309,7 +2264,7 @@ T_{\mathrm{burst}}=t_a+t_r+nt_d.
 <p>全互锁的事件顺序为“发请求 → 发回答 → 撤请求 → 撤回答”。双方对信号撤销都作确认，可靠性较高，但增加了信号交互与传播开销。异步定时适合设备速度差异较大的连接，控制通常比固定同步时序复杂。</p>
 <h4 id="半同步定时">半同步定时<a class="headerlink" href="#半同步定时" title="Permanent link">&para;</a></h4>
 <p>半同步定时以统一时钟为基础，同时增加等待或就绪反馈。主设备在规定时钟边沿检查从设备状态：若尚未准备好，就插入等待周期；准备完成后继续传送。</p>
-<p>它既保留时钟约束，也能延长事务以适应慢速设备。等待信号的高低电平含义应由协议规定，不能仅凭 <code>Wait</code>、<code>Ready</code> 等名称推断有效电平。</p>
+<p>它既保留时钟约束，也能延长事务以适应慢速设备。等待信号的高低电平含义应由协议规定，读取 <code>Wait</code>、<code>Ready</code> 等信号时，按协议定义的有效电平判断。</p>
 <h4 id="分离式定时">分离式定时<a class="headerlink" href="#分离式定时" title="Permanent link">&para;</a></h4>
 <p>前面几种基本模型在请求发出到传输完成之间通常由一个事务占用总线。若从设备准备较慢，总线会在等待期间闲置。</p>
 <p><strong>分离式定时</strong> 把事务分成请求与应答两个阶段：</p>
@@ -2319,18 +2274,6 @@ T_{\mathrm{burst}}=t_a+t_r+nt_d.
 <li>从设备准备好后，重新取得总线，以应答阶段主设备的身份返回结果。</li>
 </ol>
 <p>它提高了总线利用率，但需要管理未完成事务及其对应的应答，并增加仲裁与协议控制。多个事务可以同时处于“已请求、尚未完成”的状态，每一时刻的共享传送通路仍需按规则分配。</p>
-<h2 id="本章小结">本章小结<a class="headerlink" href="#本章小结" title="Permanent link">&para;</a></h2>
-<h3 id="引入总线的收益与代价">引入总线的收益与代价<a class="headerlink" href="#引入总线的收益与代价" title="Permanent link">&para;</a></h3>
-<p>公共连接减少了专用连线，使接口更规整，支持模块化设计、扩展、配置和维护。采用标准化接口还便于连接不同功能部件，降低重复设计的成本。</p>
-<p>共享通路也会形成带宽竞争。提高传输频率、扩大有效宽度、使用<a href="#非突发与突发传送">突发传送</a>、分层或增加独立通路，分别针对不同瓶颈；多主设备的控制权竞争还需要仲裁。</p>
-<h3 id="总线仲裁">总线仲裁<a class="headerlink" href="#总线仲裁" title="Permanent link">&para;</a></h3>
-<p><strong>总线仲裁</strong> 在多个主设备同时申请共享通路时，决定由谁取得控制权。获得控制权的主设备才能发起相应传送；仲裁部件负责选择，不能与“当前发起事务的主设备”混为一谈。</p>
-<p>仲裁可以采用集中式判定，也可由各申请者按协议分布式决定。常见思路包括链式传递允许信号、集中并行判优和分布式自选择。设计时既要考虑优先级，也要考虑公平性，避免某个申请者长期无法取得通路。</p>
-<p>仲裁决定 <strong>谁先使用总线</strong>，<a href="#总线定时">总线定时</a>决定 <strong>取得通路后怎样协调传送</strong>。它与<a href="../co_IO/#中断请求与响应判优">I/O 中断判优</a>的对象不同：后者选择 CPU 接下来响应哪个中断请求。</p>
-<h2 id="常见问题和易混淆知识点">常见问题和易混淆知识点<a class="headerlink" href="#常见问题和易混淆知识点" title="Permanent link">&para;</a></h2>
-<h3 id="同一时刻能有多对主从设备通信吗">同一时刻能有多对主从设备通信吗？<a class="headerlink" href="#同一时刻能有多对主从设备通信吗" title="Permanent link">&para;</a></h3>
-<p>对同一组共享数据线，通信必须遵守<a href="#总线概述">分时使用规则</a>，不能让多对设备同时传送不同数据。广播可以由一个发送方把同一信息交给多个接收方。</p>
-<p>多条独立总线或点对点链路可以各自进行传输；<a href="#分离式定时">分离式事务</a>也可使多个请求同时等待应答。它们都要与“同一共享数据通路在同一时刻由多个发送方驱动”区分。</p>
 
 
 

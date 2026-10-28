@@ -2197,67 +2197,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#本章小结" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        本章小结
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#常见问题和易混淆知识点" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        常见问题和易混淆知识点
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="常见问题和易混淆知识点">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#常见寻址方式怎样选择" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        常见寻址方式怎样选择？
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#一个操作数占多个单元地址怎样给出" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        一个操作数占多个单元，地址怎样给出？
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#loadstore-怎样完成对内存数据的计算" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        LOAD/STORE 怎样完成对内存数据的计算？
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2281,7 +2220,7 @@
 
 <h1 id="指令系统">指令系统<a class="headerlink" href="#指令系统" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 11661 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M360.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m64.6 136.1c-12.5 12.5-12.5 32.8 0 45.3l73.4 73.4-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l96-96c12.5-12.5 12.5-32.8 0-45.3l-96-96c-12.5-12.5-32.8-12.5-45.3 0zm-274.7 0c-12.5-12.5-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l73.3-73.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg></span> 68 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 40 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 9010 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M360.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m64.6 136.1c-12.5 12.5-12.5 32.8 0 45.3l73.4 73.4-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l96-96c12.5-12.5 12.5-32.8 0-45.3l-96-96c-12.5-12.5-32.8-12.5-45.3 0zm-274.7 0c-12.5-12.5-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l73.3-73.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg></span> 68 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 31 分钟</p>
 </div>
 <p>高级语言中的一次赋值、一次判断或一次函数调用，最终都要转换成处理器能够执行的机器指令。理解指令系统，就是弄清楚 <strong>一条指令要做什么、操作数从哪里来，以及执行后程序转向哪里</strong>。</p>
 <h2 id="指令系统_1">指令系统<a class="headerlink" href="#指令系统_1" title="Permanent link">&para;</a></h2>
@@ -2330,7 +2269,7 @@
 \]</div>
 <ul>
 <li><strong>操作码</strong> 指明执行的操作，也决定其他字段应如何解释。</li>
-<li><strong>地址码</strong> 给出源操作数、结果或转移目标等信息。根据寻址方式，字段可能表示主存地址、寄存器编号或操作数本身，不能一律当成主存地址。</li>
+<li><strong>地址码</strong> 给出源操作数、结果或转移目标等信息。字段的含义由寻址方式规定，可以是主存地址、寄存器编号或操作数本身。</li>
 </ul>
 <p><strong>指令字长</strong> 是一条指令包含的二进制位数。所有指令等长，称为 <strong>定长指令字结构</strong>；不同指令可以有不同长度，称为 <strong>变长指令字结构</strong>。定长结构便于确定指令边界、取指和译码；变长结构可以为不同功能分配不同的编码空间。</p>
 <div class="admonition note">
@@ -2340,7 +2279,7 @@
 <p>下面按 <strong>显式地址码的个数</strong> 区分指令格式。约定 <span class="arithmatex">\(M[A]\)</span> 表示地址 <span class="arithmatex">\(A\)</span> 处的操作数，<span class="arithmatex">\(R[r]\)</span> 表示寄存器 <span class="arithmatex">\(r\)</span> 的内容，箭头表示将结果写入目标位置。</p>
 <h4 id="零地址指令">零地址指令<a class="headerlink" href="#零地址指令" title="Permanent link">&para;</a></h4>
 <p>格式为 <code>OP</code>，没有显式地址码。它可以是无需操作数的空操作、停机等指令，也可以是操作数位置已经隐含约定的指令。</p>
-<p>例如，堆栈计算机的加法指令可以从栈顶和次栈顶取得两个操作数，再将和压回栈顶。<strong>没有显式地址码，不等于没有操作数</strong>；具体操作数位置见<a href="#堆栈寻址">堆栈寻址</a>。</p>
+<p>例如，堆栈计算机的加法指令可以从栈顶和次栈顶取得两个操作数，再将和压回栈顶。操作数位置已由栈的规则隐含指定，具体过程见<a href="#堆栈寻址">堆栈寻址</a>。</p>
 <h4 id="一地址指令">一地址指令<a class="headerlink" href="#一地址指令" title="Permanent link">&para;</a></h4>
 <p>格式为 <code>OP A₁</code>，常见两种语义：</p>
 <table>
@@ -2426,8 +2365,8 @@ M[A_1]\operatorname{OP}M[A_2]\to M[A_3].
 <div class="arithmatex">\[
 k=\left\lceil\log_2N\right\rceil.
 \]</div>
-<p>例如，区分 60 种操作至少需要 6 位操作码。若其中只使用 60 个编码，剩余 4 个可以保留，但不能说已经有 64 种实际指令。</p>
-<p>操作码位置和长度固定，硬件容易提取和译码。不过，<strong>操作码定长与整条指令定长是两个不同的属性</strong>：即使操作码一样长，地址字段、立即数等部分仍可能使指令总长度不同。</p>
+<p>例如，区分 60 种操作至少需要 6 位操作码。使用其中 60 个编码后，还剩 4 个编码可供保留或扩展。</p>
+<p>操作码位置、长度固定，便于提取和译码。<strong>操作码长度与指令总长度分别规定</strong>：即使操作码等长，地址字段、立即数等仍可能使整条指令的长度变化。</p>
 <h3 id="扩展操作码指令格式">扩展操作码指令格式<a class="headerlink" href="#扩展操作码指令格式" title="Permanent link">&para;</a></h3>
 <p>在指令总长度有限时，可以把少地址指令省下的字段用于扩展操作码。这样，地址字段越少，操作码可以越长，从而容纳更多操作类型。</p>
 <p>设指令固定为 16 位，基本操作码和每个地址字段都占 4 位。若把所有基本操作码都分配给三地址指令，只能得到 16 种操作。下面保留 <code>1111</code>，表示还要继续读取后续字段来确定操作：</p>
@@ -2485,7 +2424,7 @@ k=\left\lceil\log_2N\right\rceil.
 </details>
 <p>通常把使用频率高的操作分配给短操作码，使常见操作较早被识别。对上述固定 16 位的结构而言，这并不减少每条指令的取指位数。</p>
 <h3 id="指令的类型">指令的类型<a class="headerlink" href="#指令的类型" title="Permanent link">&para;</a></h3>
-<p>指令可以按功能分为以下几类。表中的助记符用于说明操作，不代表所有 ISA 都采用相同名称或编码。</p>
+<p>按指令完成的功能，可以分为以下几类。表中的助记符表示典型操作，具体名称与编码由各 ISA 规定。</p>
 <table>
 <thead>
 <tr>
@@ -2546,7 +2485,7 @@ k=\left\lceil\log_2N\right\rceil.
 <p><strong>跳跃寻址</strong> 根据转移指令给出的信息改变 PC。目标可以由指令直接给出，也可以通过寄存器、内存或<a href="#相对寻址">相对位移</a>计算得到。</p>
 <h4 id="数据寻址">数据寻址<a class="headerlink" href="#数据寻址" title="Permanent link">&para;</a></h4>
 <p>指令中的地址字段记为 <strong>形式地址</strong> <span class="arithmatex">\(A\)</span>；按照指定寻址方式计算出的操作数地址称为 <strong>有效地址</strong>（ Effective Address ， EA ）。地址字段旁的寻址特征位用于指出采用哪种寻址方式；若用 <span class="arithmatex">\(q\)</span> 位独立编码，最多可区分 <span class="arithmatex">\(2^q\)</span> 种方式。</p>
-<p>有效地址与形式地址可能相等，也可能需要一次或多次计算才能得到。立即寻址和寄存器寻址的操作数不在主存，因此不能强行把它们解释成“形成一个主存 EA 再取数”。使用虚拟存储器时，有效地址还可能需要<a href="../storage/#地址转换">转换为物理地址</a>。</p>
+<p>直接寻址时，形式地址就是有效地址；其他访存寻址方式还需要按规则计算或间接读取地址。立即寻址直接取指令中的数值，寄存器寻址直接读寄存器。使用虚拟存储器时，访存有效地址还需要<a href="../storage/#地址转换">转换为物理地址</a>。</p>
 <h3 id="常见的数据寻址方式">常见的数据寻址方式<a class="headerlink" href="#常见的数据寻址方式" title="Permanent link">&para;</a></h3>
 <p>沿用 <span class="arithmatex">\(M[A]\)</span>、<span class="arithmatex">\(R[r]\)</span> 的记法。下面的访存次数 <strong>只统计为了取得一个操作数而进行的主存读操作</strong>，不包含取指、写结果，也假定一个地址或操作数能一次读出。</p>
 <table>
@@ -2610,7 +2549,7 @@ k=\left\lceil\log_2N\right\rceil.
 </tr>
 </tbody>
 </table>
-<p>相对寻址常用来计算 <strong>转移目标</strong>，此时形成目标地址并不意味着还要读取一个数据操作数。不要把表中的数据取数次数机械地加到每条转移指令上。</p>
+<p>相对寻址常用来形成 <strong>转移目标</strong>。这时计算的结果用于更新 PC ，后续操作是从目标位置取指；表中“读取一个数据操作数”的次数用于数据访问场景。</p>
 <h4 id="隐含寻址">隐含寻址<a class="headerlink" href="#隐含寻址" title="Permanent link">&para;</a></h4>
 <p>操作数位置由指令约定，无需在指令中显式给出。例如<a href="#一地址指令">累加器型一地址指令</a>把 ACC 作为隐含操作数位置。</p>
 <p>这样可以缩短地址字段，但程序要遵守固定的位置约定，使用起来不如显式指定灵活。</p>
@@ -2619,40 +2558,47 @@ k=\left\lceil\log_2N\right\rceil.
 <p>若立即数字段为 <span class="arithmatex">\(n\)</span> 位，不作额外扩展时，无符号数范围为 <span class="arithmatex">\(0\sim2^n-1\)</span>，补码整数范围为 <span class="arithmatex">\(-2^{n-1}\sim2^{n-1}-1\)</span>。字段长度限制的是常量的表示范围。</p>
 <h4 id="直接寻址">直接寻址<a class="headerlink" href="#直接寻址" title="Permanent link">&para;</a></h4>
 <p>指令直接给出操作数地址，实现简单，适合访问固定位置。若地址字段为 <span class="arithmatex">\(n\)</span> 位且直接覆盖完整地址，最多能区分 <span class="arithmatex">\(2^n\)</span> 个编址单位。</p>
-<p>这里“访问固定位置”指某条指令中的地址字段确定；程序中的其他指令仍可以访问其他地址。</p>
+<p>直接地址已编码在指令中，适合固定位置的数据；改变访问位置需要改变地址信息，或采用更灵活的寻址方式。</p>
 <h4 id="间接寻址">间接寻址<a class="headerlink" href="#间接寻址" title="Permanent link">&para;</a></h4>
 <p>指令先指向一个 <strong>保存操作数地址的单元</strong>。例如 <span class="arithmatex">\(A=1000\mathrm{H}\)</span>、<span class="arithmatex">\(M[1000\mathrm{H}]=2400\mathrm{H}\)</span> 时，最终取得的是 <span class="arithmatex">\(M[2400\mathrm{H}]\)</span>。</p>
 <p>它适合通过指针访问数据。若保存地址的主存字比指令地址字段更宽，还可以扩大操作数的寻址范围；多次间接寻址则沿地址链继续查找，但会增加访问开销。</p>
 <h4 id="寄存器寻址">寄存器寻址<a class="headerlink" href="#寄存器寻址" title="Permanent link">&para;</a></h4>
-<p>地址字段只需指定寄存器编号，操作数已在寄存器中。编码较短、取数快，适合频繁参与运算的数据。</p>
+<p>地址字段只需指定寄存器编号，<strong>操作数已在寄存器中</strong>。编码较短、取数快，适合频繁参与运算的数据。</p>
 <p>若寄存器编号占 <span class="arithmatex">\(n\)</span> 位，最多区分 <span class="arithmatex">\(2^n\)</span> 个寄存器。它限制的是 <strong>寄存器数量</strong>，与主存寻址范围没有直接关系。</p>
 <h4 id="寄存器间接寻址">寄存器间接寻址<a class="headerlink" href="#寄存器间接寻址" title="Permanent link">&para;</a></h4>
-<p>寄存器保存操作数的主存地址，适合让程序在运行时改变访问位置。它与寄存器寻址的关键区别是：<strong>寄存器中存放的是数据，还是数据的地址</strong>。</p>
+<p>寄存器保存 <strong>操作数的主存地址</strong>，适合让程序在运行时改变访问位置。</p>
 <p>寻址范围主要由保存地址的寄存器位数及 ISA 的地址规则决定，不由指令中寄存器编号字段的位数决定。</p>
 <h4 id="相对寻址">相对寻址<a class="headerlink" href="#相对寻址" title="Permanent link">&para;</a></h4>
-<p>以 PC 为基准，将指令中的有符号位移加到基准地址上。若位移为 <span class="arithmatex">\(n\)</span> 位补码、单位为一个编址单位，可覆盖的目标范围为：</p>
+<p>以 PC 为基准，将指令中的有符号位移（形式地址，以补码表示）加到基准地址上。若位移为 <span class="arithmatex">\(n\)</span> 位补码、单位为一个编址单位，可覆盖的目标范围为：</p>
 <div class="arithmatex">\[
 \mathrm{PC}_{\mathrm{ref}}-2^{n-1}
 \;\sim\;
-\mathrm{PC}_{\mathrm{ref}}+2^{n-1}-1.
+\mathrm{PC}_{\mathrm{ref}}+2^{n-1}-1.s
 \]</div>
-<p>在取指后 PC 已指向下一条指令的模型中，基准就是下一条指令地址。例如，转移指令位于 <code>1000H</code>、长度为 2 字节、按字节编址，位移为 <code>+5</code>，则目标为 <code>1000H + 2 + 5 = 1007H</code>。</p>
-<p>相对寻址适合条件分支和程序内部转移。代码整体移动时，只要指令与目标之间的距离不变，位移就不需要修改。</p>
-<div class="admonition note">
-<p class="admonition-title">先确定 PC 基准和位移单位</p>
-<p>PC 的基准由具体 ISA 决定。上述模型和 x86 相对转移以 <strong>下一条指令地址</strong> 为基准； RISC-V 分支则以 <strong>本条指令地址</strong> 为基准。题目若给出按字、按半字等单位编码的位移，还要先换算，才能与 PC 相加。</p>
+<div class="admonition tip">
+<p class="admonition-title">假设取指后 PC 已指向下一条指令，那么基准就是下一条指令地址。</p>
+<p>基准地址由具体 ISA 决定。例如， x86 的相对转移以下一条指令地址为基准； RISC-V 中的分支指令则以本条指令地址为基准。</p>
 </div>
+<p>相对寻址适合条件分支和程序内部转移，即主要用于转移类指令。例如，假设一条转移指令位于 <code>1000H</code>、长度为 2 字节，机器按字节编址，位移为 <code>+5</code>，则目标地址即为 <code>1000H + 2 + 5 = 1007H</code>。形式地址的位数决定了转移范围。</p>
+<p>代码整体移动时，只要指令与目标之间的距离不变，位移就不需要修改；这便于实现重定位和共享代码。</p>
 <h4 id="基址寻址">基址寻址<a class="headerlink" href="#基址寻址" title="Permanent link">&para;</a></h4>
 <p>基址寄存器 BR 提供一段存储区域的起点，指令中的 <span class="arithmatex">\(A\)</span> 表示相对该起点的偏移。它便于 <strong>程序重定位</strong>：程序从一个区域移到另一个区域时，可以通过改变基址，使原有偏移对应到新的位置。</p>
 <p>例如，某操作数相对程序起点的偏移为 <code>20H</code>，基址由 <code>1000H</code> 改为 <code>3000H</code> 后，访问位置由 <code>1020H</code> 变为 <code>3020H</code>，指令中的偏移不用改变。</p>
-<p>讨论多道程序重定位时，常采用“基址由系统设定，程序使用偏移访问”的模型。这是在说明该模型中的职责，不能据此认为所有 ISA 中用作基址的通用寄存器都禁止程序修改。</p>
+<p>在多道程序重定位模型中，系统设置基址，程序按偏移访问自己的区域。一般 ISA 中，基址也可以由普通通用寄存器承担，访问权限与寄存器用途分别由具体规则确定。</p>
 <h4 id="变址寻址">变址寻址<a class="headerlink" href="#变址寻址" title="Permanent link">&para;</a></h4>
 <p>指令中的 <span class="arithmatex">\(A\)</span> 通常给出数组等数据区域的起点，变址寄存器 IX 保存随程序变化的偏移，适合 <strong>数组访问和循环遍历</strong>。</p>
-<p>例如，数组首地址为 <code>1000H</code>、每个元素占 4 字节，访问从 0 编号的第 3 个元素时，字节偏移为 <span class="arithmatex">\(3\times4=12\)</span>，地址为 <code>100CH</code>。不能直接把下标 3 当成字节偏移。</p>
+<p>例如，数组首地址为 <code>1000H</code>、每个元素占 4 字节，访问从 0 编号的第 3 个元素时，字节偏移为 <span class="arithmatex">\(3\times4=12\)</span>，地址为 <code>100CH</code>。</p>
 <p>基址寻址和变址寻址的加法形式相似，区别主要在用途：前者常把寄存器内容作为区域起点，后者常把寄存器内容作为变化的偏移。带比例因子的具体编码见 <a href="#x86-的内存地址表达式">x86 的内存地址表达式</a>。相对、基址、变址寻址都属于通过基准与位移形成地址的方式。</p>
 <h4 id="堆栈寻址">堆栈寻址<a class="headerlink" href="#堆栈寻址" title="Permanent link">&para;</a></h4>
 <p><strong>堆栈</strong> 按后进先出（ LIFO ）的顺序访问， SP 指示栈顶位置，指令隐含使用栈顶操作数。栈可以由寄存器组实现，也可以在主存中实现。</p>
 <p>压栈和出栈需要配合调整 SP ，但栈向高地址还是低地址增长、SP 指向已占用单元还是下一空闲位置，都要看具体约定。后面的<a href="#压栈和出栈">压栈和出栈</a>采用 32 位 x86 的内存栈模型。</p>
+<div id="常见寻址方式怎样选择"></div>
+
+<div class="admonition question">
+<p class="admonition-title">常见寻址方式怎样选择？</p>
+<p><a href="#常见的数据寻址方式">常见的数据寻址方式</a>集中列出了地址形成方法、取数次数和适用场景。做题时可以先判断题目给出的是常量、寄存器编号、指针还是相对某个基准的偏移，再选择对应模型。</p>
+<p>尤其要对照<a href="#寄存器寻址">寄存器寻址</a>与<a href="#寄存器间接寻址">寄存器间接寻址</a>，以及<a href="#基址寻址">基址寻址</a>与<a href="#变址寻址">变址寻址</a>。遇到相似的字段或加法形式时，依据字段承担的角色理解指令。</p>
+</div>
 <h2 id="程序的机器级代码表示">程序的机器级代码表示<a class="headerlink" href="#程序的机器级代码表示" title="Permanent link">&para;</a></h2>
 <p>机器代码用二进制编码指令，汇编代码则用助记符、寄存器名和地址表达式等表示同样的操作。阅读反汇编时，通常可以看到指令地址、机器码字节和汇编指令三部分；指令地址之差可以帮助判断上一条指令的长度。</p>
 <p>本节采用 <strong>32 位 x86</strong>，示例默认使用 <strong>Intel 汇编格式</strong>。寄存器宽度、操作数宽度和栈操作都按这一约定分析。</p>
@@ -2697,7 +2643,7 @@ k=\left\lceil\log_2N\right\rceil.
 </tr>
 </tbody>
 </table>
-<p>这些名称反映常见用途，不意味着每个寄存器只能承担表中的一种工作。具体指令可能限制某些操作数的位置，函数之间还需要遵守<a href="#寄存器保存约定">寄存器保存约定</a>。此外， EIP 对应程序计数器，用于指示指令位置。</p>
+<p>这些寄存器可以用于通用计算，部分指令还会隐含指定其中某些寄存器。函数调用时，双方遵守<a href="#寄存器保存约定">寄存器保存约定</a>。EIP 对应程序计数器，用于指示指令位置。</p>
 <p>为了兼容较窄的数据操作，同一寄存器的部分位可以用其他名字访问。例如：</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -2707,7 +2653,7 @@ k=\left\lceil\log_2N\right\rceil.
 \mathrm{AL}&amp;:\text{EAX 的位 }7\sim0.
 \end{aligned}
 \]</div>
-<p>EBX、ECX、EDX 也分别具有 BX/BH/BL、CX/CH/CL、DX/DH/DL。它们是 <strong>同一存储位置的不同部分</strong>，并非额外独立的寄存器。例如，修改 AL 会同时改变 AX 和 EAX 的低 8 位。</p>
+<p>EBX、ECX、EDX 也分别具有 BX/BH/BL、CX/CH/CL、DX/DH/DL。它们是 <strong>同一存储位置的不同部分</strong>。例如，修改 AL 会同时改变 AX 和 EAX 的低 8 位。</p>
 <h4 id="汇编格式与操作数宽度">汇编格式与操作数宽度<a class="headerlink" href="#汇编格式与操作数宽度" title="Permanent link">&para;</a></h4>
 <p>Intel 格式一般写作 <code>指令 目的操作数, 源操作数</code>。目的可以是寄存器或内存，源可以是寄存器、内存或立即数；<strong>具体允许的组合由指令决定</strong>。</p>
 <p>内存操作数用方括号表示，括号内是地址表达式。例如，<code>eax</code> 表示寄存器中的值，<code>[eax]</code> 表示以该值为地址访问内存，两者分别对应<a href="#寄存器寻址">寄存器寻址</a>和<a href="#寄存器间接寻址">寄存器间接寻址</a>。</p>
@@ -2734,7 +2680,7 @@ k=\left\lceil\log_2N\right\rceil.
 </tr>
 </tbody>
 </table>
-<p><strong>x86 汇编中的 word 固定表示 16 位</strong>，不能因为当前讨论的是 32 位机器，就把 <code>word ptr</code> 当成 32 位。</p>
+<p><strong>x86 汇编中的 word 为 16 位， dword 为 32 位</strong>。汇编操作数宽度按这些术语读取，机器字长则描述处理器的基本数据宽度。</p>
 <p>如果另一操作数的寄存器已经表明宽度，如 <code>mov [ebx], eax</code>，汇编器通常能推断该内存操作为 32 位；若写成 <code>mov [ebx], 5</code>，则缺少明确的数据宽度，应写成 <code>mov dword ptr [ebx], 5</code> 等形式。</p>
 <p>另一种常见写法是 <strong>AT&amp;T 格式</strong>，阅读时注意以下差别：</p>
 <table>
@@ -2800,6 +2746,17 @@ k=\left\lceil\log_2N\right\rceil.
 </tr>
 </tbody>
 </table>
+<div id="一个操作数占多个单元地址怎样给出"></div>
+
+<div class="admonition question">
+<p class="admonition-title">一个操作数占多个单元，地址怎样给出？</p>
+<p>按字节编址时，指令通常给出操作数的 <strong>起始字节地址</strong>，再由指令和操作数类型确定访问宽度。若起始地址为 <span class="arithmatex">\(A\)</span>、操作数占 <span class="arithmatex">\(k\)</span> 字节，则覆盖的地址为：</p>
+<div class="arithmatex">\[
+A,A+1,\ldots,A+k-1.
+\]</div>
+<p>例如，<code>mov eax, dword ptr [1000H]</code> 以 <code>1000H</code> 为起点，按 <code>dword ptr</code> 指定的宽度访问 <code>1000H</code>～<code>1003H</code> 的 4 个字节，再组合成一个 32 位操作数。宽度写法见<a href="#汇编格式与操作数宽度">汇编格式与操作数宽度</a>。</p>
+<p>多字节数据还要按 ISA 规定的字节顺序组合。以 x86 的小端存放为例，若这四个地址依次保存 <code>44H</code>、<code>33H</code>、<code>22H</code>、<code>11H</code>，则加载到 EAX 的数值为 <code>11223344H</code>。</p>
+</div>
 <h4 id="x86-的内存地址表达式">x86 的内存地址表达式<a class="headerlink" href="#x86-的内存地址表达式" title="Permanent link">&para;</a></h4>
 <p>一种常见的地址计算形式为：</p>
 <div class="arithmatex">\[
@@ -2807,7 +2764,7 @@ k=\left\lceil\log_2N\right\rceil.
 \]</div>
 <p>其中 base 为基址寄存器， index 为变址寄存器， scale 为比例因子， disp 为常量位移。比例因子可以是 1、2、4、8 ，部分项可以省略。</p>
 <p>例如，<code>[eax+ecx*4+8]</code> 可以用 EAX 保存数组起点、ECX 保存下标，再跳过起点后的 8 字节。若 <code>eax=1000H</code>、<code>ecx=3</code>，则地址为 <code>1014H</code>。</p>
-<p>同一条指令也可能把内存操作数编码成寄存器间接、带位移等不同形式。因此，看到相同助记符，不能假定机器码或指令长度也相同。x86 的变长编码可能包含前缀、操作码、操作数描述、位移和立即数等部分。</p>
+<p>x86 的变长编码可以包含前缀、操作码、操作数描述、位移和立即数等字段。同一助记符使用不同寻址形式时，编码及指令长度也可能变化。</p>
 <h4 id="数据传送与有效地址计算">数据传送与有效地址计算<a class="headerlink" href="#数据传送与有效地址计算" title="Permanent link">&para;</a></h4>
 <p><strong>MOV</strong> 将源值复制到目的位置，源值本身不会因这次复制而被清除。常见形式包括寄存器之间、寄存器与内存之间，以及立即数到寄存器或内存。</p>
 <p>普通 <code>mov</code> 的两个操作数不能同时位于内存。若要复制两个内存位置之间的数据，需要借助寄存器：</p>
@@ -2899,9 +2856,9 @@ k=\left\lceil\log_2N\right\rceil.
 </tbody>
 </table>
 <p>两操作数 IMUL 使用目的寄存器的 <strong>原值</strong> 作为一个乘数；三操作数 IMUL 则用第二个操作数与第三个立即数相乘，第一项只接收结果。EDX:EAX 表示拼接，高 32 位为 EDX ，低 32 位为 EAX。</p>
-<p>对 32 位 MUL ，若 EDX 非零，说明乘积不能只用低 32 位表示， CF 和 OF 置 1 ，否则置 0。对上述截断结果的 IMUL ，若完整乘积不能表示为 32 位有符号数， CF 和 OF 置 1 ；不要用“高半部非零”直接判断有符号乘法溢出。</p>
+<p>对 32 位 MUL ，若 EDX 非零，说明乘积不能只用低 32 位表示， CF 和 OF 置 1 ，否则置 0。对上述截断结果的 IMUL ，若完整乘积不能表示为 32 位有符号数， CF 和 OF 置 1 ，即高半部应恰好是低半部的符号扩展。</p>
 <p><strong>除法</strong> 的显式操作数是除数。32 位 <code>div</code> 和 <code>idiv</code> 都以 EDX:EAX 为 64 位被除数，结果的商放在 EAX ，余数放在 EDX ；前者按无符号数解释，后者按有符号数解释。除数可以是寄存器或内存，不能直接写成立即数。</p>
-<p>分析 <code>idiv ebx</code> 时，必须同时知道 EDX 和 EAX 的内容，不能只把 EAX 看作完整被除数。</p>
+<p>若原始被除数是 EAX 中的一个 32 位有符号数，执行 <code>idiv ebx</code> 前需要把它符号扩展到 EDX:EAX ，例如使用 <code>cdq</code>；无符号 <code>div</code> 的相应准备则是让 EDX 为 0。随后都以完整 EDX:EAX 参与除法。</p>
 <h4 id="逻辑运算与移位">逻辑运算与移位<a class="headerlink" href="#逻辑运算与移位" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
@@ -2944,8 +2901,8 @@ k=\left\lceil\log_2N\right\rceil.
 </tr>
 </tbody>
 </table>
-<p>例如，<code>and eax, 0x0f</code> 保留低 4 位并清除其余位，<code>xor edx, edx</code> 将 EDX 清零。NOT 对每一位取反， NEG 取算术负值，两者相差“加 1”这一步，不能混用。</p>
-<p>移位计数可以由立即数或 CL 提供，不能任意指定其他寄存器作为计数操作数。用移位替代乘法时，还要考虑数据宽度、符号解释以及被移出的位。</p>
+<p>例如，<code>and eax, 0x0f</code> 保留低 4 位并清除其余位，<code>xor edx, edx</code> 将 EDX 清零。NOT 对每一位取反， NEG 取算术负值，两者相差“加 1”这一步，分别用于按位取反与取负。</p>
+<p>移位计数可以由立即数或 CL 提供，寄存器计数形式固定使用 CL。用移位替代乘法时，还要考虑数据宽度、符号解释以及被移出的位。</p>
 <h4 id="比较测试与控制流">比较、测试与控制流<a class="headerlink" href="#比较测试与控制流" title="Permanent link">&para;</a></h4>
 <p><strong>CMP</strong> 相当于执行减法但不保存差，只更新条件码。例如 <code>cmp eax, ebx</code> 按 <code>eax - ebx</code> 设置标志， EAX 和 EBX 的值不变。</p>
 <p><strong>TEST</strong> 相当于执行按位与但不保存结果。例如 <code>test eax, eax</code> 可以检查 EAX 是否为零；<code>test eax, 1</code> 可以检查最低位是否为 1。</p>
@@ -2956,8 +2913,8 @@ k=\left\lceil\log_2N\right\rceil.
 <h4 id="条件码与分支">条件码与分支<a class="headerlink" href="#条件码与分支" title="Permanent link">&para;</a></h4>
 <p>判断条件之前，需要确认哪些指令最近设置过相关标志。ZF 表示结果是否为零， SF 反映结果的符号位， OF 用于判断有符号溢出；对于 CMP 所做的无符号减法， CF 为 1 表示发生借位。运算电路如何产生标志可联系<a href="../datas/#带标志加法器">带标志加法器</a>理解。</p>
 <div class="admonition info">
-<p class="admonition-title">不同指令对标志的影响并不相同</p>
-<p>INC、DEC 会更新 ZF、SF、OF 等标志，但保留 CF ； MOV、LEA、NOT 不改变这些条件码。因此，不能笼统地认为每条算术、逻辑或传送指令都会更新全部标志。阅读分支前的代码时，应追踪 <strong>该分支实际使用的标志由哪条指令最后设置</strong>。参见 Intel 指令手册 <a href="https://www.intel.com/content/dam/www/public/us/en/documents/manuals/64-ia-32-architectures-software-developer-vol-2a-manual.pdf">Volume 2A 的 INC、DEC、LEA 条目</a>和 <a href="https://cdrdv2-public.intel.com/868141/253667-089-sdm-vol-2b.pdf">Volume 2B 的 MOV、NOT 条目</a>。</p>
+<p class="admonition-title">追踪条件码的来源</p>
+<p>INC、DEC 更新 ZF、SF、OF 等标志，保留 CF ； MOV、LEA、NOT 保留这些条件码。阅读分支前的代码时，应追踪 <strong>分支所用的每个标志由哪条指令最后设置</strong>。具体规则见 Intel 手册 <a href="https://www.intel.com/content/dam/www/public/us/en/documents/manuals/64-ia-32-architectures-software-developer-vol-2a-manual.pdf">Volume 2A 的 INC、DEC、LEA 条目</a>及 <a href="https://cdrdv2-public.intel.com/868141/253667-089-sdm-vol-2b.pdf">Volume 2B 的 MOV、NOT 条目</a>。</p>
 </div>
 <h4 id="有符号与无符号比较">有符号与无符号比较<a class="headerlink" href="#有符号与无符号比较" title="Permanent link">&para;</a></h4>
 <p>同一位串可能表示无符号数，也可能表示补码整数。CMP 本身不选择这两种解释，后面的条件转移选择 <strong>怎样解释标志</strong>。</p>
@@ -3017,10 +2974,12 @@ k=\left\lceil\log_2N\right\rceil.
 </tr>
 </tbody>
 </table>
-<p>标志条件对应 Intel 指令手册的 <a href="https://www.intel.com/content/dam/www/public/us/en/documents/manuals/64-ia-32-architectures-software-developer-vol-2a-manual.pdf">Jcc 条目</a>。</p>
+<div class="admonition info">
+<p class="admonition-title"><a href="https://www.intel.com/content/dam/www/public/us/en/documents/manuals/64-ia-32-architectures-software-developer-vol-2a-manual.pdf">Intel 指令手册的 Jcc 条目</a>。</p>
+</div>
 <p>有符号比较常用 L/G （ less/greater ），无符号比较常用 B/A （ below/above ）。例如， 8 位的 <code>FFH</code> 按补码解释为 <span class="arithmatex">\(-1\)</span>，按无符号数解释为 255 ，与 1 比较时，两种解释会得到相反的大小关系。</p>
-<details class="note">
-<summary>为什么不能只看 SF？</summary>
+<details class="example">
+<summary>有符号比较怎样用 OF 修正 SF？</summary>
 <p>以 8 位补码为例，比较 127 与 <span class="arithmatex">\(-1\)</span> 时，数学上的差是 128 ，截断为 8 位后变成 <code>80H</code>。此时 SF=1 ，但 OF=1 ，说明这个负号来自溢出；二者相等， JG 仍能正确判定 <span class="arithmatex">\(127&gt;-1\)</span>。</p>
 </details>
 <h4 id="if-else-的控制路径">if-else 的控制路径<a class="headerlink" href="#if-else-的控制路径" title="Permanent link">&para;</a></h4>
@@ -3071,7 +3030,7 @@ k=\left\lceil\log_2N\right\rceil.
 </tr>
 </tbody>
 </table>
-<p>在不考虑循环体提前退出的通常控制路径上， do-while 的循环体至少执行一次， while 和 for 可能一次都不执行。条件表达式每次测试时都要重新求值，不能只保留第一次的判断结果。</p>
+<p>在通常控制路径上， do-while 先执行一次循环体， while 和 for 则可能执行零次。每次到达测试位置，都重新求值条件表达式，再决定继续或退出。</p>
 <p>while 可以先做一次入口判断，再把后续重复过程组织为 do-while 的形式。这样将条件回跳放在循环体末尾，但仍然要保留 <strong>初始条件为假时跳过整个循环</strong> 的路径。</p>
 <h4 id="for-循环示例">for 循环示例<a class="headerlink" href="#for-循环示例" title="Permanent link">&para;</a></h4>
 <p>考虑下面的循环，假定 n 与计算过程中的结果均不导致有符号整数溢出：</p>
@@ -3096,7 +3055,7 @@ k=\left\lceil\log_2N\right\rceil.
 <h3 id="过程调用的机器级表示">过程调用的机器级表示<a class="headerlink" href="#过程调用的机器级表示" title="Permanent link">&para;</a></h3>
 <p>一个过程 P 调用另一个过程 Q ，除了改变执行位置，还要传递参数、保护需要保留的数据、接收结果，并在 Q 结束后回到 P。<strong>指令负责基本的控制转移，调用约定规定双方怎样合作</strong>。</p>
 <h4 id="call-与-ret">CALL 与 RET<a class="headerlink" href="#call-与-ret" title="Permanent link">&para;</a></h4>
-<p>本节采用 32 位近调用。执行 CALL 时，处理器把 <strong>紧随 CALL 的下一条指令地址</strong> 压入栈，再把 EIP 改为被调用过程的入口。返回地址由实际指令长度确定，不能因为是 32 位机器就固定写成“CALL 的地址加 4”。</p>
+<p>本节采用 32 位近调用。执行 CALL 时，处理器把 <strong>紧随 CALL 的下一条指令地址</strong> 压入栈，再把 EIP 改为被调用过程的入口。返回地址由 CALL 的实际编码长度确定。</p>
 <p>普通 RET 从当前栈顶取出返回地址送入 EIP ，同时使 ESP 增加 4。它使用的是栈顶保存的地址，因此返回前必须让 ESP 指向正确的返回地址位置。</p>
 <p>调用一次通常经历以下步骤：</p>
 <ol>
@@ -3139,8 +3098,8 @@ k=\left\lceil\log_2N\right\rceil.
 </tr>
 </tbody>
 </table>
-<p>“调用者保存”并不是每次调用都必须保存所有这些寄存器；只有调用后仍要使用的旧值才需要保存。同样，被调用者不使用某个需要保留的寄存器时，也无需额外压栈。</p>
-<p>这些规则属于具体的调用约定，不能直接套用到另一种 ISA、64 位代码或不同的参数传递约定上。</p>
+<p>保存责任针对 <strong>调用后仍需保留的值</strong>： P 只需保存仍会使用的调用者保存寄存器， Q 只需保存自己确实要改写的被调用者保存寄存器。未使用的寄存器可保持原状。</p>
+<p>这里的寄存器分工、栈上传参和参数回收方式共同构成本节的调用约定；其他 ISA、64 位环境或其他约定按各自规则组织。</p>
 <h4 id="栈帧与参数位置">栈帧与参数位置<a class="headerlink" href="#栈帧与参数位置" title="Permanent link">&para;</a></h4>
 <p><strong>栈帧</strong> 是一次过程调用在运行时栈中使用的区域，可以包含局部变量、保存的寄存器、为后续调用准备的参数等信息。采用帧指针时， EBP 提供稳定的访问基准， ESP 则随分配空间和压栈、出栈而变化。</p>
 <p>典型的准备阶段为：</p>
@@ -3181,8 +3140,8 @@ k=\left\lceil\log_2N\right\rceil.
 </table>
 <p>参数通常按从右到左的顺序压栈，使第一个参数更靠近返回地址。例如先压第二个参数，再压第一个参数， CALL 又压入返回地址，过程入口再保存旧 EBP ，便得到表中的偏移。</p>
 <details class="note">
-<summary>局部空间不一定等于变量大小之和</summary>
-<p>编译器可能把部分变量放入寄存器，也可能为寄存器保存、传出参数和对齐保留额外空间。因此，<code>sub esp, N</code> 中的 N 不能只按局部变量个数猜测。栈帧是否保留 EBP、如何对齐，也取决于编译器与调用约定。</p>
+<summary>栈帧空间由哪些部分构成？</summary>
+<p>栈帧分配可能包括局部变量、保存的寄存器、传出参数和对齐填充；部分变量也可能始终保存在寄存器中。分析 <code>sub esp, N</code> 时，应结合后续访问确认各区域用途， EBP 是否保留、整体怎样对齐则按调用约定确定。</p>
 </details>
 <h4 id="完整调用示例">完整调用示例<a class="headerlink" href="#完整调用示例" title="Permanent link">&para;</a></h4>
 <p>下面使用一个整数加法过程：</p>
@@ -3218,7 +3177,7 @@ k=\left\lceil\log_2N\right\rceil.
 </span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="nf">ret</span>
 </span></code></pre></div>
 <p>add2 没有为局部变量分配空间，也没有修改 EBX、ESI、EDI ，因此结束时可以直接 <code>pop ebp</code> 再 <code>ret</code>。它返回后，两个参数仍留在 caller 的栈上，所以 caller 用 <code>add esp, 8</code> 回收参数空间，最后 EAX 中的结果为 16。</p>
-<p>caller 的 <strong>LEAVE</strong> 等价于 <code>mov esp, ebp</code> 再 <code>pop ebp</code>：先释放当前帧的局部空间，再恢复上一层的帧指针。随后 RET 才取出 caller 自己的返回地址，回到调用 caller 的过程。两者承担不同工作，不能把 LEAVE 当成返回指令。</p>
+<p>caller 的 <strong>LEAVE</strong> 等价于 <code>mov esp, ebp</code> 再 <code>pop ebp</code>：先释放当前帧的局部空间，再恢复上一层的帧指针。随后 RET 才取出 caller 自己的返回地址，回到调用 caller 的过程。LEAVE 撤销当前栈帧， RET 使用返回地址完成控制转移。</p>
 <p>如果 Q 又调用其他过程，或递归调用自身，每次调用都需要保留各自的返回位置和仍要使用的数据。按上述机制建立的各层栈帧使这些信息不会互相覆盖。</p>
 <div class="admonition note">
 <p class="admonition-title">保存返回地址的方式由 ISA 决定</p>
@@ -3270,71 +3229,15 @@ k=\left\lceil\log_2N\right\rceil.
 <p>它强调 <strong>寄存器之间的运算</strong>，通常采用 <strong>LOAD/STORE 结构</strong>：访问内存中的数据由加载和存储指令承担，算术、逻辑操作主要在寄存器中完成。这里的“访问内存”指数据访问，取指仍然需要取得指令编码。具体指令序列见<a href="#loadstore-怎样完成对内存数据的计算">访存与运算分离的例子</a>。</p>
 <p>传统 RISC 的基本指令通常采用定长编码，格式和寻址方式较少； CPU 配备较多通用寄存器，控制器常以硬布线逻辑为主。这些安排便于译码，并减少数据在主存与寄存器之间的往返。</p>
 <p>RISC 普遍采用流水线来提高指令吞吐率。编译器需要选择指令组合、分配寄存器并安排执行顺序，因此编译优化在这种设计中十分重要。</p>
-<p>指令数量较少是传统模型中的特点，但“精简”不能只按助记符总数理解。RISC-V 的基本指令采用 32 位编码， C 扩展又提供 16 位压缩指令，说明“定长”也不是所有扩展必须遵守的条件。</p>
+<p>RISC 的“精简”侧重常用操作、规整格式和易于实现的指令语义。扩展可以加入新的功能和编码形式，例如 RISC-V 基本指令为 32 位， C 扩展提供 16 位压缩指令。</p>
 <div class="admonition note">
-<p class="admonition-title">每周期完成一条，不等于每条只用一个周期</p>
-<p>在理想单发射流水线中，流水线填满后可以每个时钟周期完成一条指令，但一条指令本身仍可能经过多个阶段、耗费多个周期。前者描述吞吐率，后者描述单条指令的延迟；访存等待等因素还可能降低实际吞吐率。不能将 RISC 理解成“所有指令都在一个周期内执行完”。</p>
+<p class="admonition-title">吞吐率与单条指令延迟</p>
+<p>理想单发射流水线填满后，可以每周期完成一条指令；单条指令仍经过多个阶段。前者是吞吐率，后者是延迟，访存等待和冒险停顿会增加实际执行时间。</p>
 </div>
-<h3 id="cisc-和-risc-的比较">CISC 和 RISC 的比较<a class="headerlink" href="#cisc-和-risc-的比较" title="Permanent link">&para;</a></h3>
-<p>前面两节已经分别说明两种设计的特征，比较时可以对照下面的入口：</p>
-<table>
-<thead>
-<tr>
-<th>对比角度</th>
-<th>CISC 对应内容</th>
-<th>RISC 对应内容</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>指令功能与编码</td>
-<td><a href="#复杂指令系统计算机cisc">复杂操作、指令规模、编码与寻址</a></td>
-<td><a href="#精简指令系统计算机risc">常用简单操作与基本格式</a></td>
-</tr>
-<tr>
-<td>操作数与数据传送</td>
-<td><a href="#复杂指令系统计算机cisc">内存操作数</a></td>
-<td><a href="#精简指令系统计算机risc">LOAD/STORE 与寄存器配置</a></td>
-</tr>
-<tr>
-<td>执行与控制</td>
-<td><a href="#复杂指令系统计算机cisc">执行工作量、控制实现</a></td>
-<td><a href="#精简指令系统计算机risc">硬布线控制、流水线</a></td>
-</tr>
-<tr>
-<td>软件生成代码</td>
-<td><a href="#复杂指令系统计算机cisc">复杂组合中的指令选择</a></td>
-<td><a href="#精简指令系统计算机risc">指令组合、寄存器分配与调度</a></td>
-</tr>
-</tbody>
-</table>
-<p>RISC 简化控制逻辑后，可以把更多芯片资源用于寄存器和运算部件；规整设计也便于缩短设计周期、调试和验证，提高可靠性。不过，实现相同复杂功能可能需要更多机器指令。</p>
-<p>传统数量对照中， RISC 常被描述为一般少于 100 种；它与前面的 <a href="#复杂指令系统计算机cisc">CISC 指令规模</a>都属于经验描述，不能作为分类界限。向后兼容性同样取决于具体 ISA 的演进与实现，而不能只根据 CISC/RISC 名称断言。</p>
-<p>比较程序性能时，需要同时考虑动态指令数 <span class="arithmatex">\(I\)</span>、平均每条指令所用周期数 <span class="arithmatex">\(\mathrm{CPI}\)</span> 和时钟周期 <span class="arithmatex">\(T_{\mathrm{clk}}\)</span>：</p>
-<div class="arithmatex">\[
-T_{\mathrm{CPU}}=I\times\mathrm{CPI}\times T_{\mathrm{clk}}.
-\]</div>
-<p>复杂指令可能减少 <span class="arithmatex">\(I\)</span>，简单指令可能降低 CPI 或便于缩短时钟周期；还要结合编译结果和实际运行条件判断，不能由指令集名称直接推出程序运行时间。</p>
-<h2 id="本章小结">本章小结<a class="headerlink" href="#本章小结" title="Permanent link">&para;</a></h2>
-<p>复习时可以沿着下面三个问题检查理解，而不必再次抄写定义：</p>
-<ol>
-<li><strong>软件怎样描述处理器的工作？</strong> 对照<a href="#指令集体系结构">指令集体系结构</a>，确认机器级程序能依赖哪些接口和状态。</li>
-<li><strong>一条指令怎样描述一次操作？</strong> 从<a href="#指令的基本格式">基本格式</a>出发，读出操作、操作数位置和结果位置，再判断<a href="#扩展操作码指令格式">操作码怎样分配</a>。</li>
-<li><strong>寻址方式越丰富越好吗？</strong> 联系<a href="#数据寻址">数据寻址</a>和 <a href="#cisc-和-risc-的比较">CISC/RISC 的设计取舍</a>，同时考虑程序表达是否简洁，以及译码、地址计算和控制逻辑的成本。</li>
-</ol>
-<p>处理机器级程序题时，把指令含义、操作数宽度和控制路径连在一起：先确定数据如何取得，再判断运算如何改变寄存器和条件码，最后跟踪转移目标、循环次数或调用后的栈状态。</p>
-<h2 id="常见问题和易混淆知识点">常见问题和易混淆知识点<a class="headerlink" href="#常见问题和易混淆知识点" title="Permanent link">&para;</a></h2>
-<h4 id="常见寻址方式怎样选择">常见寻址方式怎样选择？<a class="headerlink" href="#常见寻址方式怎样选择" title="Permanent link">&para;</a></h4>
-<p><a href="#常见的数据寻址方式">常见的数据寻址方式</a>集中列出了地址形成方法、取数次数和适用场景。做题时可以先判断题目给出的是常量、寄存器编号、指针还是相对某个基准的偏移，再选择对应模型。</p>
-<p>尤其要对照<a href="#寄存器寻址">寄存器寻址</a>与<a href="#寄存器间接寻址">寄存器间接寻址</a>，以及<a href="#基址寻址">基址寻址</a>与<a href="#变址寻址">变址寻址</a>。遇到相似的字段或加法形式时，依据字段承担的角色理解指令。</p>
-<h4 id="一个操作数占多个单元地址怎样给出">一个操作数占多个单元，地址怎样给出？<a class="headerlink" href="#一个操作数占多个单元地址怎样给出" title="Permanent link">&para;</a></h4>
-<p>按字节编址时，指令通常给出操作数的 <strong>起始字节地址</strong>，再由指令和操作数类型确定访问宽度。若起始地址为 <span class="arithmatex">\(A\)</span>、操作数占 <span class="arithmatex">\(k\)</span> 字节，则覆盖的地址为：</p>
-<div class="arithmatex">\[
-A,A+1,\ldots,A+k-1.
-\]</div>
-<p>例如，<code>mov eax, dword ptr [1000H]</code> 访问从 <code>1000H</code> 到 <code>1003H</code> 的 4 个字节。起始地址不是完整操作数内容，也不意味着只读取一个字节；数据宽度的写法见<a href="#汇编格式与操作数宽度">汇编格式与操作数宽度</a>。</p>
-<p>多字节数据还要按 ISA 规定的字节顺序组合。以 x86 的小端存放为例，若这四个地址依次保存 <code>44H</code>、<code>33H</code>、<code>22H</code>、<code>11H</code>，则加载到 EAX 的数值为 <code>11223344H</code>。</p>
-<h4 id="loadstore-怎样完成对内存数据的计算">LOAD/STORE 怎样完成对内存数据的计算？<a class="headerlink" href="#loadstore-怎样完成对内存数据的计算" title="Permanent link">&para;</a></h4>
+<div id="loadstore-怎样完成对内存数据的计算"></div>
+
+<div class="admonition question">
+<p class="admonition-title">LOAD/STORE 怎样完成对内存数据的计算？</p>
 <p>沿用 <a href="#精简指令系统计算机risc">RISC 的访存组织</a>，考虑 <code>*p = *q + *r</code>，假定三个指针均指向有效的 32 位整数，计算结果也在相应表示范围内。在 RV32 的例子中，让 a0、a1、a2 分别保存 p、q、r ，可以写成：</p>
 <div class="language-asm highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nf">lw</span><span class="w"> </span><span class="no">t0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">(</span><span class="no">a1</span><span class="p">)</span><span class="w">              </span><span class="c1"># 从 q 取得第一个操作数</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nf">lw</span><span class="w"> </span><span class="no">t1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">(</span><span class="no">a2</span><span class="p">)</span><span class="w">              </span><span class="c1"># 从 r 取得第二个操作数</span>
@@ -3347,7 +3250,55 @@ A,A+1,\ldots,A+k-1.
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nf">add</span><span class="w"> </span><span class="no">eax</span><span class="p">,</span><span class="w"> </span><span class="no">dword</span><span class="w"> </span><span class="no">ptr</span><span class="w"> </span><span class="p">[</span><span class="no">edi</span><span class="p">]</span><span class="w">   </span><span class="c1"># edi 保存 r</span>
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="nf">mov</span><span class="w"> </span><span class="no">dword</span><span class="w"> </span><span class="no">ptr</span><span class="w"> </span><span class="p">[</span><span class="no">ebx</span><span class="p">],</span><span class="w"> </span><span class="no">eax</span><span class="w">   </span><span class="c1"># ebx 保存 p</span>
 </span></code></pre></div>
-<p>第二条指令把读取数据和相加结合起来。它使用了较少的机器指令，但这本身还不足以说明完成整个计算所需的时间更短，应结合前面的<a href="#cisc-和-risc-的比较">性能关系</a>分析。</p>
+<p>第二条指令把读取数据与相加结合起来，使机器指令数由 4 条减为 3 条。比较执行时间时，还需把对应 CPI 和时钟周期代入<a href="#cisc-和-risc-的比较">性能关系</a>。</p>
+</div>
+<h3 id="cisc-和-risc-的比较">CISC 和 RISC 的比较<a class="headerlink" href="#cisc-和-risc-的比较" title="Permanent link">&para;</a></h3>
+<p>两种传统设计可以直接对照如下：</p>
+<center class="centered-table">
+<table>
+<thead>
+<tr>
+<th>对比项</th>
+<th>CISC</th>
+<th>RISC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>指令与编码</td>
+<td>功能较复杂，格式和寻址组合较多，常为变长编码</td>
+<td>优先支持简单常用操作，基本格式较规整</td>
+</tr>
+<tr>
+<td>数据访问</td>
+<td>运算指令可直接使用内存操作数</td>
+<td>以 LOAD/STORE 分离数据访存与寄存器运算</td>
+</tr>
+<tr>
+<td>寄存器</td>
+<td>传统设计中通用寄存器相对较少</td>
+<td>通常设置较多通用寄存器，减少数据往返</td>
+</tr>
+<tr>
+<td>控制与流水线</td>
+<td>复杂指令常采用微程序，译码和流水线控制较复杂</td>
+<td>常以硬布线控制为主，规整格式利于流水线</td>
+</tr>
+<tr>
+<td>代码生成</td>
+<td>指令选择和复杂组合的优化较困难</td>
+<td>编译器负责更多指令组合、寄存器分配和调度</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>传统对照常用 CISC 超过 200 种、RISC 少于 100 种来描述指令规模。这些数量反映早期设计倾向；具体分类关注指令语义和组织方式，软件兼容性则由 ISA 的演进与支持范围决定。</p>
+<p>RISC 把较多芯片资源用于寄存器和运算部件，规整控制便于设计、调试与验证；相同复杂功能可能需要更多机器指令。CISC 用复杂指令压缩程序表达，同时承担更多译码、控制和特殊情况处理。</p>
+<p>比较程序性能时，需要同时考虑动态指令数 <span class="arithmatex">\(I\)</span>、平均每条指令所用周期数 <span class="arithmatex">\(\mathrm{CPI}\)</span> 和时钟周期 <span class="arithmatex">\(T_{\mathrm{clk}}\)</span>：</p>
+<div class="arithmatex">\[
+T_{\mathrm{CPU}}=I\times\mathrm{CPI}\times T_{\mathrm{clk}}.
+\]</div>
+<p>复杂指令可能减少 <span class="arithmatex">\(I\)</span>，简单指令可能降低 CPI 或缩短时钟周期。把这些变化代入上式，才能比较完成同一任务的时间。</p>
 
 
 
