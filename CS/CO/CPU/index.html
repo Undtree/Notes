@@ -1548,15 +1548,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#异常和中断响应过程" class="md-nav__link">
+  <a href="#异常和中断的响应过程" class="md-nav__link">
     <span class="md-ellipsis">
       
-        异常和中断响应过程
+        异常和中断的响应过程
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="异常和中断响应过程">
+    <nav class="md-nav" aria-label="异常和中断的响应过程">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1571,10 +1571,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#保存断点和程序状态" class="md-nav__link">
+  <a href="#保存返回地址和程序状态" class="md-nav__link">
     <span class="md-ellipsis">
       
-        保存断点和程序状态
+        保存返回地址和程序状态
       
     </span>
   </a>
@@ -1594,6 +1594,17 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#中断处理与子程序调用的区别" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        中断处理与子程序调用的区别
+      
+    </span>
+  </a>
   
 </li>
         
@@ -3287,15 +3298,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#异常和中断响应过程" class="md-nav__link">
+  <a href="#异常和中断的响应过程" class="md-nav__link">
     <span class="md-ellipsis">
       
-        异常和中断响应过程
+        异常和中断的响应过程
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="异常和中断响应过程">
+    <nav class="md-nav" aria-label="异常和中断的响应过程">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3310,10 +3321,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#保存断点和程序状态" class="md-nav__link">
+  <a href="#保存返回地址和程序状态" class="md-nav__link">
     <span class="md-ellipsis">
       
-        保存断点和程序状态
+        保存返回地址和程序状态
       
     </span>
   </a>
@@ -3333,6 +3344,17 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#中断处理与子程序调用的区别" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        中断处理与子程序调用的区别
+      
+    </span>
+  </a>
   
 </li>
         
@@ -3731,7 +3753,7 @@
 
 <h1 id="中央处理器">中央处理器<a class="headerlink" href="#中央处理器" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 15303 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M360.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m64.6 136.1c-12.5 12.5-12.5 32.8 0 45.3l73.4 73.4-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l96-96c12.5-12.5 12.5-32.8 0-45.3l-96-96c-12.5-12.5-32.8-12.5-45.3 0zm-274.7 0c-12.5-12.5-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l73.3-73.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg></span> 8 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 1 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 51 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 15837 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M360.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m64.6 136.1c-12.5 12.5-12.5 32.8 0 45.3l73.4 73.4-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l96-96c12.5-12.5 12.5-32.8 0-45.3l-96-96c-12.5-12.5-32.8-12.5-45.3 0zm-274.7 0c-12.5-12.5-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l73.3-73.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg></span> 8 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 1 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 53 分钟</p>
 </div>
 <p>指令系统规定了处理器应当完成哪些操作，却没有说明这些操作怎样变成实际的数据传送、运算和状态变化。<strong>中央处理器</strong>（ Central Processing Unit ， CPU ）负责的正是后者：同一条指令，单周期实现一步做完，流水线实现则拆成若干段、与其他指令重叠执行，执行途中还可能被异常或中断打断。指令的含义由体系结构固定，而用哪种硬件组织去实现它并无定式，速度、成本与复杂度的差别正源于此。</p>
 <h2 id="cpu的功能和基本结构">CPU 的功能和基本结构<a class="headerlink" href="#cpu的功能和基本结构" title="Permanent link">&para;</a></h2>
@@ -3839,10 +3861,10 @@
 </tbody>
 </table>
 </center>
-<p><strong>程序状态字</strong>（ Program Status Word ， PSW ）描述处理器的运行状态。除运算条件码外，还可包含中断允许位、特权级等信息；条件码和其他控制状态怎样分配到寄存器中，取决于具体体系结构。</p>
+<p><strong>程序状态字</strong>（ Program Status Word ， PSW ）描述处理器的运行状态。除运算条件码外，还可包含中断允许位、特权级等信息；条件码和其他控制状态怎样分配到寄存器中，则取决于具体体系结构。</p>
 <div class="admonition note">
 <p class="admonition-title">PC 的含义要结合观察时刻</p>
-<p>开始取指时， PC 给出本次要取的指令地址；取指后若已完成顺序递增， PC 就指向下一条顺序指令。分支又可能覆盖这个值。计算返回地址或转移目标时，应先确认讨论的是哪个时刻的 PC。</p>
+<p>开始取指时， PC 给出本次要取的指令地址；取指后若已完成顺序递增， PC 就指向下一条顺序指令。分支又可能覆盖这个值。计算返回地址或转移目标时，应先确认讨论的是<u>哪个时刻</u>的 PC。</p>
 </div>
 <p>寄存器的位数由其保存的信息决定。在采用完整地址的基本模型中， PC、MAR 的宽度与地址宽度对应； MDR 的宽度与数据传送宽度对应。地址范围和编址单位的关系见<a href="../storage/#编址单位与寻址范围">编址单位与寻址范围</a>。</p>
 <p>这里列出的是便于分析的基本结构。具体实现可以合并、替换或省去某些部件，例如后面的<a href="#专用结构的数据通路">单周期专用数据通路</a>不设置单独的 IR。</p>
@@ -3890,7 +3912,7 @@
 \longrightarrow\text{确定后继指令}\longrightarrow\text{再次取指}.
 \]</div>
 <p>非分支指令按需要取得操作数、完成运算并保存结果；分支指令则判断条件并选择后继地址。各执行阶段的具体任务见<a href="#指令周期的基本概念">指令周期的基本概念</a>。</p>
-<p>正常执行流程还要接入<a href="#异常和中断响应过程">异常与中断响应</a>：异常可在相应执行阶段被发现；外部中断通常在指令边界处响应。响应后先执行处理程序，再根据事件性质决定继续执行的位置。</p>
+<p>正常执行流程还要接入<a href="#异常和中断的响应过程">异常与中断响应</a>：异常可在相应执行阶段被发现；外部中断通常在指令边界处响应。响应后先执行处理程序，再根据事件性质决定继续执行的位置。</p>
 <div class="admonition question">
 <p class="admonition-title">同一段二进制怎样被当作指令或数据？</p>
 <p>存储内容本身没有“指令”或“数据”的固定标签。取指时，读出的内容送往指令译码路径；取操作数时，内容进入数据运算路径。CPU 通过 <strong>执行阶段和控制信号所选择的流向</strong> 区分它们。MDR 作为主存传输的缓冲部件，既可能暂存指令，也可能暂存操作数。</p>
@@ -4580,8 +4602,12 @@ b_i=\left\lceil\log_2(m_i+1)\right\rceil,
 </tbody>
 </table>
 </center>
-<p>ISA 的设计风格和控制器实现是两个层次： RISC 常配合硬布线控制， CISC 的复杂操作常用微程序实现；具体设计可以组合不同技术。指令集层面的对照见<a href="../instr/#cisc-和-risc-的比较">CISC 和 RISC</a>。</p>
+<p>ISA 的设计风格和控制器实现是两个层次。RISC 常配合硬布线控制， CISC 的复杂操作常用微程序实现；但是这种组合并不是唯一的，具体设计也可能有其他的组合。指令集层面的对照请参见 <a href="../instr/#cisc-和-risc-的比较">CISC 和 RISC</a>。</p>
 <h2 id="异常和中断机制">异常和中断机制<a class="headerlink" href="#异常和中断机制" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">阅读前惠存</p>
+<p>这一章节和操作系统课程里的对应部分有很高的重合度。为了节省空间，在以下的笔记中可能出现较多的互相链接的情况。若有更好的组织方式，欢迎读者朋友发布评论或 PR ！</p>
+</div>
 <h3 id="异常和中断的基本概念">异常和中断的基本概念<a class="headerlink" href="#异常和中断的基本概念" title="Permanent link">&para;</a></h3>
 <p>CPU 执行过程中，某些事件需要暂时改变正常指令流，进入专门的处理程序：</p>
 <ul>
@@ -4589,9 +4615,9 @@ b_i=\left\lceil\log_2(m_i+1)\right\rceil,
 <li><strong>外部中断</strong> 来自处理器外部，如 I/O 完成、定时器到时，与当前执行哪条指令通常无关。</li>
 </ul>
 <p>程序性异常是 <strong>同步事件</strong>，在译码、地址转换或运算等相应阶段检测；外部中断是 <strong>异步事件</strong>，基本模型在指令完成后的边界检查并响应。事件出现、CPU 响应和软件处理，是先后相接的几个环节。</p>
-<p>操作系统利用这些机制接管设备事件和执行错误；用户程序通过陷入进入内核，请求<a href="../../OS/os_intro/#syscall">系统调用</a>。运行权限的组织见<a href="../../OS/os_intro/#priv">特权模式</a>。</p>
+<p>操作系统利用这些机制接管设备事件和执行错误；用户程序通过陷入进入内核，请求<a href="../../OS/os_intro/#syscall">系统调用</a>。运行权限如何划分，见<a href="../../OS/os_intro/#priv">特权模式</a>。</p>
 <h3 id="异常和中断的分类">异常和中断的分类<a class="headerlink" href="#异常和中断的分类" title="Permanent link">&para;</a></h3>
-<p>异常按恢复语义分为故障、自陷和终止。外部中断按是否受通常的中断允许控制，分为 <strong>可屏蔽中断</strong> 和 <strong>不可屏蔽中断</strong>：前者用于一般设备服务，可暂时禁止；后者用于掉电等紧急事件，按专门规则响应。下面结合断点位置说明各类事件。</p>
+<p>异常按恢复语义分为故障、自陷和终止，外部中断按是否受通常的中断允许控制，分为 <strong>可屏蔽中断</strong> 和 <strong>不可屏蔽中断</strong>。<a href="../../OS/os_intro/#中断的分类">中断的分类</a>一节中详细阐述了它们的定义。本节接着说明与实现有关的部分：事件在什么时刻被发现，处理后又从哪里继续。</p>
 <h4 id="返回地址与是否重执行">返回地址与是否重执行<a class="headerlink" href="#返回地址与是否重执行" title="Permanent link">&para;</a></h4>
 <center class="centered-table">
 <table>
@@ -4633,18 +4659,22 @@ b_i=\left\lceil\log_2(m_i+1)\right\rceil,
 <li><strong>向量中断</strong>：硬件取得事件类型号，据此定位对应处理程序；各入口信息集中保存在中断向量表中。</li>
 <li><strong>非向量中断</strong>：先转入统一入口，再由软件查询设备状态，确定中断源和处理程序。</li>
 </ul>
-<p>按 <strong>处理期间是否允许嵌套</strong>，可以分为单重中断与多重中断。前者在服务期间禁止新的可屏蔽中断，后者允许满足优先级要求的请求进入嵌套处理。实现多重中断需要保存各层断点、状态，并配合中断屏蔽和优先级控制。</p>
-<h3 id="异常和中断响应过程">异常和中断响应过程<a class="headerlink" href="#异常和中断响应过程" title="Permanent link">&para;</a></h3>
+<p>按 <strong>处理期间是否允许嵌套</strong>，可以分为单重中断与多重中断。前者在服务期间禁止新的可屏蔽中断，后者允许满足优先级要求的请求进入嵌套处理。实现多重中断需要保存各层返回地址、状态，并配合中断屏蔽和优先级控制。</p>
+<h3 id="异常和中断的响应过程">异常和中断的响应过程<a class="headerlink" href="#异常和中断的响应过程" title="Permanent link">&para;</a></h3>
 <p>要区分 <strong>响应过程</strong> 和 <strong>处理程序</strong>。响应过程是从检测到事件到进入处理程序之前的硬件操作；处理程序是随后执行的软件。基本硬件响应可概括为三个步骤：</p>
 <h4 id="关中断">关中断<a class="headerlink" href="#关中断" title="Permanent link">&para;</a></h4>
 <p>在保存关键状态期间， CPU 暂时禁止可屏蔽中断，避免保存过程被打断。在用 IF 表示中断允许状态的模型中，<code>IF=0</code> 为关中断，<code>IF=1</code> 为开中断。</p>
 <p>这里的关中断针对可屏蔽外部中断；异常与不可屏蔽中断使用各自的响应规则。关键状态保存完成后，若支持多重中断，服务程序可配合屏蔽字重新允许更高优先级的请求。</p>
-<h4 id="保存断点和程序状态">保存断点和程序状态<a class="headerlink" href="#保存断点和程序状态" title="Permanent link">&para;</a></h4>
-<p>硬件至少要保存恢复执行所需的 <strong>返回地址和 PSW 等关键状态</strong>。返回地址按<a href="#返回地址与是否重执行">事件类别</a>确定；对外部中断，应保存程序实际的后继地址。例如刚完成一条转移指令时，后继可能是转移目标，而非地址上相邻的下一条指令。</p>
+<h4 id="保存返回地址和程序状态">保存返回地址和程序状态<a class="headerlink" href="#保存返回地址和程序状态" title="Permanent link">&para;</a></h4>
+<p>硬件至少要保存恢复执行所需的 <strong>返回地址</strong>（也称断点）和 <strong>PSW 等关键状态</strong>。返回地址按<a href="#返回地址与是否重执行">事件类别</a>确定；对外部中断，应保存程序实际的后继地址。例如刚完成一条转移指令时，后继可能是转移目标，而非地址上相邻的下一条指令。</p>
+<div class="admonition info">
+<p class="admonition-title">“断点”的含义</p>
+<p>这里的“断点”指被打断的位置，将其保存下来就是返回地址；调试中所说的断点则是另一回事，它是插入程序中、执行到便触发自陷的一条指令，本身不是地址。</p>
+</div>
 <p>返回地址与状态可以保存到栈或专用寄存器。栈式保存支持逐层嵌套；寄存器式保存则需要在下一次事件覆盖这些寄存器前，把外层状态转存到安全位置。</p>
-<p>硬件保存用于恢复控制流的关键状态。处理程序还需保存自己将改写的通用寄存器，结束时恢复现场，再通过专用返回指令恢复断点和运行状态。</p>
+<p>硬件保存用于恢复控制流的关键状态。处理程序还需保存自己将改写的通用寄存器，结束时恢复现场，再通过专用返回指令恢复返回地址和运行状态。</p>
 <h4 id="识别事件并转入处理程序">识别事件并转入处理程序<a class="headerlink" href="#识别事件并转入处理程序" title="Permanent link">&para;</a></h4>
-<p>在向量方式下，硬件取得事件类型号，定位相应入口，更新 PC ，并进入处理程序所需的运行模式。要区分三个量：</p>
+<p>在向量方式下，硬件取得事件类型号，定位相应入口，更新 PC ，并进入处理程序所需的运行模式。以下的三个概念，读者朋友应该明确其区别：</p>
 <center class="centered-table">
 <table>
 <thead>
@@ -4670,7 +4700,53 @@ b_i=\left\lceil\log_2(m_i+1)\right\rceil,
 </table>
 </center>
 <p>例如，向量表以地址 <span class="arithmatex">\(B\)</span> 为起点，每项占 <span class="arithmatex">\(s\)</span> 字节，则第 <span class="arithmatex">\(i\)</span> 项的位置为 <span class="arithmatex">\(B+i\times s\)</span>。CPU 还要读取该项的入口信息，才能转入服务程序，表项地址用于读取入口信息，读出的地址才送入 PC。</p>
-<p>进入处理程序后，缺页调入、设备服务、系统调用分发等操作由软件完成。异常与中断的整体处理因而是硬件与操作系统共同完成的。</p>
+<p>进入处理程序后，缺页调入、设备服务、系统调用分发等操作由软件完成。因而，异常与中断的整体处理是硬件与操作系统共同完成的。</p>
+<h3 id="中断处理与子程序调用的区别">中断处理与子程序调用的区别<a class="headerlink" href="#中断处理与子程序调用的区别" title="Permanent link">&para;</a></h3>
+<p>中断处理和子程序调用都会改变控制流、保存返回位置，但服务关系不同：子程序与主程序同属一个程序，靠调用指令建立主从关系；中断处理程序与被中断的程序相互独立，通常不属于同一程序，何时被调用也取决于事件何时到来。</p>
+<center class="centered-table">
+<table>
+<thead>
+<tr>
+<th>对比项</th>
+<th>子程序调用</th>
+<th>中断处理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>触发方式</td>
+<td>由 <code>call</code> 等调用指令显式发起</td>
+<td>由异常或外部事件引起，可以随机到来</td>
+</tr>
+<tr>
+<td>入口确定</td>
+<td>由调用指令中的地址码指定</td>
+<td>由中断向量表按类型号提供</td>
+</tr>
+<tr>
+<td>返回地址保存</td>
+<td><code>call</code> 指令执行时把返回地址（ PC 值）压入栈，由软件完成</td>
+<td>响应过程中由硬件自动保存返回地址（ PC 值）与 PSW</td>
+</tr>
+<tr>
+<td>现场保护</td>
+<td>按调用约定保存</td>
+<td>硬件保存关键状态，软件再保存将改写的寄存器</td>
+</tr>
+<tr>
+<td>优先级</td>
+<td>不需要裁决</td>
+<td>多个请求同时到达时需要判优，嵌套还受屏蔽字约束</td>
+</tr>
+<tr>
+<td>实现</td>
+<td>完全由软件组织</td>
+<td>需要专门的硬件电路支持</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>两者都要保存 PC ，但保存的时机和主体不同：<code>call</code> 由指令本身完成，中断由硬件响应完成。</p>
 <h2 id="指令流水线">指令流水线<a class="headerlink" href="#指令流水线" title="Permanent link">&para;</a></h2>
 <h3 id="指令流水线的基本概念">指令流水线的基本概念<a class="headerlink" href="#指令流水线的基本概念" title="Permanent link">&para;</a></h3>
 <p><strong>指令流水线</strong> 把一条指令的执行分成若干有序阶段，让不同指令同时处于不同阶段。</p>
@@ -4839,19 +4915,27 @@ CPI=\frac{k+n-1}{n}=1+\frac{k-1}{n}.
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nf">sub</span><span class="w"> </span><span class="no">r4</span><span class="p">,</span><span class="w"> </span><span class="no">r1</span><span class="p">,</span><span class="w"> </span><span class="no">r5</span><span class="w">   </span><span class="c1"># r4 &lt;- r1 - r5</span>
 </span></code></pre></div>
 <p>若 <code>add</code> 从第 1 周期进入流水线，<code>sub</code> 紧随其后，后者在第 3 周期 ID 时就读取 <code>r1</code>，前者却到第 5 周期 WB 才写回。直接使用寄存器旧值会出错。</p>
+<ul>
+<li>
 <p><strong>解决方法一：推迟相关指令。</strong> 软件可以插入 <code>nop</code>，硬件也可以停住相关指令并插入气泡。对上述时序，不使用旁路时：若必须在 WB 后一个周期读取，要推迟 3 周期；若支持同周期先写后读，可推迟 2 周期。</p>
+</li>
+<li>
 <p><strong>解决方法二：转发／旁路。</strong> <code>add</code> 在 EX 结束时就已产生结果，无须等到 WB。通过旁路把 EX/MEM 等段间寄存器中的结果送到后续 ALU 输入，<code>sub</code> 可在第 4 周期 EX 使用新值，消除这里的停顿。</p>
+</li>
+<li>
 <p><strong>解决方法三：调整指令顺序。</strong> 编译器可把无依赖的指令放到生产者与消费者之间，利用等待时间完成有用工作，但必须保持原程序的数据和控制语义。</p>
+</li>
+</ul>
 <p>判断依赖会造成多少停顿，关键在于 <strong>结果何时可用、消费者何时需要、是否有对应旁路</strong>。对于乱序或不同执行延迟的结构，还可能出现<a href="#读后写war与写后写waw相关">WAR 与 WAW</a>。</p>
 <h4 id="读后写war与写后写waw相关">读后写（ WAR ）与写后写（ WAW ）相关<a class="headerlink" href="#读后写war与写后写waw相关" title="Permanent link">&para;</a></h4>
 <p>除了前面讨论的<a href="#数据冒险与-raw">写后读 RAW</a>，非按序执行或不同完成延迟的结构还需要关注寄存器读写顺序。</p>
-<h5 id="读后写war">读后写 WAR<a class="headerlink" href="#读后写war" title="Permanent link">&para;</a></h5>
+<h5 id="读后写-war">读后写 WAR<a class="headerlink" href="#读后写-war" title="Permanent link">&para;</a></h5>
 <p><strong>读后写</strong>（ Write After Read ， WAR ）要求前面的指令先读取旧值，后面的指令才能覆盖该位置：</p>
 <div class="language-asm highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nf">add</span><span class="w"> </span><span class="no">r3</span><span class="p">,</span><span class="w"> </span><span class="no">r1</span><span class="p">,</span><span class="w"> </span><span class="no">r2</span><span class="w">   </span><span class="c1"># I1：读取旧 r1</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nf">sub</span><span class="w"> </span><span class="no">r1</span><span class="p">,</span><span class="w"> </span><span class="no">r4</span><span class="p">,</span><span class="w"> </span><span class="no">r5</span><span class="w">   </span><span class="c1"># I2：写入新 r1</span>
 </span></code></pre></div>
 <p>如果 <code>I2</code> 在 <code>I1</code> 读取之前就写了 <code>r1</code>，<code>I1</code> 会错误地使用新值。这里 <code>I2</code> 的目的寄存器是 <code>I1</code> 的源寄存器，它们没有“前者产生结果供后者使用”的数据传递关系。</p>
-<h5 id="写后写waw">写后写 WAW<a class="headerlink" href="#写后写waw" title="Permanent link">&para;</a></h5>
+<h5 id="写后写-waw">写后写 WAW<a class="headerlink" href="#写后写-waw" title="Permanent link">&para;</a></h5>
 <p><strong>写后写</strong>（ Write After Write ， WAW ）要求对同一目的寄存器的两次写入保持程序顺序：</p>
 <div class="language-asm highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nf">add</span><span class="w"> </span><span class="no">r1</span><span class="p">,</span><span class="w"> </span><span class="no">r2</span><span class="p">,</span><span class="w"> </span><span class="no">r3</span><span class="w">   </span><span class="c1"># I1：较早写 r1</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nf">sub</span><span class="w"> </span><span class="no">r1</span><span class="p">,</span><span class="w"> </span><span class="no">r4</span><span class="p">,</span><span class="w"> </span><span class="no">r5</span><span class="w">   </span><span class="c1"># I2：较晚写 r1</span>

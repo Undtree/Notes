@@ -3733,7 +3733,7 @@
 
 <h1 id="存储系统">存储系统<a class="headerlink" href="#存储系统" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 14740 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 7 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 49 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 14742 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 7 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 49 分钟</p>
 </div>
 <p>计算机希望存储器同时具备 <strong>速度快、容量大、成本低</strong> 三个特点，但单一存储介质很难兼顾这三者。因此，我们需要把不同特性的存储器组织起来，让常用的信息靠近 CPU ，让大量暂时用不到的信息存放在容量更大的低速部件中。</p>
 <h2 id="存储器概述">存储器概述<a class="headerlink" href="#存储器概述" title="Permanent link">&para;</a></h2>
@@ -4545,7 +4545,7 @@ T_{\mathrm{avg}}=HT_c+(1-H)(T_c+P)=T_c+(1-H)P.
 <p>写分配的核心是“写缺失后把目标块纳入 Cache”。一种描述先更新主存，再调入更新后的块；另一种描述先调入块，再在 Cache 中修改，并按直写或回写策略处理下层更新。调块与主存写入是不同的操作，发生次数由这一先后顺序和写策略共同决定。</p>
 </details>
 <h3 id="cache-容量的计算举例">Cache 容量的计算举例<a class="headerlink" href="#cache-容量的计算举例" title="Permanent link">&para;</a></h3>
-<p>Cache 的 <strong>数据区容量</strong> 描述可缓存多少数据；加入标记、状态及替换信息后，才得到相应的 <strong>总存储容量</strong>。前面<a href="#地址字段与共同约定">映射方式</a>中的 <span class="arithmatex">\(C\)</span> 指数据区容量。</p>
+<p>Cache 的 <strong>数据区容量</strong> 描述可缓存多少数据；加入标记、状态及替换信息后，才得到相应的 <strong>总存储容量</strong>。前面<a href="#cache-和主存的映射方式">映射方式</a>中提到的 <span class="arithmatex">\(C\)</span> 是数据区容量。</p>
 <p>设 Cache 有 <span class="arithmatex">\(L\)</span> 行，每行数据为 <span class="arithmatex">\(B\)</span> 字节、标记为 <span class="arithmatex">\(t\)</span> 位、有效位为 <span class="arithmatex">\(v\)</span> 位、脏位为 <span class="arithmatex">\(d\)</span> 位，每行替换控制信息为 <span class="arithmatex">\(u\)</span> 位，则</p>
 <div class="arithmatex">\[
 C_{\mathrm{total}}=L(8B+t+v+d+u)\quad\text{bit}.

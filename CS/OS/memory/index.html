@@ -3889,7 +3889,7 @@ T_{\mathrm{EAT}}
 </ol>
 <p>无论采用哪种方式，都要找到 <strong>目标页面的有效内容</strong>。代码页可以有文件作为后备，堆、栈等匿名内容则不能简单依靠原始程序文件恢复。</p>
 <h4 id="缺页中断机构">缺页中断机构<a class="headerlink" href="#缺页中断机构" title="Permanent link">&para;</a></h4>
-<p>进程访问合法但未驻留的页面时，硬件触发 <strong>缺页异常（ Page Fault ）</strong>，或称缺页中断。它属于由指令执行引起的内中断（详细的分类见<a href="../os_intro/#int">中断与异常</a>）。</p>
+<p>进程访问合法但未驻留的页面时，硬件触发 <strong>缺页异常（ Page Fault ）</strong>，或称缺页中断。它属于由指令执行引起的内中断（详细的分类见<a href="../os_intro/#int">中断的分类</a>）。</p>
 <p>缺页有两个特点：一是发生在指令的访存过程中；二是一条指令可能多次缺页，例如取指令、读源操作数和写目标操作数分别访问不同页面。</p>
 <details class="note">
 <summary>缺页不一定需要外存 I/O</summary>

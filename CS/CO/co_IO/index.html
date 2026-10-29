@@ -2675,7 +2675,7 @@
 
 <h1 id="输入输出系统">输入/输出系统<a class="headerlink" href="#输入输出系统" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 7276 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 24 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 7009 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 23 分钟</p>
 </div>
 <p>输入/输出系统把主机与外部设备连接起来，使程序能够取得外部信息并输出处理结果。麻烦在于两端的节奏相差极大：键盘按人的手速送来字符，磁盘和网卡要连续搬运成批数据，而 CPU 以纳秒计时，停下来等一个字符的时间足够它执行上百万条指令。于是，每次传送都要先回答几个问题——由谁发起，数据由谁搬运， CPU 又在什么时候抽身去做别的事。</p>
 <h2 id="io系统基本概念">I/O 系统基本概念*<a class="headerlink" href="#io系统基本概念" title="Permanent link">&para;</a></h2>
@@ -2704,7 +2704,7 @@
 </tbody>
 </table>
 </center>
-<p>外部设备包括输入设备、输出设备和通过 I/O 通路访问的外部存储设备。接口面向主机的信息交换，控制器还承担设备的具体控制；这些功能可以集成在同一硬件部件中，接口的详细功能见<a href="#io接口">I/O 接口</a>。</p>
+<p>外部设备包括输入设备、输出设备和通过 I/O 通路访问的外部存储设备。接口面向主机的信息交换，控制器还承担设备的具体控制；这些功能可以集成在同一硬件部件中，接口的详细功能见 <a href="#io接口">I/O 接口</a>。</p>
 <h3 id="外部设备">外部设备*<a class="headerlink" href="#外部设备" title="Permanent link">&para;</a></h3>
 <h4 id="输入设备">输入设备<a class="headerlink" href="#输入设备" title="Permanent link">&para;</a></h4>
 <ul>
@@ -3054,22 +3054,14 @@ U_{\mathrm{poll,min}}=
 <li>到达可响应的指令边界，且当前请求被判优逻辑选中。</li>
 </ol>
 <p>设备就绪后，经设备侧允许、请求锁存、源屏蔽和 CPU 全局允许等环节，才可能在指令边界进入响应。上述条件用于可屏蔽 I/O 中断，<a href="../CPU/#异常和中断的分类">异常与不可屏蔽中断</a>按各自规则处理。</p>
-<div id="开中断后一有请求就立即响应吗"></div>
-
 <div class="admonition question">
 <p class="admonition-title">开中断后，一有请求就立即响应吗？</p>
 <p>在基本模型中， CPU 在可响应的指令边界采样请求。若此时已开中断，存在未屏蔽的有效请求且被判优选中，就进入硬件响应。请求若在指令执行中到达，则先等待这个边界，具体条件见<a href="#cpu响应io中断的条件">响应条件</a>。</p>
 </div>
 <h4 id="硬件响应与软件处理">硬件响应与软件处理<a class="headerlink" href="#硬件响应与软件处理" title="Permanent link">&para;</a></h4>
-<p>CPU 先由硬件暂时关中断，保存断点与必要的处理器状态，再取得服务程序入口并更新 PC。这组硬件动作称为 <strong>中断隐指令</strong>，具体过程见<a href="../CPU/#异常和中断响应过程">CPU 的响应过程</a>。它由硬件自动组织。</p>
+<p>CPU 先由硬件暂时关中断，保存返回地址与必要的处理器状态，再取得服务程序入口并更新 PC。这组硬件动作称为 <strong>中断隐指令</strong>，由硬件自动组织。其具体过程见<a href="../CPU/#异常和中断的响应过程">异常和中断的响应过程</a>。</p>
 <p>传统向量中断模型中，请求与响应信号经控制线传送，中断控制器在响应阶段经数据线提供类型号。CPU 用类型号定位向量表项，再取得服务程序入口。</p>
-<div id="向量中断中断向量和向量地址有什么关系"></div>
-
-<div class="admonition question">
-<p class="admonition-title">向量中断、中断向量和向量地址有什么关系？</p>
-<p><strong>向量中断</strong> 是硬件按类型号定位服务入口的方式；<strong>中断向量</strong> 是相应处理程序的入口信息，简单模型中就是入口地址；<strong>向量地址</strong> 则是保存这项信息的表项地址。</p>
-<p>若表从地址 <span class="arithmatex">\(B\)</span> 开始，每项占 <span class="arithmatex">\(s\)</span> 字节，类型号为 <span class="arithmatex">\(i\)</span>，则向量地址为 <span class="arithmatex">\(B+i\times s\)</span>。例如 <span class="arithmatex">\(B=0\)</span>、<span class="arithmatex">\(s=4\)</span>、<span class="arithmatex">\(i=5\)</span> 时，表项位于地址 20 ， CPU 从那里读取入口地址并转入服务程序。有些结构在表项中保存转移指令，由该指令转向服务程序。</p>
-</div>
+<p><a href="../CPU/#识别事件并转入处理程序">识别事件并转入处理程序</a>这一节已经讲了向量中断、中断向量和向量地址的区别，这里不再重复。</p>
 <p>完成硬件响应后，支持嵌套的服务程序通常还要组织以下软件步骤：</p>
 <center class="centered-table">
 <table>
@@ -3103,59 +3095,16 @@ U_{\mathrm{poll,min}}=
 </tr>
 <tr>
 <td>中断返回</td>
-<td>按体系结构约定恢复断点及运行状态</td>
+<td>按体系结构约定恢复返回地址及运行状态</td>
 <td>继续被打断的程序或外层服务程序</td>
 </tr>
 </tbody>
 </table>
 </center>
-<p>硬件先保存<a href="../CPU/#保存断点和程序状态">断点与关键状态</a>，软件再保护将使用的寄存器。支持嵌套时，在关键保护完成后开中断，返回时先关中断，再恢复外层状态，使进入与退出都保持完整。</p>
+<p>硬件先保存<a href="../CPU/#保存返回地址和程序状态">返回地址与关键状态</a>，软件再保护将使用的寄存器。支持嵌套时，在关键保护完成后开中断，返回时先关中断，再恢复外层状态，使进入与退出都保持完整。</p>
 <p>在单重中断模型中，服务期间保持禁止嵌套，因而不需要上表中服务期间开中断的步骤。多重中断则需要保存每层状态，返回时按嵌套的相反顺序恢复。</p>
-<div id="程序中断与子程序调用有什么区别"></div>
-
-<div class="admonition question">
-<p class="admonition-title">程序中断与子程序调用有什么区别？</p>
-<p>两者都改变控制流，并需要保存返回位置，区别在于触发和服务关系：</p>
-<center class="centered-table" markdown="1">
-<table>
-<thead>
-<tr>
-<th>对比项</th>
-<th>子程序调用</th>
-<th>I/O 中断</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>触发</td>
-<td>程序执行 CALL 等调用指令</td>
-<td>外设异步提出请求， CPU 在允许边界响应</td>
-</tr>
-<tr>
-<td>服务对象</td>
-<td>完成调用者安排的工作</td>
-<td>处理设备事件，可以与当前程序无关</td>
-</tr>
-<tr>
-<td>入口与断点</td>
-<td>调用指令形成目标并按 ISA 保存返回地址</td>
-<td>判优、类型号等硬件确定入口，保存断点及状态</td>
-</tr>
-<tr>
-<td>保存现场</td>
-<td>遵守调用约定</td>
-<td>硬件保护关键状态，软件保存将改写的寄存器</td>
-</tr>
-<tr>
-<td>嵌套</td>
-<td>由程序调用关系及可用栈空间组织</td>
-<td>还受中断允许、屏蔽和处理优先级规则约束</td>
-</tr>
-</tbody>
-</table>
-</center>
-<p>调用的栈帧实例见<a href="../instr/#过程调用的机器级表示">过程调用</a>，中断嵌套的屏蔽字实例见<a href="#多重中断与中断屏蔽字">多重中断</a>。</p>
-</div>
+<p>我们在处理器一章已经讲过中断处理和子程序调用的区别。完整对照请见<a href="../CPU/#中断处理与子程序调用的区别">中断处理与子程序调用的区别</a>。</p>
+<p>子程序调用的栈帧实例，请见<a href="../instr/#过程调用的机器级表示">过程调用</a>；中断嵌套的屏蔽字实例，请见<a href="#多重中断与中断屏蔽字">多重中断</a>。</p>
 <h4 id="多重中断与中断屏蔽字">多重中断与中断屏蔽字<a class="headerlink" href="#多重中断与中断屏蔽字" title="Permanent link">&para;</a></h4>
 <p><strong>单重中断</strong> 在服务期间禁止新的可屏蔽中断，<strong>多重中断</strong> 允许符合优先级规则的请求抢占当前服务。屏蔽字的每一位对应一个中断源，本节约定 <strong>1 为屏蔽、0 为允许</strong>。</p>
 <p>通常在服务某个源时，屏蔽自身及处理优先级不高于它的源，允许更高处理优先级的源抢占。装入新屏蔽字前先保存原值，返回时恢复，使外层服务或主程序继续使用原来的规则。</p>
@@ -3234,7 +3183,7 @@ U_{\mathrm{poll,min}}=
 </tr>
 </tbody>
 </table>
-<p>这个例子中， C 先被响应， D 却能在 C 完成前得到服务，体现了两类优先级的区别。嵌套返回按外层断点逐层恢复： D 返回 C ， C 完成后再返回主程序。</p>
+<p>这个例子中， C 先被响应， D 却能在 C 完成前得到服务，体现了两类优先级的区别。嵌套返回按外层保存的返回地址逐层恢复： D 返回 C ， C 完成后再返回主程序。</p>
 </div>
 <h4 id="中断方式的cpu开销">中断方式的 CPU 开销<a class="headerlink" href="#中断方式的cpu开销" title="Permanent link">&para;</a></h4>
 <p>若设备速率为 <span class="arithmatex">\(R\mathrm{B/s}\)</span>，每次中断处理 <span class="arithmatex">\(g\mathrm{B}\)</span>，每次响应与服务总计 <span class="arithmatex">\(C_{\mathrm{int}}\)</span> 个时钟周期， CPU 主频为 <span class="arithmatex">\(f\)</span>，则：</p>
@@ -3359,7 +3308,7 @@ U_{\mathrm{int}}=\frac{RC_{\mathrm{int}}}{gf}.
 </table>
 </center>
 <p>DMA 一次设置和完成通知管理一个 <strong>数据块</strong>，块内逐字或按突发方式传送。整块连续占用总线、逐次周期挪用或固定交替时隙，分别对应前面的<a href="#dma的传送方式">传送方式</a>。</p>
-<p>完成通知使用的仍是中断机制，其响应和状态保护见<a href="../CPU/#异常和中断响应过程">CPU 的中断响应</a>。因此， DMA 数据搬运阶段不需要逐次保存 CPU 现场，而结束后的中断服务仍需要保护现场。</p>
+<p>完成通知使用的仍是中断机制，其响应和状态保护的进一步内容可见<a href="../CPU/#异常和中断的响应过程">异常和中断的响应过程</a>。因此， DMA 数据搬运阶段不需要逐次保存 CPU 现场，而结束后的中断服务仍需要保护现场。</p>
 <h4 id="dma开销的计算">DMA 开销的计算<a class="headerlink" href="#dma开销的计算" title="Permanent link">&para;</a></h4>
 <p>假定速率为 <span class="arithmatex">\(R\mathrm{B/s}\)</span>，每个 DMA 块为 <span class="arithmatex">\(L\mathrm{B}\)</span>，每块预处理与后处理共需 <span class="arithmatex">\(C_{\mathrm{block}}\)</span> 个 CPU 时钟周期，则 CPU 执行这些控制工作的时间比例为：</p>
 <div class="arithmatex">\[
