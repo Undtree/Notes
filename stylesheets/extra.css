@@ -79,6 +79,20 @@
   padding-inline: 0;
 }
 
+/* Material 默认给表头留了 5rem 的最小宽度，短表头的多列表格会被这个下限
+   撑出横向滚动条。取消下限，让列宽完全由内容自动决定。 */
+.md-typeset table:not([class]) th {
+  min-width: 3rem;
+}
+
+/* 窄屏下压缩单元格左右内边距，减少多列表格溢出的概率。 */
+@media screen and (max-width: 30rem) {
+  .md-typeset table:not([class]) th,
+  .md-typeset table:not([class]) td {
+    padding-inline: .5em;
+  }
+}
+
 /* 功能：折叠逻辑 (简化版) */
 
 /* 默认状态：
@@ -316,4 +330,13 @@ body,
   .exam-options {
     grid-template-columns: minmax(0, 1fr);
   }
+}
+
+/* 正文强调：双下划线，与链接、普通下划线的单线区分。
+   用法：<u class="dbl">需要强调的文字</u>
+   只包裹纯文字（不要把行内公式放进 <u>），下划线才会连贯。 */
+.md-typeset u.dbl {
+  text-decoration: none;
+  border-bottom: .26em double currentColor;
+  padding-bottom: .06em;
 }
