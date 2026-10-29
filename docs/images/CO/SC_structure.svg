@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750" role="img" aria-labelledby="title desc" font-family="Times New Roman, Times, Liberation Serif, Noto Serif, serif">
+<title id="title">存储芯片的结构</title>
+<desc id="desc">双译码存储芯片。A0 至 A5 经地址寄存器、X 译码器和驱动器选择行；A6 至 A11 经地址寄存器和 Y 译码器选择列。八个位平面各含 64×64 个存储元。I/O 电路连接存储矩阵、输出驱动和控制电路；WE 与 CS 为低电平有效。</desc>
+<!-- 根据原 SC_structure.png 重绘；保留行列双译码、八个位平面及原图的输入、输出和控制通路。 -->
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#4051b5"/></marker>
+</defs>
+<rect width="1200" height="750" fill="#ffffff"/>
+<text x="600" y="40" text-anchor="middle" font-size="25" fill="#1a237e" font-weight="700"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">存储芯片的结构</tspan></text>
+<rect x="120" y="115" width="75" height="290" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+<rect x="235" y="115" width="75" height="290" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+<rect x="365" y="115" width="75" height="290" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+<text x="157.5" y="192" text-anchor="middle" font-size="24" fill="#1a237e" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">地</tspan></text>
+<text x="157.5" y="225" text-anchor="middle" font-size="24" fill="#1a237e" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">址</tspan></text>
+<text x="157.5" y="258" text-anchor="middle" font-size="24" fill="#1a237e" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">寄</tspan></text>
+<text x="157.5" y="291" text-anchor="middle" font-size="24" fill="#1a237e" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">存</tspan></text>
+<text x="157.5" y="324" text-anchor="middle" font-size="24" fill="#1a237e" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">器</tspan></text>
+<text x="272.5" y="204" text-anchor="middle" font-size="25" fill="#1a237e" font-weight="400">X</text>
+<text x="272.5" y="240" text-anchor="middle" font-size="24" fill="#1a237e" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">译</tspan></text>
+<text x="272.5" y="273" text-anchor="middle" font-size="24" fill="#1a237e" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">码</tspan></text>
+<text x="272.5" y="306" text-anchor="middle" font-size="24" fill="#1a237e" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">器</tspan></text>
+<text x="402.5" y="225" text-anchor="middle" font-size="24" fill="#1a237e" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">驱</tspan></text>
+<text x="402.5" y="258" text-anchor="middle" font-size="24" fill="#1a237e" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">动</tspan></text>
+<text x="402.5" y="291" text-anchor="middle" font-size="24" fill="#1a237e" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">器</tspan></text>
+<rect x="595" y="85" width="250" height="250" fill="#f5f7ff" stroke="#4051b5" stroke-width="2"/>
+<rect x="535" y="125" width="250" height="250" fill="#f0f4ff" stroke="#4051b5" stroke-width="2"/>
+<rect x="505" y="155" width="250" height="250" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+<text x="730" y="183" text-anchor="middle" font-size="21" fill="#1a237e" font-weight="400">1</text>
+<text x="766" y="153" text-anchor="middle" font-size="21" fill="#1a237e" font-weight="400">2</text>
+<text x="825" y="113" text-anchor="middle" font-size="21" fill="#1a237e" font-weight="400">8</text>
+<circle cx="800" cy="125" r="1.5" fill="#1a237e"/>
+<circle cx="807" cy="118" r="1.5" fill="#1a237e"/>
+<circle cx="814" cy="111" r="1.5" fill="#1a237e"/>
+<text x="630" y="267" text-anchor="middle" font-size="26" fill="#1a237e" font-weight="400">64 × 64</text>
+<text x="630" y="305" text-anchor="middle" font-size="24" fill="#1a237e" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">存储矩阵</tspan></text>
+<text x="45" y="152" text-anchor="middle" font-size="22" fill="#1a237e" font-weight="400">A<tspan font-size="15.4" dy="4">0</tspan></text>
+<path d="M 75 145 H 120" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M 195 145 H 235" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round"/>
+<path d="M 310 145 H 365" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round"/>
+<text x="337.5" y="135" text-anchor="middle" font-size="19" fill="#1a237e" font-weight="400">0</text>
+<path d="M 440 145 H 535" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="45" y="192" text-anchor="middle" font-size="22" fill="#1a237e" font-weight="400">A<tspan font-size="15.4" dy="4">1</tspan></text>
+<path d="M 75 185 H 120" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M 195 185 H 235" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round"/>
+<path d="M 310 185 H 365" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round"/>
+<text x="337.5" y="175" text-anchor="middle" font-size="19" fill="#1a237e" font-weight="400">1</text>
+<path d="M 440 185 H 505" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="45" y="382" text-anchor="middle" font-size="22" fill="#1a237e" font-weight="400">A<tspan font-size="15.4" dy="4">5</tspan></text>
+<path d="M 75 375 H 120" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M 195 375 H 235" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round"/>
+<path d="M 310 375 H 365" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round"/>
+<text x="337.5" y="365" text-anchor="middle" font-size="19" fill="#1a237e" font-weight="400">63</text>
+<path d="M 440 375 H 505" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<circle cx="45" cy="284" r="1.7" fill="#1a237e"/>
+<circle cx="45" cy="294" r="1.7" fill="#1a237e"/>
+<circle cx="45" cy="304" r="1.7" fill="#1a237e"/>
+<circle cx="215" cy="284" r="1.7" fill="#1a237e"/>
+<circle cx="215" cy="294" r="1.7" fill="#1a237e"/>
+<circle cx="215" cy="304" r="1.7" fill="#1a237e"/>
+<circle cx="337.5" cy="284" r="1.7" fill="#1a237e"/>
+<circle cx="337.5" cy="294" r="1.7" fill="#1a237e"/>
+<circle cx="337.5" cy="304" r="1.7" fill="#1a237e"/>
+<circle cx="472" cy="284" r="1.7" fill="#1a237e"/>
+<circle cx="472" cy="294" r="1.7" fill="#1a237e"/>
+<circle cx="472" cy="304" r="1.7" fill="#1a237e"/>
+<rect x="505" y="435" width="340" height="45" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+<text x="675" y="465" text-anchor="middle" font-size="23" fill="#1a237e" font-weight="400">I/O <tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">电路</tspan></text>
+<rect x="505" y="520" width="340" height="45" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+<text x="675" y="550" text-anchor="middle" font-size="23" fill="#1a237e" font-weight="400">Y <tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">译码器</tspan></text>
+<rect x="505" y="605" width="340" height="45" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+<text x="675" y="635" text-anchor="middle" font-size="23" fill="#1a237e" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">地址寄存器</tspan></text>
+<path d="M 535 435 V 405" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="523" y="425" text-anchor="middle" font-size="19" fill="#1a237e" font-weight="400">0</text>
+<path d="M 535 520 V 480" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round"/>
+<path d="M 535 605 V 565" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round"/>
+<path d="M 565 435 V 405" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="553" y="425" text-anchor="middle" font-size="19" fill="#1a237e" font-weight="400">1</text>
+<path d="M 565 520 V 480" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round"/>
+<path d="M 565 605 V 565" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round"/>
+<path d="M 815 435 V 335" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="803" y="425" text-anchor="middle" font-size="19" fill="#1a237e" font-weight="400">63</text>
+<path d="M 815 520 V 480" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round"/>
+<path d="M 815 605 V 565" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round"/>
+<circle cx="677" cy="420" r="1.7" fill="#1a237e"/>
+<circle cx="687" cy="420" r="1.7" fill="#1a237e"/>
+<circle cx="697" cy="420" r="1.7" fill="#1a237e"/>
+<circle cx="677" cy="500" r="1.7" fill="#1a237e"/>
+<circle cx="687" cy="500" r="1.7" fill="#1a237e"/>
+<circle cx="697" cy="500" r="1.7" fill="#1a237e"/>
+<circle cx="677" cy="586" r="1.7" fill="#1a237e"/>
+<circle cx="687" cy="586" r="1.7" fill="#1a237e"/>
+<circle cx="697" cy="586" r="1.7" fill="#1a237e"/>
+<path d="M 535 696 V 650" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="535" y="723" text-anchor="middle" font-size="22" fill="#1a237e" font-weight="400">A<tspan font-size="15.4" dy="4">6</tspan></text>
+<path d="M 575 696 V 650" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="575" y="723" text-anchor="middle" font-size="22" fill="#1a237e" font-weight="400">A<tspan font-size="15.4" dy="4">7</tspan></text>
+<path d="M 815 696 V 650" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="815" y="723" text-anchor="middle" font-size="22" fill="#1a237e" font-weight="400">A<tspan font-size="15.4" dy="4">11</tspan></text>
+<circle cx="677" cy="683" r="1.7" fill="#1a237e"/>
+<circle cx="687" cy="683" r="1.7" fill="#1a237e"/>
+<circle cx="697" cy="683" r="1.7" fill="#1a237e"/>
+<rect x="925" y="435" width="190" height="45" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+<text x="1020" y="465" text-anchor="middle" font-size="23" fill="#1a237e" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">输出驱动</tspan></text>
+<path d="M 845 457.5 H 925" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M 1115 457.5 H 1180" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M 1140 451.5 L 1152 463.5" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round"/>
+<text x="1150" y="423" text-anchor="middle" font-size="22" fill="#1a237e" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">输出</tspan></text>
+<rect x="925" y="555" width="190" height="50" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+<text x="1020" y="588" text-anchor="middle" font-size="23" fill="#1a237e" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">控制电路</tspan></text>
+<path d="M 1180 580 H 1115" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M 1140 574 L 1152 586" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round"/>
+<text x="1150" y="548" text-anchor="middle" font-size="22" fill="#1a237e" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">输入</tspan></text>
+<path d="M 925 580 H 890 V 470 H 845" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M 1020 555 V 480" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M 965 670 V 605" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="965" y="700" text-anchor="middle" font-size="22" fill="#1a237e" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">读/写</tspan></text>
+<text x="965" y="732" text-anchor="middle" font-size="22" fill="#1a237e" font-weight="400">WE</text>
+<path d="M 949.8 710 H 980.2" fill="none" stroke="#4051b5" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M 1080 670 V 605" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="1080" y="700" text-anchor="middle" font-size="22" fill="#1a237e" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">片选</tspan></text>
+<text x="1080" y="732" text-anchor="middle" font-size="22" fill="#1a237e" font-weight="400">CS</text>
+<path d="M 1064.8 710 H 1095.2" fill="none" stroke="#4051b5" stroke-width="1.5" stroke-linejoin="round"/>
+</svg>

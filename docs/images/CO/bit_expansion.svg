@@ -1,0 +1,200 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="670" viewBox="0 0 1280 670" role="img" aria-labelledby="title desc" font-family="Times New Roman, Times, Liberation Serif, Noto Serif, serif">
+<title id="title">位扩展</title>
+<desc id="desc">8 片 8K×1 位芯片组成 8K×8 位存储器。A12 至 A0 共 13 根地址线、WE 和 CS 并联；每片的数据端分别接 D0 至 D7，8 片同时工作，单元数仍为 8K。 实心点表示连接，跨线弧表示不连接。</desc>
+<!-- 与 storage.md 中的扩展示例一致；地址线使用总线表示，WE、CS 及译码器片选输出均为低电平有效。 -->
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#4051b5"/></marker>
+<marker id="red-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#d62728"/></marker>
+</defs>
+<rect width="1280" height="670" fill="#ffffff"/>
+<text x="640" y="38" text-anchor="middle" font-size="25" fill="#1a237e" font-weight="700"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">位扩展</tspan></text>
+<text x="640" y="78" text-anchor="middle" font-size="24" fill="#1a237e" font-weight="400">8 <tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">片</tspan> 8K × 1 <tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">位芯片</tspan> → 8K × 8 <tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">位存储器</tspan></text>
+<g id="chip-0">
+<rect x="190" y="325" width="110" height="140" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+<text x="210" y="348" text-anchor="middle" font-size="18" fill="#1a237e" font-weight="400">A</text>
+<text x="245" y="348" text-anchor="middle" font-size="16" fill="#1a237e" font-weight="400">WE</text>
+<path d="M 234.76 332 H 255.24" fill="none" stroke="#1a237e" stroke-width="1.4" stroke-linejoin="round"/>
+<text x="280" y="348" text-anchor="middle" font-size="16" fill="#d62728" font-weight="400">CS</text>
+<path d="M 269.76 332 H 290.24" fill="none" stroke="#d62728" stroke-width="1.4" stroke-linejoin="round"/>
+<text x="245" y="387" text-anchor="middle" font-size="20" fill="#1a237e" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">第 0 片</tspan></text>
+<text x="245" y="422" text-anchor="middle" font-size="23" fill="#1a237e" font-weight="400">8K × 1</text>
+<text x="245" y="451" text-anchor="middle" font-size="18" fill="#1a237e" font-weight="400">D</text>
+</g>
+<g id="chip-1">
+<rect x="320" y="325" width="110" height="140" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+<text x="340" y="348" text-anchor="middle" font-size="18" fill="#1a237e" font-weight="400">A</text>
+<text x="375" y="348" text-anchor="middle" font-size="16" fill="#1a237e" font-weight="400">WE</text>
+<path d="M 364.76 332 H 385.24" fill="none" stroke="#1a237e" stroke-width="1.4" stroke-linejoin="round"/>
+<text x="410" y="348" text-anchor="middle" font-size="16" fill="#d62728" font-weight="400">CS</text>
+<path d="M 399.76 332 H 420.24" fill="none" stroke="#d62728" stroke-width="1.4" stroke-linejoin="round"/>
+<text x="375" y="387" text-anchor="middle" font-size="20" fill="#1a237e" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">第 1 片</tspan></text>
+<text x="375" y="422" text-anchor="middle" font-size="23" fill="#1a237e" font-weight="400">8K × 1</text>
+<text x="375" y="451" text-anchor="middle" font-size="18" fill="#1a237e" font-weight="400">D</text>
+</g>
+<g id="chip-2">
+<rect x="450" y="325" width="110" height="140" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+<text x="470" y="348" text-anchor="middle" font-size="18" fill="#1a237e" font-weight="400">A</text>
+<text x="505" y="348" text-anchor="middle" font-size="16" fill="#1a237e" font-weight="400">WE</text>
+<path d="M 494.76 332 H 515.24" fill="none" stroke="#1a237e" stroke-width="1.4" stroke-linejoin="round"/>
+<text x="540" y="348" text-anchor="middle" font-size="16" fill="#d62728" font-weight="400">CS</text>
+<path d="M 529.76 332 H 550.24" fill="none" stroke="#d62728" stroke-width="1.4" stroke-linejoin="round"/>
+<text x="505" y="387" text-anchor="middle" font-size="20" fill="#1a237e" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">第 2 片</tspan></text>
+<text x="505" y="422" text-anchor="middle" font-size="23" fill="#1a237e" font-weight="400">8K × 1</text>
+<text x="505" y="451" text-anchor="middle" font-size="18" fill="#1a237e" font-weight="400">D</text>
+</g>
+<g id="chip-3">
+<rect x="580" y="325" width="110" height="140" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+<text x="600" y="348" text-anchor="middle" font-size="18" fill="#1a237e" font-weight="400">A</text>
+<text x="635" y="348" text-anchor="middle" font-size="16" fill="#1a237e" font-weight="400">WE</text>
+<path d="M 624.76 332 H 645.24" fill="none" stroke="#1a237e" stroke-width="1.4" stroke-linejoin="round"/>
+<text x="670" y="348" text-anchor="middle" font-size="16" fill="#d62728" font-weight="400">CS</text>
+<path d="M 659.76 332 H 680.24" fill="none" stroke="#d62728" stroke-width="1.4" stroke-linejoin="round"/>
+<text x="635" y="387" text-anchor="middle" font-size="20" fill="#1a237e" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">第 3 片</tspan></text>
+<text x="635" y="422" text-anchor="middle" font-size="23" fill="#1a237e" font-weight="400">8K × 1</text>
+<text x="635" y="451" text-anchor="middle" font-size="18" fill="#1a237e" font-weight="400">D</text>
+</g>
+<g id="chip-4">
+<rect x="710" y="325" width="110" height="140" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+<text x="730" y="348" text-anchor="middle" font-size="18" fill="#1a237e" font-weight="400">A</text>
+<text x="765" y="348" text-anchor="middle" font-size="16" fill="#1a237e" font-weight="400">WE</text>
+<path d="M 754.76 332 H 775.24" fill="none" stroke="#1a237e" stroke-width="1.4" stroke-linejoin="round"/>
+<text x="800" y="348" text-anchor="middle" font-size="16" fill="#d62728" font-weight="400">CS</text>
+<path d="M 789.76 332 H 810.24" fill="none" stroke="#d62728" stroke-width="1.4" stroke-linejoin="round"/>
+<text x="765" y="387" text-anchor="middle" font-size="20" fill="#1a237e" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">第 4 片</tspan></text>
+<text x="765" y="422" text-anchor="middle" font-size="23" fill="#1a237e" font-weight="400">8K × 1</text>
+<text x="765" y="451" text-anchor="middle" font-size="18" fill="#1a237e" font-weight="400">D</text>
+</g>
+<g id="chip-5">
+<rect x="840" y="325" width="110" height="140" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+<text x="860" y="348" text-anchor="middle" font-size="18" fill="#1a237e" font-weight="400">A</text>
+<text x="895" y="348" text-anchor="middle" font-size="16" fill="#1a237e" font-weight="400">WE</text>
+<path d="M 884.76 332 H 905.24" fill="none" stroke="#1a237e" stroke-width="1.4" stroke-linejoin="round"/>
+<text x="930" y="348" text-anchor="middle" font-size="16" fill="#d62728" font-weight="400">CS</text>
+<path d="M 919.76 332 H 940.24" fill="none" stroke="#d62728" stroke-width="1.4" stroke-linejoin="round"/>
+<text x="895" y="387" text-anchor="middle" font-size="20" fill="#1a237e" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">第 5 片</tspan></text>
+<text x="895" y="422" text-anchor="middle" font-size="23" fill="#1a237e" font-weight="400">8K × 1</text>
+<text x="895" y="451" text-anchor="middle" font-size="18" fill="#1a237e" font-weight="400">D</text>
+</g>
+<g id="chip-6">
+<rect x="970" y="325" width="110" height="140" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+<text x="990" y="348" text-anchor="middle" font-size="18" fill="#1a237e" font-weight="400">A</text>
+<text x="1025" y="348" text-anchor="middle" font-size="16" fill="#1a237e" font-weight="400">WE</text>
+<path d="M 1014.76 332 H 1035.24" fill="none" stroke="#1a237e" stroke-width="1.4" stroke-linejoin="round"/>
+<text x="1060" y="348" text-anchor="middle" font-size="16" fill="#d62728" font-weight="400">CS</text>
+<path d="M 1049.76 332 H 1070.24" fill="none" stroke="#d62728" stroke-width="1.4" stroke-linejoin="round"/>
+<text x="1025" y="387" text-anchor="middle" font-size="20" fill="#1a237e" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">第 6 片</tspan></text>
+<text x="1025" y="422" text-anchor="middle" font-size="23" fill="#1a237e" font-weight="400">8K × 1</text>
+<text x="1025" y="451" text-anchor="middle" font-size="18" fill="#1a237e" font-weight="400">D</text>
+</g>
+<g id="chip-7">
+<rect x="1100" y="325" width="110" height="140" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+<text x="1120" y="348" text-anchor="middle" font-size="18" fill="#1a237e" font-weight="400">A</text>
+<text x="1155" y="348" text-anchor="middle" font-size="16" fill="#1a237e" font-weight="400">WE</text>
+<path d="M 1144.76 332 H 1165.24" fill="none" stroke="#1a237e" stroke-width="1.4" stroke-linejoin="round"/>
+<text x="1190" y="348" text-anchor="middle" font-size="16" fill="#d62728" font-weight="400">CS</text>
+<path d="M 1179.76 332 H 1200.24" fill="none" stroke="#d62728" stroke-width="1.4" stroke-linejoin="round"/>
+<text x="1155" y="387" text-anchor="middle" font-size="20" fill="#1a237e" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">第 7 片</tspan></text>
+<text x="1155" y="422" text-anchor="middle" font-size="23" fill="#1a237e" font-weight="400">8K × 1</text>
+<text x="1155" y="451" text-anchor="middle" font-size="18" fill="#1a237e" font-weight="400">D</text>
+</g>
+<path d="M 180 145 H 1120" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round"/>
+<path d="M 180 195 H 1155" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round"/>
+<path d="M 180 245 H 1190" fill="none" stroke="#d62728" stroke-width="2.2" stroke-linejoin="round"/>
+<text x="140" y="153" text-anchor="end" font-size="22" fill="#1a237e" font-weight="400">A<tspan font-size="15.4" baseline-shift="sub">12</tspan>～A<tspan font-size="15.4" baseline-shift="sub">0</tspan></text>
+<text x="140" y="203" text-anchor="middle" font-size="22" fill="#1a237e" font-weight="400">WE</text>
+<path d="M 125.92 181 H 154.08" fill="none" stroke="#1a237e" stroke-width="1.4" stroke-linejoin="round"/>
+<text x="140" y="253" text-anchor="middle" font-size="22" fill="#d62728" font-weight="400">CS</text>
+<path d="M 125.92 231 H 154.08" fill="none" stroke="#d62728" stroke-width="1.4" stroke-linejoin="round"/>
+<path d="M 184 151 L 196 139" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round"/>
+<text x="190" y="132" text-anchor="middle" font-size="18" fill="#1a237e" font-weight="400">13</text>
+<path d="M 210 188 A 7 7 0 0 1 210 202" fill="#ffffff" stroke="#ffffff" stroke-width="6"/>
+<path d="M 210 238 A 7 7 0 0 1 210 252" fill="#ffffff" stroke="#ffffff" stroke-width="6"/>
+<path d="M 210 145 V 188 A 7 7 0 0 1 210 202 V 238 A 7 7 0 0 1 210 252 V 325" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M 245 238 A 7 7 0 0 1 245 252" fill="#ffffff" stroke="#ffffff" stroke-width="6"/>
+<path d="M 245 195 V 238 A 7 7 0 0 1 245 252 V 325" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M 280 245 V 325" fill="none" stroke="#d62728" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#red-arrow)"/>
+<circle cx="210" cy="145" r="3.5" fill="#4051b5"/>
+<circle cx="245" cy="195" r="3.5" fill="#4051b5"/>
+<circle cx="280" cy="245" r="3.5" fill="#d62728"/>
+<path d="M 245 465 V 555" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+<text x="245" y="582" text-anchor="middle" font-size="24" fill="#1a237e" font-weight="400">D<tspan font-size="15.4" baseline-shift="sub">0</tspan></text>
+<path d="M 340 188 A 7 7 0 0 1 340 202" fill="#ffffff" stroke="#ffffff" stroke-width="6"/>
+<path d="M 340 238 A 7 7 0 0 1 340 252" fill="#ffffff" stroke="#ffffff" stroke-width="6"/>
+<path d="M 340 145 V 188 A 7 7 0 0 1 340 202 V 238 A 7 7 0 0 1 340 252 V 325" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M 375 238 A 7 7 0 0 1 375 252" fill="#ffffff" stroke="#ffffff" stroke-width="6"/>
+<path d="M 375 195 V 238 A 7 7 0 0 1 375 252 V 325" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M 410 245 V 325" fill="none" stroke="#d62728" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#red-arrow)"/>
+<circle cx="340" cy="145" r="3.5" fill="#4051b5"/>
+<circle cx="375" cy="195" r="3.5" fill="#4051b5"/>
+<circle cx="410" cy="245" r="3.5" fill="#d62728"/>
+<path d="M 375 465 V 555" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+<text x="375" y="582" text-anchor="middle" font-size="24" fill="#1a237e" font-weight="400">D<tspan font-size="15.4" baseline-shift="sub">1</tspan></text>
+<path d="M 470 188 A 7 7 0 0 1 470 202" fill="#ffffff" stroke="#ffffff" stroke-width="6"/>
+<path d="M 470 238 A 7 7 0 0 1 470 252" fill="#ffffff" stroke="#ffffff" stroke-width="6"/>
+<path d="M 470 145 V 188 A 7 7 0 0 1 470 202 V 238 A 7 7 0 0 1 470 252 V 325" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M 505 238 A 7 7 0 0 1 505 252" fill="#ffffff" stroke="#ffffff" stroke-width="6"/>
+<path d="M 505 195 V 238 A 7 7 0 0 1 505 252 V 325" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M 540 245 V 325" fill="none" stroke="#d62728" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#red-arrow)"/>
+<circle cx="470" cy="145" r="3.5" fill="#4051b5"/>
+<circle cx="505" cy="195" r="3.5" fill="#4051b5"/>
+<circle cx="540" cy="245" r="3.5" fill="#d62728"/>
+<path d="M 505 465 V 555" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+<text x="505" y="582" text-anchor="middle" font-size="24" fill="#1a237e" font-weight="400">D<tspan font-size="15.4" baseline-shift="sub">2</tspan></text>
+<path d="M 600 188 A 7 7 0 0 1 600 202" fill="#ffffff" stroke="#ffffff" stroke-width="6"/>
+<path d="M 600 238 A 7 7 0 0 1 600 252" fill="#ffffff" stroke="#ffffff" stroke-width="6"/>
+<path d="M 600 145 V 188 A 7 7 0 0 1 600 202 V 238 A 7 7 0 0 1 600 252 V 325" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M 635 238 A 7 7 0 0 1 635 252" fill="#ffffff" stroke="#ffffff" stroke-width="6"/>
+<path d="M 635 195 V 238 A 7 7 0 0 1 635 252 V 325" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M 670 245 V 325" fill="none" stroke="#d62728" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#red-arrow)"/>
+<circle cx="600" cy="145" r="3.5" fill="#4051b5"/>
+<circle cx="635" cy="195" r="3.5" fill="#4051b5"/>
+<circle cx="670" cy="245" r="3.5" fill="#d62728"/>
+<path d="M 635 465 V 555" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+<text x="635" y="582" text-anchor="middle" font-size="24" fill="#1a237e" font-weight="400">D<tspan font-size="15.4" baseline-shift="sub">3</tspan></text>
+<path d="M 730 188 A 7 7 0 0 1 730 202" fill="#ffffff" stroke="#ffffff" stroke-width="6"/>
+<path d="M 730 238 A 7 7 0 0 1 730 252" fill="#ffffff" stroke="#ffffff" stroke-width="6"/>
+<path d="M 730 145 V 188 A 7 7 0 0 1 730 202 V 238 A 7 7 0 0 1 730 252 V 325" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M 765 238 A 7 7 0 0 1 765 252" fill="#ffffff" stroke="#ffffff" stroke-width="6"/>
+<path d="M 765 195 V 238 A 7 7 0 0 1 765 252 V 325" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M 800 245 V 325" fill="none" stroke="#d62728" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#red-arrow)"/>
+<circle cx="730" cy="145" r="3.5" fill="#4051b5"/>
+<circle cx="765" cy="195" r="3.5" fill="#4051b5"/>
+<circle cx="800" cy="245" r="3.5" fill="#d62728"/>
+<path d="M 765 465 V 555" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+<text x="765" y="582" text-anchor="middle" font-size="24" fill="#1a237e" font-weight="400">D<tspan font-size="15.4" baseline-shift="sub">4</tspan></text>
+<path d="M 860 188 A 7 7 0 0 1 860 202" fill="#ffffff" stroke="#ffffff" stroke-width="6"/>
+<path d="M 860 238 A 7 7 0 0 1 860 252" fill="#ffffff" stroke="#ffffff" stroke-width="6"/>
+<path d="M 860 145 V 188 A 7 7 0 0 1 860 202 V 238 A 7 7 0 0 1 860 252 V 325" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M 895 238 A 7 7 0 0 1 895 252" fill="#ffffff" stroke="#ffffff" stroke-width="6"/>
+<path d="M 895 195 V 238 A 7 7 0 0 1 895 252 V 325" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M 930 245 V 325" fill="none" stroke="#d62728" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#red-arrow)"/>
+<circle cx="860" cy="145" r="3.5" fill="#4051b5"/>
+<circle cx="895" cy="195" r="3.5" fill="#4051b5"/>
+<circle cx="930" cy="245" r="3.5" fill="#d62728"/>
+<path d="M 895 465 V 555" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+<text x="895" y="582" text-anchor="middle" font-size="24" fill="#1a237e" font-weight="400">D<tspan font-size="15.4" baseline-shift="sub">5</tspan></text>
+<path d="M 990 188 A 7 7 0 0 1 990 202" fill="#ffffff" stroke="#ffffff" stroke-width="6"/>
+<path d="M 990 238 A 7 7 0 0 1 990 252" fill="#ffffff" stroke="#ffffff" stroke-width="6"/>
+<path d="M 990 145 V 188 A 7 7 0 0 1 990 202 V 238 A 7 7 0 0 1 990 252 V 325" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M 1025 238 A 7 7 0 0 1 1025 252" fill="#ffffff" stroke="#ffffff" stroke-width="6"/>
+<path d="M 1025 195 V 238 A 7 7 0 0 1 1025 252 V 325" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M 1060 245 V 325" fill="none" stroke="#d62728" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#red-arrow)"/>
+<circle cx="990" cy="145" r="3.5" fill="#4051b5"/>
+<circle cx="1025" cy="195" r="3.5" fill="#4051b5"/>
+<circle cx="1060" cy="245" r="3.5" fill="#d62728"/>
+<path d="M 1025 465 V 555" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+<text x="1025" y="582" text-anchor="middle" font-size="24" fill="#1a237e" font-weight="400">D<tspan font-size="15.4" baseline-shift="sub">6</tspan></text>
+<path d="M 1120 188 A 7 7 0 0 1 1120 202" fill="#ffffff" stroke="#ffffff" stroke-width="6"/>
+<path d="M 1120 238 A 7 7 0 0 1 1120 252" fill="#ffffff" stroke="#ffffff" stroke-width="6"/>
+<path d="M 1120 145 V 188 A 7 7 0 0 1 1120 202 V 238 A 7 7 0 0 1 1120 252 V 325" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M 1155 238 A 7 7 0 0 1 1155 252" fill="#ffffff" stroke="#ffffff" stroke-width="6"/>
+<path d="M 1155 195 V 238 A 7 7 0 0 1 1155 252 V 325" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M 1190 245 V 325" fill="none" stroke="#d62728" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#red-arrow)"/>
+<circle cx="1120" cy="145" r="3.5" fill="#4051b5"/>
+<circle cx="1155" cy="195" r="3.5" fill="#4051b5"/>
+<circle cx="1190" cy="245" r="3.5" fill="#d62728"/>
+<path d="M 1155 465 V 555" fill="none" stroke="#4051b5" stroke-width="2.8" stroke-linejoin="round" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+<text x="1155" y="582" text-anchor="middle" font-size="24" fill="#1a237e" font-weight="400">D<tspan font-size="15.4" baseline-shift="sub">7</tspan></text>
+<path d="M 245 592 V 604 H 1155 V 592" fill="none" stroke="#4051b5" stroke-width="1.5" stroke-linejoin="round"/>
+<text x="700" y="640" text-anchor="middle" font-size="23" fill="#1a237e" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">每片提供 1 位，8 片合成 8 位数据</tspan></text>
+</svg>

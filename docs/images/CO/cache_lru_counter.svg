@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="832" viewBox="0 0 1440 832" role="img" aria-labelledby="title desc" font-family="Times New Roman, Times, Liberation Serif, Noto Serif, serif">
+<title id="title">LRU 计数器从空开始的更新过程（四路组）</title><desc id="desc">四路组从空开始，依次调入 A、B、C、D。每调入一块，新行计数值置 0，原有各行加 1，故调入 D 后计数值自上而下为 0、1、2、3，从近到远是 D C B A。访问 C 命中，C 置 0，比它新的 D 加 1，次序变为 C D B A。再访问 E 缺失且组已满，替换计数值为 3 的 A；E 置 0，其余各行加 1，次序变为 E C D B。各行按计数值自上而下排列，浅蓝底、红框标出本次调入或被访问的块，虚线框表示空闲行。</desc>
+<!-- 与 storage.md 中「LRU 的计数器实现」一致；四路组计数器为 ⌈log2 r⌉ = 2 位，0 表示最近访问，r − 1 = 3 表示最久未访问。 -->
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#4051b5"/></marker></defs>
+<rect width="1440" height="832" fill="#ffffff"/>
+<text x="720" y="46" text-anchor="middle" font-size="27" fill="#1a237e" font-weight="700"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">LRU 计数器从空开始的更新过程（四路组）</tspan></text>
+<text x="296" y="108" text-anchor="middle" font-size="22" fill="#1a237e" font-weight="600"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">① 初始为空</tspan></text>
+<text x="198" y="167" text-anchor="end" font-size="22" fill="#9aa7bd"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">计</tspan> = —</text>
+<rect x="212" y="132" width="168" height="54" fill="#f7f8fc" stroke="#9aa7bd" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="7 5"/>
+<text x="296" y="166" text-anchor="middle" font-size="21" fill="#9aa7bd" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">空闲</tspan></text>
+<text x="198" y="233" text-anchor="end" font-size="22" fill="#9aa7bd"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">计</tspan> = —</text>
+<rect x="212" y="198" width="168" height="54" fill="#f7f8fc" stroke="#9aa7bd" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="7 5"/>
+<text x="296" y="232" text-anchor="middle" font-size="21" fill="#9aa7bd" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">空闲</tspan></text>
+<text x="198" y="299" text-anchor="end" font-size="22" fill="#9aa7bd"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">计</tspan> = —</text>
+<rect x="212" y="264" width="168" height="54" fill="#f7f8fc" stroke="#9aa7bd" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="7 5"/>
+<text x="296" y="298" text-anchor="middle" font-size="21" fill="#9aa7bd" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">空闲</tspan></text>
+<text x="198" y="365" text-anchor="end" font-size="22" fill="#9aa7bd"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">计</tspan> = —</text>
+<rect x="212" y="330" width="168" height="54" fill="#f7f8fc" stroke="#9aa7bd" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="7 5"/>
+<text x="296" y="364" text-anchor="middle" font-size="21" fill="#9aa7bd" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">空闲</tspan></text>
+<text x="606" y="108" text-anchor="middle" font-size="22" fill="#1a237e" font-weight="600"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">② 调入 A</tspan></text>
+<text x="508" y="167" text-anchor="end" font-size="22" fill="#1a237e"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">计</tspan> = 0</text>
+<rect x="522" y="132" width="168" height="54" fill="#dde5ff" stroke="#d62728" stroke-width="2"/>
+<text x="606" y="168" text-anchor="middle" font-size="28" fill="#1a237e" font-weight="600">A</text>
+<text x="508" y="233" text-anchor="end" font-size="22" fill="#9aa7bd"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">计</tspan> = —</text>
+<rect x="522" y="198" width="168" height="54" fill="#f7f8fc" stroke="#9aa7bd" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="7 5"/>
+<text x="606" y="232" text-anchor="middle" font-size="21" fill="#9aa7bd" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">空闲</tspan></text>
+<text x="508" y="299" text-anchor="end" font-size="22" fill="#9aa7bd"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">计</tspan> = —</text>
+<rect x="522" y="264" width="168" height="54" fill="#f7f8fc" stroke="#9aa7bd" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="7 5"/>
+<text x="606" y="298" text-anchor="middle" font-size="21" fill="#9aa7bd" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">空闲</tspan></text>
+<text x="508" y="365" text-anchor="end" font-size="22" fill="#9aa7bd"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">计</tspan> = —</text>
+<rect x="522" y="330" width="168" height="54" fill="#f7f8fc" stroke="#9aa7bd" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="7 5"/>
+<text x="606" y="364" text-anchor="middle" font-size="21" fill="#9aa7bd" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">空闲</tspan></text>
+<text x="916" y="108" text-anchor="middle" font-size="22" fill="#1a237e" font-weight="600"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">③ 调入 B</tspan></text>
+<text x="818" y="167" text-anchor="end" font-size="22" fill="#1a237e"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">计</tspan> = 0</text>
+<rect x="832" y="132" width="168" height="54" fill="#dde5ff" stroke="#d62728" stroke-width="2"/>
+<text x="916" y="168" text-anchor="middle" font-size="28" fill="#1a237e" font-weight="600">B</text>
+<text x="818" y="233" text-anchor="end" font-size="22" fill="#1a237e"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">计</tspan> = 1</text>
+<rect x="832" y="198" width="168" height="54" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+<text x="916" y="234" text-anchor="middle" font-size="28" fill="#1a237e" font-weight="600">A</text>
+<text x="818" y="299" text-anchor="end" font-size="22" fill="#9aa7bd"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">计</tspan> = —</text>
+<rect x="832" y="264" width="168" height="54" fill="#f7f8fc" stroke="#9aa7bd" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="7 5"/>
+<text x="916" y="298" text-anchor="middle" font-size="21" fill="#9aa7bd" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">空闲</tspan></text>
+<text x="818" y="365" text-anchor="end" font-size="22" fill="#9aa7bd"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">计</tspan> = —</text>
+<rect x="832" y="330" width="168" height="54" fill="#f7f8fc" stroke="#9aa7bd" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="7 5"/>
+<text x="916" y="364" text-anchor="middle" font-size="21" fill="#9aa7bd" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">空闲</tspan></text>
+<text x="1226" y="108" text-anchor="middle" font-size="22" fill="#1a237e" font-weight="600"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">④ 调入 C</tspan></text>
+<text x="1128" y="167" text-anchor="end" font-size="22" fill="#1a237e"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">计</tspan> = 0</text>
+<rect x="1142" y="132" width="168" height="54" fill="#dde5ff" stroke="#d62728" stroke-width="2"/>
+<text x="1226" y="168" text-anchor="middle" font-size="28" fill="#1a237e" font-weight="600">C</text>
+<text x="1128" y="233" text-anchor="end" font-size="22" fill="#1a237e"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">计</tspan> = 1</text>
+<rect x="1142" y="198" width="168" height="54" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+<text x="1226" y="234" text-anchor="middle" font-size="28" fill="#1a237e" font-weight="600">B</text>
+<text x="1128" y="299" text-anchor="end" font-size="22" fill="#1a237e"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">计</tspan> = 2</text>
+<rect x="1142" y="264" width="168" height="54" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+<text x="1226" y="300" text-anchor="middle" font-size="28" fill="#1a237e" font-weight="600">A</text>
+<text x="1128" y="365" text-anchor="end" font-size="22" fill="#9aa7bd"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">计</tspan> = —</text>
+<rect x="1142" y="330" width="168" height="54" fill="#f7f8fc" stroke="#9aa7bd" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="7 5"/>
+<text x="1226" y="364" text-anchor="middle" font-size="21" fill="#9aa7bd" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">空闲</tspan></text>
+<text x="448" y="470" text-anchor="middle" font-size="22" fill="#1a237e" font-weight="600"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">⑤ 调入 D</tspan></text>
+<text x="350" y="529" text-anchor="end" font-size="22" fill="#1a237e"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">计</tspan> = 0</text>
+<rect x="364" y="494" width="168" height="54" fill="#dde5ff" stroke="#d62728" stroke-width="2"/>
+<text x="448" y="530" text-anchor="middle" font-size="28" fill="#1a237e" font-weight="600">D</text>
+<text x="350" y="595" text-anchor="end" font-size="22" fill="#1a237e"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">计</tspan> = 1</text>
+<rect x="364" y="560" width="168" height="54" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+<text x="448" y="596" text-anchor="middle" font-size="28" fill="#1a237e" font-weight="600">C</text>
+<text x="350" y="661" text-anchor="end" font-size="22" fill="#1a237e"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">计</tspan> = 2</text>
+<rect x="364" y="626" width="168" height="54" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+<text x="448" y="662" text-anchor="middle" font-size="28" fill="#1a237e" font-weight="600">B</text>
+<text x="350" y="727" text-anchor="end" font-size="22" fill="#1a237e"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">计</tspan> = 3</text>
+<rect x="364" y="692" width="168" height="54" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+<text x="448" y="728" text-anchor="middle" font-size="28" fill="#1a237e" font-weight="600">A</text>
+<text x="758" y="470" text-anchor="middle" font-size="22" fill="#1a237e" font-weight="600"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">⑥ 访问 C：命中</tspan></text>
+<text x="660" y="529" text-anchor="end" font-size="22" fill="#1a237e"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">计</tspan> = 0</text>
+<rect x="674" y="494" width="168" height="54" fill="#dde5ff" stroke="#d62728" stroke-width="2"/>
+<text x="758" y="530" text-anchor="middle" font-size="28" fill="#1a237e" font-weight="600">C</text>
+<text x="660" y="595" text-anchor="end" font-size="22" fill="#1a237e"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">计</tspan> = 1</text>
+<rect x="674" y="560" width="168" height="54" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+<text x="758" y="596" text-anchor="middle" font-size="28" fill="#1a237e" font-weight="600">D</text>
+<text x="660" y="661" text-anchor="end" font-size="22" fill="#1a237e"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">计</tspan> = 2</text>
+<rect x="674" y="626" width="168" height="54" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+<text x="758" y="662" text-anchor="middle" font-size="28" fill="#1a237e" font-weight="600">B</text>
+<text x="660" y="727" text-anchor="end" font-size="22" fill="#1a237e"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">计</tspan> = 3</text>
+<rect x="674" y="692" width="168" height="54" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+<text x="758" y="728" text-anchor="middle" font-size="28" fill="#1a237e" font-weight="600">A</text>
+<text x="1068" y="470" text-anchor="middle" font-size="22" fill="#1a237e" font-weight="600"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">⑦ 访问 E：缺失，替换 A</tspan></text>
+<text x="970" y="529" text-anchor="end" font-size="22" fill="#1a237e"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">计</tspan> = 0</text>
+<rect x="984" y="494" width="168" height="54" fill="#dde5ff" stroke="#d62728" stroke-width="2"/>
+<text x="1068" y="530" text-anchor="middle" font-size="28" fill="#1a237e" font-weight="600">E</text>
+<text x="970" y="595" text-anchor="end" font-size="22" fill="#1a237e"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">计</tspan> = 1</text>
+<rect x="984" y="560" width="168" height="54" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+<text x="1068" y="596" text-anchor="middle" font-size="28" fill="#1a237e" font-weight="600">C</text>
+<text x="970" y="661" text-anchor="end" font-size="22" fill="#1a237e"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">计</tspan> = 2</text>
+<rect x="984" y="626" width="168" height="54" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+<text x="1068" y="662" text-anchor="middle" font-size="28" fill="#1a237e" font-weight="600">D</text>
+<text x="970" y="727" text-anchor="end" font-size="22" fill="#1a237e"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">计</tspan> = 3</text>
+<rect x="984" y="692" width="168" height="54" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+<text x="1068" y="728" text-anchor="middle" font-size="28" fill="#1a237e" font-weight="600">B</text>
+<path d="M 386 258 H 452" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M 696 258 H 762" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M 1006 258 H 1072" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M 538 620 H 604" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M 848 620 H 914" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M 1226 390 V 414 H 448 V 438" fill="none" stroke="#4051b5" stroke-width="2" stroke-linejoin="round" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+<rect x="584" y="776" width="30" height="20" fill="#dde5ff" stroke="#d62728" stroke-width="2"/>
+<text x="624" y="793" font-size="21" fill="#1a237e" font-weight="400"><tspan font-family="Source Han Sans SC, Noto Sans SC, Source Han Sans CN, Microsoft YaHei, sans-serif">本次被访问或新调入的块</tspan></text>
+</svg>
