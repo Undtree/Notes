@@ -13,7 +13,7 @@
 
     在此表示由衷的感谢！
 
-!!! Note "目录 & 关键词索引"
+!!! Note "目录"
     - [x] [概述](./os_intro.md)
     - [x] [进程和线程](./process.md)
     - [x] [调度](./schedule.md)
