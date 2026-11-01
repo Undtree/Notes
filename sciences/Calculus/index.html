@@ -8721,7 +8721,7 @@
 
 <h1 id="微积分">微积分<a class="headerlink" href="#微积分" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 24802 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 83 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 25070 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 84 分钟</p>
 </div>
 <div class="admonition abstract">
 <p class="admonition-title">参考教材</p>
@@ -10763,6 +10763,84 @@ V_T=\int_0^TP(t)e^{r(T-t)}\,\mathrm dt=e^{rT}V_0.
 <tr>
 <td><span class="arithmatex">\(A=+\infty,\ p\ge1\)</span></td>
 <td>发散</td>
+</tr>
+</tbody>
+</table>
+<p><strong>对数型反常积分（补充）：</strong> 设 <span class="arithmatex">\(a&gt;1\)</span>、<span class="arithmatex">\(q\in\mathbb R\)</span>，则</p>
+<div class="arithmatex">\[
+\int_a^{+\infty}\frac{\mathrm dx}{x(\ln x)^q}\text{ 收敛}\iff q&gt;1.
+\]</div>
+<details class="info">
+<summary>换元推导</summary>
+<p>对 <span class="arithmatex">\(t&gt;a\)</span>，令 <span class="arithmatex">\(u=\ln x\)</span>，则 <span class="arithmatex">\(\mathrm du=\mathrm dx/x\)</span>，有</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\int_a^t\frac{\mathrm dx}{x(\ln x)^q}
+&amp;=\int_{\ln a}^{\ln t}\frac{\mathrm du}{u^q}\\
+&amp;=\begin{cases}
+\dfrac{(\ln t)^{1-q}-(\ln a)^{1-q}}{1-q},&amp;q\ne1,\\[6pt]
+\ln\ln t-\ln\ln a,&amp;q=1.
+\end{cases}
+\end{aligned}
+\]</div>
+<p>令 <span class="arithmatex">\(t\to+\infty\)</span>，当 <span class="arithmatex">\(q&gt;1\)</span> 时，积分收敛，且</p>
+<div class="arithmatex">\[
+\int_a^{+\infty}\frac{\mathrm dx}{x(\ln x)^q}
+=\frac{(\ln a)^{1-q}}{q-1};
+\]</div>
+<p>当 <span class="arithmatex">\(q\le1\)</span> 时，上述极限为 <span class="arithmatex">\(+\infty\)</span>，积分发散。</p>
+</details>
+<p>特别地，<span class="arithmatex">\(q=1\)</span> 时，</p>
+<div class="arithmatex">\[
+\int_a^{+\infty}\frac{\mathrm dx}{x\ln x}
+=\lim_{t\to+\infty}(\ln\ln t-\ln\ln a)=+\infty.
+\]</div>
+<p>更一般地，设 <span class="arithmatex">\(p,q\in\mathbb R\)</span>、<span class="arithmatex">\(a&gt;1\)</span>，则</p>
+<table>
+<thead>
+<tr>
+<th>条件</th>
+<th><span class="arithmatex">\(\displaystyle\int_a^{+\infty}\frac{\mathrm dx}{x^p(\ln x)^q}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(p&gt;1\)</span></td>
+<td>对任意 <span class="arithmatex">\(q\)</span> 均收敛</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(p&lt;1\)</span></td>
+<td>对任意 <span class="arithmatex">\(q\)</span> 均发散</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(p=1\)</span></td>
+<td><span class="arithmatex">\(q&gt;1\)</span> 时收敛，<span class="arithmatex">\(q\le1\)</span> 时发散</td>
+</tr>
+</tbody>
+</table>
+<p><strong>不同反常端的区别：</strong> 在 <span class="arithmatex">\(x=1\)</span> 附近，令 <span class="arithmatex">\(u=\ln x\)</span>；在 <span class="arithmatex">\(x=0\)</span> 附近，令 <span class="arithmatex">\(u=-\ln x\)</span>。对 <span class="arithmatex">\(a&gt;1\)</span>、<span class="arithmatex">\(0&lt;b&lt;1\)</span>，有</p>
+<div class="arithmatex">\[
+\int_1^a\frac{\mathrm dx}{x(\ln x)^q}
+=\int_0^{\ln a}\frac{\mathrm du}{u^q},\qquad
+\int_0^b\frac{\mathrm dx}{x|\ln x|^q}
+=\int_{-\ln b}^{+\infty}\frac{\mathrm du}{u^q}.
+\]</div>
+<p>由两类 <span class="arithmatex">\(p\)</span> 反常积分的结论，得到</p>
+<table>
+<thead>
+<tr>
+<th>积分</th>
+<th>收敛的充要条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\displaystyle\int_1^a\frac{\mathrm dx}{x(\ln x)^q}\)</span>（<span class="arithmatex">\(a&gt;1\)</span>）</td>
+<td><span class="arithmatex">\(q&lt;1\)</span></td>
+</tr>
+<tr>
+<td>$\displaystyle\int_0^b\frac{\mathrm dx}{x</td>
+<td>\ln x</td>
 </tr>
 </tbody>
 </table>
