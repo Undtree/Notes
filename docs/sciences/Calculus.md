@@ -2348,6 +2348,67 @@ $$
 | $A=0,\ p<1$ | 收敛 |
 | $A=+\infty,\ p\ge1$ | 发散 |
 
+**对数型反常积分（补充）：** 设 $a>1$、$q\in\mathbb R$，则
+
+$$
+\int_a^{+\infty}\frac{\mathrm dx}{x(\ln x)^q}\text{ 收敛}\iff q>1.
+$$
+
+??? info "换元推导"
+
+    对 $t>a$，令 $u=\ln x$，则 $\mathrm du=\mathrm dx/x$，有
+
+    $$
+    \begin{aligned}
+    \int_a^t\frac{\mathrm dx}{x(\ln x)^q}
+    &=\int_{\ln a}^{\ln t}\frac{\mathrm du}{u^q}\\
+    &=\begin{cases}
+    \dfrac{(\ln t)^{1-q}-(\ln a)^{1-q}}{1-q},&q\ne1,\\[6pt]
+    \ln\ln t-\ln\ln a,&q=1.
+    \end{cases}
+    \end{aligned}
+    $$
+
+    令 $t\to+\infty$，当 $q>1$ 时，积分收敛，且
+
+    $$
+    \int_a^{+\infty}\frac{\mathrm dx}{x(\ln x)^q}
+    =\frac{(\ln a)^{1-q}}{q-1};
+    $$
+
+    当 $q\le1$ 时，上述极限为 $+\infty$，积分发散。
+
+特别地，$q=1$ 时，
+
+$$
+\int_a^{+\infty}\frac{\mathrm dx}{x\ln x}
+=\lim_{t\to+\infty}(\ln\ln t-\ln\ln a)=+\infty.
+$$
+
+更一般地，设 $p,q\in\mathbb R$、$a>1$，则
+
+| 条件 | $\displaystyle\int_a^{+\infty}\frac{\mathrm dx}{x^p(\ln x)^q}$ |
+| --- | --- |
+| $p>1$ | 对任意 $q$ 均收敛 |
+| $p<1$ | 对任意 $q$ 均发散 |
+| $p=1$ | $q>1$ 时收敛，$q\le1$ 时发散 |
+
+**不同反常端的区别：** 在 $x=1$ 附近，令 $u=\ln x$；在 $x=0$ 附近，令 $u=-\ln x$。对 $a>1$、$0<b<1$，有
+
+$$
+\int_1^a\frac{\mathrm dx}{x(\ln x)^q}
+=\int_0^{\ln a}\frac{\mathrm du}{u^q},\qquad
+\int_0^b\frac{\mathrm dx}{x|\ln x|^q}
+=\int_{-\ln b}^{+\infty}\frac{\mathrm du}{u^q}.
+$$
+
+由两类 $p$ 反常积分的结论，得到
+
+| 积分 | 收敛的充要条件 |
+| --- | --- |
+| $\displaystyle\int_1^a\frac{\mathrm dx}{x(\ln x)^q}$（$a>1$） | $q<1$ |
+| $\displaystyle\int_0^b\frac{\mathrm dx}{x|\ln x|^q}$（$0<b<1$） | $q>1$ |
+
 $\int |f|$ 收敛称为绝对收敛；$\int f$ 收敛而 $\int|f|$ 发散称为条件收敛。
 
 $$
