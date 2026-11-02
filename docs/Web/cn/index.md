@@ -11,7 +11,8 @@
     请支持 [咸鱼暄的代码空间](https://xuan-insr.github.io/)
 
 !!! Note "目录"
-    - [ ] [物理层](./Physics.md)
-    - [ ] [MAC 层](./MAC.md)
+    - [x] [物理层](./Physics.md)
+    - [ ] [数据链路层](./Datalink.md)
+    - [ ] [MAC 子层](./MAC.md)
     - [ ] [网络层](./Network.md)
     - [x] [期末复习](./review.md)
