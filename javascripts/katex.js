@@ -38,7 +38,7 @@
 
   function render() {
     if (!ready || !currentBody) return;
-    currentBody.querySelectorAll(".arithmatex").forEach((element) => {
+    currentBody.querySelectorAll(".arithmatex, .md-nav__link .md-ellipsis").forEach((element) => {
       window.renderMathInElement(element, {
         delimiters: [
           { left: "\\(", right: "\\)", display: false },
