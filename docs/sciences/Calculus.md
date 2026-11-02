@@ -2407,7 +2407,7 @@ $$
 | 积分 | 收敛的充要条件 |
 | --- | --- |
 | $\displaystyle\int_1^a\frac{\mathrm dx}{x(\ln x)^q}$（$a>1$） | $q<1$ |
-| $\displaystyle\int_0^b\frac{\mathrm dx}{x|\ln x|^q}$（$0<b<1$） | $q>1$ |
+| $\displaystyle\int_0^b\frac{\mathrm dx}{x \lvert \ln x \rvert^q}$（$0<b<1$） | $q>1$ |
 
 $\int |f|$ 收敛称为绝对收敛；$\int f$ 收敛而 $\int|f|$ 发散称为条件收敛。
 
