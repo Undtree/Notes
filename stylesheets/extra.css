@@ -340,3 +340,28 @@ body,
   border-bottom: .26em double currentColor;
   padding-bottom: .06em;
 }
+
+/* 补充样式：细线圆角框，标题嵌在上边框中，正文沿用页面字号。
+   用法：<div class="supplement" markdown="1">，首段使用
+   <p class="supplement__title">知识点 +</p>。*/
+.md-typeset .supplement {
+  min-width: 0;
+  margin: 1.8em 0;
+  padding: 0 1em 1em;
+  border: 1px solid var(--md-default-fg-color--light);
+  border-radius: .35rem;
+}
+
+.md-typeset .supplement > .supplement__title {
+  display: table;
+  max-width: 100%;
+  margin: -.8em 0 .6em;
+  padding: 0 .45em;
+  background: var(--md-default-bg-color);
+  font-weight: 650;
+  line-height: 1.6;
+}
+
+.md-typeset .supplement > :last-child {
+  margin-bottom: 0;
+}
