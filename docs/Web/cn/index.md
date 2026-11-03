@@ -6,10 +6,6 @@
 
     参考教材：Computer Networks (by Tanenbaum, Feamster and Wetherall, 6th edition)
 
-!!! Success "另外..."
-
-    请支持 [咸鱼暄的代码空间](https://xuan-insr.github.io/)
-
 !!! Note "目录"
     - [x] [物理层](./Physics.md)
     - [ ] [数据链路层](./Datalink.md)
