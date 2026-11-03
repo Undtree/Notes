@@ -2621,6 +2621,8 @@
       
         
       
+        
+      
     
     
     
@@ -2710,14 +2712,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../sciences/Phy/" class="md-nav__link">
+      <a href="../../../sciences/LAfaq/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    大学物理
+    线性代数 FAQ
   
 
     
@@ -2746,6 +2748,34 @@
     
   
     概率论与数理统计
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sciences/Phy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    大学物理
   
 
     
@@ -3733,7 +3763,7 @@
 
 <h1 id="存储系统">存储系统<a class="headerlink" href="#存储系统" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 14742 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 7 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 49 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 14788 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 7 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 49 分钟</p>
 </div>
 <p>计算机希望存储器同时具备 <strong>速度快、容量大、成本低</strong> 三个特点，但单一存储介质很难兼顾这三者。因此，我们需要把不同特性的存储器组织起来，让常用的信息靠近 CPU ，让大量暂时用不到的信息存放在容量更大的低速部件中。</p>
 <h2 id="存储器概述">存储器概述<a class="headerlink" href="#存储器概述" title="Permanent link">&para;</a></h2>
@@ -3832,7 +3862,7 @@
 <p>读操作的过程可以概括为： CPU 将目标地址送入 MAR ，经地址线送到主存；地址译码器选中对应位置，控制电路执行读操作；读出的数据经数据线送入 MDR ，再交给 CPU。</p>
 <p>写操作则是在给出地址的同时，将待写数据送入 MDR ；主存在写控制信号作用下，把数据线上的内容写入选中的位置。</p>
 <h4 id="编址单位与寻址范围">编址单位与寻址范围<a class="headerlink" href="#编址单位与寻址范围" title="Permanent link">&para;</a></h4>
-<p>在上述基本模型中，<strong>MAR 位数等于地址线位数， MDR 位数等于数据线宽度</strong>。设地址为 <span class="arithmatex">\(n\)</span> 位，则最多能区分 <span class="arithmatex">\(2^n\)</span> 个地址。完整地址的位数决定可区分的地址数量，每个地址对应的容量由编址单位决定：</p>
+<p>在上述基本模型中，<strong>MAR 位数等于地址线位数， MDR 位数等于数据线宽度</strong>。特别需要注意的是， MAR 应该保证能访问到整个主存地址空间。设地址为 <span class="arithmatex">\(n\)</span> 位，则最多能区分 <span class="arithmatex">\(2^n\)</span> 个地址。完整地址的位数决定可区分的地址数量，每个地址对应的容量由编址单位决定：</p>
 <div class="arithmatex">\[
 \text{最大可寻址容量}=2^n\times\text{编址单位大小}.
 \]</div>
@@ -4157,13 +4187,12 @@ BW_{\mathrm{总线}}\propto\text{总线位宽}\times\text{每秒数据传输次�
 <p>位扩展 <strong>增加每个单元的位数（存储字长度），单元数不变</strong>。各芯片的地址线、读写控制线和片选线并联，数据线分别接到总线的不同位段。</p>
 <p>例如，用 8 片 <span class="arithmatex">\(8\mathrm{K}\times1\)</span> 位芯片构成 <span class="arithmatex">\(8\mathrm{K}\times8\)</span> 位存储器。8 片接收同一个 13 位片内地址，每片提供一位，合起来形成 8 位数据；扩展前后都是 <span class="arithmatex">\(8\mathrm{K}\)</span> 个单元。</p>
 <figure>
-![位扩展：8 片 8K×1 位芯片组成 8K×8 位存储器](../../images/CO/bit_expansion.svg){:width="80%"}
-<figurecaption>位扩展连接示意</figruecaption>
+<p><img alt="位扩展：8 片 8K×1 位芯片组成 8K×8 位存储器" src="../../../images/CO/bit_expansion.svg" width="80%" />
+<figurecaption>位扩展连接示意</figruecaption></p>
 </figure>
-
 <h4 id="字扩展">字扩展<a class="headerlink" href="#字扩展" title="Permanent link">&para;</a></h4>
 <p>字扩展 <strong>增加存储单元数（扩大地址空间），每个单元的位数不变</strong>。系统地址的低位接各芯片的片内地址引脚，高位经译码产生不同片选信号；各芯片的数据线和读写控制线共用，同一时刻只选中一个芯片。</p>
-<p>例如，用 4 片 <span class="arithmatex">\(16\mathrm{K}\times8\)</span> 位芯片构成 <span class="arithmatex">\(64\mathrm{K}\times8\)</span> 位存储器。系统地址为 16 位，其中 <span class="arithmatex">\(A_{13}\sim A_0\)</span> 接片内地址，<span class="arithmatex">\(A_{15}A_{14}\)</span> 经 2—4 译码器选择芯片：</p>
+<p>例如，用 4 片 <span class="arithmatex">\(16\mathrm{K}\times8\)</span> 位芯片构成 <span class="arithmatex">\(64\mathrm{K}\times8\)</span> 位存储器。系统地址为 16 位（由高位到低位依次为 <span class="arithmatex">\(A_{15}\sim A_0\)</span>），其中低位的 <span class="arithmatex">\(A_{13}\sim A_0\)</span> 接片内地址，高 2 位<span class="arithmatex">\(A_{15}A_{14}\)</span> 经 2—4 译码器选择芯片：</p>
 <center class="centered-table">
 <table>
 <thead>
@@ -4198,18 +4227,16 @@ BW_{\mathrm{总线}}\propto\text{总线位宽}\times\text{每秒数据传输次�
 </table>
 </center>
 <figure>
-![字扩展：4 片 16K×8 位芯片组成 64K×8 位存储器](../../images/CO/word_expansion.svg){:width="80%"}
-<figurecaption>字扩展连接示意</figruecaption>
+<p><img alt="字扩展：4 片 16K×8 位芯片组成 64K×8 位存储器" src="../../../images/CO/word_expansion.svg" width="80%" />
+<figurecaption>字扩展连接示意</figruecaption></p>
 </figure>
-
 <h4 id="字位同时扩展">字位同时扩展<a class="headerlink" href="#字位同时扩展" title="Permanent link">&para;</a></h4>
 <p>先把若干芯片按位扩展组成一组，再把多组按字扩展连接。</p>
-<p>例如，用 <span class="arithmatex">\(16\mathrm{K}\times4\)</span> 位芯片构成 <span class="arithmatex">\(64\mathrm{K}\times8\)</span> 位存储器：每组需要 <span class="arithmatex">\(8/4=2\)</span> 片，共需 <span class="arithmatex">\(64\mathrm{K}/16\mathrm{K}=4\)</span> 组，总共 8 片。高 2 位地址选择一组，被选中组内的两片同时工作，分别提供高、低 4 位数据。</p>
+<p>例如，用 <span class="arithmatex">\(16\mathrm{K}\times4\)</span> 位芯片构成 <span class="arithmatex">\(64\mathrm{K}\times8\)</span> 位存储器：每组需要 <span class="arithmatex">\(8/4=2\)</span> 片，共需 <span class="arithmatex">\(64\mathrm{K}/16\mathrm{K}=4\)</span> 组，总共 8 片。由高 2 位地址选择一组，被选中组内的两片同时工作，分别提供高、低 4 位数据。</p>
 <figure>
-![字位同时扩展：8 片 16K×4 位芯片组成 64K×8 位存储器](../../images/CO/word_bit_expansion.svg){:width="80%"}
-<figurecaption>字位扩展连接示意</figruecaption>
+<p><img alt="字位同时扩展：8 片 16K×4 位芯片组成 64K×8 位存储器" src="../../../images/CO/word_bit_expansion.svg" width="80%" />
+<figurecaption>字位扩展连接示意</figruecaption></p>
 </figure>
-
 <h2 id="外部存储器">外部存储器<a class="headerlink" href="#外部存储器" title="Permanent link">&para;</a></h2>
 <h3 id="磁盘存储器">磁盘存储器<a class="headerlink" href="#磁盘存储器" title="Permanent link">&para;</a></h3>
 <p>机械磁盘利用磁性介质记录信息，具有容量大、每位成本低、断电后保留数据、可重复改写和非破坏性读出的特点。它需要机械运动，因此访问延迟明显大于半导体存储器。</p>
@@ -4501,9 +4528,8 @@ T_{\mathrm{avg}}=HT_c+(1-H)(T_c+P)=T_c+(1-H)P.
 </ol>
 <p>例如，四路组初始为空。依次调入 <code>A</code>、<code>B</code>、<code>C</code>、<code>D</code> 时，每块都占用一行空闲行并把计数置为 0 ，原有各行加 1 ，最终计数值为 3、2、1、0 ，从近到远是 <code>D C B A</code>。再访问 <code>C</code> 命中，<code>C</code> 置 0 ，比它新的 <code>D</code> 加 1 ，次序变为 <code>C D B A</code>。此时调入新块 <code>E</code>，组已满，替换计数值为 3 的 <code>A</code>，其余各行加 1 ，结果为 <code>E C D B</code>。</p>
 <figure>
-![四路组相联-LRU 算法的替换过程](../../images/CO/cache_lru_counter.svg){:width="92%"}
+<p><img alt="四路组相联-LRU 算法的替换过程" src="../../../images/CO/cache_lru_counter.svg" width="92%" /></p>
 </figure>
-
 <h4 id="抖动">抖动<a class="headerlink" href="#抖动" title="Permanent link">&para;</a></h4>
 <p>若同一组只有 4 行，却循环访问映射到该组的 5 个块 <code>A B C D E A B C D E ...</code>，采用 LRU 时，每次调入新块都可能淘汰下次即将访问的块，导致持续缺失。这与进程级的<a href="../../OS/memory/#抖动">抖动</a>同源：热点集合超过可用容量时，按历史选择牺牲者的算法会反复失效。即使热点数据总量小于整个 Cache ，集中争用少数组也可能导致频繁替换。</p>
 <h3 id="cache-的一致性问题">Cache 的一致性问题<a class="headerlink" href="#cache-的一致性问题" title="Permanent link">&para;</a></h3>
