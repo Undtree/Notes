@@ -2057,7 +2057,7 @@
 
 <h1 id="线性代数-faq">线性代数 FAQ<a class="headerlink" href="#线性代数-faq" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 3424 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 11 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 3949 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 13 分钟</p>
 </div>
 <h2 id="行列式">行列式<a class="headerlink" href="#行列式" title="Permanent link">&para;</a></h2>
 <div class="supplement">
@@ -2141,6 +2141,48 @@ D_k=a_kD_{k-1}-b_{k-1}c_{k-1}D_{k-2}
 </ul>
 </div>
 <h2 id="矩阵">矩阵<a class="headerlink" href="#矩阵" title="Permanent link">&para;</a></h2>
+<div class="supplement">
+<p class="supplement__title">矩阵的运算</p>
+<ul>
+<li>设 <span class="arithmatex">\(A=(a_{ij})\)</span> 为 <span class="arithmatex">\(m\times n\)</span> 矩阵、<span class="arithmatex">\(B=(b_{ij})\)</span> 为 <span class="arithmatex">\(n\times p\)</span> 矩阵，则 <span class="arithmatex">\(AB\)</span> 为 <span class="arithmatex">\(m\times p\)</span> 矩阵，且 <span class="arithmatex">\((AB)_{ij}=\sum_{k=1}^n a_{ik}b_{kj}\)</span>。</li>
+<li>若 <span class="arithmatex">\(A,B,C\)</span> 的尺寸使连续乘积有定义，则 <span class="arithmatex">\((AB)C=A(BC)\)</span>。</li>
+<li>若相应运算的尺寸相容，则 <span class="arithmatex">\(A(B+C)=AB+AC\)</span>，<span class="arithmatex">\((A+B)C=AC+BC\)</span>。</li>
+<li>若 <span class="arithmatex">\(AB\)</span> 有定义，且 <span class="arithmatex">\(c\)</span> 为标量，则 <span class="arithmatex">\(c(AB)=(cA)B=A(cB)\)</span>。</li>
+<li>设 <span class="arithmatex">\(A\)</span> 为 <span class="arithmatex">\(m\times n\)</span> 矩阵，<span class="arithmatex">\(E_m,E_n\)</span> 分别为 <span class="arithmatex">\(m,n\)</span> 阶单位矩阵，则 <span class="arithmatex">\(E_mA=A=AE_n\)</span>。</li>
+<li>若乘积尺寸相容，则 <span class="arithmatex">\(AO=O\)</span>，<span class="arithmatex">\(OA=O\)</span>。</li>
+<li>设 <span class="arithmatex">\(A\)</span> 为 <span class="arithmatex">\(m\times n\)</span> 矩阵、<span class="arithmatex">\(B\)</span> 为 <span class="arithmatex">\(n\times m\)</span> 矩阵，则 <span class="arithmatex">\(\operatorname{tr}(AB)=\operatorname{tr}(BA)\)</span>。</li>
+</ul>
+</div>
+<div class="supplement">
+<p class="supplement__title">矩阵的转置</p>
+<ul>
+<li>对任意矩阵 <span class="arithmatex">\(A\)</span>，有 <span class="arithmatex">\((A^{\mathsf T})^{\mathsf T}=A\)</span>。</li>
+<li>设 <span class="arithmatex">\(A,B\)</span> 同型、<span class="arithmatex">\(c\)</span> 为标量，则 <span class="arithmatex">\((A+B)^{\mathsf T}=A^{\mathsf T}+B^{\mathsf T}\)</span>，<span class="arithmatex">\((cA)^{\mathsf T}=cA^{\mathsf T}\)</span>。</li>
+<li>若 <span class="arithmatex">\(AB\)</span> 有定义，则 <span class="arithmatex">\((AB)^{\mathsf T}=B^{\mathsf T}A^{\mathsf T}\)</span>；多个矩阵乘积的转置同样按逆序排列各因子的转置。</li>
+</ul>
+</div>
+<div class="supplement">
+<p class="supplement__title">逆矩阵</p>
+<ul>
+<li>若 <span class="arithmatex">\(A\)</span> 为 <span class="arithmatex">\(n\)</span> 阶可逆矩阵，则 <span class="arithmatex">\(AA^{-1}=A^{-1}A=E\)</span>，且 <span class="arithmatex">\((A^{-1})^{-1}=A\)</span>。</li>
+<li>设 <span class="arithmatex">\(A,B\)</span> 为同阶方阵。若 <span class="arithmatex">\(AB=E\)</span>，则 <span class="arithmatex">\(BA=E\)</span>，且 <span class="arithmatex">\(A^{-1}=B\)</span>、<span class="arithmatex">\(B^{-1}=A\)</span>。</li>
+<li>设 <span class="arithmatex">\(A,B\)</span> 为同阶方阵，则 <span class="arithmatex">\(AB\)</span> 可逆，当且仅当 <span class="arithmatex">\(A,B\)</span> 均可逆；此时 <span class="arithmatex">\((AB)^{-1}=B^{-1}A^{-1}\)</span>。多个可逆矩阵乘积的逆同样按逆序排列各因子的逆。</li>
+<li>若 <span class="arithmatex">\(A\)</span> 可逆，则 <span class="arithmatex">\(A^{\mathsf T}\)</span> 也可逆，且 <span class="arithmatex">\((A^{\mathsf T})^{-1}=(A^{-1})^{\mathsf T}\)</span>。</li>
+<li>若 <span class="arithmatex">\(A\)</span> 可逆且 <span class="arithmatex">\(c\ne0\)</span>，则 <span class="arithmatex">\((cA)^{-1}=\dfrac1c A^{-1}\)</span>。</li>
+<li>设 <span class="arithmatex">\(A\)</span> 为 <span class="arithmatex">\(n\ge2\)</span> 阶方阵、<span class="arithmatex">\(A^*\)</span> 为其伴随矩阵，则 <span class="arithmatex">\(AA^*=A^*A=(\det A)E\)</span>；若 <span class="arithmatex">\(A\)</span> 可逆，则 <span class="arithmatex">\(A^{-1}=\dfrac1{\det A}A^*\)</span>。</li>
+<li>若 <span class="arithmatex">\(A\)</span> 可逆，且相应乘积有定义，则 <span class="arithmatex">\(AB=AC\implies B=C\)</span>，<span class="arithmatex">\(BA=CA\implies B=C\)</span>。</li>
+<li>设 <span class="arithmatex">\(Q\)</span> 为 <span class="arithmatex">\(n\)</span> 阶实矩阵。若 <span class="arithmatex">\(Q^{\mathsf T}Q=E\)</span>，则 <span class="arithmatex">\(Q^{-1}=Q^{\mathsf T}\)</span>，且 <span class="arithmatex">\(QQ^{\mathsf T}=E\)</span>，此时称 <span class="arithmatex">\(Q\)</span> 为正交矩阵。</li>
+</ul>
+</div>
+<div class="supplement">
+<p class="supplement__title">方阵的幂与交换</p>
+<ul>
+<li>设 <span class="arithmatex">\(A\)</span> 为 <span class="arithmatex">\(n\)</span> 阶方阵，<span class="arithmatex">\(p,q\)</span> 为非负整数，约定 <span class="arithmatex">\(A^0=E\)</span>，则 <span class="arithmatex">\(A^pA^q=A^{p+q}\)</span>，<span class="arithmatex">\((A^p)^q=A^{pq}\)</span>。</li>
+<li>若 <span class="arithmatex">\(A\)</span> 可逆、<span class="arithmatex">\(k\)</span> 为正整数，则 <span class="arithmatex">\((A^k)^{-1}=(A^{-1})^k=A^{-k}\)</span>。</li>
+<li>设 <span class="arithmatex">\(A,B\)</span> 为同阶方阵，则 <span class="arithmatex">\((A\pm B)^2=A^2\pm(AB+BA)+B^2\)</span>。</li>
+<li>若 <span class="arithmatex">\(A,B\)</span> 为同阶方阵且 <span class="arithmatex">\(AB=BA\)</span>，<span class="arithmatex">\(k\)</span> 为正整数，则 <span class="arithmatex">\((AB)^k=A^kB^k\)</span>，<span class="arithmatex">\((A\pm B)^2=A^2\pm2AB+B^2\)</span>。</li>
+</ul>
+</div>
 <div class="supplement">
 <p class="supplement__title">秩的判定与保秩变换</p>
 <ul>
