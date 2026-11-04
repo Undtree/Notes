@@ -88,6 +88,52 @@
 ## 矩阵
 
 <div class="supplement" markdown="1">
+<p class="supplement__title">矩阵的运算</p>
+
+- 设 $A=(a_{ij})$ 为 $m\times n$ 矩阵、$B=(b_{ij})$ 为 $n\times p$ 矩阵，则 $AB$ 为 $m\times p$ 矩阵，且 $(AB)_{ij}=\sum_{k=1}^n a_{ik}b_{kj}$。
+- 若 $A,B,C$ 的尺寸使连续乘积有定义，则 $(AB)C=A(BC)$。
+- 若相应运算的尺寸相容，则 $A(B+C)=AB+AC$，$(A+B)C=AC+BC$。
+- 若 $AB$ 有定义，且 $c$ 为标量，则 $c(AB)=(cA)B=A(cB)$。
+- 设 $A$ 为 $m\times n$ 矩阵，$E_m,E_n$ 分别为 $m,n$ 阶单位矩阵，则 $E_mA=A=AE_n$。
+- 若乘积尺寸相容，则 $AO=O$，$OA=O$。
+- 设 $A$ 为 $m\times n$ 矩阵、$B$ 为 $n\times m$ 矩阵，则 $\operatorname{tr}(AB)=\operatorname{tr}(BA)$。
+
+</div>
+
+<div class="supplement" markdown="1">
+<p class="supplement__title">矩阵的转置</p>
+
+- 对任意矩阵 $A$，有 $(A^{\mathsf T})^{\mathsf T}=A$。
+- 设 $A,B$ 同型、$c$ 为标量，则 $(A+B)^{\mathsf T}=A^{\mathsf T}+B^{\mathsf T}$，$(cA)^{\mathsf T}=cA^{\mathsf T}$。
+- 若 $AB$ 有定义，则 $(AB)^{\mathsf T}=B^{\mathsf T}A^{\mathsf T}$；多个矩阵乘积的转置同样按逆序排列各因子的转置。
+
+</div>
+
+<div class="supplement" markdown="1">
+<p class="supplement__title">逆矩阵</p>
+
+- 若 $A$ 为 $n$ 阶可逆矩阵，则 $AA^{-1}=A^{-1}A=E$，且 $(A^{-1})^{-1}=A$。
+- 设 $A,B$ 为同阶方阵。若 $AB=E$，则 $BA=E$，且 $A^{-1}=B$、$B^{-1}=A$。
+- 设 $A,B$ 为同阶方阵，则 $AB$ 可逆，当且仅当 $A,B$ 均可逆；此时 $(AB)^{-1}=B^{-1}A^{-1}$。多个可逆矩阵乘积的逆同样按逆序排列各因子的逆。
+- 若 $A$ 可逆，则 $A^{\mathsf T}$ 也可逆，且 $(A^{\mathsf T})^{-1}=(A^{-1})^{\mathsf T}$。
+- 若 $A$ 可逆且 $c\ne0$，则 $(cA)^{-1}=\dfrac1c A^{-1}$。
+- 设 $A$ 为 $n\ge2$ 阶方阵、$A^*$ 为其伴随矩阵，则 $AA^*=A^*A=(\det A)E$；若 $A$ 可逆，则 $A^{-1}=\dfrac1{\det A}A^*$。
+- 若 $A$ 可逆，且相应乘积有定义，则 $AB=AC\implies B=C$，$BA=CA\implies B=C$。
+- 设 $Q$ 为 $n$ 阶实矩阵。若 $Q^{\mathsf T}Q=E$，则 $Q^{-1}=Q^{\mathsf T}$，且 $QQ^{\mathsf T}=E$，此时称 $Q$ 为正交矩阵。
+
+</div>
+
+<div class="supplement" markdown="1">
+<p class="supplement__title">方阵的幂与交换</p>
+
+- 设 $A$ 为 $n$ 阶方阵，$p,q$ 为非负整数，约定 $A^0=E$，则 $A^pA^q=A^{p+q}$，$(A^p)^q=A^{pq}$。
+- 若 $A$ 可逆、$k$ 为正整数，则 $(A^k)^{-1}=(A^{-1})^k=A^{-k}$。
+- 设 $A,B$ 为同阶方阵，则 $(A\pm B)^2=A^2\pm(AB+BA)+B^2$。
+- 若 $A,B$ 为同阶方阵且 $AB=BA$，$k$ 为正整数，则 $(AB)^k=A^kB^k$，$(A\pm B)^2=A^2\pm2AB+B^2$。
+
+</div>
+
+<div class="supplement" markdown="1">
 <p class="supplement__title">秩的判定与保秩变换</p>
 
 - 设 $A$ 为 $m\times n$ 矩阵，则 $0\le r(A)\le\min\{m,n\}$，且 $r(A)=0\iff A=O$。

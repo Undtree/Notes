@@ -5169,7 +5169,7 @@ $$
 =\iint_D\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)\,\mathrm dx\,\mathrm dy.
 $$
 
-边界取正向，即沿边界行进时<u class="dbl">区域位于左侧</u>。
+边界取正向，即<u class="dbl">沿边界行进时区域位于左侧（方向逆时针）</u>。
 
 ??? info "格林公式的证明：单条边界曲线"
 
