@@ -15,3 +15,7 @@
 2.  笔记内容
     
     本仓库 `docs/` 目录下所有的 Markdown 笔记、文章文本及内部插图，默认采用 <u>CC BY-NC-SA 4.0</u> 许可证。
+
+## Something else
+
+网站的 favicon 来自同人作品。请勿用于商业用途。

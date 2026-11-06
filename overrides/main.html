@@ -3,6 +3,7 @@
 {% block content %}
   {{ super() }}
 
+  {% if page and page.meta.comment != false %}
   <!-- Giscus 评论区开始 -->
   <h2 id="__comments">评论</h2>
   <div class="giscus"></div>
@@ -22,4 +23,5 @@
         async>
   </script>
   <!-- Giscus 评论区结束 -->
+  {% endif %}
 {% endblock %}
