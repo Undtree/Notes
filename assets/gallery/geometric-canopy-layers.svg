@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1122 1402" aria-hidden="true">
+  <!-- 图形沿用原 PNG 纹理。剪裁去除已烘焙的轴线，原色底层补齐运动时露出的遮挡处。 -->
+  <defs>
+    <image id="gallery-texture" href="geometric-canopy.png" width="1122" height="1402"/>
+    <ellipse id="gallery-crown" cx="683" cy="401.5" rx="342" ry="352"/>
+    <circle id="gallery-orbit" cx="288" cy="316" r="72"/>
+    <path id="gallery-leaf" d="M430 598H83A347 302 0 0 0 430 900Z"/>
+    <path id="gallery-crescent" d="M426 429 347 466A342 352 0 0 0 426 630Z"/>
+    <path id="gallery-half-disc" d="M439 760A147 154 0 0 1 439 1068Z"/>
+    <path id="gallery-ground" d="M56 936 961 1402H54Z"/>
+
+    <clipPath id="gallery-clip-crown"><use href="#gallery-crown"/></clipPath>
+    <clipPath id="gallery-clip-orbit"><use href="#gallery-orbit"/></clipPath>
+    <clipPath id="gallery-clip-leaf"><use href="#gallery-leaf"/></clipPath>
+    <clipPath id="gallery-clip-crescent"><use href="#gallery-crescent"/></clipPath>
+    <clipPath id="gallery-clip-half-disc"><use href="#gallery-half-disc"/></clipPath>
+    <clipPath id="gallery-clip-ground"><use href="#gallery-ground"/></clipPath>
+
+    <mask id="gallery-clean-lines" maskUnits="userSpaceOnUse" x="0" y="0" width="1122" height="1402" style="mask-type:luminance">
+      <rect width="1122" height="1402" fill="white"/>
+      <path d="M430 108 434 1402" fill="none" stroke="black" stroke-width="20"/>
+      <path d="M60 600 1062 132M617 882 1013 689" fill="none" stroke="black" stroke-width="9"/>
+    </mask>
+    <mask id="gallery-clean-crown" maskUnits="userSpaceOnUse" x="0" y="0" width="1122" height="1402" style="mask-type:luminance">
+      <rect width="1122" height="1402" fill="white"/>
+      <path d="M430 108 434 1402" fill="none" stroke="black" stroke-width="20"/>
+      <path d="M60 600 1062 132" fill="none" stroke="black" stroke-width="9"/>
+      <use href="#gallery-crescent" fill="black"/>
+      <use href="#gallery-orbit" fill="black"/>
+    </mask>
+    <mask id="gallery-clean-orbit" maskUnits="userSpaceOnUse" x="0" y="0" width="1122" height="1402" style="mask-type:luminance">
+      <rect width="1122" height="1402" fill="white"/>
+      <use href="#gallery-crown" fill="black"/>
+    </mask>
+    <mask id="gallery-clean-leaf" maskUnits="userSpaceOnUse" x="0" y="0" width="1122" height="1402" style="mask-type:luminance">
+      <rect width="1122" height="1402" fill="white"/>
+      <path d="M430 108 434 1402" fill="none" stroke="black" stroke-width="20"/>
+      <use href="#gallery-crescent" fill="black"/>
+    </mask>
+  </defs>
+
+  <g data-layer="ground" data-shift-x="3" data-shift-y="2.5">
+    <use href="#gallery-ground" fill="#043165"/>
+    <use href="#gallery-texture" clip-path="url(#gallery-clip-ground)" mask="url(#gallery-clean-lines)"/>
+  </g>
+  <g data-layer="orbit" data-shift-x="8" data-shift-y="-7">
+    <use href="#gallery-orbit" fill="#08223e"/>
+    <use href="#gallery-texture" clip-path="url(#gallery-clip-orbit)" mask="url(#gallery-clean-orbit)"/>
+  </g>
+  <g data-layer="leaf" data-shift-x="-4" data-shift-y="3.5">
+    <use href="#gallery-leaf" fill="#045964"/>
+    <use href="#gallery-texture" clip-path="url(#gallery-clip-leaf)" mask="url(#gallery-clean-leaf)"/>
+  </g>
+  <g data-layer="crown" data-shift-x="4.5" data-shift-y="3.5">
+    <use href="#gallery-crown" fill="#028e9e"/>
+    <use href="#gallery-texture" clip-path="url(#gallery-clip-crown)" mask="url(#gallery-clean-crown)"/>
+  </g>
+  <g data-layer="crescent" data-shift-x="-6" data-shift-y="5">
+    <use href="#gallery-crescent" fill="#80b0d5"/>
+    <use href="#gallery-texture" clip-path="url(#gallery-clip-crescent)" mask="url(#gallery-clean-lines)"/>
+  </g>
+  <g data-layer="half-disc" data-shift-x="6" data-shift-y="5">
+    <use href="#gallery-half-disc" fill="#80b0d5"/>
+    <use href="#gallery-texture" clip-path="url(#gallery-clip-half-disc)" mask="url(#gallery-clean-lines)"/>
+  </g>
+  <g data-layer="axis" data-shift-x="-2" data-shift-y="-2">
+    <path d="M430 108 434 1402" fill="none" stroke="#03234f" stroke-width="12"/>
+  </g>
+  <g data-layer="diagonal" data-shift-x="-8" data-shift-y="5">
+    <path d="M60 600 1062 132" fill="none" stroke="#032b5a" stroke-width="2.7"/>
+  </g>
+  <g data-layer="short-diagonal" data-shift-x="8" data-shift-y="-6">
+    <path d="M617 882 1013 689" fill="none" stroke="#032b5a" stroke-width="2.7"/>
+  </g>
+</svg>

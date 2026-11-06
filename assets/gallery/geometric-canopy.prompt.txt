@@ -1,0 +1,21 @@
+Title: 几何生长
+Asset: geometric-canopy.png
+Generated with: built-in image_gen tool
+Purpose: a single gallery artwork for the Undertree homepage
+Final background: transparent (RGBA), 1122 x 1402 pixels
+
+Original generation prompt:
+
+Use case: stylized-concept.
+Asset type: one finished standalone portrait artwork for the right-hand gallery of Undertree's personal computer-science and mathematics notebook website.
+Primary request: an elegant geometric composition, drawing on the compositional language of early Constructivism but with a restrained contemporary blue-and-teal palette instead of red and black. This is the geometric-canopy artwork, the second direction in a proposed tree-themed collection. Suggest a tree or growth through geometry rather than depicting a literal tree: an off-center slender navy vertical axis; precisely balanced circles, half-discs, angled planes, and a few thin diagonal lines assembling into a loose geometric canopy. Give the forms a clear hierarchy: one dominant teal circular form, one substantial deep-navy diagonal or vertical plane, and a small number of pale-blue supporting shapes. Asymmetrical, deliberate, lyrical, with generous negative space. The result should feel like a collected modernist art print, not an infographic or dashboard.
+Composition/framing: single flat 4:5 portrait composition, ideally 1024 by 1280 pixels, full-bleed very light ivory paper background, comfortable internal margins, no surrounding physical frame, no wall, no photographed mockup, no UI. Crisp geometric edges with extremely subtle matte-paper and screen-print grain; visual complexity low to moderate, not an overcrowded collage.
+Color palette: deep navy #00296a, midnight blue #00122e, teal #0097a7 and #006064, pale desaturated blue #8fb9df, warm off-white #f3f2ec. Use teal and navy as the main shapes on off-white; no red, no black-dominant palette, no orange/yellow accents, no bright rainbow.
+Text: none. No typography, letters, numbers, captions, signatures, logos, or watermarks.
+This is one artwork image only, not a collage of alternatives or a website screenshot.
+
+Transparent-background edit prompt:
+
+Use case: background-extraction.
+Edit target: the attached local geometric-canopy artwork. Make only the background transparent.
+Remove the warm off-white paper background completely, including its paper grain in the empty negative spaces, replacing it with genuine alpha transparency. Preserve all existing colored geometric shapes, their exact positions, overall composition, proportions, edges, colors, subtle ink textures, and the thin dark-blue lines. Keep the dominant teal circle, small navy circle, teal quarter-disc, pale-blue semicircles, navy vertical bar, fine diagonals, and large bottom navy triangle exactly as in the source. The colored shapes themselves remain opaque; only the empty paper background becomes fully transparent. Keep clean anti-aliased edges with no cream/white fringe. Preserve the full portrait canvas, its framing, and the shapes that touch the bottom edge; do not crop, rearrange, expand, or redesign the artwork. Preserve the original 1122x1402 dimensions if possible, otherwise the exact same portrait aspect ratio. Output a transparent PNG. No checkerboard drawn into the pixels, no replacement white/black background, no typography or new elements.
