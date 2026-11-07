@@ -1850,10 +1850,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#快表tlb" class="md-nav__link">
+  <a href="#快表" class="md-nav__link">
     <span class="md-ellipsis">
       
-        快表（TLB）
+        快表
       
     </span>
   </a>
@@ -3676,10 +3676,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#快表tlb" class="md-nav__link">
+  <a href="#快表" class="md-nav__link">
     <span class="md-ellipsis">
       
-        快表（TLB）
+        快表
       
     </span>
   </a>
@@ -3763,7 +3763,7 @@
 
 <h1 id="存储系统">存储系统<a class="headerlink" href="#存储系统" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 14788 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 7 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 49 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 14956 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 7 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 50 分钟</p>
 </div>
 <p>计算机希望存储器同时具备 <strong>速度快、容量大、成本低</strong> 三个特点，但单一存储介质很难兼顾这三者。因此，我们需要把不同特性的存储器组织起来，让常用的信息靠近 CPU ，让大量暂时用不到的信息存放在容量更大的低速部件中。</p>
 <h2 id="存储器概述">存储器概述<a class="headerlink" href="#存储器概述" title="Permanent link">&para;</a></h2>
@@ -4278,7 +4278,7 @@ T_{\mathrm{传输}}=\frac{b}{rN}.
 <p>柱面—磁头—扇区（ CHS ）地址由 <strong>柱面号、盘面号、扇区号</strong> 构成。字段位数分别取对应数量的二进制编码宽度，例如 256 个柱面、16 个记录面、每道 16 个扇区需要 <span class="arithmatex">\(8+4+4=16\)</span> 位。</p>
 <p>控制器根据命令和地址完成寻址、读盘或写盘。单个磁头依次读取介质上的记录位，控制器缓冲这些数据后，再按主机接口的数据宽度传送。</p>
 <h4 id="磁盘阵列-raid">磁盘阵列 RAID<a class="headerlink" href="#磁盘阵列-raid" title="Permanent link">&para;</a></h4>
-<p><strong>RAID</strong> 把多个物理磁盘组合成一个逻辑存储设备。条带化把数据分散到不同磁盘以支持并行访问；镜像或校验则提供冗余，提高容错能力。</p>
+<p><strong>RAID</strong>（独立冗余磁盘阵列）把多个物理磁盘组合成一个逻辑存储设备。其分级如下所示：</p>
 <center class="centered-table">
 <table>
 <thead>
@@ -4292,7 +4292,7 @@ T_{\mathrm{传输}}=\frac{b}{rN}.
 <tr>
 <td>RAID 0</td>
 <td>数据条带化，无冗余</td>
-<td>提高并行访问能力，不能恢复故障盘上的数据</td>
+<td>提高并行访问能力，但不能恢复故障盘上的数据</td>
 </tr>
 <tr>
 <td>RAID 1</td>
@@ -4322,7 +4322,7 @@ T_{\mathrm{传输}}=\frac{b}{rN}.
 </tbody>
 </table>
 </center>
-<p>镜像和校验需要额外空间，也需要在写入时维护冗余信息。</p>
+<p>RAID 0 采用条带化技术，把数据分散到不同磁盘以支持并行访问； RAID 1-5 等方案则通过镜像或校验提高容错能力。</p>
 <h3 id="固态硬盘_1">固态硬盘<a class="headerlink" href="#固态硬盘_1" title="Permanent link">&para;</a></h3>
 <h4 id="组织与访问单位">组织与访问单位<a class="headerlink" href="#组织与访问单位" title="Permanent link">&para;</a></h4>
 <p>SSD 的介质基础见<a href="#非易失性存储器">非易失性存储器</a>。在设备内部，<strong>闪存翻译层</strong>（ Flash Translation Layer ， FTL ）把主机给出的逻辑块地址转换为闪存上的物理位置，并管理底层读写。</p>
@@ -4355,15 +4355,15 @@ T_{\mathrm{传输}}=\frac{b}{rN}.
 </tbody>
 </table>
 </center>
-<p>更新已有数据不能像 RAM 那样直接反复覆盖。控制器需要把新数据写入可用位置，并在回收旧块时保存其中仍有效的数据。这带来额外的数据搬移和擦除开销，因此随机写入通常比读取复杂。</p>
-<p>SSD 没有机械磁头和旋转盘片，因此没有寻道与旋转等待，随机访问延迟较低，也具有抗震、低噪声等特点；其代价是每位成本较高，且闪存块的擦写寿命有限。擦写寿命取决于器件类型和使用方式。</p>
+<p>更新已有数据时， SSD 不能像 RAM 那样直接反复覆盖。控制器需要把新数据写入可用位置，并在回收旧块时保存其中仍有效的数据。此外， SSD 的擦除也耗时较长，通常比页访问慢一个数量级。这带来了额外的数据搬移和擦除开销，因此随机写入通常比读取复杂。</p>
+<p>SSD 没有机械磁头和旋转盘片，因此没有寻道与旋转等待，<strong>随机访问延迟较低</strong>（随机访问性能明显高于磁盘），也具有 <strong>抗震强、低功耗、无噪声、无振动、安全性高</strong> 等特点；其代价是每位成本较高，且闪存块的擦写寿命有限。擦写寿命取决于器件类型和使用方式。</p>
 <h4 id="磨损均衡">磨损均衡<a class="headerlink" href="#磨损均衡" title="Permanent link">&para;</a></h4>
-<p><strong>磨损均衡</strong>（ wear leveling ）通过调整逻辑地址与物理位置的对应关系，避免少数物理块承受过多擦写。</p>
+<p><strong>磨损均衡</strong>（ wear leveling ）通过调整逻辑地址与物理位置的对应关系，避免少数物理块承受过多擦写。需要注意的是，如果部分闪存因磨损而损坏，整块 SSD 也就失效了。</p>
 <ul>
 <li><strong>动态磨损均衡</strong>：写入时选择擦写次数较少的空闲块，分散新写入带来的磨损。</li>
 <li><strong>静态磨损均衡</strong>：控制器还会主动扫描和迁移已存储的数据，调整物理块的使用，进一步均衡各块的擦写次数。</li>
 </ul>
-<p>若理想地假定所有块均匀使用、不计额外搬移等开销，则介质的总可写入量约为“容量 <span class="arithmatex">\(\times\)</span> 每块允许擦写次数”。这只是理解均衡作用的简化估算。</p>
+<p>若理想地假定所有块均匀使用、不计额外搬移等开销，则介质的总可写入量可简化估算为“容量 <span class="arithmatex">\(\times\)</span> 每块允许擦写次数”。</p>
 <div class="admonition warning">
 <p class="admonition-title">阅读前惠存</p>
 <p>以下的两个章节和操作系统课程里的对应部分有很高的重合度。为了节省空间，在以下的笔记中可能出现较多的互相链接的情况。若有更好的组织方式，欢迎读者朋友发布评论或 PR ！</p>
@@ -4387,7 +4387,7 @@ T_{\mathrm{传输}}=\frac{b}{rN}.
 <li><strong>命中</strong>：在 Cache 中取得目标数据，交给 CPU。</li>
 <li><strong>缺失</strong>，也称未命中：从主存调入目标块，选择相应 Cache 行，设置标记和有效位，再向 CPU 提供数据。</li>
 </ol>
-<p>某个块能放到哪里，由<a href="#cache-和主存的映射方式">映射方式</a>决定；候选位置已满时如何选择旧块，见<a href="#cache-中主存块的替换算法">替换算法</a>；被替换块是否需要写回，见<a href="#cache-的一致性问题">一致性问题</a>。这些工作由硬件自动完成。</p>
+<p>某个块能放到哪里，由<a href="#cache-和主存的映射方式">映射方式</a>决定；候选位置已满时如何选择旧块，见<a href="#cache-中主存块的替换算法">替换算法</a>；被替换块是否需要写回，见<a href="#cache-的一致性问题">一致性问题</a>。<strong>这些工作由硬件自动完成</strong>。</p>
 <div id="取指令时发生-cache-缺失如何继续执行"></div>
 
 <div class="admonition question">
@@ -4439,7 +4439,12 @@ T_{\mathrm{avg}}=HT_c+(1-H)(T_c+P)=T_c+(1-H)P.
 <p>全相联消除了由固定放置位置产生的冲突，强制缺失和容量缺失则仍需通过预取、增大容量等相应措施改善。</p>
 <h3 id="cache-和主存的映射方式">Cache 和主存的映射方式<a class="headerlink" href="#cache-和主存的映射方式" title="Permanent link">&para;</a></h3>
 <p>由于 Cache 行数远少于主存块数， Cache 只能存放主存中部分块的副本。</p>
-<p>为识别每个 Cache 行对应哪个主存块，需要为每行设置一个 <strong>标记</strong> 位，记录其主存块编号。同时设置一位 <strong>有效位</strong>，用于指示该行数据是否有效，为 1 则代表有效。系统初始化时， Cache 行可以有任意残留位串，但有效位均为 0。除数据外，每行还要保存标记和有效位；回写策略与替换算法还可能引入别的状态位。所以 <strong>数据区容量</strong> 与 <strong>Cache 总容量</strong> 不是同一个数，计算见<a href="#cache-容量的计算举例">容量计算</a>。</p>
+<p>为识别每个 Cache 行对应哪个主存块，需要为每行设置一个 <strong>标记</strong> 位，记录其主存块编号。同时设置一位 <strong>有效位</strong>，用于指示该行数据是否有效，为 1 则代表有效。系统初始化时， Cache 行可以有任意残留位串，但有效位均为 0。</p>
+<p>也就是说，对于 Cache ，除数据外，每行还要保存标记和有效位；回写策略与替换算法还可能引入别的状态位。所以 Cache 行的位数</p>
+<div class="arithmatex">\[
+\mathrm{Cache~}\text{行位数} = \text{块大小（数据区）位数} + \text{标记位位数} + \text{状态位位数} + \text{有效位}
+\]</div>
+<p><strong>数据区容量</strong> 与 <strong>Cache 总容量</strong> 不是同一个数，计算见<a href="#cache-容量的计算举例">容量计算</a>。</p>
 <p>以下设系统按字节编址，主存地址为 <span class="arithmatex">\(a\)</span> 位， Cache <strong>数据区容量</strong> 为 <span class="arithmatex">\(C\)</span> 字节，块长为 <span class="arithmatex">\(B=2^b\)</span> 字节， Cache 行数为 <span class="arithmatex">\(L=C/B\)</span>。所以对地址 <span class="arithmatex">\(A\)</span>，有</p>
 <div class="arithmatex">\[
 \text{主存块号}=\left\lfloor\frac{A}{B}\right\rfloor,\qquad
@@ -4450,7 +4455,7 @@ T_{\mathrm{avg}}=HT_c+(1-H)(T_c+P)=T_c+(1-H)P.
 <div class="arithmatex">\[
 \text{行号}=\text{主存块号}\bmod L.
 \]</div>
-<p>若 <span class="arithmatex">\(L=2^\ell\)</span>， CPU 给出的地址可以分为</p>
+<p>若 <span class="arithmatex">\(L=2^\ell\)</span>， CPU 给出的地址（主存地址）可以分为</p>
 <div class="arithmatex">\[
 \underbrace{\text{标记}}_{a-\ell-b}\;\big|\;
 \underbrace{\text{行号}}_{\ell}\;\big|\;
@@ -4558,8 +4563,9 @@ T_{\mathrm{avg}}=HT_c+(1-H)(T_c+P)=T_c+(1-H)P.
 </tbody>
 </table>
 </center>
-<p>回写法需要 <strong>脏位</strong>（ dirty bit ）：装入的新块尚未修改时置 0 ， CPU 修改后置 1。替换有效脏行前必须先写回旧块；干净行可以直接覆盖。脏位与有效位分别表示“是否改过”和“能否使用”，作用不同。</p>
-<p>直写法常加入 <strong>写缓冲</strong>： CPU 把待更新主存的数据交给缓冲，再由缓冲完成较慢的主存写入。缓冲有空位时可减少 CPU 等待，若写入请求持续快于下层处理，缓冲满后仍会造成停顿。</p>
+<p>不难发现，回写法在写密集场景下速度较快，因为写入次数少；全写法则每一次写入都更新 Cache 和主存，能够更加及时地保证数据一致性。</p>
+<p>回写法需要 <strong>脏位</strong>（ dirty bit ）：装入的新块尚未修改时置 0 ， CPU 修改后置 1。替换有效脏行前必须先写回旧块；干净行可以直接覆盖。注意区分脏位与有效位，它们分别表示“是否改过”和“能否使用”。</p>
+<p>为了缓冲写流量，全写法常加入 <strong>写缓冲</strong>： CPU 把待更新主存的数据交给缓冲，再由缓冲完成较慢的主存写入。缓冲有空位时可减少 CPU 等待，若写入请求持续快于下层处理，缓冲满后仍会造成停顿。</p>
 <h4 id="写缺失的处理">写缺失的处理<a class="headerlink" href="#写缺失的处理" title="Permanent link">&para;</a></h4>
 <ul>
 <li><strong>写分配</strong>（ write allocate ）：为目标块在 Cache 中分配位置，把块调入，使本次或后续写入可以在 Cache 中进行。</li>
@@ -4644,7 +4650,7 @@ C_{\mathrm{total}}=L(8B+t+v+d+u)\quad\text{bit}.
 <div class="arithmatex">\[
 T_{\mathrm{avg}}=T_1+m_1(T_2+m_2P_m).
 \]</div>
-<p>其中 <span class="arithmatex">\(m_2\)</span> 是 <strong>局部缺失率</strong>，分母为 L2 收到的访问数；在上述模型中，真正穿过两级 Cache 到达主存的访问占原始 CPU 访问的比例为 <span class="arithmatex">\(m_1m_2\)</span>。它与 L2 局部缺失率不同。</p>
+<p>其中 <span class="arithmatex">\(m_2\)</span> 是 <strong>局部缺失率</strong>，分母为 L2 收到的访问数；在上述模型中，真正穿过两级 Cache 到达主存的访问占原始 CPU 访问的比例为 <span class="arithmatex">\(m_1\times m_2\)</span>。</p>
 <p>若各级采用<a href="#cache-的一致性问题">回写</a>， L1 的脏块通常先写回 L2 ， L2 的脏块再写回主存，各级的更新和替换都以自己的下层为对象。</p>
 <details class="note">
 <summary>进一步降低缺失开销</summary>
@@ -4676,12 +4682,12 @@ T_{\mathrm{avg}}=T_1+m_1(T_2+m_2P_m).
 \mathrm{PA}=\mathrm{PFN}\times P+\mathrm{offset}.
 \]</div>
 <p>对 Cache 和 TLB 而言，关键正是这两段的划分：转换后低 <span class="arithmatex">\(p\)</span> 位原样保留，高位换成物理帧号。分页的一维地址结构与字段含义见<a href="../../OS/memory/#分页存储的几个基本概念">地址结构</a>。</p>
-<p>对于单级、连续存放的页表，若每项占 <span class="arithmatex">\(e\)</span> 字节、虚拟地址共 <span class="arithmatex">\(a_v\)</span> 位，则页表项地址为“页表基地址 <span class="arithmatex">\(+\mathrm{VPN}\times e\)</span>”，完整单级页表的项数为 <span class="arithmatex">\(2^{a_v-p}\)</span>；容量计算与多级改进见<a href="../../OS/memory/#页表设计改进">页表设计改进</a>。</p>
+<p>对于单级、连续存放的页表，若每项占 <span class="arithmatex">\(e\)</span> 字节、虚拟地址共 <span class="arithmatex">\(a_v\)</span> 位，则页表项地址为“页表基地址 <span class="arithmatex">\(+\mathrm{VPN}\times e\)</span>”，完整单级页表的项数为 <span class="arithmatex">\(2^{a_v-p}\)</span>；多级页表改进及计算见<a href="../../OS/memory/#页表设计改进">页表设计改进</a>。</p>
 <p>例如，页面为 4 KiB、虚拟地址为 <code>00005678H</code>，则虚拟页号为 5、偏移为 <code>678H</code>。若页表项记录虚拟页 5 已装入帧 3 ，则物理地址为 <code>00003678H</code>，低 12 位不变。</p>
 <h4 id="缺页处理">缺页处理<a class="headerlink" href="#缺页处理" title="Permanent link">&para;</a></h4>
 <p>目标页未装入主存时触发缺页异常：由操作系统选择空闲帧，必要时换出并保存旧页，然后调入目标页、更新映射，最后重新执行原访问。具体步骤与缺页中断的性质见<a href="../../OS/memory/#调入页面的步骤">调入页面的步骤</a>和<a href="../../OS/memory/#缺页中断机构">缺页中断机构</a>。</p>
 <p>对 Cache 而言，缺页期间该地址不可能命中；页面调入后物理帧号可能改变，需要按新地址重新查询。分页以固定大小的页为调入单位，便于管理，但最后一页可能填不满，形成 <strong>内部碎片</strong>；页越大浪费越多，页越小则页表项越多。在页长余数近似均匀分布的模型中，平均内部碎片约为半页。进一步权衡见<a href="../../OS/memory/#分页存储的几个基本概念">分页存储的几个基本概念</a>。</p>
-<h4 id="快表tlb">快表（ TLB ）<a class="headerlink" href="#快表tlb" title="Permanent link">&para;</a></h4>
+<h4 id="快表">快表<a class="headerlink" href="#快表" title="Permanent link">&para;</a></h4>
 <p>若每次都先访问主存中的页表、再访问目标数据，地址转换本身就增加了访存开销。<strong>快表</strong>（ Translation Lookaside Buffer ， TLB ）缓存近期使用的页表项，主存中的完整页表相应称为 <strong>慢表</strong>。</p>
 <p>TLB 使用高速存储器，常采用全相联或组相联查找：</p>
 <ul>
