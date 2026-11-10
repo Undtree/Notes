@@ -1,4 +1,14 @@
+---
+exercise_view: true
+---
+
 # 微积分
+
+<div class="exercise-view-controls" data-exercise-view-controls role="group" aria-label="内容显示模式" hidden>
+  <span>显示模式</span>
+  <button type="button" data-exercise-view="all" aria-pressed="true">知识点 + 习题</button>
+  <button type="button" data-exercise-view="exercises" aria-pressed="false">只展示习题</button>
+</div>
 
 !!! abstract "参考教材"
 
@@ -183,7 +193,7 @@ $$
 
 **单调有界定理：** 单调递增且有上界的数列、单调递减且有下界的数列均收敛。
 
-???+ example "例"
+!!! example exercise "例"
 
     求极限 $\displaystyle\lim_{n\to\infty}\frac12\times\frac34\times\frac56\times\cdots\times\frac{2n-1}{2n}$。
 
@@ -373,7 +383,7 @@ $$
 \lim\frac{fg}{h}=\lim\frac{f_1g_1}{h_1}.
 $$
 
-???+ example "例"
+!!! example exercise "例"
 
     求 $\displaystyle\lim_{x\to0}\frac{1-\cos x}{x^2}$。
 
@@ -585,7 +595,7 @@ $$
 
     因此，$f(x)$ 在点 $x_0$ 连续。
 
-???+ example "例"
+!!! example exercise "例"
 
     设 $f(x)=\begin{cases}x^2\sin\dfrac1x,&x\ne0,\\0,&x=0,\end{cases}$，研究 $f(x)$ 在 $x=0$ 处的可导性。
 
@@ -683,7 +693,7 @@ $$
 y'=u^v\left(v'\ln u+v\frac{u'}u\right).
 $$
 
-???+ example "例"
+!!! example exercise "例"
 
     设函数 $y=y(x)$ 由方程 $y-xe^y=1$ 确定，求 $\left.\dfrac{\mathrm dy}{\mathrm dx}\right|_{x=0}$，并求曲线上其横坐标 $x=0$ 处点的切线和法线方程。
 
@@ -971,7 +981,7 @@ $$
 
     （2）当 $m<M$ 时，由于 $f(a)=f(b)$，所以最大值、最小值至少有一个在内部取到（若不然，最大值、最小值都在端点取到，推出 $m=M$，矛盾），不妨设最大值 $M$ 在内部取到，设 $\xi\in(a,b)$，$f(\xi)=M$，则 $f(\xi)$ 为极大值。由 $f(x)$ 在 $(a,b)$ 内可导，知 $f'(\xi)$ 存在。由费马定理知，$f'(\xi)=0$。
 
-???+ example "例"
+!!! example exercise "例"
 
     设 $f(x)=a_1\cos x+a_2\cos2x+\cdots+a_n\cos nx$，其中 $a_1,a_2,\ldots,a_n$ 为任意常数，证明至少存在一点 $\xi\in(0,\pi)$，使 $f(\xi)=0$。
 
@@ -1112,7 +1122,7 @@ $$
     =\lim_{x\to x_0}\frac{f'(x)}{g'(x)}=A\text{（或 }\infty\text{）}.
     $$
 
-???+ example "例"
+!!! example exercise "例"
 
     求 $\displaystyle\lim_{x\to0}\frac{x-\sin x}{x^3}$。
 
@@ -1354,7 +1364,7 @@ $$
 (1+x)^\alpha=\sum_{k=0}^{n}\binom{\alpha}{k}x^k+o(x^n).
 $$
 
-???+ example "例"
+!!! example exercise "例"
 
     求 $\displaystyle\lim_{x\to0}\frac{e^x\sin x-x(1+x)}{x^3}$。
 
@@ -1721,7 +1731,7 @@ $$
 =F(\varphi(x))+C.
 $$
 
-???+ example "例"
+!!! example exercise "例"
 
     求 $\displaystyle\int\frac1{\sqrt{a^2-x^2}}\,\mathrm dx$（$a>0$）。
 
@@ -1788,7 +1798,7 @@ $$
     \int u(x)v'(x)\,\mathrm dx=u(x)v(x)-\int u'(x)v(x)\,\mathrm dx.
     $$
 
-???+ example "例"
+!!! example exercise "例"
 
     求 $\displaystyle\int xe^x\,\mathrm dx$。
 
@@ -2046,7 +2056,7 @@ $$
 
 **注：** 不定积分的结果是一个函数，定积分的结果是一个数值。
 
-???+ example "例"
+!!! example exercise "例"
 
     求 $\displaystyle\frac{\mathrm d}{\mathrm dx}\int_{x^2}^{x^3}\cos t^2\,\mathrm dt$。
 
@@ -2270,7 +2280,7 @@ $$
 \int_a^{+\infty}\frac{\mathrm dx}{x^p}\text{ 收敛}\iff p>1\qquad(a>0).
 $$
 
-???+ example "例"
+!!! example exercise "例"
 
     讨论 $\displaystyle\int_a^{+\infty}\frac{\mathrm dx}{x^p}$（$a>0$）的敛散性（第一 $p$ 反常积分）。
 
@@ -2604,7 +2614,7 @@ $$
     \left[\int q(x)e^{\int p(x)\,\mathrm dx}\,\mathrm dx+C\right].
     $$
 
-???+ example "例：解法二"
+!!! example exercise "例：解法二"
 
     求方程 $\displaystyle\frac{\mathrm dy}{\mathrm dx}-\frac1x y=2x^2$ 的通解。
 
@@ -2785,7 +2795,7 @@ $$
 
 $P_n,P_l$ 分别是 $n,l$ 次多项式，$m=\max(n,l)$；$Q_n,R_m,S_m$ 为相应次数的待定系数多项式。第一行的 $k$ 为 $\alpha$ 作为特征根的重数，非根时取 $0$；第二行 $\beta\ne0$，$k=0$ 或 $1$，分别对应 $\alpha+i\beta$ 不是特征根或是单根。
 
-???+ example "例"
+!!! example exercise "例"
 
     求 $\displaystyle\frac{\mathrm d^2y}{\mathrm dx^2}+\frac{\mathrm dy}{\mathrm dx}+2y=x^2-3$ 的一个特解。
 
@@ -3354,7 +3364,7 @@ $$
 
     从而 $\mathbf a\cdot\mathbf b=a_1b_1+a_2b_2+a_3b_3$。
 
-???+ example "例"
+!!! example exercise "例"
 
     设 $|\mathbf a|=3$，$|\mathbf b|=5$，且两矢量的夹角 $\theta=\dfrac\pi3$，试求 $(\mathbf a-2\mathbf b)\cdot(3\mathbf a+2\mathbf b)$。
 
@@ -3509,7 +3519,7 @@ $$
 
 **注：** 在平面解析几何中，一次方程表示一条直线；在空间解析几何中，一次方程表示一张平面。例如 $x+y=1$ 在平面解析几何中表示一条直线，而在空间解析几何中表示一张平面。
 
-???+ example "例：解法一"
+!!! example exercise "例：解法一"
 
     求过三点 $M_1(1,1,2)$，$M_2(3,2,3)$，$M_3(2,0,3)$ 的平面方程。
 
@@ -3835,7 +3845,7 @@ $$
 
 **说明：** 必须注意这个极限值与点 $P(x,y)$ 趋于点 $P_0(x_0,y_0)$ 的方式无关，即不论 $P$ 以什么方向和路径（也可以是跳跃式地，忽上忽下地）趋向 $P_0$，只要 $P$ 与 $P_0$ 充分接近，就能使 $f(P)$ 与 $A$ 接近到预先任意指定的程度。
 
-???+ example "例"
+!!! example exercise "例"
 
     研究函数 $f(x,y)=\begin{cases}\dfrac{2xy}{x^2+y^2},&x^2+y^2\ne0,\\0,&x^2+y^2=0,\end{cases}$ 在点 $(0,0)$ 处的极限是否存在。
 
@@ -3988,7 +3998,7 @@ $$
 
     因此，$z=f(x,y)$ 在点 $(x_0,y_0)$ 处可微。
 
-???+ example "例"
+!!! example exercise "例"
 
     研究函数 $f(x,y)=\begin{cases}\dfrac{2xy}{\sqrt{x^2+y^2}},&x^2+y^2\ne0,\\0,&x^2+y^2=0,\end{cases}$ 在原点的可微性。
 
@@ -4568,7 +4578,7 @@ $$
 =\int_c^d\mathrm dy\int_a^bf(x,y)\,\mathrm dx.
 $$
 
-???+ example "例"
+!!! example exercise "例"
 
     计算积分 $\displaystyle\int_0^1x^2\,\mathrm dx\int_x^1e^{-y^2}\,\mathrm dy$。
 
@@ -4621,7 +4631,7 @@ $$
 \int_{r_1(\theta)}^{r_2(\theta)}f(r\cos\theta,r\sin\theta)r\,\mathrm dr.
 $$
 
-???+ example "例"
+!!! example exercise "例"
 
     计算积分 $\displaystyle\iint_\sigma e^{-(x^2+y^2)}\,\mathrm d\sigma$，其中 $\sigma$ 是由圆 $x^2+y^2=R^2$ 所围成的区域。
 
@@ -4746,7 +4756,7 @@ $$
 |J|\,\mathrm du\,\mathrm dv\,\mathrm dw.
 $$
 
-???+ example "例：解法二"
+!!! example exercise "例：解法二"
 
     计算 $\displaystyle\iiint_V z\,\mathrm dV$，其中 $V$ 是由球面 $x^2+y^2+z^2=4$ 及抛物面 $3z=x^2+y^2$ 所围成（在抛物面内的那一部分）的立体区域。
 
@@ -4945,7 +4955,7 @@ $$
 \sqrt{r(\theta)^2+r'(\theta)^2}\,\mathrm d\theta.
 $$
 
-???+ example "例"
+!!! example exercise "例"
 
     计算 $\displaystyle\int_Lx^2\,\mathrm ds$，其中 $L$ 为球面 $x^2+y^2+z^2=a^2$ 被平面 $x+y+z=0$ 所截得的圆周。
 
@@ -5226,7 +5236,7 @@ $$
 \operatorname{Area}(D)=\frac12\oint_{\partial D}(x\,\mathrm dy-y\,\mathrm dx).
 $$
 
-???+ example "例"
+!!! example exercise "例"
 
     求 $\displaystyle\oint_Cxy^2\,\mathrm dy-x^2y\,\mathrm dx$，其中 $C$ 为圆周 $x^2+y^2=R^2$，依逆时针方向。
 
@@ -5419,7 +5429,7 @@ $$
 
     其中 $S$ 取外侧。对于不是 $xy$ 型区域的情形，则用有限个光滑曲面将它分成若干个 $xy$ 型区域来讨论。与推导格林公式过程类似，请读者自证。
 
-???+ example "例"
+!!! example exercise "例"
 
     计算 $\displaystyle\iint_S(x^2\cos\alpha+y^2\cos\beta+z^2\cos\gamma)\,\mathrm dS$，式中 $S$ 为圆锥面 $x^2+y^2=z^2\ (0\le z\le h)$ 的一部分，$\cos\alpha,\cos\beta,\cos\gamma$ 为此曲面外法线的方向余弦。
 
@@ -5575,7 +5585,7 @@ $$
 
 **注：** 由证明过程可知，对于以 $\Gamma$ 为边界且符合定理条件的曲面 $S$，结论都成立。从而我们利用斯托克斯公式时，寻找以 $\Gamma$ 为边界较简单的曲面 $S$，有利于解决问题。
 
-???+ example "例"
+!!! example exercise "例"
 
     计算 $\displaystyle\oint_C(y-z)\,\mathrm dx+(z-x)\,\mathrm dy+(x-y)\,\mathrm dz$，其中 $C$ 为椭圆
 
@@ -5854,7 +5864,7 @@ $$
 \sum_{n=1}^{\infty}u_n\text{ 与 }\int_1^{+\infty}f(x)\,\mathrm dx\text{ 同敛散}.
 $$
 
-???+ example "例"
+!!! example exercise "例"
 
     判断下列正项级数的敛散性：
 
@@ -5969,7 +5979,7 @@ q<1\ \Longrightarrow\ \sum u_n\text{ 绝对收敛},\qquad
 q>1\text{ 或 }q=+\infty\ \Longrightarrow\ \sum u_n\text{ 发散}.
 $$
 
-???+ example "例"
+!!! example exercise "例"
 
     判别 $\displaystyle\sum_{n=1}^\infty(-1)^{n-1}\frac1{n^p}$ 的敛散性。
 
@@ -6070,7 +6080,7 @@ $$
 
     由函数项级数一致收敛的柯西准则，级数 $\sum u_n(x)$ 在 $D$ 上一致收敛。
 
-???+ example "例（1）"
+!!! example exercise "例（1）"
 
     证明函数项级数 $\displaystyle\sum_{n=1}^\infty\frac{\sin nx}{\sqrt[3]{n^4+x^4}}$ 在 $|x|<+\infty$ 上一致收敛。
 
@@ -6170,29 +6180,31 @@ R=\lim_{n\to\infty}\left|\frac{a_n}{a_{n+1}}\right|,
 R=\lim_{n\to\infty}\frac1{\sqrt[n]{|a_n|}}.
 $$
 
-???+ example "例（4）"
+!!! example exercise "幂级数的收敛相关问题"
 
-    求幂级数 $\displaystyle\sum_{n=1}^\infty\frac{(x-1)^{2n}}{n\cdot4^n}$ 的收敛半径、收敛区间及收敛域。
+    1.  (课本例 4) 求幂级数 $\displaystyle\sum_{n=1}^\infty\frac{(x-1)^{2n}}{n\cdot4^n}$ 的收敛半径、收敛区间及收敛域。
 
-    ??? success "解析"
+        ??? success "解析"
 
-        此级数缺项，我们可直接利用绝对值的比值判别法。由于
+            此级数缺项，我们可直接利用绝对值的比值判别法。由于
 
-        $$
-        \begin{aligned}
-        \lim_{n\to\infty}\frac{|u_{n+1}|}{|u_n|}
-        &=\lim_{n\to\infty}\left(\frac{|x-1|^{2n+2}}{(n+1)4^{n+1}}
-        \bigg/\frac{|x-1|^{2n}}{n4^n}\right)\\
-        &=\lim_{n\to\infty}\frac{(x-1)^2}{4}\cdot\frac n{n+1}
-        =\frac{|x-1|^2}{4},
-        \end{aligned}
-        $$
+            $$
+            \begin{aligned}
+            \lim_{n\to\infty}\frac{|u_{n+1}|}{|u_n|}
+            &=\lim_{n\to\infty}\left(\frac{|x-1|^{2n+2}}{(n+1)4^{n+1}}
+            \bigg/\frac{|x-1|^{2n}}{n4^n}\right)\\
+            &=\lim_{n\to\infty}\frac{(x-1)^2}{4}\cdot\frac n{n+1}
+            =\frac{|x-1|^2}{4},
+            \end{aligned}
+            $$
 
-        当 $\dfrac{|x-1|^2}{4}<1$，即 $|x-1|<2$ 时，幂级数绝对收敛；当 $|x-1|>2$ 时，幂级数发散。
+            当 $\dfrac{|x-1|^2}{4}<1$，即 $|x-1|<2$ 时，幂级数绝对收敛；当 $|x-1|>2$ 时，幂级数发散。
 
-        所以收敛半径 $R=2$，收敛区间是 $(-1,3)$。
+            所以收敛半径 $R=2$，收敛区间是 $(-1,3)$。
 
-        当 $x=-1$ 时，幂级数为 $\displaystyle\sum_{n=1}^\infty\frac{(-2)^{2n}}{n4^n}=\sum_{n=1}^\infty\frac1n$，发散；当 $x=3$ 时，幂级数为 $\displaystyle\sum_{n=1}^\infty\frac{2^{2n}}{n4^n}=\sum_{n=1}^\infty\frac1n$，也发散。故收敛域是 $(-1,3)$。
+            当 $x=-1$ 时，幂级数为 $\displaystyle\sum_{n=1}^\infty\frac{(-2)^{2n}}{n4^n}=\sum_{n=1}^\infty\frac1n$，发散；当 $x=3$ 时，幂级数为 $\displaystyle\sum_{n=1}^\infty\frac{2^{2n}}{n4^n}=\sum_{n=1}^\infty\frac1n$，也发散。故收敛域是 $(-1,3)$。
+
+    2.  幂级数 $$
 
 #### §5.2 幂级数的性质及运算
 
@@ -6239,7 +6251,7 @@ $$
 \sum_{n=1}^{\infty}nx^{n-1}=\frac1{(1-x)^2},\qquad |x|<1.
 $$
 
-???+ example "例（1）"
+!!! example exercise "例（1）"
 
     求幂级数 $\displaystyle\sum_{n=1}^\infty\frac{x^n}{n}$ 的收敛半径、收敛区间、收敛域及和函数。
 
@@ -6530,7 +6542,7 @@ $$
 
 所以在 $x=\pm l$ 处，$S(\pm l)=\dfrac{f(-l+0)+f(l-0)}2$（左端点的右极限与右端点的左极限的平均值）。这是因为周期函数常常只给一个周期内的表达式，我们利用一个周期内的表达式就可计算出在端点处傅里叶级数的和。
 
-???+ example "例"
+!!! example exercise "例"
 
     将 $f(x)=\arcsin(\sin x)$ 展开成傅里叶级数。
 
@@ -6728,7 +6740,7 @@ $$
 +f(g_2(y),y)g_2'(y)-f(g_1(y),y)g_1'(y).
 $$
 
-???+ example "例"
+!!! example exercise "例"
 
     计算定积分 $\displaystyle I=\int_0^1\frac{\ln(1+x)}{1+x^2}\,\mathrm dx$。
 
@@ -6845,7 +6857,7 @@ $$
 =\int_c^{+\infty}\mathrm dy\int_a^{+\infty}f(x,y)\,\mathrm dx.
 $$
 
-???+ example "例"
+!!! example exercise "例"
 
     从等式 $\displaystyle\frac{e^{-ax}-e^{-bx}}x=\int_a^b e^{-xy}\,\mathrm dy$ 出发计算积分
 
@@ -7002,7 +7014,7 @@ $$
     B(p,q)=\frac{\Gamma(p)\Gamma(q)}{\Gamma(p+q)}\qquad(p>0,\ q>0).
     $$
 
-???+ example "例"
+!!! example exercise "例"
 
     计算积分 $\displaystyle I=\int_0^{\pi/2}\sin^m x\cos^n x\,\mathrm dx$。
 

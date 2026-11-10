@@ -1,4 +1,14 @@
+---
+exercise_view: true
+---
+
 # 概率论与数理统计
+
+<div class="exercise-view-controls" data-exercise-view-controls role="group" aria-label="内容显示模式" hidden>
+  <span>显示模式</span>
+  <button type="button" data-exercise-view="all" aria-pressed="true">知识点 + 习题</button>
+  <button type="button" data-exercise-view="exercises" aria-pressed="false">只展示习题</button>
+</div>
 
 <style id="pas-math-spacing">
 /* 仅调整本页行间公式的留白；修改这一变量即可调整间距。 */
@@ -63,7 +73,7 @@
 
 用集合描述事件，可以把“或”“且”“不发生”等语言转化为集合关系和运算。以下约定 $AB=A\cap B$，$\overline A=\Omega\setminus A$。
 
-???+ note "关系与基本运算"
+!!! note "关系与基本运算"
 
     <center markdown="1">
 
@@ -84,7 +94,7 @@
 
     -   多个事件中，“至少一个发生”可以写成 $\bigcup_{i=1}^n A_i$，“全部发生”可以写成 $\bigcap_{i=1}^n A_i$。对两个事件，“恰有一个发生”可以写成 $A\overline B\cup\overline A B$。
 
-???+ note "运算法则"
+!!! note "运算法则"
 
     <center markdown="1">
 
@@ -108,7 +118,7 @@
 
     换句话说，“至少一个发生”的对立事件是“全部不发生”，“全部发生”的对立事件是“至少一个不发生”。
 
-???+ Example "练习"
+!!! Example exercise "练习"
 
     设 $A, B, C$ 是在同一样本空间的任意三个事件，则下列选项中正确的是（  ）。
 
@@ -196,7 +206,7 @@ $$
 
 其中，排列数 $A_n^r$ 考虑顺序，组合数 $C^{r}_{n}$ 不考虑顺序。
 
-???+ note "随机分配问题"
+!!! note "随机分配问题"
 
     将 $n$ 个**可区分**的物品独立、等概率地投入 $m$ 个**可区分**的盒子，每个物品都有 $m$ 种选择，等可能分配方式共 $m^n$ 种。
 
@@ -210,7 +220,7 @@ $$
 
     不同的“盒内数量组合”一般不等可能。例如，两个物品投入两个盒子时，数量组合 $(2,0)$、$(1,1)$、$(0,2)$ 的概率分别为 $\frac14,\frac12,\frac14$。
 
-???+ note "简单随机抽样问题"
+!!! note "简单随机抽样问题"
 
     从 $N$ 个可区分个体中抽取 $n$ 个：
 
@@ -425,7 +435,7 @@ $$
 </div>
 </div>
 
-!!! example "公式的使用条件"
+!!! example exercise "公式的使用条件"
 
     已知 $0 \lt P(A) \lt 1$ 且 $P(B+C|A) = P(B|A) + P(C|A)$，则以下结论：
 
@@ -464,11 +474,11 @@ $$
 
 #### 独立性的判定
 
-???+ note "定义直接判定"
+!!! note "定义直接判定"
 
     优先检验 $P(AB)=P(A)P(B)$。若已知相关条件事件的概率大于 $0$，也可检验 $P(A\mid B)=P(A)$ 或 $P(B\mid A)=P(B)$。
 
-???+ note "独立性的判定定理"
+!!! note "独立性的判定定理"
 
     ① 以下四个命题等价：
 
@@ -507,7 +517,7 @@ $$
 
 #### 独立试验序列概型与 n 重伯努利概型
 
-???+ note "独立试验序列概型"
+!!! note "独立试验序列概型"
 
     若各次试验相互独立，第 $i$ 次试验中指定事件 $A_i$ 的概率为 $p_i$，则 $\displaystyle P(A_1A_2\cdots A_n)=\prod_{i=1}^n p_i.$
 
@@ -551,7 +561,7 @@ $$
 
     !!! warning "使用二项分布公式前，必须确认“独立”和“成功概率不变”；不放回抽样通常不满足这两个条件。"
 
-    ???+ info "多项分布"
+    !!! info "多项分布"
 
         若每次独立重复试验有 $r$ 类互斥且穷尽的结果，类别概率恒为 $p_1,\ldots,p_r$，且 $\sum_{i=1}^r p_i=1$，则 $n$ 次试验中各类分别出现 $n_1,\ldots,n_r$ 次的概率为
 
@@ -565,7 +575,7 @@ $$
 
 ### 小结
 
-!!! example "习题"
+!!! example exercise "习题"
 
     1. 袋中有 $3$ 个红球、$2$ 个蓝球，各球可区分。不放回地等可能抽取 $2$ 个，求恰有一个红球的概率；若改为独立有放回抽取，答案如何变化？
     2. 将 $3$ 个可区分的物品独立、等概率地放入 $3$ 个可区分的盒子。求没有空盒的概率，以及指定的第一个盒子为空的概率。为什么不能把所有盒内数量组合看作等可能？
@@ -612,7 +622,7 @@ $$
 
 #### 分布函数
 
-???+ note "分布函数的概念"
+!!! note "分布函数的概念"
 
     随机变量 $X$ 的**分布函数**定义为 $F_X(x)=P(X\le x),\qquad x \in \mathbb{R}.$
 
@@ -639,7 +649,7 @@ $$
 
 因此，分布函数在 $x$ 处的跳跃量就是 $X$ 取值为 $x$ 的概率；$F$ 在 $x$ 处连续，当且仅当 $P(X=x)=0$。
 
-!!! Example "分布函数的判断"
+!!! Example exercise "分布函数的判断"
     已知 $F(x)$ 是分布函数。下列函数中：
 
     ① $aF(x)~(a\gt 0,a\neq 1)$；② $F(x)+F(-x)$；③ $F(x)-F(-x)$；④ $F(x)\cdot F(-x)$.
@@ -987,29 +997,34 @@ $$
 
     利用对称性不难得到， $\varphi(-x)=\varphi(x),\qquad \Phi(-x)=1-\Phi(x),\qquad \Phi(0)=\dfrac12.$
 
-    !!! example "正态分布的常见应用"
+    <div class="supplement" markdown="1">
 
-        若 $X\sim N(\mu,\sigma^2)$，则通过**标准化** $Z=\dfrac{X-\mu}{\sigma}\sim N(0,1)$
+    正态分布的常见应用
+    {: .supplement__title}
 
-        可将概率转化为标准正态分布函数的值： $F_X(x)=\Phi\left(\dfrac{x-\mu}{\sigma}\right),$
+    若 $X\sim N(\mu,\sigma^2)$，则通过**标准化** $Z=\dfrac{X-\mu}{\sigma}\sim N(0,1)$
 
-        $$
-        P(a\lt X\le b)
-        =\Phi\left(\frac{b-\mu}{\sigma}\right)
-        -\Phi\left(\frac{a-\mu}{\sigma}\right).
-        $$
+    可将概率转化为标准正态分布函数的值： $F_X(x)=\Phi\left(\dfrac{x-\mu}{\sigma}\right),$
 
-        特别地，对 $c\ge0$， $P(\lvert X-\mu\rvert\le c) =2\Phi\left(\dfrac c\sigma\right)-1.$
+    $$
+    P(a\lt X\le b)
+    =\Phi\left(\frac{b-\mu}{\sigma}\right)
+    -\Phi\left(\frac{a-\mu}{\sigma}\right).
+    $$
 
-        常见的中心区间概率约为
+    特别地，对 $c\ge0$， $P(\lvert X-\mu\rvert\le c) =2\Phi\left(\dfrac c\sigma\right)-1.$
 
-        $$
-        P(\lvert X-\mu\rvert\le\sigma)\approx0.6827,\\
-        P(\lvert X-\mu\rvert\le2\sigma)\approx0.9545,\\
-        P(\lvert X-\mu\rvert\le3\sigma)\approx0.9973.
-        $$
+    常见的中心区间概率约为
 
-        若定义上侧 $\alpha$ 分位点 $z_\alpha$ 满足 $P(Z>z_\alpha)=\alpha$，则 $\Phi(z_\alpha)=1-\alpha$。
+    $$
+    P(\lvert X-\mu\rvert\le\sigma)\approx0.6827,\\
+    P(\lvert X-\mu\rvert\le2\sigma)\approx0.9545,\\
+    P(\lvert X-\mu\rvert\le3\sigma)\approx0.9973.
+    $$
+
+    若定义上侧 $\alpha$ 分位点 $z_\alpha$ 满足 $P(Z>z_\alpha)=\alpha$，则 $\Phi(z_\alpha)=1-\alpha$。
+
+    </div>
 
 ### 一维随机变量函数的分布
 
@@ -1053,7 +1068,7 @@ $$
 
 #### 连续型 → 连续型（或混合型）
 
-???+ note "分布函数法（定义法）"
+!!! note "分布函数法（定义法）"
 
     若 $X$ 具有密度 $f_X$，则
 
@@ -1063,58 +1078,58 @@ $$
 
     先针对不同的 $y$ 解不等式 $g(x)\le y$，再与 $X$ 的取值范围相交并积分。若所得 $F_Y$ 可由密度积分表示，则可通过求导得到密度；若存在跳跃，还应单独记录相应的点概率。
 
-    !!! example "习题 1"
+    !!! example exercise "定义法求分布"
 
-        已知随机变量 $X$ 的概率密度为
+        1.  已知随机变量 $X$ 的概率密度为
         
-        $$
-        f(x)=
-        \begin{cases}
-        |x|, & |x|\le 1,\\
-        0, & \text{其他}.
-        \end{cases}
-        $$
-
-        求 $Y=X^2 + 1$ 的概率密度 $f_Y(y)$。
-
-        ??? success "解答"
-
-            我们知道，$F_Y(y) = P\{Y \le y\} = P\{X^2 + 1 \le y\}$。
-
-            -   当 $y \lt 1$ 时，$F_Y(y) = P\{\varnothing\} = 0$；
-            -   当 $1 \le y \le 2$ 时，$F_Y(y) = P\{|X| \le y-1\} = \displaystyle\int_{-\sqrt{y-1}}^{\sqrt{y-1}} f(x) \mathrm dx \overset{\text{偶函数对称性}}{=} 2\displaystyle\int_0^{\sqrt{y-1}} x \mathrm dx = y-1$；
-            -   当 $y \gt 2$ 时，$F_Y(y) = P\{X^2 + 1 \le y\} = 1$.
-
-            所以 $Y$ 的概率密度
-            
             $$
-            f_Y(y) =
+            f(x)=
             \begin{cases}
-            1, & 1 \le y \le 2,\\
+            |x|, & |x|\le 1,\\
             0, & \text{其他}.
             \end{cases}
             $$
 
-    !!! example "习题 2 ☆"
+            求 $Y=X^2 + 1$ 的概率密度 $f_Y(y)$。
 
-        设随机变量 $X$ 的概率密度为 $\begin{cases}f(x)=2x, &{0 \lt x \lt 1}\\0, &\text{其他}, \end{cases}$$F(x)$ 为 $X$ 的分布函数，$E(X)$ 为 $X$ 的[数学期望](#数学期望)，则 $P\{F(X) \gt E(X)\} = \underline{\qquad}.$
+            ??? success "解答"
 
-        ??? success "解答"
+                我们知道，$F_Y(y) = P\{Y \le y\} = P\{X^2 + 1 \le y\}$。
 
-            由题给概率密度得 $E(X) = \displaystyle\int_{-\infty}^{+\infty} xf(x) \mathrm dx = \dfrac 23$；当 $0 \lt x \lt 1$ 时，$F(x) = \displaystyle\int_{0}^{x} f(t) \mathrm dt = x^2$。
+                -   当 $y \lt 1$ 时，$F_Y(y) = P\{\varnothing\} = 0$；
+                -   当 $1 \le y \le 2$ 时，$F_Y(y) = P\{|X| \le y-1\} = \displaystyle\int_{-\sqrt{y-1}}^{\sqrt{y-1}} f(x) \mathrm dx \overset{\text{偶函数对称性}}{=} 2\displaystyle\int_0^{\sqrt{y-1}} x \mathrm dx = y-1$；
+                -   当 $y \gt 2$ 时，$F_Y(y) = P\{X^2 + 1 \le y\} = 1$.
 
-            而再由题给概率密度，随机变量的取值 $X \in (0,1)$，在这个区间，$F(x) = x^2$。因此，我们可以将 $F(X)$ 代换为 $X^2$，因而
+                所以 $Y$ 的概率密度
+                
+                $$
+                f_Y(y) =
+                \begin{cases}
+                1, & 1 \le y \le 2,\\
+                0, & \text{其他}.
+                \end{cases}
+                $$
 
-            $$
-            P\{F(X) \ge E(X)\} = P\{X^2 \ge \dfrac 23\}.
-            $$
+        2.  ☆☆☆
 
-            解不等式得到 $X \gt \sqrt{\dfrac 23}$，于是所求概率转化为 $P\{X \gt \sqrt{\dfrac 23}\} = 1 - F(\sqrt{\dfrac 23}) = 1 - \displaystyle\int_{\sqrt{\frac 23}}^1 f(x) \mathrm dx = \dfrac 13.$
-        
-        !!! danger "这里的关键有两个，一是数学期望在确定概率密度后实质上就是一个常值；二是处理 $F(X)$：此处应该把 $F(X)$ 视为随机变量 $X$ 的函数，并利用相应区间实现代换“脱去” $F(\cdot)$。"
+            设随机变量 $X$ 的概率密度为 $\begin{cases}f(x)=2x, &{0 \lt x \lt 1}\\0, &\text{其他}, \end{cases}$$F(x)$ 为 $X$ 的分布函数，$E(X)$ 为 $X$ 的[数学期望](#数学期望)，则 $P\{F(X) \gt E(X)\} = \underline{\qquad}.$
+
+            ??? success "解答"
+
+                由题给概率密度得 $E(X) = \displaystyle\int_{-\infty}^{+\infty} xf(x) \mathrm dx = \dfrac 23$；当 $0 \lt x \lt 1$ 时，$F(x) = \displaystyle\int_{0}^{x} f(t) \mathrm dt = x^2$。
+
+                而再由题给概率密度，随机变量的取值 $X \in (0,1)$，在这个区间，$F(x) = x^2$。因此，我们可以将 $F(X)$ 代换为 $X^2$，因而
+
+                $$
+                P\{F(X) \ge E(X)\} = P\{X^2 \ge \dfrac 23\}.
+                $$
+
+                解不等式得到 $X \gt \sqrt{\dfrac 23}$，于是所求概率转化为 $P\{X \gt \sqrt{\dfrac 23}\} = 1 - F(\sqrt{\dfrac 23}) = 1 - \displaystyle\int_{\sqrt{\frac 23}}^1 f(x) \mathrm dx = \dfrac 13.$
+            
+            !!! danger "这里的关键有两个，一是数学期望在确定概率密度后实质上就是一个常值；二是处理 $F(X)$：此处应该把 $F(X)$ 视为随机变量 $X$ 的函数，并利用相应区间实现代换“脱去” $F(\cdot)$。"
 
 
-???+ note "单调变换公式"
+!!! note "单调变换公式"
 
     若 $g$ 在 $X$ 的密度所对应区间上严格单调、可导且 $g'(x)\ne0$，**反函数** 为 $x=h(y)$，则在变换后的区间内，$f_Y(y)=f_X(h(y))\lvert h'(y)\rvert.$ 这可以由密度函数的定义式两边求导得出。
 
@@ -1134,7 +1149,7 @@ $$
 
     若 $a=0$，则 $Y=b$ 以概率 $1$ 成立，此时为退化的离散分布。
 
-    !!! example "习题"
+    !!! example exercise "单调函数的分布"
 
         已知随机变量 $X$ 服从 $(0,1)$ 上的均匀分布，则 $Y=-\ln X$ 服从什么分布？
 
@@ -1223,7 +1238,7 @@ $$
 
 #### 联合分布函数的性质
 
-???+ note "联合分布函数的概念"
+!!! note "联合分布函数的概念"
 
     $n$ 维随机向量 $\mathbf X$ 的联合分布函数定义为
 
@@ -1305,7 +1320,7 @@ $$
 
 #### 二维离散型随机变量
 
-???+ note "联合分布律"
+!!! note "联合分布律"
 
     若 $(X,Y)$ 以概率 $1$ 取有限个或可数无穷个数对，则称其为二维离散型随机变量。设各分量的可能取值分别为 $x_i$、$y_j$，联合分布律为 $p_{ij}=P(X=x_i,\ Y=y_j).$
 
@@ -1340,7 +1355,7 @@ $$
 
     </center>
 
-???+ note "边缘分布律"
+!!! note "边缘分布律"
 
     对联合分布律求行和或列和：
 
@@ -1366,7 +1381,7 @@ $$
 
     则 $X\sim B(1,\dfrac12)$、$Y\sim B(1,\dfrac58)$。
 
-???+ note "条件分布律"
+!!! note "条件分布律"
 
     若 $P(Y=y_j)=p_{\cdot j}>0$，则给定 $Y=y_j$ 时，$X$ 的条件分布律为
 
@@ -1396,7 +1411,7 @@ $$
 
 #### 二维连续型随机变量
 
-???+ note "联合概率密度"
+!!! note "联合概率密度"
 
     若存在 **非负** 可积函数 $f(x,y)$，使
 
@@ -1423,7 +1438,7 @@ $$
 
     计算时先画出密度非零区域，再与事件对应的区域取交集，依据交集写出积分限。联合密度的数值不是点概率，面积为 $0$ 的集合在这一模型中的概率为 $0$，例如点、直线以及通常的光滑曲线。
 
-    !!! example "分区域讨论"
+    !!! example exercise "分区域讨论"
 
         已知二维随机变量 $(X,Y)$ 的概率密度为 $f(x,y) = \begin{cases} 2e^{-(x+y)}, &{0 \lt x \lt y},\\ 0, &\text{其他}, \end{cases}$ 求 $(X,Y)$ 的分布函数 $F(x,y)$。
         
@@ -1455,7 +1470,7 @@ $$
 
             综上三种情况即为分布函数。
 
-???+ note "边缘概率密度"
+!!! note "边缘概率密度"
 
     由联合密度对另一个变量积分：
 
@@ -1495,7 +1510,7 @@ $$
 
 !!! Warning "二维连续型随机变量的分量均为连续型；反过来，各分量为连续型，不一定存在二维联合密度。例如，$X\sim U(0,1)$、$Y=X$ 时，概率全部集中在直线 $y=x$ 上。"
 
-???+ note "条件概率密度"
+!!! note "条件概率密度"
 
     对满足 $0\lt f_Y(y)\lt +\infty$ 的 $y$，条件密度的标准表达式为
 
@@ -1536,7 +1551,7 @@ $$
 
     因此，给定 $Y=y$ 时，$X \sim U(0,y)$，例如 $P(X\lt y/2\mid Y=y)=1/2$。
 
-    !!! example "从条件概率密度求其他概率密度/分布函数"
+    !!! example exercise "从条件概率密度求其他概率密度/分布函数"
 
         设随机变量 $X$ 在区间 $(a,b)$ 上随机取值，当观察到 $X=x(a \lt x \lt b)$ 时，随机变量 $Y$ 在区间 $(a,b)$ 上随机取值，求：
 
@@ -1660,7 +1675,7 @@ $$
 
     $\mu_1,\mu_2$ 为两个分量的均值，$\sigma_1^2,\sigma_2^2$ 为方差，$\rho$ 为相关系数。
 
-    ???+ tip "重要结论"
+    !!! tip "重要结论"
 
         - **边缘分布均为正态分布**：$X\sim N(\mu_1,\sigma_1^2), \qquad Y\sim N(\mu_2,\sigma_2^2).$
 
@@ -1772,7 +1787,7 @@ $$
 
 **① 整体相互独立则部分也相互独立**
 
-若一组随机变量 $X_1, X_2, \dots, X_n$ 相互独立，则其中任意 $k~(2\le k\le n)$ 个随机变量也相互独立。
+若一组随机变量 $X_1, X_2, \cdots, X_n$ 相互独立，则其中任意 $k~(2\le k\le n)$ 个随机变量也相互独立。
 
 !!! question "是不是有点像线性代数中，向量组的整体与部分的关系？"
 
@@ -1823,13 +1838,16 @@ $$
     2. 求出两个边缘分布。
     3. 使用对应的乘积判据；证明独立需要满足整个判据，否定独立只需找到有效的反例。
 
-!!! example "例子"
+<div class="supplement" markdown="1">
+<p class="supplement__title">例子</p>
 
-    离散型中，以前面的分布表为例，其满足 $\displaystyle p_{00}=\frac18,~~ p_{0\cdot}p_{\cdot0}=\frac12\times\frac38=\frac3{16}$，两者不等，所以 $X,Y$ 不独立。
+离散型中，以前面的分布表为例，其满足 $\displaystyle p_{00}=\frac18,~~ p_{0\cdot}p_{\cdot0}=\frac12\times\frac38=\frac3{16}$，两者不等，所以 $X,Y$ 不独立。
 
-    连续型中，密度的代数表达式能写成乘积还不够，必须同时考虑其非零区域。例如对 $f(x,y)=2\,\mathbf1_{\{0\lt x\lt y\lt 1\}}$，虽然区域内部密度为常数，但该区域不是两个分量取值区间的笛卡尔积：如在 $0\lt y\lt x\lt 1$ 上，联合密度为 $0$，而边缘密度的乘积 $4y(1-x)>0$，所以不独立。
+连续型中，密度的代数表达式能写成乘积还不够，必须同时考虑其非零区域。例如对 $f(x,y)=2\,\mathbf1_{\{0\lt x\lt y\lt 1\}}$，虽然区域内部密度为常数，但该区域不是两个分量取值区间的笛卡尔积：如在 $0\lt y\lt x\lt 1$ 上，联合密度为 $0$，而边缘密度的乘积 $4y(1-x)>0$，所以不独立。
 
-    反之，即使非零区域是矩形，也仍需检验密度的乘积关系，不能仅凭区域形状判定独立。对于连续密度，在单个点上不相等也不足以否定独立，应依据几乎处处判据或找到概率事件的反例。
+反之，即使非零区域是矩形，也仍需检验密度的乘积关系，不能仅凭区域形状判定独立。对于连续密度，在单个点上不相等也不足以否定独立，应依据几乎处处判据或找到概率事件的反例。
+
+</div>
 
 ### 多维随机变量函数的分布
 
@@ -1850,7 +1868,7 @@ $$
 
 #### 求法
 
-???+ note "分布函数法（定义法）"
+!!! note "分布函数法（定义法）"
 
     对 $Z=g(X,Y)$， $F_Z(z)=P(Z\le z)=P(g(X,Y)\le z).$
 
@@ -1872,7 +1890,7 @@ $$
 
     先确定 $Z$ 的可能取值，再求 $D_z$ 与联合密度非零区域的交集，分段积分。若得到的分布具有密度，再对 $F_Z$ 求导；若出现跳跃，则需保留对应的点概率。
 
-    !!! example "定义法的运用"
+    !!! example exercise "定义法的运用"
 
         若 $X,Y$ 独立且都服从 $U(0,1)$，令 $Z=X+Y$，则 $Z$ 的概率密度和分布函数分别是？
         
@@ -1901,13 +1919,9 @@ $$
             \end{cases}
             $$
 
-
-
-
-
 以下各公式假设 $(X,Y)$ 具有联合密度，
 
-???+ note "最大值与最小值的分布"
+!!! note "最大值与最小值的分布"
 
     令 $M=\max(X,Y)$、$L=\min(X,Y)$。不要求独立时，
 
@@ -1942,7 +1956,35 @@ $$
 
     这类问题先把最大值、最小值的事件转化为所有分量同时满足的条件，通常比直接求密度更方便。
 
-???+ note "和的分布"
+    !!! example exercise "例"
+
+        **(2026 数一 22-1.1)** 假设某种元件的寿命服从指数分布，其均值 $\theta$ 是未知参数。为估计 $\theta$，取 $n$ 个这种原件同时做寿命试验，试验到出现 $k~~(1\le k\ge n)$ 个元件失效时停止。
+
+        若 $k=1$，失效元件的寿命记为 $T$，求 $T$ 的概率密度。
+
+        ??? success "解答"
+
+            设 $n$ 个元件的寿命分别为 $X_1, X_2, \cdots, X_n$，每个样本都服从参数为 $\lambda = \dfrac 1{\theta}$ 的指数分布（因为指数分布的数学期望是 $\dfrac 1{\theta}$），所以有
+
+            $$
+            F_i(x) =
+            \begin{cases}
+            1-e^{-\frac{x}{\theta}}, & x\ge 0, \\
+            0, & x\lt 0.
+            \end{cases}
+            $$
+
+            $k=1$ 时，$T = \min\{X_1, X_2, \cdots, X_n\}$。由于样本间互相独立，所以
+
+            $$
+            F_T(t) = 1 - \prod_{i=1}^n (1-F_i(x)) =
+                        \begin{cases}
+            1-e^{-\frac{nx}{\theta}}, & x\ge 0, \\
+            0, & x\lt 0.
+            \end{cases}
+            $$
+
+!!! note "和的分布"
 
     令 $Z=X+Y$，则代换利用边缘密度，有
 
@@ -1972,7 +2014,7 @@ $$
     X+Y\sim P(\lambda_1+\lambda_2).
     $$
 
-???+ note "差的分布"
+!!! note "差的分布"
 
     令 $Z=X-Y$，
 
@@ -2016,7 +2058,7 @@ $$
     
     而 $u$ 可以“无痛”换成 $z$，则结果即为 $Z$ 的概率密度。下面的积和商也是类似的推导过程，利用辅助变量把问题补成二维变换即可。
 
-???+ note "积的分布"
+!!! note "积的分布"
 
     令 $Z=XY$，
 
@@ -2036,7 +2078,7 @@ $$
     f_X\left(\frac zy\right)f_Y(y)\,\mathrm dy.
     $$
 
-???+ note "商的分布"
+!!! note "商的分布"
 
     令 $Z=X/Y$，
 
@@ -2060,7 +2102,7 @@ $$
 
 #### 数学期望
 
-???+ note "概念"
+!!! note "概念"
 
     数学期望描述随机变量取值的**平均水平**或分布的**重心位置**，记为 $E(X)$ 或 $\mathbb E[X]$。它由随机变量的分布决定，不一定是随机变量实际能够取到的值。
 
@@ -2094,7 +2136,7 @@ $$
 
     !!! warning "不能仅凭形式上的正负抵消判定期望存在。对于正负两部分积分均发散的情形，即使对称积分的主值存在，也不能把它当作数学期望。"
 
-    ???+ tip "随机变量函数的期望"
+    !!! tip "随机变量函数的期望"
 
         设 $Y=g(X)$。求 $E(g(X))$ 时，可以直接利用 $X$ 的分布。
 
@@ -2124,7 +2166,7 @@ $$
 
         所以一般有 $E(g(X))\ne g(E(X))$；特别地，$E(X^2)$ 与 $[E(X)]^2$ 不能混淆。
 
-???+ note "性质"
+!!! note "性质"
 
     以下涉及的期望均假定存在。
 
@@ -2149,7 +2191,7 @@ $$
 
 #### 方差、标准差
 
-???+ note "概念"
+!!! note "概念"
 
     设 $\mu=E(X)$。若 $E[(X-\mu)^2]$ 有限，则称 $D(X)=\operatorname{Var}(X)=E[(X-E(X))^2]$ 为 $X$ 的**方差**，其非负平方根 $\sigma_X=\sqrt{D(X)}$ 称为**标准差**。
 
@@ -2175,7 +2217,7 @@ $$
 
     例如，当 $X\sim U(0,1)$ 时， $\displaystyle D(X)=\frac13-\left(\frac12\right)^2=\frac1{12}.$
 
-???+ note "性质"
+!!! note "性质"
 
     方差的主要性质包括：
 
@@ -2194,7 +2236,7 @@ $$
     =\sum_{i=1}^n a_i^2D(X_i).
     $$
 
-    事实上，两两不相关已足以保证这一等式。一般情形下必须考虑协方差，不能直接把方差相加。
+    事实上，两两不相关已足以保证这一等式。在后面我们会了解到，更一般的情形下，还必须考虑协方差，不能直接把方差相加。
 
 ??? info "标准化与平方偏差"
 
@@ -2256,7 +2298,7 @@ $$
 
 #### 数学期望
 
-???+ note "随机向量的期望与分量的期望"
+!!! note "随机向量的期望与分量的期望"
 
     对随机向量 $(X,Y)$，若两个分量的期望存在，可将其期望写为 $E[(X,Y)]=(E(X),E(Y)).$
 
@@ -2286,7 +2328,7 @@ $$
 
     求某个分量自身的数字特征时，使用它的边缘分布就可以了。
 
-???+ note "二维随机变量函数的期望"
+!!! note "二维随机变量函数的期望"
 
     令 $Z=g(X,Y)$。若 $E(|g(X,Y)|)\lt+\infty$，则可以直接利用联合分布计算：
 
@@ -2302,34 +2344,40 @@ $$
 
     积分区域实际取联合密度的非零区域。一般不必先求出 $Z$ 的分布。
 
-    ??? Example "计算示例"
-        设
+    <div class="supplement" markdown="1">
 
-        $$
-        f(x,y)=
-        \begin{cases}
-        2, & 0\lt x\lt y\lt1,\\
-        0, & \text{其他}.
-        \end{cases}
-        $$
+    计算示例
+    {: .supplement__title}
 
-        直接利用联合密度，有
+    设
 
-        $$
-        E(X)=\int_0^1\int_0^y2x\,\mathrm dx\,\mathrm dy=\frac13,
-        $$
+    $$
+    f(x,y)=
+    \begin{cases}
+    2, & 0\lt x\lt y\lt1,\\
+    0, & \text{其他}.
+    \end{cases}
+    $$
 
-        $$
-        E(Y)=\int_0^1\int_0^y2y\,\mathrm dx\,\mathrm dy=\frac23,
-        $$
+    直接利用联合密度，有
 
-        $$
-        E(XY)=\int_0^1\int_0^y2xy\,\mathrm dx\,\mathrm dy=\frac14.
-        $$
+    $$
+    E(X)=\int_0^1\int_0^y2x\,\mathrm dx\,\mathrm dy=\frac13,
+    $$
 
-        由期望的线性性质， $E(X+Y)=E(X)+E(Y)=1.$
-    
-    !!! example "习题"
+    $$
+    E(Y)=\int_0^1\int_0^y2y\,\mathrm dx\,\mathrm dy=\frac23,
+    $$
+
+    $$
+    E(XY)=\int_0^1\int_0^y2xy\,\mathrm dx\,\mathrm dy=\frac14.
+    $$
+
+    由期望的线性性质， $E(X+Y)=E(X)+E(Y)=1.$
+
+    </div>
+
+    !!! example exercise "习题"
 
         设随机变量 $X$ 和 $Y$ 独立同分布，都服从参数为 $1$ 的指数分布。若 $Z = \begin{cases} 2X, &{X\ge Y},\\ Y-1, &{X\lt Y}, \end{cases}$ 则 $E(Z) = \underline\qquad.$
 
@@ -2360,7 +2408,7 @@ $$
 
 #### 协方差
 
-???+ note "协方差的概念"
+!!! note "协方差的概念"
 
     设 $X,Y$ 均具有有限二阶矩，则称 $\operatorname{Cov}(X,Y) =E[(X-E(X))(Y-E(Y))]$ 为 $X,Y$ 的**协方差**。
 
@@ -2382,7 +2430,7 @@ $$
 
     协方差的量纲为两个变量量纲的乘积，其大小会受到单位选择的影响。因此，比较线性相关程度时通常采用无量纲的相关系数。
 
-???+ note "协方差的性质"
+!!! note "协方差的性质"
 
     对具有有限二阶矩的随机变量及常数 $a,b,c,d$，
     
@@ -2428,7 +2476,7 @@ $$
 
 #### 相关系数
 
-???+ note "相关系数的概念"
+!!! note "相关系数的概念"
 
     若 $0\lt D(X),D(Y)\lt+\infty$，则称
 
@@ -2456,7 +2504,7 @@ $$
 
     !!! warning "若某个变量方差为 $0$，则上述相关系数没有定义，不能直接把它赋值为 $0$。<br>不过，此时它与另一个与其配对的、具有有限二阶矩变量的协方差仍然可以定义，协方差为 $0$。"
 
-???+ note "相关系数的性质"
+!!! note "相关系数的性质"
 
     -   由柯西—施瓦茨不等式，$|\operatorname{Cov}(X,Y)|\le\sqrt{D(X)D(Y)}$，从而
 
@@ -2476,31 +2524,55 @@ $$
 
         平移或正比例缩放不改变相关系数；若恰有一个变量乘以负数，则相关系数变号。
 
-!!! Example "协方差与相关系数的计算示例"
-    继续使用三角形区域 $0\lt x\lt y\lt1$ 上的联合密度 $f(x,y)=2$。已有 
-    
-    $$
-    \displaystyle E(X)=\frac13,\qquad E(Y)=\frac23,\qquad E(XY)=\frac14.
-    $$
+<div class="supplement" markdown="1">
+<p class="supplement__title">协方差与相关系数的计算示例</p>
 
-    再计算
+继续使用三角形区域 $0\lt x\lt y\lt1$ 上的联合密度 $f(x,y)=2$。已有
 
-    $$
-    E(X^2)=\int_0^1\int_0^y2x^2\,\mathrm dx\,\mathrm dy=\frac16,
-    $$
+$$
+\displaystyle E(X)=\frac13,\qquad E(Y)=\frac23,\qquad E(XY)=\frac14.
+$$
 
-    $$
-    E(Y^2)=\int_0^1\int_0^y2y^2\,\mathrm dx\,\mathrm dy=\frac12.
-    $$
+再计算
 
-    于是 $\displaystyle D(X)=\frac16-\frac19=\frac1{18}, \qquad D(Y)=\frac12-\frac49=\frac1{18},$ $\displaystyle \operatorname{Cov}(X,Y)=\frac14-\frac13\cdot\frac23=\frac1{36},$
+$$
+E(X^2)=\int_0^1\int_0^y2x^2\,\mathrm dx\,\mathrm dy=\frac16,
+$$
 
-    $$
-    \rho_{XY}
-    =\frac{1/36}{\sqrt{(1/18)(1/18)}}=\frac12.
-    $$
+$$
+E(Y^2)=\int_0^1\int_0^y2y^2\,\mathrm dx\,\mathrm dy=\frac12.
+$$
 
-    因此，两个变量正相关但不是完全线性相关，并且 $\displaystyle D(X+Y)=\frac1{18}+\frac1{18}+2\cdot\frac1{36}=\frac16.$
+于是 $\displaystyle D(X)=\frac16-\frac19=\frac1{18}, \qquad D(Y)=\frac12-\frac49=\frac1{18},$ $\displaystyle \operatorname{Cov}(X,Y)=\frac14-\frac13\cdot\frac23=\frac1{36},$
+
+$$
+\rho_{XY}
+=\frac{1/36}{\sqrt{(1/18)(1/18)}}=\frac12.
+$$
+
+因此，两个变量正相关但不是完全线性相关，并且 $\displaystyle D(X+Y)=\frac1{18}+\frac1{18}+2\cdot\frac1{36}=\frac16.$
+
+</div>
+
+!!! example exercise "给定实际情境的计算"
+
+    **(2012 数一 8)** 将长度为 $1 \mathrm m$ 的木棒随机地截成两段，则两段长度的相关系数为（ ）。
+
+    A. $1.\qquad$ B. $\dfrac 12.\qquad$ C. $-\dfrac 12.\qquad$ D. $-1.$
+
+    ??? success "解答"
+
+        D.
+
+        设其中一段的长度为 $X$。显然有 $E(X) = E(1-X) = \dfrac 12$，$E(X^2) = \displaystyle\int_0^1 x^2 \mathrm dx = \dfrac 13$。
+
+        所以 $D(X) = D(1-X) = E(X^2) - E^2(X) = \dfrac{1}{12}$。
+
+        所以
+
+        $$
+        \rho = \frac{\operatorname{Cov}(X,Y)}{\sqrt{D(X)\cdot D(1-X)}} = -1.
+        $$
 
 ### 独立性与不相关性的判定、切比雪夫不等式
 
@@ -2583,18 +2655,22 @@ $$
 
             其余三个联合概率由边缘概率确定，分别为 $p(1-q)$、$(1-p)q$、$(1-p)(1-q)$，因此整个联合分布律均满足乘积关系，两个变量独立。
 
-!!! Example "不相关但不独立的例子"
-    设 $X\sim U(-1,1)$，令 $Y=X^2$。由对称性， $E(X)=E(X^3)=0,$
+<div class="supplement" markdown="1">
+<p class="supplement__title">不相关但不独立的例子</p>
 
-    所以 $\operatorname{Cov}(X,Y)=E(X^3)-E(X)E(X^2)=0.$
+设 $X\sim U(-1,1)$，令 $Y=X^2$。由对称性， $E(X)=E(X^3)=0,$
 
-    但令 $\displaystyle A=\{|X|\le\frac 12\},\qquad B=\{Y\le\frac 14\},$
+所以 $\operatorname{Cov}(X,Y)=E(X^3)-E(X)E(X^2)=0.$
 
-    则 $A=B$，且 $P(A)=P(B)=\displaystyle\frac 12$，从而 $\displaystyle P(A\cap B)=\frac12\ne\frac14=P(A)P(B).$
+但令 $\displaystyle A=\{|X|\le\frac 12\},\qquad B=\{Y\le\frac 14\},$
 
-    所以 $X,Y$ 不独立。
-    
-    这个例子说明：完全由另一个变量确定的非线性关系，也可能具有零相关系数。
+则 $A=B$，且 $P(A)=P(B)=\displaystyle\frac 12$，从而 $\displaystyle P(A\cap B)=\frac12\ne\frac14=P(A)P(B).$
+
+所以 $X,Y$ 不独立。
+
+这个例子说明：完全由另一个变量确定的非线性关系，也可能具有零相关系数。
+
+</div>
 
 #### 切比雪夫不等式
 
@@ -2651,26 +2727,29 @@ $$
 
     除以 $\varepsilon^2$ 即得切比雪夫不等式。这也可以看作对非负随机变量 $(X-\mu)^2$ 使用马尔可夫不等式。
 
-!!! Example "切比雪夫不等式的应用"
+<div class="supplement" markdown="1">
+<p class="supplement__title">切比雪夫不等式的应用</p>
 
-    已知期望和方差、但不知道具体分布时，可以用切比雪夫不等式给出偏离均值的概率上界或落在均值附近的概率下界。
+已知期望和方差、但不知道具体分布时，可以用切比雪夫不等式给出偏离均值的概率上界或落在均值附近的概率下界。
 
-    ---
+---
 
-    例如，若 $E(X)=10$、$D(X)=4$，则 $\displaystyle P(|X-10|\ge6)\le\frac4{36}=\frac19,$
+例如，若 $E(X)=10$、$D(X)=4$，则 $\displaystyle P(|X-10|\ge6)\le\frac4{36}=\frac19,$
 
-    因此 $P(4\lt X\lt16)\ge\dfrac89.$
+因此 $P(4\lt X\lt16)\ge\dfrac89.$
 
-    这里只得到一个保证成立的界，不能据此断言概率恰好等于 $8/9$。若已知具体分布，则通常可用分布函数获得更精确的概率。
+这里只得到一个保证成立的界，不能据此断言概率恰好等于 $8/9$。若已知具体分布，则通常可用分布函数获得更精确的概率。
 
-    若希望保证 $P(|X-\mu|\lt\varepsilon)\ge1-\alpha, \qquad 0\lt\alpha\lt1,$
+若希望保证 $P(|X-\mu|\lt\varepsilon)\ge1-\alpha, \qquad 0\lt\alpha\lt1,$
 
-    由切比雪夫不等式可知，一个充分条件是 $\displaystyle \varepsilon\ge\frac{\sigma}{\sqrt\alpha}.$
+由切比雪夫不等式可知，一个充分条件是 $\displaystyle \varepsilon\ge\frac{\sigma}{\sqrt\alpha}.$
+
+</div>
 
 ## 大数定律与中心极限定理
 ### 依概率收敛
 
-???+ note "概念"
+!!! note "概念"
 
     设 $X_1,X_2,\ldots$ 与 $X$ 定义在同一概率空间上。若对任意 $\varepsilon>0$，都有
 
@@ -2692,7 +2771,7 @@ $$
 
     依概率收敛不表示每次观测都更接近极限，也不要求误差随 $n$ 单调减小；它描述的是误差事件的概率变化。
 
-???+ note "常用性质"
+!!! note "常用性质"
 
     -   若 $X_n\xrightarrow{P}a$、$Y_n\xrightarrow{P}b$，其中 $a,b$ 为有限常数，则 $X_n+Y_n\xrightarrow{P}a+b$， $X_nY_n\xrightarrow{P}ab.$
 
@@ -2707,7 +2786,7 @@ $$
 
 !!! info "该定律由俄国数学家帕夫努季·利沃维奇·切比雪夫（Chebyshev）提出。"
 
-???+ note "条件与结论"
+!!! note "条件与结论"
 
     设 $X_1,X_2,\ldots$ **两两不相关**，各自具有有限方差，且方差存在统一上界：存在常数 $C\lt+\infty$，使对所有 $i$ 都有 $D(X_i)\le C.$
 
@@ -2765,7 +2844,7 @@ $$
 
 !!! info "该定律由苏联数学家亚历山大·雅科夫列维奇·辛钦（Khinchin）提出。"
 
-???+ note "条件与结论"
+!!! note "条件与结论"
 
     设 $X_1,X_2,\ldots$ **相互独立、同分布**，且都具有有限数学期望 $E(X_i)=\mu, \qquad E(|X_i|)\lt+\infty.$
 
@@ -2777,29 +2856,32 @@ $$
 
     即 **大量随机变量的平均值，依概率接近它们的期望**。
 
-??? example "辛钦大数定律的运用"
+<div class="supplement" markdown="1">
+<p class="supplement__title">辛钦大数定律的运用</p>
 
-    若 $X_1,X_2,\ldots$ 独立同分布，$g$ 为可测函数，且 $E(|g(X_1)|)\lt+\infty$，则 $g(X_i)$ 也独立同分布，所以
+若 $X_1,X_2,\ldots$ 独立同分布，$g$ 为可测函数，且 $E(|g(X_1)|)\lt+\infty$，则 $g(X_i)$ 也独立同分布，所以
 
-    $$
-    \frac1n\sum_{i=1}^ng(X_i)\xrightarrow{P}E(g(X_1)).
-    $$
+$$
+\frac1n\sum_{i=1}^ng(X_i)\xrightarrow{P}E(g(X_1)).
+$$
 
-    例如，若 $E(X_1^2)\lt+\infty$，则 $\displaystyle \frac1n\sum_{i=1}^nX_i^2\xrightarrow{P}E(X_1^2).$
+例如，若 $E(X_1^2)\lt+\infty$，则 $\displaystyle \frac1n\sum_{i=1}^nX_i^2\xrightarrow{P}E(X_1^2).$
 
-    结合 $\overline X_n\xrightarrow{P}\mu$ 及连续函数的收敛性质，可得
+结合 $\overline X_n\xrightarrow{P}\mu$ 及连续函数的收敛性质，可得
 
-    $$
-    \frac1n\sum_{i=1}^n(X_i-\overline X_n)^2
-    =\frac1n\sum_{i=1}^nX_i^2-\overline X_n^2
-    \xrightarrow{P}D(X_1).
-    $$
+$$
+\frac1n\sum_{i=1}^n(X_i-\overline X_n)^2
+=\frac1n\sum_{i=1}^nX_i^2-\overline X_n^2
+\xrightarrow{P}D(X_1).
+$$
 
-    即样本的平均平方偏差可以依概率逼近总体方差。
+即样本的平均平方偏差可以依概率逼近总体方差。
+
+</div>
 
 #### 伯努利大数定律
 
-???+ note "条件与结论"
+!!! note "条件与结论"
 
     独立重复进行同一个试验，事件 $A$ 在每次试验中发生的概率恒为 $p$。令 $S_n$ 表示前 $n$ 次试验中 $A$ 发生的次数，则
 
@@ -2866,7 +2948,7 @@ $$
 
     本节这些结论采用依概率收敛的形式，属于弱大数定律。独立同分布且方差有限时，可以同时满足切比雪夫与辛钦定律的条件；仅有有限期望时，则优先考虑辛钦定律。
 
-!!! example "大数定律的运用"
+!!! example exercise "大数定律的运用"
 
     1.  设 $X_1,X_2,\cdots,X_n,\cdots$ 是来自总体 $X$ 的简单随机样本，$X$ 服从 $[-\pi,\pi]$ 上的均匀分布，记 $Y_k=\cos(kX_k)$，$k=1,2,\cdots,n,\cdots$，则 $\dfrac{1}{n}\sum_{k=1}^{n}Y_k^2$ 依概率收敛于 $\underline{\qquad}$。
 
@@ -2899,7 +2981,7 @@ $$
 
 !!! info "该定理由芬兰数学家耶尔·瓦尔德马·林德伯格（Lindeberg）于 20 世纪 20 年代提出。<br>法国数学家保罗·列维（Levy）几乎同时独立证明了这一定理。"
 
-???+ note "条件与结论"
+!!! note "条件与结论"
 
     设 $X_1,X_2,\ldots$ **相互独立、同分布**。记 $E(X_i)=\mu,\qquad D(X_i)=\sigma^2, \qquad 0\lt\sigma^2\lt+\infty.$
 
@@ -2924,32 +3006,35 @@ $$
 
 !!! warning "定理只指出标准化的和依分布收敛于正态分布，并不意味着原变量服从于正态分布。<br>依分布收敛描述分布函数的收敛，不能认为 $Z_n$ 依概率收敛于 $0$。"
 
-???+ example "和与平均值的正态近似"
+<div class="supplement" markdown="1">
+<p class="supplement__title">和与平均值的正态近似</p>
 
-    当 $n$ 足够大且近似效果适当时，可以写成 $S_n\approx N(n\mu,n\sigma^2),\qquad\overline X_n = \dfrac 1n S_n\approx N\left(\mu,\frac{\sigma^2}{n}\right).$
+当 $n$ 足够大且近似效果适当时，可以写成 $S_n\approx N(n\mu,n\sigma^2),\qquad\overline X_n = \dfrac 1n S_n\approx N\left(\mu,\frac{\sigma^2}{n}\right).$
 
-    这里的 $\approx$ 表示分布近似，不是精确分布等式。相应地，
+这里的 $\approx$ 表示分布近似，不是精确分布等式。相应地，
 
-    $$
-    P(a\lt S_n\le b)
-    \approx
-    \Phi\left(\frac{b-n\mu}{\sigma\sqrt n}\right)
-    -\Phi\left(\frac{a-n\mu}{\sigma\sqrt n}\right),
-    $$
+$$
+P(a\lt S_n\le b)
+\approx
+\Phi\left(\frac{b-n\mu}{\sigma\sqrt n}\right)
+-\Phi\left(\frac{a-n\mu}{\sigma\sqrt n}\right),
+$$
 
-    $$
-    P(a\lt\overline X_n\le b)
-    \approx
-    \Phi\left(\frac{\sqrt n(b-\mu)}{\sigma}\right)
-    -\Phi\left(\frac{\sqrt n(a-\mu)}{\sigma}\right).
-    $$
+$$
+P(a\lt\overline X_n\le b)
+\approx
+\Phi\left(\frac{\sqrt n(b-\mu)}{\sigma}\right)
+-\Phi\left(\frac{\sqrt n(a-\mu)}{\sigma}\right).
+$$
 
-    对给定 $\varepsilon>0$，常用估计为
+对给定 $\varepsilon>0$，常用估计为
 
-    $$
-    P(|\overline X_n-\mu|\lt\varepsilon)
-    \approx2\Phi\left(\frac{\sqrt n\,\varepsilon}{\sigma}\right)-1.
-    $$
+$$
+P(|\overline X_n-\mu|\lt\varepsilon)
+\approx2\Phi\left(\frac{\sqrt n\,\varepsilon}{\sigma}\right)-1.
+$$
+
+</div>
 
 !!! tip "与大数定律的区别及适用边界"
 
@@ -2976,7 +3061,7 @@ $$
 
 !!! info "或称拉普拉斯（中心极限）定理。1718 年，法裔数学家亚伯拉罕·棣莫弗（De Moivre）发表的《机遇论》是概率论早期的重要著作，书中对 n 重伯努利试验的中心极限定理的特殊情况，即 $p=\dfrac 12$ 的情况作了讨论。1812 年，法国学者皮埃尔-西蒙·拉普拉斯（Laplace）在《概率的分析理论》一书中总结了概率论所有已经得到的成果，并将此定理推广到一般情形。"
 
-???+ note "条件与结论"
+!!! note "条件与结论"
 
     设 $S_n\sim B(n,p)$，其中 $0\lt p\lt1$ 固定。则
 
@@ -2997,7 +3082,7 @@ $$
 
     特别地，当 $p=0$ 或 $p=1$ 时，二项分布退化为常数分布，不能使用上述含标准差分母的标准化公式。
 
-???+ info "连续性修正"
+!!! info "连续性修正"
 
     二项变量只取整数值，而正态变量连续。用正态分布近似整数区间概率时，常将端点向外扩展半个单位，这称为**连续性修正**。
 
@@ -3033,7 +3118,7 @@ $$
 
 #### 小结
 
-!!! example "中心极限定理的计算"
+!!! example exercise "中心极限定理的计算"
 
     1.  设随机变量 $X_1,X_2,\cdots,X_n,\cdots$ 相互独立且均服从 $U[1,4]$，$\Phi(x)$ 是标准正态分布的分布函数，则
 
@@ -3104,7 +3189,7 @@ $$
 
             故 $a=\sqrt 2$。
 
-!!! example "实际问题中中心极限定理的应用"
+!!! example exercise "实际问题中中心极限定理的应用"
 
     关键在于 **识别出对应的随机变量和参数**。
 
@@ -3236,7 +3321,7 @@ $$
 
 #### 常用统计量
 
-???+ note "样本均值"
+!!! note "样本均值"
 
     样本均值定义为
 
@@ -3248,7 +3333,7 @@ $$
 
     其中方差公式利用了样本之间的独立性（$D(\sum_{i=1}^n X_i) = n\sigma^2$）。$\overline X$ 描述样本的平均水平，也是估计总体均值最常用的统计量。
 
-???+ note "样本方差"
+!!! note "样本方差"
 
     对 $n\ge2$，样本方差定义为
 
@@ -3268,13 +3353,13 @@ $$
 
 本章统一用 $S^2$ 表示分母为 $n-1$ 的样本方差。
 
-???+ note "样本标准差"
+!!! note "样本标准差"
 
     样本标准差是样本方差的非负平方根： $S=\sqrt{S^2}.$
 
     它与样本观测值具有相同量纲。虽然 $S^2$ 是 $\sigma^2$ 的无偏估计量，但一般 **并没有** $E(S)=\sigma$。
 
-???+ note "样本 k 阶原点矩"
+!!! note "样本 k 阶原点矩"
 
     对正整数 $k$，样本 $k$ 阶原点矩定义为
 
@@ -3288,7 +3373,7 @@ $$
 
     后一结论来自对 $X_i^k$ 应用辛钦大数定律，是矩估计法的依据之一。
 
-???+ note "样本 k 阶中心矩"
+!!! note "样本 k 阶中心矩"
 
     样本 $k$ 阶中心矩定义为
 
@@ -3302,7 +3387,7 @@ $$
 
 以上五种统计量从不同角度反映了样本的数字特征。在统计中我们可能还会用到别的统计量。
 
-???+ note "顺序统计量"
+!!! note "顺序统计量"
 
     把样本从小到大排列，得到 $X_{(1)}\le X_{(2)}\le\cdots\le X_{(n)},$
 
@@ -3365,7 +3450,7 @@ $$
 
     $n$ 就是未知量。
 
-???+ note "$\chi^2$ 分布"
+!!! note "$\chi^2$ 分布"
 
     若 $Z_1,\ldots,Z_\nu$ 相互独立且均服从 $N(0,1)$，则
 
@@ -3383,7 +3468,7 @@ $$
 
     自由度反映构成平方和的独立标准正态分量个数；在样本残差平方和中，估计均值会产生一个线性约束，因此常出现 $n-1$ 个自由度。
 
-???+ note "$t$ 分布"
+!!! note "$t$ 分布"
 
     若 $Z\sim N(0,1)$、$U\sim\chi^2(\nu)$，且 $Z,U$ 相互独立，则
 
@@ -3399,7 +3484,7 @@ $$
     
     正态总体均值未知、方差也未知时，用样本标准差代替总体标准差所构造的统计量通常服从 $t$ 分布。
 
-???+ note "$F$ 分布"
+!!! note "$F$ 分布"
 
     若 $U\sim\chi^2(\nu_1)$、$V\sim\chi^2(\nu_2)$ 相互独立，则
 
@@ -3421,7 +3506,7 @@ $$
         \quad(\nu_2>4).
         $$
 
-!!! example "抽样分布的识别"
+!!! example exercise "抽样分布的识别"
 
     1.  设 $X_1, X_2$ 是取自正态总体 $X\sim N(1,1)$ 的简单随机样本，则 $\dfrac{X_1-1}{|1-X_2|}$ 服从（    ）。
 
@@ -3477,7 +3562,7 @@ $$
 
             而 $X_1^2 \sim \chi^2(1)$，$9Y^2 \sim \chi^2(9)$，故 $\dfrac{X_1^2/1}{9Y^2/9} = \dfrac{X_1^2}{Y^2} \sim F(1,9).$
 
-!!! example "服从抽样分布的独立性条件"
+!!! example exercise "服从抽样分布的独立性条件"
 
     设随机变量 $X\sim N(0,1),\,Y\sim N(0,1)$，则下列结论正确的是（    ）。
 
@@ -3500,23 +3585,76 @@ $$
 
         对于 A. B. C.，我们需要保证 $X$ 和 $Y$ 独立。
 
-??? warning "分位点的统一约定"
+#### 分位点
 
-    本章统一使用**上侧分位点**。对 $0\lt\alpha\lt1$，
+设随机变量 $X$ 的分布函数为 $F$。对 $0\lt\alpha\lt1$，若 $x_\alpha$ 满足
+
+$$
+P(X\le x_\alpha)=\alpha,
+\qquad\text{即}\qquad
+F(x_\alpha)=\alpha,
+$$
+
+则称 $x_\alpha$ 为 $X$ 的**下侧 $\alpha$ 分位点**；若 $\xi_\alpha$ 满足
+
+$$
+P(X>\xi_\alpha)=\alpha,
+$$
+
+则称 $\xi_\alpha$ 为 $X$ 的**上侧 $\alpha$ 分位点**。特别地，下侧 $0.5$ 分位点称为**中位数**。
+
+对连续型随机变量，若 $F$ 严格单调，则分位点唯一，并且
+
+$$
+P(X\le\xi_\alpha)=1-\alpha,
+\qquad
+\xi_\alpha=x_{1-\alpha}.
+$$
+
+即上侧 $\alpha$ 分位点就是下侧 $1-\alpha$ 分位点。若 $X$ 为离散型，或分布函数存在平坦段，满足 $F(x)=\alpha$ 的 $x$ 可能不存在或不唯一；通常取满足 $F(x)\ge\alpha$ 的最小 $x$ 作为下侧分位点。本章用到的抽样分布都是连续型，下面不再区分。
+
+!!! warning "本章统一使用上侧分位点"
+
+    对 $0\lt\alpha\lt1$，
 
     $$
     P(Z>z_\alpha)=\alpha,\qquad
     P(T>t_\alpha(\nu))=\alpha,\\
-    \newline
     P(U>\chi^2_\alpha(\nu))=\alpha,\qquad
     P(W>F_\alpha(\nu_1,\nu_2))=\alpha.
     $$
 
-    例如，$z_{0.025}\approx1.96$。上侧概率越小，对应分位点越大。
+    等价地，$\Phi(z_\alpha)=1-\alpha$。例如，$z_{0.025}\approx1.96$。上侧概率越小，对应分位点越大。
 
-    由对称性和倒数关系， $z_{1-\alpha}=-z_\alpha,\qquad t_{1-\alpha}(\nu)=-t_\alpha(\nu),$ $F_{1-\alpha}(\nu_1,\nu_2) =\dfrac1{F_\alpha(\nu_2,\nu_1)}.$
+    若软件使用下侧累计概率分位点，应输入 $1-\alpha$ 来获得这里的上侧 $\alpha$ 分位点。
 
-    $\chi^2$ 分布与 $F$ 分布的左右分位点不能通过简单改变正负号获得。若软件使用下侧累计概率分位点，应输入 $1-\alpha$ 来获得这里的上侧 $\alpha$ 分位点。
+由对称性和倒数关系，
+
+$$
+z_{1-\alpha}=-z_\alpha,\qquad
+t_{1-\alpha}(\nu)=-t_\alpha(\nu),
+$$
+
+$$
+F_{1-\alpha}(\nu_1,\nu_2)
+=\frac1{F_\alpha(\nu_2,\nu_1)}.
+$$
+
+后一式来自 $\dfrac1W\sim F(\nu_2,\nu_1)$。$\chi^2$ 分布与 $F$ 分布不对称，左右分位点不能通过改变正负号获得。由 $T^2\sim F(1,\nu)$ 还可得到
+
+$$
+t_{\alpha/2}^2(\nu)=F_\alpha(1,\nu).
+$$
+
+这是因为 $|T|>t_{\alpha/2}(\nu)$ 与 $T^2>t_{\alpha/2}^2(\nu)$ 是同一事件。
+
+常用的标准正态上侧分位点为
+
+| $\alpha$ | $0.10$ | $0.05$ | $0.025$ | $0.01$ | $0.005$ |
+| --- | --- | --- | --- | --- | --- |
+| $z_\alpha$ | $1.282$ | $1.645$ | $1.960$ | $2.326$ | $2.576$ |
+
+区间估计与假设检验中的临界值都由分位点给出。双侧置信水平 $1-\alpha$ 对应 $z_{\alpha/2}$，单侧问题对应 $z_\alpha$：例如 $95\%$ 双侧区间使用 $1.96$，而 $95\%$ 单侧检验使用 $1.645$。
 
 #### 正态总体下的常用结论
 
@@ -3596,7 +3734,7 @@ $$
         \sim t(n_1+n_2-2).
         $$
 
-!!! example "习题"
+!!! example exercise "习题"
 
     1.  从总体 $X\sim N\left(\mu,2^2\right)$ 中随意抽取容量为 $n$ 的一组样本，其均值为 $\overline X$，若要求 $E(|\overline X - \mu|)\le 0.1$，则 $n$ 的最小取值是多少？
 
@@ -3688,7 +3826,7 @@ $$
 
 #### 方法
 
-???+ note "矩估计法"
+!!! note "矩估计法"
 
     矩估计法用样本矩代替总体矩，并解出未知参数。
 
@@ -3712,7 +3850,7 @@ $$
 
     若 $X\sim U(0,\theta)$、$\theta>0$，由 $E(X)=\theta/2$，可得 $\widehat\theta_{\mathrm{MM}}=2\overline X$。
 
-???+ note "最大似然估计法"
+!!! note "最大似然估计法"
 
     给定样本观测值 $x_1,\ldots,x_n$，将样本联合概率或联合密度视为参数 $\theta$ 的函数，称为**似然函数**：
 
@@ -3776,7 +3914,7 @@ $$
 
         不变性不意味着变换后的估计量无偏；无偏性一般不会在非线性变换下保持。
 
-!!! example "习题"
+!!! example exercise "习题"
 
     1.  设 $X_1, X_2, \cdots, X_n$ 是取自总体 $X$ 的简单随机样本，$X$ 的概率密度为
 
@@ -3839,8 +3977,27 @@ $$
             $$
             \widehat\lambda_{\mathrm{MLE}}=\frac1n\sum_{i=1}^n|X_i|.
             $$
+
+    2.  **(2026 数一 22-2)** 假设某种元件的寿命服从指数分布，其均值 $\theta$ 是未知参数。为估计 $\theta$，取 $n$ 个这种原件同时做寿命试验，试验到出现 $k~~(1\le k\le n)$ 个元件失效时停止。
+
+        已知 $k$ 个失效元件的寿命值分别为 $t_1, t_2, \cdots, t_k$，且 $t_1\le t_2\le \cdots \le t_k$，似然函数为 $L(\theta) = \dfrac 1{\theta^k} e^{-\frac 1{\theta}[\sum_{i=1}^k t_i + (n-k)t_k]}$，求 $\theta$ 的最大似然估计值。
+
+        ??? success "解答"
+
+            取对数得 $\displaystyle \ell(\theta)= -k\ln \theta -\frac{1}{\theta}\left[\sum_{i=1}^k t_i + (n-k)t_k\right]$，对其求导：
+
+            $$
+            \ell'(\theta)
+            =\frac 1k\theta+\frac{1}{\theta^2}\left[\sum_{i=1}^k t_i + (n-k)t_k\right].
+            $$
+
+            令 $\ell'(\theta)=0$ 得驻点 $\displaystyle \widehat\theta=\frac1k\left[\sum_{i=1}^k t_i + (n-k)t_k\right] = \frac1k\sum_{i=1}^k t_i + \frac {n-k}{k} t_k$。又当 $\theta\to0^+$ 或 $\theta\to+\infty$ 时均有 $L(\theta)\to0$，所以该驻点就是最大值点，故
+
+            $$
+            \widehat\theta_{\mathrm{MLE}}=\frac1k\sum_{i=1}^k t_i + \frac {n-k}{k} t_k.
+            $$
     
-    2.  在数集 $\Omega=\{0,1,2,\cdots,N\}$ 中有放回地抽取 $n$ 次，得 $X_1,X_2,\cdots,X_n$，则 $N$ 的最大似然估计量是（    ）。
+    3.  在数集 $\Omega=\{0,1,2,\cdots,N\}$ 中有放回地抽取 $n$ 次，得 $X_1,X_2,\cdots,X_n$，则 $N$ 的最大似然估计量是（    ）。
 
         <div class="exam-options" markdown="1">
 
@@ -3943,29 +4100,37 @@ $$
 </div>
 </div>
 
-!!! example "习题"
+!!! example exercise "习题"
 
-    设总体 $X$ 的数学期望 $E(X) = 0$，方差 $D(X) = \sigma^2$。$X_1,X_2,\cdots,X_n~(n \gt 2)$ 是来自总体 $X$ 的简单随机样本。$\overline X = \dfrac 1n \sum\limits_{i=1}^n X_i$，$S^2 = \dfrac 1{n-1} \sum\limits_{i=1}^n (X_i-\overline X)^2$，则下列属于 $\sigma^2$ 的无偏估计量是（    ）。
+    1.  设总体 $X$ 的数学期望 $E(X) = 0$，方差 $D(X) = \sigma^2$。$X_1,X_2,\cdots,X_n~(n \gt 2)$ 是来自总体 $X$ 的简单随机样本。$\overline X = \dfrac 1n \sum\limits_{i=1}^n X_i$，$S^2 = \dfrac 1{n-1} \sum\limits_{i=1}^n (X_i-\overline X)^2$，则下列属于 $\sigma^2$ 的无偏估计量是（    ）。
 
-    <div class="exam-options" markdown="1">
+        <div class="exam-options" markdown="1">
 
-    A. $n{\overline X}^2+S^2$
+        A. $n{\overline X}^2+S^2$
 
-    B. $\dfrac 12 (n{\overline X}^2+S^2)$
+        B. $\dfrac 12 (n{\overline X}^2+S^2)$
 
-    C. $\dfrac 13 (n{\overline X}^2+S^2)$
+        C. $\dfrac 13 (n{\overline X}^2+S^2)$
 
-    D. $\dfrac 14 (n{\overline X}^2+S^2)$
-    </div>
+        D. $\dfrac 14 (n{\overline X}^2+S^2)$
+        </div>
 
-    ??? success "解答"
-        B.
+        ??? success "解答"
+            B.
+
+    2.  **(2026 数一 22.1-2)** 假设某种元件的寿命服从指数分布，其均值 $\theta$ 是未知参数。为估计 $\theta$，取 $n$ 个这种原件同时做寿命试验，试验到出现 $k~~(1\le k\le n)$ 个元件失效时停止。
+
+        若 $k=1$，失效元件的寿命记为 $T$，确定 $a$，使得 $\widehat{\theta}=aT$ 是 $\theta$ 的无偏估计，并求 $D(\widehat{\theta})$。
+
+        ??? success "解答"
+
+            在上一问我们得到了 $T \sim \mathrm{Exp}(\dfrac{n}{\theta})$。所以，$E(T) = \dfrac {\theta}{n},~~ D(T) = \dfrac {\theta^2}{n^2}$；$E(\widehat{\theta}) = aE(T) = \dfrac{a\theta}{n}$。令 $E(\widehat{\theta} = \theta)$ 即得 $a=n$；此时 $D(\widehat{\theta} = a^2D(T) = \theta^2$。
 
         
 
 #### 估计量的数字特征与收敛性
 
-???+ note "求期望与方差"
+!!! note "求期望与方差"
 
     将估计量看作样本函数，利用期望线性性、方差公式或其抽样分布计算。
 
@@ -3981,7 +4146,7 @@ $$
 
     可知等权重 $a_i=1/n$ 对应的样本均值，在这类固定权重的线性无偏估计量中方差最小。
 
-???+ note "验证依概率收敛"
+!!! note "验证依概率收敛"
 
     常用方法包括：
 
@@ -4012,7 +4177,7 @@ $$
 ### 参数的区间估计
 #### 概念
 
-???+ note "置信区间与置信水平"
+!!! note "置信区间与置信水平"
 
     设 $L=L(X_1,\ldots,X_n)$、$U=U(X_1,\ldots,X_n)$ 为样本函数。若对每个参数真值 $\theta$，
 
@@ -4027,7 +4192,7 @@ $$
 
     样本已经观测后，得到的是一个确定区间。不能把频率学派的置信水平解释为“固定参数以 $1-\alpha$ 的概率落入这一个已经算出的区间”。
 
-???+ note "枢轴量"
+!!! note "枢轴量"
 
     构造置信区间的常见方法是寻找**枢轴量** $Q(X_1,\ldots,X_n;\theta)$：它可以含未知参数，但其分布不含未知参数。
 
@@ -4046,7 +4211,7 @@ $$
 
 #### 单个正态总体均值和方差的置信区间
 
-???+ note "均值"
+!!! note "均值"
 
     -   **总体方差已知**：
 
@@ -4086,7 +4251,7 @@ $$
 
         用 $t_{0.025}(15)\approx2.131$，得到约为 $[8.9345,11.0655]$ 的区间。
 
-???+ note "方差"
+!!! note "方差"
 
     -   **总体均值未知**：
 
@@ -4210,7 +4375,7 @@ $$
 
 #### 正态总体下的六大检验及拒绝域
 
-???+ note "① 单总体均值检验：方差已知（Z 检验）"
+!!! note "① 单总体均值检验：方差已知（Z 检验）"
 
     设 $X_i\overset{\mathrm{iid}}{\sim}N(\mu,\sigma^2)$，$\sigma^2$ 已知，检验基准为 $\mu_0$。使用
 
@@ -4234,7 +4399,7 @@ $$
 
     例如，$\mu_0=50$、$\sigma=10$、$n=100$、$\overline x=52.5$，则 $z_{\mathrm{obs}}=2.5$。在 $\alpha=0.05$ 的双侧检验中，$2.5>1.96$，因此拒绝 $H_0:\mu=50$。
 
-???+ note "② 单总体均值检验：方差未知（t 检验）"
+!!! note "② 单总体均值检验：方差未知（t 检验）"
 
     设总体正态，$\sigma^2$ 未知，$n\ge2$。使用
 
@@ -4256,7 +4421,7 @@ $$
 
     这里 $S^2$ 的分母为 $n-1$。正态性保证该 $t$ 分布是精确结论，而非仅由样本量较大得到的近似。
 
-???+ note "③ 单总体方差检验（$\chi^2$ 检验）"
+!!! note "③ 单总体方差检验（$\chi^2$ 检验）"
 
     设总体正态，均值未知，检验基准方差为 $\sigma_0^2>0$。使用
 
@@ -4278,7 +4443,7 @@ $$
 
     若总体均值 $\mu$ 已知，可改用 $Q=\sum_i(X_i-\mu)^2/\sigma_0^2$，并把自由度改为 $\nu=n$。
 
-???+ note "④ 两总体均值差检验：两方差已知（Z 检验）"
+!!! note "④ 两总体均值差检验：两方差已知（Z 检验）"
 
     设两个总体均为正态，两组样本相互独立，方差 $\sigma_1^2,\sigma_2^2$ 已知。检验均值差基准 $\Delta_0$，使用
 
@@ -4302,7 +4467,7 @@ $$
 
     检验两个均值是否相等时，取 $\Delta_0=0$。两组样本的独立性不能省略；配对数据需要按差值样本等相应模型处理。
 
-???+ note "⑤ 两总体均值差检验：两方差未知但相等（合并 t 检验）"
+!!! note "⑤ 两总体均值差检验：两方差未知但相等（合并 t 检验）"
 
     设两个正态总体具有共同的未知方差 $\sigma^2$，两组样本相互独立，$n_1,n_2\ge2$。令
 
@@ -4331,7 +4496,7 @@ $$
 
     !!! warning "方差未知并不等于方差相等。若不满足等方差假设，不能直接使用这个合并方差公式及其自由度。"
 
-???+ note "⑥ 两总体方差比检验（F 检验）"
+!!! note "⑥ 两总体方差比检验（F 检验）"
 
     设两个正态总体的均值未知，两组样本相互独立。检验方差比基准 $r_0=\dfrac{\sigma_1^2}{\sigma_2^2}>0,$
 
@@ -4401,7 +4566,7 @@ $\beta$ 一般依赖真实参数值、样本量、显著性水平以及检验规
 
 </center>
 
-???+ note "第二类错误概率的计算"
+!!! note "第二类错误概率的计算"
 
     计算 $\beta$ 时，先确定“不拒绝域”，再把统计量放到备择假设下的真实分布中计算概率。不能继续把它当成原假设下的标准分布。
 

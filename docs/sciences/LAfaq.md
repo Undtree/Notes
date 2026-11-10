@@ -1,4 +1,14 @@
+---
+exercise_view: true
+---
+
 # 线性代数 FAQ
+
+<div class="exercise-view-controls" data-exercise-view-controls role="group" aria-label="内容显示模式" hidden>
+  <span>显示模式</span>
+  <button type="button" data-exercise-view="all" aria-pressed="true">知识点 + 习题</button>
+  <button type="button" data-exercise-view="exercises" aria-pressed="false">只展示习题</button>
+</div>
 
 ## 行列式
 

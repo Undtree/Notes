@@ -80,7 +80,7 @@
     
     ![freq-of-waves](../../images/Network/freq.png){ width="600" style="display: block; margin: 0 auto;" }
 
-### 数字调制与复用 (Digital Modulation and Multiplexing)
+### 数字调制与复用
 
 #### 1. 传输方式
 *   **基带传输:**
@@ -99,7 +99,7 @@
         *   **QAM-64:** 64个点，每个点6 bit。
         *   点越多，传输速率越高，但抗干扰能力越差。
 
-#### 2. 复用技术 (Multiplexing)
+#### 2. 复用技术
 
 *   **FDM (频分复用):** 分割频率。
 *   **TDM (时分复用):** 分割时间片。
