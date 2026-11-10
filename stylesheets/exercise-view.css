@@ -1,0 +1,56 @@
+.md-typeset .exercise-view-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .5em;
+  margin: 0 0 1.5em;
+}
+
+.md-typeset .exercise-view-controls[hidden] {
+  display: none;
+}
+
+.exercise-view-controls > span {
+  margin-right: .3em;
+  color: var(--md-default-fg-color--light);
+}
+
+.exercise-view-controls > button {
+  padding: .45em .85em;
+  border: 1px solid var(--md-default-fg-color--lighter);
+  border-radius: .3rem;
+  color: var(--md-default-fg-color);
+  font: inherit;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.exercise-view-controls > button[aria-pressed="true"] {
+  border-color: var(--md-typeset-a-color);
+  background: var(--md-typeset-a-color);
+  color: var(--md-default-bg-color);
+}
+
+.exercise-view-controls > button:hover {
+  border-color: var(--md-accent-fg-color);
+}
+
+.exercise-view-controls > button:focus-visible {
+  outline: 2px solid var(--md-accent-fg-color);
+  outline-offset: 3px;
+}
+
+.md-typeset.exercise-view-only .exercise-view-knowledge {
+  display: none;
+}
+
+/* 知识块中的题目独立展示，不留下外层 note 的边框和缩进。 */
+.md-typeset.exercise-view-only .exercise-view-context {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  box-shadow: none;
+  color: inherit;
+  font: inherit;
+}

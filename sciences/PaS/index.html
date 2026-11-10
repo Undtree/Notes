@@ -29,6 +29,7 @@
       
     
     
+  
       <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
@@ -73,6 +74,10 @@
 
 
     
+  
+  <link rel="stylesheet" href="../../stylesheets/exercise-view.css">
+  
+
     
       
     
@@ -1499,6 +1504,8 @@
           
         
       
+        
+      
     
     
     
@@ -1531,6 +1538,11 @@
 
             </a>
             
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
           </div>
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
@@ -1544,6 +1556,34 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/cn/cn_intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    计算机网络概述
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -2901,6 +2941,17 @@
     <span class="md-ellipsis">
       
         三大抽样分布
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#分位点" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        分位点
       
     </span>
   </a>
@@ -4285,6 +4336,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#分位点" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        分位点
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#正态总体下的常用结论" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4539,8 +4601,14 @@
 
 <h1 id="概率论与数理统计">概率论与数理统计<a class="headerlink" href="#概率论与数理统计" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 34953 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 117 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 36065 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 120 分钟</p>
 </div>
+<div class="exercise-view-controls" data-exercise-view-controls role="group" aria-label="内容显示模式" hidden>
+  <span>显示模式</span>
+  <button type="button" data-exercise-view="all" aria-pressed="true">知识点 + 习题</button>
+  <button type="button" data-exercise-view="exercises" aria-pressed="false">只展示习题</button>
+</div>
+
 <style id="pas-math-spacing">
 /* 仅调整本页行间公式的留白；修改这一变量即可调整间距。 */
 .md-typeset:has(> #pas-math-spacing) {
@@ -4593,8 +4661,8 @@
 <p>严格地说，事件应属于指定的事件集合族 <span class="arithmatex">\(\mathcal F\)</span>；有限或可数样本空间通常可取全部子集为事件，连续样本空间则需考虑可测性。</p>
 <h4 id="事件的关系与运算">事件的关系与运算<a class="headerlink" href="#事件的关系与运算" title="Permanent link">&para;</a></h4>
 <p>用集合描述事件，可以把“或”“且”“不发生”等语言转化为集合关系和运算。以下约定 <span class="arithmatex">\(AB=A\cap B\)</span>，<span class="arithmatex">\(\overline A=\Omega\setminus A\)</span>。</p>
-<details class="note" open="open">
-<summary>关系与基本运算</summary>
+<div class="admonition note">
+<p class="admonition-title">关系与基本运算</p>
 <center markdown="1">
 <table>
 <thead>
@@ -4656,9 +4724,9 @@
 <p>多个事件中，“至少一个发生”可以写成 <span class="arithmatex">\(\bigcup_{i=1}^n A_i\)</span>，“全部发生”可以写成 <span class="arithmatex">\(\bigcap_{i=1}^n A_i\)</span>。对两个事件，“恰有一个发生”可以写成 <span class="arithmatex">\(A\overline B\cup\overline A B\)</span>。</p>
 </li>
 </ul>
-</details>
-<details class="note" open="open">
-<summary>运算法则</summary>
+</div>
+<div class="admonition note">
+<p class="admonition-title">运算法则</p>
 <center markdown="1">
 <table>
 <thead>
@@ -4698,9 +4766,9 @@
 \overline{\bigcap_i A_i}=\bigcup_i\overline{A_i}.
 \]</div>
 <p>换句话说，“至少一个发生”的对立事件是“全部不发生”，“全部发生”的对立事件是“至少一个不发生”。</p>
-</details>
-<details class="example" open="open">
-<summary>练习</summary>
+</div>
+<div class="admonition example exercise">
+<p class="admonition-title">练习</p>
 <p>设 <span class="arithmatex">\(A, B, C\)</span> 是在同一样本空间的任意三个事件，则下列选项中正确的是（  ）。</p>
 <p>A. 若 <span class="arithmatex">\(A \cup C = B \cup C\)</span>，则 <span class="arithmatex">\(A = B\)</span></p>
 <p>B. 若 <span class="arithmatex">\(A - C = B - C\)</span>，则 <span class="arithmatex">\(A = B\)</span></p>
@@ -4713,7 +4781,7 @@
 <p>对于 B.，考虑 <span class="arithmatex">\(AC \neq BC\)</span>。</p>
 <p>对于 C.，考虑 <span class="arithmatex">\(A-C \neq B-C\)</span>。</p>
 </details>
-</details>
+</div>
 <h4 id="概率的定义">概率的定义<a class="headerlink" href="#概率的定义" title="Permanent link">&para;</a></h4>
 <div class="card card-shadow">
 <div class="card-body">
@@ -4758,8 +4826,8 @@ C^{r}_{n}=\frac{n!}{r!(n-r)!},
 \qquad 0\le r\le n,\quad 0!=1.
 \]</div>
 <p>其中，排列数 <span class="arithmatex">\(A_n^r\)</span> 考虑顺序，组合数 <span class="arithmatex">\(C^{r}_{n}\)</span> 不考虑顺序。</p>
-<details class="note" open="open">
-<summary>随机分配问题</summary>
+<div class="admonition note">
+<p class="admonition-title">随机分配问题</p>
 <p>将 <span class="arithmatex">\(n\)</span> 个<strong>可区分</strong>的物品独立、等概率地投入 <span class="arithmatex">\(m\)</span> 个<strong>可区分</strong>的盒子，每个物品都有 <span class="arithmatex">\(m\)</span> 种选择，等可能分配方式共 <span class="arithmatex">\(m^n\)</span> 种。</p>
 <ul>
 <li>指定盒子为空的概率为 <span class="arithmatex">\(\left(1-\frac1m\right)^n\)</span>。</li>
@@ -4770,9 +4838,9 @@ C^{r}_{n}=\frac{n!}{r!(n-r)!},
 P=\frac{n!}{n_1!n_2!\cdots n_m!}\left(\frac1m\right)^n.
 \]</div>
 <p>不同的“盒内数量组合”一般不等可能。例如，两个物品投入两个盒子时，数量组合 <span class="arithmatex">\((2,0)\)</span>、<span class="arithmatex">\((1,1)\)</span>、<span class="arithmatex">\((0,2)\)</span> 的概率分别为 <span class="arithmatex">\(\frac14,\frac12,\frac14\)</span>。</p>
-</details>
-<details class="note" open="open">
-<summary>简单随机抽样问题</summary>
+</div>
+<div class="admonition note">
+<p class="admonition-title">简单随机抽样问题</p>
 <p>从 <span class="arithmatex">\(N\)</span> 个可区分个体中抽取 <span class="arithmatex">\(n\)</span> 个：</p>
 <center markdown="1">
 <table>
@@ -4810,7 +4878,7 @@ P=\frac{C^{k}_{M}C^{n-k}_{N-M}}{C^{n}_{N}},
 \max(0,n-N+M)\le k\le\min(n,M).
 \]</div>
 <p>这就是超几何分布的抽样背景。若改为独立、有放回地抽取，则每次抽中特征个体的概率恒为 <span class="arithmatex">\(M/N\)</span>，可使用后面的二项概率公式。</p>
-</details>
+</div>
 <h4 id="几何概型">几何概型<a class="headerlink" href="#几何概型" title="Permanent link">&para;</a></h4>
 <p>当样本空间为某个几何区域，且随机点在该区域内<strong>均匀选取</strong>，概率与区域的几何度量成正比时，有</p>
 <div class="arithmatex">\[
@@ -4933,7 +5001,7 @@ P(B_j\mid A)
 <p>全概率公式由各来源求结果的概率，贝叶斯公式在结果已知时求来源的条件概率。</p>
 </div>
 </div>
-<div class="admonition example">
+<div class="admonition example exercise">
 <p class="admonition-title">公式的使用条件</p>
 <p>已知 <span class="arithmatex">\(0 \lt P(A) \lt 1\)</span> 且 <span class="arithmatex">\(P(B+C|A) = P(B|A) + P(C|A)\)</span>，则以下结论：</p>
 <p>① <span class="arithmatex">\(P(B+C) = P(B) + P(C)\)</span>；</p>
@@ -4961,12 +5029,12 @@ P(A_{i_1}\cdots A_{i_k})
 <p>因此，这三个事件两两独立，但不相互独立。</p>
 </details>
 <h4 id="独立性的判定">独立性的判定<a class="headerlink" href="#独立性的判定" title="Permanent link">&para;</a></h4>
-<details class="note" open="open">
-<summary>定义直接判定</summary>
+<div class="admonition note">
+<p class="admonition-title">定义直接判定</p>
 <p>优先检验 <span class="arithmatex">\(P(AB)=P(A)P(B)\)</span>。若已知相关条件事件的概率大于 <span class="arithmatex">\(0\)</span>，也可检验 <span class="arithmatex">\(P(A\mid B)=P(A)\)</span> 或 <span class="arithmatex">\(P(B\mid A)=P(B)\)</span>。</p>
-</details>
-<details class="note" open="open">
-<summary>独立性的判定定理</summary>
+</div>
+<div class="admonition note">
+<p class="admonition-title">独立性的判定定理</p>
 <p>① 以下四个命题等价：</p>
 <ul>
 <li><span class="arithmatex">\(A\)</span> 与 <span class="arithmatex">\(B\)</span> 独立。</li>
@@ -4985,7 +5053,7 @@ P(A\overline B)=P(A)-P(AB)
 </div>
 <p>② 对于相互独立的多个事件，将其中任意一些换成各自的对立事件后，仍相互独立。</p>
 <p>③ 若 <span class="arithmatex">\(P(A)=0\)</span> 或 <span class="arithmatex">\(P(A)=1\)</span>，则 <span class="arithmatex">\(A\)</span> 与任意事件 <span class="arithmatex">\(B\)</span> 相互独立。</p>
-</details>
+</div>
 <div class="admonition tip">
 <p class="admonition-title">互斥与独立的区别</p>
 <center markdown="1">
@@ -5019,15 +5087,15 @@ P(A\overline B)=P(A)-P(AB)
 <p>若 <span class="arithmatex">\(A,B\)</span> 互斥且两者概率均大于 <span class="arithmatex">\(0\)</span>，则 <span class="arithmatex">\(P(AB)=0\lt P(A)P(B)\)</span>，所以不独立。</p>
 </div>
 <h4 id="独立试验序列概型与-n-重伯努利概型">独立试验序列概型与 n 重伯努利概型<a class="headerlink" href="#独立试验序列概型与-n-重伯努利概型" title="Permanent link">&para;</a></h4>
-<details class="note" open="open">
-<summary>独立试验序列概型</summary>
+<div class="admonition note">
+<p class="admonition-title">独立试验序列概型</p>
 <p>若各次试验相互独立，第 <span class="arithmatex">\(i\)</span> 次试验中指定事件 <span class="arithmatex">\(A_i\)</span> 的概率为 <span class="arithmatex">\(p_i\)</span>，则 <span class="arithmatex">\(\displaystyle P(A_1A_2\cdots A_n)=\prod_{i=1}^n p_i.\)</span></p>
 <p>各次试验可以具有不同的结果类别或不同的事件概率。若每次都关注某事件是否发生，则</p>
 <div class="arithmatex">\[
 P(\text{一次也不发生})=\prod_{i=1}^n(1-p_i),\\
 P(\text{至少发生一次})=1-\prod_{i=1}^n(1-p_i).
 \]</div>
-</details>
+</div>
 <div class="admonition note">
 <p class="admonition-title">n 重伯努利概型</p>
 <p><span class="arithmatex">\(n\)</span> 重伯努利试验满足：</p>
@@ -5054,8 +5122,8 @@ P(X\le r)=\sum_{k=0}^{r}C^{k}_{n} p^k(1-p)^{n-k},
 <div class="admonition warning">
 <p class="admonition-title">使用二项分布公式前，必须确认“独立”和“成功概率不变”；不放回抽样通常不满足这两个条件。</p>
 </div>
-<details class="info" open="open">
-<summary>多项分布</summary>
+<div class="admonition info">
+<p class="admonition-title">多项分布</p>
 <p>若每次独立重复试验有 <span class="arithmatex">\(r\)</span> 类互斥且穷尽的结果，类别概率恒为 <span class="arithmatex">\(p_1,\ldots,p_r\)</span>，且 <span class="arithmatex">\(\sum_{i=1}^r p_i=1\)</span>，则 <span class="arithmatex">\(n\)</span> 次试验中各类分别出现 <span class="arithmatex">\(n_1,\ldots,n_r\)</span> 次的概率为</p>
 <div class="arithmatex">\[
 P=\frac{n!}{n_1!n_2!\cdots n_r!}
@@ -5063,10 +5131,10 @@ P=\frac{n!}{n_1!n_2!\cdots n_r!}
 \qquad n_i\ge0,\quad \sum_{i=1}^r n_i=n.
 \]</div>
 <p>这就是多项分布的试验背景；二项分布是 <span class="arithmatex">\(r=2\)</span> 时的特殊情形。</p>
-</details>
+</div>
 </div>
 <h3 id="小结">小结<a class="headerlink" href="#小结" title="Permanent link">&para;</a></h3>
-<div class="admonition example">
+<div class="admonition example exercise">
 <p class="admonition-title">习题</p>
 <ol>
 <li>袋中有 <span class="arithmatex">\(3\)</span> 个红球、<span class="arithmatex">\(2\)</span> 个蓝球，各球可区分。不放回地等可能抽取 <span class="arithmatex">\(2\)</span> 个，求恰有一个红球的概率；若改为独立有放回抽取，答案如何变化？</li>
@@ -5113,11 +5181,11 @@ X(\text{正},\text{正})=2.
 \]</div>
 <p>不同样本点可以对应同一个随机变量取值。随机变量的<strong>分布</strong>描述其取值所遵循的概率规律。</p>
 <h4 id="分布函数">分布函数<a class="headerlink" href="#分布函数" title="Permanent link">&para;</a></h4>
-<details class="note" open="open">
-<summary>分布函数的概念</summary>
+<div class="admonition note">
+<p class="admonition-title">分布函数的概念</p>
 <p>随机变量 <span class="arithmatex">\(X\)</span> 的<strong>分布函数</strong>定义为 <span class="arithmatex">\(F_X(x)=P(X\le x),\qquad x \in \mathbb{R}.\)</span></p>
 <p>不致混淆时记为 <span class="arithmatex">\(F(x)\)</span>。分布函数给出随机变量落在 <span class="arithmatex">\((-\infty,x]\)</span> 内的概率，适用于离散型、连续型和混合型等各种随机变量，并能唯一确定其分布。我们称 <span class="arithmatex">\(X\)</span> 服从 <span class="arithmatex">\(F(x)\)</span> 分布，记作 <span class="arithmatex">\(X \sim F(x)\)</span>。</p>
-</details>
+</div>
 <p>分布函数满足：</p>
 <ul>
 <li><strong>单调不减</strong>：若 <span class="arithmatex">\(x_1\lt x_2\)</span>，则 <span class="arithmatex">\(F(x_1)\le F(x_2)\)</span>。</li>
@@ -5137,7 +5205,7 @@ X(\text{正},\text{正})=2.
 <p>记左极限为 <span class="arithmatex">\(\displaystyle F(x^-)=\lim_{t\to x^-}F(t)=P(X\lt x).\)</span></p>
 <p>则 <span class="arithmatex">\(P(X=x)=F(x)-F(x^-).\)</span></p>
 <p>因此，分布函数在 <span class="arithmatex">\(x\)</span> 处的跳跃量就是 <span class="arithmatex">\(X\)</span> 取值为 <span class="arithmatex">\(x\)</span> 的概率；<span class="arithmatex">\(F\)</span> 在 <span class="arithmatex">\(x\)</span> 处连续，当且仅当 <span class="arithmatex">\(P(X=x)=0\)</span>。</p>
-<div class="admonition example">
+<div class="admonition example exercise">
 <p class="admonition-title">分布函数的判断</p>
 <p>已知 <span class="arithmatex">\(F(x)\)</span> 是分布函数。下列函数中：</p>
 <p>① <span class="arithmatex">\(aF(x)~(a\gt 0,a\neq 1)\)</span>；② <span class="arithmatex">\(F(x)+F(-x)\)</span>；③ <span class="arithmatex">\(F(x)-F(-x)\)</span>；④ <span class="arithmatex">\(F(x)\cdot F(-x)\)</span>.</p>
@@ -5462,8 +5530,8 @@ f(x)=\frac1{\sqrt{2\pi}\sigma}
 <p class="admonition-title">事实上，非退化的正态分布的分布函数都不是初等函数，因此我们这里只用积分形式表示。</p>
 </div>
 <p>利用对称性不难得到， <span class="arithmatex">\(\varphi(-x)=\varphi(x),\qquad \Phi(-x)=1-\Phi(x),\qquad \Phi(0)=\dfrac12.\)</span></p>
-<div class="admonition example">
-<p class="admonition-title">正态分布的常见应用</p>
+<div class="supplement" markdown="1">
+<p class="supplement__title">正态分布的常见应用</p>
 <p>若 <span class="arithmatex">\(X\sim N(\mu,\sigma^2)\)</span>，则通过<strong>标准化</strong> <span class="arithmatex">\(Z=\dfrac{X-\mu}{\sigma}\sim N(0,1)\)</span></p>
 <p>可将概率转化为标准正态分布函数的值： <span class="arithmatex">\(F_X(x)=\Phi\left(\dfrac{x-\mu}{\sigma}\right),\)</span></p>
 <div class="arithmatex">\[
@@ -5536,15 +5604,17 @@ P(Y=y_j)=\sum_{k:\,g(x_k)=y_j}p_k.
 </center>
 <p>当 <span class="arithmatex">\(g\)</span> 不是一一对应时，必须合并概率，不能只替换分布律表格中的取值。</p>
 <h4 id="连续型--连续型或混合型">连续型 → 连续型（或混合型）<a class="headerlink" href="#连续型--连续型或混合型" title="Permanent link">&para;</a></h4>
-<details class="note" open="open">
-<summary>分布函数法（定义法）</summary>
+<div class="admonition note">
+<p class="admonition-title">分布函数法（定义法）</p>
 <p>若 <span class="arithmatex">\(X\)</span> 具有密度 <span class="arithmatex">\(f_X\)</span>，则</p>
 <div class="arithmatex">\[
 F_Y(y)=\int_{\{x:\,g(x)\le y\}}f_X(x)\,\mathrm dx.
 \]</div>
 <p>先针对不同的 <span class="arithmatex">\(y\)</span> 解不等式 <span class="arithmatex">\(g(x)\le y\)</span>，再与 <span class="arithmatex">\(X\)</span> 的取值范围相交并积分。若所得 <span class="arithmatex">\(F_Y\)</span> 可由密度积分表示，则可通过求导得到密度；若存在跳跃，还应单独记录相应的点概率。</p>
-<div class="admonition example">
-<p class="admonition-title">习题 1</p>
+<div class="admonition example exercise">
+<p class="admonition-title">定义法求分布</p>
+<ol>
+<li>
 <p>已知随机变量 <span class="arithmatex">\(X\)</span> 的概率密度为</p>
 <div class="arithmatex">\[
 f(x)=
@@ -5571,9 +5641,9 @@ f_Y(y) =
 \end{cases}
 \]</div>
 </details>
-</div>
-<div class="admonition example">
-<p class="admonition-title">习题 2 ☆</p>
+</li>
+<li>
+<p>☆☆☆</p>
 <p>设随机变量 <span class="arithmatex">\(X\)</span> 的概率密度为 <span class="arithmatex">\(\begin{cases}f(x)=2x, &amp;{0 \lt x \lt 1}\\0, &amp;\text{其他}, \end{cases}\)</span><span class="arithmatex">\(F(x)\)</span> 为 <span class="arithmatex">\(X\)</span> 的分布函数，<span class="arithmatex">\(E(X)\)</span> 为 <span class="arithmatex">\(X\)</span> 的<a href="#数学期望">数学期望</a>，则 <span class="arithmatex">\(P\{F(X) \gt E(X)\} = \underline{\qquad}.\)</span></p>
 <details class="success">
 <summary>解答</summary>
@@ -5587,10 +5657,12 @@ P\{F(X) \ge E(X)\} = P\{X^2 \ge \dfrac 23\}.
 <div class="admonition danger">
 <p class="admonition-title">这里的关键有两个，一是数学期望在确定概率密度后实质上就是一个常值；二是处理 <span class="arithmatex">\(F(X)\)</span>：此处应该把 <span class="arithmatex">\(F(X)\)</span> 视为随机变量 <span class="arithmatex">\(X\)</span> 的函数，并利用相应区间实现代换“脱去” <span class="arithmatex">\(F(\cdot)\)</span>。</p>
 </div>
+</li>
+</ol>
 </div>
-</details>
-<details class="note" open="open">
-<summary>单调变换公式</summary>
+</div>
+<div class="admonition note">
+<p class="admonition-title">单调变换公式</p>
 <p>若 <span class="arithmatex">\(g\)</span> 在 <span class="arithmatex">\(X\)</span> 的密度所对应区间上严格单调、可导且 <span class="arithmatex">\(g'(x)\ne0\)</span>，<strong>反函数</strong> 为 <span class="arithmatex">\(x=h(y)\)</span>，则在变换后的区间内，<span class="arithmatex">\(f_Y(y)=f_X(h(y))\lvert h'(y)\rvert.\)</span> 这可以由密度函数的定义式两边求导得出。</p>
 <p>区间外密度为 <span class="arithmatex">\(0\)</span>。绝对值保证密度非负，不能省略。</p>
 <ul>
@@ -5604,8 +5676,8 @@ f_X\left(\frac{y-b}{a}\right).
 \]</div>
 <p>因此，若 <span class="arithmatex">\(X\sim N(\mu,\sigma^2)\)</span>，则 <span class="arithmatex">\(aX+b\sim N(a\mu+b,a^2\sigma^2),\qquad a\ne0.\)</span></p>
 <p>若 <span class="arithmatex">\(a=0\)</span>，则 <span class="arithmatex">\(Y=b\)</span> 以概率 <span class="arithmatex">\(1\)</span> 成立，此时为退化的离散分布。</p>
-<div class="admonition example">
-<p class="admonition-title">习题</p>
+<div class="admonition example exercise">
+<p class="admonition-title">单调函数的分布</p>
 <p>已知随机变量 <span class="arithmatex">\(X\)</span> 服从 <span class="arithmatex">\((0,1)\)</span> 上的均匀分布，则 <span class="arithmatex">\(Y=-\ln X\)</span> 服从什么分布？</p>
 <details class="success">
 <summary>解答</summary>
@@ -5625,7 +5697,7 @@ f_Y(y) = f_X(e^{-y})|-e^{-y}| = e^{-y}.
 <p>这就是 <span class="arithmatex">\(\lambda = 1\)</span> 的指数分布。</p>
 </details>
 </div>
-</details>
+</div>
 <details class="tip">
 <summary>非单调变换情形：分段</summary>
 <p>若 <span class="arithmatex">\(g\)</span> 可以分成若干严格单调且满足上述求导条件的区间，方程 <span class="arithmatex">\(g(x)=y\)</span> 在这些区间内的有效解为 <span class="arithmatex">\(x_1(y),x_2(y),\ldots\)</span>，则在公式适用处，</p>
@@ -5671,8 +5743,8 @@ F_Y(y)=
 <p>当 <span class="arithmatex">\(n=2\)</span> 时，记为 <span class="arithmatex">\((X,Y)\)</span>。例如，同时记录某人的身高 <span class="arithmatex">\(X\)</span> 与体重 <span class="arithmatex">\(Y\)</span>，不仅要描述两个变量各自的分布，还要描述它们共同取值的概率规律。</p>
 <p>各分量定义在同一概率空间上，并不意味着它们相互独立。</p>
 <h4 id="联合分布函数的性质">联合分布函数的性质<a class="headerlink" href="#联合分布函数的性质" title="Permanent link">&para;</a></h4>
-<details class="note" open="open">
-<summary>联合分布函数的概念</summary>
+<div class="admonition note">
+<p class="admonition-title">联合分布函数的概念</p>
 <p><span class="arithmatex">\(n\)</span> 维随机向量 <span class="arithmatex">\(\mathbf X\)</span> 的联合分布函数定义为</p>
 <div class="arithmatex">\[
 F(x_1,\ldots,x_n)
@@ -5680,7 +5752,7 @@ F(x_1,\ldots,x_n)
 \]</div>
 <p>其中逗号表示事件同时发生，即取交集。二维情形为 <span class="arithmatex">\(F(x,y)=P(X\le x,\ Y\le y).\)</span></p>
 <p>几何上，它表示随机点 <span class="arithmatex">\((X,Y)\)</span> 落在矩形区域 <span class="arithmatex">\((-\infty,x]\times(-\infty,y]\)</span> 内的概率。联合分布函数能够唯一确定随机向量的分布。<span class="arithmatex">\((X,Y)\)</span> 服从分布函数 <span class="arithmatex">\(F(X,Y)\)</span> 记为 <span class="arithmatex">\((X,Y) \sim F(X,Y)\)</span>。</p>
-</details>
+</div>
 <p>以二维情况说明（无特殊说明则以下都是二维为例），二维联合分布函数满足：</p>
 <ul>
 <li><strong>有界性</strong>：<span class="arithmatex">\(0\le F(x,y)\le1\)</span>。</li>
@@ -5738,8 +5810,8 @@ F_{X_i}(x_i)
 </div>
 <h3 id="常见的两类二维随机变量">常见的两类二维随机变量<a class="headerlink" href="#常见的两类二维随机变量" title="Permanent link">&para;</a></h3>
 <h4 id="二维离散型随机变量">二维离散型随机变量<a class="headerlink" href="#二维离散型随机变量" title="Permanent link">&para;</a></h4>
-<details class="note" open="open">
-<summary>联合分布律</summary>
+<div class="admonition note">
+<p class="admonition-title">联合分布律</p>
 <p>若 <span class="arithmatex">\((X,Y)\)</span> 以概率 <span class="arithmatex">\(1\)</span> 取有限个或可数无穷个数对，则称其为二维离散型随机变量。设各分量的可能取值分别为 <span class="arithmatex">\(x_i\)</span>、<span class="arithmatex">\(y_j\)</span>，联合分布律为 <span class="arithmatex">\(p_{ij}=P(X=x_i,\ Y=y_j).\)</span></p>
 <p>并非每个数对都一定能取到；不可能取到的组合对应 <span class="arithmatex">\(p_{ij}=0\)</span>。联合分布律满足</p>
 <div class="arithmatex">\[
@@ -5797,9 +5869,9 @@ P((X,Y)\in D)=\sum_{(x_i,y_j)\in D}p_{ij}.
 </tbody>
 </table>
 </center>
-</details>
-<details class="note" open="open">
-<summary>边缘分布律</summary>
+</div>
+<div class="admonition note">
+<p class="admonition-title">边缘分布律</p>
 <p>对联合分布律求行和或列和：</p>
 <div class="arithmatex">\[
 P(X=x_i)=p_{i\cdot}=\sum_jp_{ij},
@@ -5841,9 +5913,9 @@ P(Y=y_j)=p_{\cdot j}=\sum_ip_{ij}.
 </table>
 </center>
 <p>则 <span class="arithmatex">\(X\sim B(1,\dfrac12)\)</span>、<span class="arithmatex">\(Y\sim B(1,\dfrac58)\)</span>。</p>
-</details>
-<details class="note" open="open">
-<summary>条件分布律</summary>
+</div>
+<div class="admonition note">
+<p class="admonition-title">条件分布律</p>
 <p>若 <span class="arithmatex">\(P(Y=y_j)=p_{\cdot j}&gt;0\)</span>，则给定 <span class="arithmatex">\(Y=y_j\)</span> 时，<span class="arithmatex">\(X\)</span> 的条件分布律为</p>
 <div class="arithmatex">\[
 P(X=x_i\mid Y=y_j)=\frac{p_{ij}}{p_{\cdot j}}.
@@ -5861,10 +5933,10 @@ P(X=1\mid Y=1)=\frac{1/4}{5/8}=\frac25.
 \]</div>
 <p>还可用乘法关系恢复联合概率： <span class="arithmatex">\(p_{ij}=P(X=x_i\mid Y=y_j)\,p_{\cdot j}.\)</span></p>
 <p>这里的 · 代表任意取值，下同。</p>
-</details>
+</div>
 <h4 id="二维连续型随机变量">二维连续型随机变量<a class="headerlink" href="#二维连续型随机变量" title="Permanent link">&para;</a></h4>
-<details class="note" open="open">
-<summary>联合概率密度</summary>
+<div class="admonition note">
+<p class="admonition-title">联合概率密度</p>
 <p>若存在 <strong>非负</strong> 可积函数 <span class="arithmatex">\(f(x,y)\)</span>，使</p>
 <div class="arithmatex">\[
 F(x,y)=\int_{-\infty}^{x}\int_{-\infty}^{y}
@@ -5882,7 +5954,7 @@ f(x,y)\,\mathrm dy\,\mathrm dx=1.
 P((X,Y)\in D)=\iint_D f(x,y)\,\mathrm dx\,\mathrm dy.
 \]</div>
 <p>计算时先画出密度非零区域，再与事件对应的区域取交集，依据交集写出积分限。联合密度的数值不是点概率，面积为 <span class="arithmatex">\(0\)</span> 的集合在这一模型中的概率为 <span class="arithmatex">\(0\)</span>，例如点、直线以及通常的光滑曲线。</p>
-<div class="admonition example">
+<div class="admonition example exercise">
 <p class="admonition-title">分区域讨论</p>
 <p>已知二维随机变量 <span class="arithmatex">\((X,Y)\)</span> 的概率密度为 <span class="arithmatex">\(f(x,y) = \begin{cases} 2e^{-(x+y)}, &amp;{0 \lt x \lt y},\\ 0, &amp;\text{其他}, \end{cases}\)</span> 求 <span class="arithmatex">\((X,Y)\)</span> 的分布函数 <span class="arithmatex">\(F(x,y)\)</span>。</p>
 <details class="success">
@@ -5908,9 +5980,9 @@ F(x,y) &amp;= \int_{-\infty}^{x}\int_{-\infty}^{y}f(u,v)\,\mathrm dv\,\mathrm du
 <p>综上三种情况即为分布函数。</p>
 </details>
 </div>
-</details>
-<details class="note" open="open">
-<summary>边缘概率密度</summary>
+</div>
+<div class="admonition note">
+<p class="admonition-title">边缘概率密度</p>
 <p>由联合密度对另一个变量积分：</p>
 <div class="arithmatex">\[
 f_X(x)=\int_{-\infty}^{+\infty}f(x,y)\,\mathrm dy,
@@ -5940,12 +6012,12 @@ f_Y(y)=
 0, &amp; \text{其他}.
 \end{cases}
 \]</div>
-</details>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">二维连续型随机变量的分量均为连续型；反过来，各分量为连续型，不一定存在二维联合密度。例如，<span class="arithmatex">\(X\sim U(0,1)\)</span>、<span class="arithmatex">\(Y=X\)</span> 时，概率全部集中在直线 <span class="arithmatex">\(y=x\)</span> 上。</p>
 </div>
-<details class="note" open="open">
-<summary>条件概率密度</summary>
+<div class="admonition note">
+<p class="admonition-title">条件概率密度</p>
 <p>对满足 <span class="arithmatex">\(0\lt f_Y(y)\lt +\infty\)</span> 的 <span class="arithmatex">\(y\)</span>，条件密度的标准表达式为</p>
 <div class="arithmatex">\[
 f_{X\mid Y}(x\mid y)=\frac{f(x,y)}{f_Y(y)}.
@@ -5973,7 +6045,7 @@ f_{X\mid Y}(x\mid y)=
 \end{cases}
 \]</div>
 <p>因此，给定 <span class="arithmatex">\(Y=y\)</span> 时，<span class="arithmatex">\(X \sim U(0,y)\)</span>，例如 <span class="arithmatex">\(P(X\lt y/2\mid Y=y)=1/2\)</span>。</p>
-<div class="admonition example">
+<div class="admonition example exercise">
 <p class="admonition-title">从条件概率密度求其他概率密度/分布函数</p>
 <p>设随机变量 <span class="arithmatex">\(X\)</span> 在区间 <span class="arithmatex">\((a,b)\)</span> 上随机取值，当观察到 <span class="arithmatex">\(X=x(a \lt x \lt b)\)</span> 时，随机变量 <span class="arithmatex">\(Y\)</span> 在区间 <span class="arithmatex">\((a,b)\)</span> 上随机取值，求：</p>
 <p>1) <span class="arithmatex">\(Y\)</span> 的概率密度；
@@ -6033,7 +6105,7 @@ P\{X+Y\lt a+b\}
 \]</div>
 </details>
 </div>
-</details>
+</div>
 <h4 id="常见的二维连续型随机变量的分布">常见的二维连续型随机变量的分布<a class="headerlink" href="#常见的二维连续型随机变量的分布" title="Permanent link">&para;</a></h4>
 <details class="note">
 <summary>二维均匀分布</summary>
@@ -6071,8 +6143,8 @@ f(x,y)=\frac1{2\pi\sigma_1\sigma_2\sqrt{1-\rho^2}}
 \]</div>
 <p>其中 <span class="arithmatex">\(\mu_1,\mu_2\in\mathbb R\)</span>、<span class="arithmatex">\(\sigma_1,\sigma_2&gt;0\)</span>、<span class="arithmatex">\(-1\lt \rho\lt 1\)</span>，则称 <span class="arithmatex">\((X,Y)\)</span> 服从非退化的二维正态分布，记为 <span class="arithmatex">\((X,Y)\sim N(\mu_1,\mu_2;\sigma_1^2,\sigma_2^2;\rho).\)</span></p>
 <p><span class="arithmatex">\(\mu_1,\mu_2\)</span> 为两个分量的均值，<span class="arithmatex">\(\sigma_1^2,\sigma_2^2\)</span> 为方差，<span class="arithmatex">\(\rho\)</span> 为相关系数。</p>
-<details class="tip" open="open">
-<summary>重要结论</summary>
+<div class="admonition tip">
+<p class="admonition-title">重要结论</p>
 <ul>
 <li>
 <p><strong>边缘分布均为正态分布</strong>：<span class="arithmatex">\(X\sim N(\mu_1,\sigma_1^2), \qquad Y\sim N(\mu_2,\sigma_2^2).\)</span></p>
@@ -6104,7 +6176,7 @@ a^2\sigma_1^2+b^2\sigma_2^2+2ab\rho\sigma_1\sigma_2
 </li>
 </ul>
 <p>仅知道两个边缘分布都为正态分布，不能推出联合分布是二维正态分布；还需要联合结构的信息（独立与否）。<span class="arithmatex">\(\lvert\rho\rvert=1\)</span> 对应退化情形，不能代入上述含 <span class="arithmatex">\(\sqrt{1-\rho^2}\)</span> 分母的密度公式。</p>
-</details>
+</div>
 </details>
 <h3 id="随机变量的相互独立性">随机变量的相互独立性<a class="headerlink" href="#随机变量的相互独立性" title="Permanent link">&para;</a></h3>
 <h4 id="概念">概念<a class="headerlink" href="#概念" title="Permanent link">&para;</a></h4>
@@ -6160,7 +6232,7 @@ X\text{ 与 }Y\text{ 独立}
 <div class="card card-shadow">
 <div class="card-body">
 <p><strong>① 整体相互独立则部分也相互独立</strong></p>
-<p>若一组随机变量 <span class="arithmatex">\(X_1, X_2, \dots, X_n\)</span> 相互独立，则其中任意 <span class="arithmatex">\(k~(2\le k\le n)\)</span> 个随机变量也相互独立。</p>
+<p>若一组随机变量 <span class="arithmatex">\(X_1, X_2, \cdots, X_n\)</span> 相互独立，则其中任意 <span class="arithmatex">\(k~(2\le k\le n)\)</span> 个随机变量也相互独立。</p>
 <div class="admonition question">
 <p class="admonition-title">是不是有点像线性代数中，向量组的整体与部分的关系？</p>
 </div>
@@ -6197,8 +6269,8 @@ f_{Y\mid X}(y\mid x)=f_Y(y),
 <li>使用对应的乘积判据；证明独立需要满足整个判据，否定独立只需找到有效的反例。</li>
 </ol>
 </div>
-<div class="admonition example">
-<p class="admonition-title">例子</p>
+<div class="supplement">
+<p class="supplement__title">例子</p>
 <p>离散型中，以前面的分布表为例，其满足 <span class="arithmatex">\(\displaystyle p_{00}=\frac18,~~ p_{0\cdot}p_{\cdot0}=\frac12\times\frac38=\frac3{16}\)</span>，两者不等，所以 <span class="arithmatex">\(X,Y\)</span> 不独立。</p>
 <p>连续型中，密度的代数表达式能写成乘积还不够，必须同时考虑其非零区域。例如对 <span class="arithmatex">\(f(x,y)=2\,\mathbf1_{\{0\lt x\lt y\lt 1\}}\)</span>，虽然区域内部密度为常数，但该区域不是两个分量取值区间的笛卡尔积：如在 <span class="arithmatex">\(0\lt y\lt x\lt 1\)</span> 上，联合密度为 <span class="arithmatex">\(0\)</span>，而边缘密度的乘积 <span class="arithmatex">\(4y(1-x)&gt;0\)</span>，所以不独立。</p>
 <p>反之，即使非零区域是矩形，也仍需检验密度的乘积关系，不能仅凭区域形状判定独立。对于连续密度，在单个点上不相等也不足以否定独立，应依据几乎处处判据或找到概率事件的反例。</p>
@@ -6214,8 +6286,8 @@ Z=\max(X,Y),\qquad Z=\min(X,Y).
 <p>一般必须利用联合分布求 <span class="arithmatex">\(Z\)</span> 的分布，仅有各边缘分布通常不够。若已知各分量独立，就可以先用边缘分布构造联合分布。</p>
 <p>若同时定义 <span class="arithmatex">\(U=g(X,Y)\)</span>、<span class="arithmatex">\(V=h(X,Y)\)</span>，则需要求新的随机向量 <span class="arithmatex">\((U,V)\)</span> 的联合分布。</p>
 <h4 id="求法">求法<a class="headerlink" href="#求法" title="Permanent link">&para;</a></h4>
-<details class="note" open="open">
-<summary>分布函数法（定义法）</summary>
+<div class="admonition note">
+<p class="admonition-title">分布函数法（定义法）</p>
 <p>对 <span class="arithmatex">\(Z=g(X,Y)\)</span>， <span class="arithmatex">\(F_Z(z)=P(Z\le z)=P(g(X,Y)\le z).\)</span></p>
 <ul>
 <li><strong>离散型</strong>：将满足条件的联合概率相加，</li>
@@ -6233,7 +6305,7 @@ P(Z=z_k)=\sum_{g(x_i,y_j)=z_k}p_{ij}.
 F_Z(z)=\iint_{D_z}f(x,y)\,\mathrm dx\,\mathrm dy.
 \]</div>
 <p>先确定 <span class="arithmatex">\(Z\)</span> 的可能取值，再求 <span class="arithmatex">\(D_z\)</span> 与联合密度非零区域的交集，分段积分。若得到的分布具有密度，再对 <span class="arithmatex">\(F_Z\)</span> 求导；若出现跳跃，则需保留对应的点概率。</p>
-<div class="admonition example">
+<div class="admonition example exercise">
 <p class="admonition-title">定义法的运用</p>
 <p>若 <span class="arithmatex">\(X,Y\)</span> 独立且都服从 <span class="arithmatex">\(U(0,1)\)</span>，令 <span class="arithmatex">\(Z=X+Y\)</span>，则 <span class="arithmatex">\(Z\)</span> 的概率密度和分布函数分别是？</p>
 <details class="success">
@@ -6259,10 +6331,10 @@ z, &amp; 0\lt z\lt 1,\\
 \]</div>
 </details>
 </div>
-</details>
+</div>
 <p>以下各公式假设 <span class="arithmatex">\((X,Y)\)</span> 具有联合密度，</p>
-<details class="note" open="open">
-<summary>最大值与最小值的分布</summary>
+<div class="admonition note">
+<p class="admonition-title">最大值与最小值的分布</p>
 <p>令 <span class="arithmatex">\(M=\max(X,Y)\)</span>、<span class="arithmatex">\(L=\min(X,Y)\)</span>。不要求独立时，</p>
 <div class="arithmatex">\[
 F_M(z)=P(X\le z,Y\le z)=F(z,z),
@@ -6286,9 +6358,33 @@ F_{\max_iX_i}(z)=[F(z)]^n,
 F_{\min_iX_i}(z)=1-[1-F(z)]^n.
 \]</div>
 <p>这类问题先把最大值、最小值的事件转化为所有分量同时满足的条件，通常比直接求密度更方便。</p>
+<div class="admonition example exercise">
+<p class="admonition-title">例</p>
+<p><strong>(2026 数一 22-1.1)</strong> 假设某种元件的寿命服从指数分布，其均值 <span class="arithmatex">\(\theta\)</span> 是未知参数。为估计 <span class="arithmatex">\(\theta\)</span>，取 <span class="arithmatex">\(n\)</span> 个这种原件同时做寿命试验，试验到出现 <span class="arithmatex">\(k~~(1\le k\ge n)\)</span> 个元件失效时停止。</p>
+<p>若 <span class="arithmatex">\(k=1\)</span>，失效元件的寿命记为 <span class="arithmatex">\(T\)</span>，求 <span class="arithmatex">\(T\)</span> 的概率密度。</p>
+<details class="success">
+<summary>解答</summary>
+<p>设 <span class="arithmatex">\(n\)</span> 个元件的寿命分别为 <span class="arithmatex">\(X_1, X_2, \cdots, X_n\)</span>，每个样本都服从参数为 <span class="arithmatex">\(\lambda = \dfrac 1{\theta}\)</span> 的指数分布（因为指数分布的数学期望是 <span class="arithmatex">\(\dfrac 1{\theta}\)</span>），所以有</p>
+<div class="arithmatex">\[
+F_i(x) =
+\begin{cases}
+1-e^{-\frac{x}{\theta}}, &amp; x\ge 0, \\
+0, &amp; x\lt 0.
+\end{cases}
+\]</div>
+<p><span class="arithmatex">\(k=1\)</span> 时，<span class="arithmatex">\(T = \min\{X_1, X_2, \cdots, X_n\}\)</span>。由于样本间互相独立，所以</p>
+<div class="arithmatex">\[
+F_T(t) = 1 - \prod_{i=1}^n (1-F_i(x)) =
+            \begin{cases}
+1-e^{-\frac{nx}{\theta}}, &amp; x\ge 0, \\
+0, &amp; x\lt 0.
+\end{cases}
+\]</div>
 </details>
-<details class="note" open="open">
-<summary>和的分布</summary>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">和的分布</p>
 <p>令 <span class="arithmatex">\(Z=X+Y\)</span>，则代换利用边缘密度，有</p>
 <div class="arithmatex">\[
 f_Z(z)=\int_{-\infty}^{+\infty}f(x,z-x)\,\mathrm dx
@@ -6309,9 +6405,9 @@ X\sim P(\lambda_1),\quad Y\sim P(\lambda_2)
 \quad\Longrightarrow\quad
 X+Y\sim P(\lambda_1+\lambda_2).
 \]</div>
-</details>
-<details class="note" open="open">
-<summary>差的分布</summary>
+</div>
+<div class="admonition note">
+<p class="admonition-title">差的分布</p>
 <p>令 <span class="arithmatex">\(Z=X-Y\)</span>，</p>
 <div class="arithmatex">\[
 f_Z(z)=\int_{-\infty}^{+\infty}f(z+y,y)\,\mathrm dy
@@ -6322,7 +6418,7 @@ f_Z(z)=\int_{-\infty}^{+\infty}f(z+y,y)\,\mathrm dy
 f_Z(z)=\int_{-\infty}^{+\infty}f_X(z+y)f_Y(y)\,\mathrm dy
 =\int_{-\infty}^{+\infty}f_X(x)f_Y(x-z)\,\mathrm dx.
 \]</div>
-</details>
+</div>
 <details class="info">
 <summary>卷积公式</summary>
 <p>在数学定义上，卷积公式定义为</p>
@@ -6343,8 +6439,8 @@ f_U(u) = \displaystyle\int_{-\infty}^{+\infty} f_X(\dfrac{u-bv}{a}) \cdot f_Y(v)
 \]</div>
 <p>而 <span class="arithmatex">\(u\)</span> 可以“无痛”换成 <span class="arithmatex">\(z\)</span>，则结果即为 <span class="arithmatex">\(Z\)</span> 的概率密度。下面的积和商也是类似的推导过程，利用辅助变量把问题补成二维变换即可。</p>
 </div>
-<details class="note" open="open">
-<summary>积的分布</summary>
+<div class="admonition note">
+<p class="admonition-title">积的分布</p>
 <p>令 <span class="arithmatex">\(Z=XY\)</span>，</p>
 <div class="arithmatex">\[
 f_Z(z)=\int_{x\ne0}\frac1{|x|}
@@ -6359,9 +6455,9 @@ f_X(x)f_Y\left(\frac zx\right)\,\mathrm dx
 =\int_{y\ne0}\frac1{|y|}
 f_X\left(\frac zy\right)f_Y(y)\,\mathrm dy.
 \]</div>
-</details>
-<details class="note" open="open">
-<summary>商的分布</summary>
+</div>
+<div class="admonition note">
+<p class="admonition-title">商的分布</p>
 <p>令 <span class="arithmatex">\(Z=X/Y\)</span>，</p>
 <div class="arithmatex">\[
 f_Z(z)=\int_{-\infty}^{+\infty}|y|f(zy,y)\,\mathrm dy.
@@ -6371,13 +6467,13 @@ f_Z(z)=\int_{-\infty}^{+\infty}|y|f(zy,y)\,\mathrm dy.
 f_Z(z)=\int_{-\infty}^{+\infty}|y|f_X(zy)f_Y(y)\,\mathrm dy.
 \]</div>
 <p>联合具有密度时，<span class="arithmatex">\(P(Y=0)=0\)</span>，所以商可在 <span class="arithmatex">\(Y=0\)</span> 的零概率事件上任意定义而不影响分布。</p>
-</details>
+</div>
 <p>实际积分范围仍由原联合密度的非零区域决定，积的公式中 <span class="arithmatex">\(x=0\)</span> 附近若出现瑕积分，应按相应积分含义处理。</p>
 <h2 id="随机变量的数字特征">随机变量的数字特征<a class="headerlink" href="#随机变量的数字特征" title="Permanent link">&para;</a></h2>
 <h3 id="一维随机变量的数字特征">一维随机变量的数字特征<a class="headerlink" href="#一维随机变量的数字特征" title="Permanent link">&para;</a></h3>
 <h4 id="数学期望">数学期望<a class="headerlink" href="#数学期望" title="Permanent link">&para;</a></h4>
-<details class="note" open="open">
-<summary>概念</summary>
+<div class="admonition note">
+<p class="admonition-title">概念</p>
 <p>数学期望描述随机变量取值的<strong>平均水平</strong>或分布的<strong>重心位置</strong>，记为 <span class="arithmatex">\(E(X)\)</span> 或 <span class="arithmatex">\(\mathbb E[X]\)</span>。它由随机变量的分布决定，不一定是随机变量实际能够取到的值。</p>
 <p>本章说“期望存在”时，通常指期望为有限实数，即满足<strong>绝对可积</strong>条件 <span class="arithmatex">\(E(|X|)\lt+\infty\)</span>。</p>
 <p>对于离散型随机变量，若 <span class="arithmatex">\(P(X=x_k)=p_k\)</span>，且 <span class="arithmatex">\(\displaystyle \sum_k |x_k|p_k\lt+\infty,\)</span></p>
@@ -6399,8 +6495,8 @@ E(X)=\int_{-\infty}^{+\infty}xf(x)\,\mathrm dx.
 <div class="admonition warning">
 <p class="admonition-title">不能仅凭形式上的正负抵消判定期望存在。对于正负两部分积分均发散的情形，即使对称积分的主值存在，也不能把它当作数学期望。</p>
 </div>
-<details class="tip" open="open">
-<summary>随机变量函数的期望</summary>
+<div class="admonition tip">
+<p class="admonition-title">随机变量函数的期望</p>
 <p>设 <span class="arithmatex">\(Y=g(X)\)</span>。求 <span class="arithmatex">\(E(g(X))\)</span> 时，可以直接利用 <span class="arithmatex">\(X\)</span> 的分布。</p>
 <p>离散型情形：</p>
 <div class="arithmatex">\[
@@ -6421,10 +6517,10 @@ E(X)=\int_0^1x\,\mathrm dx=\frac12,
 E(X^2)=\int_0^1x^2\,\mathrm dx=\frac13.
 \]</div>
 <p>所以一般有 <span class="arithmatex">\(E(g(X))\ne g(E(X))\)</span>；特别地，<span class="arithmatex">\(E(X^2)\)</span> 与 <span class="arithmatex">\([E(X)]^2\)</span> 不能混淆。</p>
-</details>
-</details>
-<details class="note" open="open">
-<summary>性质</summary>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">性质</p>
 <p>以下涉及的期望均假定存在。</p>
 <ul>
 <li><strong>常数的期望</strong>：<span class="arithmatex">\(E(c)=c\)</span>。</li>
@@ -6446,10 +6542,10 @@ E\left(\sum_{i=1}^n a_iX_i+b\right)
 </ul>
 <p>对有限个相互独立且可积的随机变量，同样有 <span class="arithmatex">\(E(\prod_iX_i)=\prod_iE(X_i)\)</span>。没有独立性时，不能直接使用这一性质。</p>
 <p>这里“几乎处处”表示相应关系以概率 <span class="arithmatex">\(1\)</span> 成立，允许在零概率事件上例外。</p>
-</details>
+</div>
 <h4 id="方差标准差">方差、标准差<a class="headerlink" href="#方差标准差" title="Permanent link">&para;</a></h4>
-<details class="note" open="open">
-<summary>概念</summary>
+<div class="admonition note">
+<p class="admonition-title">概念</p>
 <p>设 <span class="arithmatex">\(\mu=E(X)\)</span>。若 <span class="arithmatex">\(E[(X-\mu)^2]\)</span> 有限，则称 <span class="arithmatex">\(D(X)=\operatorname{Var}(X)=E[(X-E(X))^2]\)</span> 为 <span class="arithmatex">\(X\)</span> 的<strong>方差</strong>，其非负平方根 <span class="arithmatex">\(\sigma_X=\sqrt{D(X)}\)</span> 称为<strong>标准差</strong>。</p>
 <p>方差衡量随机变量相对于其平均水平的离散程度。标准差与 <span class="arithmatex">\(X\)</span> 具有相同量纲，方差的量纲则是 <span class="arithmatex">\(X\)</span> 量纲的平方。</p>
 <p>离散型与连续型的计算公式分别为</p>
@@ -6465,9 +6561,9 @@ D(X)=\int_{-\infty}^{+\infty}(x-\mu)^2f(x)\,\mathrm dx.
 D(X)=E(X^2)-[E(X)]^2.
 \]</div>
 <p>例如，当 <span class="arithmatex">\(X\sim U(0,1)\)</span> 时， <span class="arithmatex">\(\displaystyle D(X)=\frac13-\left(\frac12\right)^2=\frac1{12}.\)</span></p>
-</details>
-<details class="note" open="open">
-<summary>性质</summary>
+</div>
+<div class="admonition note">
+<p class="admonition-title">性质</p>
 <p>方差的主要性质包括：</p>
 <ul>
 <li><strong>非负性</strong>：<span class="arithmatex">\(D(X)\ge0\)</span>。</li>
@@ -6487,8 +6583,8 @@ D(X)=E(X^2)-[E(X)]^2.
 D\left(\sum_{i=1}^n a_iX_i\right)
 =\sum_{i=1}^n a_i^2D(X_i).
 \]</div>
-<p>事实上，两两不相关已足以保证这一等式。一般情形下必须考虑协方差，不能直接把方差相加。</p>
-</details>
+<p>事实上，两两不相关已足以保证这一等式。在后面我们会了解到，更一般的情形下，还必须考虑协方差，不能直接把方差相加。</p>
+</div>
 <details class="info">
 <summary>标准化与平方偏差</summary>
 <p>若 <span class="arithmatex">\(0\lt D(X)=\sigma^2\lt+\infty\)</span>，令 <span class="arithmatex">\(Z=\dfrac{X-\mu}{\sigma},\)</span></p>
@@ -6591,8 +6687,8 @@ E(|Z|)
 </ul>
 <h3 id="二维随机变量的数字特征">二维随机变量的数字特征<a class="headerlink" href="#二维随机变量的数字特征" title="Permanent link">&para;</a></h3>
 <h4 id="数学期望_1">数学期望<a class="headerlink" href="#数学期望_1" title="Permanent link">&para;</a></h4>
-<details class="note" open="open">
-<summary>随机向量的期望与分量的期望</summary>
+<div class="admonition note">
+<p class="admonition-title">随机向量的期望与分量的期望</p>
 <p>对随机向量 <span class="arithmatex">\((X,Y)\)</span>，若两个分量的期望存在，可将其期望写为 <span class="arithmatex">\(E[(X,Y)]=(E(X),E(Y)).\)</span></p>
 <p>计算每个分量的期望，可以使用边缘分布，也可以直接使用联合分布。</p>
 <p>离散型情形：设 <span class="arithmatex">\(p_{ij}=P(X=x_i,Y=y_j)\)</span>，则</p>
@@ -6612,9 +6708,9 @@ E(Y)=\int_{-\infty}^{+\infty}yf_Y(y)\,\mathrm dy
 =\iint_{\mathbb R^2}yf(x,y)\,\mathrm dx\,\mathrm dy.
 \]</div>
 <p>求某个分量自身的数字特征时，使用它的边缘分布就可以了。</p>
-</details>
-<details class="note" open="open">
-<summary>二维随机变量函数的期望</summary>
+</div>
+<div class="admonition note">
+<p class="admonition-title">二维随机变量函数的期望</p>
 <p>令 <span class="arithmatex">\(Z=g(X,Y)\)</span>。若 <span class="arithmatex">\(E(|g(X,Y)|)\lt+\infty\)</span>，则可以直接利用联合分布计算：</p>
 <div class="arithmatex">\[
 E(g(X,Y))=\sum_i\sum_jg(x_i,y_j)p_{ij}
@@ -6624,8 +6720,8 @@ E(g(X,Y))=\sum_i\sum_jg(x_i,y_j)p_{ij}
 E(g(X,Y))=\iint_{\mathbb R^2}g(x,y)f(x,y)\,\mathrm dx\,\mathrm dy.
 \]</div>
 <p>积分区域实际取联合密度的非零区域。一般不必先求出 <span class="arithmatex">\(Z\)</span> 的分布。</p>
-<details class="example">
-<summary>计算示例</summary>
+<div class="supplement" markdown="1">
+<p class="supplement__title">计算示例</p>
 <p>设</p>
 <div class="arithmatex">\[
 f(x,y)=
@@ -6645,8 +6741,8 @@ E(Y)=\int_0^1\int_0^y2y\,\mathrm dx\,\mathrm dy=\frac23,
 E(XY)=\int_0^1\int_0^y2xy\,\mathrm dx\,\mathrm dy=\frac14.
 \]</div>
 <p>由期望的线性性质， <span class="arithmatex">\(E(X+Y)=E(X)+E(Y)=1.\)</span></p>
-</details>
-<div class="admonition example">
+</div>
+<div class="admonition example exercise">
 <p class="admonition-title">习题</p>
 <p>设随机变量 <span class="arithmatex">\(X\)</span> 和 <span class="arithmatex">\(Y\)</span> 独立同分布，都服从参数为 <span class="arithmatex">\(1\)</span> 的指数分布。若 <span class="arithmatex">\(Z = \begin{cases} 2X, &amp;{X\ge Y},\\ Y-1, &amp;{X\lt Y}, \end{cases}\)</span> 则 <span class="arithmatex">\(E(Z) = \underline\qquad.\)</span></p>
 <details class="success">
@@ -6671,10 +6767,10 @@ E(Z)
 \]</div>
 </details>
 </div>
-</details>
+</div>
 <h4 id="协方差">协方差<a class="headerlink" href="#协方差" title="Permanent link">&para;</a></h4>
-<details class="note" open="open">
-<summary>协方差的概念</summary>
+<div class="admonition note">
+<p class="admonition-title">协方差的概念</p>
 <p>设 <span class="arithmatex">\(X,Y\)</span> 均具有有限二阶矩，则称 <span class="arithmatex">\(\operatorname{Cov}(X,Y) =E[(X-E(X))(Y-E(Y))]\)</span> 为 <span class="arithmatex">\(X,Y\)</span> 的<strong>协方差</strong>。</p>
 <p>它描述两个变量相对于各自均值的共同变化方向。化简定义式可得常用计算公式为</p>
 <div class="arithmatex">\[
@@ -6690,9 +6786,9 @@ E(Z)
 <li>协方差为零，称 <span class="arithmatex">\(X,Y\)</span> <strong>不相关</strong>。</li>
 </ul>
 <p>协方差的量纲为两个变量量纲的乘积，其大小会受到单位选择的影响。因此，比较线性相关程度时通常采用无量纲的相关系数。</p>
-</details>
-<details class="note" open="open">
-<summary>协方差的性质</summary>
+</div>
+<div class="admonition note">
+<p class="admonition-title">协方差的性质</p>
 <p>对具有有限二阶矩的随机变量及常数 <span class="arithmatex">\(a,b,c,d\)</span>，</p>
 <div class="arithmatex">\[
 \operatorname{Cov}(X,Y)=\operatorname{Cov}(Y,X),\\
@@ -6723,10 +6819,10 @@ D\left(\sum_{i=1}^n a_iX_i\right)
 =\sum_{i=1}^n a_i^2D(X_i)
 +2\sum_{i\lt j}a_ia_j\operatorname{Cov}(X_i,X_j).
 \]</div>
-</details>
+</div>
 <h4 id="相关系数">相关系数<a class="headerlink" href="#相关系数" title="Permanent link">&para;</a></h4>
-<details class="note" open="open">
-<summary>相关系数的概念</summary>
+<div class="admonition note">
+<p class="admonition-title">相关系数的概念</p>
 <p>若 <span class="arithmatex">\(0\lt D(X),D(Y)\lt+\infty\)</span>，则称</p>
 <div class="arithmatex">\[
 \rho_{XY}
@@ -6749,9 +6845,9 @@ D\left(\sum_{i=1}^n a_iX_i\right)
 <div class="admonition warning">
 <p class="admonition-title">若某个变量方差为 <span class="arithmatex">\(0\)</span>，则上述相关系数没有定义，不能直接把它赋值为 <span class="arithmatex">\(0\)</span>。<br>不过，此时它与另一个与其配对的、具有有限二阶矩变量的协方差仍然可以定义，协方差为 <span class="arithmatex">\(0\)</span>。</p>
 </div>
-</details>
-<details class="note" open="open">
-<summary>相关系数的性质</summary>
+</div>
+<div class="admonition note">
+<p class="admonition-title">相关系数的性质</p>
 <ul>
 <li>
 <p>由柯西—施瓦茨不等式，<span class="arithmatex">\(|\operatorname{Cov}(X,Y)|\le\sqrt{D(X)D(Y)}\)</span>，从而</p>
@@ -6773,10 +6869,10 @@ D\left(\sum_{i=1}^n a_iX_i\right)
 <p>平移或正比例缩放不改变相关系数；若恰有一个变量乘以负数，则相关系数变号。</p>
 </li>
 </ul>
-</details>
-<div class="admonition example">
-<p class="admonition-title">协方差与相关系数的计算示例</p>
-<p>继续使用三角形区域 <span class="arithmatex">\(0\lt x\lt y\lt1\)</span> 上的联合密度 <span class="arithmatex">\(f(x,y)=2\)</span>。已有 </p>
+</div>
+<div class="supplement">
+<p class="supplement__title">协方差与相关系数的计算示例</p>
+<p>继续使用三角形区域 <span class="arithmatex">\(0\lt x\lt y\lt1\)</span> 上的联合密度 <span class="arithmatex">\(f(x,y)=2\)</span>。已有</p>
 <div class="arithmatex">\[
 \displaystyle E(X)=\frac13,\qquad E(Y)=\frac23,\qquad E(XY)=\frac14.
 \]</div>
@@ -6793,6 +6889,21 @@ E(Y^2)=\int_0^1\int_0^y2y^2\,\mathrm dx\,\mathrm dy=\frac12.
 =\frac{1/36}{\sqrt{(1/18)(1/18)}}=\frac12.
 \]</div>
 <p>因此，两个变量正相关但不是完全线性相关，并且 <span class="arithmatex">\(\displaystyle D(X+Y)=\frac1{18}+\frac1{18}+2\cdot\frac1{36}=\frac16.\)</span></p>
+</div>
+<div class="admonition example exercise">
+<p class="admonition-title">给定实际情境的计算</p>
+<p><strong>(2012 数一 8)</strong> 将长度为 <span class="arithmatex">\(1 \mathrm m\)</span> 的木棒随机地截成两段，则两段长度的相关系数为（ ）。</p>
+<p>A. <span class="arithmatex">\(1.\qquad\)</span> B. <span class="arithmatex">\(\dfrac 12.\qquad\)</span> C. <span class="arithmatex">\(-\dfrac 12.\qquad\)</span> D. <span class="arithmatex">\(-1.\)</span></p>
+<details class="success">
+<summary>解答</summary>
+<p>D.</p>
+<p>设其中一段的长度为 <span class="arithmatex">\(X\)</span>。显然有 <span class="arithmatex">\(E(X) = E(1-X) = \dfrac 12\)</span>，<span class="arithmatex">\(E(X^2) = \displaystyle\int_0^1 x^2 \mathrm dx = \dfrac 13\)</span>。</p>
+<p>所以 <span class="arithmatex">\(D(X) = D(1-X) = E(X^2) - E^2(X) = \dfrac{1}{12}\)</span>。</p>
+<p>所以</p>
+<div class="arithmatex">\[
+\rho = \frac{\operatorname{Cov}(X,Y)}{\sqrt{D(X)\cdot D(1-X)}} = -1.
+\]</div>
+</details>
 </div>
 <h3 id="独立性与不相关性的判定切比雪夫不等式">独立性与不相关性的判定、切比雪夫不等式<a class="headerlink" href="#独立性与不相关性的判定切比雪夫不等式" title="Permanent link">&para;</a></h3>
 <h4 id="独立性的分布判据">独立性的分布判据<a class="headerlink" href="#独立性的分布判据" title="Permanent link">&para;</a></h4>
@@ -6896,8 +7007,8 @@ X,Y\text{ 不相关}
 </ul>
 </details>
 </div>
-<div class="admonition example">
-<p class="admonition-title">不相关但不独立的例子</p>
+<div class="supplement">
+<p class="supplement__title">不相关但不独立的例子</p>
 <p>设 <span class="arithmatex">\(X\sim U(-1,1)\)</span>，令 <span class="arithmatex">\(Y=X^2\)</span>。由对称性， <span class="arithmatex">\(E(X)=E(X^3)=0,\)</span></p>
 <p>所以 <span class="arithmatex">\(\operatorname{Cov}(X,Y)=E(X^3)-E(X)E(X^2)=0.\)</span></p>
 <p>但令 <span class="arithmatex">\(\displaystyle A=\{|X|\le\frac 12\},\qquad B=\{Y\le\frac 14\},\)</span></p>
@@ -6946,8 +7057,8 @@ P(|X-\mu|\lt k\sigma)\ge1-\frac1{k^2},
 \]</div>
 <p>除以 <span class="arithmatex">\(\varepsilon^2\)</span> 即得切比雪夫不等式。这也可以看作对非负随机变量 <span class="arithmatex">\((X-\mu)^2\)</span> 使用马尔可夫不等式。</p>
 </details>
-<div class="admonition example">
-<p class="admonition-title">切比雪夫不等式的应用</p>
+<div class="supplement">
+<p class="supplement__title">切比雪夫不等式的应用</p>
 <p>已知期望和方差、但不知道具体分布时，可以用切比雪夫不等式给出偏离均值的概率上界或落在均值附近的概率下界。</p>
 <hr />
 <p>例如，若 <span class="arithmatex">\(E(X)=10\)</span>、<span class="arithmatex">\(D(X)=4\)</span>，则 <span class="arithmatex">\(\displaystyle P(|X-10|\ge6)\le\frac4{36}=\frac19,\)</span></p>
@@ -6958,8 +7069,8 @@ P(|X-\mu|\lt k\sigma)\ge1-\frac1{k^2},
 </div>
 <h2 id="大数定律与中心极限定理">大数定律与中心极限定理<a class="headerlink" href="#大数定律与中心极限定理" title="Permanent link">&para;</a></h2>
 <h3 id="依概率收敛">依概率收敛<a class="headerlink" href="#依概率收敛" title="Permanent link">&para;</a></h3>
-<details class="note" open="open">
-<summary>概念</summary>
+<div class="admonition note">
+<p class="admonition-title">概念</p>
 <p>设 <span class="arithmatex">\(X_1,X_2,\ldots\)</span> 与 <span class="arithmatex">\(X\)</span> 定义在同一概率空间上。若对任意 <span class="arithmatex">\(\varepsilon&gt;0\)</span>，都有</p>
 <div class="arithmatex">\[
 \lim_{n\to\infty}P(|X_n-X|\ge\varepsilon)=0,
@@ -6972,9 +7083,9 @@ P(|X-\mu|\lt k\sigma)\ge1-\frac1{k^2},
 <p>定义中的“<span class="arithmatex">\(\ge\varepsilon\)</span>”也可换成“<span class="arithmatex">\(&gt;\varepsilon\)</span>”，因为要求对每一个正的 <span class="arithmatex">\(\varepsilon\)</span> 都成立。</p>
 <p>若极限为常数 <span class="arithmatex">\(a\)</span>，则写为 <span class="arithmatex">\(X_n\xrightarrow{P}a\)</span>。其含义是：当 <span class="arithmatex">\(n\)</span> 足够大时，<span class="arithmatex">\(X_n\)</span> 与 <span class="arithmatex">\(a\)</span> 相差超过任意固定误差的概率可以任意小。</p>
 <p>依概率收敛不表示每次观测都更接近极限，也不要求误差随 <span class="arithmatex">\(n\)</span> 单调减小；它描述的是误差事件的概率变化。</p>
-</details>
-<details class="note" open="open">
-<summary>常用性质</summary>
+</div>
+<div class="admonition note">
+<p class="admonition-title">常用性质</p>
 <ul>
 <li>
 <p>若 <span class="arithmatex">\(X_n\xrightarrow{P}a\)</span>、<span class="arithmatex">\(Y_n\xrightarrow{P}b\)</span>，其中 <span class="arithmatex">\(a,b\)</span> 为有限常数，则 <span class="arithmatex">\(X_n+Y_n\xrightarrow{P}a+b\)</span>， <span class="arithmatex">\(X_nY_n\xrightarrow{P}ab.\)</span></p>
@@ -6989,14 +7100,14 @@ P(|X-\mu|\lt k\sigma)\ge1-\frac1{k^2},
 <p>更一般地，若 <span class="arithmatex">\(g\)</span> 在 <span class="arithmatex">\(a\)</span> 处连续，则 <span class="arithmatex">\(X_n\xrightarrow{P}a \quad\Longrightarrow\quad g(X_n)\xrightarrow{P}g(a).\)</span> 例如，若 <span class="arithmatex">\(X_n\xrightarrow{P}2\)</span>，则 <span class="arithmatex">\(X_n^2\xrightarrow{P}4\)</span>。</p>
 </li>
 </ul>
-</details>
+</div>
 <h3 id="大数定律">大数定律<a class="headerlink" href="#大数定律" title="Permanent link">&para;</a></h3>
 <h4 id="切比雪夫大数定律">切比雪夫大数定律<a class="headerlink" href="#切比雪夫大数定律" title="Permanent link">&para;</a></h4>
 <div class="admonition info">
 <p class="admonition-title">该定律由俄国数学家帕夫努季 · 利沃维奇 · 切比雪夫（ Chebyshev ）提出。</p>
 </div>
-<details class="note" open="open">
-<summary>条件与结论</summary>
+<div class="admonition note">
+<p class="admonition-title">条件与结论</p>
 <p>设 <span class="arithmatex">\(X_1,X_2,\ldots\)</span> <strong>两两不相关</strong>，各自具有有限方差，且方差存在统一上界：存在常数 <span class="arithmatex">\(C\lt+\infty\)</span>，使对所有 <span class="arithmatex">\(i\)</span> 都有 <span class="arithmatex">\(D(X_i)\le C.\)</span></p>
 <p>则</p>
 <div class="arithmatex">\[
@@ -7011,7 +7122,7 @@ P(|X-\mu|\lt k\sigma)\ge1-\frac1{k^2},
 \overline X_n=\frac1n\sum_{i=1}^nX_i\xrightarrow{P}\mu.
 \]</div>
 <p>若各期望不相同，但 <span class="arithmatex">\(\frac1n\sum_{i=1}^nE(X_i)\to a\)</span>，也可得 <span class="arithmatex">\(\overline X_n\xrightarrow{P}a\)</span>。</p>
-</details>
+</div>
 <details class="info">
 <summary>切比雪夫大数定律的证明与更一般的方差条件</summary>
 <p>令 <span class="arithmatex">\(T_n=\dfrac1n\sum_{i=1}^n[X_i-E(X_i)].\)</span></p>
@@ -7037,17 +7148,17 @@ P(|T_n|\ge\varepsilon)
 <div class="admonition info">
 <p class="admonition-title">该定律由苏联数学家亚历山大 · 雅科夫列维奇 · 辛钦（ Khinchin ）提出。</p>
 </div>
-<details class="note" open="open">
-<summary>条件与结论</summary>
+<div class="admonition note">
+<p class="admonition-title">条件与结论</p>
 <p>设 <span class="arithmatex">\(X_1,X_2,\ldots\)</span> <strong>相互独立、同分布</strong>，且都具有有限数学期望 <span class="arithmatex">\(E(X_i)=\mu, \qquad E(|X_i|)\lt+\infty.\)</span></p>
 <p>则</p>
 <div class="arithmatex">\[
 \overline X_n=\frac1n\sum_{i=1}^nX_i\xrightarrow{P}\mu.
 \]</div>
 <p>即 <strong>大量随机变量的平均值，依概率接近它们的期望</strong>。</p>
-</details>
-<details class="example">
-<summary>辛钦大数定律的运用</summary>
+</div>
+<div class="supplement">
+<p class="supplement__title">辛钦大数定律的运用</p>
 <p>若 <span class="arithmatex">\(X_1,X_2,\ldots\)</span> 独立同分布，<span class="arithmatex">\(g\)</span> 为可测函数，且 <span class="arithmatex">\(E(|g(X_1)|)\lt+\infty\)</span>，则 <span class="arithmatex">\(g(X_i)\)</span> 也独立同分布，所以</p>
 <div class="arithmatex">\[
 \frac1n\sum_{i=1}^ng(X_i)\xrightarrow{P}E(g(X_1)).
@@ -7060,10 +7171,10 @@ P(|T_n|\ge\varepsilon)
 \xrightarrow{P}D(X_1).
 \]</div>
 <p>即样本的平均平方偏差可以依概率逼近总体方差。</p>
-</details>
+</div>
 <h4 id="伯努利大数定律">伯努利大数定律<a class="headerlink" href="#伯努利大数定律" title="Permanent link">&para;</a></h4>
-<details class="note" open="open">
-<summary>条件与结论</summary>
+<div class="admonition note">
+<p class="admonition-title">条件与结论</p>
 <p>独立重复进行同一个试验，事件 <span class="arithmatex">\(A\)</span> 在每次试验中发生的概率恒为 <span class="arithmatex">\(p\)</span>。令 <span class="arithmatex">\(S_n\)</span> 表示前 <span class="arithmatex">\(n\)</span> 次试验中 <span class="arithmatex">\(A\)</span> 发生的次数，则</p>
 <div class="arithmatex">\[
 \frac{S_n}{n}\xrightarrow{P}p.
@@ -7075,7 +7186,7 @@ P(|T_n|\ge\varepsilon)
 P\left(\left|\frac{S_n}{n}-p\right|\ge\varepsilon\right)=0.
 \]</div>
 <p>这说明 <strong>频率依概率收敛于概率</strong>，为用大量独立重复试验的频率估计概率提供了理论依据。</p>
-</details>
+</div>
 <details class="info">
 <summary>伯努利大数定律的证明</summary>
 <p>设</p>
@@ -7133,7 +7244,7 @@ P\left(\left|\frac{S_n}{n}-p\right|\ge\varepsilon\right)
 </center>
 <p>本节这些结论采用依概率收敛的形式，属于弱大数定律。独立同分布且方差有限时，可以同时满足切比雪夫与辛钦定律的条件；仅有有限期望时，则优先考虑辛钦定律。</p>
 </div>
-<div class="admonition example">
+<div class="admonition example exercise">
 <p class="admonition-title">大数定律的运用</p>
 <ol>
 <li>
@@ -7166,8 +7277,8 @@ P\left(\left|\frac{S_n}{n}-p\right|\ge\varepsilon\right)
 <div class="admonition info">
 <p class="admonition-title">该定理由芬兰数学家耶尔 · 瓦尔德马 · 林德伯格（ Lindeberg ）于 20 世纪 20 年代提出。<br>法国数学家保罗 · 列维（ Levy ）几乎同时独立证明了这一定理。</p>
 </div>
-<details class="note" open="open">
-<summary>条件与结论</summary>
+<div class="admonition note">
+<p class="admonition-title">条件与结论</p>
 <p>设 <span class="arithmatex">\(X_1,X_2,\ldots\)</span> <strong>相互独立、同分布</strong>。记 <span class="arithmatex">\(E(X_i)=\mu,\qquad D(X_i)=\sigma^2, \qquad 0\lt\sigma^2\lt+\infty.\)</span></p>
 <p>令 <span class="arithmatex">\(S_n=\sum_{i=1}^nX_i\)</span>，则 <strong>标准化的和</strong></p>
 <div class="arithmatex">\[
@@ -7182,12 +7293,12 @@ P\left(\frac{S_n-n\mu}{\sigma\sqrt n}\le x\right)
 =\Phi(x),
 \]</div>
 <p>其中 <span class="arithmatex">\(\Phi\)</span> 是标准正态分布函数。</p>
-</details>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">定理只指出标准化的和依分布收敛于正态分布，并不意味着原变量服从于正态分布。<br>依分布收敛描述分布函数的收敛，不能认为 <span class="arithmatex">\(Z_n\)</span> 依概率收敛于 <span class="arithmatex">\(0\)</span>。</p>
 </div>
-<details class="example" open="open">
-<summary>和与平均值的正态近似</summary>
+<div class="supplement">
+<p class="supplement__title">和与平均值的正态近似</p>
 <p>当 <span class="arithmatex">\(n\)</span> 足够大且近似效果适当时，可以写成 <span class="arithmatex">\(S_n\approx N(n\mu,n\sigma^2),\qquad\overline X_n = \dfrac 1n S_n\approx N\left(\mu,\frac{\sigma^2}{n}\right).\)</span></p>
 <p>这里的 <span class="arithmatex">\(\approx\)</span> 表示分布近似，不是精确分布等式。相应地，</p>
 <div class="arithmatex">\[
@@ -7207,7 +7318,7 @@ P(a\lt\overline X_n\le b)
 P(|\overline X_n-\mu|\lt\varepsilon)
 \approx2\Phi\left(\frac{\sqrt n\,\varepsilon}{\sigma}\right)-1.
 \]</div>
-</details>
+</div>
 <div class="admonition tip">
 <p class="admonition-title">与大数定律的区别及适用边界</p>
 <center markdown="1">
@@ -7251,8 +7362,8 @@ P(|\overline X_n-\mu|\lt\varepsilon)
 <div class="admonition info">
 <p class="admonition-title">或称拉普拉斯（中心极限）定理。1718 年，法裔数学家亚伯拉罕 · 棣莫弗（ De Moivre ）发表的《机遇论》是概率论早期的重要著作，书中对 n 重伯努利试验的中心极限定理的特殊情况，即 <span class="arithmatex">\(p=\dfrac 12\)</span> 的情况作了讨论。1812 年，法国学者皮埃尔-西蒙 · 拉普拉斯（ Laplace ）在《概率的分析理论》一书中总结了概率论所有已经得到的成果，并将此定理推广到一般情形。</p>
 </div>
-<details class="note" open="open">
-<summary>条件与结论</summary>
+<div class="admonition note">
+<p class="admonition-title">条件与结论</p>
 <p>设 <span class="arithmatex">\(S_n\sim B(n,p)\)</span>，其中 <span class="arithmatex">\(0\lt p\lt1\)</span> 固定。则</p>
 <div class="arithmatex">\[
 \frac{S_n-np}{\sqrt{np(1-p)}}\xrightarrow{d}N(0,1).
@@ -7265,9 +7376,9 @@ P\left(\frac{S_n-np}{\sqrt{np(1-p)}}\le x\right)=\Phi(x).
 <p>因为 <span class="arithmatex">\(S_n\)</span> 可以表示为 <span class="arithmatex">\(n\)</span> 个独立同分布的示性变量之和，每个变量的期望为 <span class="arithmatex">\(p\)</span>、方差为 <span class="arithmatex">\(p(1-p)\)</span>，所以<u>该定理是独立同分布中心极限定理（列维-林德伯格定理）的特例</u>。</p>
 <p>因此，在适用的近似情形下， <span class="arithmatex">\(S_n\approx N(np,np(1-p)),\)</span> <span class="arithmatex">\(\displaystyle \frac{S_n}{n}\approx N\left(p,\frac{p(1-p)}n\right).\)</span></p>
 <p>特别地，当 <span class="arithmatex">\(p=0\)</span> 或 <span class="arithmatex">\(p=1\)</span> 时，二项分布退化为常数分布，不能使用上述含标准差分母的标准化公式。</p>
-</details>
-<details class="info" open="open">
-<summary>连续性修正</summary>
+</div>
+<div class="admonition info">
+<p class="admonition-title">连续性修正</p>
 <p>二项变量只取整数值，而正态变量连续。用正态分布近似整数区间概率时，常将端点向外扩展半个单位，这称为<strong>连续性修正</strong>。</p>
 <p>记 <span class="arithmatex">\(\mu_n=np,\qquad \sigma_n=\sqrt{np(1-p)}.\)</span></p>
 <p>对整数 <span class="arithmatex">\(r\le s\)</span>，常用公式为：</p>
@@ -7311,10 +7422,10 @@ P\left(\frac{S_n-np}{\sqrt{np(1-p)}}\le x\right)=\Phi(x).
 <li>若需要精确概率，可直接求和 <span class="arithmatex">\(\sum_{k=r}^s\binom nkp^k(1-p)^{n-k}\)</span>，或计算二项分布函数。</li>
 </ul>
 </details>
-</details>
+</div>
 <p>伯努利大数定律说明成功频率接近 <span class="arithmatex">\(p\)</span>，棣莫弗—拉普拉斯定理进一步描述成功次数及频率在各自均值附近的近似波动分布。</p>
 <h4 id="小结_2">小结<a class="headerlink" href="#小结_2" title="Permanent link">&para;</a></h4>
-<div class="admonition example">
+<div class="admonition example exercise">
 <p class="admonition-title">中心极限定理的计算</p>
 <ol>
 <li>
@@ -7374,7 +7485,7 @@ D(Y_i)=D(X_{2i}-X_{2i-1})=D(X_{2i})+D(X_{2i-1})=\dfrac 12
 </li>
 </ol>
 </div>
-<div class="admonition example">
+<div class="admonition example exercise">
 <p class="admonition-title">实际问题中中心极限定理的应用</p>
 <p>关键在于 <strong>识别出对应的随机变量和参数</strong>。</p>
 <ol>
@@ -7472,17 +7583,17 @@ P(X_1=x_1,\ldots,X_n=x_n)
 <p>设 <span class="arithmatex">\(X_1,\ldots,X_n\)</span> 为来自某总体的样本。若样本函数 <span class="arithmatex">\(T=T(X_1,\ldots,X_n)\)</span> 的表达式<strong>不含未知参数</strong>，则称 <span class="arithmatex">\(T\)</span> 为统计量。</p>
 <p>例如，样本均值 <span class="arithmatex">\(\overline X\)</span>、样本方差 <span class="arithmatex">\(S^2\)</span>、样本最大值 <span class="arithmatex">\(X_{(n)}\)</span> 都是统计量。若总体均值 <span class="arithmatex">\(\mu\)</span> 未知，则 <span class="arithmatex">\(\overline X-\mu\)</span> 含未知参数，不是统计量；但它可以参与构造后面的枢轴量。</p>
 <h4 id="常用统计量">常用统计量<a class="headerlink" href="#常用统计量" title="Permanent link">&para;</a></h4>
-<details class="note" open="open">
-<summary>样本均值</summary>
+<div class="admonition note">
+<p class="admonition-title">样本均值</p>
 <p>样本均值定义为</p>
 <div class="arithmatex">\[
 \overline X=\frac1n\sum_{i=1}^nX_i.
 \]</div>
 <p>若总体具有有限期望 <span class="arithmatex">\(\mu\)</span> 与有限方差 <span class="arithmatex">\(\sigma^2\)</span>，则 <span class="arithmatex">\(E(\overline X)=\mu,\qquad D(\overline X)=\dfrac{\sigma^2}{n}.\)</span></p>
 <p>其中方差公式利用了样本之间的独立性（<span class="arithmatex">\(D(\sum_{i=1}^n X_i) = n\sigma^2\)</span>）。<span class="arithmatex">\(\overline X\)</span> 描述样本的平均水平，也是估计总体均值最常用的统计量。</p>
-</details>
-<details class="note" open="open">
-<summary>样本方差</summary>
+</div>
+<div class="admonition note">
+<p class="admonition-title">样本方差</p>
 <p>对 <span class="arithmatex">\(n\ge2\)</span>，样本方差定义为</p>
 <div class="arithmatex">\[
 S^2=\frac1{n-1}\sum_{i=1}^n(X_i-\overline X)^2
@@ -7494,15 +7605,15 @@ S^2=\frac1{n-1}\sum_{i=1}^n(X_i-\overline X)^2
 \sum_{i=1}^n(X_i-\overline X)^2
 =\sum_{i=1}^n(X_i-\mu)^2-n(\overline X-\mu)^2,
 \]</div>
-</details>
+</div>
 <p>本章统一用 <span class="arithmatex">\(S^2\)</span> 表示分母为 <span class="arithmatex">\(n-1\)</span> 的样本方差。</p>
-<details class="note" open="open">
-<summary>样本标准差</summary>
+<div class="admonition note">
+<p class="admonition-title">样本标准差</p>
 <p>样本标准差是样本方差的非负平方根： <span class="arithmatex">\(S=\sqrt{S^2}.\)</span></p>
 <p>它与样本观测值具有相同量纲。虽然 <span class="arithmatex">\(S^2\)</span> 是 <span class="arithmatex">\(\sigma^2\)</span> 的无偏估计量，但一般 <strong>并没有</strong> <span class="arithmatex">\(E(S)=\sigma\)</span>。</p>
-</details>
-<details class="note" open="open">
-<summary>样本 k 阶原点矩</summary>
+</div>
+<div class="admonition note">
+<p class="admonition-title">样本 k 阶原点矩</p>
 <p>对正整数 <span class="arithmatex">\(k\)</span>，样本 <span class="arithmatex">\(k\)</span> 阶原点矩定义为</p>
 <div class="arithmatex">\[
 A_k=\frac1n\sum_{i=1}^nX_i^k.
@@ -7510,19 +7621,19 @@ A_k=\frac1n\sum_{i=1}^nX_i^k.
 <p>特别地，<span class="arithmatex">\(\displaystyle A_1=\overline X,\qquad A_2=\frac1n\sum_{i=1}^nX_i^2.\)</span></p>
 <p>若总体 <span class="arithmatex">\(k\)</span> 阶绝对矩有限，即 <span class="arithmatex">\(E(|X|^k)\lt+\infty\)</span>，则 <span class="arithmatex">\(E(A_k)=E(X^k), \qquad A_k\xrightarrow{P}E(X^k).\)</span></p>
 <p>后一结论来自对 <span class="arithmatex">\(X_i^k\)</span> 应用辛钦大数定律，是矩估计法的依据之一。</p>
-</details>
-<details class="note" open="open">
-<summary>样本 k 阶中心矩</summary>
+</div>
+<div class="admonition note">
+<p class="admonition-title">样本 k 阶中心矩</p>
 <p>样本 <span class="arithmatex">\(k\)</span> 阶中心矩定义为</p>
 <div class="arithmatex">\[
 M_k=\frac1n\sum_{i=1}^n(X_i-\overline X)^k.
 \]</div>
 <p>它以 <strong>样本均值</strong> 为中心，而不是以未知的总体均值为中心。特别地， <span class="arithmatex">\(M_1=0,\qquad M_2=A_2-A_1^2=\dfrac{n-1}{n}S^2.\)</span></p>
 <p>样本中心矩一般不自动具有无偏性。例如，<span class="arithmatex">\(E(M_2)=\dfrac{n-1}{n}\sigma^2\)</span>。</p>
-</details>
+</div>
 <p>以上五种统计量从不同角度反映了样本的数字特征。在统计中我们可能还会用到别的统计量。</p>
-<details class="note" open="open">
-<summary>顺序统计量</summary>
+<div class="admonition note">
+<p class="admonition-title">顺序统计量</p>
 <p>把样本从小到大排列，得到 <span class="arithmatex">\(X_{(1)}\le X_{(2)}\le\cdots\le X_{(n)},\)</span></p>
 <p>其中 <span class="arithmatex">\(X_{(k)}\)</span> 称为第 <span class="arithmatex">\(k\)</span> 个顺序统计量。特别地， <span class="arithmatex">\(\displaystyle X_{(1)}=\min_iX_i,\qquad X_{(n)}=\max_iX_i.\)</span></p>
 <p>虽然原样本 <span class="arithmatex">\(X_i\)</span> 相互独立，顺序统计量一般并不独立。</p>
@@ -7543,7 +7654,7 @@ f_{X_{(k)}}(x)
 =\frac{n!}{(k-1)!(n-k)!}
 [F(x)]^{k-1}[1-F(x)]^{n-k}f(x).
 \]</div>
-</details>
+</div>
 <div class="admonition tip">
 <p class="admonition-title">常用性质</p>
 <ul>
@@ -7576,8 +7687,8 @@ X_i\overset{\mathrm{iid}}{\sim}N(\mu,\sigma^2)
 \]</div>
 <p><span class="arithmatex">\(n\)</span> 就是未知量。</p>
 </div>
-<details class="note" open="open">
-<summary><span class="arithmatex">\(\chi^2\)</span> 分布</summary>
+<div class="admonition note">
+<p class="admonition-title"><span class="arithmatex">\(\chi^2\)</span> 分布</p>
 <p>若 <span class="arithmatex">\(Z_1,\ldots,Z_\nu\)</span> 相互独立且均服从 <span class="arithmatex">\(N(0,1)\)</span>，则</p>
 <div class="arithmatex">\[
 U=\sum_{i=1}^{\nu}Z_i^2
@@ -7593,9 +7704,9 @@ U=\sum_{i=1}^{\nu}Z_i^2
 </li>
 </ul>
 <p>自由度反映构成平方和的独立标准正态分量个数；在样本残差平方和中，估计均值会产生一个线性约束，因此常出现 <span class="arithmatex">\(n-1\)</span> 个自由度。</p>
-</details>
-<details class="note" open="open">
-<summary><span class="arithmatex">\(t\)</span> 分布</summary>
+</div>
+<div class="admonition note">
+<p class="admonition-title"><span class="arithmatex">\(t\)</span> 分布</p>
 <p>若 <span class="arithmatex">\(Z\sim N(0,1)\)</span>、<span class="arithmatex">\(U\sim\chi^2(\nu)\)</span>，且 <span class="arithmatex">\(Z,U\)</span> 相互独立，则</p>
 <div class="arithmatex">\[
 T=\frac{Z}{\sqrt{U/\nu}}\sim t(\nu).
@@ -7604,9 +7715,9 @@ T=\frac{Z}{\sqrt{U/\nu}}\sim t(\nu).
 <p>其数字特征为 <span class="arithmatex">\(E(T)=0\quad(\nu&gt;1), ~~ D(T)=\dfrac{\nu}{\nu-2}\quad(\nu&gt;2).\)</span>（注意条件）</p>
 <p>特别地，<span class="arithmatex">\(t(1)\)</span> 为标准柯西分布，数学期望不存在；当 <span class="arithmatex">\(\nu\to\infty\)</span> 时，<span class="arithmatex">\(t(\nu)\)</span> 依分布趋于 <span class="arithmatex">\(N(0,1)\)</span>。</p>
 <p>正态总体均值未知、方差也未知时，用样本标准差代替总体标准差所构造的统计量通常服从 <span class="arithmatex">\(t\)</span> 分布。</p>
-</details>
-<details class="note" open="open">
-<summary><span class="arithmatex">\(F\)</span> 分布</summary>
+</div>
+<div class="admonition note">
+<p class="admonition-title"><span class="arithmatex">\(F\)</span> 分布</p>
 <p>若 <span class="arithmatex">\(U\sim\chi^2(\nu_1)\)</span>、<span class="arithmatex">\(V\sim\chi^2(\nu_2)\)</span> 相互独立，则</p>
 <div class="arithmatex">\[
 W=\frac{U/\nu_1}{V/\nu_2}\sim F(\nu_1,\nu_2).
@@ -7627,8 +7738,8 @@ D(W)=
 \]</div>
 </li>
 </ul>
-</details>
-<div class="admonition example">
+</div>
+<div class="admonition example exercise">
 <p class="admonition-title">抽样分布的识别</p>
 <ol>
 <li>
@@ -7673,7 +7784,7 @@ X_1-1\sim N(0,1),\qquad X_2-1\sim N(0,1),
 </li>
 </ol>
 </div>
-<div class="admonition example">
+<div class="admonition example exercise">
 <p class="admonition-title">服从抽样分布的独立性条件</p>
 <p>设随机变量 <span class="arithmatex">\(X\sim N(0,1),\,Y\sim N(0,1)\)</span>，则下列结论正确的是（    ）。</p>
 <div class="exam-options" markdown="1">
@@ -7689,20 +7800,75 @@ X_1-1\sim N(0,1),\qquad X_2-1\sim N(0,1),
 <p>对于 A. B. C.，我们需要保证 <span class="arithmatex">\(X\)</span> 和 <span class="arithmatex">\(Y\)</span> 独立。</p>
 </details>
 </div>
-<details class="warning">
-<summary>分位点的统一约定</summary>
-<p>本章统一使用<strong>上侧分位点</strong>。对 <span class="arithmatex">\(0\lt\alpha\lt1\)</span>，</p>
+<h4 id="分位点">分位点<a class="headerlink" href="#分位点" title="Permanent link">&para;</a></h4>
+<p>设随机变量 <span class="arithmatex">\(X\)</span> 的分布函数为 <span class="arithmatex">\(F\)</span>。对 <span class="arithmatex">\(0\lt\alpha\lt1\)</span>，若 <span class="arithmatex">\(x_\alpha\)</span> 满足</p>
+<div class="arithmatex">\[
+P(X\le x_\alpha)=\alpha,
+\qquad\text{即}\qquad
+F(x_\alpha)=\alpha,
+\]</div>
+<p>则称 <span class="arithmatex">\(x_\alpha\)</span> 为 <span class="arithmatex">\(X\)</span> 的<strong>下侧 <span class="arithmatex">\(\alpha\)</span> 分位点</strong>；若 <span class="arithmatex">\(\xi_\alpha\)</span> 满足</p>
+<div class="arithmatex">\[
+P(X&gt;\xi_\alpha)=\alpha,
+\]</div>
+<p>则称 <span class="arithmatex">\(\xi_\alpha\)</span> 为 <span class="arithmatex">\(X\)</span> 的<strong>上侧 <span class="arithmatex">\(\alpha\)</span> 分位点</strong>。特别地，下侧 <span class="arithmatex">\(0.5\)</span> 分位点称为<strong>中位数</strong>。</p>
+<p>对连续型随机变量，若 <span class="arithmatex">\(F\)</span> 严格单调，则分位点唯一，并且</p>
+<div class="arithmatex">\[
+P(X\le\xi_\alpha)=1-\alpha,
+\qquad
+\xi_\alpha=x_{1-\alpha}.
+\]</div>
+<p>即上侧 <span class="arithmatex">\(\alpha\)</span> 分位点就是下侧 <span class="arithmatex">\(1-\alpha\)</span> 分位点。若 <span class="arithmatex">\(X\)</span> 为离散型，或分布函数存在平坦段，满足 <span class="arithmatex">\(F(x)=\alpha\)</span> 的 <span class="arithmatex">\(x\)</span> 可能不存在或不唯一；通常取满足 <span class="arithmatex">\(F(x)\ge\alpha\)</span> 的最小 <span class="arithmatex">\(x\)</span> 作为下侧分位点。本章用到的抽样分布都是连续型，下面不再区分。</p>
+<div class="admonition warning">
+<p class="admonition-title">本章统一使用上侧分位点</p>
+<p>对 <span class="arithmatex">\(0\lt\alpha\lt1\)</span>，</p>
 <div class="arithmatex">\[
 P(Z&gt;z_\alpha)=\alpha,\qquad
 P(T&gt;t_\alpha(\nu))=\alpha,\\
-\newline
 P(U&gt;\chi^2_\alpha(\nu))=\alpha,\qquad
 P(W&gt;F_\alpha(\nu_1,\nu_2))=\alpha.
 \]</div>
-<p>例如，<span class="arithmatex">\(z_{0.025}\approx1.96\)</span>。上侧概率越小，对应分位点越大。</p>
-<p>由对称性和倒数关系， <span class="arithmatex">\(z_{1-\alpha}=-z_\alpha,\qquad t_{1-\alpha}(\nu)=-t_\alpha(\nu),\)</span> <span class="arithmatex">\(F_{1-\alpha}(\nu_1,\nu_2) =\dfrac1{F_\alpha(\nu_2,\nu_1)}.\)</span></p>
-<p><span class="arithmatex">\(\chi^2\)</span> 分布与 <span class="arithmatex">\(F\)</span> 分布的左右分位点不能通过简单改变正负号获得。若软件使用下侧累计概率分位点，应输入 <span class="arithmatex">\(1-\alpha\)</span> 来获得这里的上侧 <span class="arithmatex">\(\alpha\)</span> 分位点。</p>
-</details>
+<p>等价地，<span class="arithmatex">\(\Phi(z_\alpha)=1-\alpha\)</span>。例如，<span class="arithmatex">\(z_{0.025}\approx1.96\)</span>。上侧概率越小，对应分位点越大。</p>
+<p>若软件使用下侧累计概率分位点，应输入 <span class="arithmatex">\(1-\alpha\)</span> 来获得这里的上侧 <span class="arithmatex">\(\alpha\)</span> 分位点。</p>
+</div>
+<p>由对称性和倒数关系，</p>
+<div class="arithmatex">\[
+z_{1-\alpha}=-z_\alpha,\qquad
+t_{1-\alpha}(\nu)=-t_\alpha(\nu),
+\]</div>
+<div class="arithmatex">\[
+F_{1-\alpha}(\nu_1,\nu_2)
+=\frac1{F_\alpha(\nu_2,\nu_1)}.
+\]</div>
+<p>后一式来自 <span class="arithmatex">\(\dfrac1W\sim F(\nu_2,\nu_1)\)</span>。<span class="arithmatex">\(\chi^2\)</span> 分布与 <span class="arithmatex">\(F\)</span> 分布不对称，左右分位点不能通过改变正负号获得。由 <span class="arithmatex">\(T^2\sim F(1,\nu)\)</span> 还可得到</p>
+<div class="arithmatex">\[
+t_{\alpha/2}^2(\nu)=F_\alpha(1,\nu).
+\]</div>
+<p>这是因为 <span class="arithmatex">\(|T|&gt;t_{\alpha/2}(\nu)\)</span> 与 <span class="arithmatex">\(T^2&gt;t_{\alpha/2}^2(\nu)\)</span> 是同一事件。</p>
+<p>常用的标准正态上侧分位点为</p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(\alpha\)</span></th>
+<th><span class="arithmatex">\(0.10\)</span></th>
+<th><span class="arithmatex">\(0.05\)</span></th>
+<th><span class="arithmatex">\(0.025\)</span></th>
+<th><span class="arithmatex">\(0.01\)</span></th>
+<th><span class="arithmatex">\(0.005\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(z_\alpha\)</span></td>
+<td><span class="arithmatex">\(1.282\)</span></td>
+<td><span class="arithmatex">\(1.645\)</span></td>
+<td><span class="arithmatex">\(1.960\)</span></td>
+<td><span class="arithmatex">\(2.326\)</span></td>
+<td><span class="arithmatex">\(2.576\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>区间估计与假设检验中的临界值都由分位点给出。双侧置信水平 <span class="arithmatex">\(1-\alpha\)</span> 对应 <span class="arithmatex">\(z_{\alpha/2}\)</span>，单侧问题对应 <span class="arithmatex">\(z_\alpha\)</span>：例如 <span class="arithmatex">\(95\%\)</span> 双侧区间使用 <span class="arithmatex">\(1.96\)</span>，而 <span class="arithmatex">\(95\%\)</span> 单侧检验使用 <span class="arithmatex">\(1.645\)</span>。</p>
 <h4 id="正态总体下的常用结论">正态总体下的常用结论<a class="headerlink" href="#正态总体下的常用结论" title="Permanent link">&para;</a></h4>
 <div class="admonition tip">
 <p class="admonition-title">① 单个正态总体</p>
@@ -7766,7 +7932,7 @@ S_p^2=
 \]</div>
 </div>
 </div>
-<div class="admonition example">
+<div class="admonition example exercise">
 <p class="admonition-title">习题</p>
 <ol>
 <li>
@@ -7838,8 +8004,8 @@ D(S_2^2)\lt D(S_1^2)\lt D(S_Y^2)\lt D(S_X^2).
 <p>同一个参数可以有不同估计量。例如，估计 <span class="arithmatex">\(U(0,\theta)\)</span> 的上端点时，可以考虑 <span class="arithmatex">\(2\overline X\)</span> 或样本最大值 <span class="arithmatex">\(X_{(n)}\)</span>，但它们的偏差、方差等性质不同。</p>
 <p>构造估计量的方法，与评价估计量好坏的标准，是两个不同的问题。</p>
 <h4 id="方法">方法<a class="headerlink" href="#方法" title="Permanent link">&para;</a></h4>
-<details class="note" open="open">
-<summary>矩估计法</summary>
+<div class="admonition note">
+<p class="admonition-title">矩估计法</p>
 <p>矩估计法用样本矩代替总体矩，并解出未知参数。</p>
 <p>若总体含 <span class="arithmatex">\(r\)</span> 个未知参数 <span class="arithmatex">\(\theta_1,\ldots,\theta_r\)</span>，可选择 <span class="arithmatex">\(r\)</span> 个存在的总体矩，建立方程 <span class="arithmatex">\(E_\theta(X^k)=A_k,\qquad k=1,\ldots,r,\)</span></p>
 <p>再求解得到矩估计量。所选矩应足以识别参数，方程的解还应满足参数空间的限制。</p>
@@ -7854,9 +8020,9 @@ D(S_2^2)\lt D(S_1^2)\lt D(S_Y^2)\lt D(S_X^2).
 \]</div>
 <p>这里的方差矩估计使用分母 <span class="arithmatex">\(n\)</span>，与分母为 <span class="arithmatex">\(n-1\)</span> 的无偏样本方差 <span class="arithmatex">\(S^2\)</span> 不同。</p>
 <p>若 <span class="arithmatex">\(X\sim U(0,\theta)\)</span>、<span class="arithmatex">\(\theta&gt;0\)</span>，由 <span class="arithmatex">\(E(X)=\theta/2\)</span>，可得 <span class="arithmatex">\(\widehat\theta_{\mathrm{MM}}=2\overline X\)</span>。</p>
-</details>
-<details class="note" open="open">
-<summary>最大似然估计法</summary>
+</div>
+<div class="admonition note">
+<p class="admonition-title">最大似然估计法</p>
 <p>给定样本观测值 <span class="arithmatex">\(x_1,\ldots,x_n\)</span>，将样本联合概率或联合密度视为参数 <span class="arithmatex">\(\theta\)</span> 的函数，称为<strong>似然函数</strong>：</p>
 <p><center markdown="1">
 <span class="arithmatex">\(L(\theta)=\prod_{i=1}^np(x_i;\theta)~~\)</span> 或 <span class="arithmatex">\(~~L(\theta)=\prod_{i=1}^nf(x_i;\theta).\)</span>
@@ -7908,8 +8074,8 @@ f(x;\theta)=\frac1\theta\mathbf1_{\{0\lt x\le\theta\}},
 <p>例如，指数总体的率参数估计为 <span class="arithmatex">\(\widehat\lambda=1/\overline X\)</span>，其均值 <span class="arithmatex">\(1/\lambda\)</span> 的最大似然估计为 <span class="arithmatex">\(\overline X\)</span>。</p>
 <p>不变性不意味着变换后的估计量无偏；无偏性一般不会在非线性变换下保持。</p>
 </div>
-</details>
-<div class="admonition example">
+</div>
+<div class="admonition example exercise">
 <p class="admonition-title">习题</p>
 <ol>
 <li>
@@ -7958,6 +8124,22 @@ L(\lambda)
 <p>令 <span class="arithmatex">\(\ell'(\lambda)=0\)</span> 得驻点 <span class="arithmatex">\(\displaystyle \widehat\lambda=\frac1n\sum_{i=1}^n|x_i|\)</span>。又当 <span class="arithmatex">\(\lambda\to0^+\)</span> 或 <span class="arithmatex">\(\lambda\to+\infty\)</span> 时均有 <span class="arithmatex">\(L(\lambda)\to0\)</span>，所以该驻点就是最大值点，故</p>
 <div class="arithmatex">\[
 \widehat\lambda_{\mathrm{MLE}}=\frac1n\sum_{i=1}^n|X_i|.
+\]</div>
+</details>
+</li>
+<li>
+<p><strong>(2026 数一 22-2)</strong> 假设某种元件的寿命服从指数分布，其均值 <span class="arithmatex">\(\theta\)</span> 是未知参数。为估计 <span class="arithmatex">\(\theta\)</span>，取 <span class="arithmatex">\(n\)</span> 个这种原件同时做寿命试验，试验到出现 <span class="arithmatex">\(k~~(1\le k\le n)\)</span> 个元件失效时停止。</p>
+<p>已知 <span class="arithmatex">\(k\)</span> 个失效元件的寿命值分别为 <span class="arithmatex">\(t_1, t_2, \cdots, t_k\)</span>，且 <span class="arithmatex">\(t_1\le t_2\le \cdots \le t_k\)</span>，似然函数为 <span class="arithmatex">\(L(\theta) = \dfrac 1{\theta^k} e^{-\frac 1{\theta}[\sum_{i=1}^k t_i + (n-k)t_k]}\)</span>，求 <span class="arithmatex">\(\theta\)</span> 的最大似然估计值。</p>
+<details class="success">
+<summary>解答</summary>
+<p>取对数得 <span class="arithmatex">\(\displaystyle \ell(\theta)= -k\ln \theta -\frac{1}{\theta}\left[\sum_{i=1}^k t_i + (n-k)t_k\right]\)</span>，对其求导：</p>
+<div class="arithmatex">\[
+\ell'(\theta)
+=\frac 1k\theta+\frac{1}{\theta^2}\left[\sum_{i=1}^k t_i + (n-k)t_k\right].
+\]</div>
+<p>令 <span class="arithmatex">\(\ell'(\theta)=0\)</span> 得驻点 <span class="arithmatex">\(\displaystyle \widehat\theta=\frac1k\left[\sum_{i=1}^k t_i + (n-k)t_k\right] = \frac1k\sum_{i=1}^k t_i + \frac {n-k}{k} t_k\)</span>。又当 <span class="arithmatex">\(\theta\to0^+\)</span> 或 <span class="arithmatex">\(\theta\to+\infty\)</span> 时均有 <span class="arithmatex">\(L(\theta)\to0\)</span>，所以该驻点就是最大值点，故</p>
+<div class="arithmatex">\[
+\widehat\theta_{\mathrm{MLE}}=\frac1k\sum_{i=1}^k t_i + \frac {n-k}{k} t_k.
 \]</div>
 </details>
 </li>
@@ -8032,8 +8214,10 @@ L(N)=
 <p>则均方误差趋于 <span class="arithmatex">\(0\)</span>，从而 <span class="arithmatex">\(\widehat\theta_n\xrightarrow{P}\theta\)</span>。这是证明一致性的一个充分条件。</p>
 </div>
 </div>
-<div class="admonition example">
+<div class="admonition example exercise">
 <p class="admonition-title">习题</p>
+<ol>
+<li>
 <p>设总体 <span class="arithmatex">\(X\)</span> 的数学期望 <span class="arithmatex">\(E(X) = 0\)</span>，方差 <span class="arithmatex">\(D(X) = \sigma^2\)</span>。<span class="arithmatex">\(X_1,X_2,\cdots,X_n~(n \gt 2)\)</span> 是来自总体 <span class="arithmatex">\(X\)</span> 的简单随机样本。<span class="arithmatex">\(\overline X = \dfrac 1n \sum\limits_{i=1}^n X_i\)</span>，<span class="arithmatex">\(S^2 = \dfrac 1{n-1} \sum\limits_{i=1}^n (X_i-\overline X)^2\)</span>，则下列属于 <span class="arithmatex">\(\sigma^2\)</span> 的无偏估计量是（    ）。</p>
 <div class="exam-options" markdown="1">
 <p>A. <span class="arithmatex">\(n{\overline X}^2+S^2\)</span></p>
@@ -8045,10 +8229,20 @@ L(N)=
 <summary>解答</summary>
 <p>B.</p>
 </details>
+</li>
+<li>
+<p><strong>(2026 数一 22.1-2)</strong> 假设某种元件的寿命服从指数分布，其均值 <span class="arithmatex">\(\theta\)</span> 是未知参数。为估计 <span class="arithmatex">\(\theta\)</span>，取 <span class="arithmatex">\(n\)</span> 个这种原件同时做寿命试验，试验到出现 <span class="arithmatex">\(k~~(1\le k\le n)\)</span> 个元件失效时停止。</p>
+<p>若 <span class="arithmatex">\(k=1\)</span>，失效元件的寿命记为 <span class="arithmatex">\(T\)</span>，确定 <span class="arithmatex">\(a\)</span>，使得 <span class="arithmatex">\(\widehat{\theta}=aT\)</span> 是 <span class="arithmatex">\(\theta\)</span> 的无偏估计，并求 <span class="arithmatex">\(D(\widehat{\theta})\)</span>。</p>
+<details class="success">
+<summary>解答</summary>
+<p>在上一问我们得到了 <span class="arithmatex">\(T \sim \mathrm{Exp}(\dfrac{n}{\theta})\)</span>。所以，<span class="arithmatex">\(E(T) = \dfrac {\theta}{n},~~ D(T) = \dfrac {\theta^2}{n^2}\)</span>；<span class="arithmatex">\(E(\widehat{\theta}) = aE(T) = \dfrac{a\theta}{n}\)</span>。令 <span class="arithmatex">\(E(\widehat{\theta} = \theta)\)</span> 即得 <span class="arithmatex">\(a=n\)</span>；此时 <span class="arithmatex">\(D(\widehat{\theta} = a^2D(T) = \theta^2\)</span>。</p>
+</details>
+</li>
+</ol>
 </div>
 <h4 id="估计量的数字特征与收敛性">估计量的数字特征与收敛性<a class="headerlink" href="#估计量的数字特征与收敛性" title="Permanent link">&para;</a></h4>
-<details class="note" open="open">
-<summary>求期望与方差</summary>
+<div class="admonition note">
+<p class="admonition-title">求期望与方差</p>
 <p>将估计量看作样本函数，利用期望线性性、方差公式或其抽样分布计算。</p>
 <p>例如，若 <span class="arithmatex">\(\widehat\theta=\sum_{i=1}^na_iX_i\)</span>，样本独立同分布且 <span class="arithmatex">\(E(X_i)=\mu\)</span>、<span class="arithmatex">\(D(X_i)=\sigma^2\)</span>，则</p>
 <div class="arithmatex">\[
@@ -8058,9 +8252,9 @@ D(\widehat\theta)=\sigma^2\sum_{i=1}^na_i^2.
 \]</div>
 <p>若 <span class="arithmatex">\(\sum_i a_i=1\)</span>，则它无偏估计 <span class="arithmatex">\(\mu\)</span>。由 <span class="arithmatex">\(\displaystyle \sum_{i=1}^na_i^2\ge\frac1n,\)</span></p>
 <p>可知等权重 <span class="arithmatex">\(a_i=1/n\)</span> 对应的样本均值，在这类固定权重的线性无偏估计量中方差最小。</p>
-</details>
-<details class="note" open="open">
-<summary>验证依概率收敛</summary>
+</div>
+<div class="admonition note">
+<p class="admonition-title">验证依概率收敛</p>
 <p>常用方法包括：</p>
 <ul>
 <li>应用大数定律及依概率收敛的连续函数性质。</li>
@@ -8081,11 +8275,11 @@ P(|M_n-\theta|\ge\varepsilon)
 =\left(1-\frac{\varepsilon}{\theta}\right)^n\to0.
 \]</div>
 <p>乘以修正系数可得到无偏估计量 <span class="arithmatex">\(\frac{n+1}{n}M_n\)</span>，它也一致收敛于 <span class="arithmatex">\(\theta\)</span>。</p>
-</details>
+</div>
 <h3 id="参数的区间估计">参数的区间估计<a class="headerlink" href="#参数的区间估计" title="Permanent link">&para;</a></h3>
 <h4 id="概念_3">概念<a class="headerlink" href="#概念_3" title="Permanent link">&para;</a></h4>
-<details class="note" open="open">
-<summary>置信区间与置信水平</summary>
+<div class="admonition note">
+<p class="admonition-title">置信区间与置信水平</p>
 <p>设 <span class="arithmatex">\(L=L(X_1,\ldots,X_n)\)</span>、<span class="arithmatex">\(U=U(X_1,\ldots,X_n)\)</span> 为样本函数。若对每个参数真值 <span class="arithmatex">\(\theta\)</span>，</p>
 <div class="arithmatex">\[
 P_\theta(L\le\theta\le U)=1-\alpha,
@@ -8094,9 +8288,9 @@ P_\theta(L\le\theta\le U)=1-\alpha,
 <p>则称随机区间 <span class="arithmatex">\([L,U]\)</span> 为 <span class="arithmatex">\(\theta\)</span> 的置信水平为 <span class="arithmatex">\(1-\alpha\)</span> 的置信区间。某些构造使用覆盖概率至少为 <span class="arithmatex">\(1-\alpha\)</span> 的保守区间。</p>
 <p>抽样前，区间端点是随机的，参数 <span class="arithmatex">\(\theta\)</span> 是固定的；重复抽样并按同一规则构造区间，长期来看有约 <span class="arithmatex">\(1-\alpha\)</span> 的比例覆盖真值。</p>
 <p>样本已经观测后，得到的是一个确定区间。不能把频率学派的置信水平解释为“固定参数以 <span class="arithmatex">\(1-\alpha\)</span> 的概率落入这一个已经算出的区间”。</p>
-</details>
-<details class="note" open="open">
-<summary>枢轴量</summary>
+</div>
+<div class="admonition note">
+<p class="admonition-title">枢轴量</p>
 <p>构造置信区间的常见方法是寻找<strong>枢轴量</strong> <span class="arithmatex">\(Q(X_1,\ldots,X_n;\theta)\)</span>：它可以含未知参数，但其分布不含未知参数。</p>
 <p>具体步骤为：</p>
 <ol>
@@ -8108,10 +8302,10 @@ P_\theta(L\le\theta\le U)=1-\alpha,
 <p>例如，若 <span class="arithmatex">\(Z=\dfrac{(\overline X-\mu)}{(\sigma/\sqrt n)}\sim N(0,1)\)</span>，则 <span class="arithmatex">\(P\left(-z_{\alpha/2}\le Z\le z_{\alpha/2}\right)=1-\alpha.\)</span></p>
 <p>移项后就得到 <span class="arithmatex">\(\mu\)</span> 的双侧置信区间。</p>
 <p>在其他条件相同的情况下，提高置信水平通常会使区间变宽，增大样本量通常会使区间变窄。区间宽度反映估计精度，但比较宽度时应保持置信水平及模型条件一致。</p>
-</details>
+</div>
 <h4 id="单个正态总体均值和方差的置信区间">单个正态总体均值和方差的置信区间<a class="headerlink" href="#单个正态总体均值和方差的置信区间" title="Permanent link">&para;</a></h4>
-<details class="note" open="open">
-<summary>均值</summary>
+<div class="admonition note">
+<p class="admonition-title">均值</p>
 <ul>
 <li>
 <p><strong>总体方差已知</strong>：</p>
@@ -8144,9 +8338,9 @@ P_\theta(L\le\theta\le U)=1-\alpha,
 <p>用 <span class="arithmatex">\(t_{0.025}(15)\approx2.131\)</span>，得到约为 <span class="arithmatex">\([8.9345,11.0655]\)</span> 的区间。</p>
 </li>
 </ul>
-</details>
-<details class="note" open="open">
-<summary>方差</summary>
+</div>
+<div class="admonition note">
+<p class="admonition-title">方差</p>
 <ul>
 <li>
 <p><strong>总体均值未知</strong>：</p>
@@ -8190,7 +8384,7 @@ Q_0=\frac{\sum_{i=1}^n(X_i-\mu)^2}{\sigma^2}\sim\chi^2(n),
 <p>这里围绕已知的 <span class="arithmatex">\(\mu\)</span> 计算平方和，自由度为 <span class="arithmatex">\(n\)</span>；不能混用未知均值情形的 <span class="arithmatex">\(n-1\)</span>。</p>
 </li>
 </ul>
-</details>
+</div>
 <h3 id="假设检验">假设检验<a class="headerlink" href="#假设检验" title="Permanent link">&para;</a></h3>
 <h4 id="概念_4">概念<a class="headerlink" href="#概念_4" title="Permanent link">&para;</a></h4>
 <p>假设检验先对总体分布或参数提出一个假设，再根据样本判断是否有足够证据拒绝它。</p>
@@ -8264,8 +8458,8 @@ p_{\text{双侧}}=2[1-\Phi(|z_{\mathrm{obs}}|)].
 \]</div>
 <p>通常按 <span class="arithmatex">\(p\le\alpha\)</span> 拒绝 <span class="arithmatex">\(H_0\)</span>。<span class="arithmatex">\(p\)</span> 值不是原假设成立的概率，<span class="arithmatex">\(\alpha\)</span> 也不是某次检验结论错误的后验概率。</p>
 <h4 id="正态总体下的六大检验及拒绝域">正态总体下的六大检验及拒绝域<a class="headerlink" href="#正态总体下的六大检验及拒绝域" title="Permanent link">&para;</a></h4>
-<details class="note" open="open">
-<summary>① 单总体均值检验：方差已知（Z 检验）</summary>
+<div class="admonition note">
+<p class="admonition-title">① 单总体均值检验：方差已知（ Z 检验）</p>
 <p>设 <span class="arithmatex">\(X_i\overset{\mathrm{iid}}{\sim}N(\mu,\sigma^2)\)</span>，<span class="arithmatex">\(\sigma^2\)</span> 已知，检验基准为 <span class="arithmatex">\(\mu_0\)</span>。使用</p>
 <div class="arithmatex">\[
 Z=\frac{\overline X-\mu_0}{\sigma/\sqrt n}.
@@ -8297,9 +8491,9 @@ Z=\frac{\overline X-\mu_0}{\sigma/\sqrt n}.
 </center>
 <hr />
 <p>例如，<span class="arithmatex">\(\mu_0=50\)</span>、<span class="arithmatex">\(\sigma=10\)</span>、<span class="arithmatex">\(n=100\)</span>、<span class="arithmatex">\(\overline x=52.5\)</span>，则 <span class="arithmatex">\(z_{\mathrm{obs}}=2.5\)</span>。在 <span class="arithmatex">\(\alpha=0.05\)</span> 的双侧检验中，<span class="arithmatex">\(2.5&gt;1.96\)</span>，因此拒绝 <span class="arithmatex">\(H_0:\mu=50\)</span>。</p>
-</details>
-<details class="note" open="open">
-<summary>② 单总体均值检验：方差未知（t 检验）</summary>
+</div>
+<div class="admonition note">
+<p class="admonition-title">② 单总体均值检验：方差未知（ t 检验）</p>
 <p>设总体正态，<span class="arithmatex">\(\sigma^2\)</span> 未知，<span class="arithmatex">\(n\ge2\)</span>。使用</p>
 <div class="arithmatex">\[
 T=\frac{\overline X-\mu_0}{S/\sqrt n}.
@@ -8330,9 +8524,9 @@ T=\frac{\overline X-\mu_0}{S/\sqrt n}.
 </table>
 </center>
 <p>这里 <span class="arithmatex">\(S^2\)</span> 的分母为 <span class="arithmatex">\(n-1\)</span>。正态性保证该 <span class="arithmatex">\(t\)</span> 分布是精确结论，而非仅由样本量较大得到的近似。</p>
-</details>
-<details class="note" open="open">
-<summary>③ 单总体方差检验（<span class="arithmatex">\(\chi^2\)</span> 检验）</summary>
+</div>
+<div class="admonition note">
+<p class="admonition-title">③ 单总体方差检验（<span class="arithmatex">\(\chi^2\)</span> 检验）</p>
 <p>设总体正态，均值未知，检验基准方差为 <span class="arithmatex">\(\sigma_0^2&gt;0\)</span>。使用</p>
 <div class="arithmatex">\[
 Q=\frac{(n-1)S^2}{\sigma_0^2}.
@@ -8363,9 +8557,9 @@ Q=\frac{(n-1)S^2}{\sigma_0^2}.
 </table>
 </center>
 <p>若总体均值 <span class="arithmatex">\(\mu\)</span> 已知，可改用 <span class="arithmatex">\(Q=\sum_i(X_i-\mu)^2/\sigma_0^2\)</span>，并把自由度改为 <span class="arithmatex">\(\nu=n\)</span>。</p>
-</details>
-<details class="note" open="open">
-<summary>④ 两总体均值差检验：两方差已知（Z 检验）</summary>
+</div>
+<div class="admonition note">
+<p class="admonition-title">④ 两总体均值差检验：两方差已知（ Z 检验）</p>
 <p>设两个总体均为正态，两组样本相互独立，方差 <span class="arithmatex">\(\sigma_1^2,\sigma_2^2\)</span> 已知。检验均值差基准 <span class="arithmatex">\(\Delta_0\)</span>，使用</p>
 <div class="arithmatex">\[
 Z=
@@ -8398,9 +8592,9 @@ Z=
 </table>
 </center>
 <p>检验两个均值是否相等时，取 <span class="arithmatex">\(\Delta_0=0\)</span>。两组样本的独立性不能省略；配对数据需要按差值样本等相应模型处理。</p>
-</details>
-<details class="note" open="open">
-<summary>⑤ 两总体均值差检验：两方差未知但相等（合并 t 检验）</summary>
+</div>
+<div class="admonition note">
+<p class="admonition-title">⑤ 两总体均值差检验：两方差未知但相等（合并 t 检验）</p>
 <p>设两个正态总体具有共同的未知方差 <span class="arithmatex">\(\sigma^2\)</span>，两组样本相互独立，<span class="arithmatex">\(n_1,n_2\ge2\)</span>。令</p>
 <div class="arithmatex">\[
 S_p^2=
@@ -8439,9 +8633,9 @@ T=
 <div class="admonition warning">
 <p class="admonition-title">方差未知并不等于方差相等。若不满足等方差假设，不能直接使用这个合并方差公式及其自由度。</p>
 </div>
-</details>
-<details class="note" open="open">
-<summary>⑥ 两总体方差比检验（F 检验）</summary>
+</div>
+<div class="admonition note">
+<p class="admonition-title">⑥ 两总体方差比检验（ F 检验）</p>
 <p>设两个正态总体的均值未知，两组样本相互独立。检验方差比基准 <span class="arithmatex">\(r_0=\dfrac{\sigma_1^2}{\sigma_2^2}&gt;0,\)</span></p>
 <p>其中 <span class="arithmatex">\(r_0\)</span> 表示原假设规定的数值。使用</p>
 <div class="arithmatex">\[
@@ -8479,7 +8673,7 @@ F_{\mathrm{stat}}\sim F(\nu_1,\nu_2),
 </table>
 </center>
 <p>检验两方差是否相等时取 <span class="arithmatex">\(r_0=1\)</span>。分子对应第一总体、分母对应第二总体；若交换分子分母，应同时交换自由度、变换方差比及备择方向。</p>
-</details>
+</div>
 <div class="admonition tip">
 <p class="admonition-title">检验与置信区间的联系</p>
 <p>对同一模型、同一枢轴量及相匹配的双侧检验，显著性水平 <span class="arithmatex">\(\alpha\)</span> 的检验与置信水平 <span class="arithmatex">\(1-\alpha\)</span> 的区间互相对应： <span class="arithmatex">\(\theta_0\text{ 不在相应置信区间内} \iff \text{拒绝 }H_0:\theta=\theta_0.\)</span></p>
@@ -8520,8 +8714,8 @@ F_{\mathrm{stat}}\sim F(\nu_1,\nu_2),
 </tbody>
 </table>
 </center>
-<details class="note" open="open">
-<summary>第二类错误概率的计算</summary>
+<div class="admonition note">
+<p class="admonition-title">第二类错误概率的计算</p>
 <p>计算 <span class="arithmatex">\(\beta\)</span> 时，先确定“不拒绝域”，再把统计量放到备择假设下的真实分布中计算概率。不能继续把它当成原假设下的标准分布。</p>
 <p>例如，正态总体方差 <span class="arithmatex">\(\sigma^2\)</span> 已知，检验 <span class="arithmatex">\(H_0:\mu=\mu_0\)</span> 对 <span class="arithmatex">\(H_1:\mu\ne\mu_0\)</span>。双侧 <span class="arithmatex">\(Z\)</span> 检验的不拒绝域为</p>
 <div class="arithmatex">\[
@@ -8539,7 +8733,7 @@ b=\mu_0+z_{\alpha/2}\frac{\sigma}{\sqrt n}.
 \]</div>
 <p>在固定样本量、模型和通常的检验形式下，降低 <span class="arithmatex">\(\alpha\)</span> 会缩小拒绝域，往往使 <span class="arithmatex">\(\beta\)</span> 增大。增加样本量则通常可以在保持 <span class="arithmatex">\(\alpha\)</span> 不变时降低特定备择下的 <span class="arithmatex">\(\beta\)</span>，提高功效。</p>
 <p>因此，“显著性水平更低”不等于检验在所有方面都更好；还要结合样本量和需要识别的参数偏离程度。</p>
-</details>
+</div>
 
 
 
@@ -8624,6 +8818,7 @@ b=\mu_0+z_{\alpha/2}\frac{\sigma}{\sqrt n}.
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["toc.follow", "content.code.copy", "search.share", "search.suggest", "search.highlight", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
+  
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../javascripts/fonts.js"></script>
@@ -8631,5 +8826,9 @@ b=\mu_0+z_{\alpha/2}\frac{\sigma}{\sqrt n}.
         <script src="../../javascripts/katex.js"></script>
       
     
+  
+  <script src="../../javascripts/exercise-view.js"></script>
+  
+
   </body>
 </html>

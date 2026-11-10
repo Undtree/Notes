@@ -29,6 +29,7 @@
       
     
     
+  
       <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
@@ -73,6 +74,8 @@
 
 
     
+  
+
     
       
     
@@ -2471,6 +2474,8 @@
           
         
       
+        
+      
     
     
     
@@ -2503,6 +2508,11 @@
 
             </a>
             
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
           </div>
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
@@ -2516,6 +2526,34 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Web/cn/cn_intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    计算机网络概述
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -3827,7 +3865,7 @@
 <tr>
 <td>相联存取</td>
 <td>按内容或内容特征查找，而非直接给出存储地址</td>
-<td><a href="#快表tlb">TLB</a> 等高速查找部件</td>
+<td><a href="#快表">TLB</a> 等高速查找部件</td>
 </tr>
 </tbody>
 </table>
@@ -4751,14 +4789,14 @@ T_{\mathrm{avg}}=T_1+m_1(T_2+m_2P_m).
 <p>在 <strong>单级页表位于主存、页表访问不经 Cache、一次数据块调入计作一次主存访问、不计其他更新和写回开销</strong> 的简化模型中，前四种情况分别需要 0、1、1、2 次主存访问；缺页还需要访问辅存。Cache 缺失由硬件处理，缺页由操作系统处理， TLB 缺失则可由硬件或软件处理。</p>
 <div class="admonition note">
 <p class="admonition-title">三种缺失发生在不同层次</p>
-<p>一次访问分别检查 <a href="#快表tlb">TLB 映射</a>、<a href="#读访问与命中">Cache 数据块</a>和<a href="#缺页处理">页面驻留</a>。一个页通常包含多个 Cache 块，所以跨入新块时，页号及其 TLB 映射可能保持不变。</p>
+<p>一次访问分别检查 <a href="#快表">TLB 映射</a>、<a href="#读访问与命中">Cache 数据块</a>和<a href="#缺页处理">页面驻留</a>。一个页通常包含多个 Cache 块，所以跨入新块时，页号及其 TLB 映射可能保持不变。</p>
 </div>
 <h3 id="段式虚拟存储器">段式虚拟存储器<a class="headerlink" href="#段式虚拟存储器" title="Permanent link">&para;</a></h3>
 <p><strong>段</strong> 按程序逻辑结构划分，例如代码段、数据段，各段长度可以不同。虚拟地址由 <strong>段号 + 段内偏移</strong> 构成，段表保存段的起始地址、长度和驻留状态等信息。CPU 用段号定位段表项，检查偏移是否小于段长且该段已驻留，然后形成</p>
 <div class="arithmatex">\[
 \mathrm{PA}=\text{段基地址}+\text{段内偏移}.
 \]</div>
-<p>分段通过 <strong>基址与偏移相加</strong> 形成地址，分页则替换页号并保留页内偏移。可变长度段便于按逻辑模块共享、保护和修改，但需要连续空间，分配与回收容易留下 <strong>外部碎片</strong>；分页的固定划分则通常对应用程序员透明。段表结构、共享与保护的管理细节见<a href="../../OS/memory/#基本分段存储管理">基本分段存储管理</a>。</p>
+<p>分段通过 <strong>基址与偏移相加</strong> 形成地址，分页则替换页号并保留页内偏移。可变长度段便于按逻辑模块共享、保护和修改，但需要连续空间，分配与回收容易留下 <strong>外部碎片</strong>；分页的固定划分则通常对应用程序员透明。段表结构、共享与保护的管理细节见<a href="../../OS/memory/#基本分段存储管理-">基本分段存储管理</a>。</p>
 <h3 id="段页式虚拟存储器">段页式虚拟存储器<a class="headerlink" href="#段页式虚拟存储器" title="Permanent link">&para;</a></h3>
 <p>段页式先按逻辑结构分段，再把每段划分为固定大小的页；主存仍按帧分配，调入调出以页为单位。每个程序有一个段表，每段有自己的页表，虚拟地址由 <strong>段号 + 段内页号 + 页内偏移</strong> 构成：</p>
 <ol>
@@ -4887,6 +4925,7 @@ T_{\mathrm{avg}}=T_1+m_1(T_2+m_2P_m).
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["toc.follow", "content.code.copy", "search.share", "search.suggest", "search.highlight", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
+  
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../../javascripts/fonts.js"></script>
@@ -4894,5 +4933,7 @@ T_{\mathrm{avg}}=T_1+m_1(T_2+m_2P_m).
         <script src="../../../javascripts/katex.js"></script>
       
     
+  
+
   </body>
 </html>
