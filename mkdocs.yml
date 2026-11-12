@@ -46,6 +46,12 @@ nav:
     - 计算机网络:
       - Web/cn/index.md
       - 计算机网络概述: Web/cn/cn_intro.md
+      - 物理层: Web/cn/physical.md
+      - 数据链路层: Web/cn/datalink.md
+      - 介质访问控制子层: Web/cn/MAC.md
+      - 网络层: Web/cn/network.md
+      - 传输层: Web/cn/transport.md
+      - 应用层: Web/cn/application.md
 
   # - 安全:
     # - 密码学: Security/Crypto.md
