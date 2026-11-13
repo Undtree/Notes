@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="580" viewBox="0 0 1080 580" role="img" aria-labelledby="title desc">
+  <title id="title">电路交换、报文交换与分组交换</title>
+  <desc id="desc">时间向下，数据从 A 经 B、C 到 D。电路交换先建立连接，再连续传送报文，最后释放连接；报文交换在每一跳收齐整份报文后转发；分组交换收齐一个分组即可转发，各跳形成流水线。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#4051b5"/>
+    </marker>
+    <style>
+      text { fill: #1a237e; font-family: "Source Han Sans SC", "Noto Sans SC", "Microsoft YaHei", sans-serif; font-size: 22px; text-anchor: middle; }
+      .heading { font-size: 27px; font-weight: 700; }
+      .node { font-family: "Times New Roman", Times, serif; font-size: 25px; }
+      .axis { fill: none; stroke: #929bc1; stroke-width: 1.5; }
+      .flow { fill: none; stroke: #4051b5; stroke-width: 2.2; marker-end: url(#arrow); }
+      .data { fill: #eaf0ff; stroke: #4051b5; stroke-width: 2; stroke-linejoin: round; }
+      .bracket { fill: none; stroke: #4051b5; stroke-width: 1.5; }
+      .packet { font-family: "Times New Roman", Times, serif; font-size: 22px; }
+    </style>
+  </defs>
+  <rect width="1080" height="580" fill="#ffffff"/>
+  <text class="heading" x="272" y="42">电路交换</text>
+  <text class="heading" x="592" y="42">报文交换</text>
+  <text class="heading" x="912" y="42">分组交换</text>
+
+  <!-- 各图采用相同的时间方向、链路传播时间和报文发送时间。 -->
+  <text x="37" y="80">时间</text>
+  <path class="flow" d="M 37 100 V 520"/>
+  <g class="axis">
+    <path d="M 170 80 V 520 M 238 80 V 520 M 306 80 V 520 M 374 80 V 520"/>
+    <path d="M 490 80 V 520 M 558 80 V 520 M 626 80 V 520 M 694 80 V 520"/>
+    <path d="M 810 80 V 520 M 878 80 V 520 M 946 80 V 520 M 1014 80 V 520"/>
+  </g>
+  <g class="node">
+    <text class="node" x="170" y="552">A</text><text class="node" x="238" y="552">B</text><text class="node" x="306" y="552">C</text><text class="node" x="374" y="552">D</text>
+    <text class="node" x="490" y="552">A</text><text class="node" x="558" y="552">B</text><text class="node" x="626" y="552">C</text><text class="node" x="694" y="552">D</text>
+    <text class="node" x="810" y="552">A</text><text class="node" x="878" y="552">B</text><text class="node" x="946" y="552">C</text><text class="node" x="1014" y="552">D</text>
+  </g>
+
+  <!-- 电路交换：建立请求、确认、连续数据流、释放。 -->
+  <g class="bracket">
+    <path d="M 154 100 H 145 V 196 H 154"/>
+    <path d="M 154 212 H 145 V 372 H 154"/>
+    <path d="M 154 388 H 145 V 436 H 154"/>
+  </g>
+  <text x="94" y="156">连接建立</text>
+  <text x="94" y="300">数据传送</text>
+  <text x="94" y="420">连接释放</text>
+  <path class="flow" d="M 170 100 L 238 116"/>
+  <path class="flow" d="M 238 116 L 306 132"/>
+  <path class="flow" d="M 306 132 L 374 148"/>
+  <path class="flow" d="M 374 148 L 306 164"/>
+  <path class="flow" d="M 306 164 L 238 180"/>
+  <path class="flow" d="M 238 180 L 170 196"/>
+  <path class="data" d="M 170 212 L 374 260 V 372 L 170 324 Z"/>
+  <path class="axis" d="M 238 228 V 340 M 306 244 V 356"/>
+  <rect x="243" y="273" width="58" height="32" fill="#eaf0ff"/>
+  <text x="272" y="297">报文</text>
+  <path class="flow" d="M 248 316 L 296 327"/>
+  <path class="flow" d="M 170 388 L 238 404"/>
+  <path class="flow" d="M 238 404 L 306 420"/>
+  <path class="flow" d="M 306 420 L 374 436"/>
+
+  <!-- 报文交换：每跳发送 112 个时间单位，传播 16 个时间单位。 -->
+  <path class="data" d="M 490 100 L 558 116 V 228 L 490 212 Z"/>
+  <path class="data" d="M 558 228 L 626 244 V 356 L 558 340 Z"/>
+  <path class="data" d="M 626 356 L 694 372 V 484 L 626 468 Z"/>
+  <text x="524" y="168">报文</text>
+  <text x="592" y="296">报文</text>
+  <text x="660" y="424">报文</text>
+  <path class="flow" d="M 506 188 L 542 196"/>
+  <path class="flow" d="M 574 316 L 610 324"/>
+  <path class="flow" d="M 642 444 L 678 452"/>
+
+  <!-- 分组交换：同一报文分为四组，每组发送 28 个时间单位。 -->
+  <g class="data">
+    <path d="M 810 100 L 878 116 V 144 L 810 128 Z" fill="#dde5ff"/>
+    <path d="M 810 128 L 878 144 V 172 L 810 156 Z"/>
+    <path d="M 810 156 L 878 172 V 200 L 810 184 Z" fill="#dde5ff"/>
+    <path d="M 810 184 L 878 200 V 228 L 810 212 Z"/>
+    <path d="M 878 144 L 946 160 V 188 L 878 172 Z" fill="#dde5ff"/>
+    <path d="M 878 172 L 946 188 V 216 L 878 200 Z"/>
+    <path d="M 878 200 L 946 216 V 244 L 878 228 Z" fill="#dde5ff"/>
+    <path d="M 878 228 L 946 244 V 272 L 878 256 Z"/>
+    <path d="M 946 188 L 1014 204 V 232 L 946 216 Z" fill="#dde5ff"/>
+    <path d="M 946 216 L 1014 232 V 260 L 946 244 Z"/>
+    <path d="M 946 244 L 1014 260 V 288 L 946 272 Z" fill="#dde5ff"/>
+    <path d="M 946 272 L 1014 288 V 316 L 946 300 Z"/>
+  </g>
+  <g class="packet">
+    <text class="packet" x="844" y="130">P₁</text><text class="packet" x="844" y="158">P₂</text><text class="packet" x="844" y="186">P₃</text><text class="packet" x="844" y="214">P₄</text>
+    <text class="packet" x="912" y="174">P₁</text><text class="packet" x="912" y="202">P₂</text><text class="packet" x="912" y="230">P₃</text><text class="packet" x="912" y="258">P₄</text>
+    <text class="packet" x="980" y="218">P₁</text><text class="packet" x="980" y="246">P₂</text><text class="packet" x="980" y="274">P₃</text><text class="packet" x="980" y="302">P₄</text>
+  </g>
+</svg>

@@ -8,10 +8,10 @@
 
 !!! Note "目录"
     - [x] [概述](./cn_intro.md)
-    - [x] [物理层](./Physics.md)
-    - [x] [数据链路层](./Datalink.md)
+    - [x] [物理层](./physical.md)
+    - [x] [数据链路层](./datalink.md)
     - [x] [MAC 子层](./MAC.md)
-    - [x] [网络层](./Network.md)
-    - [x] [传输层](./Transport.md)
-    - [x] [应用层](./Application.md)
+    - [x] [网络层](./network.md)
+    - [x] [传输层](./transport.md)
+    - [x] [应用层](./application.md)
     - [x] [期末复习](./review.md)
