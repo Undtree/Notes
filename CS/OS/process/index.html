@@ -1775,6 +1775,18 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1842,6 +1854,174 @@
     
   
     计算机网络概述
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Web/cn/physical/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    物理层
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Web/cn/datalink/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据链路层
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Web/cn/MAC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    介质访问控制子层
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Web/cn/network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    网络层
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Web/cn/transport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    传输层
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Web/cn/application/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    应用层
   
 
     
@@ -2652,7 +2832,7 @@
 <p>有些时候，一些进程会对其他进程施加影响，或者受到其他进程的影响。这时我们称这样的进程是 <strong>协作进程</strong>（ cooperation process ）。“协作”一定会需要信息交换；进程通信（ inter-process communication, IPC ）就指的是进程之间的信息交换，它也支持了进程的协作。</p>
 <p>按照通信效率和数据量的不同，可以分为低级通信和高级通信两类。低级通信主要用于传递控制信息，例如 PV 操作（换句话说就是信号量， semaphores ）；高级通信用于高效传输大量数据，主要包括共享存储、消息传递和管道通信、信号（ signal ）等方式。</p>
 <blockquote>
-<p>这里我们只介绍上面提到的高级通信的几种方式，关于信号量的介绍请看<a href="">同步</a>这一节的有关内容。</p>
+<p>这里我们只介绍上面提到的高级通信的几种方式，关于信号量的介绍请看<a href="../sync/#信号量">同步</a>这一节的有关内容。</p>
 </blockquote>
 <h3 id="共享存储">共享存储<a class="headerlink" href="#共享存储" title="Permanent link">&para;</a></h3>
 <p>进程的地址空间通常是互相隔离的，一个进程不能直接访问另一个进程的内存。但我们想让进程间实现高效的数据交换，于是操作系统提供了共享存储（ shared memory ）机制：通过特殊的系统调用，创建一段 <strong>独立的内存区域</strong>，并将其 <strong>映射到多个进程的虚拟地址空间</strong>，这样这些进程都能直接读写该区域，通过该区域实现数据交换，就像一家银行中柜员和客户之间的柜台。</p>
