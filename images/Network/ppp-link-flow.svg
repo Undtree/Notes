@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="728" viewBox="0 0 800 728" role="img" aria-labelledby="title desc">
+  <title id="title">PPP 链路建立与释放流程</title>
+  <desc id="desc">物理连接建立后进行 LCP 协商。需要鉴别时，先鉴别对端，通过后进入 NCP 配置；无需鉴别时，直接进入 NCP 配置。配置完成后传送网络层分组。通信结束时，结束网络层协议的使用，由 LCP 终止链路，再释放物理连接。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#4051b5"/>
+    </marker>
+    <style>
+      text { fill: #1a237e; font-family: "Source Han Sans SC", "Noto Sans SC", "Microsoft YaHei", sans-serif; font-size: 27px; text-anchor: middle; dominant-baseline: middle; }
+      .terminal { fill: #f7f8fc; stroke: #9da8cc; stroke-width: 2; }
+      .step { fill: #eaf0ff; stroke: #4051b5; stroke-width: 2; }
+      .decision { fill: #fdf4e6; stroke: #c07f1e; stroke-width: 2; }
+      .transfer { fill: #e9f6f1; stroke: #2f9070; stroke-width: 2; }
+      .connector { fill: none; stroke: #4051b5; stroke-width: 2.5; stroke-linejoin: round; }
+      .arrow { marker-end: url(#arrow); }
+      .branch { font-size: 22px; }
+      .green { fill: #237354; }
+    </style>
+  </defs>
+  <rect width="800" height="728" fill="#fff"/>
+
+  <!-- 物理连接建立后，由 LCP 协商链路参数。 -->
+  <rect class="terminal" x="181" y="22" width="326" height="50" rx="25"/>
+  <text x="344" y="47">物理连接建立</text>
+  <path class="connector arrow" d="M 344 72 V 98"/>
+  <rect class="step" x="181" y="98" width="326" height="50" rx="8"/>
+  <text x="344" y="123">LCP 协商</text>
+  <path class="connector arrow" d="M 344 148 V 173"/>
+
+  <!-- 无需鉴别与鉴别通过的路径在 NCP 配置前汇合。 -->
+  <path class="decision" d="M 344 173 L 484 219 L 344 265 L 204 219 Z"/>
+  <text x="344" y="219">需要鉴别？</text>
+  <path class="connector arrow" d="M 484 219 H 553"/>
+  <text class="branch" x="519" y="197">是</text>
+  <rect class="step" x="553" y="192" width="200" height="54" rx="8"/>
+  <text x="653" y="219">鉴别对端</text>
+  <path class="connector" d="M 653 246 V 300 H 344"/>
+  <text class="branch" x="690" y="273">通过</text>
+  <path class="connector arrow" d="M 344 265 V 329"/>
+  <text class="branch" x="319" y="286">否</text>
+  <circle cx="344" cy="300" r="4" fill="#4051b5"/>
+
+  <rect class="step" x="181" y="329" width="326" height="54" rx="8"/>
+  <text x="344" y="356">NCP 配置</text>
+  <path class="connector arrow" d="M 344 383 V 409"/>
+  <rect class="transfer" x="181" y="409" width="326" height="54" rx="8"/>
+  <text class="green" x="344" y="436">传送网络层分组</text>
+
+  <!-- 通信结束后的释放顺序。 -->
+  <path class="connector arrow" d="M 344 463 V 489"/>
+  <rect class="step" x="181" y="489" width="326" height="54" rx="8"/>
+  <text x="344" y="516">结束网络层协议的使用</text>
+  <path class="connector arrow" d="M 344 543 V 569"/>
+  <rect class="step" x="181" y="569" width="326" height="54" rx="8"/>
+  <text x="344" y="596">LCP 终止</text>
+  <path class="connector arrow" d="M 344 623 V 649"/>
+  <rect class="terminal" x="181" y="649" width="326" height="54" rx="27"/>
+  <text x="344" y="676">物理连接释放</text>
+</svg>
