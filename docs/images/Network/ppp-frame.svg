@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="220" viewBox="0 0 1024 220" role="img" aria-labelledby="title desc">
+  <title id="title">PPP 帧格式</title>
+  <desc id="desc">未压缩的 PPP 帧按发送顺序包含起始标志、地址、控制、协议、信息字段、FCS 和结束标志。两个标志均为 1 字节，值为 0x7E。地址和控制各占 1 字节，值分别为 0xFF 和 0x03。协议字段占 2 字节，信息字段长度可变，默认 FCS 占 2 字节。</desc>
+  <style>
+    text { fill: #1a237e; font-family: "Source Han Sans SC", "Noto Sans SC", "Microsoft YaHei", sans-serif; text-anchor: middle; dominant-baseline: middle; }
+    .field { font-size: 28px; font-weight: 600; }
+    .bytes, .value { font: 24px "Cascadia Mono", Consolas, monospace; }
+    .note { font-size: 21px; }
+    .flag rect { fill: #eaf0ff; stroke: #4051b5; }
+    .header rect { fill: #f7f8fc; stroke: #9da8cc; }
+    .info rect { fill: #e9f6f1; stroke: #2f9070; }
+    .info text { fill: #237354; }
+    .fcs rect { fill: #fdf4e6; stroke: #c07f1e; }
+    .fcs text { fill: #8a5a10; }
+    g rect { stroke-width: 2; }
+  </style>
+  <rect width="1024" height="220" fill="#fff"/>
+
+  <g class="flag" transform="translate(42 26)">
+    <rect width="112" height="168" rx="8"/>
+    <text class="field" x="56" y="34">标志 F</text>
+    <text class="bytes" x="56" y="84">1 B</text>
+    <text class="value" x="56" y="132">0x7E</text>
+  </g>
+  <g class="header" transform="translate(158 26)">
+    <rect width="112" height="168" rx="8"/>
+    <text class="field" x="56" y="34">地址 A</text>
+    <text class="bytes" x="56" y="84">1 B</text>
+    <text class="value" x="56" y="132">0xFF</text>
+  </g>
+  <g class="header" transform="translate(274 26)">
+    <rect width="112" height="168" rx="8"/>
+    <text class="field" x="56" y="34">控制 C</text>
+    <text class="bytes" x="56" y="84">1 B</text>
+    <text class="value" x="56" y="132">0x03</text>
+  </g>
+  <g class="header" transform="translate(390 26)">
+    <rect width="132" height="168" rx="8"/>
+    <text class="field" x="66" y="34">协议</text>
+    <text class="bytes" x="66" y="84">2 B</text>
+    <text class="note" x="66" y="132">载荷类型</text>
+  </g>
+  <g class="info" transform="translate(526 26)">
+    <rect width="216" height="168" rx="8"/>
+    <text class="field" x="108" y="34">信息字段</text>
+    <text class="note" x="108" y="84">长度可变</text>
+    <text class="note" x="108" y="132">可含填充</text>
+  </g>
+  <g class="fcs" transform="translate(746 26)">
+    <rect width="120" height="168" rx="8"/>
+    <text class="field" x="60" y="34">FCS</text>
+    <text class="bytes" x="60" y="84">2 B</text>
+    <text class="note" x="60" y="132">差错检测</text>
+  </g>
+  <g class="flag" transform="translate(870 26)">
+    <rect width="112" height="168" rx="8"/>
+    <text class="field" x="56" y="34">标志 F</text>
+    <text class="bytes" x="56" y="84">1 B</text>
+    <text class="value" x="56" y="132">0x7E</text>
+  </g>
+</svg>

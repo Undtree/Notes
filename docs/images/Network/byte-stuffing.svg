@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="284" viewBox="0 0 1080 284" role="img" aria-labelledby="title desc">
+  <title id="title">字节填充法：发送方插入转义字节并加定界符</title>
+  <desc id="desc">原始数据为 A、B、ESC、FLAG 四个字节。发送方在每个 ESC 和 FLAG 前插入一个 ESC 完成转义，再在两端加上定界符：用 FLAG 定界时帧内容为 A、B、ESC、ESC、ESC、FLAG，两端各加一个 FLAG；也可以改用 SOH 和 EOT 定界。接收方去掉两端定界符，遇到 ESC 就把其后一个字节还原为普通数据。</desc>
+  <defs>
+    <marker id="bs-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#929bc1"/>
+    </marker>
+    <style>
+      text { fill: #1a237e; font-family: "Source Han Sans SC", "Noto Sans SC", "Microsoft YaHei", sans-serif; font-size: 16px; text-anchor: middle; }
+      .label { text-anchor: end; }
+      .byte { font-family: "Cascadia Mono", Consolas, "Courier New", monospace; font-size: 18px; font-weight: 600; }
+      .one { font-size: 19px; }
+      .callout-head { font-size: 15px; font-weight: 700; }
+      .callout-line { font-size: 14px; }
+      .data { fill: #f7f8fc; stroke: #b7bedd; stroke-width: 1.6; }
+      .stuffed { fill: #fdf4e6; stroke: #c07f1e; stroke-width: 1.8; }
+      .delim { fill: #eaf0ff; stroke: #4051b5; stroke-width: 2; }
+      .t-data { fill: #1a237e; }
+      .t-stuffed { fill: #8a5a10; }
+      .t-delim { fill: #2b3894; }
+      .box { fill: #fbfcff; stroke: #929bc1; stroke-width: 1.5; stroke-dasharray: 6 4; }
+      .connector { fill: none; stroke: #929bc1; stroke-width: 1.5; stroke-dasharray: 3 4; marker-end: url(#bs-arrow); }
+    </style>
+  </defs>
+  <rect width="1080" height="284" fill="#ffffff"/>
+
+  <!-- ① 网络层交下来的原始数据 -->
+  <text class="label" x="214" y="60">原始数据</text>
+  <rect class="data" x="230" y="28" width="72" height="46" rx="8"/>
+  <text class="byte one t-data" x="266" y="58">A</text>
+  <rect class="data" x="308" y="28" width="72" height="46" rx="8"/>
+  <text class="byte one t-data" x="344" y="58">B</text>
+  <rect class="data" x="386" y="28" width="72" height="46" rx="8"/>
+  <text class="byte t-data" x="422" y="58">ESC</text>
+  <rect class="data" x="464" y="28" width="72" height="46" rx="8"/>
+  <text class="byte t-data" x="500" y="58">FLAG</text>
+
+  <!-- ② 发送方：先插入转义字节，再加两端定界符 -->
+  <text class="label" x="214" y="152">发送方输出的帧</text>
+  <rect class="delim" x="230" y="120" width="72" height="46" rx="8"/>
+  <text class="byte t-delim" x="266" y="150">FLAG</text>
+  <rect class="data" x="308" y="120" width="72" height="46" rx="8"/>
+  <text class="byte one t-data" x="344" y="150">A</text>
+  <rect class="data" x="386" y="120" width="72" height="46" rx="8"/>
+  <text class="byte one t-data" x="422" y="150">B</text>
+  <rect class="stuffed" x="464" y="120" width="72" height="46" rx="8"/>
+  <text class="byte t-stuffed" x="500" y="150">ESC</text>
+  <rect class="data" x="542" y="120" width="72" height="46" rx="8"/>
+  <text class="byte t-data" x="578" y="150">ESC</text>
+  <rect class="stuffed" x="620" y="120" width="72" height="46" rx="8"/>
+  <text class="byte t-stuffed" x="656" y="150">ESC</text>
+  <rect class="data" x="698" y="120" width="72" height="46" rx="8"/>
+  <text class="byte t-data" x="734" y="150">FLAG</text>
+  <rect class="delim" x="776" y="120" width="72" height="46" rx="8"/>
+  <text class="byte t-delim" x="812" y="150">FLAG</text>
+
+  <!-- ③ 同一帧，改用 SOH / EOT 定界 -->
+  <text class="label" x="214" y="244">或改用 SOH / EOT</text>
+  <rect class="delim" x="230" y="212" width="72" height="46" rx="8"/>
+  <text class="byte t-delim" x="266" y="242">SOH</text>
+  <rect class="data" x="308" y="212" width="72" height="46" rx="8"/>
+  <text class="byte one t-data" x="344" y="242">A</text>
+  <rect class="data" x="386" y="212" width="72" height="46" rx="8"/>
+  <text class="byte one t-data" x="422" y="242">B</text>
+  <rect class="stuffed" x="464" y="212" width="72" height="46" rx="8"/>
+  <text class="byte t-stuffed" x="500" y="242">ESC</text>
+  <rect class="data" x="542" y="212" width="72" height="46" rx="8"/>
+  <text class="byte t-data" x="578" y="242">ESC</text>
+  <rect class="stuffed" x="620" y="212" width="72" height="46" rx="8"/>
+  <text class="byte t-stuffed" x="656" y="242">ESC</text>
+  <rect class="data" x="698" y="212" width="72" height="46" rx="8"/>
+  <text class="byte t-data" x="734" y="242">FLAG</text>
+  <rect class="delim" x="776" y="212" width="72" height="46" rx="8"/>
+  <text class="byte t-delim" x="812" y="242">EOT</text>
+
+  <!-- 接收方做逆操作：两种定界方式同样处理 -->
+  <path class="connector" d="M 856 143 H 863 V 235 H 856"/>
+  <path class="connector" d="M 863 189 H 871"/>
+  <rect class="box" x="872" y="110" width="186" height="150" rx="8"/>
+  <text class="callout-head" x="965" y="140">接收方</text>
+  <text class="callout-line" x="965" y="170">去掉两端定界符</text>
+  <text class="callout-line" x="965" y="196">遇到 ESC 时</text>
+  <text class="callout-line" x="965" y="222">把后一个字节</text>
+  <text class="callout-line" x="965" y="248">还原为普通数据</text>
+</svg>

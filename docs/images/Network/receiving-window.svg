@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="696" viewBox="0 0 1000 696" role="img" aria-labelledby="title desc">
+  <title id="title">接收窗口：窗口为 4 与窗口为 1 的对比</title>
+  <desc id="desc">上半图的接收窗口容量为 4，允许乱序缓存，使用 3 bit 序号。初始窗口为 0、1、2、3。先收到帧 1 时，将其缓存，窗口起点仍为 0。帧 0 到达后，按序交付帧 0、1，窗口前移为 2、3、4、5。下半图的接收窗口容量为 1：当前仅接受帧 2，先到的帧 3 被丢弃，窗口保持不变；帧 2 到达并交付后，窗口前移，改为仅接受帧 3。</desc>
+  <defs>
+    <marker id="rw-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#4051b5"/></marker>
+    <style>
+      text { fill: #1a237e; font-family: "Source Han Sans SC", "Noto Sans SC", "Microsoft YaHei", sans-serif; font-size: 20px; dominant-baseline: middle; }
+      .heading { font-size: 28px; font-weight: 600; }
+      .step { font-size: 22px; font-weight: 600; }
+      .window-label { font-size: 22px; font-weight: 600; text-anchor: middle; }
+      .window { fill: none; stroke: #4051b5; stroke-width: 2.5; }
+      .number { font-family: "Cascadia Mono", Consolas, monospace; font-size: 26px; font-weight: 600; text-anchor: middle; }
+      .state { font-size: 17px; text-anchor: middle; }
+      .ready rect { fill: #eaf0ff; stroke: #4051b5; }
+      .buffered rect { fill: #fdf4e6; stroke: #c07f1e; }
+      .buffered text { fill: #8a5a10; }
+      .done rect { fill: #e9f6f1; stroke: #2f9070; }
+      .done text { fill: #237354; }
+      .outside rect { fill: #f7f8fc; stroke: #b7bedd; }
+      .outside text { fill: #66708a; }
+      .cell rect { stroke-width: 1.5; }
+      .slide { fill: none; stroke: #4051b5; stroke-width: 2.5; marker-end: url(#rw-arrow); }
+    </style>
+  </defs>
+  <rect width="1000" height="696" fill="#ffffff"/>
+  <text x="32" y="36" class="heading">接收窗口为 4：允许乱序缓存</text>
+
+  <!-- 帧 1 已到达，但窗口起点的帧 0 尚未到达。 -->
+  <text x="32" y="160" class="step">① 乱序到达</text>
+  <text x="364" y="104" class="window-label">接收窗口：0～3</text>
+  <rect x="178" y="120" width="372" height="78" rx="10" class="window"/>
+  <g class="cell ready" transform="translate(184 128)"><rect width="84" height="62" rx="6"/><text x="42" y="23" class="number">0</text><text x="42" y="47" class="state">未收到</text></g>
+  <g class="cell buffered" transform="translate(276 128)"><rect width="84" height="62" rx="6"/><text x="42" y="23" class="number">1</text><text x="42" y="47" class="state">已缓存</text></g>
+  <g class="cell ready" transform="translate(368 128)"><rect width="84" height="62" rx="6"/><text x="42" y="23" class="number">2</text><text x="42" y="47" class="state">未收到</text></g>
+  <g class="cell ready" transform="translate(460 128)"><rect width="84" height="62" rx="6"/><text x="42" y="23" class="number">3</text><text x="42" y="47" class="state">未收到</text></g>
+  <g class="cell outside" transform="translate(552 128)"><rect width="84" height="62" rx="6"/><text x="42" y="23" class="number">4</text><text x="42" y="47" class="state">窗口外</text></g>
+  <g class="cell outside" transform="translate(644 128)"><rect width="84" height="62" rx="6"/><text x="42" y="23" class="number">5</text><text x="42" y="47" class="state">窗口外</text></g>
+  <g class="cell outside" transform="translate(736 128)"><rect width="84" height="62" rx="6"/><text x="42" y="23" class="number">6</text><text x="42" y="47" class="state">窗口外</text></g>
+  <g class="cell outside" transform="translate(828 128)"><rect width="84" height="62" rx="6"/><text x="42" y="23" class="number">7</text><text x="42" y="47" class="state">窗口外</text></g>
+  <text x="184" y="224">帧 1 先到：暂存，等待帧 0 补齐；窗口保持不变</text>
+
+  <path d="M 184 264 H 368" class="slide"/>
+  <text x="398" y="264">帧 0 到达，按序交付 0、1 后前移 2 格</text>
+
+  <!-- 连续帧按序交付后，释放缓存并推进接收窗口。 -->
+  <text x="32" y="354" class="step">② 补齐缺口</text>
+  <text x="548" y="298" class="window-label">接收窗口：2～5</text>
+  <rect x="362" y="314" width="372" height="78" rx="10" class="window"/>
+  <g class="cell done" transform="translate(184 322)"><rect width="84" height="62" rx="6"/><text x="42" y="23" class="number">0</text><text x="42" y="47" class="state">已交付</text></g>
+  <g class="cell done" transform="translate(276 322)"><rect width="84" height="62" rx="6"/><text x="42" y="23" class="number">1</text><text x="42" y="47" class="state">已交付</text></g>
+  <g class="cell ready" transform="translate(368 322)"><rect width="84" height="62" rx="6"/><text x="42" y="23" class="number">2</text><text x="42" y="47" class="state">未收到</text></g>
+  <g class="cell ready" transform="translate(460 322)"><rect width="84" height="62" rx="6"/><text x="42" y="23" class="number">3</text><text x="42" y="47" class="state">未收到</text></g>
+  <g class="cell ready" transform="translate(552 322)"><rect width="84" height="62" rx="6"/><text x="42" y="23" class="number">4</text><text x="42" y="47" class="state">未收到</text></g>
+  <g class="cell ready" transform="translate(644 322)"><rect width="84" height="62" rx="6"/><text x="42" y="23" class="number">5</text><text x="42" y="47" class="state">未收到</text></g>
+  <g class="cell outside" transform="translate(736 322)"><rect width="84" height="62" rx="6"/><text x="42" y="23" class="number">6</text><text x="42" y="47" class="state">窗口外</text></g>
+  <g class="cell outside" transform="translate(828 322)"><rect width="84" height="62" rx="6"/><text x="42" y="23" class="number">7</text><text x="42" y="47" class="state">窗口外</text></g>
+  <text x="184" y="416">0、1 已交付；新窗口等待 2、3、4、5</text>
+
+  <!-- 窗口为 1 时，后续新帧位于窗口外；只有期望帧到达才推进。 -->
+  <path d="M 32 456 H 968" fill="none" stroke="#dce1ef" stroke-width="1.5"/>
+  <text x="32" y="492" class="heading">接收窗口为 1：只接受期望帧</text>
+  <text x="226" y="538" class="window-label">期望帧 2</text>
+  <rect x="178" y="554" width="96" height="78" rx="10" class="window"/>
+  <g class="cell ready" transform="translate(184 562)"><rect width="84" height="62" rx="6"/><text x="42" y="23" class="number">2</text><text x="42" y="47" class="state">未收到</text></g>
+  <g class="cell outside" transform="translate(276 562)"><rect width="84" height="62" rx="6"/><text x="42" y="23" class="number">3</text><text x="42" y="47" class="state">窗口外</text></g>
+  <text x="184" y="662">先到帧 3：丢弃，窗口保持不变</text>
+
+  <text x="502" y="570" text-anchor="middle">收到并交付帧 2</text>
+  <path d="M 402 598 H 602" class="slide"/>
+
+  <text x="778" y="538" class="window-label">期望帧 3</text>
+  <rect x="730" y="554" width="96" height="78" rx="10" class="window"/>
+  <g class="cell done" transform="translate(644 562)"><rect width="84" height="62" rx="6"/><text x="42" y="23" class="number">2</text><text x="42" y="47" class="state">已交付</text></g>
+  <g class="cell ready" transform="translate(736 562)"><rect width="84" height="62" rx="6"/><text x="42" y="23" class="number">3</text><text x="42" y="47" class="state">未收到</text></g>
+  <text x="644" y="662">窗口前移，改为只接受帧 3</text>
+</svg>

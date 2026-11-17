@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="510" viewBox="0 0 1000 510" role="img" aria-labelledby="title desc">
+  <title id="title">停止—等待协议的正常传输</title>
+  <desc id="desc">发送方发送数据帧后等待确认。接收方收到并处理数据、准备就绪后返回确认帧。确认到达发送方后，发送方才发送下一数据帧。时间从上向下。</desc>
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#4051b5"/></marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#2f9070"/></marker>
+    <marker id="arrow-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#c07f1e"/></marker>
+    <style>
+      text { fill: #1a237e; font-family: "Source Han Sans SC", "Noto Sans SC", "Microsoft YaHei", sans-serif; font-size: 26px; text-anchor: middle; dominant-baseline: middle; }
+      .heading { font-size: 28px; font-weight: 600; }
+      .frame { font-size: 27px; font-weight: 600; }
+      .green { fill: #2f9070; }
+      .amber { fill: #8a5a10; }
+      .red { fill: #c5474c; }
+      .axis { fill: none; stroke: #4051b5; stroke-width: 2; stroke-dasharray: 7 6; opacity: .5; }
+      .data { fill: none; stroke: #4051b5; stroke-width: 3; marker-end: url(#arrow-blue); }
+      .ack { fill: none; stroke: #2f9070; stroke-width: 3; marker-end: url(#arrow-green); }
+      .retry { fill: none; stroke: #c07f1e; stroke-width: 3; marker-end: url(#arrow-amber); }
+      .bracket { fill: none; stroke: #c07f1e; stroke-width: 2.5; }
+    </style>
+  </defs>
+  <rect width="1000" height="510" fill="#ffffff"/>
+  <rect x="141" y="26" width="208" height="58" rx="10" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+  <rect x="581" y="26" width="208" height="58" rx="10" fill="#e9f6f1" stroke="#2f9070" stroke-width="2"/>
+  <text x="245" y="56" class="heading">发送方 A</text>
+  <text x="685" y="56" class="heading" style="fill:#2f9070">接收方 B</text>
+  <path class="axis" d="M 245 100 V 470"/>
+  <path class="axis" d="M 685 100 V 470"/>
+  <text x="66" y="112">时间</text>
+  <path class="data" d="M 66 143 V 462"/>
+  <path class="bracket" d="M 211 135 H 198 V 330 H 211"/>
+  <text x="133" y="234" class="amber">等待确认</text>
+  <path class="data" d="M 245 135 L 685 200"/>
+  <text x="465" y="145" class="frame">数据帧</text>
+  <rect x="671" y="200" width="28" height="58" rx="10" fill="#e9f6f1" stroke="#2f9070" stroke-width="2"/>
+  <text x="823" y="230" class="green">接收、处理</text>
+  <path class="ack" d="M 685 265 L 245 330"/>
+  <text x="465" y="276" class="frame" style="fill:#2f9070">确认帧</text>
+  <path class="data" d="M 245 375 L 685 440"/>
+  <text x="465" y="385" class="frame">下一数据帧</text>
+</svg>

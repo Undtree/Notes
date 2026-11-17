@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="976" viewBox="0 0 1000 976" role="img" aria-labelledby="title desc">
+  <title id="title">后退 N 帧协议（GBN）时序图</title>
+  <desc id="desc">时间向下。发送方连续发送帧 0 至 3，帧 1 丢失。接收方交付帧 0 并回送 ACK 0，丢弃失序到达的帧 2、3 时重复回送 ACK 0。帧 1 超时后，发送方重传帧 1、2、3，接收方依次交付并回送累计确认 ACK 3。</desc>
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#4051b5"/></marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#2f9070"/></marker>
+    <marker id="arrow-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#c07f1e"/></marker>
+    <style>
+      text { fill: #1a237e; font-family: "Source Han Sans SC", "Noto Sans SC", "Microsoft YaHei", sans-serif; font-size: 26px; text-anchor: middle; dominant-baseline: middle; }
+      .heading { font-size: 28px; font-weight: 600; }
+      .label { font-weight: 600; paint-order: stroke; stroke: #fff; stroke-width: 5; stroke-linejoin: round; }
+      .event { font-size: 24px; text-anchor: start; }
+      .green { fill: #237354; }
+      .amber { fill: #8a5a10; }
+      .red { fill: #ad3840; }
+      .axis { fill: none; stroke: #4051b5; stroke-width: 2; stroke-dasharray: 7 6; opacity: .5; }
+      .data { fill: none; stroke: #4051b5; stroke-width: 3; marker-end: url(#arrow-blue); }
+      .ack { fill: none; stroke: #2f9070; stroke-width: 3; marker-end: url(#arrow-green); }
+      .retry { fill: none; stroke: #c07f1e; stroke-width: 3; marker-end: url(#arrow-amber); }
+      .loss { fill: none; stroke: #c5474c; stroke-width: 3; stroke-dasharray: 9 5; }
+      .cross { fill: none; stroke: #c5474c; stroke-width: 4; stroke-linecap: round; }
+    </style>
+  </defs>
+  <rect width="1000" height="976" fill="#fff"/>
+  <rect x="126" y="26" width="208" height="58" rx="10" fill="#eaf0ff" stroke="#4051b5" stroke-width="2"/>
+  <rect x="551" y="26" width="208" height="58" rx="10" fill="#e9f6f1" stroke="#2f9070" stroke-width="2"/>
+  <text x="230" y="56" class="heading">发送方 A</text>
+  <text x="655" y="56" class="heading green">接收方 B</text>
+  <path class="axis" d="M 230 100 V 950 M 655 100 V 950"/>
+  <text x="48" y="112">时间</text>
+  <path class="data" d="M 48 143 V 946"/>
+
+  <!-- 首次发送与累计确认。 -->
+  <path class="data" d="M 230 130 L 655 234"/>
+  <path class="data" d="M 230 254 L 655 358"/>
+  <path class="data" d="M 230 316 L 655 420"/>
+  <path class="loss" d="M 230 192 L 445 245"/>
+  <path class="cross" d="M 436 236 L 454 254 M 454 236 L 436 254"/>
+  <path class="ack" d="M 655 234 L 230 338"/>
+  <path class="ack" d="M 655 358 L 230 462"/>
+  <path class="ack" d="M 655 420 L 230 524"/>
+  <text x="327" y="135" class="label">帧 0</text>
+  <text x="327" y="197" class="label red">帧 1</text>
+  <text x="488" y="247" class="label red">丢失</text>
+  <text x="327" y="259" class="label">帧 2</text>
+  <text x="352" y="326" class="label">帧 3</text>
+  <text x="560" y="239" class="label green">ACK 0</text>
+  <text x="560" y="363" class="label green">ACK 0</text>
+  <text x="560" y="425" class="label green">ACK 0</text>
+  <text x="684" y="234" class="event green">交付帧 0</text>
+  <text x="684" y="358" class="event red">丢弃失序帧 2</text>
+  <text x="684" y="420" class="event red">丢弃失序帧 3</text>
+
+  <!-- 最早未确认的帧超时后，批量重传。 -->
+  <path d="M 210 565 H 230" stroke="#c07f1e" stroke-width="2"/>
+  <circle cx="230" cy="565" r="5" fill="#c07f1e"/>
+  <rect x="82" y="542" width="128" height="46" rx="10" fill="#fdf4e6" stroke="#c07f1e" stroke-width="2"/>
+  <text x="146" y="565" class="amber">帧 1 超时</text>
+  <path class="retry" d="M 230 615 L 655 719"/>
+  <path class="retry" d="M 230 677 L 655 781"/>
+  <path class="retry" d="M 230 739 L 655 843"/>
+  <path class="ack" d="M 655 843 L 230 947"/>
+  <text x="350" y="625" class="label amber">重传帧 1</text>
+  <text x="350" y="687" class="label amber">重传帧 2</text>
+  <text x="350" y="749" class="label amber">重传帧 3</text>
+  <text x="530" y="853" class="label green">ACK 3（累计确认）</text>
+  <text x="684" y="719" class="event green">交付帧 1</text>
+  <text x="684" y="781" class="event green">交付帧 2</text>
+  <text x="684" y="843" class="event green">交付帧 3</text>
+</svg>
