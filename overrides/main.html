@@ -2,14 +2,14 @@
 
 {% block styles %}
   {{ super() }}
-  {% if page and page.meta.exercise_view %}
+  {% if page is defined and page.meta is defined and page.meta.exercise_view | default(false) %}
   <link rel="stylesheet" href="{{ 'stylesheets/exercise-view.css' | url }}">
   {% endif %}
 {% endblock %}
 
 {% block scripts %}
   {{ super() }}
-  {% if page and page.meta.exercise_view %}
+  {% if page is defined and page.meta is defined and page.meta.exercise_view | default(false) %}
   <script src="{{ 'javascripts/exercise-view.js' | url }}"></script>
   {% endif %}
 {% endblock %}
@@ -17,7 +17,7 @@
 {% block content %}
   {{ super() }}
 
-  {% if page and page.meta.comment != false %}
+  {% if page is defined and page.meta is defined and (page.meta.comment | default(true)) != false %}
   <!-- Giscus 评论区开始 -->
   <h2 id="__comments">评论</h2>
   <div class="giscus"></div>

@@ -1,8 +1,11 @@
 # folders
 site/
 .vscode/
+.cache/
 Archive/
 private/
 
 # files
 *.drawio
+
+deploy.ps1

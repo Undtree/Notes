@@ -74,6 +74,7 @@ nav:
     - 大学物理: sciences/Phy.md
 
 theme:
+    variant: modern
     name: material
     favicon: assets/logo/logo-round.png
     language: 'zh'
@@ -118,7 +119,6 @@ theme:
       admonition:
         tip: material/lightbulb-outline
         info: material/information-outline
-        note: material/note-outline
         success: material/check-circle-outline
         warning: material/alert-circle-outline
         danger: material/alert-octagon-outline
