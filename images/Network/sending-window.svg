@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="448" viewBox="0 0 1000 448" role="img" aria-labelledby="title desc">
+  <title id="title">发送窗口：收到确认后向前滑动</title>
+  <desc id="desc">发送窗口容量为 4，使用 3 bit 序号。发送帧 0、1 后，窗口仍为 0、1、2、3，其中 0、1 已发送未确认，2、3 尚未发送但可以发送。收到帧 0、1 的确认后，窗口前移为 2、3、4、5，0、1 移出窗口，4、5 进入可发送范围。图中两步之间没有发送新的数据帧。</desc>
+  <defs>
+    <marker id="sw-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#4051b5"/></marker>
+    <style>
+      text { fill: #1a237e; font-family: "Source Han Sans SC", "Noto Sans SC", "Microsoft YaHei", sans-serif; font-size: 20px; dominant-baseline: middle; }
+      .heading { font-size: 28px; font-weight: 600; }
+      .step { font-size: 22px; font-weight: 600; }
+      .window-label { font-size: 22px; font-weight: 600; text-anchor: middle; }
+      .window { fill: none; stroke: #4051b5; stroke-width: 2.5; }
+      .number { font-family: "Cascadia Mono", Consolas, monospace; font-size: 26px; font-weight: 600; text-anchor: middle; }
+      .state { font-size: 17px; text-anchor: middle; }
+      .ready rect { fill: #eaf0ff; stroke: #4051b5; }
+      .pending rect { fill: #fdf4e6; stroke: #c07f1e; }
+      .pending text { fill: #8a5a10; }
+      .done rect { fill: #e9f6f1; stroke: #2f9070; }
+      .done text { fill: #237354; }
+      .outside rect { fill: #f7f8fc; stroke: #b7bedd; }
+      .outside text { fill: #66708a; }
+      .cell rect { stroke-width: 1.5; }
+      .slide { fill: none; stroke: #4051b5; stroke-width: 2.5; marker-end: url(#sw-arrow); }
+    </style>
+  </defs>
+  <rect width="1000" height="448" fill="#ffffff"/>
+  <text x="32" y="36" class="heading">发送窗口</text>
+
+  <!-- 发送新帧只占用窗口内的位置；窗口边界保持不变。 -->
+  <text x="32" y="160" class="step">① 发送后</text>
+  <text x="364" y="104" class="window-label">发送窗口：0～3</text>
+  <rect x="178" y="120" width="372" height="78" rx="10" class="window"/>
+  <g class="cell pending" transform="translate(184 128)"><rect width="84" height="62" rx="6"/><text x="42" y="23" class="number">0</text><text x="42" y="47" class="state">待确认</text></g>
+  <g class="cell pending" transform="translate(276 128)"><rect width="84" height="62" rx="6"/><text x="42" y="23" class="number">1</text><text x="42" y="47" class="state">待确认</text></g>
+  <g class="cell ready" transform="translate(368 128)"><rect width="84" height="62" rx="6"/><text x="42" y="23" class="number">2</text><text x="42" y="47" class="state">可发送</text></g>
+  <g class="cell ready" transform="translate(460 128)"><rect width="84" height="62" rx="6"/><text x="42" y="23" class="number">3</text><text x="42" y="47" class="state">可发送</text></g>
+  <g class="cell outside" transform="translate(552 128)"><rect width="84" height="62" rx="6"/><text x="42" y="23" class="number">4</text><text x="42" y="47" class="state">窗口外</text></g>
+  <g class="cell outside" transform="translate(644 128)"><rect width="84" height="62" rx="6"/><text x="42" y="23" class="number">5</text><text x="42" y="47" class="state">窗口外</text></g>
+  <g class="cell outside" transform="translate(736 128)"><rect width="84" height="62" rx="6"/><text x="42" y="23" class="number">6</text><text x="42" y="47" class="state">窗口外</text></g>
+  <g class="cell outside" transform="translate(828 128)"><rect width="84" height="62" rx="6"/><text x="42" y="23" class="number">7</text><text x="42" y="47" class="state">窗口外</text></g>
+  <text x="184" y="224">窗口内：2 帧已发送、待确认 + 2 帧未发送、可发送</text>
+
+  <path d="M 184 264 H 368" class="slide"/>
+  <text x="398" y="264">收到帧 0、1 的确认，窗口前移 2 格</text>
+
+  <!-- 本例中帧 2、3 尚未发送；确认后帧 4、5 进入窗口。 -->
+  <text x="32" y="354" class="step">② 确认后</text>
+  <text x="548" y="298" class="window-label">发送窗口：2～5</text>
+  <rect x="362" y="314" width="372" height="78" rx="10" class="window"/>
+  <g class="cell done" transform="translate(184 322)"><rect width="84" height="62" rx="6"/><text x="42" y="23" class="number">0</text><text x="42" y="47" class="state">已确认</text></g>
+  <g class="cell done" transform="translate(276 322)"><rect width="84" height="62" rx="6"/><text x="42" y="23" class="number">1</text><text x="42" y="47" class="state">已确认</text></g>
+  <g class="cell ready" transform="translate(368 322)"><rect width="84" height="62" rx="6"/><text x="42" y="23" class="number">2</text><text x="42" y="47" class="state">可发送</text></g>
+  <g class="cell ready" transform="translate(460 322)"><rect width="84" height="62" rx="6"/><text x="42" y="23" class="number">3</text><text x="42" y="47" class="state">可发送</text></g>
+  <g class="cell ready" transform="translate(552 322)"><rect width="84" height="62" rx="6"/><text x="42" y="23" class="number">4</text><text x="42" y="47" class="state">可发送</text></g>
+  <g class="cell ready" transform="translate(644 322)"><rect width="84" height="62" rx="6"/><text x="42" y="23" class="number">5</text><text x="42" y="47" class="state">可发送</text></g>
+  <g class="cell outside" transform="translate(736 322)"><rect width="84" height="62" rx="6"/><text x="42" y="23" class="number">6</text><text x="42" y="47" class="state">窗口外</text></g>
+  <g class="cell outside" transform="translate(828 322)"><rect width="84" height="62" rx="6"/><text x="42" y="23" class="number">7</text><text x="42" y="47" class="state">窗口外</text></g>
+  <text x="184" y="416">0、1 移出窗口；4、5 进入可发送范围</text>
+</svg>

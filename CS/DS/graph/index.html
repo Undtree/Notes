@@ -11,6 +11,7 @@
         <link rel="canonical" href="https://undtree.github.io/Notes/CS/DS/graph/">
       
       
+      
         <link rel="prev" href="../trees/">
       
       
@@ -21,7 +22,7 @@
       
       
       <link rel="icon" href="../../../assets/logo/logo-round.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="zensical-0.1.1">
     
     
       
@@ -30,10 +31,15 @@
     
     
   
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      <link rel="stylesheet" href="../../../assets/stylesheets/modern/main.ebb7f775.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/modern/palette.b60ce83d.min.css">
       
       
   
@@ -69,7 +75,7 @@
     
   
   
-  <style>:root{--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M12%202a7%207%200%200%201%207%207c0%202.38-1.19%204.47-3%205.74V17a1%201%200%200%201-1%201H9a1%201%200%200%201-1-1v-2.26C6.19%2013.47%205%2011.38%205%209a7%207%200%200%201%207-7M9%2021v-1h6v1a1%201%200%200%201-1%201h-4a1%201%200%200%201-1-1m3-17a5%205%200%200%200-5%205c0%202.05%201.23%203.81%203%204.58V16h4v-2.42c1.77-.77%203-2.53%203-4.58a5%205%200%200%200-5-5%22/%3E%3C/svg%3E');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M11%209h2V7h-2m1%2013c-4.41%200-8-3.59-8-8s3.59-8%208-8%208%203.59%208%208-3.59%208-8%208m0-18A10%2010%200%200%200%202%2012a10%2010%200%200%200%2010%2010%2010%2010%200%200%200%2010-10A10%2010%200%200%200%2012%202m-1%2015h2v-6h-2z%22/%3E%3C/svg%3E');--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M14%2010h5.5L14%204.5zM5%203h10l6%206v10a2%202%200%200%201-2%202H5a2%202%200%200%201-2-2V5c0-1.11.89-2%202-2m0%202v14h14v-7h-7V5z%22/%3E%3C/svg%3E');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M12%202C6.5%202%202%206.5%202%2012s4.5%2010%2010%2010%2010-4.5%2010-10S17.5%202%2012%202m0%2018c-4.41%200-8-3.59-8-8s3.59-8%208-8%208%203.59%208%208-3.59%208-8%208m4.59-12.42L10%2014.17l-2.59-2.58L6%2013l4%204%208-8z%22/%3E%3C/svg%3E');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M11%2015h2v2h-2zm0-8h2v6h-2zm1-5C6.47%202%202%206.5%202%2012a10%2010%200%200%200%2010%2010%2010%2010%200%200%200%2010-10A10%2010%200%200%200%2012%202m0%2018a8%208%200%200%201-8-8%208%208%200%200%201%208-8%208%208%200%200%201%208%208%208%208%200%200%201-8%208%22/%3E%3C/svg%3E');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M8.27%203%203%208.27v7.46L8.27%2021h7.46C17.5%2019.24%2021%2015.73%2021%2015.73V8.27L15.73%203M9.1%205h5.8L19%209.1v5.8L14.9%2019H9.1L5%2014.9V9.1m6%205.9h2v2h-2zm0-8h2v6h-2z%22/%3E%3C/svg%3E');}</style>
+  <style>:root{--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M8.27%203%203%208.27v7.46L8.27%2021h7.46C17.5%2019.24%2021%2015.73%2021%2015.73V8.27L15.73%203M9.1%205h5.8L19%209.1v5.8L14.9%2019H9.1L5%2014.9V9.1m6%205.9h2v2h-2zm0-8h2v6h-2z%22/%3E%3C/svg%3E');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M11%209h2V7h-2m1%2013c-4.41%200-8-3.59-8-8s3.59-8%208-8%208%203.59%208%208-3.59%208-8%208m0-18A10%2010%200%200%200%202%2012a10%2010%200%200%200%2010%2010%2010%2010%200%200%200%2010-10A10%2010%200%200%200%2012%202m-1%2015h2v-6h-2z%22/%3E%3C/svg%3E');--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M14%2010h5.5L14%204.5zM5%203h10l6%206v10a2%202%200%200%201-2%202H5a2%202%200%200%201-2-2V5c0-1.11.89-2%202-2m0%202v14h14v-7h-7V5z%22/%3E%3C/svg%3E');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M12%202C6.5%202%202%206.5%202%2012s4.5%2010%2010%2010%2010-4.5%2010-10S17.5%202%2012%202m0%2018c-4.41%200-8-3.59-8-8s3.59-8%208-8%208%203.59%208%208-3.59%208-8%208m4.59-12.42L10%2014.17l-2.59-2.58L6%2013l4%204%208-8z%22/%3E%3C/svg%3E');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M12%202a7%207%200%200%201%207%207c0%202.38-1.19%204.47-3%205.74V17a1%201%200%200%201-1%201H9a1%201%200%200%201-1-1v-2.26C6.19%2013.47%205%2011.38%205%209a7%207%200%200%201%207-7M9%2021v-1h6v1a1%201%200%200%201-1%201h-4a1%201%200%200%201-1-1m3-17a5%205%200%200%200-5%205c0%202.05%201.23%203.81%203%204.58V16h4v-2.42c1.77-.77%203-2.53%203-4.58a5%205%200%200%200-5-5%22/%3E%3C/svg%3E');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M11%2015h2v2h-2zm0-8h2v6h-2zm1-5C6.47%202%202%206.5%202%2012a10%2010%200%200%200%2010%2010%2010%2010%200%200%200%2010-10A10%2010%200%200%200%2012%202m0%2018a8%208%200%200%201-8-8%208%208%200%200%201%208-8%208%208%200%200%201%208%208%208%208%200%200%201-8%208%22/%3E%3C/svg%3E');}</style>
 
 
 
@@ -82,8 +88,6 @@
     
       
     
-    
-      <link rel="stylesheet" href="../../../css/timeline.css">
     
       <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
@@ -91,7 +95,7 @@
     
       <link rel="stylesheet" href="../../../stylesheets/404.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
     
       
 
@@ -112,14 +116,11 @@
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" for="__drawer"></label>
+    <label class="md-overlay" for="__drawer" aria-hidden="true"></label>
     <div data-md-component="skip">
-      
-        
-        <a href="#图论" class="md-skip">
-          跳转至
-        </a>
-      
+      <a href="#__skip" class="md-skip">
+        跳转至
+      </a>
     </div>
     <div data-md-component="announce">
       
@@ -130,7 +131,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../.." title="Undertree&#39;s 小站" class="md-header__button md-logo" aria-label="Undertree's 小站" data-md-component="logo">
+    <a href="../../.." title="Undertree&#x27;s 小站" class="md-header__button md-logo" aria-label="Undertree's 小站" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4zM3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7zm2-2v2h2V5zm0 14h2v-2H5zm0-6h2v-2H5z"/></svg>
@@ -138,7 +139,8 @@
     </a>
     <label class="md-header__button md-icon" for="__drawer">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+      <span class="md-visually-hidden">导航栏</span>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -202,62 +204,29 @@
       
         <label class="md-header__button md-icon" for="__search">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+          <span class="md-visually-hidden">查找</span>
         </label>
-        <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="查找">
-        
-          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
-            
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
-          </a>
-        
-        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
-        </button>
-      </nav>
-      
-        <div class="md-search__suggest" data-md-component="search-suggest"></div>
-      
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
-            正在初始化搜索引擎
-          </div>
-          <ol class="md-search-result__list" role="presentation"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="查找">
+  <button type="button" class="md-search__button">
+    查找
+  </button>
 </div>
       
     
-    
-      <div class="md-header__source">
+    <div class="md-header__source">
+      
         <a href="https://github.com/Undtree/Notes/" title="前往仓库" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
     Undtree/Notes
   </div>
 </a>
-      </div>
-    
+      
+    </div>
   </nav>
   
 </header>
@@ -281,9 +250,6 @@
       <a href="../../.." class="md-tabs__link">
         
   
-  
-    
-  
   主页
 
       </a>
@@ -299,15 +265,29 @@
   
   
     
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
     
       <li class="md-tabs__item md-tabs__item--active">
         <a href="../../" class="md-tabs__link">
           
-  
-  
-    
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 16H3V4h18m0-2H3c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h7v2H8v2h8v-2h-2v-2h7a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2"/></svg>
-    
   
   计算机科学
 
@@ -323,15 +303,21 @@
   
   
     
+      
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
     
       <li class="md-tabs__item">
         <a href="../../../Web/" class="md-tabs__link">
           
-  
-  
-    
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 2c-1.11 0-2 .89-2 2v3c0 1.11.89 2 2 2h1v2H2v2h4v2H5c-1.11 0-2 .89-2 2v3c0 1.11.89 2 2 2h4c1.11 0 2-.89 2-2v-3c0-1.11-.89-2-2-2H8v-2h8v2h-1c-1.11 0-2 .89-2 2v3c0 1.11.89 2 2 2h4c1.11 0 2-.89 2-2v-3c0-1.11-.89-2-2-2h-1v-2h4v-2h-9V9h1c1.11 0 2-.89 2-2V4c0-1.11-.89-2-2-2zm0 2h4v3h-4zM5 17h4v3H5zm10 0h4v3h-4z"/></svg>
-    
   
   Web 相关
 
@@ -347,15 +333,19 @@
   
   
     
+      
+      
+        
+          
+        
+      
+    
+    
+    
     
       <li class="md-tabs__item">
         <a href="../../../AI/" class="md-tabs__link">
           
-  
-  
-    
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.33 12.91c.09 1.55-.62 3.04-1.89 3.95l.77 1.49c.23.45.26.98.06 1.45-.19.47-.58.84-1.06 1l-.79.25a1.687 1.687 0 0 1-1.86-.55L14.44 18c-.89-.15-1.73-.53-2.44-1.1-.5.15-1 .23-1.5.23-.88 0-1.76-.27-2.5-.79-.53.16-1.07.23-1.62.22-.79.01-1.57-.15-2.3-.45a4.1 4.1 0 0 1-2.43-3.61c-.08-.72.04-1.45.35-2.11-.29-.75-.32-1.57-.07-2.33C2.3 7.11 3 6.32 3.87 5.82c.58-1.69 2.21-2.82 4-2.7 1.6-1.5 4.05-1.66 5.83-.37.42-.11.86-.17 1.3-.17 1.36-.03 2.65.57 3.5 1.64 2.04.53 3.5 2.35 3.58 4.47.05 1.11-.25 2.2-.86 3.13.07.36.11.72.11 1.09m-5-1.41c.57.07 1.02.5 1.02 1.07a1 1 0 0 1-1 1h-.63c-.32.9-.88 1.69-1.62 2.29.25.09.51.14.77.21 5.13-.07 4.53-3.2 4.53-3.25a2.59 2.59 0 0 0-2.69-2.49 1 1 0 0 1-1-1 1 1 0 0 1 1-1c1.23.03 2.41.49 3.33 1.3.05-.29.08-.59.08-.89-.06-1.24-.62-2.32-2.87-2.53-1.25-2.96-4.4-1.32-4.4-.4-.03.23.21.72.25.75a1 1 0 0 1 1 1c0 .55-.45 1-1 1-.53-.02-1.03-.22-1.43-.56-.48.31-1.03.5-1.6.56-.57.05-1.04-.35-1.07-.9a.97.97 0 0 1 .88-1.1c.16-.02.94-.14.94-.77 0-.66.25-1.29.68-1.79-.92-.25-1.91.08-2.91 1.29C6.75 5 6 5.25 5.45 7.2 4.5 7.67 4 8 3.78 9c1.08-.22 2.19-.13 3.22.25.5.19.78.75.59 1.29-.19.52-.77.78-1.29.59-.73-.32-1.55-.34-2.3-.06-.32.27-.32.83-.32 1.27 0 .74.37 1.43 1 1.83.53.27 1.12.41 1.71.4q-.225-.39-.39-.81a1.038 1.038 0 0 1 1.96-.68c.4 1.14 1.42 1.92 2.62 2.05 1.37-.07 2.59-.88 3.19-2.13.23-1.38 1.34-1.5 2.56-1.5m2 7.47-.62-1.3-.71.16 1 1.25zm-4.65-8.61a1 1 0 0 0-.91-1.03c-.71-.04-1.4.2-1.93.67-.57.58-.87 1.38-.84 2.19a1 1 0 0 0 1 1c.57 0 1-.45 1-1 0-.27.07-.54.23-.76.12-.1.27-.15.43-.15.55.03 1.02-.38 1.02-.92"/></svg>
-    
   
   人工智能
 
@@ -371,15 +361,27 @@
   
   
     
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
     
       <li class="md-tabs__item">
         <a href="../../../sciences/" class="md-tabs__link">
           
-  
-  
-    
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81z"/></svg>
-    
   
   数理内容
 
@@ -411,7 +413,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Undertree&#39;s 小站" class="md-nav__button md-logo" aria-label="Undertree's 小站" data-md-component="logo">
+    <a href="../../.." title="Undertree&#x27;s 小站" class="md-nav__button md-logo" aria-label="Undertree's 小站" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4zM3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7zm2-2v2h2V5zm0 14h2v-2H5zm0-6h2v-2H5z"/></svg>
@@ -424,7 +426,7 @@
       <a href="https://github.com/Undtree/Notes/" title="前往仓库" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
     Undtree/Notes
@@ -448,8 +450,7 @@
   <span class="md-ellipsis">
     
   
-    主页
-  
+  主页
 
     
   </span>
@@ -513,8 +514,7 @@
   <span class="md-ellipsis">
     
   
-    计算机科学
-  
+  计算机科学
 
     
   </span>
@@ -530,21 +530,21 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    计算机科学
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
               
-            
+  
+  计算机科学
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+              
+                
+                  
   
   
     
@@ -592,8 +592,7 @@
   <span class="md-ellipsis">
     
   
-    数据结构与算法分析
-  
+  数据结构与算法分析
 
     
   </span>
@@ -609,21 +608,21 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    数据结构与算法分析
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_2_2">
+              <span class="md-nav__icon md-icon"></span>
               
-            
+  
+  数据结构与算法分析
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+              
+                
+                  
   
   
   
@@ -636,8 +635,7 @@
   <span class="md-ellipsis">
     
   
-    算法的分析
-  
+  算法的分析
 
     
   </span>
@@ -648,10 +646,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -664,8 +662,7 @@
   <span class="md-ellipsis">
     
   
-    线性数据结构
-  
+  线性数据结构
 
     
   </span>
@@ -676,10 +673,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -692,8 +689,7 @@
   <span class="md-ellipsis">
     
   
-    树形结构
-  
+  树形结构
 
     
   </span>
@@ -704,10 +700,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
     
@@ -716,7 +712,7 @@
   
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
       
       
         
@@ -729,8 +725,7 @@
   <span class="md-ellipsis">
     
   
-    图论
-  
+  图论
 
     
   </span>
@@ -740,15 +735,14 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="./" class="md-nav__link md-nav__link--active">
+      <a href="././" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    图论
-  
+  图论
 
     
   </span>
@@ -758,6 +752,7 @@
       </a>
       
         
+
 
 <nav class="md-nav md-nav--secondary" aria-label="目录">
   
@@ -775,9 +770,9 @@
         <li class="md-nav__item">
   <a href="#图的重要概念" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         图的重要概念
-      
+      </span>
     </span>
   </a>
   
@@ -787,9 +782,9 @@
           <li class="md-nav__item">
   <a href="#连通弱连通强连通" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         连通、弱连通、强连通
-      
+      </span>
     </span>
   </a>
   
@@ -798,9 +793,9 @@
           <li class="md-nav__item">
   <a href="#极大连通子图-maximal-connected-subgraph" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         极大连通子图 (Maximal Connected Subgraph)
-      
+      </span>
     </span>
   </a>
   
@@ -809,9 +804,9 @@
           <li class="md-nav__item">
   <a href="#极小连通子图-minimal-connected-subgraph" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         极小连通子图 (Minimal Connected Subgraph)
-      
+      </span>
     </span>
   </a>
   
@@ -825,9 +820,9 @@
         <li class="md-nav__item">
   <a href="#图的遍历" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         图的遍历
-      
+      </span>
     </span>
   </a>
   
@@ -837,9 +832,9 @@
           <li class="md-nav__item">
   <a href="#广度优先-breadth-first-搜索bfs" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         广度优先 (Breadth-First) 搜索，BFS
-      
+      </span>
     </span>
   </a>
   
@@ -848,9 +843,9 @@
           <li class="md-nav__item">
   <a href="#深度优先-depth-first-搜索dfs" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         深度优先 (Depth-First) 搜索，DFS
-      
+      </span>
     </span>
   </a>
   
@@ -859,9 +854,9 @@
           <li class="md-nav__item">
   <a href="#遍历与连通性" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         遍历与连通性
-      
+      </span>
     </span>
   </a>
   
@@ -875,9 +870,9 @@
         <li class="md-nav__item">
   <a href="#图的应用" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         图的应用
-      
+      </span>
     </span>
   </a>
   
@@ -887,9 +882,9 @@
           <li class="md-nav__item">
   <a href="#最小生成树" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         最小生成树
-      
+      </span>
     </span>
   </a>
   
@@ -898,9 +893,9 @@
           <li class="md-nav__item">
   <a href="#最短路算法" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         最短路算法
-      
+      </span>
     </span>
   </a>
   
@@ -909,9 +904,9 @@
           <li class="md-nav__item">
   <a href="#拓扑排序和网络流" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         拓扑排序和网络流
-      
+      </span>
     </span>
   </a>
   
@@ -929,10 +924,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -945,8 +940,7 @@
   <span class="md-ellipsis">
     
   
-    查找
-  
+  查找
 
     
   </span>
@@ -957,10 +951,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -973,8 +967,7 @@
   <span class="md-ellipsis">
     
   
-    排序
-  
+  排序
 
     
   </span>
@@ -985,18 +978,19 @@
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1044,8 +1038,7 @@
   <span class="md-ellipsis">
     
   
-    计算机组成原理
-  
+  计算机组成原理
 
     
   </span>
@@ -1061,21 +1054,21 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    计算机组成原理
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_2_3">
+              <span class="md-nav__icon md-icon"></span>
               
-            
+  
+  计算机组成原理
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+              
+                
+                  
   
   
   
@@ -1088,8 +1081,7 @@
   <span class="md-ellipsis">
     
   
-    计算机系统概述
-  
+  计算机系统概述
 
     
   </span>
@@ -1100,10 +1092,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1116,8 +1108,7 @@
   <span class="md-ellipsis">
     
   
-    数据的表示与运算
-  
+  数据的表示与运算
 
     
   </span>
@@ -1128,10 +1119,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1144,8 +1135,7 @@
   <span class="md-ellipsis">
     
   
-    存储系统
-  
+  存储系统
 
     
   </span>
@@ -1156,10 +1146,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1172,8 +1162,7 @@
   <span class="md-ellipsis">
     
   
-    指令系统
-  
+  指令系统
 
     
   </span>
@@ -1184,10 +1173,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1200,8 +1189,7 @@
   <span class="md-ellipsis">
     
   
-    中央处理器
-  
+  中央处理器
 
     
   </span>
@@ -1212,10 +1200,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1228,8 +1216,7 @@
   <span class="md-ellipsis">
     
   
-    总线
-  
+  总线
 
     
   </span>
@@ -1240,10 +1227,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1256,8 +1243,7 @@
   <span class="md-ellipsis">
     
   
-    I/O 系统
-  
+  I/O 系统
 
     
   </span>
@@ -1268,18 +1254,19 @@
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1327,8 +1314,7 @@
   <span class="md-ellipsis">
     
   
-    操作系统
-  
+  操作系统
 
     
   </span>
@@ -1344,21 +1330,21 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    操作系统
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_2_4">
+              <span class="md-nav__icon md-icon"></span>
               
-            
+  
+  操作系统
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+              
+                
+                  
   
   
   
@@ -1371,8 +1357,7 @@
   <span class="md-ellipsis">
     
   
-    概述
-  
+  概述
 
     
   </span>
@@ -1383,10 +1368,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1399,8 +1384,7 @@
   <span class="md-ellipsis">
     
   
-    进程和线程
-  
+  进程和线程
 
     
   </span>
@@ -1411,10 +1395,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1427,8 +1411,7 @@
   <span class="md-ellipsis">
     
   
-    调度
-  
+  调度
 
     
   </span>
@@ -1439,10 +1422,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1455,8 +1438,7 @@
   <span class="md-ellipsis">
     
   
-    同步
-  
+  同步
 
     
   </span>
@@ -1467,10 +1449,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1483,8 +1465,7 @@
   <span class="md-ellipsis">
     
   
-    内存管理
-  
+  内存管理
 
     
   </span>
@@ -1495,10 +1476,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1511,8 +1492,7 @@
   <span class="md-ellipsis">
     
   
-    文件管理
-  
+  文件管理
 
     
   </span>
@@ -1523,10 +1503,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1539,8 +1519,7 @@
   <span class="md-ellipsis">
     
   
-    输入输出
-  
+  输入输出
 
     
   </span>
@@ -1551,18 +1530,19 @@
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1575,8 +1555,7 @@
   <span class="md-ellipsis">
     
   
-    计算理论
-  
+  计算理论
 
     
   </span>
@@ -1587,10 +1566,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1603,8 +1582,7 @@
   <span class="md-ellipsis">
     
   
-    数据库系统
-  
+  数据库系统
 
     
   </span>
@@ -1615,10 +1593,11 @@
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
@@ -1663,8 +1642,7 @@
   <span class="md-ellipsis">
     
   
-    Web 相关
-  
+  Web 相关
 
     
   </span>
@@ -1680,21 +1658,21 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Web 相关
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3">
+              <span class="md-nav__icon md-icon"></span>
               
-            
+  
+  Web 相关
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+              
+                
+                  
   
   
   
@@ -1742,8 +1720,7 @@
   <span class="md-ellipsis">
     
   
-    计算机网络
-  
+  计算机网络
 
     
   </span>
@@ -1759,21 +1736,21 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    计算机网络
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3_2">
+              <span class="md-nav__icon md-icon"></span>
               
-            
+  
+  计算机网络
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+              
+                
+                  
   
   
   
@@ -1786,8 +1763,7 @@
   <span class="md-ellipsis">
     
   
-    计算机网络概述
-  
+  计算机网络概述
 
     
   </span>
@@ -1798,10 +1774,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1814,8 +1790,7 @@
   <span class="md-ellipsis">
     
   
-    物理层
-  
+  物理层
 
     
   </span>
@@ -1826,10 +1801,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1842,8 +1817,7 @@
   <span class="md-ellipsis">
     
   
-    数据链路层
-  
+  数据链路层
 
     
   </span>
@@ -1854,10 +1828,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1870,8 +1844,7 @@
   <span class="md-ellipsis">
     
   
-    介质访问控制子层
-  
+  介质访问控制子层
 
     
   </span>
@@ -1882,10 +1855,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1898,8 +1871,7 @@
   <span class="md-ellipsis">
     
   
-    网络层
-  
+  网络层
 
     
   </span>
@@ -1910,10 +1882,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1926,8 +1898,7 @@
   <span class="md-ellipsis">
     
   
-    传输层
-  
+  传输层
 
     
   </span>
@@ -1938,10 +1909,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1954,8 +1925,7 @@
   <span class="md-ellipsis">
     
   
-    应用层
-  
+  应用层
 
     
   </span>
@@ -1966,18 +1936,20 @@
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
@@ -2020,8 +1992,7 @@
   <span class="md-ellipsis">
     
   
-    人工智能
-  
+  人工智能
 
     
   </span>
@@ -2032,21 +2003,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    人工智能
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-          </ul>
-        </nav>
+        
       
     </li>
   
@@ -2097,8 +2054,7 @@
   <span class="md-ellipsis">
     
   
-    数理内容
-  
+  数理内容
 
     
   </span>
@@ -2114,21 +2070,21 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    数理内容
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_5">
+              <span class="md-nav__icon md-icon"></span>
               
-            
+  
+  数理内容
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+              
+                
+                  
   
   
   
@@ -2141,8 +2097,7 @@
   <span class="md-ellipsis">
     
   
-    微积分
-  
+  微积分
 
     
   </span>
@@ -2153,10 +2108,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -2169,8 +2124,7 @@
   <span class="md-ellipsis">
     
   
-    线性代数 FAQ
-  
+  线性代数 FAQ
 
     
   </span>
@@ -2181,10 +2135,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -2197,8 +2151,7 @@
   <span class="md-ellipsis">
     
   
-    概率论与数理统计
-  
+  概率论与数理统计
 
     
   </span>
@@ -2209,10 +2162,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -2225,8 +2178,7 @@
   <span class="md-ellipsis">
     
   
-    大学物理
-  
+  大学物理
 
     
   </span>
@@ -2237,10 +2189,11 @@
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
@@ -2256,8 +2209,22 @@
               
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
                   <div class="md-sidebar__inner">
                     
+
 
 <nav class="md-nav md-nav--secondary" aria-label="目录">
   
@@ -2275,9 +2242,9 @@
         <li class="md-nav__item">
   <a href="#图的重要概念" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         图的重要概念
-      
+      </span>
     </span>
   </a>
   
@@ -2287,9 +2254,9 @@
           <li class="md-nav__item">
   <a href="#连通弱连通强连通" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         连通、弱连通、强连通
-      
+      </span>
     </span>
   </a>
   
@@ -2298,9 +2265,9 @@
           <li class="md-nav__item">
   <a href="#极大连通子图-maximal-connected-subgraph" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         极大连通子图 (Maximal Connected Subgraph)
-      
+      </span>
     </span>
   </a>
   
@@ -2309,9 +2276,9 @@
           <li class="md-nav__item">
   <a href="#极小连通子图-minimal-connected-subgraph" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         极小连通子图 (Minimal Connected Subgraph)
-      
+      </span>
     </span>
   </a>
   
@@ -2325,9 +2292,9 @@
         <li class="md-nav__item">
   <a href="#图的遍历" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         图的遍历
-      
+      </span>
     </span>
   </a>
   
@@ -2337,9 +2304,9 @@
           <li class="md-nav__item">
   <a href="#广度优先-breadth-first-搜索bfs" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         广度优先 (Breadth-First) 搜索，BFS
-      
+      </span>
     </span>
   </a>
   
@@ -2348,9 +2315,9 @@
           <li class="md-nav__item">
   <a href="#深度优先-depth-first-搜索dfs" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         深度优先 (Depth-First) 搜索，DFS
-      
+      </span>
     </span>
   </a>
   
@@ -2359,9 +2326,9 @@
           <li class="md-nav__item">
   <a href="#遍历与连通性" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         遍历与连通性
-      
+      </span>
     </span>
   </a>
   
@@ -2375,9 +2342,9 @@
         <li class="md-nav__item">
   <a href="#图的应用" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         图的应用
-      
+      </span>
     </span>
   </a>
   
@@ -2387,9 +2354,9 @@
           <li class="md-nav__item">
   <a href="#最小生成树" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         最小生成树
-      
+      </span>
     </span>
   </a>
   
@@ -2398,9 +2365,9 @@
           <li class="md-nav__item">
   <a href="#最短路算法" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         最短路算法
-      
+      </span>
     </span>
   </a>
   
@@ -2409,9 +2376,9 @@
           <li class="md-nav__item">
   <a href="#拓扑排序和网络流" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         拓扑排序和网络流
-      
+      </span>
     </span>
   </a>
   
@@ -2434,19 +2401,16 @@
             <div class="md-content" data-md-component="content">
               
               <article class="md-content__inner md-typeset">
+                <a id="__skip" tabindex="-1"></a>
                 
   
                   
-
 
   
   
 
 
 <h1 id="图论">图论<a class="headerlink" href="#图论" title="Permanent link">&para;</a></h1>
-<div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 1219 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 4 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 4 分钟</p>
-</div>
 <h2 id="图的重要概念">图的重要概念<a class="headerlink" href="#图的重要概念" title="Permanent link">&para;</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">容易误解的名词</p>
@@ -2674,8 +2638,7 @@
 
 
 
-  
-  
+
 
 
 
@@ -2715,7 +2678,7 @@
         
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
   回到页面顶部
 </button>
         
@@ -2729,8 +2692,8 @@
   
   
     Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
     </a>
   
 </div>
@@ -2740,7 +2703,7 @@
 </footer>
       
     </div>
-    <div class="md-dialog" data-md-component="dialog">
+    <div class="md-dialog" data-md-component="dialog" role="status" aria-atomic="true">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
@@ -2748,11 +2711,15 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["toc.follow", "content.code.copy", "search.share", "search.suggest", "search.highlight", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../..","features":["toc.follow","content.code.copy","search.share","search.suggest","search.highlight","navigation.tracking","navigation.tabs","navigation.indexes","navigation.top"],"redirect":null,"search":"../../../assets/javascripts/workers/search.719e0d91.min.js","tags":null,"translations":{"clipboard.copied":"已复制","clipboard.copy":"复制","clipboard.error":"Could not copy to clipboard","search.result.more.one":"在该页上还有 1 个符合条件的结果","search.result.more.other":"在该页上还有 # 个符合条件的结果","search.result.none":"没有找到符合条件的结果","search.result.one":"找到 1 个符合条件的结果","search.result.other":"# 个符合条件的结果","search.result.placeholder":"键入以开始搜索","search.result.term.missing":"缺少","select.version":"选择当前版本"},"version":null}</script>
     
     
   
-      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.3cb411a8.min.js"></script>
       
         <script src="../../../javascripts/fonts.js"></script>
       

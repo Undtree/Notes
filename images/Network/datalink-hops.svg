@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="376" viewBox="0 0 1080 376" role="img" aria-labelledby="title desc">
+  <title id="title">跨网络通信中每一段数据链路各自成帧</title>
+  <desc id="desc">源主机经两台路由器到达目的主机。源主机到第一台路由器传送帧 1，两台路由器之间传送帧 2，第二台路由器到目的主机传送帧 3，三段链路的帧格式可以互不相同。每台路由器都先解封装取出网络层分组，查路由后再把分组封装进下一段链路的帧中。</desc>
+  <defs>
+    <marker id="hop-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#4051b5"/>
+    </marker>
+    <style>
+      text { fill: #1a237e; font-family: "Source Han Sans SC", "Noto Sans SC", "Microsoft YaHei", sans-serif; font-size: 22px; text-anchor: middle; }
+      .node { font-size: 22px; font-weight: 600; }
+      .frame { font-size: 19px; font-weight: 700; }
+      .heading { font-size: 18px; font-weight: 700; }
+      .step { font-size: 17px; }
+      .hop-label { fill: #7c86ad; font-size: 14px; }
+      .wire { fill: none; stroke: #4051b5; stroke-width: 2; marker-end: url(#hop-arrow); }
+      .host { fill: #eaf0ff; stroke: #4051b5; stroke-width: 2; }
+      .router { fill: #ffffff; stroke: #4051b5; stroke-width: 2; }
+      .callout { fill: #fbfcff; stroke: #929bc1; stroke-width: 1.5; stroke-dasharray: 6 4; }
+      .connector { fill: none; stroke: #929bc1; stroke-width: 1.5; stroke-dasharray: 3 4; }
+      .f1 { fill: #eef2ff; stroke: #4051b5; stroke-width: 2; }
+      .f2 { fill: #fdf4e6; stroke: #c07f1e; stroke-width: 2; }
+      .f3 { fill: #e9f6f1; stroke: #2f9070; stroke-width: 2; }
+      .t1 { fill: #2b3894; }
+      .t2 { fill: #8a5a10; }
+      .t3 { fill: #1f6b52; }
+    </style>
+  </defs>
+  <rect width="1080" height="376" fill="#ffffff"/>
+
+  <!-- 三段链路：每段只传送本段自己的帧。 -->
+  <path class="wire" d="M 170 142 H 332"/>
+  <path class="wire" d="M 458 142 H 618"/>
+  <path class="wire" d="M 746 142 H 906"/>
+
+  <rect class="host" x="48" y="104" width="118" height="76" rx="10"/>
+  <text class="node" x="107" y="150">源主机</text>
+  <rect class="router" x="336" y="104" width="118" height="76" rx="10"/>
+  <text class="node" x="395" y="150">路由器</text>
+  <rect class="router" x="624" y="104" width="118" height="76" rx="10"/>
+  <text class="node" x="683" y="150">路由器</text>
+  <rect class="host" x="912" y="104" width="118" height="76" rx="10"/>
+  <text class="node" x="971" y="150">目的主机</text>
+
+  <!-- 帧压在链路上，表示它只存在于这一段链路。 -->
+  <rect class="f1" x="207" y="123" width="88" height="38" rx="8"/>
+  <text class="frame t1" x="251" y="149">帧 1</text>
+  <rect class="f2" x="495" y="123" width="88" height="38" rx="8"/>
+  <text class="frame t2" x="539" y="149">帧 2</text>
+  <rect class="f3" x="783" y="123" width="88" height="38" rx="8"/>
+  <text class="frame t3" x="827" y="149">帧 3</text>
+
+  <text class="hop-label" x="251" y="192">数据链路 ①</text>
+  <text class="hop-label" x="539" y="192">数据链路 ②</text>
+  <text class="hop-label" x="827" y="192">数据链路 ③</text>
+
+  <!-- 每台路由器都重复同样的三步。 -->
+  <path class="connector" d="M 395 180 V 212"/>
+  <path class="connector" d="M 683 180 V 212"/>
+  <rect class="callout" x="311" y="212" width="168" height="132" rx="8"/>
+  <text class="heading" x="395" y="240">路由器每跳执行</text>
+  <text class="step" x="395" y="270">① 解封装</text>
+  <text class="step" x="395" y="298">② 查路由</text>
+  <text class="step" x="395" y="326">③ 重新封装</text>
+  <rect class="callout" x="599" y="212" width="168" height="132" rx="8"/>
+  <text class="heading" x="683" y="240">路由器每跳执行</text>
+  <text class="step" x="683" y="270">① 解封装</text>
+  <text class="step" x="683" y="298">② 查路由</text>
+  <text class="step" x="683" y="326">③ 重新封装</text>
+
+</svg>
