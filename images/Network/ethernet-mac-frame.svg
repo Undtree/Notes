@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="958" height="210" viewBox="0 0 958 210" role="img" aria-labelledby="title desc">
+  <title id="title">以太网基本 MAC 帧格式</title>
+  <desc id="desc">线上先传送 7 字节前同步码和 1 字节帧开始定界符，两者均在 MAC 帧之外。未加 VLAN 标签的 MAC 帧按发送顺序包含 6 字节目的地址、6 字节源地址、2 字节类型或长度、46 至 1500 字节数据与填充以及 4 字节 FCS。MAC 帧总长为 64 至 1518 字节。</desc>
+  <style>
+    text { fill: #1a237e; font-family: "Source Han Sans SC", "Noto Sans SC", "Microsoft YaHei", sans-serif; text-anchor: middle; dominant-baseline: middle; }
+    .field { font-size: 23px; font-weight: 600; }
+    .bytes { font: 22px "Cascadia Mono", Consolas, monospace; }
+    .note { font-size: 17px; }
+    .bracket-label { font-size: 20px; font-weight: 600; }
+    g rect { stroke-width: 2; }
+    .prefix rect { fill: #eaf0ff; stroke: #7182c1; }
+    .header rect { fill: #f7f8fc; stroke: #9da8cc; }
+    .payload rect { fill: #e9f6f1; stroke: #2f9070; }
+    .payload text { fill: #237354; }
+    .fcs rect { fill: #fdf4e6; stroke: #c07f1e; }
+    .fcs text { fill: #8a5a10; }
+    .bracket { fill: none; stroke: #7182c1; stroke-width: 2; }
+  </style>
+  <rect width="958" height="210" fill="#fff"/>
+
+  <g class="prefix" transform="translate(24 24)">
+    <rect width="108" height="118" rx="8"/>
+    <text class="field" x="54" y="27">前同步码</text>
+    <text class="bytes" x="54" y="60">7 B</text>
+    <text class="note" x="54" y="93">比特同步</text>
+  </g>
+  <g class="prefix" transform="translate(138 24)">
+    <rect width="112" height="118" rx="8"/>
+    <text class="field" x="56" y="27">SFD</text>
+    <text class="bytes" x="56" y="60">1 B</text>
+    <text class="note" x="56" y="93">帧开始定界符</text>
+  </g>
+  <g class="header" transform="translate(264 24)">
+    <rect width="119" height="118" rx="8"/>
+    <text class="field" x="59.5" y="27">目的地址</text>
+    <text class="bytes" x="59.5" y="60">6 B</text>
+    <text class="note" x="59.5" y="93">接收接口或组</text>
+  </g>
+  <g class="header" transform="translate(389 24)">
+    <rect width="119" height="118" rx="8"/>
+    <text class="field" x="59.5" y="27">源地址</text>
+    <text class="bytes" x="59.5" y="60">6 B</text>
+    <text class="note" x="59.5" y="93">发送接口</text>
+  </g>
+  <g class="header" transform="translate(514 24)">
+    <rect width="119" height="118" rx="8"/>
+    <text class="field" x="59.5" y="27">类型/长度</text>
+    <text class="bytes" x="59.5" y="60">2 B</text>
+    <text class="note" x="59.5" y="93">协议或长度</text>
+  </g>
+  <g class="payload" transform="translate(639 24)">
+    <rect width="178" height="118" rx="8"/>
+    <text class="field" x="89" y="27">数据与填充</text>
+    <text class="bytes" x="89" y="60">46–1500 B</text>
+    <text class="note" x="89" y="93">必要时补足最小帧长</text>
+  </g>
+  <g class="fcs" transform="translate(823 24)">
+    <rect width="111" height="118" rx="8"/>
+    <text class="field" x="55.5" y="27">FCS</text>
+    <text class="bytes" x="55.5" y="60">4 B</text>
+    <text class="note" x="55.5" y="93">CRC-32 校验</text>
+  </g>
+
+  <path class="bracket" d="M 24 152 V 162 H 250 V 152 M 264 152 V 162 H 934 V 152"/>
+  <text class="bracket-label" x="137" y="183">MAC 帧之前 · 8 B</text>
+  <text class="bracket-label" x="599" y="183">MAC 帧 · 64–1518 B</text>
+</svg>

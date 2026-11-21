@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="748" height="513" viewBox="0 0 748 513" role="img" aria-labelledby="title desc">
+  <title id="title">IPv6 首部格式</title>
+  <desc id="desc">基本首部固定 40 字节，每行 32 位。第一行是 4 位版本、8 位通信量类（6 位 DSCP 和 2 位 ECN）和 20 位流标签。第二行是 16 位载荷长度、8 位下一首部和 8 位跳数限制。源地址与目的地址各占 128 位，即各占四行。基本首部之后的可选扩展首部和上层报文都计入载荷长度。</desc>
+  <style>
+    text { fill: #1a237e; font-family: "Source Han Sans SC", "Noto Sans SC", "Microsoft YaHei", sans-serif; text-anchor: middle; dominant-baseline: middle; }
+    .field { font-size: 22px; font-weight: 600; }
+    .bits { font: 17px "Cascadia Mono", Consolas, monospace; }
+    .abbr { font: 600 17px "Cascadia Mono", Consolas, monospace; }
+    .small { font-size: 13px; }
+    .note { font-size: 17px; }
+    .group-label { font-size: 21px; font-weight: 600; }
+    .ruler, .bracket { fill: none; stroke: #7182c1; stroke-width: 2; }
+    .tick { stroke-width: 1; }
+    .grid-line { fill: none; stroke: #9da8cc; stroke-width: 1.5; }
+    .optional rect { fill: #f7f8fc; stroke: #7182c1; stroke-width: 2; stroke-dasharray: 6 4; }
+    .payload rect { fill: #e9f6f1; stroke: #2f9070; stroke-width: 2; }
+    .payload text, .payload-label { fill: #237354; }
+    .payload-bracket { stroke: #2f9070; }
+  </style>
+  <rect width="748" height="513" fill="#fff"/>
+
+  <path class="ruler" d="M22 20H249 M22 20l7-4 m-7 4l7 4 M403 20H630 m0 0l-7-4 m7 4l-7 4"/>
+  <text class="note" x="326" y="20">首部每行 32 bit</text>
+  <g class="bits">
+    <text x="22" y="40">0</text>
+    <text x="174" y="40">8</text>
+    <text x="326" y="40">16</text>
+    <text x="478" y="40">24</text>
+    <text x="630" y="40">32</text>
+  </g>
+  <!-- 基本首部从 x=22 开始，每位宽 19 px；地址行两侧的短线分隔 32 位字。 -->
+  <path class="ruler tick" d="M41 62v-7 M60 62v-7 M79 62v-7 M98 62v-7 M117 62v-7 M136 62v-7 M155 62v-7 M193 62v-7 M212 62v-7 M231 62v-7 M250 62v-7 M269 62v-7 M288 62v-7 M307 62v-7 M345 62v-7 M364 62v-7 M383 62v-7 M402 62v-7 M421 62v-7 M440 62v-7 M459 62v-7 M497 62v-7 M516 62v-7 M535 62v-7 M554 62v-7 M573 62v-7 M592 62v-7 M611 62v-7"/>
+  <path class="ruler" d="M22 62H630 M22 62v-12 M174 62v-12 M326 62v-12 M478 62v-12 M630 62v-12"/>
+
+  <rect x="22" y="76" width="608" height="304" rx="7" fill="#f7f8fc"/>
+  <rect x="98" y="76" width="152" height="66" fill="#eaf0ff"/>
+  <rect class="grid-line" x="22" y="76" width="608" height="304" rx="7"/>
+  <path class="grid-line" d="M22 142H630 M22 200H630 M22 290H630
+    M98 76V142 M250 76V142 M98 103H250 M212 103V142
+    M326 142V200 M478 142V200
+    M22 222.5h12 m584 0h12 M22 245h12 m584 0h12 M22 267.5h12 m584 0h12
+    M22 312.5h12 m584 0h12 M22 335h12 m584 0h12 M22 357.5h12 m584 0h12"/>
+
+  <text class="field" x="60" y="100">版本</text>
+  <text class="bits" x="60" y="124">4 bit</text>
+  <text class="field" x="174" y="90">通信量类</text>
+  <text class="abbr" x="155" y="116">DSCP</text>
+  <text class="bits small" x="155" y="132">6 bit</text>
+  <text class="abbr" x="231" y="116">ECN</text>
+  <text class="bits small" x="231" y="132">2 bit</text>
+  <text class="field" x="440" y="100">流标签</text>
+  <text class="bits" x="440" y="124">20 bit</text>
+
+  <text class="field" x="174" y="161">载荷长度</text>
+  <text class="bits" x="174" y="184">16 bit</text>
+  <text class="field" x="402" y="161">下一首部</text>
+  <text class="bits" x="402" y="184">8 bit</text>
+  <text class="field" x="554" y="161">跳数限制</text>
+  <text class="bits" x="554" y="184">8 bit</text>
+
+  <text class="field" x="326" y="233">源地址</text>
+  <text class="bits" x="326" y="258">128 bit</text>
+  <text class="field" x="326" y="323">目的地址</text>
+  <text class="bits" x="326" y="348">128 bit</text>
+
+  <path class="bracket" d="M643 76h9V380h-9"/>
+  <text class="group-label" x="697" y="215">基本首部</text>
+  <text class="bits" x="697" y="241">40 B</text>
+
+  <g class="optional">
+    <rect x="22" y="392" width="608" height="48" rx="7"/>
+    <text class="field" x="326" y="407">扩展首部</text>
+    <text class="note" x="326" y="427">可选，可串接</text>
+  </g>
+  <g class="payload">
+    <rect x="22" y="449" width="608" height="48" rx="7"/>
+    <text class="field" x="326" y="473">数据</text>
+  </g>
+  <path class="bracket payload-bracket" d="M643 392h9V497h-9"/>
+  <text class="group-label payload-label" x="697" y="445">载荷</text>
+</svg>

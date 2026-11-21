@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1090" height="352" viewBox="0 0 1090 352" role="img" aria-labelledby="title desc">
+  <title id="title">IEEE 802.11 数据帧格式与帧控制位构成</title>
+  <desc id="desc">第一行从左到右是 2 字节帧控制、2 字节持续期或 ID、各 6 字节的地址 1 至 3、2 字节序列控制、可选的 6 字节地址 4、2 字节 QoS 控制和 4 字节 HT 控制，随后是帧体和 4 字节 FCS。帧体的 0 至 2312 字节采用 802.11-1999 所列范围。第二行展开帧控制的 16 位：B0 至 B1 协议版本，B2 至 B3 类型，B4 至 B7 子类型；B8 至 B15 依次为 To DS、From DS、更多分片、重传、电源管理、更多数据、受保护帧、+HTC，各 1 位。</desc>
+  <style>
+    text { fill: #1a237e; font-family: "Source Han Sans SC", "Noto Sans SC", "Microsoft YaHei", sans-serif; text-anchor: middle; dominant-baseline: middle; }
+    .field { font-size: 22px; font-weight: 600; }
+    .bytes { font: 20px "Cascadia Mono", Consolas, monospace; }
+    .bits { font: 19px "Cascadia Mono", Consolas, monospace; }
+    .note { font-size: 20px; }
+    .group-label { font-size: 21px; font-weight: 600; }
+    .bracket { fill: none; stroke: #7182c1; stroke-width: 2; }
+    .detail-link { fill: none; stroke: #4051b5; stroke-width: 2; }
+    g rect { stroke-width: 2; }
+    .header rect { fill: #f7f8fc; stroke: #9da8cc; }
+    .frame-control rect { fill: #eaf0ff; stroke: #4051b5; }
+    .optional rect { fill: #f7f8fc; stroke: #7182c1; stroke-dasharray: 6 4; }
+    .payload rect { fill: #e9f6f1; stroke: #2f9070; }
+    .payload text { fill: #237354; }
+    .fcs rect { fill: #fdf4e6; stroke: #c07f1e; }
+    .fcs text { fill: #8a5a10; }
+  </style>
+  <rect width="1090" height="352" fill="#fff"/>
+
+  <text class="group-label" x="443.5" y="20">MAC 首部</text>
+  <path class="bracket" d="M 16 45 V 37 H 871 V 45"/>
+  <g class="frame-control" transform="translate(16 52)">
+    <rect width="75" height="84" rx="8"/>
+    <text class="field" x="37.5" y="25">帧控制</text>
+    <text class="bytes" x="37.5" y="58">2 B</text>
+  </g>
+  <g class="header" transform="translate(96 52)">
+    <rect width="110" height="84" rx="8"/>
+    <text class="field" x="55" y="25">持续期/ID</text>
+    <text class="bytes" x="55" y="58">2 B</text>
+  </g>
+  <g class="header" transform="translate(211 52)">
+    <rect width="76" height="84" rx="8"/>
+    <text class="field" x="38" y="25">地址 1</text>
+    <text class="bytes" x="38" y="58">6 B</text>
+  </g>
+  <g class="header" transform="translate(292 52)">
+    <rect width="76" height="84" rx="8"/>
+    <text class="field" x="38" y="25">地址 2</text>
+    <text class="bytes" x="38" y="58">6 B</text>
+  </g>
+  <g class="header" transform="translate(373 52)">
+    <rect width="76" height="84" rx="8"/>
+    <text class="field" x="38" y="25">地址 3</text>
+    <text class="bytes" x="38" y="58">6 B</text>
+  </g>
+  <g class="header" transform="translate(454 52)">
+    <rect width="102" height="84" rx="8"/>
+    <text class="field" x="51" y="25">序列控制</text>
+    <text class="bytes" x="51" y="58">2 B</text>
+  </g>
+  <g class="optional" transform="translate(561 52)">
+    <rect width="88" height="84" rx="8"/>
+    <text class="field" x="44" y="25">地址 4</text>
+    <text class="bytes" x="44" y="58">0/6 B</text>
+  </g>
+  <g class="optional" transform="translate(654 52)">
+    <rect width="113" height="84" rx="8"/>
+    <text class="field" x="56.5" y="25">QoS 控制</text>
+    <text class="bytes" x="56.5" y="58">0/2 B</text>
+  </g>
+  <g class="optional" transform="translate(772 52)">
+    <rect width="99" height="84" rx="8"/>
+    <text class="field" x="49.5" y="25">HT 控制</text>
+    <text class="bytes" x="49.5" y="58">0/4 B</text>
+  </g>
+  <g class="payload" transform="translate(876 52)">
+    <rect width="117" height="84" rx="8"/>
+    <text class="field" x="58.5" y="25">帧体</text>
+    <text class="bytes" x="58.5" y="58">0–2312 B</text>
+  </g>
+  <g class="fcs" transform="translate(998 52)">
+    <rect width="76" height="84" rx="8"/>
+    <text class="field" x="38" y="25">FCS</text>
+    <text class="bytes" x="38" y="58">4 B</text>
+  </g>
+  <text class="note" x="545" y="157">虚线表示可选字段 · 帧体长度采用 802.11-1999 的范围</text>
+
+  <path class="detail-link" d="M 53.5 136 V 192 m -5 -5 l 5 5 l 5 -5"/>
+  <text class="group-label" x="545" y="190">帧控制的位构成 · 16 bit</text>
+  <text class="note" x="154.5" y="214">第 1 字节</text>
+  <text class="note" x="686.5" y="214">第 2 字节</text>
+  <path class="bracket" d="M 16 232 V 227 H 293 V 232 M 299 232 V 227 H 1074 V 232"/>
+
+  <g class="header" transform="translate(16 237)">
+    <rect width="106" height="98" rx="8"/>
+    <text class="field" x="53" y="22">协议版本</text>
+    <text class="bits" x="53" y="50">B0–B1</text>
+    <text class="bits" x="53" y="76">2 bit</text>
+  </g>
+  <g class="header" transform="translate(127 237)">
+    <rect width="71" height="98" rx="8"/>
+    <text class="field" x="35.5" y="22">类型</text>
+    <text class="bits" x="35.5" y="50">B2–B3</text>
+    <text class="bits" x="35.5" y="76">2 bit</text>
+  </g>
+  <g class="header" transform="translate(203 237)">
+    <rect width="90" height="98" rx="8"/>
+    <text class="field" x="45" y="22">子类型</text>
+    <text class="bits" x="45" y="50">B4–B7</text>
+    <text class="bits" x="45" y="76">4 bit</text>
+  </g>
+  <g class="frame-control" transform="translate(299 237)">
+    <rect width="80" height="98" rx="8"/>
+    <text class="field" x="40" y="22">To DS</text>
+    <text class="bits" x="40" y="50">B8</text>
+    <text class="bits" x="40" y="76">1 bit</text>
+  </g>
+  <g class="frame-control" transform="translate(384 237)">
+    <rect width="106" height="98" rx="8"/>
+    <text class="field" x="53" y="22">From DS</text>
+    <text class="bits" x="53" y="50">B9</text>
+    <text class="bits" x="53" y="76">1 bit</text>
+  </g>
+  <g class="header" transform="translate(495 237)">
+    <rect width="100" height="98" rx="8"/>
+    <text class="field" x="50" y="22">更多分片</text>
+    <text class="bits" x="50" y="50">B10</text>
+    <text class="bits" x="50" y="76">1 bit</text>
+  </g>
+  <g class="header" transform="translate(600 237)">
+    <rect width="70" height="98" rx="8"/>
+    <text class="field" x="35" y="22">重传</text>
+    <text class="bits" x="35" y="50">B11</text>
+    <text class="bits" x="35" y="76">1 bit</text>
+  </g>
+  <g class="header" transform="translate(675 237)">
+    <rect width="99" height="98" rx="8"/>
+    <text class="field" x="49.5" y="22">电源管理</text>
+    <text class="bits" x="49.5" y="50">B12</text>
+    <text class="bits" x="49.5" y="76">1 bit</text>
+  </g>
+  <g class="header" transform="translate(779 237)">
+    <rect width="99" height="98" rx="8"/>
+    <text class="field" x="49.5" y="22">更多数据</text>
+    <text class="bits" x="49.5" y="50">B13</text>
+    <text class="bits" x="49.5" y="76">1 bit</text>
+  </g>
+  <g class="header" transform="translate(883 237)">
+    <rect width="101" height="98" rx="8"/>
+    <text class="field" x="50.5" y="22">受保护帧</text>
+    <text class="bits" x="50.5" y="50">B14</text>
+    <text class="bits" x="50.5" y="76">1 bit</text>
+  </g>
+  <g class="header" transform="translate(989 237)">
+    <rect width="85" height="98" rx="8"/>
+    <text class="field" x="42.5" y="22">+HTC</text>
+    <text class="bits" x="42.5" y="50">B15</text>
+    <text class="bits" x="42.5" y="76">1 bit</text>
+  </g>
+</svg>

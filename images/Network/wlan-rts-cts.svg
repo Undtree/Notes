@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="944" height="474" viewBox="0 0 944 474" role="img" aria-labelledby="title desc">
+  <title id="title">RTS/CTS 信道预约与旁站的 NAV</title>
+  <desc id="desc">A 与 B 互为隐藏站，B 能收到 AP 发给 A 的 CTS。时间从左到右。A 等待 DIFS 后向 AP 发送 RTS，双方以 SIFS 为间隔交换 CTS、DATA 和 ACK。旁站分别从收到 RTS、CTS 或 DATA 后开始按 NAV 避让，到 ACK 结束。对收到 DATA 的站，教材所画的保护时段还包括接收 DATA 本身的时间。</desc>
+  <defs>
+    <marker id="link-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#4051b5"/>
+    </marker>
+    <marker id="time-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#667396"/>
+    </marker>
+    <style>
+      text { fill: #253354; font: 20px "Source Han Sans SC", "Noto Sans SC", "Microsoft YaHei", sans-serif; text-anchor: middle; dominant-baseline: central; }
+      .station, .frame-label, .nav-label { font-weight: 700; }
+      .station { font-size: 22px; }
+      .station-box, .control-frame { fill: #eaf0ff; stroke: #4051b5; stroke-width: 1.6; }
+      .hidden-station { fill: #f5f7fb; stroke: #71809e; stroke-width: 1.6; }
+      .link { fill: none; stroke: #4051b5; stroke-width: 2; marker-end: url(#link-arrow); }
+      .heard-link { stroke-dasharray: 6 4; }
+      .row-label { text-anchor: end; }
+      .lane { fill: none; stroke: #d5dce9; stroke-width: 1.5; }
+      .axis { fill: none; stroke: #667396; stroke-width: 1.6; }
+      .time { marker-end: url(#time-arrow); }
+      .guide { fill: none; stroke: #8e9ab5; stroke-width: 1.3; stroke-dasharray: 5 4; }
+      .muted { fill: #455473; }
+      .data-frame { fill: #e3f3ec; stroke: #2f9070; stroke-width: 1.6; }
+      .nav { fill: #dfe8ff; stroke: #4051b5; stroke-width: 1.6; }
+      .receive { fill: #f2f5fa; stroke: #71809e; stroke-width: 1.4; stroke-dasharray: 4 3; }
+    </style>
+  </defs>
+  <rect width="944" height="474" fill="#fff"/>
+
+  <!-- Station topology -->
+  <rect class="station-box" x="40" y="34" width="164" height="46" rx="8"/>
+  <rect class="station-box" x="390" y="34" width="164" height="46" rx="8"/>
+  <rect class="hidden-station" x="740" y="34" width="164" height="46" rx="8"/>
+  <text class="station" x="122" y="57">发送站 A</text>
+  <text class="station" x="472" y="57">接入点 AP</text>
+  <text class="station" x="822" y="57">隐藏站 B</text>
+  <path class="link" d="M 207 46 H 387"/>
+  <path class="link" d="M 387 68 H 207"/>
+  <path class="link heard-link" d="M 557 57 H 737"/>
+  <text class="muted" x="297" y="26">RTS、DATA</text>
+  <text class="muted" x="297" y="88">CTS、ACK</text>
+  <text class="muted" x="647" y="37">可收到 CTS</text>
+  <path class="lane" d="M 30 111 H 914"/>
+
+  <!-- Time intervals and transmit lanes -->
+  <g class="muted">
+    <text x="228" y="136">DIFS</text>
+    <text x="356" y="136">SIFS</text>
+    <text x="478" y="136">SIFS</text>
+    <text x="673" y="136">SIFS</text>
+    <text x="801" y="136">DIFS</text>
+    <text x="871" y="136">退避</text>
+  </g>
+  <path class="axis" d="M 192 158 V 150 H 264 V 158 M 326 158 V 150 H 386 V 158 M 448 158 V 150 H 508 V 158 M 643 158 V 150 H 703 V 158 M 765 158 V 150 H 837 V 158"/>
+  <path class="axis" d="M 837 151 H 904 V 163 H 837 Z M 850 151 V 163 M 863 151 V 163 M 877 151 V 163 M 890 151 V 163"/>
+  <path class="lane" d="M 192 190 H 904 M 192 234 H 904"/>
+  <path class="guide" d="M 326 205 V 286 M 448 249 V 334 M 508 205 V 382 M 643 205 V 382 M 765 249 V 416"/>
+
+  <text class="row-label" x="176" y="190">A 发送</text>
+  <text class="row-label" x="176" y="234">AP 发送</text>
+  <rect class="control-frame" x="264" y="174" width="62" height="32" rx="3"/>
+  <rect class="control-frame" x="386" y="218" width="62" height="32" rx="3"/>
+  <rect class="data-frame" x="508" y="174" width="135" height="32" rx="3"/>
+  <rect class="control-frame" x="703" y="218" width="62" height="32" rx="3"/>
+  <text class="frame-label" x="295" y="190">RTS</text>
+  <text class="frame-label" x="417" y="234">CTS</text>
+  <text class="frame-label" x="575.5" y="190">DATA</text>
+  <text class="frame-label" x="734" y="234">ACK</text>
+
+  <text class="row-label muted" x="176" y="267">时间</text>
+  <path class="axis time" d="M 192 267 H 916"/>
+
+  <!-- Receiver-side NAV intervals -->
+  <text class="row-label" x="176" y="303">收到 RTS 的站</text>
+  <text class="row-label" x="176" y="351">收到 CTS 的站</text>
+  <text class="row-label" x="176" y="399">收到 DATA 的站</text>
+  <rect class="nav" x="326" y="286" width="439" height="34" rx="3"/>
+  <rect class="nav" x="448" y="334" width="317" height="34" rx="3"/>
+  <rect class="receive" x="508" y="382" width="135" height="34"/>
+  <rect class="nav" x="643" y="382" width="122" height="34" rx="3"/>
+  <text class="nav-label" x="545.5" y="303">NAV</text>
+  <text class="nav-label" x="606.5" y="351">NAV（如 B）</text>
+  <text class="muted" x="575.5" y="399">接收 DATA</text>
+  <text class="nav-label" x="704" y="399">NAV</text>
+
+  <path class="axis" d="M 508 423 V 433 H 765 V 423"/>
+  <text class="muted" x="636.5" y="452">保护时段</text>
+</svg>

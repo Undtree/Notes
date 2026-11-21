@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="477" viewBox="0 0 680 477" role="img" aria-labelledby="title desc">
+  <title id="title">OSPF 区域划分</title>
+  <desc id="desc">本 AS 内，Area 1 和 Area 2 分别通过各自的区域边界路由器（ABR）接入骨干区域（Area 0），由骨干区域连通。图中的自治系统边界路由器（ASBR）位于 Area 0，通过 eBGP 与相邻 AS 交换路由。</desc>
+  <style>
+    text { fill: #1a237e; font-family: "Source Han Sans SC", "Noto Sans SC", "Microsoft YaHei", sans-serif; text-anchor: middle; }
+    .as-label { font-size: 23px; font-weight: 600; }
+    .area-label { font-size: 24px; font-weight: 700; }
+    .note { font-size: 19px; font-weight: 500; }
+    .router-label { font-size: 20px; font-weight: 700; }
+    .abr-label { fill: #fff; }
+    .asbr-label, .external-label { fill: #176950; }
+    .external-label { text-anchor: start; }
+    .local-links, .backbone-link, .bgp-link { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    .local-links { stroke: #7182c1; stroke-width: 2; }
+    .backbone-link { stroke: #4356a5; stroke-width: 3; }
+    .bgp-link { stroke: #237354; stroke-width: 2.5; }
+  </style>
+
+  <rect width="680" height="477" rx="12" fill="#fff"/>
+  <rect x="18" y="14" width="644" height="334" rx="14" fill="#fff" stroke="#a3acc7" stroke-width="2"/>
+  <text class="as-label" x="340" y="48">本 AS</text>
+
+  <rect x="44" y="67" width="272" height="108" rx="10" fill="#f7f8fc" stroke="#a3afd1" stroke-width="2"/>
+  <rect x="364" y="67" width="272" height="108" rx="10" fill="#f7f8fc" stroke="#a3afd1" stroke-width="2"/>
+  <rect x="44" y="175" width="592" height="155" rx="10" fill="#eaf0ff" stroke="#7182c1" stroke-width="2"/>
+
+  <text class="area-label" x="180" y="103">Area 1</text>
+  <text class="area-label" x="500" y="103">Area 2</text>
+  <g id="area-links">
+    <path class="local-links" d="M150 129l30 14 30-14m-30 14v12"/>
+    <g fill="#7182c1">
+      <circle cx="150" cy="129" r="4"/>
+      <circle cx="210" cy="129" r="4"/>
+    </g>
+  </g>
+  <use href="#area-links" x="320"/>
+
+  <path class="backbone-link" d="M180 195v54h320v-54m-160 54v28"/>
+  <circle cx="340" cy="249" r="5" fill="#4356a5"/>
+  <text class="area-label" x="340" y="213">骨干区域 · Area 0</text>
+  <text class="note" x="340" y="236">连通 AS 内其他区域</text>
+
+  <!-- ABR 跨在骨干区域和各自连接的非骨干区域之间。 -->
+  <g fill="#3b4d9d">
+    <rect x="128" y="155" width="104" height="40" rx="9"/>
+    <rect x="448" y="155" width="104" height="40" rx="9"/>
+  </g>
+  <text class="router-label abr-label" x="180" y="182">ABR 1</text>
+  <text class="router-label abr-label" x="500" y="182">ABR 2</text>
+
+  <rect x="281" y="277" width="118" height="38" rx="9" fill="#e9f6f1" stroke="#2f9070" stroke-width="2"/>
+  <text class="router-label asbr-label" x="340" y="303">ASBR</text>
+
+  <path class="bgp-link" d="M340 322v82" stroke-dasharray="5 5"/>
+  <path class="bgp-link" d="M334 328l6-6 6 6m-12 70l6 6 6-6"/>
+  <text class="note external-label" x="359" y="378">eBGP · AS 间交换路由</text>
+
+  <rect x="226" y="411" width="228" height="51" rx="10" fill="#e9f6f1" stroke="#2f9070" stroke-width="2"/>
+  <text class="as-label" x="340" y="444">相邻 AS</text>
+</svg>

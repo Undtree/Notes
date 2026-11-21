@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="958" height="344" viewBox="0 0 958 344" role="img" aria-labelledby="title desc">
+  <title id="title">带单个 802.1Q VLAN 标签的以太网 MAC 帧</title>
+  <desc id="desc">MAC 帧依次为目的地址 6 字节、源地址 6 字节、802.1Q VLAN 标签 4 字节、原类型或长度 2 字节、数据与填充 42 至 1500 字节、FCS 4 字节。标签前 16 位是 TPID，值为 0x8100。后 16 位是 TCI，依次包括 3 位优先级 PCP、1 位可丢弃指示 DEI 和 12 位 VLAN 标识符 VID。</desc>
+  <style>
+    text { fill: #1a237e; font-family: "Source Han Sans SC", "Noto Sans SC", "Microsoft YaHei", sans-serif; text-anchor: middle; dominant-baseline: middle; }
+    .field { font-size: 23px; font-weight: 600; }
+    .bytes { font: 22px "Cascadia Mono", Consolas, monospace; }
+    .note { font-size: 18px; }
+    .value { font: 600 29px "Cascadia Mono", Consolas, monospace; }
+    .header rect { fill: #f7f8fc; stroke: #9da8cc; stroke-width: 2; }
+    .payload rect { fill: #e9f6f1; stroke: #2f9070; stroke-width: 2; }
+    .payload text { fill: #237354; }
+    .fcs rect { fill: #fdf4e6; stroke: #c07f1e; stroke-width: 2; }
+    .fcs text { fill: #8a5a10; }
+    .tag rect { fill: #4051b5; }
+    .tag text { fill: #fff; }
+    .detail { fill: #eaf0ff; stroke: #7182c1; stroke-width: 2; }
+    .subfield { fill: #fff; stroke: #a3b1dd; stroke-width: 1.5; }
+    .vid { fill: #d8e3ff; stroke: #4051b5; stroke-width: 1.5; }
+  </style>
+  <rect width="958" height="344" fill="#fff"/>
+
+  <!-- Ethernet MAC frame -->
+  <g class="header" transform="translate(24 24)">
+    <rect width="126" height="94" rx="8"/>
+    <text class="field" x="63" y="30">目的地址</text>
+    <text class="bytes" x="63" y="63">6 B</text>
+  </g>
+  <g class="header" transform="translate(156 24)">
+    <rect width="126" height="94" rx="8"/>
+    <text class="field" x="63" y="30">源地址</text>
+    <text class="bytes" x="63" y="63">6 B</text>
+  </g>
+  <g class="tag" transform="translate(288 24)">
+    <rect width="180" height="94" rx="8"/>
+    <text class="field" x="90" y="30">VLAN 标签</text>
+    <text class="bytes" x="90" y="63">4 B</text>
+  </g>
+  <g class="header" transform="translate(474 24)">
+    <rect width="151" height="94" rx="8"/>
+    <text class="field" x="75.5" y="30">原类型/长度</text>
+    <text class="bytes" x="75.5" y="63">2 B</text>
+  </g>
+  <g class="payload" transform="translate(631 24)">
+    <rect width="189" height="94" rx="8"/>
+    <text class="field" x="94.5" y="30">数据与填充</text>
+    <text class="bytes" x="94.5" y="63">42–1500 B</text>
+  </g>
+  <g class="fcs" transform="translate(826 24)">
+    <rect width="108" height="94" rx="8"/>
+    <text class="field" x="54" y="30">FCS</text>
+    <text class="bytes" x="54" y="63">4 B</text>
+  </g>
+
+  <!-- Expanded 802.1Q tag: TPID followed by TCI -->
+  <path d="M 298 118 H 458 L 925 174 H 33 Z" fill="#edf1fd"/>
+  <path d="M 298 118 L 33 174 M 458 118 L 925 174" fill="none" stroke="#7182c1" stroke-width="2"/>
+  <g transform="translate(24 174)">
+    <rect class="detail" width="446" height="146" rx="8"/>
+    <text class="field" x="223" y="27">TPID · 16 bit</text>
+    <text class="value" x="223" y="75">0x8100</text>
+    <text class="note" x="223" y="110">标签协议标识符</text>
+  </g>
+  <g transform="translate(488 174)">
+    <rect class="detail" width="446" height="146" rx="8"/>
+    <text class="field" x="223" y="27">TCI（标签控制信息）· 16 bit</text>
+    <g transform="translate(12 48)">
+      <rect class="subfield" width="113" height="86" rx="6"/>
+      <text class="field" x="56.5" y="17">PCP</text>
+      <text class="bytes" x="56.5" y="44">3 bit</text>
+      <text class="note" x="56.5" y="69">优先级</text>
+    </g>
+    <g transform="translate(133 48)">
+      <rect class="subfield" width="118" height="86" rx="6"/>
+      <text class="field" x="59" y="17">DEI</text>
+      <text class="bytes" x="59" y="44">1 bit</text>
+      <text class="note" x="59" y="69">可丢弃指示</text>
+    </g>
+    <g transform="translate(259 48)">
+      <rect class="vid" width="175" height="86" rx="6"/>
+      <text class="field" x="87.5" y="17">VID</text>
+      <text class="bytes" x="87.5" y="44">12 bit</text>
+      <text class="note" x="87.5" y="69">VLAN 标识符</text>
+    </g>
+  </g>
+</svg>

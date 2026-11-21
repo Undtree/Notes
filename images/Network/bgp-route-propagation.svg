@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="780" height="337" viewBox="0 0 780 337" role="img" aria-labelledby="title desc">
+  <title id="title">BGP 路由传播示例</title>
+  <desc id="desc">A 在 AS 64496 内发起对前缀 203.0.113.0/24 的通告，经 eBGP 发给 AS 64497 的 B，AS_PATH 为 64496。B 经 iBGP 发给同一 AS 的 C，AS_PATH 不变。B 和 C 是这条 iBGP 会话的端点。X 按 IP 路由转发承载 BGP 报文的分组；图中只画出 B–X 和 X–C 的物理连接。C 再经 eBGP 发给 AS 64498 的 D，AS_PATH 变为 64497 64496。绿色长虚线和靛蓝色短虚线分别表示 eBGP 和 iBGP 会话，灰色实线表示物理连接。空心箭头表示三条会话各自发送的 UPDATE 报文：A 到 B，B 经 X 到 C，C 到 D。</desc>
+  <defs>
+    <marker id="ebgp-arrow" viewBox="0 0 10 10" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 0 10 5 0 10 2.5 5z" fill="#237354"/>
+    </marker>
+    <marker id="ibgp-arrow" viewBox="0 0 10 10" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 0 10 5 0 10 2.5 5z" fill="#4053a5"/>
+    </marker>
+    <path id="update-arrow" d="M0-3.5H20V-8L32 0L20 8V3.5H0Z" fill="#fff" stroke="#475569" stroke-width="1.8" stroke-linejoin="round"/>
+  </defs>
+  <style>
+    text { fill: #1a237e; font-family: "Source Han Sans SC", "Noto Sans SC", "Microsoft YaHei", sans-serif; font-size: 20px; text-anchor: middle; }
+    .prefix, .session-label, .as-label { font-weight: 700; }
+    .mono { font-family: "Cascadia Mono", Consolas, monospace; font-weight: 700; }
+    .label-start { text-anchor: start; }
+    .label-end { text-anchor: end; }
+    .note, .legend { font-size: 18px; fill: #475569; }
+    .router-label { font-size: 23px; font-weight: 700; }
+    .border-router { fill: #fff; }
+    .ebgp-label { fill: #1c694d; }
+    .ibgp-label { fill: #34489b; }
+    .physical, .ebgp, .ibgp { fill: none; stroke-width: 3; stroke-linecap: round; }
+    .physical { stroke: #596579; }
+    .ebgp { stroke: #237354; stroke-dasharray: 8 5; marker-end: url(#ebgp-arrow); }
+    .ibgp { stroke: #4053a5; stroke-dasharray: 2 5; marker-end: url(#ibgp-arrow); }
+  </style>
+
+  <rect width="780" height="337" rx="12" fill="#fff"/>
+  <text class="prefix label-start" x="20" y="35">通告前缀 <tspan class="mono">203.0.113.0/24</tspan></text>
+  <text class="note label-end" x="760" y="35">会话旁的数字为 <tspan class="mono">AS_PATH</tspan></text>
+  <path d="M20 50H760" stroke="#dce2f0"/>
+
+  <!-- 仅绘出 B–X 和 X–C 的物理链路。 -->
+  <g fill="#f7f8fc" stroke="#a3acc7" stroke-width="2">
+    <rect x="18" y="149" width="140" height="135" rx="12"/>
+    <rect x="202" y="149" width="376" height="135" rx="12" fill="#edf1ff" stroke="#8797ca"/>
+    <rect x="622" y="149" width="140" height="135" rx="12"/>
+  </g>
+  <path class="physical" d="M289 219H370 M410 219H491"/>
+  <text class="as-label" x="88" y="268">AS 64496</text>
+  <text class="as-label" x="390" y="268">AS 64497</text>
+  <text class="as-label" x="692" y="268">AS 64498</text>
+
+  <!-- 会话跨越一条或多条物理链路；箭头只标示本例的通告方向。 -->
+  <path class="ebgp" d="M104 198v-58q0-9 9-9h120q9 0 9 9v58"/>
+  <path class="ibgp" d="M274 198v-58q0-9 9-9h214q9 0 9 9v58"/>
+  <path class="ebgp" d="M538 198v-58q0-9 9-9h120q9 0 9 9v58"/>
+  <g class="session-label">
+    <text class="ebgp-label" x="173" y="79">eBGP 会话</text>
+    <text class="ibgp-label" x="390" y="79">iBGP 会话</text>
+    <text class="ebgp-label" x="607" y="79">eBGP 会话</text>
+  </g>
+  <g class="mono">
+    <text class="ebgp-label" x="173" y="105">64496</text>
+    <text class="ibgp-label" x="390" y="105">64496</text>
+    <text class="ebgp-label" x="607" y="105">64497 64496</text>
+  </g>
+
+  <g fill="#3b4d9d">
+    <rect x="57" y="198" width="62" height="42" rx="9"/>
+    <rect x="227" y="198" width="62" height="42" rx="9"/>
+    <rect x="491" y="198" width="62" height="42" rx="9"/>
+    <rect x="661" y="198" width="62" height="42" rx="9"/>
+  </g>
+  <g class="router-label">
+    <text class="border-router" x="88" y="227">A</text>
+    <text class="border-router" x="258" y="227">B</text>
+    <text class="border-router" x="522" y="227">C</text>
+    <text class="border-router" x="692" y="227">D</text>
+  </g>
+  <circle cx="390" cy="219" r="20" fill="#fff" stroke="#596579" stroke-width="2"/>
+  <text class="router-label" x="390" y="227">X</text>
+  <text class="note" x="390" y="185">仅做 IP 转发</text>
+
+  <!-- 空心箭头标出报文传递方向，独立于会话线和物理链路。 -->
+  <use href="#update-arrow" x="164" y="242"/>
+  <use href="#update-arrow" x="314" y="242"/>
+  <use href="#update-arrow" x="434" y="242"/>
+  <use href="#update-arrow" x="584" y="242"/>
+
+  <path class="ebgp" d="M28 313H64"/>
+  <text class="legend label-start" x="76" y="319">eBGP 会话</text>
+  <path class="ibgp" d="M205 313H241"/>
+  <text class="legend label-start" x="253" y="319">iBGP 会话</text>
+  <path class="physical" d="M382 313H418"/>
+  <text class="legend label-start" x="430" y="319">物理连接</text>
+  <use href="#update-arrow" x="555" y="313"/>
+  <text class="legend label-start" x="599" y="319">UPDATE 报文方向</text>
+</svg>
