@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="160" viewBox="0 0 760 160" role="img" aria-labelledby="title desc">
+  <title id="title">四个无线站点的监听关系</title>
+  <desc id="desc">只有相邻站点能互相听到：A 与 B、B 与 C、C 与 D。非相邻站点互相听不到。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#4051b5"/>
+    </marker>
+    <style>
+      text { fill: #1a237e; font: 24px "Source Han Sans SC", "Noto Sans SC", "Microsoft YaHei", sans-serif; text-anchor: middle; dominant-baseline: central; }
+      .station { fill: #eaf0ff; stroke: #4051b5; stroke-width: 2; }
+      .station-label { font-weight: 700; font-size: 28px; }
+      .link { fill: none; stroke: #4051b5; stroke-width: 2.5; marker-start: url(#arrow); marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect width="760" height="160" fill="#fff"/>
+
+  <path class="link" d="M 124 59 H 252"/>
+  <path class="link" d="M 316 59 H 444"/>
+  <path class="link" d="M 508 59 H 636"/>
+
+  <circle class="station" cx="92" cy="59" r="27"/>
+  <circle class="station" cx="284" cy="59" r="27"/>
+  <circle class="station" cx="476" cy="59" r="27"/>
+  <circle class="station" cx="668" cy="59" r="27"/>
+  <text class="station-label" x="92" y="59">A</text>
+  <text class="station-label" x="284" y="59">B</text>
+  <text class="station-label" x="476" y="59">C</text>
+  <text class="station-label" x="668" y="59">D</text>
+  <text x="380" y="119">相邻站点能互相听到，非相邻站点互相听不到</text>
+</svg>

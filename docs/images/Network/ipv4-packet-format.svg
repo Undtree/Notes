@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="748" height="489" viewBox="0 0 748 489" role="img" aria-labelledby="title desc">
+  <title id="title">IPv4 分组格式</title>
+  <desc id="desc">首部每行 32 位，标尺每小格为 1 位。第一行依次为 4 位版本、4 位首部长度 IHL、8 位区分服务字节（6 位 DSCP 和 2 位 ECN）、16 位总长度。第二行是 16 位标识、3 个各占 1 位的标志（保留位 0、DF、MF）和 13 位片偏移。第三行是 8 位生存时间、8 位协议和 16 位首部校验和；第四行和第五行分别是 32 位源地址和目的地址。固定首部之后的选项与填充共占 0 至 10 个 32 位字，首部之后为数据。</desc>
+  <style>
+    text { fill: #1a237e; font-family: "Source Han Sans SC", "Noto Sans SC", "Microsoft YaHei", sans-serif; text-anchor: middle; dominant-baseline: middle; }
+    .field { font-size: 22px; font-weight: 600; }
+    .bits { font: 17px "Cascadia Mono", Consolas, monospace; }
+    .abbr { font: 600 17px "Cascadia Mono", Consolas, monospace; }
+    .small { font-size: 13px; }
+    .note { font-size: 17px; }
+    .group-label { font-size: 21px; font-weight: 600; }
+    .ruler, .bracket { fill: none; stroke: #7182c1; stroke-width: 2; }
+    .tick { stroke-width: 1; }
+    .grid-line { fill: none; stroke: #9da8cc; stroke-width: 1.5; }
+    .checksum text { fill: #8a5a10; }
+    .optional rect { fill: #f7f8fc; stroke: #7182c1; stroke-width: 2; stroke-dasharray: 6 4; }
+    .payload rect { fill: #e9f6f1; stroke: #2f9070; stroke-width: 2; }
+    .payload text { fill: #237354; }
+  </style>
+  <rect width="748" height="489" fill="#fff"/>
+
+  <path class="ruler" d="M22 20H249 M22 20l7-4 m-7 4l7 4 M403 20H630 m0 0l-7-4 m7 4l-7 4"/>
+  <text class="note" x="326" y="20">首部每行 32 bit</text>
+  <g class="bits">
+    <text x="22" y="40">0</text>
+    <text x="174" y="40">8</text>
+    <text x="326" y="40">16</text>
+    <text x="478" y="40">24</text>
+    <text x="630" y="40">32</text>
+  </g>
+  <!-- 固定首部横向按真实位宽绘制：从 x=22 开始，每位 19 px。 -->
+  <path class="ruler tick" d="M41 62v-7 M60 62v-7 M79 62v-7 M98 62v-7 M117 62v-7 M136 62v-7 M155 62v-7 M193 62v-7 M212 62v-7 M231 62v-7 M250 62v-7 M269 62v-7 M288 62v-7 M307 62v-7 M345 62v-7 M364 62v-7 M383 62v-7 M402 62v-7 M421 62v-7 M440 62v-7 M459 62v-7 M497 62v-7 M516 62v-7 M535 62v-7 M554 62v-7 M573 62v-7 M592 62v-7 M611 62v-7"/>
+  <path class="ruler" d="M22 62H630 M22 62v-12 M174 62v-12 M326 62v-12 M478 62v-12 M630 62v-12"/>
+
+  <rect x="22" y="76" width="608" height="268" rx="7" fill="#f7f8fc"/>
+  <rect x="326" y="204" width="304" height="52" fill="#fdf4e6"/>
+  <rect x="326" y="142" width="57" height="62" fill="#eaf0ff"/>
+  <rect x="326" y="166" width="19" height="38" fill="#e3e6ee"/>
+  <rect class="grid-line" x="22" y="76" width="608" height="268" rx="7"/>
+  <path class="grid-line" d="M22 142H630 M22 204H630 M22 256H630 M22 300H630
+    M98 76V142 M174 76V142 M326 76V256 M174 103H326 M288 103V142
+    M383 142V204 M326 166H383 M345 166V204 M364 166V204 M174 204V256"/>
+
+  <g>
+    <text class="field" x="60" y="100">版本</text>
+    <text class="bits" x="60" y="124">4 bit</text>
+    <text class="abbr" x="136" y="90">IHL</text>
+    <text class="note" x="136" y="110">首部长度</text>
+    <text class="bits small" x="136" y="129">4 bit</text>
+    <text class="field" x="250" y="90">区分服务</text>
+    <text class="abbr" x="231" y="116">DSCP</text>
+    <text class="bits small" x="231" y="132">6 bit</text>
+    <text class="abbr" x="307" y="116">ECN</text>
+    <text class="bits small" x="307" y="132">2 bit</text>
+    <text class="field" x="478" y="100">总长度</text>
+    <text class="bits" x="478" y="124">16 bit</text>
+  </g>
+  <g>
+    <text class="field" x="174" y="162">标识</text>
+    <text class="bits" x="174" y="186">16 bit</text>
+    <text class="note" x="354.5" y="154">标志</text>
+    <text class="abbr" x="335.5" y="185">0</text>
+    <text class="abbr" x="354.5" y="177">D<tspan x="354.5" y="193">F</tspan></text>
+    <text class="abbr" x="373.5" y="177">M<tspan x="373.5" y="193">F</tspan></text>
+    <text class="field" x="506.5" y="162">片偏移</text>
+    <text class="bits" x="506.5" y="186">13 bit</text>
+  </g>
+  <g>
+    <text class="field" x="98" y="220">生存时间 TTL</text>
+    <text class="bits" x="98" y="242">8 bit</text>
+    <text class="field" x="250" y="220">协议</text>
+    <text class="bits" x="250" y="242">8 bit</text>
+  </g>
+  <g class="checksum">
+    <text class="field" x="478" y="220">首部校验和</text>
+    <text class="bits" x="478" y="242">16 bit</text>
+  </g>
+  <g>
+    <text class="field" x="326" y="270">源地址</text>
+    <text class="bits" x="326" y="289">32 bit</text>
+    <text class="field" x="326" y="314">目的地址</text>
+    <text class="bits" x="326" y="333">32 bit</text>
+  </g>
+
+  <g class="optional">
+    <rect x="22" y="351" width="608" height="59" rx="7"/>
+    <text class="field" x="326" y="370">选项与填充</text>
+    <text class="note" x="326" y="393">0–10 个 32 位字（0–40 B）</text>
+  </g>
+  <path class="bracket" d="M643 76h9V410h-9"/>
+  <text class="group-label" x="697" y="230">首部</text>
+  <text class="bits" x="697" y="256">20–60 B</text>
+
+  <g class="payload">
+    <rect x="22" y="424" width="608" height="49" rx="7"/>
+    <text class="field" x="326" y="439">数据</text>
+    <text class="note" x="326" y="459">长度可变</text>
+  </g>
+</svg>

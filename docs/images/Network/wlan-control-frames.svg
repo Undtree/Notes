@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="390" viewBox="0 0 900 390" role="img" aria-labelledby="title desc">
+  <title id="title">IEEE 802.11 的 RTS、CTS 和 ACK 控制帧</title>
+  <desc id="desc">RTS、CTS、ACK 的帧控制字段中的子类型值分别为十六进制 B、C、D。RTS 长 20 字节，依次包含帧控制 2 字节、持续期 2 字节、接收地址 6 字节、发送地址 6 字节及 FCS 4 字节。CTS 和 ACK 各长 14 字节，依次包含帧控制 2 字节、持续期 2 字节、接收地址 6 字节及 FCS 4 字节。</desc>
+  <defs>
+    <style>
+      text { fill: #1a237e; font-family: "Source Han Sans SC", "Noto Sans SC", "Microsoft YaHei", sans-serif; text-anchor: middle; dominant-baseline: middle; }
+      .field { font-size: 25px; font-weight: 600; }
+      .row-label { font-size: 28px; font-weight: 700; }
+      .bytes { font: 23px "Cascadia Mono", Consolas, monospace; }
+      .note { font-size: 19px; }
+      g rect { stroke-width: 2; }
+      .header rect { fill: #f7f8fc; stroke: #9da8cc; }
+      .control rect { fill: #eaf0ff; stroke: #7182c1; }
+      .fcs rect { fill: #fdf4e6; stroke: #c07f1e; }
+      .fcs text { fill: #8a5a10; }
+    </style>
+    <g id="frame-control" class="control">
+      <rect width="150" height="104" rx="8"/>
+      <text class="field" x="75" y="24">帧控制</text>
+      <text class="bytes" x="75" y="53">2 B</text>
+    </g>
+    <g id="duration" class="header">
+      <rect width="132" height="104" rx="8"/>
+      <text class="field" x="66" y="24">持续期</text>
+      <text class="bytes" x="66" y="53">2 B</text>
+      <text class="note" x="66" y="81">单位 μs</text>
+    </g>
+    <g id="receiver" class="header">
+      <rect width="140" height="104" rx="8"/>
+      <text class="field" x="70" y="24">RA</text>
+      <text class="bytes" x="70" y="53">6 B</text>
+      <text class="note" x="70" y="81">接收地址</text>
+    </g>
+    <g id="fcs" class="fcs">
+      <rect width="132" height="104" rx="8"/>
+      <text class="field" x="66" y="24">FCS</text>
+      <text class="bytes" x="66" y="53">4 B</text>
+      <text class="note" x="66" y="81">CRC-32 校验</text>
+    </g>
+  </defs>
+  <rect width="900" height="390" fill="#fff"/>
+
+  <g transform="translate(0 24)">
+    <text class="row-label" x="69" y="40">RTS</text>
+    <text class="bytes" x="69" y="71">20 B</text>
+    <use href="#frame-control" x="132"/>
+    <text class="note" x="207" y="81">子类型 0xB</text>
+    <use href="#duration" x="290"/>
+    <use href="#receiver" x="430"/>
+    <g class="header" transform="translate(578 0)">
+      <rect width="140" height="104" rx="8"/>
+      <text class="field" x="70" y="24">TA</text>
+      <text class="bytes" x="70" y="53">6 B</text>
+      <text class="note" x="70" y="81">发送地址</text>
+    </g>
+    <use href="#fcs" x="726"/>
+  </g>
+  <g transform="translate(0 143)">
+    <text class="row-label" x="69" y="40">CTS</text>
+    <text class="bytes" x="69" y="71">14 B</text>
+    <use href="#frame-control" x="132"/>
+    <text class="note" x="207" y="81">子类型 0xC</text>
+    <use href="#duration" x="290"/>
+    <use href="#receiver" x="430"/>
+    <use href="#fcs" x="578"/>
+  </g>
+  <g transform="translate(0 262)">
+    <text class="row-label" x="69" y="40">ACK</text>
+    <text class="bytes" x="69" y="71">14 B</text>
+    <use href="#frame-control" x="132"/>
+    <text class="note" x="207" y="81">子类型 0xD</text>
+    <use href="#duration" x="290"/>
+    <use href="#receiver" x="430"/>
+    <use href="#fcs" x="578"/>
+  </g>
+</svg>

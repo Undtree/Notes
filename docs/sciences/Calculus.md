@@ -5124,10 +5124,12 @@ $$
 
 #### §1.1 第二类曲线积分的概念
 
-设有向光滑曲线 $L$ 的单位切矢量为
+在有向光滑曲线 $L$ 上，每一点的切线有两个方向，曲线的取向决定切矢量指向哪一边。设 $\mathbf T=(T_x,T_y,T_z)\ne\mathbf 0$ 是指向行进方向的切矢量，$\alpha,\beta,\gamma$ 分别为它与 $Ox,Oy,Oz$ 轴正向的夹角，则单位切矢量为
 
 $$
-\boldsymbol\tau=(\cos\alpha,\cos\beta,\cos\gamma),
+\boldsymbol\tau=\frac{\mathbf T}{|\mathbf T|}
+=\frac{(T_x,T_y,T_z)}{\sqrt{T_x^2+T_y^2+T_z^2}}
+=(\cos\alpha,\cos\beta,\cos\gamma).
 $$
 
 矢量函数 $\mathbf A=(P,Q,R)$ 在 $L$ 上连续。$\mathbf A$ 沿 $L$ 的第二类曲线积分定义为
@@ -5138,13 +5140,17 @@ $$
 =\int_LP\,\mathrm dx+Q\,\mathrm dy+R\,\mathrm dz.
 $$
 
+这里 $\mathbf A\cdot\boldsymbol\tau$ 是 $\mathbf A$ 沿行进切向的带符号分量，积分沿整条曲线累加这个分量乘以弧长的贡献。
+
 有向弧元素为
 
 $$
 \mathrm d\mathbf s=\boldsymbol\tau\,\mathrm ds=(\mathrm dx,\mathrm dy,\mathrm dz).
 $$
 
-反向曲线记为 $-L$，则
+它的三个分量是无穷小位移在三个坐标轴上的有向投影。例如 $\mathrm dx=\cos\alpha\,\mathrm ds$：当行进方向的 $x$ 分量为负时，$\mathrm dx<0$，而弧长元 $\mathrm ds$ 仍为正。
+
+反向曲线记为 $-L$。换向时，弧长元 $\mathrm ds$ 不变，单位切矢量 $\boldsymbol\tau$ 变号，因此
 
 $$
 \int_{-L}\mathbf A\cdot\mathrm d\mathbf s
@@ -5158,12 +5164,31 @@ $$
 =\int_{L_1}\mathbf A\cdot\mathrm d\mathbf s+\int_{L_2}\mathbf A\cdot\mathrm d\mathbf s.
 $$
 
-若参数方程为 $\mathbf r(t)=(x(t),y(t),z(t))$，起点、终点对应参数为 $t_A,t_B$，则
+若曲线用 $\mathbf r(t)=(x(t),y(t),z(t))$ 参数化，且 $\mathbf r'(t)\ne\mathbf 0$，当沿 $t$ 增大的方向行进时，$\mathbf r'(t)$ 就是指向行进方向的切矢量。单位化时除去的模长与弧长元中的因子正好抵消：
+
+$$
+\mathrm ds=|\mathbf r'(t)|\,\mathrm dt,
+\qquad
+\mathrm d\mathbf s=\frac{\mathbf r'(t)}{|\mathbf r'(t)|}\,\mathrm ds
+=\mathbf r'(t)\,\mathrm dt.
+$$
+
+记起点、终点对应的参数为 $t_A,t_B$，则
 
 $$
 \int_LP\,\mathrm dx+Q\,\mathrm dy+R\,\mathrm dz
+=\int_{t_A}^{t_B}\mathbf A(\mathbf r(t))\cdot\mathbf r'(t)\,\mathrm dt
 =\int_{t_A}^{t_B}
 \bigl[P(\mathbf r(t))x'(t)+Q(\mathbf r(t))y'(t)+R(\mathbf r(t))z'(t)\bigr]\,\mathrm dt.
+$$
+
+积分限按起点到终点写；若沿 $t$ 减小的方向行进，就取 $t_A>t_B$。
+
+例如，沿平面曲线 $y=\varphi(x)$ 从 $x=a$ 走到 $x=b$（$a<b$），可直接以 $x$ 为参数，切矢量为 $(1,\varphi'(x))$。代入 $\mathrm dy=\varphi'(x)\,\mathrm dx$ 得
+
+$$
+\int_LP\,\mathrm dx+Q\,\mathrm dy
+=\int_a^b\bigl[P(x,\varphi(x))+Q(x,\varphi(x))\varphi'(x)\bigr]\,\mathrm dx.
 $$
 
 力场 $\mathbf F$ 沿 $L$ 所做的功为
@@ -5293,12 +5318,14 @@ $$
 
 #### §2.1 第二类曲面积分的概念
 
-光滑曲面上选定一点的法线方向，沿曲面任一闭曲线连续移动法线方向，回到原点时方向均保持原向的曲面称为双侧曲面。选定连续法线方向的一侧后，称为定侧曲面。
+光滑曲面上选定一点的法线方向，沿曲面任一闭曲线连续移动法线方向，回到起点时方向均保持原向的曲面称为双侧曲面。选定连续法线方向的一侧后，称为定侧曲面。
 
-设定侧曲面 $S$ 的单位法矢量为
+在定侧曲面 $S$ 上，每一点的法线垂直于该点的切平面，所选的侧决定法线的朝向。设 $\mathbf N=(N_x,N_y,N_z)\ne\mathbf 0$ 是指向所选一侧的法矢量，$\alpha,\beta,\gamma$ 分别为它与 $Ox,Oy,Oz$ 轴正向的夹角，则单位法矢量为
 
 $$
-\mathbf n=(\cos\alpha,\cos\beta,\cos\gamma),
+\mathbf n=\frac{\mathbf N}{|\mathbf N|}
+=\frac{(N_x,N_y,N_z)}{\sqrt{N_x^2+N_y^2+N_z^2}}
+=(\cos\alpha,\cos\beta,\cos\gamma).
 $$
 
 $\mathbf A=(P,Q,R)$ 在 $S$ 上连续。第二类曲面积分定义为
@@ -5318,6 +5345,8 @@ $$
 \mathrm dz\,\mathrm dx=\cos\beta\,\mathrm dS,\quad
 \mathrm dx\,\mathrm dy=\cos\gamma\,\mathrm dS.
 $$
+
+这里的三个乘积分别是曲面面积元在 $Oyz$、$Ozx$、$Oxy$ 平面上的有向投影面积：把 $\mathrm dS$ 乘以相应方向余弦的绝对值，就得到投影的大小；保留余弦的符号，就得到投影的方向信息。
 
 若 $-S$ 表示选取相反侧的曲面，则
 
@@ -5341,7 +5370,18 @@ $$
 
 #### §2.2 第二类曲面积分的计算
 
-若 $S:z=z(x,y)$，投影区域为 $D_{xy}$，则
+若曲面片用 $\mathbf r(u,v)$ 参数化，且 $\mathbf r_u\times\mathbf r_v\ne\mathbf 0$，则 $\mathbf r_u$ 和 $\mathbf r_v$ 是两条参数曲线的切矢量，它们的叉积垂直于切平面。从 $\pm(\mathbf r_u\times\mathbf r_v)$ 中取指向所选一侧的 $\mathbf N$。叉积的模长等于这两个切矢量张成的平行四边形的面积，也就是参数平面到曲面的面积伸缩因子。因此
+
+$$
+\mathrm dS=|\mathbf N|\,\mathrm du\,\mathrm dv,
+\qquad
+\mathrm d\mathbf S=\frac{\mathbf N}{|\mathbf N|}\,\mathrm dS
+=\mathbf N\,\mathrm du\,\mathrm dv.
+$$
+
+可见，单位化时除去的模长与面积元中的伸缩因子正好抵消。
+
+若 $S:z=z(x,y)$，投影区域为 $D_{xy}$，可取 $\mathbf r(x,y)=(x,y,z(x,y))$。沿曲面的切向位移满足 $z_x\,\mathrm dx+z_y\,\mathrm dy-\mathrm dz=0$，因此 $(z_x,z_y,-1)$ 与切平面垂直，指向下侧。上侧的法矢量为 $\mathbf r_x\times\mathbf r_y=(-z_x,-z_y,1)$。将相应的 $\mathbf N$ 代入有向面积元，得
 
 $$
 \iint_SP\,\mathrm dy\,\mathrm dz+Q\,\mathrm dz\,\mathrm dx+R\,\mathrm dx\,\mathrm dy
