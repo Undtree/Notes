@@ -9355,6 +9355,21 @@ B=Pe^{rt}.
 </tbody>
 </table>
 <p>在闭区间上只有有限个第一类间断点的函数称为在该区间上按段连续。</p>
+<div class="admonition example exercise">
+<p class="admonition-title">带绝对值的函数间断点</p>
+<p>求 <span class="arithmatex">\(f(x)=\dfrac{x^2-x}{|\sin x|(x^2-1)}\)</span> 在 <span class="arithmatex">\((-\dfrac{\pi}{2},\dfrac{\pi}{2})\)</span> 内第一类间断点的个数。</p>
+<div class="exam-options" markdown="1">
+<p>A. 0</p>
+<p>B. 1</p>
+<p>C. 2</p>
+<p>D. 3
+</div></p>
+<details class="success">
+<summary>解析</summary>
+<p>候选点是 <span class="arithmatex">\(-1,0,1\)</span>。在去心邻域内约分得 <span class="arithmatex">\(\dfrac{x}{(x+1)|\sin x|}\)</span>：<span class="arithmatex">\(-1\)</span> 处一侧趋于无穷，是第二类；<span class="arithmatex">\(0\)</span> 处 <span class="arithmatex">\(\dfrac{x}{|\sin x|}\)</span> 左右极限分别为 <span class="arithmatex">\(-1,1\)</span>，是跳跃间断；<span class="arithmatex">\(1\)</span> 处两侧都趋于 <span class="arithmatex">\(\dfrac{1}{2\sin1}\)</span>，是可去间断。因此第一类间断点有 <strong><span class="arithmatex">\(2\)</span> 个（ C ）</strong>。</p>
+<p><strong>易错点：</strong> <span class="arithmatex">\(0\)</span> 附近不能把 <span class="arithmatex">\(|\sin x|\)</span> 直接换成 <span class="arithmatex">\(\sin x\)</span> 后取双侧极限。</p>
+</details>
+</div>
 <h4 id="42-连续函数的局部性质">§4.2 连续函数的局部性质<a class="headerlink" href="#42-连续函数的局部性质" title="Permanent link">&para;</a></h4>
 <p><span class="arithmatex">\(f,g\)</span> 在 <span class="arithmatex">\(x_0\)</span> 连续时，<span class="arithmatex">\(f\pm g\)</span>、<span class="arithmatex">\(fg\)</span>、<span class="arithmatex">\(cf\)</span> 也在 <span class="arithmatex">\(x_0\)</span> 连续，其中 <span class="arithmatex">\(c\)</span> 为常数；<span class="arithmatex">\(g(x_0)\ne0\)</span> 时，<span class="arithmatex">\(f/g\)</span> 也连续。</p>
 <p>若 <span class="arithmatex">\(f\)</span> 在 <span class="arithmatex">\(x_0\)</span> 连续，则其在某邻域内有界；若 <span class="arithmatex">\(f(x_0)&gt;0\)</span>（<span class="arithmatex">\(&lt;0\)</span>），则在某邻域内 <span class="arithmatex">\(f(x)&gt;0\)</span>（<span class="arithmatex">\(&lt;0\)</span>）。</p>
@@ -9372,6 +9387,40 @@ m\le f(x)\le M\quad(x\in[a,b]).
 \]</div>
 <p><strong>零点定理：</strong> 若 <span class="arithmatex">\(f\in C[a,b]\)</span> 且 <span class="arithmatex">\(f(a)f(b)&lt;0\)</span>，则存在 <span class="arithmatex">\(\xi\in(a,b)\)</span>，使 <span class="arithmatex">\(f(\xi)=0\)</span>。</p>
 <p><strong>介值定理：</strong> 若 <span class="arithmatex">\(f\in C[a,b]\)</span>，<span class="arithmatex">\(f(a)\ne f(b)\)</span>，<span class="arithmatex">\(c\)</span> 严格介于 <span class="arithmatex">\(f(a),f(b)\)</span> 之间，则存在 <span class="arithmatex">\(\xi\in(a,b)\)</span> 使 <span class="arithmatex">\(f(\xi)=c\)</span>。因此 <span class="arithmatex">\(f([a,b])=[m,M]\)</span>。</p>
+<div class="admonition example exercise">
+<p class="admonition-title">☆☆☆ 函数有界性的判定</p>
+<p>下列命题中，正确的有几项？</p>
+<p>① <span class="arithmatex">\(\dfrac{x}{\int_0^x|\cos t|\,\mathrm dt}\)</span> 在 <span class="arithmatex">\((0,\infty)\)</span> 上有界<br>
+② <span class="arithmatex">\(\mathbb R\)</span> 上的连续周期函数有界<br>
+③ 若 <span class="arithmatex">\(f\)</span> 在有限区间 <span class="arithmatex">\((a,b)\)</span> 上可导且 <span class="arithmatex">\(f'\)</span> 有界，则 <span class="arithmatex">\(f\)</span> 有界<br>
+④ 若 <span class="arithmatex">\(f\)</span> 在 <span class="arithmatex">\([0,\infty)\)</span> 上可导且 <span class="arithmatex">\(f'(x)\to0\)</span>，则 <span class="arithmatex">\(f\)</span> 有界</p>
+<div class="exam-options" markdown="1">
+<p>A. 1</p>
+<p>B. 2</p>
+<p>C. 3</p>
+<p>D. 4
+</div></p>
+<details class="success">
+<summary>解析</summary>
+<p>① 在 <span class="arithmatex">\(0^+\)</span> 处的极限为 <span class="arithmatex">\(1\)</span>；令 <span class="arithmatex">\(x=m\pi+r,\ 0\le r&lt;\pi\)</span>，则分母为 <span class="arithmatex">\(2m+\int_0^r|\cos t|\,\mathrm dt\)</span>，所以无穷远处的极限为 <span class="arithmatex">\(\dfrac{\pi}{2}\)</span>。中间任取闭区间用连续性，得有界。② 只需看一个完整周期。③ 固定 <span class="arithmatex">\(x_0\in(a,b)\)</span>，由中值定理 <span class="arithmatex">\(|f(x)-f(x_0)|\le\sup|f'|\,(b-a)\)</span>。④ 反例 <span class="arithmatex">\(f(x)=\ln(1+x)\)</span>。故 <strong>三项正确（ C ）</strong>。</p>
+<p><strong>易错点：</strong> 导数趋零只说明增长变慢；③ 能得出有界还用到了区间长度有限。</p>
+</details>
+</div>
+<div class="admonition example exercise">
+<p class="admonition-title">连续函数与数列收敛性</p>
+<p>设 <span class="arithmatex">\(f\)</span> 在 <span class="arithmatex">\([-1,1]\)</span> 上连续，<span class="arithmatex">\(a_n\in(-1,1)\)</span>。下列说法哪一项正确？</p>
+<div class="exam-options" markdown="1">
+<p>A. 若 <span class="arithmatex">\(\{f(a_n)\}\)</span> 收敛，则 <span class="arithmatex">\(\{a_n\}\)</span> 收敛</p>
+<p>B. 若 <span class="arithmatex">\(\{f(a_n)\}\)</span> 发散，则 <span class="arithmatex">\(\{a_n\}\)</span> 可能收敛</p>
+<p>C. 若 <span class="arithmatex">\(\{a_n\}\)</span> 单调，则 <span class="arithmatex">\(\{f(a_n)\}\)</span> 收敛</p>
+<p>D. 若 <span class="arithmatex">\(\{f(a_n)\}\)</span> 单调，则 <span class="arithmatex">\(\{a_n\}\)</span> 收敛
+</div></p>
+<details class="success">
+<summary>解析</summary>
+<p>C 中 <span class="arithmatex">\(a_n\)</span> 有界且单调，必收敛到 <span class="arithmatex">\([-1,1]\)</span> 内某点，再用连续性。B 与连续性矛盾。对 A 和 D ，取 <span class="arithmatex">\(f(x)=x^2\)</span>、<span class="arithmatex">\(a_n=\dfrac{(-1)^n}{2}\)</span>，则 <span class="arithmatex">\(f(a_n)\)</span> 是常数列，<span class="arithmatex">\(a_n\)</span> 却振荡。因此 <strong>只有 C 正确</strong>。</p>
+<p><strong>提醒：</strong> <span class="arithmatex">\(a_n\)</span> 虽取值于开区间，极限可以在端点；题设在<strong>闭区间</strong>上连续恰好覆盖这种情况。</p>
+</details>
+</div>
 <h4 id="44-初等函数在其定义域上的连续性">§4.4 初等函数在其定义域上的连续性<a class="headerlink" href="#44-初等函数在其定义域上的连续性" title="Permanent link">&para;</a></h4>
 <p>在闭区间上连续且严格单调的函数，其反函数在相应值域上连续且具有相同的严格单调性。</p>
 <p>基本初等函数在各自定义域上连续；初等函数在其有定义的区间上连续。</p>
@@ -9838,6 +9887,15 @@ F(x)=a_1\sin x+\frac{a_2\sin2x}{2}+\cdots+\frac{a_n\sin nx}{n},
 <p>知 <span class="arithmatex">\(F(x)\in C[0,\pi]\)</span>，由 <span class="arithmatex">\(F'(x)=f(x)\)</span> 知 <span class="arithmatex">\(F(x)\in D(0,\pi)\)</span>。又 <span class="arithmatex">\(F(0)=F(\pi)=0\)</span>，由罗尔定理知，至少存在一点 <span class="arithmatex">\(\xi\in(0,\pi)\)</span>，使 <span class="arithmatex">\(F'(\xi)=0\)</span>。由于 <span class="arithmatex">\(F'(x)=f(x)\)</span>，从而推出 <span class="arithmatex">\(f(\xi)=0\)</span>。</p>
 </details>
 </div>
+<div class="admonition example exercise">
+<p class="admonition-title">☆☆☆ 积分条件下的导数中值</p>
+<p>设 <span class="arithmatex">\(f\)</span> 在 <span class="arithmatex">\([-a,a]\)</span> 上二阶可导且为奇函数，<span class="arithmatex">\(\int_0^a f(x)\,\mathrm dx=\dfrac12a^2 f(a)\)</span>。证明：（一）存在 <span class="arithmatex">\(\xi\in(0,a)\)</span> 使 <span class="arithmatex">\(f'(\xi)=f(a)\)</span>；（二）任给 <span class="arithmatex">\(\lambda\in\mathbb R\)</span>，存在 <span class="arithmatex">\(\eta\in(-a,a)\)</span> 使 <span class="arithmatex">\(f''(\eta)-\lambda f'(\eta)+\lambda f(a)=0\)</span>。</p>
+<details class="success">
+<summary>解析</summary>
+<p>令 <span class="arithmatex">\(H(x)=\int_0^x[f(t)-tf(a)]\,\mathrm dt\)</span>。由 <span class="arithmatex">\(H(0)=H(a)=0\)</span>，得某 <span class="arithmatex">\(c\in(0,a)\)</span> 使 <span class="arithmatex">\(H'(c)=0\)</span>。又 <span class="arithmatex">\(H'(0)=0\)</span>，再应用罗尔定理得 <span class="arithmatex">\(H''(\xi)=f'(\xi)-f(a)=0\)</span>。因为 <span class="arithmatex">\(f'\)</span> 为偶函数，<span class="arithmatex">\(G(x)=e^{-\lambda x}[f'(x)-f(a)]\)</span> 在 <span class="arithmatex">\(\pm\xi\)</span> 均为零；在 <span class="arithmatex">\((-\xi,\xi)\)</span> 对 <span class="arithmatex">\(G\)</span> 用罗尔定理，展开 <span class="arithmatex">\(G'(\eta)=0\)</span> 即得第二问。</p>
+<p><strong>要点：</strong> 指数因子由目标式 <span class="arithmatex">\(u'-\lambda u\)</span> 反推；奇偶性负责提供第二个零点。</p>
+</details>
+</div>
 <h4 id="13-拉格朗日定理函数的单调区间">§1.3 拉格朗日定理、函数的单调区间<a class="headerlink" href="#13-拉格朗日定理函数的单调区间" title="Permanent link">&para;</a></h4>
 <p>设 <span class="arithmatex">\(f\in C[a,b]\)</span>，在 <span class="arithmatex">\((a,b)\)</span> 内可导，则存在 <span class="arithmatex">\(\xi\in(a,b)\)</span>，使</p>
 <div class="arithmatex">\[
@@ -9872,6 +9930,16 @@ f'(\xi)-\frac{f(b)-f(a)}{b-a}=0,
 <div class="arithmatex">\[
 \frac{f(b)-f(a)}{g(b)-g(a)}=\frac{f'(\xi)}{g'(\xi)}.
 \]</div>
+<div class="admonition example exercise">
+<p class="admonition-title">☆☆☆ 两次柯西中值与三阶余项</p>
+<p>设 <span class="arithmatex">\(f\)</span> 在 <span class="arithmatex">\([0,1]\)</span> 连续、在 <span class="arithmatex">\((0,1)\)</span> 二阶可导，<span class="arithmatex">\(f(0)=0\)</span>，且 <span class="arithmatex">\(f(x)&gt;0\)</span>（<span class="arithmatex">\(0&lt;x&lt;1\)</span>）。证明存在 <span class="arithmatex">\(\xi,\eta\in(0,1)\)</span>，使 <span class="arithmatex">\(\int_0^1 f(x)^3\,\mathrm dx=f'(\xi)\bigl(\int_0^1 f(x)\,\mathrm dx\bigr)^2\)</span>，且 <span class="arithmatex">\(\eta f''(\eta)+2f'(\eta)=6\int_0^1 xf(x)\,\mathrm dx\)</span>。题面的“恒正”和 <span class="arithmatex">\(f(0)=0\)</span> 在端点冲突，以上按区间内部为正处理。</p>
+<details class="success">
+<summary>解析</summary>
+<p>记 <span class="arithmatex">\(A(t)=\int_0^t f\)</span>。先对 <span class="arithmatex">\(\int_0^t f^3\)</span> 和 <span class="arithmatex">\(A(t)^2\)</span> 用柯西中值定理，得到某 <span class="arithmatex">\(c\in(0,1)\)</span> 处的比 <span class="arithmatex">\(\dfrac{f(c)^2}{2A(c)}\)</span>；再对 <span class="arithmatex">\(f^2\)</span> 与 <span class="arithmatex">\(2A\)</span> 在 <span class="arithmatex">\([0,c]\)</span> 用柯西中值定理，所得导数比为 <span class="arithmatex">\(f'(\xi)\)</span>。</p>
+<p>记 <span class="arithmatex">\(I=\int_0^1 xf(x)\,\mathrm dx\)</span>、<span class="arithmatex">\(g(t)=\int_0^t xf(x)\,\mathrm dx-It^3\)</span>。<span class="arithmatex">\(g(0)=g(1)=0\)</span>，故 <span class="arithmatex">\(g'\)</span> 在内部有零点；同时 <span class="arithmatex">\(g'(0)=0\)</span> 且 <span class="arithmatex">\(\dfrac{g'(t)}{t}=f(t)-3It\to0\)</span>。若 <span class="arithmatex">\(g'''\)</span> 在内部无零点，由导数的介值性，它恒正或恒负。此时 <span class="arithmatex">\(g'\)</span> 严格凸或严格凹，其在 <span class="arithmatex">\(0\)</span> 的右导数为零，故在内部严格为正或严格为负，与零点矛盾。因此 <span class="arithmatex">\(g'''(\eta)=\eta f''(\eta)+2f'(\eta)-6I=0\)</span>。</p>
+<p><strong>要点：</strong> 第一问的分母是积分的平方，要先对整平方求导；第二问保留了手写的三阶构造，同时只用题面给出的端点连续性。</p>
+</details>
+</div>
 <h4 id="15-函数的单调区间与极值">§1.5 函数的单调区间与极值<a class="headerlink" href="#15-函数的单调区间与极值" title="Permanent link">&para;</a></h4>
 <p>设 <span class="arithmatex">\(f\)</span> 在区间 <span class="arithmatex">\(I\)</span> 上连续、在其内部可导，则</p>
 <table>
@@ -10165,6 +10233,28 @@ f(x)\approx P_n(x),\qquad
 \le\frac{M}{(n+1)!}|x-x_0|^{n+1},
 \]</div>
 <p>其中 <span class="arithmatex">\(M\)</span> 是 <span class="arithmatex">\(x_0\)</span> 与 <span class="arithmatex">\(x\)</span> 之间 <span class="arithmatex">\(|f^{(n+1)}|\)</span> 的上界。</p>
+<div class="admonition example exercise">
+<p class="admonition-title">☆☆☆ 相邻指数项之差的极限</p>
+<p>求 <span class="arithmatex">\(\lim_{n\to\infty}n^2[(1+\dfrac{1}{n+1})^{n+1}-(1+\dfrac{1}{n})^n]\)</span>。</p>
+<details class="success">
+<summary>解析</summary>
+<p>令 <span class="arithmatex">\(a_n=n\ln(1+\dfrac{1}{n})\)</span>。展开得 <span class="arithmatex">\(a_n=1-\dfrac1{2n}+\dfrac1{3n^2}+O(n^{-3})\)</span>，所以</p>
+<div class="arithmatex">\[
+n^2(a_{n+1}-a_n)=\frac{n}{2(n+1)}+\frac13\left(\frac{n^2}{(n+1)^2}-1\right)+O(n^{-1})\longrightarrow\frac12.
+\]</div>
+<p>对 <span class="arithmatex">\(e^x\)</span> 用拉格朗日中值定理，<span class="arithmatex">\(e^{a_{n+1}}-e^{a_n}=e^{\xi_n}(a_{n+1}-a_n)\)</span>，<span class="arithmatex">\(\xi_n\to1\)</span>。答案为 <strong><span class="arithmatex">\(\dfrac{e}{2}\)</span></strong>。</p>
+<p><strong>易错点：</strong> 只展开到 <span class="arithmatex">\(\dfrac{1}{n}\)</span> 并留下 <span class="arithmatex">\(O(n^{-2})\)</span>，误差乘 <span class="arithmatex">\(n^2\)</span> 后仍可能影响极限。</p>
+</details>
+</div>
+<div class="admonition example exercise">
+<p class="admonition-title">☆☆☆ 参数方程下的泰勒展开</p>
+<p>设 <span class="arithmatex">\(y=f(x)\)</span> 由 <span class="arithmatex">\(x=t^2+2t-3,\ t^2-y-\sin y=1\)</span>（<span class="arithmatex">\(t\ge0\)</span>）确定。求 <span class="arithmatex">\(\lim_{x\to0^+}\dfrac{4f(x)\sin x-x^2}{x^3}\)</span>。</p>
+<details class="success">
+<summary>解析</summary>
+<p><span class="arithmatex">\(x=0\)</span> 对应 <span class="arithmatex">\(t=1,y=0\)</span>。由 <span class="arithmatex">\(y+\sin y=t^2-1\)</span> 得 <span class="arithmatex">\(\dfrac{\mathrm dy}{\mathrm dx}=\dfrac{t}{(t+1)(1+\cos y)}\)</span>，所以 <span class="arithmatex">\(f'(0)=\dfrac{1}{4}\)</span>。再对 <span class="arithmatex">\(t\)</span> 求导，代入 <span class="arithmatex">\(t=1,y=0\)</span> 得 <span class="arithmatex">\(\dfrac{\mathrm d\left(\dfrac{\mathrm dy}{\mathrm dx}\right)}{\mathrm dt}=\dfrac{1}{8}\)</span>；除以 <span class="arithmatex">\(\dfrac{\mathrm dx}{\mathrm dt}=4\)</span>，有 <span class="arithmatex">\(f''(0)=\dfrac{1}{32}\)</span>。因此 <span class="arithmatex">\(f(x)=\dfrac{x}{4}+\dfrac{x^2}{64}+o(x^2)\)</span>，乘上 <span class="arithmatex">\(\sin x=x+O(x^3)\)</span> 后，二次项相消，极限为 <strong><span class="arithmatex">\(\dfrac{1}{16}\)</span></strong>。</p>
+<p><strong>易错点：</strong> 二阶导数是先对 <span class="arithmatex">\(t\)</span> 求 <span class="arithmatex">\(\dfrac{\mathrm d\left(\dfrac{\mathrm dy}{\mathrm dx}\right)}{\mathrm dt}\)</span>，再除以 <span class="arithmatex">\(\dfrac{\mathrm dx}{\mathrm dt}\)</span>。</p>
+</details>
+</div>
 <h3 id="4-数学建模一">§4 数学建模（一）<a class="headerlink" href="#4-数学建模一" title="Permanent link">&para;</a></h3>
 <p><strong>数学模型：</strong> 为了某种目的，对现实中的特定对象作必要的简化和假设，用数学工具得到的数学结构，用于解释对象的状态、预测未来或确定决策与控制。</p>
 <h3 id="5-函数图形的凹凸性与拐点">§5 函数图形的凹凸性与拐点<a class="headerlink" href="#5-函数图形的凹凸性与拐点" title="Permanent link">&para;</a></h3>
@@ -10189,6 +10279,15 @@ f''(x)&lt;0\Rightarrow\text{曲线为凸}.
 \]</div>
 <p><strong>拐点：</strong> 连续曲线上凹凸性发生改变的点。</p>
 <p>若 <span class="arithmatex">\(f\)</span> 在 <span class="arithmatex">\(x_0\)</span> 的某邻域内二阶可导，<span class="arithmatex">\((x_0,f(x_0))\)</span> 是拐点，则 <span class="arithmatex">\(f''(x_0)=0\)</span>。若 <span class="arithmatex">\(f''\)</span> 在 <span class="arithmatex">\(x_0\)</span> 两侧异号，则 <span class="arithmatex">\((x_0,f(x_0))\)</span> 为拐点；若两侧同号，则不是拐点。</p>
+<div class="admonition example exercise">
+<p class="admonition-title">☆☆☆ 中心二阶差分与拐点</p>
+<p>设 <span class="arithmatex">\(f\)</span> 在 <span class="arithmatex">\(\mathbb R\)</span> 上二阶可导。证明 <span class="arithmatex">\(f''\ge0\)</span> 等价于对任意 <span class="arithmatex">\(x,h\)</span> 都有 <span class="arithmatex">\(f(x+h)-2f(x)+f(x-h)\ge0\)</span>；若 <span class="arithmatex">\(x_0\)</span> 为拐点，证明 <span class="arithmatex">\(f''(x_0)=0\)</span>。题面第一问写的是严格 <span class="arithmatex">\(&gt;0\)</span>，这里按非严格不等式订正：<span class="arithmatex">\(h=0\)</span> 时差分为零，仿射函数也符合 <span class="arithmatex">\(f''\ge0\)</span>。</p>
+<details class="success">
+<summary>解析</summary>
+<p>由 <span class="arithmatex">\(f''\ge0\)</span> 知 <span class="arithmatex">\(f'\)</span> 单调不减。对 <span class="arithmatex">\(h&gt;0\)</span>，<span class="arithmatex">\([x,x+h]\)</span> 上的割线斜率不小于 <span class="arithmatex">\([x-h,x]\)</span> 上的割线斜率（分别用中值定理），即目标不等式；<span class="arithmatex">\(h\le0\)</span> 由对称性处理。反向将二阶差分除以 <span class="arithmatex">\(h^2\)</span>，取极限得到 <span class="arithmatex">\(f''(x)\ge0\)</span>。在拐点两侧，<span class="arithmatex">\(f'\)</span> 的单调方向相反，又 <span class="arithmatex">\(f'\)</span> 在 <span class="arithmatex">\(x_0\)</span> 连续，所以 <span class="arithmatex">\(f'\)</span> 在 <span class="arithmatex">\(x_0\)</span> 取局部极值；费马定理给出 <span class="arithmatex">\(f''(x_0)=0\)</span>。</p>
+<p><strong>易错点：</strong> 二阶可导给出 <span class="arithmatex">\(f'\)</span> 可导，不要求 <span class="arithmatex">\(f''\)</span> 连续；这里对 <span class="arithmatex">\(f'\)</span> 用费马定理。</p>
+</details>
+</div>
 <h3 id="6-函数图形的描绘">§6 函数图形的描绘<a class="headerlink" href="#6-函数图形的描绘" title="Permanent link">&para;</a></h3>
 <h4 id="61-曲线的渐近线">§6.1 曲线的渐近线<a class="headerlink" href="#61-曲线的渐近线" title="Permanent link">&para;</a></h4>
 <p><strong>渐近线：</strong> 当曲线上的点沿曲线趋于无穷远时，该点到某一直线的距离趋于零，则该直线称为曲线的渐近线。</p>
@@ -10202,6 +10301,24 @@ a=\lim\frac{f(x)}x,\qquad b=\lim\bigl(f(x)-ax\bigr)
 \]</div>
 <p>均为有限数；<span class="arithmatex">\(a=0\)</span> 时，<span class="arithmatex">\(y=b\)</span> 为水平渐近线。</p>
 <p>若 <span class="arithmatex">\(x\to x_0\)</span> 的至少一个单侧极限满足 <span class="arithmatex">\(|f(x)|\to\infty\)</span>，则直线 <span class="arithmatex">\(x=x_0\)</span> 为铅直渐近线。</p>
+<div class="admonition example exercise">
+<p class="admonition-title">☆☆☆ 隐函数的奇偶性、零点与渐近线</p>
+<p>设连续函数 <span class="arithmatex">\(y=y(x)\)</span> 由 <span class="arithmatex">\(\dfrac12x+\dfrac{\sqrt3}{2}y=\arctan(\dfrac{\sqrt3}{2}x-\dfrac12y)\)</span> 确定。下列说法中，正确的有几项？</p>
+<p>① <span class="arithmatex">\(y(x)\)</span> 为奇函数<br>
+② <span class="arithmatex">\(y(x)\)</span> 恰有三个零点<br>
+③ <span class="arithmatex">\(y=y(x)\)</span> 有两条斜渐近线</p>
+<div class="exam-options" markdown="1">
+<p>A. 0</p>
+<p>B. 1</p>
+<p>C. 2</p>
+<p>D. 3
+</div></p>
+<details class="success">
+<summary>解析</summary>
+<p>将右端移到左边，所得式子对 <span class="arithmatex">\(y\)</span> 严格递增，所以每个 <span class="arithmatex">\(x\)</span> 的解唯一。代入 <span class="arithmatex">\((-x,-y)\)</span> 仍成立，故 <span class="arithmatex">\(y\)</span> 为奇函数。令 <span class="arithmatex">\(h(x)=\arctan(\dfrac{\sqrt3 x}{2})-\dfrac{x}{2}\)</span>，在 <span class="arithmatex">\(x&gt;0\)</span> 上 <span class="arithmatex">\(h'\)</span> 由正值严格递减至 <span class="arithmatex">\(-\dfrac{1}{2}\)</span>，且 <span class="arithmatex">\(h(0)=0,\ h(x)\to-\infty\)</span>，故正零点恰有一个。由奇性得三个零点。又 <span class="arithmatex">\(y=-\dfrac{x}{\sqrt3}+O(1)\)</span>，故反正切的自变量随 <span class="arithmatex">\(x\to\pm\infty\)</span> 趋于 <span class="arithmatex">\(\pm\infty\)</span>，从而 <span class="arithmatex">\(y+\dfrac{x}{\sqrt3}\to\pm\dfrac{\pi}{\sqrt3}\)</span>。三项均正确（ D ）。</p>
+<p><strong>易错点：</strong> 由方程的对称性推出隐函数的奇性之前，先确认同一个 <span class="arithmatex">\(x\)</span> 只对应一个 <span class="arithmatex">\(y\)</span>。</p>
+</details>
+</div>
 <h4 id="62-函数图形的描绘">§6.2 函数图形的描绘<a class="headerlink" href="#62-函数图形的描绘" title="Permanent link">&para;</a></h4>
 <h3 id="7-导数在经济中的应用-">§7 导数在经济中的应用 *<a class="headerlink" href="#7-导数在经济中的应用-" title="Permanent link">&para;</a></h3>
 <h4 id="71-经济中常用的一些函数">§7.1 经济中常用的一些函数<a class="headerlink" href="#71-经济中常用的一些函数" title="Permanent link">&para;</a></h4>
@@ -10272,6 +10389,15 @@ R=\frac{(1+(y')^2)^{3/2}}{|y''|},\qquad
 \eta=y+\frac{1+(y')^2}{y''}.
 \]</div>
 <p>曲线 <span class="arithmatex">\(C\)</span> 的曲率中心的轨迹 <span class="arithmatex">\(G\)</span> 称为 <span class="arithmatex">\(C\)</span> 的渐屈线，<span class="arithmatex">\(C\)</span> 称为 <span class="arithmatex">\(G\)</span> 的渐伸线。</p>
+<div class="admonition example exercise">
+<p class="admonition-title">☆☆☆ 曲率圆的半径与圆心</p>
+<p>求 <span class="arithmatex">\(xy=1\)</span> 在 <span class="arithmatex">\((1,1)\)</span> 处的曲率圆方程。</p>
+<details class="success">
+<summary>解析</summary>
+<p>对 <span class="arithmatex">\(y=\dfrac{1}{x}\)</span>，该点 <span class="arithmatex">\(y'=-1,\ y''=2\)</span>。曲率 <span class="arithmatex">\(\kappa=\dfrac{|y''|}{(1+y'^2)^{\frac{3}{2}}}=\dfrac{1}{\sqrt2}\)</span>，半径 <span class="arithmatex">\(\sqrt2\)</span>。因 <span class="arithmatex">\(y''&gt;0\)</span>，指向凹侧的单位法向量是 <span class="arithmatex">\(\dfrac{(1,1)}{\sqrt2}\)</span>，所以圆心为 <span class="arithmatex">\((2,2)\)</span>，方程是 <strong><span class="arithmatex">\((x-2)^2+(y-2)^2=2\)</span></strong>。</p>
+<p><strong>易错点：</strong> 法线与半径只能给出两个候选圆心，必须用凹向（或有符号曲率）选边。</p>
+</details>
+</div>
 <h3 id="9-方程的近似根-">§9 方程的近似根 *<a class="headerlink" href="#9-方程的近似根-" title="Permanent link">&para;</a></h3>
 <h4 id="91-图解法">§9.1 图解法<a class="headerlink" href="#91-图解法" title="Permanent link">&para;</a></h4>
 <p>方程 <span class="arithmatex">\(f(x)=0\)</span> 的实根对应于曲线 <span class="arithmatex">\(y=f(x)\)</span> 与 <span class="arithmatex">\(x\)</span> 轴交点的横坐标；方程 <span class="arithmatex">\(f_1(x)=f_2(x)\)</span> 的实根对应于曲线 <span class="arithmatex">\(y=f_1(x)\)</span> 与 <span class="arithmatex">\(y=f_2(x)\)</span> 交点的横坐标。</p>
@@ -10684,6 +10810,15 @@ m(b-a)\le\int_a^bf(x)\,\mathrm dx\le M(b-a).
 <div class="arithmatex">\[
 \int_a^bf(x)\,\mathrm dx=f(\xi)(b-a).
 \]</div>
+<div class="admonition example exercise">
+<p class="admonition-title">☆☆☆ 含根式积分的夹逼极限</p>
+<p>求 <span class="arithmatex">\(\lim_{n\to\infty}{\displaystyle \int_0^1}\dfrac{\sqrt[n]{1+n\arctan(x^2)}}{1+x^2}\,\mathrm dx\)</span>。</p>
+<details class="success">
+<summary>解析</summary>
+<p>在整个积分区间上，<span class="arithmatex">\(1\le\sqrt[n]{1+n\arctan(x^2)}\le(1+n)^{\frac{1}{n}}\)</span>。因此积分夹在 <span class="arithmatex">\(\dfrac{\pi}{4}\)</span> 和 <span class="arithmatex">\((1+n)^{\frac{1}{n}}\dfrac{\pi}{4}\)</span> 之间。上界因 <span class="arithmatex">\(\dfrac{\ln(1+n)}{n}\to0\)</span> 也趋于 <span class="arithmatex">\(\dfrac{\pi}{4}\)</span>，故极限为 <strong><span class="arithmatex">\(\dfrac{\pi}{4}\)</span></strong>。</p>
+<p><strong>要点：</strong> 放缩的上界与 <span class="arithmatex">\(x\)</span> 无关，可以先夹住积分，不必交换极限和积分。</p>
+</details>
+</div>
 <h4 id="22-微积分学基本定理">§2.2 微积分学基本定理<a class="headerlink" href="#22-微积分学基本定理" title="Permanent link">&para;</a></h4>
 <p>设 <span class="arithmatex">\(f\)</span> 在区间 <span class="arithmatex">\(I\)</span> 连续，<span class="arithmatex">\(a\in I\)</span> 为固定点，变上限积分定义的函数</p>
 <div class="arithmatex">\[
@@ -10795,6 +10930,21 @@ I_n=
 \dfrac{n-1}{n}\dfrac{n-3}{n-2}\cdots\dfrac23,&amp;n\text{ 为奇数}.
 \end{cases}
 \]</div>
+<div class="admonition example exercise">
+<p class="admonition-title">☆☆☆ 含幂三角函数的积分大小比较</p>
+<p>设 <span class="arithmatex">\(\alpha&gt;1\)</span>，记 <span class="arithmatex">\(I_1=\int_0^1(\sin x)^\alpha\,\mathrm dx\)</span>、<span class="arithmatex">\(I_2=\int_0^1\sin(x^\alpha)\,\mathrm dx\)</span>、<span class="arithmatex">\(I_3=\int_0^1(\tan x)^\alpha\,\mathrm dx\)</span>、<span class="arithmatex">\(I_4=\int_0^1\tan(x^\alpha)\,\mathrm dx\)</span>。下列大小关系哪一项正确？</p>
+<div class="exam-options" markdown="1">
+<p>A. <span class="arithmatex">\(I_1\ge I_2,\ I_3\ge I_4\)</span></p>
+<p>B. <span class="arithmatex">\(I_1\ge I_2,\ I_3\le I_4\)</span></p>
+<p>C. <span class="arithmatex">\(I_1\le I_2,\ I_3\ge I_4\)</span></p>
+<p>D. <span class="arithmatex">\(I_1\le I_2,\ I_3\le I_4\)</span>
+</div></p>
+<details class="success">
+<summary>解析</summary>
+<p>在 <span class="arithmatex">\(0&lt;x&lt;1\)</span>，有 <span class="arithmatex">\(x^\alpha&lt;x\)</span>、<span class="arithmatex">\(\sin x&lt;x\)</span>、<span class="arithmatex">\(\cos x&lt;\cos(x^\alpha)\)</span>，所以 <span class="arithmatex">\((\sin x)^{\alpha-1}\cos x&lt;x^{\alpha-1}\cos(x^\alpha)\)</span>，即 <span class="arithmatex">\((\sin x)^\alpha-\sin(x^\alpha)\)</span> 的导数为负。对正切则 <span class="arithmatex">\(\tan x&gt;x\)</span> 且 <span class="arithmatex">\(\sec^2x&gt;\sec^2(x^\alpha)\)</span>，相应差的导数为正。两组差在 <span class="arithmatex">\(0\)</span> 处都为零，故<strong>正弦组前者小，正切组前者大（ C ）</strong>。</p>
+<p><strong>要点：</strong> 求导后把 <span class="arithmatex">\(\alpha x^{\alpha-1}\)</span> 作为共同尺度，剩下的因子可以分别比较。</p>
+</details>
+</div>
 <h3 id="4-定积分的应用">§4 定积分的应用<a class="headerlink" href="#4-定积分的应用" title="Permanent link">&para;</a></h3>
 <h4 id="41-平面图形的面积">§4.1 平面图形的面积<a class="headerlink" href="#41-平面图形的面积" title="Permanent link">&para;</a></h4>
 <p>连续曲线 <span class="arithmatex">\(y=f_1(x),y=f_2(x)\)</span> 与直线 <span class="arithmatex">\(x=a,x=b\)</span> 围成的图形面积为</p>
@@ -10814,6 +10964,19 @@ V=\int_a^bA(x)\,\mathrm dx.
 <div class="arithmatex">\[
 V_x=\pi\int_a^bf^2(x)\,\mathrm dx.
 \]</div>
+<div class="admonition example exercise">
+<p class="admonition-title">双瓣区域的旋转体积</p>
+<p>求 <span class="arithmatex">\(x^2+y^2=|x|-|y|\)</span> 围成的区域绕 <span class="arithmatex">\(y\)</span> 轴旋转一周的体积。</p>
+<details class="success">
+<summary>解析</summary>
+<p>只取右瓣，左瓣绕轴后会与它完全重合。用柱壳法，再利用右瓣的上下对称性，体积是第一象限内 <span class="arithmatex">\(\iint 4\pi x\,\mathrm dA\)</span>。在该象限 <span class="arithmatex">\(0\le\theta\le\dfrac{\pi}{4}\)</span>、<span class="arithmatex">\(0\le r\le\cos\theta-\sin\theta\)</span>，因此</p>
+<div class="arithmatex">\[
+V=\frac{4\pi}{3}\int_0^{\pi/4}\cos\theta(\cos\theta-\sin\theta)^3\,\mathrm d\theta
+=\pi\left(\frac\pi4-\frac12\right).
+\]</div>
+<p><strong>易错点：</strong> 上下半瓣可以加，左右两瓣旋转后重合，不要再乘 <span class="arithmatex">\(2\)</span>。</p>
+</details>
+</div>
 <h4 id="43-微元法及应用">§4.3 微元法及应用<a class="headerlink" href="#43-微元法及应用" title="Permanent link">&para;</a></h4>
 <p>微元 <span class="arithmatex">\(\mathrm dQ=f(x)\,\mathrm dx\)</span> 是部分量增量 <span class="arithmatex">\(\Delta Q\)</span> 的线性主部：</p>
 <div class="arithmatex">\[
@@ -10942,6 +11105,19 @@ V_T=\int_0^TP(t)e^{r(T-t)}\,\mathrm dt=e^{rT}V_0.
 \int_a^b\frac{\mathrm dx}{(b-x)^p}\text{ 收敛}\iff p&lt;1,\qquad
 \int_a^b\frac{\mathrm dx}{(x-a)^p}\text{ 收敛}\iff p&lt;1.
 \]</div>
+<div class="admonition example exercise">
+<p class="admonition-title">☆☆☆ 双反常端点的正割换元</p>
+<p>计算 <span class="arithmatex">\({\displaystyle \int_0^\infty} \dfrac{\mathrm dx}{\sqrt{x(x+2)^3}}\)</span>。</p>
+<details class="success">
+<summary>解析</summary>
+<p>分母为 <span class="arithmatex">\((x+2)\sqrt{(x+1)^2-1}\)</span>。在截断积分中令 <span class="arithmatex">\(x+1=\sec t\)</span>，<span class="arithmatex">\(x\downarrow0\)</span> 对应 <span class="arithmatex">\(t\downarrow0\)</span>，<span class="arithmatex">\(x\to\infty\)</span> 对应 <span class="arithmatex">\(t\uparrow\dfrac{\pi}{2}\)</span>，所以</p>
+<div class="arithmatex">\[
+I=\int_0^{\pi/2}\frac{\mathrm dt}{1+\cos t}
+=\left[\tan(t/2)\right]_0^{\pi/2}=1.
+\]</div>
+<p><strong>易错点：</strong> <span class="arithmatex">\(0\)</span> 处无界、另一端为无穷远；换元时两端都要按极限换过去。</p>
+</details>
+</div>
 <h4 id="53-反常积分敛散性的判别法-">§5.3 反常积分敛散性的判别法 *<a class="headerlink" href="#53-反常积分敛散性的判别法-" title="Permanent link">&para;</a></h4>
 <p>设 <span class="arithmatex">\(f,g\)</span> 连续，且在反常端附近 <span class="arithmatex">\(0\le f(x)\le g(x)\)</span>，比较判别关系为</p>
 <div class="arithmatex">\[
@@ -11076,6 +11252,21 @@ V_T=\int_0^TP(t)e^{r(T-t)}\,\mathrm dt=e^{rT}V_0.
 <div class="arithmatex">\[
 \int|f|\text{ 收敛}\Longrightarrow\int f\text{ 收敛}.
 \]</div>
+<div class="admonition example exercise">
+<p class="admonition-title">☆☆☆ 多反常端点的敛散性</p>
+<p>判定 <span class="arithmatex">\(I_1={\displaystyle \int_0^{\frac{\pi}{2}}}\dfrac{\tan x}{x\sqrt{\pi-2x}}\,\mathrm dx\)</span> 和 <span class="arithmatex">\(I_2={\displaystyle \int_0^\infty}\dfrac{\ln x}{\sqrt{x^3+x}}\,\mathrm dx\)</span> 的敛散性。</p>
+<div class="exam-options" markdown="1">
+<p>A. <span class="arithmatex">\(I_1\)</span> 收敛，<span class="arithmatex">\(I_2\)</span> 收敛</p>
+<p>B. <span class="arithmatex">\(I_1\)</span> 收敛，<span class="arithmatex">\(I_2\)</span> 发散</p>
+<p>C. <span class="arithmatex">\(I_1\)</span> 发散，<span class="arithmatex">\(I_2\)</span> 收敛</p>
+<p>D. <span class="arithmatex">\(I_1\)</span> 发散，<span class="arithmatex">\(I_2\)</span> 发散
+</div></p>
+<details class="success">
+<summary>解析</summary>
+<p><span class="arithmatex">\(I_1\)</span> 在 <span class="arithmatex">\(0\)</span> 附近被积函数有有限极限；当 <span class="arithmatex">\(x\uparrow\dfrac{\pi}{2}\)</span>，令 <span class="arithmatex">\(h=\dfrac{\pi}{2}-x\)</span>，被积函数与正常数乘 <span class="arithmatex">\(h^{-\frac{3}{2}}\)</span> 等价，所以发散。<span class="arithmatex">\(I_2\)</span> 在 <span class="arithmatex">\(0^+\)</span> 附近绝对值不超过 <span class="arithmatex">\(|\ln x|x^{-\frac{1}{2}}\)</span>，在无穷远处不超过 <span class="arithmatex">\((\ln x)x^{-\frac{3}{2}}\)</span>，两者分别在对应端点可积。故 <strong><span class="arithmatex">\(I_1\)</span> 发散，<span class="arithmatex">\(I_2\)</span> 收敛（ C ）</strong>。</p>
+<p><strong>要点：</strong> 同一个反常积分可能有多个反常端点，分别比较才可下结论。</p>
+</details>
+</div>
 <h4 id="54-γ函数-">§5.4 Γ 函数 *<a class="headerlink" href="#54-γ函数-" title="Permanent link">&para;</a></h4>
 <div class="arithmatex">\[
 \Gamma(s)=\int_0^{+\infty}x^{s-1}e^{-x}\,\mathrm dx,\qquad s&gt;0.
@@ -12211,6 +12402,21 @@ f_{yy}=\frac{\partial}{\partial y}f_y.
 f_{xy}=f_{yx}.
 \]</div>
 <p>高阶混合偏导数在连续条件下也与求导次序无关。</p>
+<div class="admonition example exercise">
+<p class="admonition-title">☆☆☆ 三角形区域内的二元函数单调性</p>
+<p>令 <span class="arithmatex">\(z=(x^2+y^2)e^{x-y}\)</span>，<span class="arithmatex">\(g=z_{xx}-z_{yy}\)</span>，在 <span class="arithmatex">\(D=\{0&lt;x&lt;1,\ 0&lt;y&lt;1-x\}\)</span> 内取两点。下列哪一项是 <span class="arithmatex">\(g(x_1,y_1)\le g(x_2,y_2)\)</span> 的充分条件？</p>
+<div class="exam-options" markdown="1">
+<p>A. <span class="arithmatex">\(x_1&lt;x_2,\ y_1&lt;y_2\)</span></p>
+<p>B. <span class="arithmatex">\(x_1&lt;x_2,\ y_1&gt;y_2\)</span></p>
+<p>C. <span class="arithmatex">\(x_1&gt;x_2,\ y_1&lt;y_2\)</span></p>
+<p>D. <span class="arithmatex">\(x_1&gt;x_2,\ y_1&gt;y_2\)</span>
+</div></p>
+<details class="success">
+<summary>解析</summary>
+<p>求导得 <span class="arithmatex">\(g=4(x+y)e^{x-y}\)</span>，所以 <span class="arithmatex">\(g_x=4(1+x+y)e^{x-y}&gt;0\)</span>、<span class="arithmatex">\(g_y=4(1-x-y)e^{x-y}&gt;0\)</span>。沿两点间的线段（全在线性不等式划出的凸域 <span class="arithmatex">\(D\)</span> 内），两个坐标都递增，故 <span class="arithmatex">\(g\)</span> 严格增大。原题选 <strong>A ：<span class="arithmatex">\(x_1&lt;x_2\)</span> 且 <span class="arithmatex">\(y_1&lt;y_2\)</span></strong>。</p>
+<p><strong>要点：</strong> 第二次求导仍要完整使用乘积法则；比较两点时，连接路径应留在偏导数符号已知的区域内。</p>
+</details>
+</div>
 <h4 id="22-全微分">§2.2 全微分<a class="headerlink" href="#22-全微分" title="Permanent link">&para;</a></h4>
 <p>设 <span class="arithmatex">\(\rho=\sqrt{(\Delta x)^2+(\Delta y)^2}\)</span>。若函数的全增量可以表示为</p>
 <div class="arithmatex">\[
@@ -12302,6 +12508,21 @@ f_x(0,0)=\lim_{x\to0}\frac{f(x,0)-f(0,0)}x=\lim_{x\to0}\frac0x=0,
 <p>由本章 §1 例 知此极限不存在，所以函数 <span class="arithmatex">\(f\)</span> 在原点不可微。</p>
 </details>
 </div>
+<div class="admonition example exercise">
+<p class="admonition-title">☆☆☆ 原点的偏导数与可微性</p>
+<p>设 <span class="arithmatex">\(f(x,y)=\dfrac{x|y|+y|x|}{\sqrt{x^2+y^2}}\)</span>（<span class="arithmatex">\((x,y)\ne(0,0)\)</span>），且 <span class="arithmatex">\(f(0,0)=0\)</span>。判断 <span class="arithmatex">\(f\)</span> 在原点的连续性、偏导数与可微性。</p>
+<div class="exam-options" markdown="1">
+<p>A. 极限存在，但不连续</p>
+<p>B. 连续，但偏导数不存在</p>
+<p>C. 偏导数存在，但不可微</p>
+<p>D. 可微
+</div></p>
+<details class="success">
+<summary>解析</summary>
+<p>令 <span class="arithmatex">\(r=\sqrt{x^2+y^2}\)</span>，有 <span class="arithmatex">\(|f|\le\dfrac{2|xy|}{r}\le r\)</span>，故连续；在两个坐标轴上恒为零，故两偏导均为零。但沿 <span class="arithmatex">\(x=y=t&gt;0\)</span>，<span class="arithmatex">\(\dfrac{f(t,t)}{\sqrt{2t^2}}=1\)</span>，可微所要求的余项比并不趋零。故 <strong>偏导存在但不可微（ C ）</strong>。</p>
+<p><strong>要点：</strong> 先由偏导数确定唯一可能的线性主部，再检查余项是否为 <span class="arithmatex">\(o(r)\)</span>；找一条失败路径即足够。</p>
+</details>
+</div>
 <h5 id="全微分在近似计算和误差估算中的应用-">全微分在近似计算和误差估算中的应用 *<a class="headerlink" href="#全微分在近似计算和误差估算中的应用-" title="Permanent link">&para;</a></h5>
 <p>当 <span class="arithmatex">\(\Delta x,\Delta y\)</span> 较小时，一阶近似公式为</p>
 <div class="arithmatex">\[
@@ -12387,6 +12608,36 @@ f(x+\Delta x,y+\Delta y)
 +\frac{\partial z}{\partial v}\frac{\partial v}{\partial y}.
 \]</div>
 </details>
+<div class="admonition example exercise">
+<p class="admonition-title">☆☆☆ 线性换元下的二阶偏导数</p>
+<p>已知 <span class="arithmatex">\(f\)</span> 具有二阶连续偏导数，<span class="arithmatex">\(f_{xx}+f_{yy}=2\)</span>。换元 <span class="arithmatex">\(u=ax+by,\ v=ax-by\)</span> 后，若 <span class="arithmatex">\(f_{uu}+f_{vv}=4,\ f_{uv}=0\)</span>，求 <span class="arithmatex">\(a^2+b^2\)</span>。</p>
+<details class="success">
+<summary>解析</summary>
+<p>由链式法则，<span class="arithmatex">\(\partial_x=a(\partial_u+\partial_v)\)</span>、<span class="arithmatex">\(\partial_y=b(\partial_u-\partial_v)\)</span>。平方相加得到</p>
+<div class="arithmatex">\[
+f_{xx}+f_{yy}=(a^2+b^2)(f_{uu}+f_{vv})+2(a^2-b^2)f_{uv}.
+\]</div>
+<p>代入得 <strong><span class="arithmatex">\(a^2+b^2=\dfrac{1}{2}\)</span></strong>。<strong>要点：</strong> 二阶链式法则里混合项有两个，合并后再代入 <span class="arithmatex">\(f_{uv}=0\)</span>。</p>
+</details>
+</div>
+<div class="admonition example exercise">
+<p class="admonition-title">☆☆☆ 径向拉普拉斯方程的降阶</p>
+<p>设 <span class="arithmatex">\(u(x,y,z)=f(\sqrt{x^2+y^2+z^2})\)</span> 在 <span class="arithmatex">\(r=\sqrt{x^2+y^2+z^2}&gt;0\)</span> 时满足 <span class="arithmatex">\(u_{xx}+u_{yy}+u_{zz}=0\)</span>，且 <span class="arithmatex">\(f(1)=0,\ f'(1)=1\)</span>。求 <span class="arithmatex">\(f\)</span>。</p>
+<details class="success">
+<summary>解析</summary>
+<p>对 <span class="arithmatex">\(r&gt;0\)</span>，<span class="arithmatex">\(\sum r_{x_i}^2=1\)</span>、<span class="arithmatex">\(\sum r_{x_ix_i}=\dfrac{2}{r}\)</span>。链式法则给出 <span class="arithmatex">\(f''(r)+\dfrac{2f'(r)}{r}=0\)</span>，即 <span class="arithmatex">\((r^2f'(r))'=0\)</span>。由 <span class="arithmatex">\(f'(1)=1\)</span> 得 <span class="arithmatex">\(f'(r)=\dfrac{1}{r^2}\)</span>，积分并用 <span class="arithmatex">\(f(1)=0\)</span>，于是 <strong><span class="arithmatex">\(f(r)=1-\dfrac{1}{r}\)</span>（<span class="arithmatex">\(r&gt;0\)</span>）</strong>。</p>
+<p><strong>要点：</strong> 降阶时用乘积导数最直接；半径为零是方程的奇点，所得解无法连续延拓到原点；若把题设理解为要求在原点也二阶可导，则初值条件下无解。</p>
+</details>
+</div>
+<div class="admonition example exercise">
+<p class="admonition-title">含绝对值积分的混合偏导数</p>
+<p>设 <span class="arithmatex">\(z(x,y)=\int_0^1 |x^2+y^2-t|f(t)\,\mathrm dt\)</span>，<span class="arithmatex">\(f\)</span> 连续且 <span class="arithmatex">\(f(\dfrac{1}{2})=\dfrac{1}{2}\)</span>。求 <span class="arithmatex">\(z_{xy}(\dfrac{1}{2},\dfrac{1}{2})\)</span>。</p>
+<details class="success">
+<summary>解析</summary>
+<p>令 <span class="arithmatex">\(s=x^2+y^2\)</span>。在目标点附近 <span class="arithmatex">\(0&lt;s&lt;1\)</span>，对 <span class="arithmatex">\(s\)</span> 的函数为 <span class="arithmatex">\(H(s)=\int_0^s(s-t)f(t)\,\mathrm dt+\int_s^1(t-s)f(t)\,\mathrm dt\)</span>。两段边界项都为零，故 <span class="arithmatex">\(H'(s)=\int_0^s f-\int_s^1 f\)</span>，再求导得 <span class="arithmatex">\(H''(s)=2f(s)\)</span>。由链式法则 <span class="arithmatex">\(z_{xy}=4xyH''(s)=8xyf(s)\)</span>，代值得 <strong><span class="arithmatex">\(1\)</span></strong>。</p>
+<p><strong>易错点：</strong> 第一遍求导，折点处两被积项都为零；第二遍求导，两个变限积分的贡献同号相加。</p>
+</details>
+</div>
 <h4 id="32-复合函数的全微分">§3.2 复合函数的全微分<a class="headerlink" href="#32-复合函数的全微分" title="Permanent link">&para;</a></h4>
 <p>设 <span class="arithmatex">\(z=f(x,y)\)</span>，<span class="arithmatex">\(x=x(s,t)\)</span>、<span class="arithmatex">\(y=y(s,t)\)</span> 均有连续偏导数，则</p>
 <div class="arithmatex">\[
@@ -12402,6 +12653,21 @@ f(x+\Delta x,y+\Delta y)
 =z_s\,\mathrm ds+z_t\,\mathrm dt.
 \]</div>
 <p>函数的一阶全微分表达式对中间变量仍保持相同形式，称为<u class="dbl">一阶</u>全微分的形式不变性。</p>
+<div class="admonition example exercise">
+<p class="admonition-title">☆☆☆ 参数曲线给出的全微分</p>
+<p>设 <span class="arithmatex">\(f\)</span> 可微，<span class="arithmatex">\(f(x^2,e^x-1)=xe^x\)</span> 且 <span class="arithmatex">\(f(\ln x,x-1)=(1-x)^2\)</span>。求 <span class="arithmatex">\(\mathrm df(0,0)\)</span>。</p>
+<div class="exam-options" markdown="1">
+<p>A. <span class="arithmatex">\(\mathrm dy\)</span></p>
+<p>B. <span class="arithmatex">\(-\mathrm dx+\mathrm dy\)</span></p>
+<p>C. <span class="arithmatex">\(\mathrm dx-\mathrm dy\)</span></p>
+<p>D. <span class="arithmatex">\(\mathrm dx+\mathrm dy\)</span>
+</div></p>
+<details class="success">
+<summary>解析</summary>
+<p>先找两条参数曲线各自经过原点的参数值：第一条在 <span class="arithmatex">\(x=0\)</span>，第二条在 <span class="arithmatex">\(x=1\)</span>。对两式分别求导，再代入对应参数，得到 <span class="arithmatex">\(f_y(0,0)=1\)</span> 及 <span class="arithmatex">\(f_x(0,0)+f_y(0,0)=0\)</span>。因此 <strong><span class="arithmatex">\(\mathrm df(0,0)=-\mathrm dx+\mathrm dy\)</span>（ B ）</strong>。</p>
+<p><strong>要点：</strong> 两条曲线经过的是同一个目标点，但参数值不同；求导后再代入。</p>
+</details>
+</div>
 <h3 id="4-隐函数的偏导数">§4 隐函数的偏导数<a class="headerlink" href="#4-隐函数的偏导数" title="Permanent link">&para;</a></h3>
 <h4 id="41-隐函数的偏导数">§4.1 隐函数的偏导数<a class="headerlink" href="#41-隐函数的偏导数" title="Permanent link">&para;</a></h4>
 <p>设 <span class="arithmatex">\(F(x,y,z)\)</span> 在 <span class="arithmatex">\(P_0=(x_0,y_0,z_0)\)</span> 的某邻域内有连续偏导数，且</p>
@@ -12414,6 +12680,21 @@ F(x_0,y_0,z_0)=0,\qquad F_z(x_0,y_0,z_0)\ne0.
 \frac{\partial z}{\partial y}=-\frac{F_y}{F_z}.
 \]</div>
 <p>各偏导数均在 <span class="arithmatex">\((x,y,f(x,y))\)</span> 处取值。</p>
+<div class="admonition example exercise">
+<p class="admonition-title">☆☆☆ 隐函数的二阶混合偏导数</p>
+<p>设 <span class="arithmatex">\(z=z(x,y)\)</span> 由 <span class="arithmatex">\(xy+\ln z+yz^2=0\)</span> 确定。求 <span class="arithmatex">\(z_{xy}(1,0)\)</span>。</p>
+<div class="exam-options" markdown="1">
+<p>A. <span class="arithmatex">\(-1\)</span></p>
+<p>B. <span class="arithmatex">\(0\)</span></p>
+<p>C. <span class="arithmatex">\(1\)</span></p>
+<p>D. <span class="arithmatex">\(2\)</span>
+</div></p>
+<details class="success">
+<summary>解析</summary>
+<p>在目标点有 <span class="arithmatex">\(z=1\)</span>。记隐式左边为 <span class="arithmatex">\(F(x,y,z)\)</span>，由 <span class="arithmatex">\(z_x=-\dfrac{F_x}{F_z}\)</span> 得 <span class="arithmatex">\(z_x=-\dfrac{yz}{1+2yz^2}\)</span>。对 <span class="arithmatex">\(y\)</span> 求导再令 <span class="arithmatex">\(y=0\)</span>，分子中的 <span class="arithmatex">\(yz_y\)</span> 及商法则里乘 <span class="arithmatex">\(y\)</span> 的项均为零，只剩 <span class="arithmatex">\(-z=-1\)</span>。故 <strong><span class="arithmatex">\(z_{xy}(1,0)=-1\)</span>（ A ）</strong>。</p>
+<p><strong>易错点：</strong> 不能先令 <span class="arithmatex">\(y=0\)</span> 再对 <span class="arithmatex">\(y\)</span> 求导，否则会丢掉 <span class="arithmatex">\(yz\)</span> 求导留下的 <span class="arithmatex">\(z\)</span>。</p>
+</details>
+</div>
 <h4 id="42-隐函数组的偏导数">§4.2 隐函数组的偏导数<a class="headerlink" href="#42-隐函数组的偏导数" title="Permanent link">&para;</a></h4>
 <p>设 <span class="arithmatex">\(F(x,y,u,v)\)</span>、<span class="arithmatex">\(G(x,y,u,v)\)</span> 在 <span class="arithmatex">\(P_0=(x_0,y_0,u_0,v_0)\)</span> 的某邻域内有连续偏导数，并满足</p>
 <div class="arithmatex">\[
@@ -12471,6 +12752,15 @@ u(x,y,z)=C.
 \frac{\partial u}{\partial l}(P_0)
 =u_x(P_0)\cos\alpha+u_y(P_0)\cos\beta+u_z(P_0)\cos\gamma.
 \]</div>
+<div class="admonition example exercise">
+<p class="admonition-title">☆☆☆ 方向导数的约束最值</p>
+<p>令 <span class="arithmatex">\(f(x,y,z)\)</span> 为 <span class="arithmatex">\(u=3x^2+4y^3-9z^2\)</span> 沿 <span class="arithmatex">\((1,1,1)\)</span> 方向的方向导数。求 <span class="arithmatex">\(x^2+2y^2+z^2=1\)</span> 上 <span class="arithmatex">\(f\)</span> 的最大值。</p>
+<details class="success">
+<summary>解析</summary>
+<p>先把方向单位化，得 <span class="arithmatex">\(f=2\sqrt3(x+2y^2-3z)\)</span>。按手写的拉格朗日乘数法，令 <span class="arithmatex">\(g=x+2y^2-3z\)</span>，对 <span class="arithmatex">\(g+\lambda(x^2+2y^2+z^2-1)\)</span> 求驻点，得到 <span class="arithmatex">\(1+2\lambda x=0,\ (4+4\lambda)y=0,\ -3+2\lambda z=0\)</span>。若 <span class="arithmatex">\(y\ne0\)</span>，则 <span class="arithmatex">\(\lambda=-1\)</span>，推出 <span class="arithmatex">\(x^2+z^2=\dfrac{5}{2}\)</span>，矛盾。若 <span class="arithmatex">\(y=0\)</span>，最大值在 <span class="arithmatex">\((x,z)=\dfrac{(1,-3)}{\sqrt{10}}\)</span> 处取得，<span class="arithmatex">\(g=\sqrt{10}\)</span>。故 <strong><span class="arithmatex">\(f_{\max}=2\sqrt{30}\)</span></strong>。</p>
+<p><strong>要点：</strong> 方向导数用单位向量点乘梯度；约束椭球为紧集且约束梯度处处非零，乘数法覆盖最大值候选点。</p>
+</details>
+</div>
 <h4 id="53-梯度">§5.3 梯度<a class="headerlink" href="#53-梯度" title="Permanent link">&para;</a></h4>
 <p>数量场 <span class="arithmatex">\(u\)</span> 的梯度定义为</p>
 <div class="arithmatex">\[
@@ -12549,6 +12839,24 @@ L=f+\sum_{k=1}^m\lambda_k\psi_k,\qquad
 \psi_k=0\ (k=1,\ldots,m),
 \]</div>
 <p>其中 <span class="arithmatex">\(\lambda_1,\ldots,\lambda_m\)</span> 为拉格朗日乘子。</p>
+<div class="admonition example exercise">
+<p class="admonition-title">全微分与闭域最值</p>
+<p>已知 <span class="arithmatex">\(\mathrm df=3(x-y)^2\,\mathrm dx-3(x^2-2xy+2y^2-2)\,\mathrm dy\)</span>，<span class="arithmatex">\(f(0,0)=0\)</span>。求 <span class="arithmatex">\(f\)</span> 及其在 <span class="arithmatex">\(x\ge0,\ y\ge0,\ x+y\le3\)</span> 上的最大值、最小值。</p>
+<details class="success">
+<summary>解析</summary>
+<p>对 <span class="arithmatex">\(f_x\)</span> 积分得 <span class="arithmatex">\((x-y)^3+\phi(y)\)</span>，比较 <span class="arithmatex">\(f_y\)</span> 得 <span class="arithmatex">\(\phi'(y)=6-3y^2\)</span>，故 <span class="arithmatex">\(f=(x-y)^3-y^3+6y\)</span>。内部唯一驻点是 <span class="arithmatex">\((\sqrt2,\sqrt2)\)</span>，函数值 <span class="arithmatex">\(4\sqrt2\)</span>。边 <span class="arithmatex">\(x=0\)</span> 的内点候选为 <span class="arithmatex">\((0,1)\)</span>，值为 <span class="arithmatex">\(4\)</span>；边 <span class="arithmatex">\(y=0\)</span> 上 <span class="arithmatex">\(f=x^3\)</span>；边 <span class="arithmatex">\(y=3-x\)</span> 的限制函数导数为 <span class="arithmatex">\(3(3x-5)^2\ge0\)</span>，所以这条边只需比较端点。三顶点的函数值依次为 <span class="arithmatex">\(0,27,-36\)</span>，故 <strong>最大值 <span class="arithmatex">\(27\)</span>，最小值 <span class="arithmatex">\(-36\)</span></strong>。</p>
+<p><strong>步骤：</strong> 分开列内部、各边和顶点；边上若已判定单调，可省去只让导数为零的点。</p>
+</details>
+</div>
+<div class="admonition example exercise">
+<p class="admonition-title">二元驻点的 Hessian 判别</p>
+<p>求 <span class="arithmatex">\(f(x,y)=x^3+y^3-3x-3y+3xy\)</span> 的极值。</p>
+<details class="success">
+<summary>解析</summary>
+<p>驻点满足 <span class="arithmatex">\(x^2+y=1,\ y^2+x=1\)</span>，相减得 <span class="arithmatex">\((x-y)(x+y-1)=0\)</span>。若 <span class="arithmatex">\(x+y=1\)</span>，得 <span class="arithmatex">\((1,0),(0,1)\)</span>， Hessian 行列式 <span class="arithmatex">\(36xy-9=-9&lt;0\)</span>，均为鞍点。若 <span class="arithmatex">\(x=y=t_\pm=\dfrac{-1\pm\sqrt5}{2}\)</span>，则 <span class="arithmatex">\(36t_\pm^2-9&gt;0\)</span>。由 <span class="arithmatex">\(f_{xx}=6t\)</span> 的符号，<span class="arithmatex">\(t_-\)</span> 处局部极大，值为 <span class="arithmatex">\(\dfrac{7+5\sqrt5}{2}\)</span>；<span class="arithmatex">\(t_+\)</span> 处局部极小，值为 <span class="arithmatex">\(\dfrac{7-5\sqrt5}{2}\)</span>。</p>
+<p><strong>提醒：</strong> 用 <span class="arithmatex">\(AC-B^2\)</span> 时，大于零才继续看 <span class="arithmatex">\(A\)</span> 的符号；若用笔记里的 <span class="arithmatex">\(B^2-AC\)</span>，对应不等号反向。</p>
+</details>
+</div>
 <h5 id="数学建模初步三-">数学建模初步（三） *<a class="headerlink" href="#数学建模初步三-" title="Permanent link">&para;</a></h5>
 <p>对数据 <span class="arithmatex">\((x_i,y_i)\)</span>（<span class="arithmatex">\(i=1,\ldots,n\)</span>），直线 <span class="arithmatex">\(y=ax+b\)</span> 的最小二乘拟合以偏差平方和</p>
 <div class="arithmatex">\[
@@ -12640,6 +12948,15 @@ z-z_0=f_x(x_0,y_0)(x-x_0)+f_y(x_0,y_0)(y-y_0),\qquad
 </li>
 </ul>
 </div>
+<div class="admonition example exercise">
+<p class="admonition-title">☆☆☆ 切平面与交线法平面的平行条件</p>
+<p>求椭球面 <span class="arithmatex">\(x^2+y^2+2z^2=1\)</span> 上的点，使其切平面与交线 <span class="arithmatex">\(x^2+y^2+z^2=3,\ x+y-z=1\)</span> 在 <span class="arithmatex">\((1,1,1)\)</span> 处的法平面平行。</p>
+<details class="success">
+<summary>解析</summary>
+<p>交线的切向量取两个梯度的叉积，得到与 <span class="arithmatex">\((-1,1,0)\)</span> 同向的向量；它是<strong>法平面</strong>的法向量。故椭球面上所求点满足 <span class="arithmatex">\((2x,2y,4z)\parallel(-1,1,0)\)</span>，即 <span class="arithmatex">\(y=-x,\ z=0\)</span>。代回得 <strong><span class="arithmatex">\((\pm\dfrac{1}{\sqrt2},\mp\dfrac{1}{\sqrt2},0)\)</span></strong>。</p>
+<p><strong>要点：</strong> 比较的是两个平面的法向量；法向量有零分量时，直接写成整向量的倍数。</p>
+</details>
+</div>
 <h2 id="第九章-多元函数积分学">第九章 多元函数积分学<a class="headerlink" href="#第九章-多元函数积分学" title="Permanent link">&para;</a></h2>
 <h3 id="1-二重积分的概念">§1 二重积分的概念<a class="headerlink" href="#1-二重积分的概念" title="Permanent link">&para;</a></h3>
 <h4 id="11-二重积分的概念">§1.1 二重积分的概念<a class="headerlink" href="#11-二重积分的概念" title="Permanent link">&para;</a></h4>
@@ -12682,6 +12999,15 @@ m\operatorname{Area}(D)\le\iint_Df\,\mathrm d\sigma
 <div class="arithmatex">\[
 \bar f=\frac{1}{\operatorname{Area}(D)}\iint_Df\,\mathrm d\sigma.
 \]</div>
+<div class="admonition example exercise">
+<p class="admonition-title">☆☆☆ 对称积分域的变量分离</p>
+<p>求 <span class="arithmatex">\(\displaystyle\lim_{t\to0^+}\dfrac{\int_0^t\mathrm dx\int_x^t(e^{x^2+y^2}-e^{x^2}-e^{y^2}+1)\,\mathrm dy}{t^6}\)</span>。</p>
+<details class="success">
+<summary>解析</summary>
+<p>被积函数分解为 <span class="arithmatex">\((e^{x^2}-1)(e^{y^2}-1)\)</span>，交换 <span class="arithmatex">\(x,y\)</span> 后不变，故三角形积分为正方形积分的一半。原式遂化为 <span class="arithmatex">\(\dfrac12[\dfrac{\int_0^t(e^{x^2}-1)\,\mathrm dx}{t^3}]^2\)</span>。由洛必达法则，括号极限为 <span class="arithmatex">\(\lim_{t\to0^+}\dfrac{e^{t^2}-1}{3t^2}=\dfrac{1}{3}\)</span>，所以答案为 <strong><span class="arithmatex">\(\dfrac{1}{18}\)</span></strong>。</p>
+<p><strong>要点：</strong> 先利用区域对称性把变上限变成常上限，再用因式分解将二重积分写成乘积。</p>
+</details>
+</div>
 <h3 id="2-二重积分的计算">§2 二重积分的计算<a class="headerlink" href="#2-二重积分的计算" title="Permanent link">&para;</a></h3>
 <h4 id="21-在直角坐标系中计算二重积分">§2.1 在直角坐标系中计算二重积分<a class="headerlink" href="#21-在直角坐标系中计算二重积分" title="Permanent link">&para;</a></h4>
 <p><span class="arithmatex">\(x\)</span> 型区域与 <span class="arithmatex">\(y\)</span> 型区域分别表示为</p>
@@ -12727,6 +13053,19 @@ D_y=\{(x,y):c\le y\le d,\ \psi_1(y)\le x\le\psi_2(y)\}.
 <div class="arithmatex">\[
 \text{原式}=\frac16-\frac1{3e}.
 \]</div>
+</details>
+</div>
+<div class="admonition example exercise">
+<p class="admonition-title">☆☆☆ 分片积分域的换序</p>
+<p>计算 <span class="arithmatex">\(\int_0^1\mathrm dy\int_0^{\sqrt y}x^2y\,\mathrm dx+\int_1^{\sqrt2}\mathrm dy\int_0^{\sqrt{2-y^2}}x^2y\,\mathrm dx\)</span>。</p>
+<details class="success">
+<summary>解析</summary>
+<p>两片区域分别在 <span class="arithmatex">\(y=1\)</span> 下方、上方，拼成 <span class="arithmatex">\(0\le x\le1,\ x^2\le y\le\sqrt{2-x^2}\)</span>。所以</p>
+<div class="arithmatex">\[
+I=\int_0^1\int_{x^2}^{\sqrt{2-x^2}}x^2y\,\mathrm dy\,\mathrm dx
+=\int_0^1\left(x^2-\frac{x^4}{2}-\frac{x^6}{2}\right)\mathrm dx=\frac{17}{105}.
+\]</div>
+<p><strong>易错点：</strong> 换序只重写区域和积分次序，被积函数仍是 <span class="arithmatex">\(x^2y\)</span>。</p>
 </details>
 </div>
 <h4 id="22-在极坐标系中计算二重积分">§2.2 在极坐标系中计算二重积分<a class="headerlink" href="#22-在极坐标系中计算二重积分" title="Permanent link">&para;</a></h4>
@@ -13008,6 +13347,18 @@ M_5:&amp;\quad (x+x_w\,\mathrm dw,\ y+y_w\,\mathrm dw,\ z+z_w\,\mathrm dw).
 \]</div>
 </details>
 </div>
+<div class="admonition example exercise">
+<p class="admonition-title">隐式曲线的弧长因子</p>
+<p>设 <span class="arithmatex">\(L\)</span> 为 <span class="arithmatex">\(x^2+2xy+2y^2=1\)</span> 位于第一象限的弧，求 <span class="arithmatex">\({\displaystyle \int_L}\dfrac{x^2-4y^2}{\sqrt{2+2xy+y^2}}\,\mathrm ds\)</span>。</p>
+<details class="success">
+<summary>解析</summary>
+<p>隐式求导给出 <span class="arithmatex">\(y'=-\dfrac{x+y}{x+2y}\)</span>。用曲线方程化简，<span class="arithmatex">\(\sqrt{1+y'^2}=\dfrac{\sqrt{2+2xy+y^2}}{x+2y}\)</span>，原式成为 <span class="arithmatex">\(\int_0^1(x-2y)\,\mathrm dx\)</span>。再令 <span class="arithmatex">\(y=\sin t,\ x=\cos t-\sin t\)</span>，<span class="arithmatex">\(x\)</span> 从 <span class="arithmatex">\(0\)</span> 增至 <span class="arithmatex">\(1\)</span> 时 <span class="arithmatex">\(t\)</span> 从 <span class="arithmatex">\(\dfrac{\pi}{4}\)</span> 减至 <span class="arithmatex">\(0\)</span>，于是</p>
+<div class="arithmatex">\[
+I=\int_0^{\pi/4}(\cos t-3\sin t)(\sin t+\cos t)\,\mathrm dt=\frac12-\frac\pi4.
+\]</div>
+<p><strong>提醒：</strong> 第一类积分与行进方向无关，<span class="arithmatex">\(\mathrm ds\)</span> 为非负弧长元；改写为定积分后仍需处理代换产生的负号和上下限。</p>
+</details>
+</div>
 <h4 id="42-第一类曲面积分">§4.2 第一类曲面积分<a class="headerlink" href="#42-第一类曲面积分" title="Permanent link">&para;</a></h4>
 <p>将光滑曲面 <span class="arithmatex">\(S\)</span> 分成面积为 <span class="arithmatex">\(\Delta S_i\)</span> 的小块，各块任取点 <span class="arithmatex">\(P_i\)</span>，记小块直径的最大值为 <span class="arithmatex">\(\lambda\)</span>。若极限存在且与分割、取点无关，定义</p>
 <div class="arithmatex">\[
@@ -13035,6 +13386,19 @@ M_5:&amp;\quad (x+x_w\,\mathrm dw,\ y+y_w\,\mathrm dw,\ z+z_w\,\mathrm dw).
 \iint_Sf\,\mathrm dS
 =\iint_{D_{yz}}f(x(y,z),y,z)\sqrt{1+x_y^2+x_z^2}\,\mathrm dy\,\mathrm dz.
 \]</div>
+<div class="admonition example exercise">
+<p class="admonition-title">☆☆☆ 旋转曲面积分的奇偶对称性</p>
+<p>曲线 <span class="arithmatex">\(x=\sqrt2\cos t,\ y=\sin t,\ z=\cos^2t\ (0\le t\le\dfrac{\pi}{2})\)</span> 绕 <span class="arithmatex">\(z\)</span> 轴一周得到 <span class="arithmatex">\(\Sigma\)</span>。求 <span class="arithmatex">\({\displaystyle \iint_\Sigma} \dfrac{xy^3+\sqrt{5+4z}}{1+x^2+y^2}\,\mathrm dS\)</span>。</p>
+<details class="success">
+<summary>解析</summary>
+<p>旋转保持 <span class="arithmatex">\(x^2+y^2=1+z\)</span>，故 <span class="arithmatex">\(\Sigma\)</span> 是 <span class="arithmatex">\(z=x^2+y^2-1\)</span> 在 <span class="arithmatex">\(1\le x^2+y^2\le2\)</span> 上的图形。反射 <span class="arithmatex">\(x\mapsto-x\)</span> 保持面积元，含 <span class="arithmatex">\(xy^3\)</span> 的一项积分为零。剩下的根式与面积因子相乘得到 <span class="arithmatex">\(1+4r^2\)</span>，从而</p>
+<div class="arithmatex">\[
+I=2\pi\int_1^{\sqrt2}\frac{1+4r^2}{1+r^2}r\,\mathrm dr
+=\pi\bigl(4-3\ln(3/2)\bigr).
+\]</div>
+<p><strong>要点：</strong> 先找旋转不变量和投影范围；奇偶消项要同时检查曲面与面积元的对称性。</p>
+</details>
+</div>
 <h3 id="5-点函数积分的概念性质及应用">§5 点函数积分的概念、性质及应用<a class="headerlink" href="#5-点函数积分的概念性质及应用" title="Permanent link">&para;</a></h3>
 <p>设 <span class="arithmatex">\(\Omega\)</span> 为有界闭的空间形体，<span class="arithmatex">\(f(P)\)</span> 为其上的点函数。以 <span class="arithmatex">\(\Delta\Omega_i\)</span> 表示分块的度量，<span class="arithmatex">\(\lambda\)</span> 为各块直径的最大值；若下列极限存在且与分割、取点无关，则定义点函数积分</p>
 <div class="arithmatex">\[
@@ -13242,6 +13606,39 @@ W=\int_L\mathbf F\cdot\mathrm d\mathbf s.
 \]</div>
 </details>
 </div>
+<div class="admonition example exercise">
+<p class="admonition-title">☆☆☆ 补线闭合后的积分方向</p>
+<p>设 <span class="arithmatex">\(L\)</span> 为由 <span class="arithmatex">\((-1,0)\)</span> 到 <span class="arithmatex">\((1,0)\)</span> 的上半圆周 <span class="arithmatex">\(y=\sqrt{1-x^2}\)</span>。求</p>
+<div class="arithmatex">\[
+\int_L\frac{(e^{x-2y}+x^2y)\,\mathrm dx-2(e^{x-2y}+xy^2)\,\mathrm dy}{x^2+y^2}.
+\]</div>
+<div class="exam-options" markdown="1">
+<p>A. <span class="arithmatex">\(\dfrac{3\pi}{8}-e+e^{-1}\)</span></p>
+<p>B. <span class="arithmatex">\(-\dfrac{3\pi}{8}-e+e^{-1}\)</span></p>
+<p>C. <span class="arithmatex">\(e-e^{-1}+\dfrac{3\pi}{8}\)</span></p>
+<p>D. <span class="arithmatex">\(e-e^{-1}-\dfrac{3\pi}{8}\)</span>
+</div></p>
+<details class="success">
+<summary>解析</summary>
+<p>先在 <span class="arithmatex">\(L\)</span> 上用 <span class="arithmatex">\(x^2+y^2=1\)</span> 消去分母。对所得分子向量场补上从 <span class="arithmatex">\((1,0)\)</span> 到 <span class="arithmatex">\((-1,0)\)</span> 的直径 <span class="arithmatex">\(L_0\)</span>，闭路为<strong>顺时针</strong>。令 <span class="arithmatex">\(D\)</span> 为上半单位圆盘，<span class="arithmatex">\(Q_x-P_y=-x^2-2y^2\)</span>，故闭路积分为 <span class="arithmatex">\(\iint_D(x^2+2y^2)\,\mathrm dA=\dfrac{3\pi}{8}\)</span>。补线积分为 <span class="arithmatex">\(\int_1^{-1}e^x\,\mathrm dx=e^{-1}-e\)</span>，所以原积分为 <strong><span class="arithmatex">\(e-e^{-1}+\dfrac{3\pi}{8}\)</span>（ C ）</strong>。</p>
+<p><strong>易错点：</strong> 只在原弧上消分母，再对化简后的场补线；直接补原式会碰到原点奇点。</p>
+</details>
+</div>
+<div class="admonition example exercise">
+<p class="admonition-title">☆☆☆ 含原点奇点的环流</p>
+<p>设星形线 <span class="arithmatex">\(L:x^{\frac{2}{3}}+y^{\frac{2}{3}}=1\)</span> 取顺时针方向。求 <span class="arithmatex">\({\displaystyle \oint_L} \dfrac{x\,\mathrm dy-y\,\mathrm dx}{4x^2+y^2}\)</span>。</p>
+<div class="exam-options" markdown="1">
+<p>A. <span class="arithmatex">\(0\)</span></p>
+<p>B. <span class="arithmatex">\(-\pi\)</span></p>
+<p>C. <span class="arithmatex">\(-2\pi\)</span></p>
+<p>D. <span class="arithmatex">\(\pi\)</span>
+</div></p>
+<details class="success">
+<summary>解析</summary>
+<p>场在原点外满足 <span class="arithmatex">\(Q_x-P_y=0\)</span>。从内部挖去小椭圆盘 <span class="arithmatex">\(4x^2+y^2\le\varepsilon^2\)</span>，在剩余区域用格林公式，可知原积分等于沿小椭圆<strong>取顺时针</strong>的积分。取 <span class="arithmatex">\(x=(\dfrac{\varepsilon}{2})\cos t,\ y=-\varepsilon\sin t\)</span>，<span class="arithmatex">\(0\le t\le2\pi\)</span>，得到被积微分 <span class="arithmatex">\(-\dfrac{\mathrm dt}{2}\)</span>，故答案为 <strong><span class="arithmatex">\(-\pi\)</span>（ B ）</strong>。</p>
+<p><strong>易错点：</strong> 内外边界在格林公式中方向相反；移项后，将两条曲线都取同一方向再比较。</p>
+</details>
+</div>
 <h4 id="13-平面曲线积分与路径无关性">§1.3 平面曲线积分与路径无关性<a class="headerlink" href="#13-平面曲线积分与路径无关性" title="Permanent link">&para;</a></h4>
 <p>平面区域 <span class="arithmatex">\(D\)</span> 内任一闭曲线均可在 <span class="arithmatex">\(D\)</span> 内连续收缩成一点时，称 <span class="arithmatex">\(D\)</span> 为单连通区域。</p>
 <p>设 <span class="arithmatex">\(D\)</span> 为单连通区域，<span class="arithmatex">\(P,Q\)</span> 在 <span class="arithmatex">\(D\)</span> 上具有一阶连续偏导数，则下列条件等价：</p>
@@ -13266,6 +13663,42 @@ W=\int_L\mathbf F\cdot\mathrm d\mathbf s.
 u(x,y)=\int_{x_0}^{x}P(t,y_0)\,\mathrm dt
 +\int_{y_0}^{y}Q(x,t)\,\mathrm dt+C.
 \]</div>
+<div class="admonition example exercise">
+<p class="admonition-title">不围原点的闭路积分</p>
+<p>求使 <span class="arithmatex">\(\displaystyle\oint_C\dfrac{(ax+by)\,\mathrm dx-(cx+dy)\,\mathrm dy}{x^2+2y^2}=0\)</span> 对每条不经过、也不包围原点的简单闭曲线 <span class="arithmatex">\(C\)</span> 都成立的参数关系。题面印作“恒等 50”；若按非零常数理解，把同一闭路反向就会矛盾，这里按零环流整理。</p>
+<div class="exam-options" markdown="1">
+<p>A. <span class="arithmatex">\(2a=d,\ b=c\)</span></p>
+<p>B. <span class="arithmatex">\(-2a=d,\ b=c\)</span></p>
+<p>C. <span class="arithmatex">\(a=d,\ b=2c\)</span></p>
+<p>D. <span class="arithmatex">\(a=-d,\ b=2c\)</span>
+</div></p>
+<details class="success">
+<summary>解析</summary>
+<p>设 <span class="arithmatex">\(P,Q\)</span> 为 <span class="arithmatex">\(\mathrm dx,\mathrm dy\)</span> 的系数，则</p>
+<div class="arithmatex">\[
+Q_x-P_y=\frac{(c-b)(x^2-2y^2)+(2d+4a)xy}{(x^2+2y^2)^2}.
+\]</div>
+<p>由格林公式，充分条件是分子恒为零，即 <strong><span class="arithmatex">\(b=c,\ d=-2a\)</span>（ B ）</strong>。反过来，若某非原点处 <span class="arithmatex">\(Q_x-P_y\ne0\)</span>，可取足够小的圆盘使其保持同号，圆周上的环流就非零，故上述条件也必要。</p>
+<p><strong>要点：</strong> 在避开奇点的小圆盘上用格林公式推出点态条件；包围原点的闭路需要另算。</p>
+</details>
+</div>
+<div class="admonition example exercise">
+<p class="admonition-title">恰当微分与势函数</p>
+<p>设 <span class="arithmatex">\(f\in C^2\)</span>、<span class="arithmatex">\(f(0)=1,f'(0)=\dfrac{1}{2}\)</span>，已知</p>
+<div class="arithmatex">\[
+\mathrm du=[f'(x+y)-e^{x+y}]\,\mathrm dx+\left[\int_0^{x+y}f(t)\,\mathrm dt+2y\right]\mathrm dy.
+\]</div>
+<p>求 <span class="arithmatex">\(f,u\)</span>，以及从 <span class="arithmatex">\((0,0)\)</span> 到 <span class="arithmatex">\((1,1)\)</span> 的曲线积分 <span class="arithmatex">\(\int\mathrm du\)</span>。</p>
+<details class="success">
+<summary>解析</summary>
+<p>混合偏导相等给出 <span class="arithmatex">\(f''(s)-f(s)=e^s\)</span>，其中 <span class="arithmatex">\(s=x+y\)</span>。对应的特解取 <span class="arithmatex">\(\dfrac{se^s}{2}\)</span>，代初值得 <span class="arithmatex">\(f(s)=\dfrac{(1+s)e^s+e^{-s}}{2}\)</span>。按 <span class="arithmatex">\(x\)</span> 对 <span class="arithmatex">\(u_x\)</span> 积分，再比较 <span class="arithmatex">\(u_y\)</span> 确定只含 <span class="arithmatex">\(y\)</span> 的部分，得到</p>
+<div class="arithmatex">\[
+u=\frac{(s-1)e^s+e^{-s}+y}{2}+y^2+C.
+\]</div>
+<p>积分为 <span class="arithmatex">\(u(1,1)-u(0,0)=\mathbf{\dfrac{e^2+e^{-2}+3}{2}}\)</span>。</p>
+<p><strong>要点：</strong> 混合偏导相等用来筛出 <span class="arithmatex">\(f\)</span>；势函数求出后可直接代入端点。</p>
+</details>
+</div>
 <h3 id="2-第二类曲面积分">§2 第二类曲面积分<a class="headerlink" href="#2-第二类曲面积分" title="Permanent link">&para;</a></h3>
 <h4 id="21-第二类曲面积分的概念">§2.1 第二类曲面积分的概念<a class="headerlink" href="#21-第二类曲面积分的概念" title="Permanent link">&para;</a></h4>
 <p>光滑曲面上选定一点的法线方向，沿曲面任一闭曲线连续移动法线方向，回到起点时方向均保持原向的曲面称为双侧曲面。选定连续法线方向的一侧后，称为定侧曲面。</p>
@@ -13304,6 +13737,21 @@ u(x,y)=\int_{x_0}^{x}P(t,y_0)\,\mathrm dt
 <div class="arithmatex">\[
 Q=\iint_S\rho\mathbf v\cdot\mathbf n\,\mathrm dS.
 \]</div>
+<div class="admonition example exercise">
+<p class="admonition-title">球面下侧的单位法向量</p>
+<p>设 <span class="arithmatex">\(\Sigma\)</span> 为上半单位球面被柱面 <span class="arithmatex">\(x^2+y^2=x\)</span> 截出的部分，取下侧。把 <span class="arithmatex">\({\displaystyle \iint_\Sigma} \dfrac{xy\,\mathrm dy\,\mathrm dz+yz\,\mathrm dx\,\mathrm dy}{x^2+y^2+z^2}\)</span> 化为第一类曲面积分。</p>
+<div class="exam-options" markdown="1">
+<p>A. <span class="arithmatex">\(\iint_\Sigma(x^2y+yz^2)\,\mathrm dS\)</span></p>
+<p>B. <span class="arithmatex">\(-\iint_\Sigma(x^2y+yz^2)\,\mathrm dS\)</span></p>
+<p>C. <span class="arithmatex">\(\iint_\Sigma(x^2y+y^2z)\,\mathrm dS\)</span></p>
+<p>D. <span class="arithmatex">\(-\iint_\Sigma(x^2y+y^2z)\,\mathrm dS\)</span>
+</div></p>
+<details class="success">
+<summary>解析</summary>
+<p>在球面上分母为 <span class="arithmatex">\(1\)</span>。下侧的单位法向量是 <span class="arithmatex">\(-(x,y,z)\)</span>，与场 <span class="arithmatex">\((xy,0,yz)\)</span> 点乘，得 <strong><span class="arithmatex">\(-\iint_\Sigma (x^2y+yz^2)\,\mathrm dS\)</span>（ B ）</strong>。</p>
+<p><strong>提醒：</strong> 转换到 <span class="arithmatex">\(\mathrm dS\)</span> 必须点乘<strong>单位</strong>法向量；转换到 <span class="arithmatex">\(\mathrm dx\,\mathrm dy\)</span> 才使用未单位化的投影向量。</p>
+</details>
+</div>
 <h4 id="22-第二类曲面积分的计算">§2.2 第二类曲面积分的计算<a class="headerlink" href="#22-第二类曲面积分的计算" title="Permanent link">&para;</a></h4>
 <p>若曲面片用 <span class="arithmatex">\(\mathbf r(u,v)\)</span> 参数化，且 <span class="arithmatex">\(\mathbf r_u\times\mathbf r_v\ne\mathbf 0\)</span>，则 <span class="arithmatex">\(\mathbf r_u\)</span> 和 <span class="arithmatex">\(\mathbf r_v\)</span> 是两条参数曲线的切矢量，它们的叉积垂直于切平面。从 <span class="arithmatex">\(\pm(\mathbf r_u\times\mathbf r_v)\)</span> 中取指向所选一侧的 <span class="arithmatex">\(\mathbf N\)</span>。叉积的模长等于这两个切矢量张成的平行四边形的面积，也就是参数平面到曲面的面积伸缩因子。因此</p>
 <div class="arithmatex">\[
@@ -13331,6 +13779,35 @@ Q=\iint_S\rho\mathbf v\cdot\mathbf n\,\mathrm dS.
 =\pm\iint_{D_{xz}}[-Py_x+Q-Ry_z]_{y=y(x,z)}\,\mathrm dx\,\mathrm dz,
 \]</div>
 <p>法线的 <span class="arithmatex">\(y\)</span> 分量为正时取 <span class="arithmatex">\(+\)</span>，为负时取 <span class="arithmatex">\(-\)</span>。</p>
+<div class="admonition example exercise">
+<p class="admonition-title">☆☆☆ 曲面积分投影的交换对称性</p>
+<p>设 <span class="arithmatex">\(\Sigma:z=1-4x^2-4y^2,\ 0\le z\le1\)</span>，取上侧。求</p>
+<div class="arithmatex">\[
+\iint_\Sigma\frac{xy^2z\,\mathrm dy\,\mathrm dz-x^2yz\,\mathrm dz\,\mathrm dx}{x^2+y^2+z^2}
++\frac{x^2-y^2}{2}\ln(x^2+y^2+z^2)\,\mathrm dx\,\mathrm dy.
+\]</div>
+<details class="success">
+<summary>解析</summary>
+<p>上侧投影使用 <span class="arithmatex">\((-z_x,-z_y,1)=(8x,8y,1)\)</span>。前两项正好抵消，只剩 <span class="arithmatex">\(\dfrac{(x^2-y^2)\ln(x^2+y^2+z^2)}{2}\)</span>；代入 <span class="arithmatex">\(z\)</span> 后，交换 <span class="arithmatex">\(x,y\)</span> 保持圆盘 <span class="arithmatex">\(x^2+y^2\le\dfrac{1}{4}\)</span> 不变，却使被积函数变号，故积分为 <strong><span class="arithmatex">\(0\)</span></strong>。</p>
+<p><strong>提醒：</strong> 上侧投影向量的第三分量是 <span class="arithmatex">\(+1\)</span>。直接投影还可避开补底后在原点处理奇点。</p>
+</details>
+</div>
+<div class="admonition example exercise">
+<p class="admonition-title">锥面下侧的通量投影</p>
+<p>设 <span class="arithmatex">\(\Sigma\)</span> 为第一卦限内 <span class="arithmatex">\(z=\sqrt{x^2+y^2}\)</span>、<span class="arithmatex">\(0\le z\le1\)</span> 的锥面，取下侧，<span class="arithmatex">\(f\)</span> 连续且非常量。求</p>
+<div class="arithmatex">\[
+I=\iint_\Sigma\frac{[1+yf(z)]\,\mathrm dy\,\mathrm dz+[1-xf(z)]\,\mathrm dz\,\mathrm dx}{1+\sqrt{x^2+y^2}}.
+\]</div>
+<details class="success">
+<summary>解析</summary>
+<p>令 <span class="arithmatex">\(r=\sqrt{x^2+y^2}\)</span>。下侧投影向量为 <span class="arithmatex">\((\dfrac{x}{r},\dfrac{y}{r},-1)\)</span>，所以分子投影后为 <span class="arithmatex">\(\dfrac{x+y}{r}\)</span>，两项 <span class="arithmatex">\(\dfrac{xyf(z)}{r}\)</span> 相消。改用极坐标：</p>
+<div class="arithmatex">\[
+I=\int_0^{\pi/2}(\cos\theta+\sin\theta)\,\mathrm d\theta
+\int_0^1\frac{r}{1+r}\,\mathrm dr=2(1-\ln2).
+\]</div>
+<p><strong>易错点：</strong> 下侧向量是 <span class="arithmatex">\((z_x,z_y,-1)\)</span>；锥顶单点可用截去小圆盘再取极限处理。</p>
+</details>
+</div>
 <h4 id="23-高斯公式">§2.3 高斯公式<a class="headerlink" href="#23-高斯公式" title="Permanent link">&para;</a></h4>
 <p>设空间有界闭区域 <span class="arithmatex">\(V\)</span> 的边界 <span class="arithmatex">\(S\)</span> 由分片光滑的双侧曲面组成，<span class="arithmatex">\(P,Q,R\)</span> 在 <span class="arithmatex">\(V\)</span> 上连续且具有一阶连续偏导数，则</p>
 <div class="arithmatex">\[
@@ -13408,6 +13885,20 @@ Q=\iint_S\rho\mathbf v\cdot\mathbf n\,\mathrm dS.
 \iint_S(x^2\cos\alpha+y^2\cos\beta+z^2\cos\gamma)\,\mathrm dS
 =\frac{\pi h^4}{2}-\pi h^4=-\frac{\pi h^4}{2}.
 \]</div>
+</details>
+</div>
+<div class="admonition example exercise">
+<p class="admonition-title">☆☆☆ 含未知函数的半球面通量</p>
+<p>设 <span class="arithmatex">\(\Sigma:x^2+y^2+z^2=2,\ z\ge0\)</span> 取上侧。连续函数 <span class="arithmatex">\(f\)</span> 满足 <span class="arithmatex">\(f(x,y)=x^2+y^2+xI\)</span>，其中</p>
+<div class="arithmatex">\[
+I=\iint_\Sigma xy^2\,\mathrm dy\,\mathrm dz+x^2y\,\mathrm dz\,\mathrm dx-
+[(x+3y)^2-z^2+zf(x,y)]\,\mathrm dx\,\mathrm dy.
+\]</div>
+<p>求 <span class="arithmatex">\(f\)</span>。</p>
+<details class="success">
+<summary>解析</summary>
+<p>将积分中的变量与等式左侧的自变量区分：<span class="arithmatex">\(I\)</span> 是常数。补上取下侧的底盘 <span class="arithmatex">\(D\)</span>，应用高斯公式；场的散度是 <span class="arithmatex">\(x^2+y^2+2z-f(x,y)=2z-Ix\)</span>。由半球体关于 <span class="arithmatex">\(x=0\)</span> 对称，<span class="arithmatex">\(-Ix\)</span> 积分为零，闭面通量为 <span class="arithmatex">\(\pi\int_0^{\sqrt2}2z(2-z^2)\,\mathrm dz=2\pi\)</span>。底盘通量为 <span class="arithmatex">\(\iint_D(x+3y)^2\,\mathrm dA=10\pi\)</span>（交叉项消掉，两个平方项积分各为 <span class="arithmatex">\(\pi\)</span>）。故 <span class="arithmatex">\(I=2\pi-10\pi=-8\pi\)</span>，即 <strong><span class="arithmatex">\(f(x,y)=x^2+y^2-8\pi x\)</span></strong>。</p>
+<p><strong>易错点：</strong> 底面外法向朝下，<span class="arithmatex">\(z=0\)</span> 时通量为正的 <span class="arithmatex">\((x+3y)^2\)</span>；求原曲面通量需从闭面通量中减去它。</p>
 </details>
 </div>
 <h4 id="24-散度场">§2.4 散度场<a class="headerlink" href="#24-散度场" title="Permanent link">&para;</a></h4>
@@ -13526,6 +14017,15 @@ x^2+y^2=a^2,\qquad\frac xa+\frac zh=1\quad(a&gt;0,\ h&gt;0),
 =-2\pi a(h+a).
 \end{aligned}
 \]</div>
+</details>
+</div>
+<div class="admonition example exercise">
+<p class="admonition-title">☆☆☆ 斯托克斯公式的闭合边界</p>
+<p>题面给出 <span class="arithmatex">\(\Gamma:z=\sqrt{1-x^2-y},\ x^2+y^2=x\)</span>，从 <span class="arithmatex">\(z\)</span> 轴正向往负向看取逆时针，要求计算 <span class="arithmatex">\(\oint_\Gamma(2y-z)\,\mathrm dx+(x-2)z\,\mathrm dy+(x-2y)\,\mathrm dz\)</span>。</p>
+<details class="success">
+<summary>解析</summary>
+<p><strong>先核对题面。</strong> 在投影圆上，<span class="arithmatex">\((\dfrac{4}{5},\dfrac{2}{5})\)</span> 使根号内为负，而 <span class="arithmatex">\((0,0)\)</span> 使其为正。依印刷式，实曲线没有所要求的闭合边界；手写后半段用的是另一曲面，即 <span class="arithmatex">\(z=\sqrt{1-x^2-y^2}\)</span>。</p>
+<p>若按手写的<strong>上半球版本</strong>重做，逆时针对应上侧法向 <span class="arithmatex">\((x,y,z)\)</span>，旋度为 <span class="arithmatex">\((-x,-2,z-2)\)</span>。在投影圆盘 <span class="arithmatex">\(D:x^2+y^2\le x\)</span> 上投影，关于 <span class="arithmatex">\(y\)</span> 的奇项消失，结果为 <span class="arithmatex">\(\iint_D(z-\dfrac{x^2}{z}-2)\,\mathrm dA\)</span>。其中 <span class="arithmatex">\(z-\dfrac{x^2}{z}=\partial_x(xz)\)</span>；再用格林公式，取 <span class="arithmatex">\(x=\dfrac{1+\cos t}{2},\ y=\dfrac{\sin t}{2}\)</span> 得 <span class="arithmatex">\(\oint_{\partial D}xz\,\mathrm dy=\int_{-1}^1(2u^4-u^2)\,\mathrm du=\dfrac{2}{15}\)</span>（<span class="arithmatex">\(u=\cos(\dfrac{t}{2})\)</span>）。减去 <span class="arithmatex">\(2|D|=\dfrac{\pi}{2}\)</span>，得到 <strong><span class="arithmatex">\(\dfrac{2}{15}-\dfrac{\pi}{2}\)</span></strong>。</p>
 </details>
 </div>
 <h4 id="32-空间曲线积分与路径无关性">§3.2 空间曲线积分与路径无关性<a class="headerlink" href="#32-空间曲线积分与路径无关性" title="Permanent link">&para;</a></h4>
@@ -13738,9 +14238,18 @@ q&gt;1\text{ 或 }q=+\infty\ \Longrightarrow\ \sum u_n\text{ 发散}.
 <p>而 <span class="arithmatex">\(\displaystyle\sum_{n=1}^\infty\frac1{n^2}\)</span> 收敛，且 <span class="arithmatex">\(\dfrac{a^2}{2}&gt;0\)</span>，由比较判别法知 <span class="arithmatex">\(\displaystyle\sum_{n=1}^\infty\left(1-\cos\frac an\right)\)</span> 收敛。</p>
 </details>
 </div>
+<div class="admonition example exercise">
+<p class="admonition-title">幂与对数混合情形</p>
+<p>设 <span class="arithmatex">\(p,q&gt;0\)</span>，讨论 <span class="arithmatex">\(\sum_{n=1}^\infty \dfrac{1}{n^p\ln^q(n+1)}\)</span> 的敛散性。</p>
+<details class="success">
+<summary>解析</summary>
+<p><span class="arithmatex">\(p&gt;1\)</span> 时由与 <span class="arithmatex">\(\sum n^{-p}\)</span> 比较而收敛；<span class="arithmatex">\(0&lt;p&lt;1\)</span> 时，通项与 <span class="arithmatex">\(\dfrac{1}{n}\)</span> 的比 <span class="arithmatex">\(\dfrac{n^{1-p}}{\ln^q(n+1)}\to\infty\)</span>，故发散。<span class="arithmatex">\(p=1\)</span> 时，通项与 <span class="arithmatex">\(\dfrac{1}{(n+1)\ln^q(n+1)}\)</span> 等价。后者用积分判别，令 <span class="arithmatex">\(t=\ln(x+1)\)</span>，归结为 <span class="arithmatex">\(\int_{\ln2}^\infty t^{-q}\,\mathrm dt\)</span>。因此 <strong><span class="arithmatex">\(p&gt;1\)</span> 或 <span class="arithmatex">\(p=1,q&gt;1\)</span> 时收敛，其余发散</strong>。</p>
+<p><strong>要点：</strong> 幂次非临界时优先比较判别；<span class="arithmatex">\(p=1\)</span> 才需要进一步检查对数次幂。</p>
+</details>
+</div>
 <h3 id="3-一般数项级数收敛性的判别法">§3 一般数项级数收敛性的判别法<a class="headerlink" href="#3-一般数项级数收敛性的判别法" title="Permanent link">&para;</a></h3>
 <h4 id="31-交错级数">§3.1 交错级数<a class="headerlink" href="#31-交错级数" title="Permanent link">&para;</a></h4>
-<p>设 <span class="arithmatex">\(u_n&gt;0\)</span>，级数</p>
+<p>（<strong>莱布尼兹定理</strong>）设 <span class="arithmatex">\(u_n&gt;0\)</span>，级数</p>
 <div class="arithmatex">\[
 \sum_{n=1}^{\infty}(-1)^{n-1}u_n
 \]</div>
@@ -13780,6 +14289,20 @@ S_{2m}=u_1-(u_2-u_3)-\cdots-(u_{2m-2}-u_{2m-1})-u_{2m}\le u_1,
 \end{aligned}
 \]</div>
 </details>
+<div class="admonition example exercise">
+<p class="admonition-title">☆☆☆ 含积分项的交错级数</p>
+<p>设 <span class="arithmatex">\(a_n={\displaystyle \int_0^{\frac{\pi}{2}}}(1+\sin x)^{-n}\,\mathrm dx\)</span>。求 <span class="arithmatex">\(\lim a_n\)</span>，并证明 <span class="arithmatex">\(\sum_{n\ge1}(-1)^{n-1}a_n\)</span> 收敛。</p>
+<details class="success">
+<summary>解析</summary>
+<p>由 <span class="arithmatex">\(\sin x\ge \dfrac{2x}{\pi}\)</span>，当 <span class="arithmatex">\(n&gt;1\)</span> 时，</p>
+<div class="arithmatex">\[
+0&lt;a_n\le\int_0^{\pi/2}(1+2x/\pi)^{-n}\,\mathrm dx
+=\frac{\pi}{2(n-1)}(1-2^{1-n})\longrightarrow0.
+\]</div>
+<p>被积函数随 <span class="arithmatex">\(n\)</span> 递减，故 <span class="arithmatex">\(a_n\)</span> 递减并趋于零，交错级数由莱布尼兹判别法收敛。</p>
+<p><strong>易错点：</strong> 积分中值点随 <span class="arithmatex">\(n\)</span> 变化，可能逼近 <span class="arithmatex">\(0\)</span>；用统一的夹逼上界才可直接取极限。</p>
+</details>
+</div>
 <h4 id="32-绝对收敛级数与条件收敛级数">§3.2 绝对收敛级数与条件收敛级数<a class="headerlink" href="#32-绝对收敛级数与条件收敛级数" title="Permanent link">&para;</a></h4>
 <p>若 <span class="arithmatex">\(\sum|u_n|\)</span> 收敛，称 <span class="arithmatex">\(\sum u_n\)</span> 绝对收敛；若 <span class="arithmatex">\(\sum u_n\)</span> 收敛而 <span class="arithmatex">\(\sum|u_n|\)</span> 发散，称其条件收敛。</p>
 <div class="arithmatex">\[
@@ -13809,6 +14332,21 @@ q&gt;1\text{ 或 }q=+\infty\ \Longrightarrow\ \sum u_n\text{ 发散}.
 =\sum_{n=1}^\infty\frac1{n^p},
 \]</div>
 <p>当 <span class="arithmatex">\(p&gt;1\)</span> 时收敛。因此，当 <span class="arithmatex">\(p&gt;1\)</span> 时，<span class="arithmatex">\(\displaystyle\sum_{n=1}^\infty(-1)^{n-1}\frac1{n^p}\)</span> 绝对收敛；当 <span class="arithmatex">\(0&lt;p\le1\)</span> 时，由莱布尼茨定理知 <span class="arithmatex">\(\displaystyle\sum_{n=1}^\infty(-1)^{n-1}\frac1{n^p}\)</span> 收敛，但 <span class="arithmatex">\(\displaystyle\sum_{n=1}^\infty\frac1{n^p}\)</span> 发散，故原级数条件收敛；当 <span class="arithmatex">\(p\le0\)</span> 时，<span class="arithmatex">\((-1)^{n-1}\dfrac1{n^p}\)</span> 不趋于零，这时级数发散。</p>
+</details>
+</div>
+<div class="admonition example exercise">
+<p class="admonition-title">☆☆☆ 对数因子的交错级数</p>
+<p>设 <span class="arithmatex">\(k&gt;0\)</span>，判断 <span class="arithmatex">\(\sum_{n=1}^\infty(-1)^n\dfrac{\ln n}{n^k}\)</span> 的敛散性。</p>
+<div class="exam-options" markdown="1">
+<p>A. 当 <span class="arithmatex">\(k&gt;0\)</span> 时，级数绝对收敛</p>
+<p>B. 当 <span class="arithmatex">\(k&gt;0\)</span> 时，级数条件收敛</p>
+<p>C. 当 <span class="arithmatex">\(0&lt;k\le1\)</span> 时，级数发散；当 <span class="arithmatex">\(k&gt;1\)</span> 时，级数绝对收敛</p>
+<p>D. 当 <span class="arithmatex">\(0&lt;k\le1\)</span> 时，级数条件收敛；当 <span class="arithmatex">\(k&gt;1\)</span> 时，级数绝对收敛
+</div></p>
+<details class="success">
+<summary>解析</summary>
+<p><span class="arithmatex">\(u(x)=\dfrac{\ln x}{x^k}\to0\)</span>，且 <span class="arithmatex">\(u'(x)=x^{-k-1}(1-k\ln x)\)</span> 在充分大的 <span class="arithmatex">\(x\)</span> 处为负，故由莱布尼兹判别法，级数对所有 <span class="arithmatex">\(k&gt;0\)</span> 收敛。若 <span class="arithmatex">\(0&lt;k\le1\)</span>，则充分大时 <span class="arithmatex">\(u(n)\ge\dfrac{1}{n}\)</span>；若 <span class="arithmatex">\(k&gt;1\)</span>，取 <span class="arithmatex">\(1&lt;p&lt;k\)</span>，有 <span class="arithmatex">\(u(n)=o(n^{-p})\)</span>。因此 <strong><span class="arithmatex">\(0&lt;k\le1\)</span> 条件收敛，<span class="arithmatex">\(k&gt;1\)</span> 绝对收敛（ D ）</strong>。</p>
+<p><strong>易错点：</strong> 先证交错原级数收敛，再判绝对值级数；莱布尼兹判别法需要检查最终单调性。</p>
 </details>
 </div>
 <h4 id="33-绝对收敛级数的性质-">§3.3 绝对收敛级数的性质 *<a class="headerlink" href="#33-绝对收敛级数的性质-" title="Permanent link">&para;</a></h4>
@@ -13969,6 +14507,15 @@ R=\lim_{n\to\infty}\frac1{\sqrt[n]{|a_n|}}.
 </li>
 </ol>
 </div>
+<div class="admonition example exercise">
+<p class="admonition-title">☆☆☆ 阶乘系数幂级数的收敛域</p>
+<p>求 <span class="arithmatex">\(\sum_{n=1}^{\infty}\dfrac{(n!)^2}{(2n)!}x^n\)</span> 的收敛域。</p>
+<details class="success">
+<summary>解析</summary>
+<p>系数之比 <span class="arithmatex">\(\dfrac{(n+1)^2}{(2n+2)(2n+1)}\to\dfrac{1}{4}\)</span>，所以半径为 <span class="arithmatex">\(4\)</span>。当 <span class="arithmatex">\(x=\pm4\)</span> 时，通项绝对值为 <span class="arithmatex">\(\prod_{k=1}^n\dfrac{2k}{2k-1}\ge1\)</span>，故两端都发散。收敛域为 <strong><span class="arithmatex">\((-4,4)\)</span></strong>。</p>
+<p><strong>易错点：</strong> 比值法算出的是半径；端点处先查通项是否趋于零。</p>
+</details>
+</div>
 <h4 id="52-幂级数的性质及运算">§5.2 幂级数的性质及运算<a class="headerlink" href="#52-幂级数的性质及运算" title="Permanent link">&para;</a></h4>
 <p>设 <span class="arithmatex">\(S(x)=\sum_{n=0}^{\infty}a_n(x-x_0)^n\)</span> 的收敛半径为 <span class="arithmatex">\(R&gt;0\)</span>。在收敛区间内，<span class="arithmatex">\(S\)</span> 连续，可逐项求导与积分，所得幂级数的收敛半径仍为 <span class="arithmatex">\(R\)</span>：</p>
 <div class="arithmatex">\[
@@ -14027,6 +14574,19 @@ S(x)=\int_0^x\frac1{1-x}\,\mathrm dx=-\ln(1-x),\qquad x\in(-1,1).
 <div class="arithmatex">\[
 \sum_{n=1}^\infty\frac{x^n}{n}=-\ln(1-x),\qquad x\in[-1,1).
 \]</div>
+</details>
+</div>
+<div class="admonition example exercise">
+<p class="admonition-title">☆☆☆ 递推积分项的级数求和</p>
+<p>设 <span class="arithmatex">\(a_n=\int_0^1(1+x^2)^{-n}\,\mathrm dx\)</span>，求 <span class="arithmatex">\(\sum_{n=1}^\infty[\dfrac{a_{n+1}}{2n-1}-\dfrac{a_n}{2n}]\)</span>。</p>
+<details class="success">
+<summary>解析</summary>
+<p>积分 <span class="arithmatex">\(\dfrac{\mathrm d}{\mathrm dx}[x(1+x^2)^{-n}]\)</span> 得 <span class="arithmatex">\(2na_{n+1}-(2n-1)a_n=2^{-n}\)</span>。令</p>
+<div class="arithmatex">\[
+S(t)=\sum_{n=1}^\infty\frac{t^{2n}}{2n(2n-1)}.
+\]</div>
+<p>原和是 <span class="arithmatex">\(S(\dfrac{1}{\sqrt2})\)</span>。因 <span class="arithmatex">\(S''(t)=\dfrac{1}{1-t^2}\)</span> 且 <span class="arithmatex">\(S(0)=S'(0)=0\)</span>，在 <span class="arithmatex">\(|t|&lt;1\)</span> 积分两次得 <span class="arithmatex">\(S(t)=\dfrac12[(1+t)\ln(1+t)+(1-t)\ln(1-t)]\)</span>。代入得 <strong><span class="arithmatex">\(\dfrac{\sqrt2}{2}\ln(1+\sqrt2)-\dfrac12\ln2\)</span></strong>。</p>
+<p><strong>易错点：</strong> 求导两次后的级数是偶次幂的几何级数；不要误写成 <span class="arithmatex">\(\dfrac{1}{1-t}\)</span>。</p>
 </details>
 </div>
 <h3 id="6-函数展成幂级数">§6 函数展成幂级数<a class="headerlink" href="#6-函数展成幂级数" title="Permanent link">&para;</a></h3>
@@ -14241,6 +14801,15 @@ b_n&amp;=\frac2\pi\int_0^\pi\arcsin(\sin x)\sin nx\,\mathrm dx\\
 &amp;=\arcsin(\sin x),\qquad x\in(-\infty,+\infty).
 \end{aligned}
 \]</div>
+</details>
+</div>
+<div class="admonition example exercise">
+<p class="admonition-title">☆☆☆ 周期为四的偶函数的傅里叶系数</p>
+<p>设 <span class="arithmatex">\(f\)</span> 为周期 <span class="arithmatex">\(4\)</span> 的偶函数，在 <span class="arithmatex">\([0,1)\)</span> 上 <span class="arithmatex">\(f(x)=x\)</span>，在 <span class="arithmatex">\([1,2]\)</span> 上 <span class="arithmatex">\(f(x)=2-x\)</span>。对展开式 <span class="arithmatex">\(\dfrac{a_0}{2}+\sum_{n\ge1}[a_n\cos(\dfrac{n\pi x}{2})+b_n\sin(\dfrac{n\pi x}{2})]\)</span>，求 <span class="arithmatex">\((a_2,b_2)\)</span>。</p>
+<details class="success">
+<summary>解析</summary>
+<p>奇偶性给出 <span class="arithmatex">\(b_2=0\)</span>。半周期 <span class="arithmatex">\(l=2\)</span>，故 <span class="arithmatex">\(a_2=(\dfrac{2}{l})\int_0^l f(x)\cos(\pi x)\,\mathrm dx\)</span>。将 <span class="arithmatex">\([1,2]\)</span> 一段作 <span class="arithmatex">\(x\mapsto2-x\)</span>，它与 <span class="arithmatex">\([0,1]\)</span> 的贡献相同，所以 <span class="arithmatex">\(a_2=2\int_0^1x\cos(\pi x)\,\mathrm dx=-\dfrac{4}{\pi^2}\)</span>。答案为 <strong><span class="arithmatex">\((-\dfrac{4}{\pi^2},0)\)</span></strong>。</p>
+<p><strong>要点：</strong> 先从全周期找半周期；偶延拓化为半区间积分时系数是 <span class="arithmatex">\(\dfrac{2}{l}\)</span>。</p>
 </details>
 </div>
 <h4 id="83-有限区间上的傅里叶展开">§8.3 有限区间上的傅里叶展开<a class="headerlink" href="#83-有限区间上的傅里叶展开" title="Permanent link">&para;</a></h4>

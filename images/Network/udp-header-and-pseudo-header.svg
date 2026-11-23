@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="696" height="350" viewBox="0 0 696 350" role="img" aria-labelledby="title desc">
+  <title id="title">UDP 数据报的首部与 IPv4 伪首部</title>
+  <desc id="desc">IPv4 伪首部共 12 字节：源 IP 地址和目的 IP 地址各 4 字节，全零字段和协议号 17 各 1 字节，UDP 长度占 2 字节。计算校验和时，在 UDP 首部和数据之前加上伪首部。UDP 首部由源端口、目的端口、长度和校验和组成，各占 2 字节。发送时只有 UDP 首部和数据。</desc>
+  <style>
+    text { fill: #1a237e; font-family: "Source Han Sans SC", "Noto Sans SC", "Microsoft YaHei", sans-serif; text-anchor: middle; }
+    .heading { font-size: 20px; font-weight: 600; }
+    .field { font-size: 22px; font-weight: 600; }
+    .size { font-size: 18px; }
+    .grid { fill: none; stroke-width: 1.5; }
+    .guide { fill: none; stroke: #9da8cc; stroke-width: 1.5; }
+    .pseudo rect { fill: #fdf4e6; }
+    .pseudo rect, .pseudo path { stroke: #c07f1e; }
+    .pseudo text { fill: #8a5a10; }
+    .header rect { fill: #eaf0ff; }
+    .header rect, .header path { stroke: #4051b5; }
+    .data rect { fill: #e9f6f1; stroke: #2f9070; }
+    .data text { fill: #237354; }
+    .pseudo rect, .header rect, .data rect { stroke-width: 1.5; }
+  </style>
+  <rect width="696" height="350" fill="#fff"/>
+
+  <g class="pseudo">
+    <text class="heading" x="24" y="37" style="text-anchor: start">IPv4 伪首部 · 12 B</text>
+    <rect x="24" y="52" width="648" height="64"/>
+    <path class="grid" d="M 240 52 V 116 M 456 52 V 116 M 510 52 V 116 M 564 52 V 116"/>
+    <g class="field">
+      <text x="132" y="81">源 IP 地址</text>
+      <text x="348" y="81">目的 IP 地址</text>
+      <text x="483" y="81">0</text>
+      <text x="537" y="81">17</text>
+      <text x="618" y="81">UDP 长度</text>
+    </g>
+    <g class="size">
+      <text x="132" y="104">4 B</text>
+      <text x="348" y="104">4 B</text>
+      <text x="483" y="104">1 B</text>
+      <text x="537" y="104">1 B</text>
+      <text x="618" y="104">2 B</text>
+    </g>
+    <path d="M 86 116 V 158" stroke-width="1.5"/>
+  </g>
+
+  <text class="heading" x="148" y="145" style="text-anchor: start">计算校验和时</text>
+  <g class="pseudo">
+    <rect x="24" y="158" width="124" height="64"/>
+    <text class="field" x="86" y="187">伪首部</text>
+    <text class="size" x="86" y="210">12 B</text>
+  </g>
+  <g class="header">
+    <rect x="148" y="158" width="400" height="64"/>
+    <path class="grid" d="M 248 158 V 222 M 348 158 V 222 M 448 158 V 222"/>
+    <g class="field">
+      <text x="198" y="187">源端口</text>
+      <text x="298" y="187">目的端口</text>
+      <text x="398" y="187">长度</text>
+      <text x="498" y="187">校验和</text>
+    </g>
+    <g class="size">
+      <text x="198" y="210">2 B</text>
+      <text x="298" y="210">2 B</text>
+      <text x="398" y="210">2 B</text>
+      <text x="498" y="210">2 B</text>
+    </g>
+  </g>
+  <g class="data">
+    <rect x="548" y="158" width="124" height="64"/>
+    <text class="field" x="610" y="187">数据</text>
+    <text class="size" x="610" y="210">长度可变</text>
+  </g>
+
+  <path class="guide" d="M 148 222 V 256 M 548 222 V 256 M 672 222 V 256"/>
+  <g class="header">
+    <rect x="148" y="256" width="400" height="48"/>
+    <text class="field" x="348" y="288">UDP 首部 · 8 B</text>
+  </g>
+  <g class="data">
+    <rect x="548" y="256" width="124" height="48"/>
+    <text class="field" x="610" y="288">数据</text>
+  </g>
+  <path class="guide" d="M 148 313 V 327 H 292 M 528 327 H 672 V 313"/>
+  <text class="heading" x="410" y="334">实际发送的 UDP 数据报</text>
+</svg>

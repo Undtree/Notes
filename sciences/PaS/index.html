@@ -5571,6 +5571,15 @@ P(X=k)=
 <p>分子分别从特征个体中选 <span class="arithmatex">\(k\)</span> 个、从其余个体中选 <span class="arithmatex">\(n-k\)</span> 个；分母为所有容量为 <span class="arithmatex">\(n\)</span> 的样本数。</p>
 <p>超几何分布用于不放回抽样，二项分布用于各次独立且成功概率不变的试验。当抽样比例 <span class="arithmatex">\(n/N\)</span> 很小时，可考虑用 <span class="arithmatex">\(B(n,M/N)\)</span> 近似超几何分布。</p>
 </details>
+<div class="admonition example exercise">
+<p class="admonition-title">☆☆☆ 泊松和与指数级数</p>
+<p>设相互独立的 <span class="arithmatex">\(X_i\sim P(\lambda_i)\)</span> 满足 <span class="arithmatex">\(P(\sum_iX_i\ge1)=1-e^{-1}\)</span>。求 <span class="arithmatex">\(E(2^{\sum_iX_i})\)</span>。</p>
+<details class="success">
+<summary>解析</summary>
+<p><span class="arithmatex">\(S=\sum_i X_i\sim P(\lambda)\)</span>，其中 <span class="arithmatex">\(\lambda=\sum_i\lambda_i\)</span>。由 <span class="arithmatex">\(P(S=0)=e^{-\lambda}=e^{-1}\)</span> 得 <span class="arithmatex">\(\lambda=1\)</span>。于是 <span class="arithmatex">\(E(2^S)=e^{-1}\sum_{k=0}^\infty\dfrac{2^k}{k!}=\mathbf{e}\)</span>。</p>
+<p><strong>要点：</strong> “至少一个”先取补事件；泊松分布求指数函数的期望时，识别 <span class="arithmatex">\(e^x\)</span> 的幂级数。</p>
+</details>
+</div>
 <h3 id="一维连续型随机变量">一维连续型随机变量<a class="headerlink" href="#一维连续型随机变量" title="Permanent link">&para;</a></h3>
 <h4 id="概率密度">概率密度<a class="headerlink" href="#概率密度" title="Permanent link">&para;</a></h4>
 <p>若存在非负可积函数 <span class="arithmatex">\(f(x)\)</span>，使随机变量 <span class="arithmatex">\(X\)</span> 的分布函数可表示为</p>
@@ -5598,6 +5607,21 @@ f(x)\ge0,\qquad
 <li><strong>分布函数连续</strong>：因此区间概率不受有限个端点是否包含的影响。</li>
 <li><strong>密度不唯一</strong>：在有限个点上改变密度的值，不改变任何区间积分，也就不改变分布；更一般地，在零测集上的修改也不影响分布。</li>
 </ul>
+<div class="admonition example exercise">
+<p class="admonition-title">☆☆☆ 密度峰值与归一化条件</p>
+<p>设密度在 <span class="arithmatex">\(x&gt;0\)</span> 时为 <span class="arithmatex">\(a(x+b)e^{-x}\)</span>、其余处为零，在 <span class="arithmatex">\(x=1\)</span> 处取得最大值。求 <span class="arithmatex">\(P(X\ge EX)\)</span>。</p>
+<div class="exam-options" markdown="1">
+<p>A. <span class="arithmatex">\(\dfrac2e\)</span></p>
+<p>B. <span class="arithmatex">\(\dfrac3e\)</span></p>
+<p>C. <span class="arithmatex">\(\dfrac2{e^2}\)</span></p>
+<p>D. <span class="arithmatex">\(\dfrac3{e^2}\)</span>
+</div></p>
+<details class="success">
+<summary>解析</summary>
+<p><span class="arithmatex">\(x=1\)</span> 是内部极值点，代入密度导数 <span class="arithmatex">\(a(1-x-b)e^{-x}\)</span> 得 <span class="arithmatex">\(b=0\)</span>。归一化给出 <span class="arithmatex">\(a=1\)</span>，即 <span class="arithmatex">\(f(x)=xe^{-x}\)</span>（<span class="arithmatex">\(x&gt;0\)</span>）。分部积分得 <span class="arithmatex">\(EX=\int_0^\infty x^2e^{-x}\,\mathrm dx=2\)</span>，再算尾概率 <span class="arithmatex">\(\int_2^\infty xe^{-x}\,\mathrm dx=\mathbf{3e^{-2}}\)</span>（ D ）。</p>
+<p><strong>易错点：</strong> 密度含额外因子 <span class="arithmatex">\(x\)</span>，不能直接套指数分布的尾概率。</p>
+</details>
+</div>
 <h4 id="应用求概率_1">应用——求概率<a class="headerlink" href="#应用求概率_1" title="Permanent link">&para;</a></h4>
 <p>对 <span class="arithmatex">\(a\lt b\)</span>，</p>
 <div class="arithmatex">\[
@@ -5701,8 +5725,36 @@ P(\lvert X-\mu\rvert\le3\sigma)\approx0.9973.
 <p>若定义上侧 <span class="arithmatex">\(\alpha\)</span> 分位点 <span class="arithmatex">\(z_\alpha\)</span> 满足 <span class="arithmatex">\(P(Z&gt;z_\alpha)=\alpha\)</span>，则 <span class="arithmatex">\(\Phi(z_\alpha)=1-\alpha\)</span>。</p>
 </div>
 </details>
+<div class="admonition example exercise">
+<p class="admonition-title">☆☆☆ 正态分布的指数加权矩</p>
+<p>设 <span class="arithmatex">\(X\)</span> 的密度为 <span class="arithmatex">\(a\exp[\dfrac{x(2-x)}{2}]\)</span>（<span class="arithmatex">\(x\in\mathbb R\)</span>）。求 <span class="arithmatex">\(E(X^2e^X)\)</span>。</p>
+<div class="exam-options" markdown="1">
+<p>A. <span class="arithmatex">\(5e^{\frac12}\)</span></p>
+<p>B. <span class="arithmatex">\(3e^{\frac12}\)</span></p>
+<p>C. <span class="arithmatex">\(5e^{\frac32}\)</span></p>
+<p>D. <span class="arithmatex">\(3e^{\frac32}\)</span>
+</div></p>
+<details class="success">
+<summary>解析</summary>
+<p>先配方 <span class="arithmatex">\(\dfrac{x(2-x)}{2}=\dfrac{1}{2}-\dfrac{(x-1)^2}{2}\)</span>，归一化后 <span class="arithmatex">\(X\sim N(1,1)\)</span>。在期望积分中再配方：</p>
+<div class="arithmatex">\[
+x-\frac{(x-1)^2}{2}=\frac32-\frac{(x-2)^2}{2}.
+\]</div>
+<p>所以所求为 <span class="arithmatex">\(e^{\frac{3}{2}}EY^2\)</span>，其中 <span class="arithmatex">\(Y\sim N(2,1)\)</span>，得 <strong><span class="arithmatex">\(5e^{\frac{3}{2}}\)</span>（ C ）</strong>。</p>
+<p><strong>要点：</strong> 第二次配方会改变正态的均值，并在积分外留下常数因子。</p>
+</details>
+</div>
 <h3 id="一维随机变量函数的分布">一维随机变量函数的分布<a class="headerlink" href="#一维随机变量函数的分布" title="Permanent link">&para;</a></h3>
 <p>已知 <span class="arithmatex">\(X\)</span> 的分布，令 <span class="arithmatex">\(Y=g(X)\)</span>，其中 <span class="arithmatex">\(g\)</span> 为可测函数，我们的目标是求出 <span class="arithmatex">\(Y\)</span> 的分布。一般方法是先确定 <span class="arithmatex">\(Y\)</span> 的取值范围，再由事件 <span class="arithmatex">\(\{g(X)\le y\}\)</span> 求分布函数： <span class="arithmatex">\(F_Y(y)=P(Y\le y)=P(g(X)\le y).\)</span></p>
+<div class="admonition example exercise">
+<p class="admonition-title">☆☆☆ 最小盒号的分布与条件缩放</p>
+<p>三只球各自独立、等可能地投入编号为 <span class="arithmatex">\(1,2,3\)</span> 的盒子，<span class="arithmatex">\(X\)</span> 为非空盒的最小编号。求 <span class="arithmatex">\(X\)</span> 的分布；若 <span class="arithmatex">\(Y\mid X=i\sim U[0,i]\)</span>，证明 <span class="arithmatex">\(Z=\dfrac{Y}{X}\sim U[0,1]\)</span>。</p>
+<details class="success">
+<summary>解析</summary>
+<p><span class="arithmatex">\(P(X\ge2)=(\dfrac{2}{3})^3\)</span>，<span class="arithmatex">\(P(X\ge3)=(\dfrac{1}{3})^3\)</span>，由相邻尾概率作差，得 <strong><span class="arithmatex">\(P(X=1),P(X=2),P(X=3)\)</span> 分别为 <span class="arithmatex">\(\dfrac{19}{27},\dfrac{7}{27},\dfrac{1}{27}\)</span></strong>。当 <span class="arithmatex">\(0\le z\le1\)</span>，每个条件分布都给出 <span class="arithmatex">\(P(Z\le z\mid X=i)=P(Y\le iz\mid X=i)=z\)</span>。用全概率公式得 <span class="arithmatex">\(F_Z(z)=z\)</span>；区间外取 <span class="arithmatex">\(0\)</span> 或 <span class="arithmatex">\(1\)</span>，所以 <span class="arithmatex">\(Z\sim U[0,1]\)</span>。</p>
+<p><strong>要点：</strong> 最小编号用“前几个盒子都空”算尾概率；不同分支缩放后有相同分布。</p>
+</details>
+</div>
 <h4 id="离散型--离散型">离散型 → 离散型<a class="headerlink" href="#离散型--离散型" title="Permanent link">&para;</a></h4>
 <p>若 <span class="arithmatex">\(X\)</span> 的分布律为 <span class="arithmatex">\(P(X=x_k)=p_k\)</span>，则 <span class="arithmatex">\(Y=g(X)\)</span> 的可能取值为 <span class="arithmatex">\(g(x_k)\)</span>。把相同的函数值合并后，对每个不同的取值 <span class="arithmatex">\(y_j\)</span>，</p>
 <div class="arithmatex">\[
@@ -5940,6 +5992,24 @@ F(b,d)-F(a,d)-F(b,c)+F(a,c)\ge0.
 P(X=x,\ Y=y)
 =F(x,y)-F(x^-,y)-F(x,y^-)+F(x^-,y^-).
 \]</div>
+<div class="admonition example exercise">
+<p class="admonition-title">含分段随机变量的联合分布函数</p>
+<p>设 <span class="arithmatex">\(X\)</span> 的密度在 <span class="arithmatex">\((-1,1)\)</span> 上为 <span class="arithmatex">\(\dfrac{3x^2}{2}\)</span>、其余处为零。令 <span class="arithmatex">\(X&lt;0\)</span> 时 <span class="arithmatex">\(Y=-1\)</span>，<span class="arithmatex">\(0\le X&lt;\dfrac{1}{2}\)</span> 时 <span class="arithmatex">\(Y=0\)</span>，<span class="arithmatex">\(X\ge\dfrac{1}{2}\)</span> 时 <span class="arithmatex">\(Y=1\)</span>。求联合分布函数在 <span class="arithmatex">\((\dfrac{1}{4},\dfrac{1}{2})\)</span> 的值。</p>
+<div class="exam-options" markdown="1">
+<p>A. <span class="arithmatex">\(\dfrac{65}{128}\)</span></p>
+<p>B. <span class="arithmatex">\(\dfrac{64}{128}\)</span></p>
+<p>C. <span class="arithmatex">\(\dfrac1{64}\)</span></p>
+<p>D. <span class="arithmatex">\(\dfrac5{64}\)</span>
+</div></p>
+<details class="success">
+<summary>解析</summary>
+<p><span class="arithmatex">\(Y\le\dfrac{1}{2}\)</span> 等价于 <span class="arithmatex">\(X&lt;\dfrac{1}{2}\)</span>，而 <span class="arithmatex">\(X\le\dfrac{1}{4}\)</span> 已蕴含此条件，故</p>
+<div class="arithmatex">\[
+F(1/4,1/2)=P(X\le1/4)=\int_{-1}^{1/4}\frac32x^2\,\mathrm dx=\frac{65}{128}\quad\text{（ A ）}.
+\]</div>
+<p><strong>提醒：</strong> <span class="arithmatex">\(Y\)</span> 是 <span class="arithmatex">\(X\)</span> 的分段函数，又是离散型；直接用联合分布函数的事件定义最省事。</p>
+</details>
+</div>
 <h4 id="边缘分布函数">边缘分布函数<a class="headerlink" href="#边缘分布函数" title="Permanent link">&para;</a></h4>
 <p>可由联合分布求出联合分布中的某一个分量或部分分量的分布，称为<strong>边缘分布</strong>。对二维随机向量 <span class="arithmatex">\((X,Y)\)</span>，</p>
 <div class="arithmatex">\[
@@ -6257,6 +6327,40 @@ P\{X+Y\lt a+b\}
 \]</div>
 </details>
 </div>
+</div>
+<div class="admonition example exercise">
+<p class="admonition-title">☆☆☆ 离散条件下的连续混合分布</p>
+<p>已知 <span class="arithmatex">\(P(X=1)=\dfrac{1}{4},\ P(X=2)=\dfrac{3}{4}\)</span>，<span class="arithmatex">\(Y\sim U[-\pi,\pi]\)</span> 与 <span class="arithmatex">\(X\)</span> 独立。令 <span class="arithmatex">\(Z=X\cos(\dfrac{\pi}{4}+Y)\)</span>，求 <span class="arithmatex">\(X=1\)</span> 时 <span class="arithmatex">\(Z\)</span> 的条件密度、<span class="arithmatex">\(Z\)</span> 的边缘密度，并判定 <span class="arithmatex">\(X,Z\)</span> 是否不相关、是否独立。</p>
+<details class="success">
+<summary>解析</summary>
+<p>一个完整周期内，余弦大于 <span class="arithmatex">\(z\in(-1,1)\)</span> 的角长是 <span class="arithmatex">\(2\arccos z\)</span>，所以 <span class="arithmatex">\(F_{Z\mid X=1}(z)=1-\dfrac{\arccos z}{\pi}\)</span>。对它求导，再按 <span class="arithmatex">\(X\)</span> 的两个取值加权，得</p>
+<div class="arithmatex">\[
+f_{Z\mid X=1}(z)=h_1(z),\qquad f_Z(z)=\tfrac14 h_1(z)+\tfrac34 h_2(z),
+\]</div>
+<p>其中 <span class="arithmatex">\(h_c(z)=\dfrac{1}{\pi\sqrt{c^2-z^2}}\)</span> 在 <span class="arithmatex">\(|z|&lt;c\)</span> 时成立，其他处取零。余弦项 <span class="arithmatex">\(C=\cos(\dfrac{\pi}{4}+Y)\)</span> 满足 <span class="arithmatex">\(EC=0\)</span> 且独立于 <span class="arithmatex">\(X\)</span>，所以 <span class="arithmatex">\(EZ=E(XC)=0,\ E(XZ)=E(X^2)EC=0\)</span>，即 <strong>不相关</strong>。但 <span class="arithmatex">\(P(Z&gt;1\mid X=1)=0\)</span>、<span class="arithmatex">\(P(Z&gt;1)&gt;0\)</span>，故 <strong>不独立</strong>。</p>
+<p><strong>易错点：</strong> 整周期内余弦达到同一中间值两次；缩放为 <span class="arithmatex">\(2C\)</span> 时，密度的自变量和系数都要变。</p>
+</details>
+</div>
+<div class="admonition example exercise">
+<p class="admonition-title">☆☆☆ 区间条件下的边缘密度</p>
+<p>设联合密度在 <span class="arithmatex">\(0&lt;y&lt;x&lt;1\)</span> 内为 <span class="arithmatex">\(Axy\)</span>，其他处为零。求 <span class="arithmatex">\(A\)</span> 和给定 <span class="arithmatex">\(0&lt;X&lt;\dfrac{1}{2}\)</span> 时 <span class="arithmatex">\(Y\)</span> 的条件密度。</p>
+<details class="success">
+<summary>解析</summary>
+<p>积分得 <span class="arithmatex">\(\dfrac{A}{8}=1\)</span>，故 <span class="arithmatex">\(A=8\)</span>。给定事件 <span class="arithmatex">\(B=\{0&lt;X&lt;\dfrac{1}{2}\}\)</span> 的概率是 <span class="arithmatex">\({\displaystyle \int_0^{\frac{1}{2}}}4x^3\,\mathrm dx=\dfrac{1}{16}\)</span>。当 <span class="arithmatex">\(0&lt;y&lt;\dfrac{1}{2}\)</span> 时，从截取后的联合密度取边缘，再除以 <span class="arithmatex">\(P(B)\)</span>：</p>
+<div class="arithmatex">\[
+f_{Y\mid B}(y)=\frac{\int_y^{1/2}8xy\,\mathrm dx}{1/16}=16y-64y^3.
+\]</div>
+<p>其余处取零。<strong>易错点：</strong> 条件截短了 <span class="arithmatex">\(Y\)</span> 的支撑；对 <span class="arithmatex">\(x\)</span> 积分的下限仍是 <span class="arithmatex">\(y\)</span>，上限才变为 <span class="arithmatex">\(\dfrac{1}{2}\)</span>。</p>
+</details>
+</div>
+<div class="admonition example exercise">
+<p class="admonition-title">给定连续变量取值的条件概率</p>
+<p>设联合密度在 <span class="arithmatex">\(|x|,|y|\le1\)</span> 时为 <span class="arithmatex">\(k(1-xy)\)</span>，其他处为零。求 <span class="arithmatex">\(P(Y&lt;\dfrac{1}{2}\mid X=\dfrac{1}{4})\)</span>。</p>
+<details class="success">
+<summary>解析</summary>
+<p>归一化给出 <span class="arithmatex">\(k=\dfrac{1}{4}\)</span>；因关于 <span class="arithmatex">\(y\)</span> 的奇函数项积分为零，<span class="arithmatex">\(f_X(x)=\dfrac{1}{2}\)</span>（<span class="arithmatex">\(|x|\le1\)</span>）。所以 <span class="arithmatex">\(f_{Y\mid X=\frac{1}{4}}(y)=\dfrac{1}{2}-\dfrac{y}{8}\)</span>（<span class="arithmatex">\(|y|\le1\)</span>），答案为 <span class="arithmatex">\({\displaystyle \int_{-1}^{\frac{1}{2}}}(\dfrac{1}{2}-\dfrac{y}{8})\,\mathrm dy=\mathbf{\dfrac{51}{64}}\)</span>。</p>
+<p><strong>要点：</strong> 给定连续变量的一个具体取值，用联合密度除以边缘密度；给定区间事件时才用事件概率作分母。</p>
+</details>
 </div>
 <h4 id="常见的二维连续型随机变量的分布">常见的二维连续型随机变量的分布<a class="headerlink" href="#常见的二维连续型随机变量的分布" title="Permanent link">&para;</a></h4>
 <details class="note">
@@ -6621,6 +6725,65 @@ f_Z(z)=\int_{-\infty}^{+\infty}|y|f_X(zy)f_Y(y)\,\mathrm dy.
 <p>联合具有密度时，<span class="arithmatex">\(P(Y=0)=0\)</span>，所以商可在 <span class="arithmatex">\(Y=0\)</span> 的零概率事件上任意定义而不影响分布。</p>
 </div>
 <p>实际积分范围仍由原联合密度的非零区域决定，积的公式中 <span class="arithmatex">\(x=0\)</span> 附近若出现瑕积分，应按相应积分含义处理。</p>
+<div class="admonition example exercise">
+<p class="admonition-title">☆☆☆ 分段随机变量的混合分布与协方差</p>
+<p>设 <span class="arithmatex">\(X\sim U[0,2]\)</span>、<span class="arithmatex">\(Y\sim\operatorname{Exp}(1)\)</span> 且相互独立。<span class="arithmatex">\(X\le1\)</span> 时取 <span class="arithmatex">\(Z=Y\)</span>，<span class="arithmatex">\(X&gt;1\)</span> 时取 <span class="arithmatex">\(Z=X\)</span>。求 <span class="arithmatex">\(Z\)</span> 的密度和 <span class="arithmatex">\(\operatorname{Cov}(X,Z)\)</span>。</p>
+<details class="success">
+<summary>解析</summary>
+<p>先按事件拆分：<span class="arithmatex">\(F_Z(z)=\dfrac12F_Y(z)+P(1&lt;X\le2,\ X\le z)\)</span>，所以 <span class="arithmatex">\(f_Z(z)=\dfrac12 e^{-z}\mathbf1_{\{z&gt;0\}}+\dfrac12\mathbf1_{\{1&lt;z&lt;2\}}\)</span>。由此 <span class="arithmatex">\(EZ=\dfrac{1}{2}+\dfrac{3}{4}=\dfrac{5}{4}\)</span>，而 <span class="arithmatex">\(EX=1\)</span>。又</p>
+<div class="arithmatex">\[
+E(XZ)=EY\cdot\frac12\int_0^1x\,\mathrm dx+\frac12\int_1^2x^2\,\mathrm dx=\frac{17}{12}.
+\]</div>
+<p>故 <strong><span class="arithmatex">\(\operatorname{Cov}(X,Z)=\dfrac{1}{6}\)</span></strong>。</p>
+<p><strong>要点：</strong> <span class="arithmatex">\(X&gt;1\)</span> 的分支在求密度时只贡献区间 <span class="arithmatex">\((1,2)\)</span>，在求 <span class="arithmatex">\(E(XZ)\)</span> 时贡献的是 <span class="arithmatex">\(X^2\)</span>。</p>
+</details>
+</div>
+<div class="admonition example exercise">
+<p class="admonition-title">☆☆☆ 第一象限的半径与幅角</p>
+<p>设 <span class="arithmatex">\((X,Y)\)</span> 的联合密度在第一象限为 <span class="arithmatex">\((\dfrac{2}{\pi})e^{-\sqrt{x^2+y^2}}\)</span>、其他处为零。令 <span class="arithmatex">\(U=\sqrt{X^2+Y^2},\ V=\arctan(\dfrac{Y}{X})\)</span>。求 <span class="arithmatex">\(P(U\le1,V\le\dfrac{\pi}{4})\)</span>，写出联合与边缘分布，并判断独立性。</p>
+<details class="success">
+<summary>解析</summary>
+<p>极坐标雅可比给出</p>
+<div class="arithmatex">\[
+f_{U,V}(u,v)=\frac2\pi ue^{-u}\quad(u&gt;0,\ 0&lt;v&lt;\pi/2),
+\]</div>
+<p>其他处取零。支撑是直积，密度也分解为 <span class="arithmatex">\(f_U(u)=ue^{-u}\ (u&gt;0)\)</span> 与 <span class="arithmatex">\(f_V(v)=\dfrac{2}{\pi}\ (0&lt;v&lt;\dfrac{\pi}{2})\)</span>，所以 <strong><span class="arithmatex">\(U,V\)</span> 独立</strong>。当 <span class="arithmatex">\(u&gt;0\)</span> 时 <span class="arithmatex">\(F_U(u)=1-(1+u)e^{-u}\)</span>，否则为零；<span class="arithmatex">\(F_V(v)=\min(1,\max(0,\dfrac{2v}{\pi}))\)</span>，联合分布函数是 <span class="arithmatex">\(F_U(u)F_V(v)\)</span>。所求概率为 <strong><span class="arithmatex">\(\dfrac{1}{2}-\dfrac{1}{e}\)</span></strong>。</p>
+<p><strong>易错点：</strong> 联合密度含 <span class="arithmatex">\(u\)</span> 来自雅可比；幅角与半径的支撑都要随象限写清。</p>
+</details>
+</div>
+<div class="admonition example exercise">
+<p class="admonition-title">线性变换的逆雅可比</p>
+<p>设 <span class="arithmatex">\((X,Y)\)</span> 有联合密度 <span class="arithmatex">\(f(x,y)\)</span>，令 <span class="arithmatex">\(U=-Y,\ V=2X+Y\)</span>，求 <span class="arithmatex">\((U,V)\)</span> 的联合密度。</p>
+<div class="exam-options" markdown="1">
+<p>A. <span class="arithmatex">\(\dfrac12 f\!\left(\dfrac{u+v}{2},-u\right)\)</span></p>
+<p>B. <span class="arithmatex">\(\dfrac12 f\!\left(\dfrac{u+v}{2},u\right)\)</span></p>
+<p>C. <span class="arithmatex">\(f\!\left(\dfrac{u+v}{2},-u\right)\)</span></p>
+<p>D. <span class="arithmatex">\(f\!\left(\dfrac{u+v}{2},u\right)\)</span>
+</div></p>
+<details class="success">
+<summary>解析</summary>
+<p>反解为 <span class="arithmatex">\(x=\dfrac{u+v}{2},\ y=-u\)</span>。正变换雅可比的绝对值为 <span class="arithmatex">\(2\)</span>，所以 <span class="arithmatex">\(\mathrm dx\,\mathrm dy=\dfrac12\,\mathrm du\,\mathrm dv\)</span>，联合密度为 <strong><span class="arithmatex">\(\dfrac12 f(\dfrac{u+v}{2},-u)\)</span>（ A ）</strong>。</p>
+<p><strong>提醒：</strong> 密度乘的是逆变换的雅可比绝对值；原密度为零的区域同时随坐标变换。</p>
+</details>
+</div>
+<div class="admonition example exercise">
+<p class="admonition-title">三角支撑上的最值事件</p>
+<p>设联合密度在 <span class="arithmatex">\(0&lt;x&lt;y\)</span> 时为 <span class="arithmatex">\(Axe^{-y}\)</span>，其他处为零。令 <span class="arithmatex">\(M=\max(X,Y)\)</span>、<span class="arithmatex">\(N=\min(X,Y)\)</span>，求 <span class="arithmatex">\(P(M&lt;2,N&lt;1)\)</span>。</p>
+<div class="exam-options" markdown="1">
+<p>A. <span class="arithmatex">\(1-\dfrac1e\)</span></p>
+<p>B. <span class="arithmatex">\(1-\dfrac1e-\dfrac1{e^2}\)</span></p>
+<p>C. <span class="arithmatex">\(1-\dfrac2{e^2}\)</span></p>
+<p>D. <span class="arithmatex">\(1-\dfrac2e-\dfrac1{2e^2}\)</span>
+</div></p>
+<details class="success">
+<summary>解析</summary>
+<p>归一化为 <span class="arithmatex">\(A\int_0^\infty (\dfrac{y^2}{2})e^{-y}\,\mathrm dy=1\)</span>，故 <span class="arithmatex">\(A=1\)</span>。支撑内恒有 <span class="arithmatex">\(X&lt;Y\)</span>，事件等价于 <span class="arithmatex">\(Y&lt;2,X&lt;1\)</span>。先固定 <span class="arithmatex">\(x\in(0,1)\)</span>，再令 <span class="arithmatex">\(y\)</span> 从 <span class="arithmatex">\(x\)</span> 到 <span class="arithmatex">\(2\)</span>：</p>
+<div class="arithmatex">\[
+P=\int_0^1 x(e^{-x}-e^{-2})\,\mathrm dx=1-\frac2e-\frac1{2e^2}\quad\text{（ D ）}.
+\]</div>
+<p><strong>要点：</strong> 先用密度的支撑约束简化 <span class="arithmatex">\(\max,\min\)</span>；画区域时同时保留 <span class="arithmatex">\(y&gt;x\)</span>。</p>
+</details>
+</div>
 <h2 id="随机变量的数字特征">随机变量的数字特征<a class="headerlink" href="#随机变量的数字特征" title="Permanent link">&para;</a></h2>
 <h3 id="一维随机变量的数字特征">一维随机变量的数字特征<a class="headerlink" href="#一维随机变量的数字特征" title="Permanent link">&para;</a></h3>
 <h4 id="数学期望">数学期望<a class="headerlink" href="#数学期望" title="Permanent link">&para;</a></h4>
@@ -7055,6 +7218,30 @@ E(Y^2)=\int_0^1\int_0^y2y^2\,\mathrm dx\,\mathrm dy=\frac12.
 <div class="arithmatex">\[
 \rho = \frac{\operatorname{Cov}(X,Y)}{\sqrt{D(X)\cdot D(1-X)}} = -1.
 \]</div>
+</details>
+</div>
+<div class="admonition example exercise">
+<p class="admonition-title">☆☆☆ 含正态四阶矩的相关系数</p>
+<p>设 <span class="arithmatex">\(X_1,X_2\)</span> 独立，<span class="arithmatex">\(P(X_1=1)=P(X_1=-1)=\dfrac{1}{2}\)</span>，<span class="arithmatex">\(X_2\sim N(0,1)\)</span>。令 <span class="arithmatex">\(Z=X_1X_2^2\)</span>，求 <span class="arithmatex">\(\rho_{X_1,Z}\)</span>。</p>
+<details class="success">
+<summary>解析</summary>
+<p><span class="arithmatex">\(EX_1=EZ=0\)</span>，故 <span class="arithmatex">\(\operatorname{Cov}(X_1,Z)=E(X_1^2)E(X_2^2)=1\)</span>。又 <span class="arithmatex">\(X_2^2\sim\chi^2(1)\)</span>，所以 <span class="arithmatex">\(E(X_2^4)=2+1^2=3\)</span>，从而 <span class="arithmatex">\(DZ=3\)</span>。结合 <span class="arithmatex">\(DX_1=1\)</span> 得 <strong><span class="arithmatex">\(\rho=\dfrac{1}{\sqrt3}\)</span></strong>。</p>
+<p><strong>要点：</strong> 用 <span class="arithmatex">\(E[(X_2^2)^2]=D(X_2^2)+[E(X_2^2)]^2\)</span>，不要把四阶矩写成二阶矩的平方。</p>
+</details>
+</div>
+<div class="admonition example exercise">
+<p class="admonition-title">同一样本内两个残差的相关性</p>
+<p>设 <span class="arithmatex">\(X_1,X_2,X_3\)</span> 是来自均值为 <span class="arithmatex">\(\mu\)</span>、方差为 <span class="arithmatex">\(\sigma^2&gt;0\)</span> 的总体的简单随机样本，<span class="arithmatex">\(\bar X=\dfrac{X_1+X_2+X_3}{3}\)</span>。求 <span class="arithmatex">\(X_1-\bar X\)</span> 与 <span class="arithmatex">\(X_2-\bar X\)</span> 的相关系数。</p>
+<div class="exam-options" markdown="1">
+<p>A. <span class="arithmatex">\(\dfrac12\)</span></p>
+<p>B. <span class="arithmatex">\(-\dfrac12\)</span></p>
+<p>C. <span class="arithmatex">\(0\)</span></p>
+<p>D. <span class="arithmatex">\(1\)</span>
+</div></p>
+<details class="success">
+<summary>解析</summary>
+<p>两个残差写成独立样本的线性组合后，系数向量分别为 <span class="arithmatex">\(\dfrac{(2,-1,-1)}{3}\)</span> 和 <span class="arithmatex">\(\dfrac{(-1,2,-1)}{3}\)</span>。两者的方差均为 <span class="arithmatex">\(\dfrac{2\sigma^2}{3}\)</span>，协方差为 <span class="arithmatex">\(\dfrac{\sigma^2(-2-2+1)}{9}=-\dfrac{\sigma^2}{3}\)</span>，所以 <strong><span class="arithmatex">\(\rho=-\dfrac{1}{2}\)</span>（ B ）</strong>。</p>
+<p><strong>提醒：</strong> <span class="arithmatex">\(X_i\)</span> 与含有它的 <span class="arithmatex">\(\bar X\)</span> 相关；先按独立的 <span class="arithmatex">\(X_1,X_2,X_3\)</span> 展开再算。</p>
 </details>
 </div>
 <h3 id="独立性与不相关性的判定切比雪夫不等式">独立性与不相关性的判定、切比雪夫不等式<a class="headerlink" href="#独立性与不相关性的判定切比雪夫不等式" title="Permanent link">&para;</a></h3>
@@ -7952,6 +8139,55 @@ X_1-1\sim N(0,1),\qquad X_2-1\sim N(0,1),
 <p>对于 A. B. C.，我们需要保证 <span class="arithmatex">\(X\)</span> 和 <span class="arithmatex">\(Y\)</span> 独立。</p>
 </details>
 </div>
+<div class="admonition example exercise">
+<p class="admonition-title">☆☆☆ F 分布的几何概率</p>
+<p>若 <span class="arithmatex">\(F\sim F(1,1)\)</span>，求 <span class="arithmatex">\(P(F\le3)\)</span>。</p>
+<div class="exam-options" markdown="1">
+<p>A. <span class="arithmatex">\(\dfrac12\)</span></p>
+<p>B. <span class="arithmatex">\(\dfrac23\)</span></p>
+<p>C. <span class="arithmatex">\(\Phi(1)\)</span></p>
+<p>D. <span class="arithmatex">\(\Phi(2)\)</span>
+</div></p>
+<details class="success">
+<summary>解析</summary>
+<p>取独立的 <span class="arithmatex">\(U,V\sim N(0,1)\)</span>，则 <span class="arithmatex">\(F\)</span> 与 <span class="arithmatex">\(\dfrac{U^2}{V^2}\)</span> 同分布。事件为 <span class="arithmatex">\(|U|\le\sqrt3\,|V|\)</span>；在第一象限取 <span class="arithmatex">\(U=r\cos\theta,V=r\sin\theta\)</span>，对应 <span class="arithmatex">\(\dfrac{\pi}{6}\le\theta\le\dfrac{\pi}{2}\)</span>。标准二维正态的方向均匀，四个象限各占 <span class="arithmatex">\(\dfrac{\pi}{3}\)</span>，故答案是 <strong><span class="arithmatex">\(\dfrac{2}{3}\)</span>（ B ）</strong>。</p>
+<p><strong>易错点：</strong> 自由度为 <span class="arithmatex">\(1\)</span> 的 <span class="arithmatex">\(\chi^2\)</span> 是标准正态的<strong>平方</strong>；开平方时要保留绝对值。</p>
+</details>
+</div>
+<div class="admonition example exercise">
+<p class="admonition-title">☆☆☆ 正态和差与平方比的倒数</p>
+<p>设 <span class="arithmatex">\(X_1,X_2\)</span> 独立且均为标准正态，<span class="arithmatex">\(T=\dfrac{X_1-X_2}{|X_1+X_2|}\)</span>。若 <span class="arithmatex">\(P(T&gt;C)=\alpha\in(0,\dfrac{1}{2})\)</span>，求 <span class="arithmatex">\(P(\dfrac{1}{T^2}&gt;C^2)\)</span>。</p>
+<div class="exam-options" markdown="1">
+<p>A. <span class="arithmatex">\(\alpha\)</span></p>
+<p>B. <span class="arithmatex">\(1-\alpha\)</span></p>
+<p>C. <span class="arithmatex">\(2\alpha\)</span></p>
+<p>D. <span class="arithmatex">\(1-2\alpha\)</span>
+</div></p>
+<details class="success">
+<summary>解析</summary>
+<p>令 <span class="arithmatex">\(U=\dfrac{X_1-X_2}{\sqrt2},\ V=\dfrac{X_1+X_2}{\sqrt2}\)</span>。两者联合正态，协方差为零，故独立，且都是标准正态。这样 <span class="arithmatex">\(T=\dfrac{U}{|V|}\sim t(1)\)</span>，<span class="arithmatex">\(C&gt;0\)</span>。<span class="arithmatex">\(\dfrac{1}{T^2}=\dfrac{V^2}{U^2}\)</span> 与 <span class="arithmatex">\(T^2\)</span> 同分布（交换独立同分布的 <span class="arithmatex">\(U,V\)</span>），所以 <span class="arithmatex">\(P(\dfrac{1}{T^2}&gt;C^2)=P(|T|&gt;C)=\mathbf{2\alpha}\)</span>（ C ）。</p>
+<p><strong>易错点：</strong> 和与差的方差都是 <span class="arithmatex">\(2\)</span>；由零协方差推出独立还用到了<strong>联合正态</strong>。</p>
+</details>
+</div>
+<div class="admonition example exercise">
+<p class="admonition-title">☆☆☆ 正态线性组合的尺度和自由度</p>
+<p>设 <span class="arithmatex">\(X_1,\ldots,X_5\)</span> 独立同服从 <span class="arithmatex">\(N(0,\sigma^2)\)</span>，<span class="arithmatex">\(\bar X=\dfrac15\sum_{i=1}^5X_i\)</span>，<span class="arithmatex">\(S^2=\dfrac14\sum_{i=1}^5(X_i-\bar X)^2\)</span>。下列分布式中，正确的有几项？</p>
+<p>① <span class="arithmatex">\(\sqrt{\frac{3}{2}}\dfrac{X_1+X_2}{|X_3+X_4+X_5|}\sim t(1)\)</span><br>
+② <span class="arithmatex">\(\dfrac{5\bar X^2}{\sigma^2}\sim\chi^2(5)\)</span><br>
+③ <span class="arithmatex">\(\dfrac{(X_1-2X_2)^2+(2X_3+X_4)^2}{\sigma^2}\sim\chi^2(2)\)</span><br>
+④ <span class="arithmatex">\(\dfrac{(X_1-2X_2)^2}{(2X_3+X_5)^2}\sim F(1,1)\)</span></p>
+<div class="exam-options" markdown="1">
+<p>A. 1</p>
+<p>B. 2</p>
+<p>C. 3</p>
+<p>D. 4
+</div></p>
+<details class="success">
+<summary>解析</summary>
+<p>① 分别除以 <span class="arithmatex">\(\sqrt2\,\sigma\)</span>、<span class="arithmatex">\(\sqrt3\,\sigma\)</span> 后得到两个独立标准正态，成立。② <span class="arithmatex">\(\dfrac{\sqrt5\bar X}{\sigma}\)</span> 是一个标准正态，平方自由度为 <span class="arithmatex">\(1\)</span>。③ 两个括号内的方差都是 <span class="arithmatex">\(5\sigma^2\)</span>，相加并除以 <span class="arithmatex">\(5\sigma^2\)</span> 才得到 <span class="arithmatex">\(\chi^2(2)\)</span>。④ 两个独立正态的方差同为 <span class="arithmatex">\(5\sigma^2\)</span>，平方比中尺度抵消，成立。因此 <strong>①④正确（ B ）</strong>。</p>
+<p><strong>要点：</strong> 自由度数的是独立标准正态平方的个数；对线性组合先算方差再标准化。</p>
+</details>
+</div>
 <h4 id="分位点">分位点<a class="headerlink" href="#分位点" title="Permanent link">&para;</a></h4>
 <p>设随机变量 <span class="arithmatex">\(X\)</span> 的分布函数为 <span class="arithmatex">\(F\)</span>。对 <span class="arithmatex">\(0\lt\alpha\lt1\)</span>，若 <span class="arithmatex">\(x_\alpha\)</span> 满足</p>
 <div class="arithmatex">\[
@@ -8150,6 +8386,19 @@ D(S_2^2)\lt D(S_1^2)\lt D(S_Y^2)\lt D(S_X^2).
 </li>
 </ol>
 </div>
+<div class="admonition example exercise">
+<p class="admonition-title">两组正态样本的方差和</p>
+<p>两个独立样本 <span class="arithmatex">\((X_1,\ldots,X_n)\)</span>、<span class="arithmatex">\((Y_1,\ldots,Y_n)\)</span> 均来自 <span class="arithmatex">\(N(\mu,\sigma^2)\)</span>，记 <span class="arithmatex">\(W=S_X^2+S_Y^2\)</span>，其中 <span class="arithmatex">\(S_X^2,S_Y^2\)</span> 为两组的样本方差。对任意 <span class="arithmatex">\(0&lt;\alpha&lt;1\)</span>，下列等式哪一项正确？</p>
+<p>A. <span class="arithmatex">\(P\!\biggl\{\chi^2_{1-\frac{\alpha}{2}}(2n)&lt;\dfrac{(n-1)W}{\sigma^2}&lt;\chi^2_{\frac{\alpha}{2}}(2n){\biggr\}=1-\alpha}\)</span></p>
+<p>B. <span class="arithmatex">\(P\!\biggl\{\chi^2_{1-\frac{\alpha}{2}}{(2n-2)}&lt;\dfrac{(n-1)W}{\sigma^2}&lt;\chi^2_{\frac{\alpha}{2}}{(2n-2)}{\biggr\}=1-\alpha}\)</span></p>
+<p>C. <span class="arithmatex">\(P\!\biggl\{-t_{\frac{\alpha}{2}}(2n)&lt;\dfrac{\sqrt n(\bar X-\bar Y)}{W}&lt;t_{\frac{\alpha}{2}}(2n){\biggr\}=1-\alpha}\)</span></p>
+<p>D. <span class="arithmatex">\(P\!\biggl\{-t_{\frac{\alpha}{2}}{(2n-2)}&lt;\dfrac{\sqrt n(\bar X-\bar Y)}{W}&lt;t_{\frac{\alpha}{2}}{(2n-2)}{\biggr\}=\alpha}\)</span></p>
+<details class="success">
+<summary>解析</summary>
+<p>两个标准化样本方差独立，分别服从 <span class="arithmatex">\(\chi^2(n-1)\)</span>，故 <strong><span class="arithmatex">\(\dfrac{(n-1)W}{\sigma^2}\sim\chi^2(2n-2)\)</span></strong>。按上侧分位点记号，区间为 <span class="arithmatex">\((\chi^2_{1-\frac{\alpha}{2}}(2n-2),\chi^2_{\frac{\alpha}{2}}(2n-2))\)</span>（ B ）。</p>
+<p><strong>提醒：</strong> 每组估计一个均值，单组自由度是 <span class="arithmatex">\(n-1\)</span>。若另用样本均值差构造 <span class="arithmatex">\(t\)</span> 统计量，分母应为 <span class="arithmatex">\(\sqrt W\)</span>，不是 <span class="arithmatex">\(W\)</span>。</p>
+</details>
+</div>
 <h3 id="参数的点估计">参数的点估计<a class="headerlink" href="#参数的点估计" title="Permanent link">&para;</a></h3>
 <h4 id="概念_2">概念<a class="headerlink" href="#概念_2" title="Permanent link">&para;</a></h4>
 <p>用统计量 <span class="arithmatex">\(\widehat\theta=\widehat\theta(X_1,\ldots,X_n)\)</span> 估计未知参数 <span class="arithmatex">\(\theta\)</span>，称为参数的<strong>点估计</strong>。其中，<span class="arithmatex">\(\widehat\theta\)</span> 是估计量，将观测值代入得到的 <span class="arithmatex">\(\widehat\theta(x_1,\ldots,x_n)\)</span> 是估计值。</p>
@@ -8332,6 +8581,25 @@ L(N)=
 </details>
 </li>
 </ol>
+</div>
+<div class="admonition example exercise">
+<p class="admonition-title">☆☆☆ 不同观测下的极大似然估计</p>
+<p>设 <span class="arithmatex">\((X,Y)\sim N(0,2;\sigma^2,\sigma^2;\dfrac{1}{2})\)</span>，<span class="arithmatex">\(\sigma^2\)</span> 未知，观测到 <span class="arithmatex">\(n\)</span> 组简单随机样本 <span class="arithmatex">\((x_i,y_i)\)</span>。求 <span class="arithmatex">\(p=P(X+Y\le1)\)</span> 的极大似然估计。</p>
+<div class="exam-options" markdown="1">
+<p>A. <span class="arithmatex">\(\Phi\!\Bigl(\sqrt{\frac{n}{\sum_{i=1}^n(x_i+y_i)^2}}\Bigr)\)</span></p>
+<p>B. <span class="arithmatex">\(1-\Phi\!\Bigl(\sqrt{\frac{n}{\sum_{i=1}^n(x_i+y_i-2)^2}}\Bigr)\)</span></p>
+<p>C. <span class="arithmatex">\(\Phi\!\Bigl(\sqrt{\frac{n}{\sum_{i=1}^n(x_i+y_i-2)^2}}\Bigr)\)</span></p>
+<p>D. <span class="arithmatex">\(1-\Phi\!\Bigl(\sqrt{\frac{3n}{\sum_{i=1}^n(x_i+y_i-2)^2}}\Bigr)\)</span>
+</div></p>
+<details class="success">
+<summary>解析</summary>
+<p>令 <span class="arithmatex">\(Z=X+Y-2,\ W=X-Y+2\)</span>。两者联合正态且协方差为零，故分别独立服从 <span class="arithmatex">\(N(0,3\sigma^2)\)</span>、<span class="arithmatex">\(N(0,\sigma^2)\)</span>。记对应观测为 <span class="arithmatex">\(z_i,w_i\)</span>，则 <span class="arithmatex">\(p=1-\Phi(\dfrac{1}{\sqrt3\,\sigma})\)</span>。用<strong>整组二维观测</strong>，联合似然的对数中与 <span class="arithmatex">\(\sigma^2\)</span> 有关的部分为</p>
+<div class="arithmatex">\[
+-n\ln\sigma^2-\frac{\sum_i(z_i^2/3+w_i^2)}{2\sigma^2}.
+\]</div>
+<p>于是 <span class="arithmatex">\(\widehat{\sigma^2}=\dfrac{\sum_i\left(\dfrac{z_i^2}{3}+w_i^2\right)}{2n}\)</span>，代回得 <span class="arithmatex">\(\hat p=1-\Phi\!\Bigl(\sqrt{\frac{2n}{\sum_i z_i^2+3\sum_i w_i^2}}\Bigr)\)</span>。</p>
+<p><strong>易错点：</strong> 只用和 <span class="arithmatex">\(Z\)</span> 建一元似然，也可以得到选项 B ：<span class="arithmatex">\(1-\Phi\!\Bigl(\sqrt{\frac{n}{\sum_i z_i^2}}\Bigr)\)</span>。但这适用于只观测到和的情形；而题面给出了全部数对，差 <span class="arithmatex">\(W\)</span> 也含有关于 <span class="arithmatex">\(\sigma^2\)</span> 的信息。</p>
+</details>
 </div>
 <h4 id="估计量的评价标准">估计量的评价标准<a class="headerlink" href="#估计量的评价标准" title="Permanent link">&para;</a></h4>
 <div class="card card-shadow">
@@ -8609,6 +8877,21 @@ p_{\text{左侧}}=\Phi(z_{\mathrm{obs}}),
 p_{\text{双侧}}=2[1-\Phi(|z_{\mathrm{obs}}|)].
 \]</div>
 <p>通常按 <span class="arithmatex">\(p\le\alpha\)</span> 拒绝 <span class="arithmatex">\(H_0\)</span>。<span class="arithmatex">\(p\)</span> 值不是原假设成立的概率，<span class="arithmatex">\(\alpha\)</span> 也不是某次检验结论错误的后验概率。</p>
+<div class="admonition example exercise">
+<p class="admonition-title">☆☆☆ 拒绝域与显著性水平</p>
+<p>设 <span class="arithmatex">\(X_1,\ldots,X_n\)</span> 是来自 <span class="arithmatex">\(N(\mu,\sigma^2)\)</span> 的简单随机样本。检验 <span class="arithmatex">\(H_0:\mu\le\mu_0\)</span> 对 <span class="arithmatex">\(H_1:\mu&gt;\mu_0\)</span>。拒绝域 <span class="arithmatex">\(W_1=\{\bar X-\mu_0\ge1\}\)</span>、<span class="arithmatex">\(W_2=\{\bar X-\mu_0\ge2\}\)</span> 的显著性水平分别为 <span class="arithmatex">\(\alpha_1,\alpha_2\)</span>，比较两者。</p>
+<div class="exam-options" markdown="1">
+<p>A. <span class="arithmatex">\(\alpha_1=\alpha_2\)</span></p>
+<p>B. <span class="arithmatex">\(\alpha_1&gt;\alpha_2\)</span></p>
+<p>C. <span class="arithmatex">\(\alpha_1&lt;\alpha_2\)</span></p>
+<p>D. <span class="arithmatex">\(\alpha_1\)</span> 和 <span class="arithmatex">\(\alpha_2\)</span> 的大小关系不确定
+</div></p>
+<details class="success">
+<summary>解析</summary>
+<p>在 <span class="arithmatex">\(H_0\)</span> 内，拒绝概率随 <span class="arithmatex">\(\mu\)</span> 增加，两种规则均在 <span class="arithmatex">\(\mu=\mu_0\)</span> 时取到最大拒绝概率。此时 <span class="arithmatex">\(\bar X-\mu_0\sim N(0,\dfrac{\sigma^2}{n})\)</span>，且落在 <span class="arithmatex">\([1,2)\)</span> 的概率严格为正，故 <strong><span class="arithmatex">\(\alpha_1&gt;\alpha_2\)</span>（ B ）</strong>。</p>
+<p><strong>要点：</strong> 复合原假设下显著性水平看原假设范围内的最大拒绝概率；本题两者在同一边界取最大值。</p>
+</details>
+</div>
 <h4 id="正态总体下的六大检验及拒绝域">正态总体下的六大检验及拒绝域<a class="headerlink" href="#正态总体下的六大检验及拒绝域" title="Permanent link">&para;</a></h4>
 <div class="admonition note">
 <p class="admonition-title">① 单总体均值检验：方差已知（ Z 检验）</p>

@@ -1794,17 +1794,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#为什么还需要端到端控制" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        为什么还需要端到端控制
-      </span>
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1823,10 +1812,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#首部与长度" class="md-nav__link">
+  <a href="#ucp-的首部" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        首部与长度
+        UCP 的首部
       </span>
     </span>
   </a>
@@ -1850,27 +1839,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tcp-的服务与首部" class="md-nav__link">
+  <a href="#tcp-的特点与报文段" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        TCP 的服务与首部
+        TCP 的特点与报文段
       </span>
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="TCP 的服务与首部">
+    <nav class="md-nav" aria-label="TCP 的特点与报文段">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#字节流与-mss" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        字节流与 MSS
-      </span>
-    </span>
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#首部字段" class="md-nav__link">
@@ -2459,17 +2437,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#为什么还需要端到端控制" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        为什么还需要端到端控制
-      </span>
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -2488,10 +2455,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#首部与长度" class="md-nav__link">
+  <a href="#ucp-的首部" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        首部与长度
+        UCP 的首部
       </span>
     </span>
   </a>
@@ -2515,27 +2482,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tcp-的服务与首部" class="md-nav__link">
+  <a href="#tcp-的特点与报文段" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        TCP 的服务与首部
+        TCP 的特点与报文段
       </span>
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="TCP 的服务与首部">
+    <nav class="md-nav" aria-label="TCP 的特点与报文段">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#字节流与-mss" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        字节流与 MSS
-      </span>
-    </span>
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#首部字段" class="md-nav__link">
@@ -2775,44 +2731,56 @@
 
 
 <h1 id="传输层">传输层<a class="headerlink" href="#传输层" title="Permanent link">&para;</a></h1>
-<p>网络层把分组送到目的主机，传输层进一步解决：<strong>主机上的哪个进程接收数据，以及两端进程怎样完成通信。</strong> 它运行在端系统中，为应用程序提供端到端服务。</p>
 <h2 id="传输层的服务">传输层的服务<a class="headerlink" href="#传输层的服务" title="Permanent link">&para;</a></h2>
 <h3 id="进程寻址与端口">进程寻址与端口<a class="headerlink" href="#进程寻址与端口" title="Permanent link">&para;</a></h3>
-<p><strong>IP 地址标识网络接口，端口号区分传输层的应用端点</strong>。端口长 16 bit ， TCP 和 UDP 各有自己的端口空间；同一个数字可以分别用于 TCP 和 UDP。</p>
+<p>IP 地址标识了主机的网络接口， IP 可以把分组送到目的主机。但“主机之间的通信”实际上是主机上的某个应用进程之间的通信。IP 送来的分组仅停留在主机的网络层，并未交付给具体的应用进程。所以，传输层的视角从主机细化到进程，它运行在端系统中，为应用程序提供端到端服务。</p>
+<p><strong>端口</strong> 是传输层与应用层的接口，应用进程通过 <strong>端口号</strong> 标识。端口号长 16 bit ，仅具有本地意义，不同主机的相同端口号没有关联， TCP 和 UDP 也各有自己的端口空间，同一个数字可以分别用于 TCP 和 UDP。</p>
+<p>根据用途，端口号可以分为两类：</p>
+<ol>
+<li>服务器端使用的端口号。可以细分为：<ul>
+<li><strong>熟知端口（ 0～1023 ）</strong>。是由 IANA 分配给最重要的 TCP/IP 应用程序，供所有用户熟知；</li>
+<li><strong>登记端口（ 1024～49151 ）</strong>。供未获熟知端口号的应用程序使用，需要在 IANA 登记。</li>
+</ul>
+</li>
+<li>客户端使用的端口号，又称为 <strong>短暂端口号（ 49152～65535 ）</strong>，或者动态／私有端口。这类端口就是一个临时通信端点，在客户进程运行时动态分配。服务器从客户报文中提取源端口号，并将其作为回送数据的目的端口。通信结束后，该端口被系统回收供其他客户进程复用。</li>
+</ol>
+<p>常见的熟知端口号如下（考试需要记忆）：</p>
 <table>
-<thead>
-<tr>
-<th>端口范围</th>
-<th>名称</th>
-<th>常见用途</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0～1023</td>
-<td>熟知端口</td>
-<td>HTTP 80、HTTPS 443、DNS 53 等服务</td>
-</tr>
-<tr>
-<td>1024～49151</td>
-<td>登记端口</td>
-<td>为应用登记使用</td>
-</tr>
-<tr>
-<td>49152～65535</td>
-<td>动态／私有端口</td>
-<td>可用于临时通信端点</td>
-</tr>
-</tbody>
+  <tr>
+    <th>应用程序</th>
+    <td>FTP</td>
+    <td>SSH</td>
+    <td>TELNET</td>
+    <td>SMTP</td>
+    <td>DNS</td>
+    <td>TFTP</td>
+    <td>HTTP</td>
+    <td>SNMP</td>
+  </tr>
+  <tr>
+    <th>熟知端口号</th>
+    <td>21</td>
+    <td>22</td>
+    <td>23</td>
+    <td>25</td>
+    <td>53</td>
+    <td>69</td>
+    <td>80</td>
+    <td>161</td>
+  </tr>
 </table>
-<p>操作系统实际使用的临时端口范围由其配置决定。<strong>复用</strong>把多个应用的数据交给传输层发送；<strong>分用</strong>则根据端口、地址与协议等信息，把收到的数据交给相应端点。</p>
-<p>一个 TCP 连接由 <strong><code>(源 IP，源端口，目的 IP，目的端口)</code></strong> 标识。同一个服务器监听端口可以接受多个客户端连接，它们由不同的端点组合区分。</p>
+
+<p>操作系统实际使用的临时端口范围由其配置决定。<strong>复用</strong> 允许多个应用的数据使用同一个传输层协议发送数据；<strong>分用</strong> 则指接收方根据端口、地址与协议等信息，在剥去报文首部后，能够把收到的数据正确交给相应端点。</p>
+<p>TCP 是面向连接的， UDP 则是无连接的。一个 TCP 连接由 <strong><code>(源 IP，源端口，目的 IP，目的端口)</code></strong> 标识。同一个服务器监听端口可以接受多个客户端连接，它们由不同的端点组合区分。</p>
 <h3 id="socket-接口">Socket 接口<a class="headerlink" href="#socket-接口" title="Permanent link">&para;</a></h3>
-<p>Socket 是应用使用网络服务的编程接口。面向连接的典型调用顺序是：</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>服务器：socket → bind → listen → accept → recv/send → close
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>                                  ↑
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>客户端：socket ────────────────→ connect → send/recv → close
-</span></code></pre></div>
+<p>Socket （套接字）是应用使用网络服务的 <strong>编程接口</strong>，其唯一标识网络中某台主机的某个应用进程，可以用 <code>(IP 地址: 端口号)</code> 来表示。面向连接的典型调用顺序是：</p>
+<div class="split-cols">
+<div class="split-cols__media" style="flex-basis: 10rem;">
+<figure>
+<p><img alt="服务器：socket → bind → listen → accept → recv/send → close；客户端：socket → connect → send/recv → close；connect 指向 accept。" src="../../../images/Network/socket-call-sequence.svg" /></p>
+</figure>
+</div>
+<div class="split-cols__text">
 <table>
 <thead>
 <tr>
@@ -2831,19 +2799,19 @@
 </tr>
 <tr>
 <td><code>listen</code></td>
-<td>让端点进入监听状态，设置待接受连接队列</td>
+<td>让端点进入监听状态，<br>设置待接受连接队列</td>
 </tr>
 <tr>
 <td><code>accept</code></td>
-<td>接受连接，获得与该客户端通信的已连接 socket</td>
+<td>接受连接，获得与该客户端通信的<br>已连接 socket</td>
 </tr>
 <tr>
 <td><code>connect</code></td>
 <td>主动请求建立连接</td>
 </tr>
 <tr>
-<td><code>send</code>、<code>recv</code></td>
-<td>发送、接收数据</td>
+<td><code>send</code>/<code>recv</code></td>
+<td>发送／接收数据</td>
 </tr>
 <tr>
 <td><code>close</code></td>
@@ -2851,19 +2819,27 @@
 </tr>
 </tbody>
 </table>
-<p>监听 socket 与 <code>accept</code> 返回的已连接 socket 分工不同：前者继续接受连接，后者服务于已经建立的连接。</p>
-<h3 id="为什么还需要端到端控制">为什么还需要端到端控制<a class="headerlink" href="#为什么还需要端到端控制" title="Permanent link">&para;</a></h3>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">我们可能会遇到监听 socket 与 <code>accept</code> 返回的已连接 socket 这两种服务端 socket。他们的分工是不同的，前者继续接受连接，后者服务于已经建立的连接。</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">为什么还需要端到端控制？</p>
 <p>数据链路层处理相邻节点之间的帧，传输层面对跨越整个网络的通信：分组可能走不同路径、乱序到达，也可能在网络中停留较长时间。因此，确认、序号、超时和连接管理都要覆盖整个端到端过程。</p>
 <p>链路层的检错与重传可以减少局部错误的代价；<strong>端到端校验与恢复负责检查最终交付的数据</strong>。窗口大小则取决于速率、时延和缓存需求，链路层和传输层都可以使用滑动窗口。</p>
+</div>
 <h2 id="udp">UDP<a class="headerlink" href="#udp" title="Permanent link">&para;</a></h2>
-<p><strong>UDP （ User Datagram Protocol ，用户数据报协议）</strong>在 IP 之上增加端口分用与校验等功能，提供无连接、面向报文的传输。</p>
+<p><strong>UDP （ User Datagram Protocol ，用户数据报协议）</strong> 在 IP 的数据报服务之上只增加 <strong>复用、分用和差错检测</strong> 的功能。</p>
 <ul>
-<li>发送前无须建立连接，首部开销小。</li>
-<li><strong>保留报文边界</strong>：应用交来一个报文， UDP 就把它作为一个数据报处理。</li>
-<li>UDP 本身不负责重传、排序、流量控制与拥塞控制；需要这些能力的应用应自行实现，或采用提供相应能力的上层协议。</li>
-<li>支持单播，也可用于广播与多播。DNS、RTP、RIP 和 QUIC 等都可以使用 UDP。</li>
+<li>UDP 是无连接的。发送前， UDP 无须建立连接。</li>
+<li>UDP 是 <strong>面向报文</strong> 的。UDP 会 <strong>保留报文边界</strong>：应用交来一个报文， UDP 会在添加首部之后直接传给 IP 层，即一次就发送一个完整的报文而不进行合并或拆分。</li>
+<li>UDP 的首部开销小。</li>
+<li>UDP 支持单播，也可用于广播与多播。相比之下， TCP 仅支持一对一单播。</li>
+<li>UDP 本身不负责重传、排序、流量控制与拥塞控制；需要这些可靠性机制的应用应自行实现，或采用提供相应能力的上层协议。</li>
 </ul>
-<h3 id="首部与长度">首部与长度<a class="headerlink" href="#首部与长度" title="Permanent link">&para;</a></h3>
+<p>DNS、RTP、RIP 和 QUIC 等 <strong>一次性传输少量数据</strong> 的应用都常使用 UDP ，因为 TCP 的连接建立、维护和释放会带来显著开销。UDP 也广泛用于多媒体应用，因为这些应用更关注 <strong>低时延</strong> 而非更可靠。</p>
+<h3 id="ucp-的首部">UCP 的首部<a class="headerlink" href="#ucp-的首部" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -2876,39 +2852,61 @@
 <tr>
 <td>源端口</td>
 <td>16 bit</td>
-<td>标识发送端口；不需要时可置 0</td>
+<td>标识发送端口；不需要对方回复时可置 0</td>
 </tr>
 <tr>
 <td>目的端口</td>
 <td>16 bit</td>
-<td>标识接收端口</td>
+<td>标识接收端口；所有 UDP 报文都必须有效</td>
 </tr>
 <tr>
 <td>长度</td>
 <td>16 bit</td>
-<td><strong>UDP 首部加数据</strong>的字节数，最小为 8</td>
+<td><strong>UDP 数据报</strong>（首部和数据总和）的字节数，最小为 8</td>
 </tr>
 <tr>
 <td>校验和</td>
 <td>16 bit</td>
-<td>检查伪首部、UDP 首部和数据</td>
+<td>由发送方传输层计算并写入，接收方据此检错</td>
 </tr>
 </tbody>
 </table>
-<p>UDP 首部固定为 <strong>8 B</strong>。以无选项 IPv4 为例，一个 1500 B 的 IP 分组可携带 <span class="arithmatex">\(1500-20-8=1472\)</span> B 的 UDP 数据；更大的 UDP 数据报可能导致 IP 分片。</p>
+<p>可见 UDP 首部固定为 <strong>8 B</strong>。以无选项 IPv4 为例，一个 1500 B 的 IP 分组可携带 <span class="arithmatex">\(1500-20-8=1472\)</span> B 的 UDP 数据。</p>
+<p>当传输层从 IP 层收到 UDP 数据报时，就根据首部中的目的端口把 UDP 数据报通过相应的端口上交给应用进程。如果接收方发现报文中的目的端口号不正确（或不存在对应于该端口的进程），则丢弃该报文，并由 ICMP 发送“端口不可达”报文给发送方。</p>
 <h3 id="校验和与伪首部">校验和与伪首部<a class="headerlink" href="#校验和与伪首部" title="Permanent link">&para;</a></h3>
-<p>计算校验和时，在 UDP 首部前临时加上<strong>伪首部</strong>。IPv4 伪首部为 12 B ，包含源 IP、目的 IP、一个全零字节、协议号 17 和 UDP 长度。</p>
+<p>计算校验和时，在 UDP 首部前临时加上<strong>伪首部</strong>。IPv4 伪首部为 <strong>12 B</strong>，包含源 IP、目的 IP、一个全零字节、协议号（值为 17 ，占 1 个字节）和 2 B 的 UDP 长度。</p>
+<figure>
+<p><img alt="UDP 数据报的伪首部和首部" src="../../../images/Network/udp-header-and-pseudo-header.svg" width="85%" /></p>
+</figure>
+<p>计算检验和的过程如下：</p>
 <ol>
 <li>把 UDP 校验和字段置零。</li>
-<li>对伪首部、UDP 首部和数据做 16 bit 反码求和；奇数字节长度时补零参与计算。</li>
-<li>将和取反，填入校验和字段；若计算结果为全 0 ，则传送全 1。</li>
+<li>对伪首部、UDP 首部和数据以 16 bit 为单位反码求和；奇数字节长度时补零参与计算。<ul>
+<li>最高位产生进位时，应加至最低位。</li>
+</ul>
+</li>
+<li>将和取反得到校验和，填入校验和字段；例如若计算结果为全 0 ，则传送全 1。</li>
 </ol>
-<p>伪首部用于检查数据报是否被交给正确的网络端点，<strong>不随 UDP 报文实际发送</strong>。IPv4 中校验和字段全 0 表示未使用 UDP 校验； IPv6 中通常必须使用 UDP 校验和。</p>
-<h2 id="tcp-的服务与首部">TCP 的服务与首部<a class="headerlink" href="#tcp-的服务与首部" title="Permanent link">&para;</a></h2>
-<p><strong>TCP （ Transmission Control Protocol ，传输控制协议）</strong>提供面向连接、可靠、有序、全双工的字节流服务，一个连接只涉及两个端点。</p>
-<h3 id="字节流与-mss">字节流与 MSS<a class="headerlink" href="#字节流与-mss" title="Permanent link">&para;</a></h3>
-<p><strong>TCP 不保留应用写入的消息边界</strong>。发送方连续写入四次 512 B ，接收方可以分多次读，也可能一次读出 2048 B。应用若需要区分消息，应自行规定长度字段、分隔符或固定长度等规则。</p>
-<p><strong>MSS （最大报文段长度）指 TCP 段的数据部分上限</strong>，不含 TCP 与 IP 首部。常见以太网 MTU 为 1500 B ，若 IPv4 和 TCP 首部均为 20 B ，则对应 MSS 为 <span class="arithmatex">\(1500-20-20=1460\)</span> B。存在选项或其他封装时，还要计入相应开销。</p>
+<p>伪首部用于检查数据报是否被交给正确的网络端点，<strong>不随 UDP 报文实际发送</strong>。IPv4 中，校验和字段全置为 0 表示未使用 UDP 校验； IPv6 中通常强制必须使用 UDP 校验和。</p>
+<div class="admonition note">
+<p class="admonition-title">UDP 校验</p>
+<ol>
+<li>若 UDP 检验和检验出数据报错误，则通常丢弃该报文。虽然 RFC 允许其交付上层并附带错误指示，但实际实现极少采用。</li>
+<li>通过伪首部， UDP 不仅可以校验端口和数据内容是否有错，也可以校验 IP 地址是否有错。</li>
+</ol>
+</div>
+<h2 id="tcp-的特点与报文段">TCP 的特点与报文段<a class="headerlink" href="#tcp-的特点与报文段" title="Permanent link">&para;</a></h2>
+<p><strong>TCP （ Transmission Control Protocol ，传输控制协议）</strong>是在不可靠的 IP 层之上实现的可靠数据传输协议，主要解决可能的分组丢失、失序、重复和差错等问题。</p>
+<ul>
+<li>TCP 是面向连接的。</li>
+<li>TCP 一个连接只涉及两个端点，只支持单播。</li>
+<li>TCP 支持全双工通信。为此， TCP 连接的两端均设有收发缓存。</li>
+<li>
+<p>TCP 是 <strong>面向字节流</strong> 的。TCP 不保留应用写入的消息边界将应用数据视为无结构的字节流，并不关心应用进程一次向缓存写了多少数据，而是根据对方通告的窗口大小和当前网络的拥塞程度，动态决定一个报文段应包含多少字节。</p>
+<p>对于过长的数据块， TCP 可能会分块；对于较短的数据块， TCP 可能会暂存，直到积累到合适长度后再发送。发送方连续写入四次 512 B ，接收方可以分多次读，也可能一次读出 2048 B。应用若需要区分消息，应自行规定长度字段、分隔符或固定长度等规则。</p>
+</li>
+</ul>
+<p><strong>MSS （最大报文段长度）指 TCP 段的数据部分上限</strong>，不含 TCP 与 IP 首部。例如，常见以太网 MTU 为 1500 B ，若 IPv4 和 TCP 首部均为 20 B ，则对应 MSS 为 <span class="arithmatex">\(1500-20-20=1460\)</span> B。</p>
 <h3 id="首部字段">首部字段<a class="headerlink" href="#首部字段" title="Permanent link">&para;</a></h3>
 <p>TCP 基本首部为 <strong>20 B</strong>，含选项时最长为 60 B。</p>
 <p><img alt="TCP 首部" src="../../../images/Network/TCP-header.png" style="display: block; margin: 0 auto;" width="650" /></p>
