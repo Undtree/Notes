@@ -441,6 +441,29 @@ $$
 
 在闭区间上只有有限个第一类间断点的函数称为在该区间上按段连续。
 
+!!! example exercise "带绝对值的函数间断点"
+
+    求 $f(x)=\dfrac{x^2-x}{|\sin x|(x^2-1)}$ 在 $(-\dfrac{\pi}{2},\dfrac{\pi}{2})$ 内第一类间断点的个数。
+
+    <div class="exam-options" markdown="1">
+
+    A. 0
+
+    B. 1
+
+    C. 2
+
+    D. 3
+    </div>
+
+    ??? success "解析"
+
+        **先列原式的零分母点，再约分。** 区间内候选点为 $-1,0,1$。在这些点以外可化成 $f(x)=\dfrac{x}{(x+1)|\sin x|}$。约掉了 $x-1$，只是方便取极限，原函数在 $1$ 仍无定义。
+
+        在 $x=-1$ 附近，分子和 $|\sin x|$ 都趋于非零常数，$x+1\to0$，故为无穷间断点，属于第二类。
+
+        在 $x=0$ 附近，$|\sin x|\sim|x|$，所以左极限为 $-1$，右极限为 $1$，是跳跃间断点。在 $x=1$ 处两侧极限同为 $\dfrac{1}{2\sin1}$，是可去间断点。后两点左右极限都有限，故第一类间断点共 **$2$ 个（C）**。
+
 #### §4.2 连续函数的局部性质
 
 $f,g$ 在 $x_0$ 连续时，$f\pm g$、$fg$、$cf$ 也在 $x_0$ 连续，其中 $c$ 为常数；$g(x_0)\ne0$ 时，$f/g$ 也连续。
@@ -468,6 +491,59 @@ $$
 **零点定理：** 若 $f\in C[a,b]$ 且 $f(a)f(b)<0$，则存在 $\xi\in(a,b)$，使 $f(\xi)=0$。
 
 **介值定理：** 若 $f\in C[a,b]$，$f(a)\ne f(b)$，$c$ 严格介于 $f(a),f(b)$ 之间，则存在 $\xi\in(a,b)$ 使 $f(\xi)=c$。因此 $f([a,b])=[m,M]$。
+
+!!! example exercise "☆☆☆ 函数有界性的判定"
+
+    下列命题中，正确的有几项？
+
+    ① $\dfrac{x}{{\displaystyle \int_0^x}|\cos t|\,\mathrm dt}$ 在 $(0,\infty)$ 上有界<br>
+    ② $\mathbb R$ 上的连续周期函数有界<br>
+    ③ 若 $f$ 在有限区间 $(a,b)$ 上可导且 $f'$ 有界，则 $f$ 有界<br>
+    ④ 若 $f$ 在 $[0,\infty)$ 上可导且 $f'(x)\to0$，则 $f$ 有界
+
+    <div class="exam-options" markdown="1">
+
+    A. 1
+
+    B. 2
+
+    C. 3
+
+    D. 4
+    </div>
+
+    ??? success "解析"
+
+        **① 开区间上的连续性要配合两端检查。** 当 $x\downarrow0$ 时，${\displaystyle \int_0^x}|\cos t|\,\mathrm dt\sim x$，比值趋于 $1$。当 $x\to\infty$ 时写 $x=m\pi+r$，$0\le r<\pi$。每个整周期的积分为 $2$，余下一段积分有界，故比值为 $\dfrac{m\pi+r}{2m+{\displaystyle \int_0^r}|\cos t|\,\mathrm dt}\to\dfrac\pi2$。两端有界，中间闭区间上函数连续，①成立。
+
+        **② 周期把全实轴缩为一个闭区间。** 连续函数在一个周期 $[0,T]$ 上有最大、最小值；其余各点的值都在这里出现过，②成立。
+
+        **③ 有界导数控制的是增量。** 固定 $x_0\in(a,b)$，设 $|f'|\le M$。由中值定理，$|f(x)|\le |f(x_0)|+M|x-x_0|\le|f(x_0)|+M(b-a)$，③成立。
+
+        **④ 无穷区间没有有限的长度上界。** 取 $f(x)=\ln(1+x)$，其导数趋零，函数却无界。故 **①②③正确，共三项（C）**。
+
+!!! example exercise "连续函数与数列收敛性"
+
+    设 $f$ 在 $[-1,1]$ 上连续，$a_n\in(-1,1)$。下列说法哪一项正确？
+
+    <div class="exam-options" markdown="1">
+
+    A. 若 $\{f(a_n)\}$ 收敛，则 $\{a_n\}$ 收敛
+
+    B. 若 $\{f(a_n)\}$ 发散，则 $\{a_n\}$ 可能收敛
+
+    C. 若 $\{a_n\}$ 单调，则 $\{f(a_n)\}$ 收敛
+
+    D. 若 $\{f(a_n)\}$ 单调，则 $\{a_n\}$ 收敛
+    </div>
+
+    ??? success "解析"
+
+        先看条件传递的方向：若 $a_n\to a$，连续性给出 $f(a_n)\to f(a)$。$a_n$ 的极限可能是端点 $\pm1$，所以这里用到的是 $f$ 在**闭区间**上连续。
+
+        C 中，$a_n$ 单调且有界，故必收敛；再用上述结论，$f(a_n)$ 也收敛。B 则与同一结论的逆否命题矛盾。
+
+        反方向一般不成立。对 A、D 取 $a_n=\dfrac{(-1)^n}{2}$，$f(x)=x^2$。此时 $f(a_n)$ 恒为 $\dfrac14$，既收敛也单调，但 $a_n$ 在两个不同值之间振荡。因此 **只有 C 正确**。
 
 #### §4.4 初等函数在其定义域上的连续性
 
@@ -997,6 +1073,24 @@ $$
 
         知 $F(x)\in C[0,\pi]$，由 $F'(x)=f(x)$ 知 $F(x)\in D(0,\pi)$。又 $F(0)=F(\pi)=0$，由罗尔定理知，至少存在一点 $\xi\in(0,\pi)$，使 $F'(\xi)=0$。由于 $F'(x)=f(x)$，从而推出 $f(\xi)=0$。
 
+!!! example exercise "☆☆☆ 积分条件下的导数中值"
+
+    设 $a>0$，$f(x)$ 是 $[-a,a]$ 上二阶可导的奇函数，且 $\displaystyle\int_0^a f(x)\,\mathrm dx=\dfrac12a^2 f(a)$。
+
+    （1）证明存在 $\xi\in(0,a)$，使 $f'(\xi)=f(a)$。
+
+    （2）证明对任意实数 $\lambda$，都存在 $\eta\in(-a,a)$，使 $f''(\eta)-\lambda f'(\eta)+\lambda f(a)=0$。
+
+    ??? success "解析"
+
+        **（1）从积分相等造出两个等高端点。** 右端 $\dfrac12a^2f(a)$ 可写成 ${\displaystyle \int_0^a} tf(a)\,\mathrm dt$。因此令 $H(x)={\displaystyle \int_0^x}[f(t)-tf(a)]\,\mathrm dt$，就有 $H(0)=H(a)=0$。由罗尔定理，某个 $c\in(0,a)$ 满足 $H'(c)=0$。
+
+        要得到的是 $f'$，还需再用一次罗尔定理。奇函数满足 $f(0)=0$，故 $H'(0)=0$。在 $[0,c]$ 上对 $H'$ 用罗尔定理，得到 $H''(\xi)=f'(\xi)-f(a)=0$。
+
+        **（2）从目标式反推积分因子。** 令 $u(x)=f'(x)-f(a)$，目标就是 $u'(\eta)-\lambda u(\eta)=0$。因为 $(e^{-\lambda x}u)'=e^{-\lambda x}(u'-\lambda u)$，只要为 $e^{-\lambda x}u$ 找到两个零点即可。
+
+        上问给出 $u(\xi)=0$；$f'$ 是偶函数，又给出 $u(-\xi)=0$。在 $[-\xi,\xi]$ 用罗尔定理，得到所求 $\eta$。两问中，奇性分别用来提供原点的函数值和对称的第二个零点。
+
 #### §1.3 拉格朗日定理、函数的单调区间
 
 设 $f\in C[a,b]$，在 $(a,b)$ 内可导，则存在 $\xi\in(a,b)$，使
@@ -1046,6 +1140,38 @@ $$
 $$
 \frac{f(b)-f(a)}{g(b)-g(a)}=\frac{f'(\xi)}{g'(\xi)}.
 $$
+
+!!! example exercise "☆☆☆ 两次柯西中值与三阶余项"
+
+    设函数 $f$ 在 $[0,1]$ 上连续，在 $(0,1)$ 内恒正且二阶可导，$f(0)=0$。
+
+    （1）证明存在 $\xi\in(0,1)$，使
+
+    $$
+    \int_0^1 f^3(x)\,\mathrm dx=f'(\xi)\left(\int_0^1 f(x)\,\mathrm dx\right)^2.
+    $$
+
+    （2）证明存在 $\eta\in(0,1)$，使
+
+    $$
+    \eta f''(\eta)+2f'(\eta)=6\int_0^1xf(x)\,\mathrm dx.
+    $$
+
+    ??? success "解析"
+
+        **（1）从两个积分之比识别柯西中值定理。** 令 $A(t)={\displaystyle \int_0^t} f(x)\,\mathrm dx$。分子 ${\displaystyle \int_0^t} f^3(x)\,\mathrm dx$ 与分母 $A(t)^2$ 都在 $t=0$ 为零，且在内部 $f,A$ 均为正。第一次用柯西中值定理，存在 $c\in(0,1)$ 使
+
+        $$
+        \frac{\int_0^1 f^3(x)\,\mathrm dx}{A(1)^2}=\frac{f(c)^3}{2A(c)f(c)}=\frac{f(c)^2}{2A(c)}.
+        $$
+
+        再在 $[0,c]$ 上对 $f^2$ 与 $2A$ 用一次同一定理。由于 $f(0)=A(0)=0$，右端等于 $\dfrac{2f(\xi)f'(\xi)}{2f(\xi)}=f'(\xi)$，第一问得证。
+
+        **（2）从目标式反推三阶导数。** 记 $I={\displaystyle \int_0^1}xf(x)\,\mathrm dx$，取 $g(t)={\displaystyle \int_0^t} xf(x)\,\mathrm dx-It^3$。则 $g(0)=g(1)=0$，且 $g'''(t)=tf''(t)+2f'(t)-6I$。目标就是证明 $g'''$ 在内部有零点。
+
+        由罗尔定理取 $c\in(0,1)$ 使 $g'(c)=0$。又 $g'(t)=tf(t)-3It^2$，从而 $g'(0)=0$，且 $\lim_{t\downarrow0}\dfrac{g'(t)-g'(0)}{t}=0$。
+
+        若 $g'''$ 在 $(0,c)$ 从不为零，由导数的介值性，它恒正或恒负。于是 $g'$ 在 $[0,c]$ 上严格凸或严格凹。从原点到 $(t,g'(t))$ 的割线斜率就会严格递增或严格递减，而它在 $0^+$ 的极限和在 $c$ 处的值却同为零，矛盾。故存在所求的 $\eta$。这里用端点极限，是因为题设只保证 $f$ 在端点连续，没有给出 $f'(0)$。
 
 #### §1.5 函数的单调区间与极值
 
@@ -1391,6 +1517,42 @@ $$
 
 其中 $M$ 是 $x_0$ 与 $x$ 之间 $|f^{(n+1)}|$ 的上界。
 
+!!! example exercise "☆☆☆ 相邻指数项之差的极限"
+
+    求 $\lim_{n\to\infty}n^2[(1+\dfrac{1}{n+1})^{n+1}-(1+\dfrac{1}{n})^n]$。
+
+    ??? success "解析"
+
+        括号中两项都趋于 $e$，但只用等价无穷小代换会把差的主项消掉。先取对数，设 $a_n=n\ln(1+\dfrac1n)$，原括号就是 $e^{a_{n+1}}-e^{a_n}$。
+
+        因为外面乘了 $n^2$，把 $a_n$ 展开到二次项：$a_n=1-\dfrac1{2n}+\dfrac1{3n^2}+O(n^{-3})$。代入相邻两项并相减，
+
+        $$
+        n^2(a_{n+1}-a_n)=\frac{n}{2(n+1)}+\frac13\left(\frac{n^2}{(n+1)^2}-1\right)+O(n^{-1})\longrightarrow\frac12.
+        $$
+
+        最后对指数函数用中值定理，$e^{a_{n+1}}-e^{a_n}=e^{\xi_n}(a_{n+1}-a_n)$，$\xi_n$ 介于两个都趋于 $1$ 的数之间。故极限为 **$\dfrac e2$**。若只留下 $O(n^{-2})$ 的余项，乘回 $n^2$ 后它还不能忽略。
+
+!!! example exercise "☆☆☆ 参数方程下的泰勒展开"
+
+    设 $y=f(x)$ 由参数方程
+
+    $$
+    \begin{cases}x=t^2+2t-3,\\t^2-y-\sin y=1,\end{cases}\qquad t\ge0
+    $$
+
+    确定。求 $\displaystyle\lim_{x\to0^+}\dfrac{4f(x)\sin x-x^2}{x^3}$。
+
+    ??? success "解析"
+
+        分母为 $x^3$，分子中 $f(x)$ 还要乘一个一阶的 $\sin x$，故只需把 $f$ 展开到二阶。由 $x=0,\ t\ge0$ 得 $t=1$，再由 $y+\sin y=0$ 得 $y=0$。
+
+        对 $t$ 求导，$x'=2(t+1),\ (1+\cos y)y'=2t$，所以 $\dfrac{\mathrm dy}{\mathrm dx}=\dfrac{t}{(t+1)(1+\cos y)}$，在目标点 $f'(0)=\dfrac14$。
+
+        再对这条一阶导数公式求 $t$ 导数。由于 $y=0$ 时 $\sin y=0$，因子 $\dfrac1{1+\cos y}$ 的导数项消失，只剩 $\dfrac{1}{(t+1)^2(1+\cos y)}=\dfrac18$。这是对 $t$ 的导数，**还要除以 $x'(1)=4$**，才得 $f''(0)=\dfrac1{32}$。
+
+        于是 $f(x)=\dfrac x4+\dfrac{x^2}{64}+o(x^2)$。乘上 $\sin x=x+O(x^3)$ 后，$4f(x)\sin x=x^2+\dfrac{x^3}{16}+o(x^3)$，故极限为 **$\dfrac1{16}$**。
+
 ### §4 数学建模（一）
 
 **数学模型：** 为了某种目的，对现实中的特定对象作必要的简化和假设，用数学工具得到的数学结构，用于解释对象的状态、预测未来或确定决策与控制。
@@ -1427,6 +1589,24 @@ $$
 
 若 $f$ 在 $x_0$ 的某邻域内二阶可导，$(x_0,f(x_0))$ 是拐点，则 $f''(x_0)=0$。若 $f''$ 在 $x_0$ 两侧异号，则 $(x_0,f(x_0))$ 为拐点；若两侧同号，则不是拐点。
 
+!!! example exercise "☆☆☆ 中心二阶差分与拐点"
+
+    设函数 $f(x)$ 在 $\mathbb R$ 上二阶可导。
+
+    （1）题面要求证明：$f''(x)\ge0$（对一切 $x$）的充要条件是，对任意 $h,x\in\mathbb R$，都有 $f(x+h)-2f(x)+f(x-h)>0$。请先判断这里的严格不等号是否成立，再证明正确的命题。
+
+    （2）若 $(x_0,f(x_0))$ 是曲线 $y=f(x)$ 的拐点，证明 $f''(x_0)=0$。
+
+    ??? success "解析"
+
+        **先辨明第一问的不等号。** 取 $h=0$，中心差分恒为零；即使排除 $h=0$，仿射函数也有 $f''=0$ 而差分为零。因此可成立的充要条件应为差分 **$\ge0$**。
+
+        **（1）从曲率看两段割线。** 若 $f''\ge0$，则 $f'$ 单调不减。当 $h>0$ 时，在 $[x-h,x]$、$[x,x+h]$ 分别用中值定理，右边割线斜率不小于左边，即 $f(x+h)-f(x)\ge f(x)-f(x-h)$。$h<0$ 由对称性处理，$h=0$ 为等号。
+
+        反过来，在 $x$ 处分别对 $f(x+h)$ 与 $f(x-h)$ 作带佩亚诺余项的二阶展开。一次项相消，差分为 $f''(x)h^2+o(h^2)$。对 $h\ne0$ 除以 $h^2$ 再取极限，便得 $f''(x)\ge0$。
+
+        **（2）从凹凸改变转到 $f'$ 的极值。** 拐点两侧，$f'$ 的单调方向相反。$f'$ 在 $x_0$ 连续，所以 $f'$ 在 $x_0$ 取局部极值。对 $f'$ 用费马定理，得到 **$f''(x_0)=0$**。二阶可导保证的是 $f'$ 可导；这里无需额外假设 $f''$ 连续。
+
 ### §6 函数图形的描绘
 
 #### §6.1 曲线的渐近线
@@ -1448,6 +1628,33 @@ $$
 均为有限数；$a=0$ 时，$y=b$ 为水平渐近线。
 
 若 $x\to x_0$ 的至少一个单侧极限满足 $|f(x)|\to\infty$，则直线 $x=x_0$ 为铅直渐近线。
+
+!!! example exercise "☆☆☆ 隐函数的奇偶性、零点与渐近线"
+
+    设连续函数 $y=y(x)$ 由 $\dfrac12x+\dfrac{\sqrt3}{2}y=\arctan(\dfrac{\sqrt3}{2}x-\dfrac12y)$ 确定。下列说法中，正确的有几项？
+
+    ① $y(x)$ 为奇函数<br>
+    ② $y(x)$ 恰有三个零点<br>
+    ③ $y=y(x)$ 有两条斜渐近线
+
+    <div class="exam-options" markdown="1">
+
+    A. 0
+
+    B. 1
+
+    C. 2
+
+    D. 3
+    </div>
+
+    ??? success "解析"
+
+        **① 奇性：先查隐函数的唯一性。** 记 $u=\dfrac{\sqrt3}{2}x-\dfrac12y$。把右端移到左边，对 $y$ 求偏导得 $\dfrac{\sqrt3}{2}+\dfrac{1}{2(1+u^2)}>0$，同一个 $x$ 至多对应一个 $y$。又因反正切是奇函数，$(x,y)$ 满足方程时 $(-x,-y)$ 也满足，故 $y(-x)=-y(x)$。
+
+        **② 零点：令 $y=0$，只考察正半轴。** 设 $h(x)=\arctan(\dfrac{\sqrt3 x}{2})-\dfrac{x}{2}$。$h(0)=0$，$h'(x)=\dfrac{\sqrt3}{2(1+\frac{3x^2}{4})}-\dfrac12$ 在正半轴从正值严格递减到负值。因此 $h$ 先增后减，又 $h(x)\to-\infty$，正半轴恰有一个零点。连同原点和对称的负零点，共三个。
+
+        **③ 渐近线：斜率和截距分开求。** 反正切有界，原方程给出 $y=-\dfrac{x}{\sqrt3}+O(1)$。代回 $u$，知 $x\to\pm\infty$ 时 $u\to\pm\infty$，故 $y+\dfrac{x}{\sqrt3}=\dfrac{2}{\sqrt3}\arctan u\to\pm\dfrac{\pi}{\sqrt3}$。两个方向截距不同，确有两条斜渐近线。**三项均正确（D）**。
 
 #### §6.2 函数图形的描绘
 
@@ -1555,6 +1762,22 @@ R=\frac{(1+(y')^2)^{3/2}}{|y''|},\qquad
 $$
 
 曲线 $C$ 的曲率中心的轨迹 $G$ 称为 $C$ 的渐屈线，$C$ 称为 $G$ 的渐伸线。
+
+!!! example exercise "☆☆☆ 曲率圆的半径与圆心"
+
+    求 $xy=1$ 在 $(1,1)$ 处的曲率圆方程。
+
+    ??? success "解析"
+
+        曲率圆需要半径和圆心。写成 $y=\dfrac1x$，在 $(1,1)$ 有 $y'=-1,\ y''=2$。由曲率公式
+
+        $$
+        \kappa=\frac{|y''|}{(1+y'^2)^{\frac32}}=\frac1{\sqrt2},\qquad R=\frac1\kappa=\sqrt2.
+        $$
+
+        法线方向有正反两个，取哪一侧由曲线的凹向决定。这里 $y''>0$，曲线向上弯，指向圆心的单位法向量为 $\dfrac{(-y',1)}{\sqrt{1+y'^2}}=\dfrac{(1,1)}{\sqrt2}$。
+
+        从切点沿此方向走一个半径，得到圆心 $(1,1)+\sqrt2\dfrac{(1,1)}{\sqrt2}=(2,2)$。因此曲率圆为 **$(x-2)^2+(y-2)^2=2$**。
 
 ### §9 方程的近似根 \*
 
@@ -1664,21 +1887,21 @@ $f$ 为被积函数，$x$ 为积分变量，$f(x)\,\mathrm dx$ 为被积表达�
 
 | 不定积分 | 公式 | 条件 |
 | --- | --- | --- |
-| $\int1\,\mathrm dx$ | $x+C$ | |
-| $\int x^\alpha\,\mathrm dx$ | $\displaystyle\frac{x^{\alpha+1}}{\alpha+1}+C$ | $\alpha\ne-1$ |
-| $\int\frac{\mathrm dx}{x}$ | $\ln\lvert x\rvert+C$ | $x\ne0$ |
-| $\int a^x\,\mathrm dx$ | $\displaystyle\frac{a^x}{\ln a}+C$ | $a>0,\ a\ne1$ |
-| $\int e^x\,\mathrm dx$ | $e^x+C$ | |
-| $\int\frac{\mathrm dx}{1+x^2}$ | $\arctan x+C$ 或 $-\operatorname{arccot}x+C$ | |
-| $\int\frac{\mathrm dx}{\sqrt{1-x^2}}$ | $\arcsin x+C$ 或 $-\arccos x+C$ | $-1<x<1$ |
-| $\int\sin x\,\mathrm dx$ | $-\cos x+C$ | |
-| $\int\cos x\,\mathrm dx$ | $\sin x+C$ | |
-| $\int\sec^2x\,\mathrm dx$ | $\tan x+C$ | $\cos x\ne0$ |
-| $\int\csc^2x\,\mathrm dx$ | $-\cot x+C$ | $\sin x\ne0$ |
-| $\int\sec x\tan x\,\mathrm dx$ | $\sec x+C$ | $\cos x\ne0$ |
-| $\int\csc x\cot x\,\mathrm dx$ | $-\csc x+C$ | $\sin x\ne0$ |
-| $\int\sinh x\,\mathrm dx$ | $\cosh x+C$ | |
-| $\int\cosh x\,\mathrm dx$ | $\sinh x+C$ | |
+| ${\displaystyle \int}1\,\mathrm dx$ | $x+C$ | |
+| ${\displaystyle \int} x^\alpha\,\mathrm dx$ | $\displaystyle\frac{x^{\alpha+1}}{\alpha+1}+C$ | $\alpha\ne-1$ |
+| ${\displaystyle \int}\frac{\mathrm dx}{x}$ | $\ln\lvert x\rvert+C$ | $x\ne0$ |
+| ${\displaystyle \int} a^x\,\mathrm dx$ | $\displaystyle\frac{a^x}{\ln a}+C$ | $a>0,\ a\ne1$ |
+| ${\displaystyle \int} e^x\,\mathrm dx$ | $e^x+C$ | |
+| ${\displaystyle \int}\frac{\mathrm dx}{1+x^2}$ | $\arctan x+C$ 或 $-\operatorname{arccot}x+C$ | |
+| ${\displaystyle \int}\frac{\mathrm dx}{\sqrt{1-x^2}}$ | $\arcsin x+C$ 或 $-\arccos x+C$ | $-1<x<1$ |
+| ${\displaystyle \int}\sin x\,\mathrm dx$ | $-\cos x+C$ | |
+| ${\displaystyle \int}\cos x\,\mathrm dx$ | $\sin x+C$ | |
+| ${\displaystyle \int}\sec^2x\,\mathrm dx$ | $\tan x+C$ | $\cos x\ne0$ |
+| ${\displaystyle \int}\csc^2x\,\mathrm dx$ | $-\cot x+C$ | $\sin x\ne0$ |
+| ${\displaystyle \int}\sec x\tan x\,\mathrm dx$ | $\sec x+C$ | $\cos x\ne0$ |
+| ${\displaystyle \int}\csc x\cot x\,\mathrm dx$ | $-\csc x+C$ | $\sin x\ne0$ |
+| ${\displaystyle \int}\sinh x\,\mathrm dx$ | $\cosh x+C$ | |
+| ${\displaystyle \int}\cosh x\,\mathrm dx$ | $\sinh x+C$ | |
 
 #### §1.3 不定积分的性质
 
@@ -1771,7 +1994,7 @@ $$
 
 #### §2.3 分部积分法
 
-若 $u,v$ 均可导，且 $\int u'v\,\mathrm dx$ 存在，则
+若 $u,v$ 均可导，且 ${\displaystyle \int} u'v\,\mathrm dx$ 存在，则
 
 $$
 \int u(x)v'(x)\,\mathrm dx
@@ -1898,7 +2121,7 @@ $$
 
 !!! warning "注意"
 
-    -   不定积分的结果必须带任意常数 $C$；$\int fg\ne\int f\cdot\int g$，$\int\dfrac fg\ne\dfrac{\int f}{\int g}$。
+    -   不定积分的结果必须带任意常数 $C$；${\displaystyle \int} fg\ne{\displaystyle \int} f\cdot{\displaystyle \int} g$，${\displaystyle \int}\dfrac fg\ne\dfrac{{\displaystyle \int} f}{{\displaystyle \int} g}$。
 
     -   连续函数必有原函数，但原函数存在不要求被积函数连续；初等函数不一定有初等原函数（如 $e^{-x^2}$）。
 
@@ -1972,11 +2195,27 @@ $$
 m(b-a)\le\int_a^bf(x)\,\mathrm dx\le M(b-a).
 $$
 
-若 $f$ 连续、$f\ge0$ 且 $f\not\equiv0$，则 $\int_a^bf(x)\,\mathrm dx>0$。若 $f$ 在 $[a,b]$ 连续，则存在 $\xi\in[a,b]$，使积分中值公式成立：
+若 $f$ 连续、$f\ge0$ 且 $f\not\equiv0$，则 ${\displaystyle \int_a^b}f(x)\,\mathrm dx>0$。若 $f$ 在 $[a,b]$ 连续，则存在 $\xi\in[a,b]$，使积分中值公式成立：
 
 $$
 \int_a^bf(x)\,\mathrm dx=f(\xi)(b-a).
 $$
+
+!!! example exercise "☆☆☆ 含根式积分的夹逼极限"
+
+    求 $\lim_{n\to\infty}{\displaystyle \int_0^1}\dfrac{\sqrt[n]{1+n\arctan(x^2)}}{1+x^2}\,\mathrm dx$。
+
+    ??? success "解析"
+
+        根式中 $x$ 的变化只通过 $\arctan(x^2)$ 进入。对整个 $[0,1]$ 都有 $0\le\arctan(x^2)\le\dfrac\pi4<1$，所以 $1\le\sqrt[n]{1+n\arctan(x^2)}\le(1+n)^{\frac1n}$。关键是**上界不再依赖 $x$**。
+
+        将不等式同乘正函数 $\dfrac{1}{1+x^2}$ 并积分。记原积分为 $I_n$，由于 ${\displaystyle \int_0^1}\dfrac{\mathrm dx}{1+x^2}=\arctan1=\dfrac\pi4$，得到
+
+        $$
+        \frac\pi4\le I_n\le (1+n)^{\frac1n}\frac\pi4.
+        $$
+
+        上界中的因子取对数后为 $\dfrac{\ln(1+n)}{n}\to0$，故因子趋于 $1$。由夹逼定理，**极限为 $\dfrac\pi4$**。这里夹住的是整个积分，不需要先交换积分与极限。
 
 #### §2.2 微积分学基本定理
 
@@ -2030,7 +2269,7 @@ $$
 
 ??? info "牛顿—莱布尼茨公式的证明"
 
-    由定理条件知，$F(x)$ 也是 $f(x)$ 在区间 $[a,b]$ 上的一个原函数，而 $\int_a^xf(t)\,\mathrm dt$ 也是 $f(x)$ 在区间 $[a,b]$ 上的一个原函数，则
+    由定理条件知，$F(x)$ 也是 $f(x)$ 在区间 $[a,b]$ 上的一个原函数，而 ${\displaystyle \int_a^x}f(t)\,\mathrm dt$ 也是 $f(x)$ 在区间 $[a,b]$ 上的一个原函数，则
 
     $$
     \int_a^xf(t)\,\mathrm dt-F(x)=C,\qquad C\text{ 是某一个常数},
@@ -2042,13 +2281,13 @@ $$
     \int_a^xf(t)\,\mathrm dt=F(x)+C.
     $$
 
-    在上面的恒等式中令 $x=a$，有 $0=\int_a^af(t)\,\mathrm dt=F(a)+C$，即 $C=-F(a)$，于是
+    在上面的恒等式中令 $x=a$，有 $0={\displaystyle \int_a^a}f(t)\,\mathrm dt=F(a)+C$，即 $C=-F(a)$，于是
 
     $$
     \int_a^xf(t)\,\mathrm dt=F(x)-F(a).
     $$
 
-    再令 $x=b$，就有 $\int_a^bf(t)\,\mathrm dt=F(b)-F(a)$，即
+    再令 $x=b$，就有 ${\displaystyle \int_a^b}f(t)\,\mathrm dt=F(b)-F(a)$，即
 
     $$
     \int_a^bf(x)\,\mathrm dx=F(b)-F(a).
@@ -2107,7 +2346,7 @@ $$
 \int_a^{a+T}f(x)\,\mathrm dx=\int_0^Tf(x)\,\mathrm dx.
 $$
 
-记 $I_n=\int_0^{\pi/2}\sin^n x\,\mathrm dx$，其中 $n$ 为非负整数，则
+记 $I_n={\displaystyle \int_0^{\pi/2}}\sin^n x\,\mathrm dx$，其中 $n$ 为非负整数，则
 
 $$
 I_n=\int_0^{\pi/2}\cos^n x\,\mathrm dx,
@@ -2124,6 +2363,35 @@ I_n=
 \dfrac{n-1}{n}\dfrac{n-3}{n-2}\cdots\dfrac23,&n\text{ 为奇数}.
 \end{cases}
 $$
+
+!!! example exercise "☆☆☆ 含幂三角函数的积分大小比较"
+
+    设 $\alpha>1$，记 $I_1={\displaystyle \int_0^1}(\sin x)^\alpha\,\mathrm dx$、$I_2={\displaystyle \int_0^1}\sin(x^\alpha)\,\mathrm dx$、$I_3={\displaystyle \int_0^1}(\tan x)^\alpha\,\mathrm dx$、$I_4={\displaystyle \int_0^1}\tan(x^\alpha)\,\mathrm dx$。下列大小关系哪一项正确？
+
+    <div class="exam-options" markdown="1">
+
+    A. $I_1\ge I_2,\ I_3\ge I_4$
+
+    B. $I_1\ge I_2,\ I_3\le I_4$
+
+    C. $I_1\le I_2,\ I_3\ge I_4$
+
+    D. $I_1\le I_2,\ I_3\le I_4$
+    </div>
+
+    ??? success "解析"
+
+        积分上下限相同，先比较被积函数。注意 $(\sin x)^\alpha$ 是先取正弦再乘方，$\sin(x^\alpha)$ 是先乘方再取正弦；两者在 $x=0$ 都等于零，适合用**差函数的导数**比较。
+
+        令 $F(x)=(\sin x)^\alpha-\sin(x^\alpha)$。在 $0<x<1$，有 $x^\alpha<x$、$\sin x<x$、$\cos x<\cos(x^\alpha)$，所以
+
+        $$
+        F'(x)=\alpha\big[(\sin x)^{\alpha-1}\cos x-x^{\alpha-1}\cos(x^\alpha)\big]<0.
+        $$
+
+        由 $F(0)=0$ 知 $F(x)<0$，积分得 $I_1<I_2$。
+
+        正切组同理，但比较方向相反：$\tan x>x$，而 $\sec^2x>\sec^2(x^\alpha)$。所以 $(\tan x)^\alpha-\tan(x^\alpha)$ 的导数为正，差在 $(0,1)$ 上为正，$I_3>I_4$。故选 **C**。
 
 ### §4 定积分的应用
 
@@ -2154,6 +2422,22 @@ $$
 $$
 V_x=\pi\int_a^bf^2(x)\,\mathrm dx.
 $$
+
+!!! example exercise "双瓣区域的旋转体积"
+
+    求 $x^2+y^2=|x|-|y|$ 围成的区域绕 $y$ 轴旋转一周的体积。
+
+    ??? success "解析"
+
+        绝对值表明图形关于两轴都对称。绕 $y$ 轴旋转时，**左右两瓣扫出同一个立体**，故只取右瓣；右瓣的上下两半扫出不同部分，可以再乘 $2$。
+
+        在第一象限用柱壳法，半径为 $x$，体积元合计为 $4\pi x\,\mathrm dA$。将边界写成极坐标 $r^2=r(\cos\theta-\sin\theta)$，得到 $0\le\theta\le\dfrac\pi4$、$0\le r\le\cos\theta-\sin\theta$。因此
+
+        $$
+        V=\frac{4\pi}{3}\int_0^{\frac\pi4}\cos\theta(\cos\theta-\sin\theta)^3\,\mathrm d\theta.
+        $$
+
+        令 $u=\theta+\dfrac\pi4$，则角积分化为 $2{\displaystyle \int_{\frac\pi4}^{\frac\pi2}}(\cos^4u+\sin u\cos^3u)\,\mathrm du$。第一项用降幂公式，第二项令 $v=\cos u$，合得 $\dfrac{3\pi}{16}-\dfrac38$。故 **$V=\pi(\dfrac\pi4-\dfrac12)$**。
 
 #### §4.3 微元法及应用
 
@@ -2306,7 +2590,7 @@ $$
         =\lim_{t\to+\infty}\left.\ln x\right|_a^t=+\infty.
         $$
 
-        因此，当 $p>1$ 时，反常积分 $\int_a^{+\infty}\dfrac{\mathrm dx}{x^p}$ 收敛；而当 $p\le1$ 时，$\int_a^{+\infty}\dfrac{\mathrm dx}{x^p}$ 发散。
+        因此，当 $p>1$ 时，反常积分 ${\displaystyle \int_a^{+\infty}}\dfrac{\mathrm dx}{x^p}$ 收敛；而当 $p\le1$ 时，${\displaystyle \int_a^{+\infty}}\dfrac{\mathrm dx}{x^p}$ 发散。
 
 #### §5.2 无界函数的反常积分
 
@@ -2333,6 +2617,18 @@ $$
 \int_a^b\frac{\mathrm dx}{(x-a)^p}\text{ 收敛}\iff p<1.
 $$
 
+!!! example exercise "☆☆☆ 双反常端点的正割换元"
+
+    计算 ${\displaystyle \int_0^\infty} \dfrac{\mathrm dx}{\sqrt{x(x+2)^3}}$。
+
+    ??? success "解析"
+
+        先把根式拆成 $(x+2)\sqrt{x(x+2)}=(x+2)\sqrt{(x+1)^2-1}$。出现“平方减一”的根式，提示令 $x+1=\sec t$。原积分在 $0$ 处无界，另一端是无穷远，可先在 $0<\varepsilon<x<R$ 上换元。
+
+        此时 $\sqrt{(x+1)^2-1}=\tan t$，$\mathrm dx=\sec t\tan t\,\mathrm dt$，且 $x+2=1+\sec t$。约去 $\tan t$，被积式化为 $\dfrac{\sec t}{1+\sec t}\,\mathrm dt=\dfrac{1}{1+\cos t}\,\mathrm dt$。
+
+        令 $\varepsilon\downarrow0,\ R\to\infty$，对应 $t$ 从 $0$ 趋到 $\dfrac\pi2$。用 $1+\cos t=2\cos^2(\dfrac t2)$，得到 $I=[\tan(\dfrac t2)]_0^{\frac\pi2}=\mathbf1$。
+
 #### §5.3 反常积分敛散性的判别法 \*
 
 设 $f,g$ 连续，且在反常端附近 $0\le f(x)\le g(x)$，比较判别关系为
@@ -2344,7 +2640,7 @@ $$
 
 设 $f\ge0$、$a>0$，$\lim_{x\to+\infty}x^pf(x)=A$，则
 
-| 条件 | $\int_a^{+\infty}f(x)\,\mathrm dx$ |
+| 条件 | ${\displaystyle \int_a^{+\infty}}f(x)\,\mathrm dx$ |
 | --- | --- |
 | $0<A<+\infty$ | $p>1$ 时收敛，$p\le1$ 时发散 |
 | $A=0,\ p>1$ | 收敛 |
@@ -2352,7 +2648,7 @@ $$
 
 设 $b$ 为瑕点，$f\ge0$，$\lim_{x\to b^-}(b-x)^pf(x)=A$，则
 
-| 条件 | $\int_a^bf(x)\,\mathrm dx$ |
+| 条件 | ${\displaystyle \int_a^b}f(x)\,\mathrm dx$ |
 | --- | --- |
 | $0<A<+\infty$ | $p<1$ 时收敛，$p\ge1$ 时发散 |
 | $A=0,\ p<1$ | 收敛 |
@@ -2419,11 +2715,34 @@ $$
 | $\displaystyle\int_1^a\frac{\mathrm dx}{x(\ln x)^q}$（$a>1$） | $q<1$ |
 | $\displaystyle\int_0^b\frac{\mathrm dx}{x \lvert \ln x \rvert^q}$（$0<b<1$） | $q>1$ |
 
-$\int |f|$ 收敛称为绝对收敛；$\int f$ 收敛而 $\int|f|$ 发散称为条件收敛。
+${\displaystyle \int} |f|$ 收敛称为绝对收敛；${\displaystyle \int} f$ 收敛而 ${\displaystyle \int}|f|$ 发散称为条件收敛。
 
 $$
 \int|f|\text{ 收敛}\Longrightarrow\int f\text{ 收敛}.
 $$
+
+!!! example exercise "☆☆☆ 多反常端点的敛散性"
+
+    判定 $I_1={\displaystyle \int_0^{\frac{\pi}{2}}}\dfrac{\tan x}{x\sqrt{\pi-2x}}\,\mathrm dx$ 和 $I_2={\displaystyle \int_0^\infty}\dfrac{\ln x}{\sqrt{x^3+x}}\,\mathrm dx$ 的敛散性。
+
+    <div class="exam-options" markdown="1">
+
+    A. $I_1$ 收敛，$I_2$ 收敛
+
+    B. $I_1$ 收敛，$I_2$ 发散
+
+    C. $I_1$ 发散，$I_2$ 收敛
+
+    D. $I_1$ 发散，$I_2$ 发散
+    </div>
+
+    ??? success "解析"
+
+        **先给每个反常端点单独做判断。** $I_1$ 在 $0^+$ 有 $\tan x\sim x$，被积函数趋于 $\dfrac1{\sqrt\pi}$。在另一端令 $h=\dfrac\pi2-x$，则 $\tan x=\cot h\sim\dfrac1h$，$\sqrt{\pi-2x}=\sqrt{2h}$。故被积函数与正常数乘 $h^{-\frac32}$ 等价，右端不可积，$I_1$ 发散。
+
+        对 $I_2$，在 $0<x<1$ 有 $\sqrt{x^3+x}\ge\sqrt x$，绝对值不超过 $|\ln x|x^{-\frac12}$。令 $x=e^{-t}$，比较积分化为 ${\displaystyle \int_0^\infty} te^{-\frac{t}{2}}\,\mathrm dt$，收敛。
+
+        在 $x>1$ 有 $\sqrt{x^3+x}\ge x^{\frac32}$，绝对值不超过 $(\ln x)x^{-\frac32}$。令 $x=e^t$，仍得到同一个收敛的比较积分。两个端点都通过，故 **$I_1$ 发散，$I_2$ 收敛（C）**。
 
 #### §5.4 Γ函数 \*
 
@@ -2483,11 +2802,11 @@ $$
 
     -   可积的必要条件是有界；连续、有界且只有有限个间断点、单调，都是可积的充分条件而非必要条件。
 
-    -   变上限积分 $\Phi(x)=\int_a^xf(t)\,\mathrm dt$ 的求导公式要求 $f$ 连续；$f$ 仅可积时 $\Phi$ 连续但未必可导。
+    -   变上限积分 $\Phi(x)={\displaystyle \int_a^x}f(t)\,\mathrm dt$ 的求导公式要求 $f$ 连续；$f$ 仅可积时 $\Phi$ 连续但未必可导。
 
     -   定积分换元要同时换上下限，换元后不必回代；分部积分要带上下限，先代边界项再算第二项。
 
-    -   反常积分先按极限定义判敛散：$\int_1^{+\infty}x^{-p}\,\mathrm dx$ 在 $p>1$ 时收敛，$\int_0^1x^{-p}\,\mathrm dx$ 在 $p<1$ 时收敛，两者恰好相反。
+    -   反常积分先按极限定义判敛散：${\displaystyle \int_1^{+\infty}}x^{-p}\,\mathrm dx$ 在 $p>1$ 时收敛，${\displaystyle \int_0^1}x^{-p}\,\mathrm dx$ 在 $p<1$ 时收敛，两者恰好相反。
 
 ## 第六章 常微分方程
 
@@ -2527,6 +2846,56 @@ $$
 \frac{\mathrm dy}{g(y)}=f(x)\,\mathrm dx,\qquad
 \int\frac{\mathrm dy}{g(y)}=\int f(x)\,\mathrm dx+C.
 $$
+
+!!! example exercise "乘积换元的可分离变量方程"
+
+    求微分方程
+
+    $$
+    x\frac{\mathrm dy}{\mathrm dx}+y=\frac{1}{1+(xy)^2}
+    $$
+
+    的通解。
+
+    ??? success "解析"
+
+        **先看两边出现了什么共同的量。** 左端 $xy'+y$ 恰好是 $(xy)'$，右端也只通过乘积 $xy$ 依赖于 $x,y$。令 $u(x)=xy(x)$，原式就变为
+
+        $$
+        \frac{\mathrm du}{\mathrm dx}=\frac{1}{1+u^2}.
+        $$
+
+        分离变量，得 $(1+u^2)\,\mathrm du=\mathrm dx$。两边积分得 $u+\dfrac{u^3}{3}=x+C$。代回 $u=xy$，通解的隐式形式为
+
+        $$
+        \boxed{xy+\frac{x^3y^3}{3}=x+C}.
+        $$
+
+        虽然左边形似一阶线性方程，但右端也含 $y$，不能把它当成只依赖 $x$ 的自由项。换元后可直接积分，不必再解关于 $y$ 的三次方程。
+
+!!! example exercise "变上限积分方程中的函数平均值"
+
+    设 $f(x)$ 是 $(-\infty,+\infty)$ 上的非负连续函数，满足
+
+    $$
+    f(x)\int_0^x f(x-t)\,\mathrm dt=x\cos^4 x.
+    $$
+
+    求 $f(x)$ 在 $[0,\pi]$ 上的平均值。
+
+    ??? success "解析"
+
+        **所求的平均值只需要一个积分值。** 令 $F(x)={\displaystyle \int_0^x} f(t)\,\mathrm dt$，则所求为 $\dfrac{F(\pi)}{\pi}$。在题设积分中作代换 $u=x-t$，得到 ${\displaystyle \int_0^x} f(x-t)\,\mathrm dt=F(x)$；外面的 $f(x)$ 又恰好是 $F'(x)$。
+
+        因此 $F(x)F'(x)=x\cos^4 x$，即 $(F^2)'=2x\cos^4 x$。直接对平方求导，不必除以可能为零的 $F(x)$。由 $F(0)=0$ 得
+
+        $$
+        F(\pi)^2=2\int_0^\pi x\cos^4 x\,\mathrm dx.
+        $$
+
+        利用 $\cos^4(\pi-x)=\cos^4x$，令 $x$ 换成 $\pi-x$，再把两个积分相加，可将右端写成 $\pi{\displaystyle \int_0^\pi}\cos^4x\,\mathrm dx$。由 $\cos^4x=\dfrac{3+4\cos 2x+\cos 4x}{8}$，余弦项在此区间上的积分均为零，故 $F(\pi)^2=\dfrac{3\pi^2}{8}$。
+
+        题设的“非负”用在开平方这一步：$F(\pi)\ge0$。再除以区间长度 $\pi$，得到平均值 **$\dfrac{\sqrt6}{4}$**。
 
 #### §2.2 齐次微分方程
 
@@ -2601,13 +2970,13 @@ $$
     +p(x)u(x)e^{-\int p(x)\,\mathrm dx}=q(x),
     $$
 
-    化简后为 $u'(x)e^{-\int p(x)\,\mathrm dx}=q(x)$，即
+    化简后为 $u'(x)e^{-{\displaystyle \int} p(x)\,\mathrm dx}=q(x)$，即
 
     $$
     u'(x)=q(x)e^{\int p(x)\,\mathrm dx}.
     $$
 
-    积分得 $u(x)=\int q(x)e^{\int p(x)\,\mathrm dx}\,\mathrm dx+C$，其中 $C$ 为任意常数。于是得到一阶线性非齐次方程的通解为
+    积分得 $u(x)={\displaystyle \int} q(x)e^{{\displaystyle \int} p(x)\,\mathrm dx}\,\mathrm dx+C$，其中 $C$ 为任意常数。于是得到一阶线性非齐次方程的通解为
 
     $$
     y=e^{-\int p(x)\,\mathrm dx}
@@ -2637,6 +3006,47 @@ $$
         $$
         y=x^3+Cx.
         $$
+
+!!! example exercise "积分恒等式确定的函数与旋转体体积"
+
+    设函数 $f(x)$ 在 $(0,+\infty)$ 内连续，且 $f(1)=3$。对任意 $x,y>0$，恒有
+
+    $$
+    \int_1^{xy}f(t)\,\mathrm dt
+    =y^2\int_1^x f(t)\,\mathrm dt+x^2\int_1^y f(t)\,\mathrm dt.
+    $$
+
+    （1）求函数 $f(x)$。
+
+    （2）求曲线 $y=f(x)$、直线 $x=1,\ x=e$ 及 $x$ 轴围成的图形绕直线 $x=1$ 旋转一周所得旋转体的体积。
+
+    ??? success "解析"
+
+        **（1）先对变上限求导，再利用 $f(1)$。** 令 $F(x)={\displaystyle \int_1^x} f(t)\,\mathrm dt$，则 $F(1)=0$，$F'(x)=f(x)$。原恒等式为 $F(xy)=y^2F(x)+x^2F(y)$。若直接令 $y=1$，只会得到 $F(x)=F(x)$；先对 $y$ 求导，左端要带上链式因子 $x$：
+
+        $$
+        x f(xy)=2yF(x)+x^2f(y).
+        $$
+
+        此时令 $y=1$，得到 $xf(x)=2F(x)+3x^2$，即 $F'-\dfrac2xF=3x$。这是关于 **$F$** 的一阶线性方程；只用到了 $f$ 连续，无须预设 $f$ 可导。
+
+        乘以积分因子 $x^{-2}$，左端成为一个乘积的导数：
+
+        $$
+        \left(\frac{F(x)}{x^2}\right)'=\frac3x.
+        $$
+
+        从 $1$ 积分到 $x$，用 $F(1)=0$ 得 $F(x)=3x^2\ln x$。由 $\ln(xy)=\ln x+\ln y$ 可验此函数满足原恒等式。题目要的是它的导数，即 **$f(x)=6x\ln x+3x$**。
+
+        **（2）绕竖直直线旋转，取竖条作柱壳。** 在 $[1,e]$ 上 $f(x)>0$，壳高为 $f(x)$，半径是到旋转轴 $x=1$ 的距离 **$x-1$**。于是 $V=2\pi{\displaystyle \int_1^e}(x-1)f(x)\,\mathrm dx$。
+
+        利用刚求出的原函数作分部积分，比重新展开对数乘积简便：
+
+        $$
+        \frac{V}{2\pi}=[(x-1)F(x)]_1^e-\int_1^e F(x)\,\mathrm dx.
+        $$
+
+        边界项为 $3(e-1)e^2$。由 ${\displaystyle \int} 3x^2\ln x\,\mathrm dx=x^3\ln x-\dfrac{x^3}{3}+C$，余下积分为 $\dfrac{2e^3+1}{3}$。故体积为 **$V=\dfrac{2\pi}{3}(7e^3-9e^2-1)$**。
 
 #### §3.2 伯努利方程
 
@@ -2703,6 +3113,26 @@ $$
 $$
 y=\int\varphi(x,C_1)\,\mathrm dx+C_2.
 $$
+
+!!! example exercise "☆☆☆ 径向拉普拉斯方程的降阶"
+
+    设函数 $f(t)$ 二阶可导，且 $u(x,y,z)=f(\sqrt{x^2+y^2+z^2})$ 满足 $u_{xx}+u_{yy}+u_{zz}=0$。已知 $f(1)=0,\ f'(1)=1$，求 $f(t)$ 在正半径 $t>0$ 时的表达式。
+
+    ??? success "解析"
+
+        三个坐标只通过半径 $r=\sqrt{x^2+y^2+z^2}$ 进入 $u$，应把三个二阶偏导相加后再解一元方程。以 $x$ 为例，$r_x=\dfrac xr$，$r_{xx}=\dfrac1r-\dfrac{x^2}{r^3}$，所以 $u_{xx}=f''(r)r_x^2+f'(r)r_{xx}$。
+
+        对 $x,y,z$ 循环相加，$f''$ 的系数为 $\dfrac{x^2+y^2+z^2}{r^2}=1$，$f'$ 的系数为 $\dfrac3r-\dfrac{x^2+y^2+z^2}{r^3}=\dfrac2r$。于是 $f''+\dfrac2r f'=0$。
+
+        **方程中有 $f''$ 和 $f'$，却没有 $f$ 本身。** 这正是不显含未知函数的降阶方程。令 $p(r)=f'(r)$，初值变成 $p(1)=1$，待解的一阶方程为
+
+        $$
+        p'(r)+\frac{2}{r}p(r)=0.
+        $$
+
+        两边乘 $r^2$，左端成为 $(r^2p)'$，故 $r^2p=C_1$。代 $p(1)=1$ 得 $C_1=1$。这里求出的是 **$f'$ 而不是 $f$**，还要再积分一次：$f(r)=-\dfrac1r+C_2$。由 $f(1)=0$ 得 $C_2=1$。
+
+        因此 **$f(t)=1-\dfrac1t$，$t>0$**。推导中除过半径，原点不能代入。
 
 #### §5.3 $\dfrac{\mathrm d^2y}{\mathrm dx^2}=f\left(y,\dfrac{\mathrm dy}{\mathrm dx}\right)$ 型微分方程
 
@@ -2832,6 +3262,44 @@ $P_n,P_l$ 分别是 $n,l$ 次多项式，$m=\max(n,l)$；$Q_n,R_m,S_m$ 为相应
         $$
 
         所以特解 $\widetilde y=\dfrac12x^2-\dfrac12x-\dfrac74$。
+
+!!! example exercise "恰当微分与势函数"
+
+    设函数 $f(x)$ 具有二阶连续导数，且 $f(0)=1,\ f'(0)=\dfrac12$。可微函数 $u(x,y)$ 的全微分为
+
+    $$
+    \mathrm du(x,y)=[f'(x+y)-e^{x+y}]\,\mathrm dx+\left[\int_0^{x+y}f(t)\,\mathrm dt+2y\right]\mathrm dy.
+    $$
+
+    （1）求 $f(x)$。
+
+    （2）求 $u(x,y)$。
+
+    （3）计算曲线积分
+
+    $$
+    I=\int_{(0,0)}^{(1,1)}[f'(x+y)-e^{x+y}]\,\mathrm dx+\left[\int_0^{x+y}f(t)\,\mathrm dt+2y\right]\mathrm dy.
+    $$
+
+    ??? success "解析"
+
+        **（1）由全微分确定 $f$。** 令 $s=x+y$。因为 $\mathrm du=P\,\mathrm dx+Q\,\mathrm dy$ 且两系数有连续偏导，$P_y=Q_x$，即 $f''(s)-e^s=f(s)$。这就把求二元函数的问题化为了关于 $s$ 的二阶常系数非齐次方程。
+
+        对应齐次方程的特征根为 $1,-1$，齐次解为 $c_1e^s+c_2e^{-s}$。自由项 $e^s$ 对应的 $1$ 是单特征根，直接试 $Ae^s$ 会使左边为零，故改试 $Ase^s$。代入 $f''-f=e^s$ 得 $2Ae^s=e^s$，所以特解为 $\dfrac12se^s$。由 $f(0)=1,\ f'(0)=\dfrac12$ 得 $c_1=c_2=\dfrac12$，所以
+
+        $$
+        f(s)=\frac{(1+s)e^s+e^{-s}}2.
+        $$
+
+        **（2）还原 $u$ 时保留关于 $y$ 的积分常数。** 由 $u_x=f'(s)-e^s$ 得 $u=f(s)-e^s+\phi(y)$。对 $y$ 求导并与题设比较：
+
+        $$
+        \phi'(y)=\int_0^s f(t)\,\mathrm dt+2y-f'(s)+e^s.
+        $$
+
+        右端中与 $s$ 有关的部分对 $s$ 求导为 $f-f''+e^s=0$，所以它是常数，可取 $s=0$ 算出为 $\dfrac12$。故 $\phi(y)=y^2+\dfrac y2+C$，得到 $u=\dfrac{(s-1)e^s+e^{-s}+y}{2}+y^2+C$。
+
+        **（3）用势函数代端点。** 被积式就是 $\mathrm du$，无需指定路径，积分为 $u(1,1)-u(0,0)=\mathbf{\dfrac{e^2+e^{-2}+3}{2}}$。
 
 #### §7.3 欧拉方程
 
@@ -3903,6 +4371,33 @@ $$
 
 高阶混合偏导数在连续条件下也与求导次序无关。
 
+!!! example exercise "☆☆☆ 三角形区域内的二元函数单调性"
+
+    设 $z=(x^2+y^2)e^{x-y}$，$g(x,y)=\dfrac{\partial^2z}{\partial x^2}-\dfrac{\partial^2z}{\partial y^2}$。在区域 $D=\{(x,y)\mid 0<x<1,\ 0<y<1-x\}$ 内任取两点 $(x_1,y_1),(x_2,y_2)$。下列哪一项是 $g(x_1,y_1)\le g(x_2,y_2)$ 的充分条件？
+
+    <div class="exam-options" markdown="1">
+
+    A. $x_1<x_2,\ y_1<y_2$
+
+    B. $x_1<x_2,\ y_1>y_2$
+
+    C. $x_1>x_2,\ y_1<y_2$
+
+    D. $x_1>x_2,\ y_1>y_2$
+    </div>
+
+    ??? success "解析"
+
+        题目比较同一函数在两点的值，可以先看它沿两个坐标的增减性。求二阶偏导时保留乘积法则的交叉项：
+
+        $$
+        z_{xx}=(2+4x+x^2+y^2)e^{x-y},\qquad z_{yy}=(2-4y+x^2+y^2)e^{x-y}.
+        $$
+
+        相减得 $g=4(x+y)e^{x-y}$。于是 $g_x=4(1+x+y)e^{x-y}>0$，而 $g_y=4(1-x-y)e^{x-y}>0$。第二个符号用到了题设区域 $x+y<1$，不能脱离区域判断。
+
+        当 $x_1<x_2,\ y_1<y_2$ 时，连接两点的线段完全在三角形内。沿线段的导数为 $g_x(x_2-x_1)+g_y(y_2-y_1)>0$，因此终点处函数值更大。故 **A 是充分条件**。
+
 #### §2.2 全微分
 
 设 $\rho=\sqrt{(\Delta x)^2+(\Delta y)^2}$。若函数的全增量可以表示为
@@ -4024,6 +4519,35 @@ $$
 
         由本章 §1 例 知此极限不存在，所以函数 $f$ 在原点不可微。
 
+!!! example exercise "☆☆☆ 原点的偏导数与可微性"
+
+    设二元函数
+
+    $$
+    f(x,y)=\begin{cases}\dfrac{x|y|+y|x|}{\sqrt{x^2+y^2}},&(x,y)\ne(0,0),\\0,&(x,y)=(0,0).\end{cases}
+    $$
+
+    关于 $f$ 在点 $(0,0)$ 处的性质，下列说法哪一项正确？
+
+    <div class="exam-options" markdown="1">
+
+    A. 极限存在，但不连续
+
+    B. 连续，但偏导数不存在
+
+    C. 偏导数存在，但不可微
+
+    D. 可微
+    </div>
+
+    ??? success "解析"
+
+        **先查连续性。** 令 $r=\sqrt{x^2+y^2}$。由 $2|xy|\le x^2+y^2$ 得 $|f(x,y)|\le\dfrac{2|xy|}{r}\le r$，故趋近原点时 $f\to0=f(0,0)$。
+
+        **用两条坐标轴确定候选线性主部。** $f(h,0)=f(0,h)=0$，按定义两偏导都为零。若可微，其线性主部只能是零，因而须对所有趋近方向满足 $\dfrac{f(x,y)}{r}\to0$。
+
+        取 $x=y=t>0$，有 $f(t,t)=\sqrt2\,t$，而 $r=\sqrt2\,t$，两者之比恒为 $1$。这条路径已经否定可微性。故 **原点处连续、偏导存在，但不可微（C）**。第一步的 $|f|\le r$ 足以证连续，却只到 $O(r)$，没有达到可微所需的 $o(r)$。
+
 ##### 全微分在近似计算和误差估算中的应用 \*
 
 当 $\Delta x,\Delta y$ 较小时，一阶近似公式为
@@ -4139,6 +4663,44 @@ $$
     +\frac{\partial z}{\partial v}\frac{\partial v}{\partial y}.
     $$
 
+!!! example exercise "☆☆☆ 线性换元下的二阶偏导数"
+
+    已知 $f$ 具有二阶连续偏导数，$f_{xx}+f_{yy}=2$。换元 $u=ax+by,\ v=ax-by$ 后，若 $f_{uu}+f_{vv}=4,\ f_{uv}=0$，求 $a^2+b^2$。
+
+    ??? success "解析"
+
+        $u,v$ 都是 $x,y$ 的线性函数，链式法则的系数为常数。由 $u_x=v_x=a$、$u_y=b,\ v_y=-b$，得到 $\partial_x=a(\partial_u+\partial_v)$，$\partial_y=b(\partial_u-\partial_v)$。
+
+        再作用一次。因为二阶偏导连续，$f_{uv}=f_{vu}$，两个交叉项要合并：
+
+        $$
+        f_{xx}=a^2(f_{uu}+2f_{uv}+f_{vv}),\qquad f_{yy}=b^2(f_{uu}-2f_{uv}+f_{vv}).
+        $$
+
+        两式相加后再用 $f_{uv}=0$，得 $2=(a^2+b^2)(f_{uu}+f_{vv})=4(a^2+b^2)$。故 **$a^2+b^2=\dfrac12$**。负号只出现在 $y$ 方向的混合项，$f_{vv}$ 项的系数仍为正。
+
+!!! example exercise "含绝对值积分的混合偏导数"
+
+    设函数 $f(t)$ 连续，且 $f(\dfrac12)=\dfrac12$。令
+
+    $$
+    z(x,y)=\int_0^1 |x^2+y^2-t|f(t)\,\mathrm dt,\qquad 0\le x\le1,\quad 0\le y\le1.
+    $$
+
+    求二阶混合偏导数 $z''_{xy}(\dfrac12,\dfrac12)$。
+
+    ??? success "解析"
+
+        令 $s=x^2+y^2$。在目标点，$s=\dfrac12$ 位于积分区间内部，所以绝对值在**随参数移动的点 $t=s$** 改变符号。先拆分，再求导：
+
+        $$
+        H(s)=\int_0^s(s-t)f(t)\,\mathrm dt+\int_s^1(t-s)f(t)\,\mathrm dt,\qquad z=H(x^2+y^2).
+        $$
+
+        第一次对 $s$ 求导时，两个边界项都含因子 $s-s$，故 $H'(s)={\displaystyle \int_0^s} f(t)\,\mathrm dt-{\displaystyle \int_s^1} f(t)\,\mathrm dt$。第二次求导时，第二个积分的下限带来负号，与外面的负号相抵，得 $H''(s)=2f(s)$。
+
+        最后用链式法则：$z_x=2xH'(s)$，$z_{xy}=4xyH''(s)=8xyf(s)$。代入 $x=y=\dfrac12$ 及 $f(\dfrac12)=\dfrac12$，得 **$z_{xy}=1$**。
+
 #### §3.2 复合函数的全微分
 
 设 $z=f(x,y)$，$x=x(s,t)$、$y=y(s,t)$ 均有连续偏导数，则
@@ -4160,6 +4722,29 @@ $$
 
 函数的一阶全微分表达式对中间变量仍保持相同形式，称为<u class="dbl">一阶</u>全微分的形式不变性。
 
+!!! example exercise "☆☆☆ 参数曲线给出的全微分"
+
+    设 $f$ 可微，$f(x^2,e^x-1)=xe^x$ 且 $f(\ln x,x-1)=(1-x)^2$。求 $\mathrm df(0,0)$。
+
+    <div class="exam-options" markdown="1">
+
+    A. $\mathrm dy$
+
+    B. $-\mathrm dx+\mathrm dy$
+
+    C. $\mathrm dx-\mathrm dy$
+
+    D. $\mathrm dx+\mathrm dy$
+    </div>
+
+    ??? success "解析"
+
+        题目要 $\mathrm df(0,0)$，只需求两个偏导数。两条已知曲线给出两个方程，但经过原点的**参数值不同**。
+
+        第一条曲线在 $x=0$ 经过原点。先对 $f(x^2,e^x-1)=xe^x$ 求导：$2x f_x+e^x f_y=(1+x)e^x$，其中偏导在该曲线点取值。代入 $x=0$，得到 $f_y(0,0)=1$。
+
+        第二条曲线在 $x=1$ 经过原点。对 $f(\ln x,x-1)=(1-x)^2$ 求导得 $\dfrac1x f_x+f_y=2(x-1)$。代入 $x=1$ 得 $f_x(0,0)+f_y(0,0)=0$，故 $f_x(0,0)=-1$。由可微性，**$\mathrm df(0,0)=-\mathrm dx+\mathrm dy$（B）**。
+
 ### §4 隐函数的偏导数
 
 #### §4.1 隐函数的偏导数
@@ -4178,6 +4763,33 @@ $$
 $$
 
 各偏导数均在 $(x,y,f(x,y))$ 处取值。
+
+!!! example exercise "☆☆☆ 隐函数的二阶混合偏导数"
+
+    设 $z=z(x,y)$ 由 $xy+\ln z+yz^2=0$ 确定。求 $z_{xy}(1,0)$。
+
+    <div class="exam-options" markdown="1">
+
+    A. $-1$
+
+    B. $0$
+
+    C. $1$
+
+    D. $2$
+    </div>
+
+    ??? success "解析"
+
+        先代 $(x,y)=(1,0)$ 求函数值：$\ln z=0$，故 $z=1$。令 $F=xy+\ln z+yz^2$，在此处 $F_z=1\ne0$，可用隐函数求导。对 $x$ 求偏导并**保留 $y$**：
+
+        $$
+        y+\left(\frac1z+2yz\right)z_x=0,\qquad z_x=-\frac{yz}{1+2yz^2}.
+        $$
+
+        现在对 $y$ 求导。分子 $yz$ 的导数是 $z+yz_y$；商法则中含分母导数的那一项又乘着 $yz$。最后代 $y=0,z=1$，后者消失，前者只留下 $-z=-1$。
+
+        故 **$z_{xy}(1,0)=-1$（A）**。若一开始就把 $y=0$ 代进 $z_x$，只能看见 $z_x(x,0)=0$，会丢掉垂直于这条直线的变化率。
 
 #### §4.2 隐函数组的偏导数
 
@@ -4262,6 +4874,24 @@ $$
 \frac{\partial u}{\partial l}(P_0)
 =u_x(P_0)\cos\alpha+u_y(P_0)\cos\beta+u_z(P_0)\cos\gamma.
 $$
+
+!!! example exercise "☆☆☆ 方向导数的约束最值"
+
+    令 $f(x,y,z)$ 为 $u=3x^2+4y^3-9z^2$ 沿 $(1,1,1)$ 方向的方向导数。求 $x^2+2y^2+z^2=1$ 上 $f$ 的最大值。
+
+    ??? success "解析"
+
+        **先明确待最优化的函数。** 方向导数是梯度与**单位**方向向量的点积。由 $\nabla u=(6x,12y^2,-18z)$ 得 $f=2\sqrt3(x+2y^2-3z)$。只需在椭球上最大化 $g=x+2y^2-3z$。
+
+        椭球是闭有界曲面且约束梯度在其上不为零，用拉格朗日乘数法。对 $g+\lambda(x^2+2y^2+z^2-1)$ 求驻点，有
+
+        $$
+        1+2\lambda x=0,\qquad 4(1+\lambda)y=0,\qquad -3+2\lambda z=0.
+        $$
+
+        中间一式不能直接约去 $y$。若 $y\ne0$，则 $\lambda=-1$，前后两式给出 $x=\dfrac12,\ z=-\dfrac32$，已经有 $x^2+z^2>1$，舍去。
+
+        只剩 $y=0$，此时 $x^2+z^2=1$。由柯西不等式，$x-3z\le\sqrt{10}$，在 $(x,z)=\dfrac{(1,-3)}{\sqrt{10}}$ 处取等。乘回 $2\sqrt3$，得 **$f_{\max}=2\sqrt{30}$**。
 
 #### §5.3 梯度
 
@@ -4372,6 +5002,44 @@ L=f+\sum_{k=1}^m\lambda_k\psi_k,\qquad
 $$
 
 其中 $\lambda_1,\ldots,\lambda_m$ 为拉格朗日乘子。
+
+!!! example exercise "全微分与闭域最值"
+
+    已知函数 $f(x,y)$ 的全微分为
+
+    $$
+    \mathrm df(x,y)=3(x-y)^2\,\mathrm dx-3(x^2-2xy+2y^2-2)\,\mathrm dy,
+    $$
+
+    且 $f(0,0)=0$。
+
+    （1）求 $f(x,y)$。
+
+    （2）求 $f(x,y)$ 在闭区域 $D=\{(x,y)\mid x\ge0,\ y\ge0,\ x+y\le3\}$ 上的最大值与最小值。
+
+    ??? success "解析"
+
+        **（1）由全微分还原函数。** $\mathrm dx$ 的系数给出 $f_x=3(x-y)^2$。对 $x$ 积分只能确定到一个关于 $y$ 的函数：$f=(x-y)^3+\phi(y)$。再对 $y$ 求导，与题设的 $\mathrm dy$ 系数比较，得 $\phi'(y)=6-3y^2$。用 $f(0,0)=0$ 定常数，得到 **$f=(x-y)^3-y^3+6y$**。
+
+        **（2）先查三角形内部。** $f_x=0$ 要求 $x=y$；代入 $f_y=0$ 得 $y^2=2$。内部只有 $(\sqrt2,\sqrt2)$，函数值为 $4\sqrt2$。
+
+        **再查三条边。** 在 $x=0$ 上，$f=-2y^3+6y$，内点 $y=1$ 给出 $4$。在 $y=0$ 上，$f=x^3$ 单调递增。在 $y=3-x$ 上，对 $x$ 求导得 $3(3x-5)^2\ge0$，也是单调递增；导数在某点为零并不改变单调方向。
+
+        三顶点 $(0,0),(3,0),(0,3)$ 的值分别为 $0,27,-36$。与前面的候选值比较，**最大值为 $27$，在 $(3,0)$ 取到；最小值为 $-36$，在 $(0,3)$ 取到**。
+
+!!! example exercise "二元驻点的 Hessian 判别"
+
+    求 $f(x,y)=x^3+y^3-3x-3y+3xy$ 的极值。
+
+    ??? success "解析"
+
+        由 $f_x=f_y=0$ 得 $x^2+y=1,\ y^2+x=1$。两式对称，相减得 $(x-y)(x+y-1)=0$。先分出两支再代回，避免约去 $x-y$ 时丢掉对角线上的驻点。
+
+        若 $x+y=1$，得到 $(1,0),(0,1)$。因 $f_{xx}=6x,\ f_{yy}=6y,\ f_{xy}=3$，Hessian 行列式为 $\Delta=36xy-9$。这两点均有 $\Delta=-9<0$，故为鞍点。
+
+        若 $x=y=t$，则 $t^2+t-1=0$，$t_\pm=\dfrac{-1\pm\sqrt5}{2}$，且两处 $\Delta=36t^2-9>0$。这时才看 $f_{xx}=6t$ 的正负：$t_-$ 对应局部极大，$t_+$ 对应局部极小。
+
+        用 $t^2=1-t$ 化简，$f(t,t)=2t^3+3t^2-6t=1-5t$。故在 $(t_-,t_-)$ 的**极大值为 $\dfrac{7+5\sqrt5}{2}$**，在 $(t_+,t_+)$ 的**极小值为 $\dfrac{7-5\sqrt5}{2}$**。
 
 ##### 数学建模初步（三） \*
 
@@ -4487,6 +5155,24 @@ $$
 
     -   隐函数组、反函数组的雅可比行列式非零只是局部可逆的充分条件，不保证整体可逆。
 
+!!! example exercise "☆☆☆ 切平面与交线法平面的平行条件"
+
+    设 $\Sigma:x^2+y^2+2z^2=1$。曲面 $\Sigma$ 上某点的切平面，与曲线
+
+    $$
+    \Gamma:\quad\begin{cases}x^2+y^2+z^2=3,\\x+y-z=1\end{cases}
+    $$
+
+    在点 $(1,1,1)$ 处的法平面平行。求曲面上所有这样的点的坐标。
+
+    ??? success "解析"
+
+        题中有两个平面：曲面的**切平面**以曲面梯度为法向量，曲线的**法平面**却以曲线切向量为法向量。要比较两个平面是否平行，应先把它们各自的法向量找出来。
+
+        交线同时位于两个曲面上，切向量垂直于两个梯度。在 $(1,1,1)$ 处取叉积，$(2,2,2)\times(1,1,-1)=(-4,4,0)$，这就是交线法平面的一个法向量。
+
+        椭球面在待求点的梯度为 $(2x,2y,4z)$。令它等于 $(-1,1,0)$ 的某个倍数，得 $y=-x,\ z=0$。代回椭球面得 $2x^2=1$。所以两点为 **$(\dfrac1{\sqrt2},-\dfrac1{\sqrt2},0)$、$(-\dfrac1{\sqrt2},\dfrac1{\sqrt2},0)$**。方向向量含零分量，写成倍数关系比写比例式可靠。
+
 ## 第九章 多元函数积分学
 
 ### §1 二重积分的概念
@@ -4502,7 +5188,7 @@ $$
 
 $f$ 为被积函数，$D$ 为积分区域，$\mathrm d\sigma$ 为面积元素；在直角坐标系中，$\mathrm d\sigma=\mathrm dx\,\mathrm dy$。连续函数在有界闭区域上可积。
 
-当 $f\ge0$ 时，$\iint_Df\,\mathrm d\sigma$ 是以 $D$ 为底、以 $z=f(x,y)$ 为顶的曲顶柱体的体积。特别地，
+当 $f\ge0$ 时，${\displaystyle \iint_D}f\,\mathrm d\sigma$ 是以 $D$ 为底、以 $z=f(x,y)$ 为顶的曲顶柱体的体积。特别地，
 
 $$
 \operatorname{Area}(D)=\iint_D1\,\mathrm d\sigma.
@@ -4548,6 +5234,18 @@ $f$ 在 $D$ 上的平均值为
 $$
 \bar f=\frac{1}{\operatorname{Area}(D)}\iint_Df\,\mathrm d\sigma.
 $$
+
+!!! example exercise "☆☆☆ 对称积分域的变量分离"
+
+    求 $\displaystyle\lim_{t\to0^+}\dfrac{{\displaystyle \int_0^t}\mathrm dx{\displaystyle \int_x^t}(e^{x^2+y^2}-e^{x^2}-e^{y^2}+1)\,\mathrm dy}{t^6}$。
+
+    ??? success "解析"
+
+        先看分子：$e^{x^2+y^2}-e^{x^2}-e^{y^2}+1=(e^{x^2}-1)(e^{y^2}-1)$。两因子的形式相同，而积分域 $0\le x\le y\le t$ 正好是正方形的一半。交换 $x,y$ 后被积函数不变，故两半的积分相等。
+
+        在完整正方形上，$x,y$ 的积分上下限彼此独立，所以分子等于 $\dfrac12\bigl[{\displaystyle \int_0^t}(e^{x^2}-1)\,\mathrm dx\bigr]^2$。分母 $t^6$ 也可写成 $(t^3)^2$，只需算一个一元极限。
+
+        由洛必达法则和 $e^s-1\sim s$，$\lim_{t\to0^+}\dfrac{{\displaystyle \int_0^t}(e^{x^2}-1)\,\mathrm dx}{t^3}=\lim_{t\to0^+}\dfrac{e^{t^2}-1}{3t^2}=\dfrac13$。故原极限为 **$\dfrac12(\dfrac13)^2=\dfrac1{18}$**。直接在三角形上拆成两个一元积分会忽略 $x\le y$ 的约束。
 
 ### §2 二重积分的计算
 
@@ -4609,6 +5307,26 @@ $$
         $$
         \text{原式}=\frac16-\frac1{3e}.
         $$
+
+!!! example exercise "☆☆☆ 分片积分域的换序"
+
+    计算下列两个累次积分之和：
+
+    $$
+    \int_0^1\mathrm dy\int_0^{\sqrt y}x^2y\,\mathrm dx+\int_1^{\sqrt2}\mathrm dy\int_0^{\sqrt{2-y^2}}x^2y\,\mathrm dx.
+    $$
+
+    ??? success "解析"
+
+        原式是沿 $y$ 分成两片来积分。第一片 $0\le x\le\sqrt y$ 等价于 $y\ge x^2$，第二片 $0\le x\le\sqrt{2-y^2}$ 等价于 $x^2+y^2\le2$。两片在 $y=1$ 处接合，边界交于 $(1,1)$。
+
+        改为固定 $x$ 看一条竖线：$x$ 从 $0$ 到 $1$，$y$ 从下面的抛物线 $x^2$ 到上面的圆弧 $\sqrt{2-x^2}$，中间没有空隙。换序后无需再分段。
+
+        $$
+        I=\int_0^1x^2\left[\frac{y^2}{2}\right]_{y=x^2}^{y=\sqrt{2-x^2}}\mathrm dx=\int_0^1\left(x^2-\frac{x^4}{2}-\frac{x^6}{2}\right)\mathrm dx=\frac{17}{105}.
+        $$
+
+        下边界代入的是 $y^2=(x^2)^2$，这里容易少平方一次。
 
 #### §2.2 在极坐标系中计算二重积分
 
@@ -4978,6 +5696,26 @@ $$
         =\frac23\pi a^3.
         $$
 
+!!! example exercise "隐式曲线的弧长因子"
+
+    设 $L$ 为 $x^2+2xy+2y^2=1$ 位于第一象限的弧，求 ${\displaystyle \int_L}\dfrac{x^2-4y^2}{\sqrt{2+2xy+y^2}}\,\mathrm ds$。
+
+    ??? success "解析"
+
+        题中是对弧长的积分。先试着用 $\mathrm ds=\sqrt{1+y'^2}\,\mathrm dx$ 抵消分母。沿第一象限的弧对曲线方程求导，得 $y'=-\dfrac{x+y}{x+2y}$。由于 $x+2y>0$，可直接从根号中提出该因子：
+
+        $$
+        \sqrt{1+y'^2}=\frac{\sqrt{(x+2y)^2+(x+y)^2}}{x+2y}=\frac{\sqrt{2+2xy+y^2}}{x+2y}.
+        $$
+
+        末步用了 $x^2+2xy+2y^2=1$。分子 $x^2-4y^2$ 也含因子 $x+2y$，所以原式化为 ${\displaystyle \int_0^1}(x-2y)\,\mathrm dx$。
+
+        再将曲线写成 $(x+y)^2+y^2=1$，令 $y=\sin t,\ x+y=\cos t$。当 $x$ 从 $0$ 到 $1$，$t$ **从 $\dfrac\pi4$ 减到 $0$**。用 $\mathrm dx=-(\sin t+\cos t)\,\mathrm dt$ 翻转上下限，得
+
+        $$
+        I=\int_0^{\frac\pi4}(\cos t-3\sin t)(\sin t+\cos t)\,\mathrm dt=\frac12-\frac\pi4.
+        $$
+
 #### §4.2 第一类曲面积分
 
 将光滑曲面 $S$ 分成面积为 $\Delta S_i$ 的小块，各块任取点 $P_i$，记小块直径的最大值为 $\lambda$。若极限存在且与分割、取点无关，定义
@@ -5015,6 +5753,26 @@ $$
 \iint_Sf\,\mathrm dS
 =\iint_{D_{yz}}f(x(y,z),y,z)\sqrt{1+x_y^2+x_z^2}\,\mathrm dy\,\mathrm dz.
 $$
+
+!!! example exercise "☆☆☆ 旋转曲面积分的奇偶对称性"
+
+    设 $\Sigma$ 为曲线 $x=\sqrt2\cos t,\ y=\sin t,\ z=\cos^2t$（$0\le t\le\dfrac\pi2$）绕 $z$ 轴旋转一周所得的曲面。计算对面积的曲面积分
+
+    $$
+    \iint_\Sigma\frac{xy^3+\sqrt{5+4z}}{1+x^2+y^2}\,\mathrm dS.
+    $$
+
+    ??? success "解析"
+
+        **先找旋转后的曲面。** 绕 $z$ 轴旋转保持高度 $z$ 和半径 $r$。由母线方程，$r^2=2\cos^2t+\sin^2t=1+z$，而 $0\le z\le1$。所以曲面是 $z=r^2-1$ 在圆环 $1\le r\le\sqrt2$ 上的图形，不是整个圆盘。
+
+        圆环关于 $x=0$ 对称，$z$、分母和面积元在反射 $x\mapsto-x$ 下都不变，只有 $xy^3$ 变号，故该项积分为零。又 $\mathrm dS=\sqrt{1+4r^2}\,\mathrm dA$，恰与 $\sqrt{5+4z}=\sqrt{1+4r^2}$ 相乘，消去根号。
+
+        于是 $I=2\pi{\displaystyle \int_1^{\sqrt2}}\dfrac{1+4r^2}{1+r^2}r\,\mathrm dr$。令 $u=1+r^2$，有
+
+        $$
+        I=\pi\int_2^3\left(4-\frac3u\right)\mathrm du=\pi\left(4-3\ln\frac32\right).
+        $$
 
 ### §5 点函数积分的概念、性质及应用
 
@@ -5280,6 +6038,60 @@ $$
         \end{aligned}
         $$
 
+!!! example exercise "☆☆☆ 补线闭合后的积分方向"
+
+    设 $L$ 为从点 $(-1,0)$ 到点 $(1,0)$ 的上半圆周 $y=\sqrt{1-x^2}$。下列哪一项等于曲线积分
+
+    $$
+    \int_L\frac{(e^{x-2y}+x^2y)\,\mathrm dx-2(e^{x-2y}+xy^2)\,\mathrm dy}{x^2+y^2}\,?
+    $$
+
+    <div class="exam-options" markdown="1">
+
+    A. $\dfrac{3\pi}{8}-e+e^{-1}$
+
+    B. $-\dfrac{3\pi}{8}-e+e^{-1}$
+
+    C. $e-e^{-1}+\dfrac{3\pi}{8}$
+
+    D. $e-e^{-1}-\dfrac{3\pi}{8}$
+    </div>
+
+    ??? success "解析"
+
+        **先判断能否补线。** $L$ 是开弧，直接补直径会经过原式分母的零点。但在原弧上 $x^2+y^2=1$，可以先消去分母，再对这个光滑的分子向量场补线。取 $L_0$ 从 $(1,0)$ 回到 $(-1,0)$，$L+L_0$ 围成上半圆盘 $D$，方向为**顺时针**。
+
+        令 $P=e^{x-2y}+x^2y,\ Q=-2(e^{x-2y}+xy^2)$。求导时指数项正好抵消，$Q_x-P_y=-x^2-2y^2$。格林公式的正向是逆时针，故顺时针闭路积分为
+
+        $$
+        \iint_D(x^2+2y^2)\,\mathrm dA=\int_0^1 r^3\,\mathrm dr\int_0^\pi(\cos^2\theta+2\sin^2\theta)\,\mathrm d\theta=\frac{3\pi}{8}.
+        $$
+
+        **最后减去补线。** 在 $L_0$ 上，$y=0,\ \mathrm dy=0$，积分为 ${\displaystyle \int_1^{-1}}e^x\,\mathrm dx=e^{-1}-e$。原弧积分等于闭路积分减去它，故选 **C：$e-e^{-1}+\dfrac{3\pi}{8}$**。
+
+!!! example exercise "☆☆☆ 含原点奇点的环流"
+
+    设星形线 $L:x^{\frac{2}{3}}+y^{\frac{2}{3}}=1$ 取顺时针方向。求 ${\displaystyle \oint_L} \dfrac{x\,\mathrm dy-y\,\mathrm dx}{4x^2+y^2}$。
+
+    <div class="exam-options" markdown="1">
+
+    A. $0$
+
+    B. $-\pi$
+
+    C. $-2\pi$
+
+    D. $\pi$
+    </div>
+
+    ??? success "解析"
+
+        被积式的分母在原点为零，而星形线包围原点。即使在原点外有 $Q_x=P_y$，也不能直接对整块内部用格林公式。可挖去足够小的椭圆盘 $4x^2+y^2\le\varepsilon^2$，使其余区域不含奇点。
+
+        在环形区域上用格林公式，按区域正向取边界时，外、内边界方向相反，总环流为零。移项并统一方向，得**外星形线的顺时针环流等于小椭圆的顺时针环流**。
+
+        按顺时针取 $x=\dfrac{\varepsilon}{2}\cos t,\ y=-\varepsilon\sin t$，$0\le t\le2\pi$。分母恒为 $\varepsilon^2$，分子为 $-\dfrac12\varepsilon^2(\cos^2t+\sin^2t)\,\mathrm dt$。故 $I=-\dfrac12{\displaystyle \int_0^{2\pi}}\mathrm dt=\mathbf{-\pi}$，选 **B**。
+
 #### §1.3 平面曲线积分与路径无关性
 
 平面区域 $D$ 内任一闭曲线均可在 $D$ 内连续收缩成一点时，称 $D$ 为单连通区域。
@@ -5313,6 +6125,41 @@ $$
 u(x,y)=\int_{x_0}^{x}P(t,y_0)\,\mathrm dt
 +\int_{y_0}^{y}Q(x,t)\,\mathrm dt+C.
 $$
+
+!!! example exercise "不围原点的闭路积分"
+
+    设有向闭曲线 $C$ 不经过原点，也不包围原点。题面称，对任何这样的 $C$，下列曲线积分“恒等 50”：
+
+    $$
+    \oint_C\frac{(ax+by)\,\mathrm dx-(cx+dy)\,\mathrm dy}{x^2+2y^2}.
+    $$
+
+    若将该处订正为“恒等于 $0$”，$a,b,c,d$ 应满足下列哪一组关系？
+
+    <div class="exam-options" markdown="1">
+
+    A. $2a=d,\ b=c$
+
+    B. $-2a=d,\ b=c$
+
+    C. $a=d,\ b=2c$
+
+    D. $a=-d,\ b=2c$
+    </div>
+
+    ??? success "解析"
+
+        若把题面的“恒等 50”理解为固定的非零环流，同一闭路反向后积分应变号，便会矛盾。以下按**恒等于零**讨论。闭路既不经过也不包围原点，格林公式所需的偏导在其内部连续。
+
+        把 $\mathrm dx,\mathrm dy$ 的系数分别记作 $P,Q$。注意 $Q$ 自带负号。通分后有
+
+        $$
+        Q_x-P_y=\frac{(c-b)(x^2-2y^2)+(2d+4a)xy}{(x^2+2y^2)^2}.
+        $$
+
+        若 $c=b,\ d=-2a$，分子恒为零，由格林公式，每条这样的闭路积分都为零。
+
+        反过来，“**任何**闭路”允许在任一非原点附近取小圆。若该点 $Q_x-P_y\ne0$，连续性保证足够小的圆盘上它保持同号，面积积分便非零，矛盾。因此分子须恒为零，比较 $x^2$ 与 $xy$ 的系数即得 **$b=c,\ d=-2a$（B）**。
 
 ### §2 第二类曲面积分
 
@@ -5368,6 +6215,29 @@ $$
 Q=\iint_S\rho\mathbf v\cdot\mathbf n\,\mathrm dS.
 $$
 
+!!! example exercise "球面下侧的单位法向量"
+
+    设 $\Sigma$ 为上半单位球面被柱面 $x^2+y^2=x$ 截出的部分，取下侧。把 ${\displaystyle \iint_\Sigma} \dfrac{xy\,\mathrm dy\,\mathrm dz+yz\,\mathrm dx\,\mathrm dy}{x^2+y^2+z^2}$ 化为第一类曲面积分。
+
+    <div class="exam-options" markdown="1">
+
+    A. ${\displaystyle \iint_\Sigma}(x^2y+yz^2)\,\mathrm dS$
+
+    B. $-{\displaystyle \iint_\Sigma}(x^2y+yz^2)\,\mathrm dS$
+
+    C. ${\displaystyle \iint_\Sigma}(x^2y+y^2z)\,\mathrm dS$
+
+    D. $-{\displaystyle \iint_\Sigma}(x^2y+y^2z)\,\mathrm dS$
+    </div>
+
+    ??? success "解析"
+
+        题目要从对坐标的积分转为对面积 $\mathrm dS$ 的积分。应写成向量场与**单位法向量**的点积；只有投影到 $\mathrm dx\,\mathrm dy$ 时才用未单位化的投影向量。
+
+        在球面上 $x^2+y^2+z^2=1$，分母可直接去掉。按 $\mathrm dy\,\mathrm dz,\ \mathrm dz\,\mathrm dx,\ \mathrm dx\,\mathrm dy$ 的次序，分子对应场 $(xy,0,yz)$，中间没有的分量是零。
+
+        上半球的外单位法向量为 $(x,y,z)$，其第三分量为正；取**下侧**要用 $(-x,-y,-z)$。点乘得 $-x^2y-yz^2$，故选 **B：$-{\displaystyle \iint_\Sigma}(x^2y+yz^2)\,\mathrm dS$**。
+
 #### §2.2 第二类曲面积分的计算
 
 若曲面片用 $\mathbf r(u,v)$ 参数化，且 $\mathbf r_u\times\mathbf r_v\ne\mathbf 0$，则 $\mathbf r_u$ 和 $\mathbf r_v$ 是两条参数曲线的切矢量，它们的叉积垂直于切平面。从 $\pm(\mathbf r_u\times\mathbf r_v)$ 中取指向所选一侧的 $\mathbf N$。叉积的模长等于这两个切矢量张成的平行四边形的面积，也就是参数平面到曲面的面积伸缩因子。因此
@@ -5407,6 +6277,49 @@ $$
 $$
 
 法线的 $y$ 分量为正时取 $+$，为负时取 $-$。
+
+!!! example exercise "☆☆☆ 曲面积分投影的交换对称性"
+
+    设 $\Sigma:z=1-4x^2-4y^2,\ 0\le z\le1$，取上侧。求
+
+    $$
+    \iint_\Sigma\frac{xy^2z\,\mathrm dy\,\mathrm dz-x^2yz\,\mathrm dz\,\mathrm dx}{x^2+y^2+z^2}
+    +\frac{x^2-y^2}{2}\ln(x^2+y^2+z^2)\,\mathrm dx\,\mathrm dy.
+    $$
+
+    ??? success "解析"
+
+        曲面已经写成 $z=z(x,y)$，而积分取上侧，直接投影比补底方便。投影为圆盘 $D:x^2+y^2\le\dfrac14$，有向面积元为 $(-z_x,-z_y,1)\,\mathrm dx\,\mathrm dy=(8x,8y,1)\,\mathrm dx\,\mathrm dy$。
+
+        原式前两项投影后，分子分别为 $8x^2y^2z$ 与 $-8x^2y^2z$，分母相同，正好抵消。剩下
+
+        $$
+        \frac12\iint_D (x^2-y^2)\ln(x^2+y^2+z^2)\,\mathrm dx\,\mathrm dy,\qquad z=1-4(x^2+y^2).
+        $$
+
+        交换 $x,y$ 后，圆盘、面积元以及对数因子都不变，只有 $x^2-y^2$ 变号。因此该积分等于自己的相反数，结果为 **$0$**。用到的是**交换两个变量**的对称性，不是单独对 $x$ 或 $y$ 的奇性。
+
+!!! example exercise "锥面下侧的通量投影"
+
+    设 $\Sigma$ 为第一卦限内 $z=\sqrt{x^2+y^2}$、$0\le z\le1$ 的锥面，取下侧，$f$ 连续且非常量。求
+
+    $$
+    I=\iint_\Sigma\frac{[1+yf(z)]\,\mathrm dy\,\mathrm dz+[1-xf(z)]\,\mathrm dz\,\mathrm dx}{1+\sqrt{x^2+y^2}}.
+    $$
+
+    ??? success "解析"
+
+        取 $r=\sqrt{x^2+y^2}$，锥面为 $z=r$，投影为第一象限的四分之一单位圆盘。因为指定**下侧**，投影向量取 $(z_x,z_y,-1)=(\dfrac xr,\dfrac yr,-1)$（先看 $r>0$）。
+
+        点乘后，分子变为 $[1+yf(z)]\dfrac xr+[1-xf(z)]\dfrac yr=\dfrac{x+y}{r}$。两个含 $f$ 的项正好相消，这也解释了为什么不需要知道 $f$ 的具体表达式。
+
+        用 $x=r\cos\theta,\ y=r\sin\theta$，并保留面积元中的 $r$，得到
+
+        $$
+        I=\int_0^{\frac\pi2}(\cos\theta+\sin\theta)\,\mathrm d\theta\int_0^1\frac{r}{1+r}\,\mathrm dr=2(1-\ln2).
+        $$
+
+        锥顶处投影向量无定义，可先取 $r\ge\varepsilon$ 再令 $\varepsilon\downarrow0$；化简后的径向积分在零端收敛。
 
 #### §2.3 高斯公式
 
@@ -5506,6 +6419,26 @@ $$
         \iint_S(x^2\cos\alpha+y^2\cos\beta+z^2\cos\gamma)\,\mathrm dS
         =\frac{\pi h^4}{2}-\pi h^4=-\frac{\pi h^4}{2}.
         $$
+
+!!! example exercise "☆☆☆ 含未知函数的半球面通量"
+
+    设 $\Sigma$ 为球面 $x^2+y^2+z^2=2$ 的上半部（$z\ge0$），取上侧。连续函数 $f(x,y)$ 满足
+
+    $$
+    \begin{aligned} f(x,y)&=x^2+y^2+x\iint_\Sigma\Bigl\{xy^2\,\mathrm dy\,\mathrm dz+x^2y\,\mathrm dz\,\mathrm dx\\[-2pt] &\hspace{5em}-\big[(x+3y)^2-z^2+zf(x,y)\big]\,\mathrm dx\,\mathrm dy\Bigr\}. \end{aligned}
+    $$
+
+    求函数 $f(x,y)$。
+
+    ??? success "解析"
+
+        **先把未知通量当作常数。** 积分遍历的是整个固定半球面，与等式左端所取的 $(x,y)$ 无关。记通量为 $I$，便有 $f(x,y)=x^2+y^2+Ix$。代回后向量场光滑，补上 $z=0$ 的底盘 $D$，即可对闭面用高斯公式。
+
+        场的第三分量为 $-(x+3y)^2+z^2-zf(x,y)$；求散度时 $f$ 与 $z$ 无关。故散度为 $y^2+x^2+2z-f(x,y)=2z-Ix$。半球体关于 $x=0$ 对称，奇项 $-Ix$ 积分为零。在高度 $z$ 处，截面积是 $\pi(2-z^2)$，闭面通量为 $\pi{\displaystyle \int_0^{\sqrt2}}2z(2-z^2)\,\mathrm dz=2\pi$。
+
+        **再扣底面。** 底面外法向朝下，故底面通量是正的 ${\displaystyle \iint_D}(x+3y)^2\,\mathrm dA$。圆盘上 ${\displaystyle \iint_D}xy\,\mathrm dA=0$，而 ${\displaystyle \iint_D} x^2\,\mathrm dA={\displaystyle \iint_D} y^2\,\mathrm dA=\pi$，所以底面通量为 $10\pi$。
+
+        题目求的是半球面而不是闭面，故 $I=2\pi-10\pi=-8\pi$。代回原关系即得 **$f(x,y)=x^2+y^2-8\pi x$**。
 
 #### §2.4 散度场
 
@@ -5659,6 +6592,28 @@ $$
         =-2\pi a(h+a).
         \end{aligned}
         $$
+
+!!! example exercise "☆☆☆ 斯托克斯公式的闭合边界"
+
+    设 $\Gamma$ 为曲面 $z=\sqrt{1-x^2-y^2}$ 与柱面 $x^2+y^2=x$ 的交线，从 $z$ 轴正向往负向看为逆时针方向。计算
+
+    $$
+    \oint_\Gamma(2y-z)\,\mathrm dx+(x-2)z\,\mathrm dy+(x-2y)\,\mathrm dz.
+    $$
+
+    ??? success "解析"
+
+        **先查斯托克斯公式的前提：曲线是否闭合？** 实际上，$z=\sqrt{1-x^2-y^2}$ 是一个 **球的上半部分**，所以曲线是闭合的。
+
+        **定向并投影。** 从上往下看逆时针，对应球面上侧。场 $(2y-z,(x-2)z,x-2y)$ 的旋度为 $(-x,-2,z-2)$。投影圆盘为 $D:x^2+y^2\le x$，上侧投影向量为 $(\dfrac xz,\dfrac yz,1)$。点乘后，含 $-\dfrac{2y}{z}$ 的项在关于 $y=0$ 对称的圆盘上积分为零。故
+
+        $$
+        I=\iint_D\left(z-\frac{x^2}{z}\right)\mathrm dA-2|D|.
+        $$
+
+        **把剩余面积分转为边界积分。** 注意 $\partial_x(xz)=z-\dfrac{x^2}{z}$。由格林公式，第一项等于 ${\displaystyle \oint_{\partial D}}xz\,\mathrm dy$（在 $z=0$ 的接触点可先截去小邻域，再取极限）。取 $x=\dfrac{1+\cos t}{2},\ y=\dfrac{\sin t}{2}$，$0\le t\le2\pi$，则边界上 $x^2+y^2=x$，所以 $z=\sqrt{1-x}=\sin(\dfrac t2)$。
+
+        令 $u=\cos(\dfrac t2)$，得到 ${\displaystyle \oint_{\partial D}}xz\,\mathrm dy={\displaystyle \int_{-1}^1}(2u^4-u^2)\,\mathrm du=\dfrac{2}{15}$。圆盘半径为 $\dfrac12$，故结果为 **$\dfrac{2}{15}-\dfrac\pi2$**。
 
 #### §3.2 空间曲线积分与路径无关性
 
@@ -5935,11 +6890,27 @@ $$
 
         而 $\displaystyle\sum_{n=1}^\infty\frac1{n^2}$ 收敛，且 $\dfrac{a^2}{2}>0$，由比较判别法知 $\displaystyle\sum_{n=1}^\infty\left(1-\cos\frac an\right)$ 收敛。
 
+!!! example exercise "幂与对数混合情形"
+
+    设 $p,q>0$，讨论 $\sum_{n=1}^\infty \dfrac{1}{n^p\ln^q(n+1)}$ 的敛散性。
+
+    ??? success "解析"
+
+        先看幂指数 $p$。对数增长比任意正幂都慢，所以除了 $p=1$ 这一临界情形，主导敛散性的是 $n^{-p}$。
+
+        这里宜先用比较判别法：相邻项之比、通项的 $n$ 次方根都趋于 $1$，比值判别法和根值判别法在本题给不出结论。
+
+        若 $p>1$，充分大的 $n$ 有 $\ln^q(n+1)\ge1$，通项不超过 $n^{-p}$，级数收敛。若 $0<p<1$，通项与 $\dfrac1n$ 的比为 $\dfrac{n^{1-p}}{\ln^q(n+1)}\to\infty$，由与调和级数比较知发散。
+
+        若 $p=1$，将 $n$ 换成 $n+1$ 不改变敛散性。对正且递减的 $\dfrac{1}{(x+1)\ln^q(x+1)}$ 用积分判别，令 $t=\ln(x+1)$，化为 ${\displaystyle \int_{\ln2}^\infty} t^{-q}\,\mathrm dt$，恰在 $q>1$ 时收敛。
+
+        因此 **$p>1$ 或 $p=1,\ q>1$ 时收敛，其余情形发散**。特别是 $p=q=1$ 仍发散，分母多一个对数还不够。
+
 ### §3 一般数项级数收敛性的判别法
 
 #### §3.1 交错级数
 
-设 $u_n>0$，级数
+（**莱布尼兹定理**）设 $u_n>0$，级数
 
 $$
 \sum_{n=1}^{\infty}(-1)^{n-1}u_n
@@ -5995,6 +6966,26 @@ $$
     \end{aligned}
     $$
 
+!!! example exercise "☆☆☆ 含积分项的交错级数"
+
+    设 $a_n=\displaystyle\int_0^{\frac\pi2}\dfrac{1}{(1+\sin x)^n}\,\mathrm dx$，$n\ge1$。
+
+    （1）求 $\lim_{n\to\infty}a_n$。
+
+    （2）证明部分和的极限 $\displaystyle\lim_{n\to\infty}\bigl[a_1-a_2+a_3-\cdots+(-1)^{n-1}a_n\bigr]$ 存在。
+
+    ??? success "解析"
+
+        **（1）先证通项趋零。** $x=0$ 时被积函数始终为 $1$，所以不能直接说它在全区间上一致趋零。利用正弦在 $[0,\dfrac\pi2]$ 上位于端点弦上方，$\sin x\ge\dfrac{2x}{\pi}$。取负次幂时不等号反向，故对 $n>1$ 有
+
+        $$
+        0<a_n\le\int_0^{\frac\pi2}\left(1+\frac{2x}{\pi}\right)^{-n}\mathrm dx=\frac{\pi}{2(n-1)}(1-2^{1-n})\longrightarrow0.
+        $$
+
+        所以 **$\lim a_n=0$**。若用积分中值定理，中值点会随 $n$ 移动，不能把它当常数取极限。
+
+        **（2）再证单调性。** 对每个 $x$，底数 $1+\sin x\ge1$，故指数由 $-n$ 变为 $-(n+1)$ 时，被积函数不增。积分后 $a_{n+1}\le a_n$。结合 $a_n\downarrow0$，由莱布尼兹判别法，所给交错级数收敛，即题中的部分和极限存在。
+
 #### §3.2 绝对收敛级数与条件收敛级数
 
 若 $\sum|u_n|$ 收敛，称 $\sum u_n$ 绝对收敛；若 $\sum u_n$ 收敛而 $\sum|u_n|$ 发散，称其条件收敛。
@@ -6033,6 +7024,29 @@ $$
         $$
 
         当 $p>1$ 时收敛。因此，当 $p>1$ 时，$\displaystyle\sum_{n=1}^\infty(-1)^{n-1}\frac1{n^p}$ 绝对收敛；当 $0<p\le1$ 时，由莱布尼茨定理知 $\displaystyle\sum_{n=1}^\infty(-1)^{n-1}\frac1{n^p}$ 收敛，但 $\displaystyle\sum_{n=1}^\infty\frac1{n^p}$ 发散，故原级数条件收敛；当 $p\le0$ 时，$(-1)^{n-1}\dfrac1{n^p}$ 不趋于零，这时级数发散。
+
+!!! example exercise "☆☆☆ 对数因子的交错级数"
+
+    已知级数 $\displaystyle\sum_{n=1}^\infty(-1)^n\dfrac{\ln n}{n^k}$，其中 $k>0$。关于这个级数的敛散性，下列说法哪一项正确？
+
+    <div class="exam-options" markdown="1">
+
+    A. 当 $k>0$ 时，级数绝对收敛
+
+    B. 当 $k>0$ 时，级数条件收敛
+
+    C. 当 $0<k\le1$ 时，级数发散；当 $k>1$ 时，级数绝对收敛
+
+    D. 当 $0<k\le1$ 时，级数条件收敛；当 $k>1$ 时，级数绝对收敛
+    </div>
+
+    ??? success "解析"
+
+        **先看交错级数本身。** 写成 $\sum(-1)^n u_n$，其中 $u_n=\dfrac{\ln n}{n^k}$。对任意 $k>0$，幂函数比对数增长快，故 $u_n\to0$。又 $u'(x)=x^{-k-1}(1-k\ln x)$ 在 $x>e^{\frac1k}$ 后为负，所以 $u_n$ 最终单调递减。由莱布尼兹判别法，原级数收敛。
+
+        **再去掉符号判断是否绝对收敛。** 当 $0<k\le1$ 时，充分大的 $n$ 有 $\ln n\ge1,\ n^k\le n$，故 $u_n\ge\dfrac1n$，绝对值级数发散。
+
+        当 $k>1$ 时，取 $1<p<k$，有 $\dfrac{u_n}{n^{-p}}=\dfrac{\ln n}{n^{k-p}}\to0$。与收敛的 $p$ 级数比较，绝对值级数收敛。因此 **$0<k\le1$ 时条件收敛，$k>1$ 时绝对收敛（D）**。莱布尼兹判别法只完成第一步，不能据此直接断言条件收敛。
 
 #### §3.3 绝对收敛级数的性质 \*
 
@@ -6248,6 +7262,22 @@ $$
 
     2.  幂级数 $$
 
+!!! example exercise "☆☆☆ 阶乘系数幂级数的收敛域"
+
+    求 $\sum_{n=1}^{\infty}\dfrac{(n!)^2}{(2n)!}x^n$ 的收敛域。
+
+    ??? success "解析"
+
+        系数含 $(n!)^2$ 与 $(2n)!$，相邻项相比就能消去阶乘。若 $a_n=\dfrac{(n!)^2}{(2n)!}$，则
+
+        $$
+        \frac{a_{n+1}}{a_n}=\frac{(n+1)^2}{(2n+2)(2n+1)}\longrightarrow\frac14.
+        $$
+
+        对含 $x^n$ 的项，比值极限是 $\dfrac{|x|}{4}$，故 $|x|<4$ 时绝对收敛，$|x|>4$ 时发散。题目要的是**收敛域**，还需分别考虑 $x=\pm4$。
+
+        在两个端点，通项绝对值相同。把 $(2n)!$ 中的奇、偶因子分开，得 $4^na_n=\prod_{k=1}^n\dfrac{2k}{2k-1}\ge1$。因此连通项趋零都不满足，正负两个端点均发散，收敛域为 **$(-4,4)$**。
+
 #### §5.2 幂级数的性质及运算
 
 设 $S(x)=\sum_{n=0}^{\infty}a_n(x-x_0)^n$ 的收敛半径为 $R>0$。在收敛区间内，$S$ 连续，可逐项求导与积分，所得幂级数的收敛半径仍为 $R$：
@@ -6329,6 +7359,28 @@ $$
         $$
         \sum_{n=1}^\infty\frac{x^n}{n}=-\ln(1-x),\qquad x\in[-1,1).
         $$
+
+!!! example exercise "☆☆☆ 递推积分项的级数求和"
+
+    设 $a_n={\displaystyle \int_0^1}(1+x^2)^{-n}\,\mathrm dx$，求 $\sum_{n=1}^\infty[\dfrac{a_{n+1}}{2n-1}-\dfrac{a_n}{2n}]$。
+
+    ??? success "解析"
+
+        **先把相邻积分项连起来。** 通项通分后，分子为 $2na_{n+1}-(2n-1)a_n$。这两个系数提示对 $x(1+x^2)^{-n}$ 求导；将 $x^2=(1+x^2)-1$ 代入导数，恰得
+
+        $$
+        \frac{\mathrm d}{\mathrm dx}\big[x(1+x^2)^{-n}\big]=2n(1+x^2)^{-n-1}-(2n-1)(1+x^2)^{-n}.
+        $$
+
+        在 $[0,1]$ 上积分，左端为 $2^{-n}$。故所求级数的通项为 $\dfrac{2^{-n}}{2n(2n-1)}$。
+
+        **再用幂级数求和。** 设 $S(t)=\sum_{n\ge1}\dfrac{t^{2n}}{2n(2n-1)}$。两次求导恰好消去分母，$S''(t)=\sum_{n\ge1}t^{2n-2}=\dfrac{1}{1-t^2}$（$|t|<1$）。由 $S(0)=S'(0)=0$ 积分两次，得
+
+        $$
+        S'(t)=\frac12\ln\frac{1+t}{1-t},\qquad S(t)=\frac{(1+t)\ln(1+t)+(1-t)\ln(1-t)}2.
+        $$
+
+        要让 $t^{2n}=2^{-n}$，应代 $t=\dfrac1{\sqrt2}$，而不是 $\dfrac12$。化简得原和为 **$\dfrac{\sqrt2}{2}\ln(1+\sqrt2)-\dfrac12\ln2$**。
 
 ### §6 函数展成幂级数
 
@@ -6622,6 +7674,18 @@ $$
         \end{aligned}
         $$
 
+!!! example exercise "☆☆☆ 周期为四的偶函数的傅里叶系数"
+
+    设 $f$ 为周期 $4$ 的偶函数，在 $[0,1)$ 上 $f(x)=x$，在 $[1,2]$ 上 $f(x)=2-x$。对展开式 $\dfrac{a_0}{2}+\sum_{n\ge1}[a_n\cos(\dfrac{n\pi x}{2})+b_n\sin(\dfrac{n\pi x}{2})]$，求 $(a_2,b_2)$。
+
+    ??? success "解析"
+
+        周期是 $4$，故半周期 $l=2$，第 $n$ 次谐波的角频率是 $\dfrac{n\pi}{2}$。由于 $f$ 偶、正弦奇，在完整对称周期上正弦系数全为零，特别是 $b_2=0$。
+
+        余弦系数化为半区间积分时要乘 $2$，故 $a_2=\dfrac{2}{l}{\displaystyle \int_0^l} f(x)\cos(\pi x)\,\mathrm dx$。在 $[1,2]$ 上令 $u=2-x$，有 $f(x)=u,\ \cos(\pi x)=\cos(\pi u)$，因此这一段与 $[0,1]$ 的积分相同。
+
+        分部积分得 $a_2=2\bigl[\dfrac{x\sin(\pi x)}{\pi}+\dfrac{\cos(\pi x)}{\pi^2}\bigr]_0^1=-\dfrac4{\pi^2}$。所以 **$(a_2,b_2)=(-\dfrac4{\pi^2},0)$**。
+
 #### §8.3 有限区间上的傅里叶展开
 
 设 $f$ 在 $[-l,l]$ 上分段光滑，以周期 $2l$ 延拓，则在 $-l<x<l$ 内，
@@ -6847,7 +7911,7 @@ $$
 \left|\int_{A_1}^{A_2}f(x,y)\,\mathrm dy\right|<\varepsilon.
 $$
 
-魏尔斯特拉斯判别法：若 $|f(x,y)|\le g(y)$，且 $\int_c^{+\infty}g(y)\,\mathrm dy$ 收敛，则含参积分在 $[a,b]$ 上一致收敛。
+魏尔斯特拉斯判别法：若 $|f(x,y)|\le g(y)$，且 ${\displaystyle \int_c^{+\infty}}g(y)\,\mathrm dy$ 收敛，则含参积分在 $[a,b]$ 上一致收敛。
 
 若 $f(x,y)$ 在 $a\le x\le b,c\le y<d$ 上有定义，且对各 $x$，$y=d$ 是瑕点，则
 
@@ -6878,13 +7942,13 @@ $$
 =\int_c^{+\infty}\mathrm dy\int_a^bf(x,y)\,\mathrm dx.
 $$
 
-若 $f,f_x$ 连续，$\int_c^{+\infty}f(x,y)\,\mathrm dy$ 在 $[a,b]$ 上收敛，且 $\int_c^{+\infty}f_x(x,y)\,\mathrm dy$ 在 $[a,b]$ 上一致收敛，则
+若 $f,f_x$ 连续，${\displaystyle \int_c^{+\infty}}f(x,y)\,\mathrm dy$ 在 $[a,b]$ 上收敛，且 ${\displaystyle \int_c^{+\infty}}f_x(x,y)\,\mathrm dy$ 在 $[a,b]$ 上一致收敛，则
 
 $$
 I'(x)=\int_c^{+\infty}f_x(x,y)\,\mathrm dy.
 $$
 
-设 $f$ 在 $a\le x<+\infty,c\le y<+\infty$ 上连续，$\int_a^{+\infty}f(x,y)\,\mathrm dx$ 关于 $y$ 在每一有限区间上一致收敛，$\int_c^{+\infty}f(x,y)\,\mathrm dy$ 关于 $x$ 在每一有限区间上一致收敛；若下列两个积分中至少一个收敛，
+设 $f$ 在 $a\le x<+\infty,c\le y<+\infty$ 上连续，${\displaystyle \int_a^{+\infty}}f(x,y)\,\mathrm dx$ 关于 $y$ 在每一有限区间上一致收敛，${\displaystyle \int_c^{+\infty}}f(x,y)\,\mathrm dy$ 关于 $x$ 在每一有限区间上一致收敛；若下列两个积分中至少一个收敛，
 
 $$
 \int_a^{+\infty}\mathrm dx\int_c^{+\infty}|f(x,y)|\,\mathrm dy,
@@ -7078,7 +8142,7 @@ $$
 
     -   含参量积分与极限、导数、积分交换次序都要有条件：常义积分要求 $f$ 连续，反常积分要求一致收敛。
 
-    -   $\Gamma(s)=\int_0^{+\infty}x^{s-1}e^{-x}\,\mathrm dx$ 只在 $s>0$ 时收敛；递推 $\Gamma(s+1)=s\Gamma(s)$ 用于向左延拓，$s$ 为非正整数时 $\Gamma(s)$ 无定义。
+    -   $\Gamma(s)={\displaystyle \int_0^{+\infty}}x^{s-1}e^{-x}\,\mathrm dx$ 只在 $s>0$ 时收敛；递推 $\Gamma(s+1)=s\Gamma(s)$ 用于向左延拓，$s$ 为非正整数时 $\Gamma(s)$ 无定义。
 
     -   $B(p,q)=\dfrac{\Gamma(p)\Gamma(q)}{\Gamma(p+q)}$ 要求 $p>0$、$q>0$，并注意 $\Gamma$ 与 $B$ 参数个数与位置的对应。
 

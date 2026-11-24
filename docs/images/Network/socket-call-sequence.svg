@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="388" height="380" viewBox="0 0 388 380" role="img" aria-labelledby="title">
+  <title id="title">Socket 面向连接的典型调用顺序</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 8 8" refX="8" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M 0 0 L 8 4 L 0 8 Z" fill="#4051b5"/>
+    </marker>
+    <marker id="connection-arrow" viewBox="0 0 8 8" refX="8" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M 0 0 L 8 4 L 0 8 Z" fill="#2f9070"/>
+    </marker>
+    <style>
+      text { fill: #1a237e; text-anchor: middle; }
+      .heading { font-family: "Source Han Sans SC", "Noto Sans SC", "Microsoft YaHei", sans-serif; font-size: 19px; font-weight: 600; }
+      .call { font-family: Consolas, Menlo, monospace; font-size: 17px; }
+      .steps rect { fill: #eaf0ff; stroke: #4051b5; stroke-width: 1.5; }
+      .flow path { fill: none; stroke: #4051b5; stroke-width: 1.5; marker-end: url(#arrow); }
+      .connection { fill: none; stroke: #2f9070; stroke-width: 2; marker-end: url(#connection-arrow); }
+    </style>
+  </defs>
+  <rect width="388" height="380" fill="#fff"/>
+
+  <text class="heading" x="91" y="36">服务器</text>
+  <text class="heading" x="297" y="36">客户端</text>
+
+  <g class="steps">
+    <rect x="24" y="54" width="134" height="34" rx="6"/>
+    <rect x="24" y="108" width="134" height="34" rx="6"/>
+    <rect x="24" y="162" width="134" height="34" rx="6"/>
+    <rect x="24" y="216" width="134" height="34" rx="6"/>
+    <rect x="24" y="270" width="134" height="34" rx="6"/>
+    <rect x="24" y="324" width="134" height="34" rx="6"/>
+    <rect x="230" y="54" width="134" height="34" rx="6"/>
+    <rect x="230" y="216" width="134" height="34" rx="6"/>
+    <rect x="230" y="270" width="134" height="34" rx="6"/>
+    <rect x="230" y="324" width="134" height="34" rx="6"/>
+  </g>
+
+  <g class="flow">
+    <path d="M 91 90 V 105"/>
+    <path d="M 91 144 V 159"/>
+    <path d="M 91 198 V 213"/>
+    <path d="M 91 252 V 267"/>
+    <path d="M 91 306 V 321"/>
+    <path d="M 297 90 V 213"/>
+    <path d="M 297 252 V 267"/>
+    <path d="M 297 306 V 321"/>
+  </g>
+  <path class="connection" d="M 228 233 H 161"/>
+
+  <g class="call">
+    <text x="91" y="77">socket</text>
+    <text x="91" y="131">bind</text>
+    <text x="91" y="185">listen</text>
+    <text x="91" y="239">accept</text>
+    <text x="91" y="293">recv/send</text>
+    <text x="91" y="347">close</text>
+    <text x="297" y="77">socket</text>
+    <text x="297" y="239">connect</text>
+    <text x="297" y="293">send/recv</text>
+    <text x="297" y="347">close</text>
+  </g>
+</svg>

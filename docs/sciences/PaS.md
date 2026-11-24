@@ -853,6 +853,24 @@ $$
 
     超几何分布用于不放回抽样，二项分布用于各次独立且成功概率不变的试验。当抽样比例 $n/N$ 很小时，可考虑用 $B(n,M/N)$ 近似超几何分布。
 
+!!! example exercise "☆☆☆ 泊松和与指数级数"
+
+    设 $X_1,\ldots,X_n$ 相互独立，且 $X_i\sim P(\lambda_i)$，$\lambda_i>0$（$i=1,\ldots,n$）。已知 $P(\sum_{i=1}^nX_i\ge1)=1-e^{-1}$，求 $E(2^{\sum_{i=1}^nX_i})$。
+
+    ??? success "解析"
+
+        把总数记为 $S=\sum_{i=1}^nX_i$。独立泊松变量的和仍服从泊松分布，参数相加，故 $S\sim P(\lambda)$，其中 $\lambda=\sum_{i=1}^n\lambda_i$。
+
+        “至少一个”的补事件是 $S=0$，所以 $e^{-\lambda}=P(S=0)=e^{-1}$，得 $\lambda=1$。不需要分别求出每个 $\lambda_i$。
+
+        按 $S$ 的分布律计算指数函数的期望：
+
+        $$
+        E(2^S)=\sum_{k=0}^{\infty}2^k\frac{e^{-1}}{k!}=e^{-1}e^2=\mathbf e.
+        $$
+
+        这里展开的是 $E(2^S)$，不能先求 $ES$ 再写成 $2^{ES}$。
+
 ### 一维连续型随机变量
 
 #### 概率密度
@@ -887,6 +905,35 @@ $$
 -   **单点概率为零**：对任意实数 $a$，$P(X=a)=0$。
 -   **分布函数连续**：因此区间概率不受有限个端点是否包含的影响。
 -   **密度不唯一**：在有限个点上改变密度的值，不改变任何区间积分，也就不改变分布；更一般地，在零测集上的修改也不影响分布。
+
+!!! example exercise "☆☆☆ 密度峰值与归一化条件"
+
+    设随机变量 $X$ 的概率密度为
+
+    $$
+    f(x)=\begin{cases}a(x+b)e^{-x},&x>0,\\0,&x\le0,\end{cases}
+    $$
+
+    其中 $a,b$ 为常数。已知 $f(x)$ 在 $x=1$ 处取得最大值，求 $P(X\ge EX)$。
+
+    <div class="exam-options" markdown="1">
+
+    A. $\dfrac2e$
+
+    B. $\dfrac3e$
+
+    C. $\dfrac2{e^2}$
+
+    D. $\dfrac3{e^2}$
+    </div>
+
+    ??? success "解析"
+
+        题目给了两个确定参数的条件：$x=1$ 是密度的内部极大值点，且密度在全实轴上的积分为 $1$。前者用来定 $b$，后者用来定 $a$。
+
+        对 $x>0$，$f'(x)=a(1-x-b)e^{-x}$。由 $f'(1)=0$ 及 $a\ne0$ 得 $b=0$。于是 $1=a{\displaystyle \int_0^\infty} xe^{-x}\,\mathrm dx=a$，故密度为 $xe^{-x}$。
+
+        题目所问的起点是**均值而非峰值**。分部积分得 $EX={\displaystyle \int_0^\infty} x^2e^{-x}\,\mathrm dx=2$。再用原函数 $-(x+1)e^{-x}$ 计算右尾，得 $P(X\ge2)=\mathbf{\dfrac{3}{e^2}}$，选 **D**。
 
 #### 应用——求概率
 
@@ -1026,9 +1073,56 @@ $$
 
     </div>
 
+!!! example exercise "☆☆☆ 正态分布的指数加权矩"
+
+    设 $X$ 的密度为 $a\exp[\dfrac{x(2-x)}{2}]$（$x\in\mathbb R$）。求 $E(X^2e^X)$。
+
+    <div class="exam-options" markdown="1">
+
+    A. $5e^{\frac12}$
+
+    B. $3e^{\frac12}$
+
+    C. $5e^{\frac32}$
+
+    D. $3e^{\frac32}$
+    </div>
+
+    ??? success "解析"
+
+        密度的指数是二次式，先配方辨认正态分布：$\dfrac{x(2-x)}{2}=\dfrac12-\dfrac{(x-1)^2}{2}$。由归一化，$ae^{\frac12}=\dfrac1{\sqrt{2\pi}}$，所以 $X\sim N(1,1)$。
+
+        求 $E(X^2e^X)$ 时，把额外的 $e^x$ 并入密度再配一次方：
+
+        $$
+        x-\frac{(x-1)^2}{2}=\frac32-\frac{(x-2)^2}{2}.
+        $$
+
+        积分中剩下的是 $N(2,1)$ 的密度，外面还留下常数 $e^{\frac32}$。若 $Y\sim N(2,1)$，则 $EY^2=DY+(EY)^2=1+4=5$。故 **$E(X^2e^X)=5e^{\frac32}$（C）**。最后一步用的是新正态变量的二阶矩。
+
 ### 一维随机变量函数的分布
 
 已知 $X$ 的分布，令 $Y=g(X)$，其中 $g$ 为可测函数，我们的目标是求出 $Y$ 的分布。一般方法是先确定 $Y$ 的取值范围，再由事件 $\{g(X)\le y\}$ 求分布函数： $F_Y(y)=P(Y\le y)=P(g(X)\le y).$
+
+!!! example exercise "☆☆☆ 最小盒号的分布与条件缩放"
+
+    有三个编号分别为 $1,2,3$ 的盒子，将三只球分别独立、等可能地投入这三个盒子。记 $X$ 为所有非空盒子（盒中至少有一只球）的最小编号。
+
+    （1）求 $X$ 的分布律。
+
+    （2）若在 $X=i$ 的条件下 $Y$ 在 $[0,i]$ 上服从均匀分布（$i=1,2,3$），令 $Z=\dfrac YX$，证明 $Z\sim U[0,1]$。
+
+    ??? success "解析"
+
+        **（1）从最小值的尾概率入手。** $X\ge2$ 表示盒 $1$ 空着，也就是三只球各自都选择盒 $2$ 或 $3$，概率为 $(\dfrac23)^3$；$X\ge3$ 则表示三只球全进盒 $3$，概率为 $(\dfrac13)^3$。相邻尾概率作差：
+
+        $$
+        P(X=1)=1-\frac8{27}=\frac{19}{27},\quad P(X=2)=\frac8{27}-\frac1{27}=\frac7{27},\quad P(X=3)=\frac1{27}.
+        $$
+
+        **（2）先固定分母，再缩放。** 对任意 $i=1,2,3$ 及 $0\le z\le1$，在 $X=i$ 条件下，$Y$ 均匀落在 $[0,i]$，故 $P(Z\le z\mid X=i)=P(Y\le iz\mid X=i)=\dfrac{iz}{i}=z$。
+
+        三个条件分布完全相同，用全概率公式加权得到 $F_Z(z)=\sum_{i=1}^3 zP(X=i)=z$。当 $z<0$ 时分布函数为 $0$，当 $z>1$ 时为 $1$，所以 **$Z\sim U[0,1]$**。整个推导用的是条件分布，无需假设 $X,Y$ 独立。
 
 #### 离散型 → 离散型
 
@@ -1286,6 +1380,39 @@ $$
 P(X=x,\ Y=y)
 =F(x,y)-F(x^-,y)-F(x,y^-)+F(x^-,y^-).
 $$
+
+!!! example exercise "含分段随机变量的联合分布函数"
+
+    设 $X$ 的概率密度为 $f_X(x)=\dfrac32x^2$（$-1<x<1$），其余处为零。令
+
+    $$
+    Y=\begin{cases}-1,&X<0,\\0,&0\le X<\frac12,\\1,&X\ge\frac12.\end{cases}
+    $$
+
+    记 $F(x,y)$ 为 $(X,Y)$ 的联合分布函数。求 $F(\dfrac14,\dfrac12)$。
+
+    <div class="exam-options" markdown="1">
+
+    A. $\dfrac{65}{128}$
+
+    B. $\dfrac{64}{128}$
+
+    C. $\dfrac1{64}$
+
+    D. $\dfrac5{64}$
+    </div>
+
+    ??? success "解析"
+
+        联合分布函数在一点的值，是**两个不等式同时成立**的概率。这里 $Y$ 由 $X$ 决定，可以把两个条件都翻译为关于 $X$ 的条件。
+
+        $Y\le\dfrac12$ 包含 $Y=-1,0$ 两段，合起来等价于 $X<\dfrac12$。再与 $X\le\dfrac14$ 取交集，较强的条件是 $X\le\dfrac14$。所以
+
+        $$
+        F\!\left(\frac14,\frac12\right)=\int_{-1}^{\frac14}\frac32 x^2\,\mathrm dx=\left[\frac{x^3}{2}\right]_{-1}^{\frac14}=\frac{65}{128}.
+        $$
+
+        故选 **A**。积分要从支撑左端 $-1$ 起算；从 $0$ 起算会漏掉 $Y=-1$ 的全部概率。
 
 #### 边缘分布函数
 
@@ -1624,6 +1751,74 @@ $$
             =\boxed{\frac12}.
             \end{aligned}
             $$
+
+!!! example exercise "☆☆☆ 离散条件下的连续混合分布"
+
+    设随机变量 $X$ 的分布律为 $P(X=1)=\dfrac14,\ P(X=2)=\dfrac34$。随机变量 $Y\sim U[-\pi,\pi]$，且 $X,Y$ 相互独立。令 $Z=X\cos(\dfrac{\pi}{4}+Y)$。
+
+    （1）在 $X=1$ 的条件下，求 $Z$ 的条件概率密度 $f_{Z\mid X}(z\mid1)$。
+
+    （2）求 $Z$ 的概率密度 $f_Z(z)$。
+
+    （3）判断 $X,Z$ 是否不相关、是否独立，并分别说明理由。
+
+    ??? success "解析"
+
+        **（1）固定 $X=1$，从角度求密度。** 记 $C=\cos(\dfrac{\pi}{4}+Y)$。$Y$ 均匀分布在长度为 $2\pi$ 的区间上，平移相位不改变完整周期内各段角度所占的比例。对 $-1<z<1$，余弦大于 $z$ 的角段总长为 $2\arccos z$，故 $P(C\le z)=1-\dfrac{\arccos z}{\pi}$。求导得 $f_{Z\mid X=1}(z)=\dfrac{1}{\pi\sqrt{1-z^2}}$，$|z|<1$，其余处取零。
+
+        **（2）按 $X$ 的取值混合。** 固定 $X=c$ 时，$Z=cC$，所以条件密度是 $h_c(z)=\dfrac1c f_C(\dfrac zc)$。既要变换密度的自变量，也要把支撑从 $(-1,1)$ 扩为 $(-c,c)$。于是
+
+        $$
+        h_c(z)=\begin{cases}\dfrac{1}{\pi\sqrt{c^2-z^2}},& |z|<c,\\0,&\text{其他},\end{cases}\qquad f_Z(z)=\tfrac14h_1(z)+\tfrac34h_2(z).
+        $$
+
+        **（3）分别检查不相关和独立。** 一个周期内余弦的均值为零，$C$ 又与 $X$ 独立，因此 $EZ=EX\cdot EC=0$，$E(XZ)=E(X^2)\cdot EC=0$，即 $\operatorname{Cov}(X,Z)=0$。
+
+        独立要求条件分布与边缘分布相同。但 $X=1$ 时 $Z$ 不可能超过 $1$，而 $X=2$ 时 $Z=2C$ 有正概率超过 $1$。因此 **$X,Z$ 不相关，但不独立**。
+
+!!! example exercise "☆☆☆ 区间条件下的边缘密度"
+
+    设二维随机变量 $(X,Y)$ 的联合概率密度为
+
+    $$
+    f(x,y)=\begin{cases}Axy,&0<y<x<1,\\0,&\text{其他}.\end{cases}
+    $$
+
+    （1）求常数 $A$。
+
+    （2）在 $0<X<\dfrac12$ 的条件下，求 $Y$ 的条件密度函数。
+
+    ??? success "解析"
+
+        **（1）归一化。** 联合密度只在三角形 $0<y<x<1$ 内非零。先固定 $x$，对 $y$ 积分得 $f_X(x)=\dfrac{A}{2}x^3$（$0<x<1$）。再对 $x$ 积分，$\dfrac{A}{8}=1$，故 **$A=8$**。
+
+        **（2）先截取区域，再取边缘。** 这里给定的是事件 $B=\{0<X<\dfrac12\}$，分母应是事件概率 $P(B)={\displaystyle \int_0^{\frac12}}4x^3\,\mathrm dx=\dfrac1{16}$。保留下来的区域为 $0<y<x<\dfrac12$。
+
+        要求 $Y$ 的密度，改为固定 $y$：只有 $0<y<\dfrac12$ 时，$x$ 才能从 $y$ 取到 $\dfrac12$。此时对 $x$ 积分并除以 $P(B)$，得
+
+        $$
+        16\int_y^{\frac12}8xy\,\mathrm dx=16y-64y^3.
+        $$
+
+        因此 $f_{Y\mid B}(y)=16y-64y^3$（$0<y<\dfrac12$），其余处为零。
+
+        若把积分下限写成零，就会把 $x<y$ 的部分也算进去，超出了原联合密度的支撑。
+
+!!! example exercise "给定连续变量取值的条件概率"
+
+    设联合密度在 $|x|,|y|\le1$ 时为 $k(1-xy)$，其他处为零。求 $P(Y<\dfrac{1}{2}\mid X=\dfrac{1}{4})$。
+
+    ??? success "解析"
+
+        给定的是连续变量的**一个取值** $X=\dfrac14$。这个事件本身概率为零，要用密度之比 $f_{Y\mid X}(y\mid x)=\dfrac{f(x,y)}{f_X(x)}$，而不是除以 $P(X=\dfrac14)$。
+
+        固定 $|x|\le1$，在对称区间 $[-1,1]$ 上对 $y$ 积分，$xy$ 项是奇函数，故 $f_X(x)=2k$。再对 $x$ 积分得 $4k=1$。于是
+
+        $$
+        f_{Y\mid X}(y\mid\tfrac14)=\frac{k(1-y/4)}{2k}=\frac12-\frac y8,\qquad -1\le y\le1.
+        $$
+
+        所求是该条件密度在 $[-1,\dfrac12)$ 上的积分，等于 $\bigl[\dfrac y2-\dfrac{y^2}{16}\bigr]_{-1}^{\frac12}=\mathbf{\dfrac{51}{64}}$。上下限仍由原联合密度的支撑决定。
 
 #### 常见的二维连续型随机变量的分布
 
@@ -2095,6 +2290,126 @@ $$
     联合具有密度时，$P(Y=0)=0$，所以商可在 $Y=0$ 的零概率事件上任意定义而不影响分布。
 
 实际积分范围仍由原联合密度的非零区域决定，积的公式中 $x=0$ 附近若出现瑕积分，应按相应积分含义处理。
+
+!!! example exercise "☆☆☆ 分段随机变量的混合分布与协方差"
+
+    设随机变量 $X,Y$ 相互独立，$X$ 在 $[0,2]$ 上服从均匀分布，$Y$ 服从参数为 $1$ 的指数分布。令
+
+    $$
+    Z=\begin{cases}Y,&0\le X\le1,\\X,&1<X\le2.\end{cases}
+    $$
+
+    （1）求 $Z$ 的概率密度。
+
+    （2）求协方差 $\operatorname{Cov}(X,Z)$。
+
+    ??? success "解析"
+
+        **（1）按决定 $Z$ 的事件拆分。** 当 $X\le1$ 时，$Z=Y$，由独立性，该分支对 $P(Z\le z)$ 贡献 $\dfrac12F_Y(z)$；当 $X>1$ 时，$Z=X$，该分支贡献 $P(1<X\le2,\ X\le z)$。对两项分别求导：
+
+        $$
+        f_Z(z)=\tfrac12e^{-z}\mathbf1_{\{z>0\}}+\tfrac12\mathbf1_{\{1<z<2\}}.
+        $$
+
+        特别地，$1<z<2$ 上**两个分支都有贡献**。由此 $EZ=\dfrac12EY+\dfrac12{\displaystyle \int_1^2}x\,\mathrm dx=\dfrac54$，而 $EX=1$。
+
+        **（2）按同样的事件拆 $XZ$。** 第一段 $XZ=XY$，可利用 $Y$ 与 $X$ 独立；第二段 $XZ=X^2$。故
+
+        $$
+        E(XZ)=EY\cdot\frac12\int_0^1x\,\mathrm dx+\frac12\int_1^2x^2\,\mathrm dx=\frac14+\frac76=\frac{17}{12}.
+        $$
+
+        最后 $\operatorname{Cov}(X,Z)=E(XZ)-EX\cdot EZ=\dfrac{17}{12}-\dfrac54=\mathbf{\dfrac16}$。
+
+!!! example exercise "☆☆☆ 第一象限的半径与幅角"
+
+    设 $(X,Y)$ 的联合概率密度为
+
+    $$
+    f(x,y)=\begin{cases}\dfrac2\pi e^{-\sqrt{x^2+y^2}},&x>0,\ y>0,\\0,&\text{其他}.\end{cases}
+    $$
+
+    令 $U=\sqrt{X^2+Y^2},\ V=\arctan(\dfrac YX)$。
+
+    （1）求 $P(U\le1,\ V\le\dfrac\pi4)$。
+
+    （2）分别求 $(U,V)$ 的联合分布函数 $F_{U,V}(u,v)$ 与联合密度函数 $f_{U,V}(u,v)$。
+
+    （3）分别求 $U$ 和 $V$ 的边缘密度函数，判断二者是否独立，并说明理由。
+
+    ??? success "解析"
+
+        **（1）扇形概率。** 半径 $U$ 与幅角 $V$ 提示用极坐标。令 $x=u\cos v,\ y=u\sin v$；在第一象限，$u>0,\ 0<v<\dfrac{\pi}{2}$，面积元为 $u\,\mathrm du\,\mathrm dv$。于是
+
+        $$
+        P(U\le1,V\le\tfrac{\pi}{4})=\int_0^{\frac{\pi}{4}}\!\frac2\pi\,\mathrm dv\int_0^1ue^{-u}\,\mathrm du=\frac12(1-2e^{-1})=\frac12-\frac1e.
+        $$
+
+        **（2）联合密度与分布函数。** 新密度为 $f_{U,V}(u,v)=\dfrac2\pi ue^{-u}$（上述范围内），其余处为零。为写清联合分布函数在整个平面上的取值，令
+
+        $$
+        G(u)=\begin{cases}0,&u\le0,\\1-(1+u)e^{-u},&u>0,\end{cases}\quad H(v)=\begin{cases}0,&v\le0,\\2v/\pi,&0<v<\pi/2,\\1,&v\ge\pi/2.\end{cases}
+        $$
+
+        在 $U\le u,\ V\le v$ 的矩形上对联合密度积分，径向、角向两个积分分别为 $G(u),H(v)$，故 $F_{U,V}(u,v)=G(u)H(v)$。
+
+        **（3）边缘密度与独立性。** 对另一变量积分得 $f_U(u)=ue^{-u}$（$u>0$），$f_V(v)=\dfrac2\pi$（$0<v<\dfrac{\pi}{2}$），其余处各为零。支撑本身也是两个区间的直积，因此联合密度处处可取为边缘密度之积，**$U,V$ 独立**。若漏掉雅可比中的 $u$，连半径的密度都会改变。
+
+!!! example exercise "线性变换的逆雅可比"
+
+    设 $(X,Y)$ 有联合密度 $f(x,y)$，令 $U=-Y,\ V=2X+Y$，求 $(U,V)$ 的联合密度。
+
+    <div class="exam-options" markdown="1">
+
+    A. $\dfrac12 f\!\left(\dfrac{u+v}{2},-u\right)$
+
+    B. $\dfrac12 f\!\left(\dfrac{u+v}{2},u\right)$
+
+    C. $f\!\left(\dfrac{u+v}{2},-u\right)$
+
+    D. $f\!\left(\dfrac{u+v}{2},u\right)$
+    </div>
+
+    ??? success "解析"
+
+        求新变量的密度时，要把**原变量写成新变量的函数**。由 $u=-y,\ v=2x+y$ 得 $y=-u,\ x=\dfrac{u+v}{2}$。这里 $y$ 的负号会直接进入原密度的第二个自变量。
+
+        用逆变换计算面积伸缩：
+
+        $$
+        \left|\frac{\partial(x,y)}{\partial(u,v)}\right|=\left|\det\begin{pmatrix}1/2&1/2\\-1&0\end{pmatrix}\right|=\frac12.
+        $$
+
+        因此 $f_{U,V}(u,v)=\dfrac12f(\dfrac{u+v}{2},-u)$，选 **A**。正变换的面积因子是 $2$；把原概率元 $f(x,y)\,\mathrm dx\,\mathrm dy$ 写到新坐标里时，用的是它的倒数。
+
+!!! example exercise "三角支撑上的最值事件"
+
+    设联合密度在 $0<x<y$ 时为 $Axe^{-y}$，其他处为零。令 $M=\max(X,Y)$、$N=\min(X,Y)$，求 $P(M<2,N<1)$。
+
+    <div class="exam-options" markdown="1">
+
+    A. $1-\dfrac1e$
+
+    B. $1-\dfrac1e-\dfrac1{e^2}$
+
+    C. $1-\dfrac2{e^2}$
+
+    D. $1-\dfrac2e-\dfrac1{2e^2}$
+    </div>
+
+    ??? success "解析"
+
+        联合密度只在 $0<x<y$ 上非零，所以几乎必然有 $M=Y,\ N=X$。不必把最大值、最小值各分两种次序讨论。
+
+        先归一化：固定 $y>0$，$x$ 从 $0$ 到 $y$，对 $x$ 积分得 $\dfrac{A}{2}y^2e^{-y}$。再对 $y$ 积分，由 ${\displaystyle \int_0^\infty} y^2e^{-y}\,\mathrm dy=2$ 得 $A=1$。
+
+        事件 $M<2,\ N<1$ 同时要求 $y<2,\ x<1$。结合支撑，固定 $0<x<1$ 后必须让 $y$ 从 $x$ 起算，而不是从 $0$ 起算。故
+
+        $$
+        P=\int_0^1x\left(\int_x^2 e^{-y}\,\mathrm dy\right)\mathrm dx=\int_0^1 x(e^{-x}-e^{-2})\,\mathrm dx=1-\frac2e-\frac1{2e^2}.
+        $$
+
+        选 **D**。
 
 ## 随机变量的数字特征
 
@@ -2573,6 +2888,45 @@ $$
         $$
         \rho = \frac{\operatorname{Cov}(X,Y)}{\sqrt{D(X)\cdot D(1-X)}} = -1.
         $$
+
+!!! example exercise "☆☆☆ 含正态四阶矩的相关系数"
+
+    设 $X_1,X_2$ 独立，$P(X_1=1)=P(X_1=-1)=\dfrac{1}{2}$，$X_2\sim N(0,1)$。令 $Z=X_1X_2^2$，求 $\rho_{X_1,Z}$。
+
+    ??? success "解析"
+
+        $Z$ 中含有 $X_1$，所以不能把 $X_1$ 与 $Z$ 当作独立变量。可以拆开期望的是题设中独立的 $X_1,X_2$。又因 $X_1=\pm1$ 等可能，$EX_1=0,\ X_1^2=1$。
+
+        先算分子：$EZ=EX_1\cdot E(X_2^2)=0$，故 $\operatorname{Cov}(X_1,Z)=E(X_1Z)=E(X_1^2)E(X_2^2)=1$。
+
+        再算分母：$DX_1=1$，而 $DZ=E(Z^2)=E(X_2^4)$。令 $Q=X_2^2\sim\chi^2(1)$，则 $EQ=1,\ DQ=2$，所以 $E(X_2^4)=E(Q^2)=DQ+(EQ)^2=3$。得到 **$\rho_{X_1,Z}=\dfrac{1}{\sqrt3}$**。四阶矩比二阶矩的平方多出的，正是 $Q$ 的方差。
+
+!!! example exercise "同一样本内两个残差的相关性"
+
+    设 $X_1,X_2,X_3$ 是来自均值为 $\mu$、方差为 $\sigma^2>0$ 的总体的简单随机样本，$\bar X=\dfrac{X_1+X_2+X_3}{3}$。求 $X_1-\bar X$ 与 $X_2-\bar X$ 的相关系数。
+
+    <div class="exam-options" markdown="1">
+
+    A. $\dfrac12$
+
+    B. $-\dfrac12$
+
+    C. $0$
+
+    D. $1$
+    </div>
+
+    ??? success "解析"
+
+        虽然 $X_1,X_2$ 独立，两个残差却都减去了**同一个** $\bar X$。为了用上样本独立性，把残差展开成原样本的线性组合：
+
+        $$
+        U=X_1-\bar X=\frac{2X_1-X_2-X_3}{3},\qquad V=X_2-\bar X=\frac{-X_1+2X_2-X_3}{3}.
+        $$
+
+        求方差时，各系数**平方后相加**：$DU=DV=\dfrac{4+1+1}{9}\sigma^2=\dfrac23\sigma^2$。求协方差时，同一个 $X_i$ 在两式中的系数**相乘后相加**；不同样本项的协方差为零，所以 $\operatorname{Cov}(U,V)=\dfrac{-2-2+1}{9}\sigma^2=-\dfrac13\sigma^2$。
+
+        最后除以两个标准差的乘积，得 **$\rho_{U,V}=-\dfrac12$（B）**。负号也符合 $U+V+(X_3-\bar X)=0$ 这一约束。
 
 ### 独立性与不相关性的判定、切比雪夫不等式
 
@@ -3585,6 +3939,84 @@ $$
 
         对于 A. B. C.，我们需要保证 $X$ 和 $Y$ 独立。
 
+!!! example exercise "☆☆☆ F 分布的几何概率"
+
+    若 $F\sim F(1,1)$，求 $P(F\le3)$。
+
+    <div class="exam-options" markdown="1">
+
+    A. $\dfrac12$
+
+    B. $\dfrac23$
+
+    C. $\Phi(1)$
+
+    D. $\Phi(2)$
+    </div>
+
+    ??? success "解析"
+
+        $F(1,1)$ 的两个自由度都是 $1$，提示把它写成两个独立标准正态的**平方之比**。设 $U,V$ 独立且服从 $N(0,1)$，则 $P(F\le3)=P(|U|\le\sqrt3\,|V|)$。
+
+        $(U,V)$ 的密度只与半径有关，因此所求概率等于满足条件的角度占整圆的比例。在第一象限令 $U=r\cos\theta,V=r\sin\theta$，则 $\cos\theta\le\sqrt3\sin\theta$，即 $\dfrac{\pi}{6}\le\theta\le\dfrac{\pi}{2}$。
+
+        这个扇区的角度为 $\dfrac{\pi}{3}$。开平方后有绝对值，另外三个象限也各有一个同样大的扇区，所以概率为 $\dfrac{4}{2\pi}\cdot\dfrac{\pi}{3}=\mathbf{\dfrac23}$，选 **B**。
+
+!!! example exercise "☆☆☆ 正态和差与平方比的倒数"
+
+    设 $X_1,X_2$ 独立且均为标准正态，$T=\dfrac{X_1-X_2}{|X_1+X_2|}$。若 $P(T>C)=\alpha\in(0,\dfrac{1}{2})$，求 $P(\dfrac{1}{T^2}>C^2)$。
+
+    <div class="exam-options" markdown="1">
+
+    A. $\alpha$
+
+    B. $1-\alpha$
+
+    C. $2\alpha$
+
+    D. $1-2\alpha$
+    </div>
+
+    ??? success "解析"
+
+        分子、分母来自同一对样本，先检查和与差是否独立。令 $U=\dfrac{X_1-X_2}{\sqrt2},\ V=\dfrac{X_1+X_2}{\sqrt2}$，则二者均为标准正态，协方差为 $\dfrac{DX_1-DX_2}{2}=0$。由于二者**联合正态**，这才推出独立。
+
+        因此 $T=\dfrac{U}{|V|}\sim t(1)$，分布关于零对称。$\alpha<\dfrac12$ 给出 $C>0$。现在看**平方比的倒数**：$\dfrac{1}{T^2}=\dfrac{V^2}{U^2}$，交换独立同分布的 $U,V$ 后，它与 $T^2$ 同分布。
+
+        于是所求概率为 $P(T^2>C^2)=P(T>C)+P(T<-C)=\mathbf{2\alpha}$，选 **C**。最后一步必须计入两边的尾部。
+
+!!! example exercise "☆☆☆ 正态线性组合的尺度和自由度"
+
+    设 $X_1,\ldots,X_5$ 独立同服从 $N(0,\sigma^2)$，$\bar X=\dfrac15\sum_{i=1}^5X_i$，$S^2=\dfrac14\sum_{i=1}^5(X_i-\bar X)^2$。下列分布式中，正确的有几项？
+
+    ① $\sqrt{\frac{3}{2}}\dfrac{X_1+X_2}{|X_3+X_4+X_5|}\sim t(1)$<br>
+    ② $\dfrac{5\bar X^2}{\sigma^2}\sim\chi^2(5)$<br>
+    ③ $\dfrac{(X_1-2X_2)^2+(2X_3+X_4)^2}{\sigma^2}\sim\chi^2(2)$<br>
+    ④ $\dfrac{(X_1-2X_2)^2}{(2X_3+X_5)^2}\sim F(1,1)$
+
+    <div class="exam-options" markdown="1">
+
+    A. 1
+
+    B. 2
+
+    C. 3
+
+    D. 4
+    </div>
+
+    ??? success "解析"
+
+        判断这四个式子，可以先问两件事：每个线性组合的方差是多少？标准化后有几个**独立**的标准正态变量？
+
+        ① $X_1+X_2$ 与 $X_3+X_4+X_5$ 用的是两组不同的样本，故独立，方差分别是 $2\sigma^2,3\sigma^2$。分别标准化后取前者与后者绝对值的比，恰好产生系数 $\sqrt{\frac32}$，服从 $t(1)$。
+
+        ② $\dfrac{\sqrt5\bar X}{\sigma}$ 是**一个**标准正态变量，平方服从 $\chi^2(1)$，自由度不是样本量 $5$。
+
+        ③ $X_1-2X_2$ 与 $2X_3+X_4$ 虽然独立，但各自方差都是 $5\sigma^2$。平方和要除以 $5\sigma^2$ 才服从 $\chi^2(2)$。
+
+        ④ 分子、分母中的线性组合独立且方差相同。取平方比时，两个 $5\sigma^2$ 自动约掉，结果是两个独立 $\chi^2(1)$ 变量之比，服从 $F(1,1)$。故 **①④正确，共两项（B）**。
+
 #### 分位点
 
 设随机变量 $X$ 的分布函数为 $F$。对 $0\lt\alpha\lt1$，若 $x_\alpha$ 满足
@@ -3815,6 +4247,32 @@ $$
             D(S_2^2)\lt D(S_1^2)\lt D(S_Y^2)\lt D(S_X^2).
             $$
 
+!!! example exercise "两组正态样本的方差和"
+
+    设 $X_1,\ldots,X_n$ 和 $Y_1,\ldots,Y_n$ 是来自总体 $N(\mu,\sigma^2)$ 的两个独立样本，样本均值分别为 $\bar X,\bar Y$，样本方差分别为 $S_X^2,S_Y^2$。记 $W=S_X^2+S_Y^2$。对任意 $0<\alpha<1$，下列等式哪一项正确？
+
+    A. $P\!\biggl\{\chi^2_{1-\frac{\alpha}{2}}(2n)<\dfrac{(n-1)W}{\sigma^2}<\chi^2_{\frac{\alpha}{2}}(2n){\biggr\}=1-\alpha}$
+
+    B. $P\!\biggl\{\chi^2_{1-\frac{\alpha}{2}}{(2n-2)}<\dfrac{(n-1)W}{\sigma^2}<\chi^2_{\frac{\alpha}{2}}{(2n-2)}{\biggr\}=1-\alpha}$
+
+    C. $P\!\biggl\{-t_{\frac{\alpha}{2}}(2n)<\dfrac{\sqrt n(\bar X-\bar Y)}{W}<t_{\frac{\alpha}{2}}(2n){\biggr\}=1-\alpha}$
+
+    D. $P\!\biggl\{-t_{\frac{\alpha}{2}}{(2n-2)}<\dfrac{\sqrt n(\bar X-\bar Y)}{W}<t_{\frac{\alpha}{2}}{(2n-2)}{\biggr\}=\alpha}$
+
+    ??? success "解析"
+
+        **从 $W$ 的形式选分布。** $W$ 是两个样本方差的**和**。对一组正态样本，用本组样本均值中心化后，$n$ 个离差的和恒为零，只剩 $n-1$ 个自由度。因此
+
+        $$
+        \begin{aligned}U&=\frac{(n-1)S_X^2}{\sigma^2}\sim\chi^2(n-1),\\[3pt]V&=\frac{(n-1)S_Y^2}{\sigma^2}\sim\chi^2(n-1).\end{aligned}
+        $$
+
+        两组样本独立，$U,V$ 才可以按独立卡方变量相加。于是 $\dfrac{(n-1)W}{\sigma^2}=U+V\sim\chi^2(2n-2)$。A 用了 $2n$，相当于漏掉了每组各损失的一个自由度。
+
+        **读分位点。** 这里 $\chi^2_p(\nu)$ 表示右尾面积为 $p$ 的点，$p$ 越大，点越靠左。取 $\nu=2n-2$，左端用 $\chi^2_{1-\frac{\alpha}{2}}(\nu)$、右端用 $\chi^2_{\frac{\alpha}{2}}(\nu)$，两端各去掉 $\dfrac{\alpha}{2}$ 的概率，中央概率即 $1-\alpha$。故选 **B**。
+
+        C、D 转而使用均值差。构造 $t$ 统计量时，要用**标准差**来标准化：此处应是 $\dfrac{\sqrt n(\bar X-\bar Y)}{\sqrt W}$，而两个选项的分母都是 $W$。
+
 ### 参数的点估计
 #### 概念
 
@@ -4044,6 +4502,39 @@ $$
             !!! tip "直观理解"
 
                 $N$ 越小，每个值被抽到的概率 $\dfrac{1}{N+1}$ 越大，但 $N$ 不能小于样本中已经出现的最大值。因此最优的 $N$ 恰好等于样本最大值。
+
+!!! example exercise "☆☆☆ 不同观测下的极大似然估计"
+
+    设 $(X,Y)$ 服从二维正态分布，$EX=0,\ EY=2$，$DX=DY=\sigma^2$，相关系数为 $\dfrac12$，其中 $\sigma^2$ 未知。$(x_1,y_1),\ldots,(x_n,y_n)$ 是来自该总体的简单随机样本观测值。求 $P(X+Y\le1)$ 的极大似然估计值。
+
+    <div class="exam-options" markdown="1">
+
+    A. $\Phi\!\Bigl(\sqrt{\frac{n}{\sum_{i=1}^n(x_i+y_i)^2}}\Bigr)$
+
+    B. $1-\Phi\!\Bigl(\sqrt{\frac{n}{\sum_{i=1}^n(x_i+y_i-2)^2}}\Bigr)$
+
+    C. $\Phi\!\Bigl(\sqrt{\frac{n}{\sum_{i=1}^n(x_i+y_i-2)^2}}\Bigr)$
+
+    D. $1-\Phi\!\Bigl(\sqrt{\frac{3n}{\sum_{i=1}^n(x_i+y_i-2)^2}}\Bigr)$
+    </div>
+
+    ??? success "解析"
+
+        **先分清所求概率和用于估计的观测。** $X+Y$ 的均值为 $2$，方差为 $\sigma^2+\sigma^2+2\cdot\dfrac12\sigma^2=3\sigma^2$，所以 $p=1-\Phi(\dfrac{1}{\sqrt3\,\sigma})$。要求 $p$ 的极大似然估计，只需先用实际观测估计 $\sigma^2$。
+
+        **用完整数对写似然。** 令 $Z=X+Y-2,\ W=X-Y+2$。两者均值为零，方差分别为 $3\sigma^2,\sigma^2$；协方差为 $DX-DY=0$，由联合正态性知它们独立。这是可逆变换，没有丢掉原数据。记观测值为 $z_i,w_i$，令 $s=\sigma^2,\ Q=\sum_i(\dfrac{z_i^2}{3}+w_i^2)$。略去与 $s$ 无关的常数后，
+
+        $$
+        \ell(s)=-n\ln s-\frac{Q}{2s},\qquad \ell'(s)=\frac{Q-2ns}{2s^2}.
+        $$
+
+        故 $\hat s=\dfrac{Q}{2n}$；代回概率公式，得
+
+        $$
+        \hat p=1-\Phi\!\Bigl(\sqrt{\frac{2n}{\sum_i z_i^2+3\sum_i w_i^2}}\Bigr).
+        $$
+
+        **为什么会算出 B？** 若只记录了各组的和，就只能使用 $Z$ 的一元似然，此时 $\hat s=\dfrac{\sum_i z_i^2}{3n}$，代回正好是 B。题面给出的是整组数对，差 $W$ 也含有关于 $\sigma^2$ 的信息；按这一观测条件，**四个选项均非完整样本的极大似然估计**。
 
 #### 估计量的评价标准
 
@@ -4372,6 +4863,33 @@ p_{\text{双侧}}=2[1-\Phi(|z_{\mathrm{obs}}|)].
 $$
 
 通常按 $p\le\alpha$ 拒绝 $H_0$。$p$ 值不是原假设成立的概率，$\alpha$ 也不是某次检验结论错误的后验概率。
+
+!!! example exercise "☆☆☆ 拒绝域与显著性水平"
+
+    设 $X_1,\ldots,X_n$ 是来自 $N(\mu,\sigma^2)$ 的简单随机样本。检验 $H_0:\mu\le\mu_0$ 对 $H_1:\mu>\mu_0$。拒绝域 $W_1=\{\bar X-\mu_0\ge1\}$、$W_2=\{\bar X-\mu_0\ge2\}$ 的显著性水平分别为 $\alpha_1,\alpha_2$，比较两者。
+
+    <div class="exam-options" markdown="1">
+
+    A. $\alpha_1=\alpha_2$
+
+    B. $\alpha_1>\alpha_2$
+
+    C. $\alpha_1<\alpha_2$
+
+    D. $\alpha_1$ 和 $\alpha_2$ 的大小关系不确定
+    </div>
+
+    ??? success "解析"
+
+        显著性水平看的是**原假设成立时误拒的概率**。两个拒绝域的阈值分别为 $1,2$，所以 $W_2\subset W_1$。要把“不小于”加强成“严格大于”，还要知道两者之间的带状区间确实有正概率。
+
+        固定总体方差 $\sigma^2$，考虑 $\mu\le\mu_0$。对阈值 $c$，因为 $\bar X\sim N(\mu,\dfrac{\sigma^2}{n})$，拒绝概率为
+
+        $$
+        P_\mu(\bar X-\mu_0\ge c)=1-\Phi\!\left(\frac{\sqrt n(c+\mu_0-\mu)}{\sigma}\right).
+        $$
+
+        它随 $\mu$ 增大而增大，两种检验均在边界 $\mu=\mu_0$ 取到最大拒绝概率。此时两水平之差就是 $P_{\mu_0}(1\le\bar X-\mu_0<2)>0$，因为正态密度在区间内为正。故 **$\alpha_1>\alpha_2$（B）**。
 
 #### 正态总体下的六大检验及拒绝域
 
