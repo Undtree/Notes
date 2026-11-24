@@ -2270,14 +2270,15 @@
 </div>
 <div class="admonition example exercise">
 <p class="admonition-title">☆☆☆ 逆矩阵之和的行列式</p>
-<p>设 <span class="arithmatex">\(A=(\alpha,\beta,\gamma)\)</span> 可逆，<span class="arithmatex">\(B=(2\alpha+3\gamma,\ 3\alpha+\beta,\ \alpha+2\gamma)\)</span>。已知 <span class="arithmatex">\(\det(A^{-1}+B^{-1})=6\)</span>，求 <span class="arithmatex">\(\det A\)</span>。</p>
+<p>设 <span class="arithmatex">\(\alpha,\beta,\gamma\)</span> 为三个线性无关的三维列向量，记 <span class="arithmatex">\(A=(\alpha,\beta,\gamma)\)</span>，<span class="arithmatex">\(B=(2\alpha+3\gamma,\ 3\alpha+\beta,\ \alpha+2\gamma)\)</span>。已知 <span class="arithmatex">\(\det(A^{-1}+B^{-1})=6\)</span>，求 <span class="arithmatex">\(\det A\)</span>。</p>
 <details class="success">
 <summary>解析</summary>
-<p>写成 <span class="arithmatex">\(B=AM\)</span>，其中 <span class="arithmatex">\(M=\begin{pmatrix}2&amp;3&amp;1\\0&amp;1&amp;0\\3&amp;0&amp;2\end{pmatrix}\)</span>，<span class="arithmatex">\(\det M=1\)</span>、<span class="arithmatex">\(\det(E+M)=12\)</span>。由 <span class="arithmatex">\(A(A^{-1}+B^{-1})B=A+B\)</span>，得</p>
+<p><span class="arithmatex">\(B\)</span> 的每列都已按基 <span class="arithmatex">\(\alpha,\beta,\gamma\)</span> 展开，把系数按<strong>列</strong>排列，就得到 <span class="arithmatex">\(B=AM\)</span>，其中</p>
 <div class="arithmatex">\[
-6=\frac{\det(A+B)}{\det A\det B}=\frac{12}{\det A},
+M=\begin{pmatrix}2&amp;3&amp;1\\0&amp;1&amp;0\\3&amp;0&amp;2\end{pmatrix}.
 \]</div>
-<p>故 <strong><span class="arithmatex">\(\det A=2\)</span></strong>。<strong>要点：</strong> 行列式可对乘积拆开，遇到矩阵加法要先找可提取的公共因子。</p>
+<p>沿第二行展开，<span class="arithmatex">\(\det M=4-3=1\)</span>，<span class="arithmatex">\(\det(E+M)=2(9-3)=12\)</span>。故 <span class="arithmatex">\(\det B=\det A\)</span>，而 <span class="arithmatex">\(A+B=A(E+M)\)</span>，其行列式为 <span class="arithmatex">\(12\det A\)</span>。</p>
+<p>遇到逆矩阵的<strong>和</strong>，不能把行列式拆成和。左乘 <span class="arithmatex">\(A\)</span>、右乘 <span class="arithmatex">\(B\)</span> 恰可消去两个逆：<span class="arithmatex">\(A(A^{-1}+B^{-1})B=B+A\)</span>。两边取行列式得 <span class="arithmatex">\(6(\det A)^2=12\det A\)</span>。因三列线性无关，<span class="arithmatex">\(\det A\ne0\)</span>，故 <strong><span class="arithmatex">\(\det A=2\)</span></strong>。</p>
 </details>
 </div>
 <div class="supplement">
@@ -2300,8 +2301,9 @@
 </div></p>
 <details class="success">
 <summary>解析</summary>
-<p>用 <span class="arithmatex">\(\boldsymbol1=(1,1,1,1)^{\mathsf T}\)</span>，所求和为 <span class="arithmatex">\(\boldsymbol1^{\mathsf T}A^*\boldsymbol1=\det A\cdot\boldsymbol1^{\mathsf T}A^{-1}\boldsymbol1\)</span>。这里 <span class="arithmatex">\(\det A=16\)</span>，而从最后一行向上回代 <span class="arithmatex">\(Au=\boldsymbol1\)</span> 得 <span class="arithmatex">\(u=(\dfrac{1}{2},\dfrac{1}{2},\dfrac{1}{2},\dfrac{1}{2})^{\mathsf T}\)</span>，所以答案为 <strong><span class="arithmatex">\(32\)</span>（ C ）</strong>。</p>
-<p><strong>要点：</strong> 余子式矩阵与伴随矩阵虽互为转置，但求所有元素之和不受转置影响；只需解一次方程组。</p>
+<p>求<strong>全部</strong>代数余子式之和时，逐个展开没有必要。取全一列向量 <span class="arithmatex">\(\boldsymbol1\)</span>，左、右各乘一次就把矩阵全部元素相加。转置不改变总和，所以所求为 <span class="arithmatex">\(\boldsymbol1^{\mathsf T}A^*\boldsymbol1\)</span>。</p>
+<p><span class="arithmatex">\(A\)</span> 是上三角阵，<span class="arithmatex">\(\det A=1\cdot2\cdot4\cdot2=16\)</span>，可用 <span class="arithmatex">\(A^*=(\det A)A^{-1}\)</span>。这时只需要 <span class="arithmatex">\(u=A^{-1}\boldsymbol1\)</span>，不需要整个逆矩阵。</p>
+<p>观察 <span class="arithmatex">\(A\)</span> 的<strong>每行元素之和都是 <span class="arithmatex">\(2\)</span></strong>，即 <span class="arithmatex">\(A\boldsymbol1=2\boldsymbol1\)</span>，立刻得 <span class="arithmatex">\(u=\dfrac12\boldsymbol1\)</span>。于是总和为 <span class="arithmatex">\(16\boldsymbol1^{\mathsf T}u=16\cdot2=\mathbf{32}\)</span>，选 <strong>C</strong>。</p>
 </details>
 </div>
 <div class="supplement">
@@ -2400,8 +2402,9 @@ D_k=a_kD_{k-1}-b_{k-1}c_{k-1}D_{k-2}
 </div></p>
 <details class="success">
 <summary>解析</summary>
-<p><span class="arithmatex">\(A^*=-A^{\mathsf T}\)</span>，故 <span class="arithmatex">\(A^{\mathsf T}A=-\det A\,E\)</span>。因 <span class="arithmatex">\(A\ne0\)</span>，有 <span class="arithmatex">\(\det A&lt;0\)</span>；再由 <span class="arithmatex">\((\det A)^2=\det A^*=-\det A\)</span> 得 <span class="arithmatex">\(\det A=-1\)</span>。于是 <span class="arithmatex">\(A\)</span> 正交，①②成立；特征值模长为 <span class="arithmatex">\(1\)</span>，非实特征值成共轭对且乘积为 <span class="arithmatex">\(1\)</span>，所以必有特征值 <span class="arithmatex">\(-1\)</span>，③成立。取 <span class="arithmatex">\(A=-E\)</span> 可否定④。故选 <strong>C ：①②③</strong>。</p>
-<p><strong>易错点：</strong> 伴随矩阵是代数余子式矩阵的转置。</p>
+<p><strong>先把逐元素条件变成矩阵等式。</strong> <span class="arithmatex">\(A^*\)</span> 是代数余子式矩阵的转置，所以 <span class="arithmatex">\(A^*=-A^{\mathsf T}\)</span>。代入 <span class="arithmatex">\(A^*A=(\det A)E\)</span>，得 <span class="arithmatex">\(A^{\mathsf T}A=-(\det A)E\)</span>。左边半正定且非零，故 <span class="arithmatex">\(\det A&lt;0\)</span>。</p>
+<p>三阶矩阵满足 <span class="arithmatex">\(\det A^*=(\det A)^2\)</span>；另一方面 <span class="arithmatex">\(\det(-A^{\mathsf T})=-\det A\)</span>，故 <span class="arithmatex">\(\det A=-1\)</span>。于是 <span class="arithmatex">\(A^{\mathsf T}A=E\)</span>，所以 <span class="arithmatex">\(\langle A\alpha,A\beta\rangle=\alpha^{\mathsf T}\beta\)</span>。令 <span class="arithmatex">\(\beta=\alpha\)</span> 还得到保长度，①②都成立。</p>
+<p><strong>再看③④。</strong> 正交矩阵的实特征值只能为 <span class="arithmatex">\(\pm1\)</span>，非实特征值成共轭对且乘积为 <span class="arithmatex">\(1\)</span>。全部特征值的乘积是 <span class="arithmatex">\(-1\)</span>，故必有特征值 <span class="arithmatex">\(-1\)</span>，即 <span class="arithmatex">\((A+E)x=0\)</span> 有非零解。对④取符合题设的 <span class="arithmatex">\(A=-E\)</span>，则 <span class="arithmatex">\(\operatorname{tr}(A^2)=3\)</span>，而 <span class="arithmatex">\((\operatorname{tr}A)^2=9\)</span>。选 <strong>C ：①②③</strong>。</p>
 </details>
 </div>
 <div class="supplement">
@@ -2486,8 +2489,9 @@ D_k=a_kD_{k-1}-b_{k-1}c_{k-1}D_{k-2}
 </div></p>
 <details class="success">
 <summary>解析</summary>
-<p>由秩不等式，<span class="arithmatex">\(A\)</span> 满列秩、<span class="arithmatex">\(B\)</span> 满行秩。从 <span class="arithmatex">\(A(BA-E_2)B=0\)</span>，先用 <span class="arithmatex">\(A\)</span> 的零空间仅含零，再用 <span class="arithmatex">\(B^{\mathsf T}\)</span> 的零空间仅含零，得到 <span class="arithmatex">\(BA=E_2\)</span>，因此前两项也成立。取 <span class="arithmatex">\(A=(e_1,e_3)\)</span>、<span class="arithmatex">\(B=A^{\mathsf T}\)</span>，有 <span class="arithmatex">\(AB=\operatorname{diag}(1,0,1)\)</span>；故 <strong>前三项成立（ C ）</strong>。</p>
-<p><strong>要点：</strong> 左乘满列秩矩阵、右乘满行秩矩阵分别能消去；幂等矩阵的秩不能固定它在原坐标中的对角位置。</p>
+<p><span class="arithmatex">\(AB\)</span> 是三阶矩阵，秩为 <span class="arithmatex">\(2\)</span>；<span class="arithmatex">\(A\)</span> 只有两列、<span class="arithmatex">\(B\)</span> 只有两行，由 <span class="arithmatex">\(r(AB)\le\min\{r(A),r(B)\}\)</span> 知 <span class="arithmatex">\(A\)</span> 满列秩、<span class="arithmatex">\(B\)</span> 满行秩。这里能用的是<strong>单侧消去</strong>。</p>
+<p>把 <span class="arithmatex">\((AB)^2=AB\)</span> 移项得 <span class="arithmatex">\(A(BA-E_2)B=0\)</span>。<span class="arithmatex">\(A\)</span> 的零空间只有零，对各列消去 <span class="arithmatex">\(A\)</span> 得 <span class="arithmatex">\((BA-E_2)B=0\)</span>。又 <span class="arithmatex">\(B\)</span> 的列张成 <span class="arithmatex">\(\mathbb R^2\)</span>，故 <span class="arithmatex">\(BA-E_2\)</span> 把整个 <span class="arithmatex">\(\mathbb R^2\)</span> 映成零，即 <span class="arithmatex">\(BA=E_2\)</span>。于是 <span class="arithmatex">\(B(AB)=(BA)B=B\)</span>，<span class="arithmatex">\((AB)A=A(BA)=A\)</span>。</p>
+<p>④要求的是原矩阵恰等于指定对角阵。取 <span class="arithmatex">\(A=(e_1,e_3)\)</span>、<span class="arithmatex">\(B=A^{\mathsf T}\)</span>，则 <span class="arithmatex">\(AB=\operatorname{diag}(1,0,1)\)</span> 仍满足题设。故成立的是 <strong>①②③，共三项（ C ）</strong>。</p>
 </details>
 </div>
 <h2 id="向量组">向量组<a class="headerlink" href="#向量组" title="Permanent link">&para;</a></h2>
@@ -2501,7 +2505,8 @@ D_k=a_kD_{k-1}-b_{k-1}c_{k-1}D_{k-2}
 </div>
 <div class="admonition example exercise">
 <p class="admonition-title">☆☆☆ 向量组的线性表示条件</p>
-<p>设 <span class="arithmatex">\(\alpha_1=(1,2,-1)^{\mathsf T}\)</span>、<span class="arithmatex">\(\alpha_2=(1,0,1)^{\mathsf T}\)</span>、<span class="arithmatex">\(\alpha_3=(-1,a,3)^{\mathsf T}\)</span>、<span class="arithmatex">\(\beta=(3,2,b)^{\mathsf T}\)</span>。若 <span class="arithmatex">\(\beta\)</span> 可由前三个向量表示，却不能仅由 <span class="arithmatex">\(\alpha_1,\alpha_2\)</span> 表示，求 <span class="arithmatex">\(a,b\)</span> 的条件。</p>
+<p>设 <span class="arithmatex">\(a,b\)</span> 为实数，<span class="arithmatex">\(\alpha_1=(1,2,-1)^{\mathsf T}\)</span>，<span class="arithmatex">\(\alpha_2=(1,0,1)^{\mathsf T}\)</span>，<span class="arithmatex">\(\alpha_3=(-1,a,3)^{\mathsf T}\)</span>，<span class="arithmatex">\(\beta=(3,2,b)^{\mathsf T}\)</span>。</p>
+<p>已知 <span class="arithmatex">\(\beta\)</span> 可由 <span class="arithmatex">\(\alpha_1,\alpha_2,\alpha_3\)</span> 线性表示，但不能由 <span class="arithmatex">\(\alpha_1,\alpha_2\)</span> 线性表示。下列哪一组条件成立？</p>
 <div class="exam-options" markdown="1">
 <p>A. <span class="arithmatex">\(a\ne-4\)</span>，<span class="arithmatex">\(b\)</span> 为任意实数</p>
 <p>B. <span class="arithmatex">\(a=4,\ b=1\)</span></p>
@@ -2510,17 +2515,25 @@ D_k=a_kD_{k-1}-b_{k-1}c_{k-1}D_{k-2}
 </div></p>
 <details class="success">
 <summary>解析</summary>
-<p>只用前两列时，第一、二坐标确定系数为 <span class="arithmatex">\(1,2\)</span>，第三坐标随即为 <span class="arithmatex">\(1\)</span>，所以必须 <span class="arithmatex">\(b\ne1\)</span>。前三列组成的方阵行列式为 <span class="arithmatex">\(-2(a+4)\)</span>；若 <span class="arithmatex">\(a=-4\)</span>，<span class="arithmatex">\(\alpha_3=-2\alpha_1+\alpha_2\)</span>，张成空间并未扩大。若 <span class="arithmatex">\(a\ne-4\)</span>，三列张成 <span class="arithmatex">\(\mathbb R^3\)</span>。故 <strong><span class="arithmatex">\(a\ne-4,\ b\ne1\)</span>（ C ）</strong>。</p>
-<p><strong>要点：</strong> 能表示等价于添加 <span class="arithmatex">\(\beta\)</span> 这列后秩不变；两次秩判定对应的是两个不同的向量组。</p>
+<p>“能由三列表示，却不能由前两列表示”给出了两个条件：先判断 <span class="arithmatex">\(\beta\)</span> 是否在前两列张成的平面内，再看第三列有没有把这个平面扩大。</p>
+<p>设 <span class="arithmatex">\(\beta=s\alpha_1+t\alpha_2\)</span>。第二坐标给出 <span class="arithmatex">\(2s=2\)</span>，第一坐标给出 <span class="arithmatex">\(s+t=3\)</span>，所以 <span class="arithmatex">\(s=1,t=2\)</span>。第三坐标此时只能是 <span class="arithmatex">\(-s+t=1\)</span>。要满足“不能由前两列表示”，必须且只须 <span class="arithmatex">\(b\ne1\)</span>。</p>
+<p>再看 <span class="arithmatex">\(\det(\alpha_1,\alpha_2,\alpha_3)=-2(a+4)\)</span>。当 <span class="arithmatex">\(a=-4\)</span> 时，<span class="arithmatex">\(\alpha_3=-2\alpha_1+\alpha_2\)</span>，加入它仍然表示不了 <span class="arithmatex">\(\beta\)</span>；当 <span class="arithmatex">\(a\ne-4\)</span> 时，三列张成整个 <span class="arithmatex">\(\mathbb R^3\)</span>，一定能表示 <span class="arithmatex">\(\beta\)</span>。合起来选 <strong>C ：<span class="arithmatex">\(a\ne-4,\ b\ne1\)</span></strong>。</p>
 </details>
 </div>
 <div class="admonition example exercise">
 <p class="admonition-title">☆☆☆ 列空间的秩与正交投影</p>
-<p>设 <span class="arithmatex">\(a\ne0\)</span>，<span class="arithmatex">\(A\)</span> 的列 <span class="arithmatex">\(\alpha_1,\alpha_2,\alpha_3\)</span> 分别为 <span class="arithmatex">\((a,0,1)^{\mathsf T},(0,-a,0)^{\mathsf T},(1,0,a)^{\mathsf T}\)</span>，<span class="arithmatex">\(\beta=(1,1,-1)^{\mathsf T}\)</span> 不在列空间内。若 <span class="arithmatex">\(\gamma\)</span> 在列空间内且 <span class="arithmatex">\(\beta^{\mathsf T}\alpha_i=\gamma^{\mathsf T}\alpha_i\)</span> 对每个 <span class="arithmatex">\(i\)</span> 成立，求 <span class="arithmatex">\(a,\gamma\)</span>，并说明为何 <span class="arithmatex">\(A^{\mathsf T}(\beta-\gamma)=0\)</span>。</p>
+<p>设实数 <span class="arithmatex">\(a\ne0\)</span>，向量组 <span class="arithmatex">\(\alpha_1=(a,0,1)^{\mathsf T},\ \alpha_2=(0,-a,0)^{\mathsf T},\ \alpha_3=(1,0,a)^{\mathsf T}\)</span>。已知 <span class="arithmatex">\(\beta=(1,1,-1)^{\mathsf T}\)</span> 不能由该向量组线性表示。向量 <span class="arithmatex">\(\gamma\)</span> 满足 <span class="arithmatex">\(\gamma=k_1\alpha_1+k_2\alpha_2+k_3\alpha_3\)</span>，且 <span class="arithmatex">\(\beta^{\mathsf T}\alpha_i=\gamma^{\mathsf T}\alpha_i\)</span>（<span class="arithmatex">\(i=1,2,3\)</span>）。</p>
+<p>（ 1 ）求 <span class="arithmatex">\(a\)</span>。</p>
+<p>（ 2 ）记 <span class="arithmatex">\(A=(\alpha_1,\alpha_2,\alpha_3)\)</span>，证明 <span class="arithmatex">\(\beta-\gamma\)</span> 是 <span class="arithmatex">\(A^{\mathsf T}x=0\)</span> 的解。</p>
+<p>（ 3 ）求 <span class="arithmatex">\(\gamma\)</span>。</p>
 <details class="success">
 <summary>解析</summary>
-<p>不满秩要求 <span class="arithmatex">\(a^2=1\)</span>。当 <span class="arithmatex">\(a=-1\)</span>，列空间为 <span class="arithmatex">\(x=-z\)</span>，包含 <span class="arithmatex">\(\beta\)</span>，舍去；当 <span class="arithmatex">\(a=1\)</span>，列空间为 <span class="arithmatex">\(x=z\)</span>，不包含 <span class="arithmatex">\(\beta\)</span>，故 <strong><span class="arithmatex">\(a=1\)</span></strong>。三个内积条件正是 <span class="arithmatex">\(A^{\mathsf T}(\beta-\gamma)=0\)</span>，于是 <span class="arithmatex">\(\gamma\)</span> 是 <span class="arithmatex">\(\beta\)</span> 对 <span class="arithmatex">\(x=z\)</span> 平面的正交投影，<strong><span class="arithmatex">\(\gamma=(0,1,0)^{\mathsf T}\)</span></strong>。</p>
-<p><strong>要点：</strong> 不可线性表示先筛出秩下降的参数，再逐一检查是否真的落在列空间外。</p>
+<p><strong>（ 1 ）由“不能线性表示”筛参数。</strong> 若 <span class="arithmatex">\(\det A=-a(a^2-1)\ne0\)</span>，三列能表示任意三维向量。由 <span class="arithmatex">\(a\ne0\)</span>，只需考察 <span class="arithmatex">\(a=\pm1\)</span>。这时前两列独立且张成平面 <span class="arithmatex">\(x=az\)</span>，第三列也在平面内。<span class="arithmatex">\(\beta=(1,1,-1)^{\mathsf T}\)</span> 在 <span class="arithmatex">\(x=-z\)</span> 上，却不在 <span class="arithmatex">\(x=z\)</span> 上，因此 <strong><span class="arithmatex">\(a=1\)</span></strong>。</p>
+<p><strong>（ 2 ）把三个内积合成一个方程。</strong> 移项得 <span class="arithmatex">\(\alpha_i^{\mathsf T}(\beta-\gamma)=0\)</span>。将三式上下叠放，左边正是 <span class="arithmatex">\(A^{\mathsf T}(\beta-\gamma)\)</span>，故 <span class="arithmatex">\(\beta-\gamma\)</span> 是 <span class="arithmatex">\(A^{\mathsf T}x=0\)</span> 的解。</p>
+<p><strong>（ 3 ）求投影。</strong> <span class="arithmatex">\(\gamma\)</span> 在平面 <span class="arithmatex">\(x=z\)</span> 内，<span class="arithmatex">\(\beta-\gamma\)</span> 又垂直于此平面，因此 <span class="arithmatex">\(\gamma\)</span> 是正交投影。取法向量 <span class="arithmatex">\(n=(1,0,-1)^{\mathsf T}\)</span>，去掉 <span class="arithmatex">\(\beta\)</span> 的法向分量：</p>
+<div class="arithmatex">\[
+\gamma=\beta-\frac{\beta^{\mathsf T}n}{n^{\mathsf T}n}\,n=\beta-n=(0,1,0)^{\mathsf T}.
+\]</div>
 </details>
 </div>
 <div class="admonition example exercise">
@@ -2534,8 +2547,9 @@ D_k=a_kD_{k-1}-b_{k-1}c_{k-1}D_{k-2}
 </div></p>
 <details class="success">
 <summary>解析</summary>
-<p>若 <span class="arithmatex">\(a=1\)</span>，<span class="arithmatex">\(\alpha_2,\alpha_3\)</span> 已张成平面 <span class="arithmatex">\(x=z\)</span>，可表示 <span class="arithmatex">\(\alpha_1\)</span>，舍去。若 <span class="arithmatex">\(a\ne1\)</span>，前三列独立，第一条件自动满足。在以 <span class="arithmatex">\(\alpha_2,\alpha_3,\alpha_4\)</span> 表示 <span class="arithmatex">\(\alpha_1\)</span> 时，用第三坐标减第一坐标可知 <span class="arithmatex">\(\alpha_3\)</span> 的系数为零；<span class="arithmatex">\(\alpha_2,\alpha_4\)</span> 在 <span class="arithmatex">\(b\ne2\)</span> 时独立并张成 <span class="arithmatex">\(x=z\)</span>，在 <span class="arithmatex">\(b=2\)</span> 时重合，不能表示 <span class="arithmatex">\(\alpha_1\)</span>。故 <strong><span class="arithmatex">\(a\ne1,\ b=2\)</span>（ B ）</strong>。</p>
-<p><strong>要点：</strong> 先找共享的平面，再用参数判断第三列是否改变秩。</p>
+<p>先看坐标：<span class="arithmatex">\(\alpha_1,\alpha_2,\alpha_4\)</span> 都在平面 <span class="arithmatex">\(x=z\)</span> 内，只有 <span class="arithmatex">\(\alpha_3\)</span> 可能在平面外。因此可以先按 <span class="arithmatex">\(a\)</span> 分类，再处理 <span class="arithmatex">\(b\)</span>。</p>
+<p>若 <span class="arithmatex">\(a=1\)</span>，则 <span class="arithmatex">\(\alpha_2,\alpha_3\)</span> 在平面内且线性无关，已经能表示 <span class="arithmatex">\(\alpha_1\)</span>，与第二个条件矛盾。若 <span class="arithmatex">\(a\ne1\)</span>，<span class="arithmatex">\(\alpha_3\)</span> 在平面外，<span class="arithmatex">\(\alpha_1,\alpha_2,\alpha_3\)</span> 张成全空间，第一个条件自动成立。</p>
+<p>此时要用 <span class="arithmatex">\(\alpha_2,\alpha_3,\alpha_4\)</span> 表示平面内的 <span class="arithmatex">\(\alpha_1\)</span>，<span class="arithmatex">\(\alpha_3\)</span> 的系数必须为零。若 <span class="arithmatex">\(b\ne2\)</span>，余下两列独立，仍可表示 <span class="arithmatex">\(\alpha_1\)</span>；若 <span class="arithmatex">\(b=2\)</span>，两列重合且均不与 <span class="arithmatex">\(\alpha_1\)</span> 共线，才符合“不可表示”。故选 <strong>B ：<span class="arithmatex">\(a\ne1,\ b=2\)</span></strong>。</p>
 </details>
 </div>
 <div class="supplement">
@@ -2554,13 +2568,28 @@ D_k=a_kD_{k-1}-b_{k-1}c_{k-1}D_{k-2}
 <li>设 <span class="arithmatex">\(A\)</span> 有 <span class="arithmatex">\(n\)</span> 列，若 <span class="arithmatex">\(Ax=\mathbf{0}\)</span> 有 <span class="arithmatex">\(s\)</span> 个线性无关的解，则 <span class="arithmatex">\(r(A)\le n-s\)</span>；若这些解构成基础解系，则 <span class="arithmatex">\(r(A)=n-s\)</span>。</li>
 </ul>
 </div>
+<div class="supplement">
+<p class="supplement__title">齐次方程组的同解判据</p>
+<p>两个方程组使用同一组未知量 <span class="arithmatex">\(x\)</span> 时，<strong>同解</strong>是指解集完全相同：第一个方程组的每个解都是第二个的解，反过来也成立。方程的个数可以不同。</p>
+<p>设 <span class="arithmatex">\(A,B\)</span> 均有 <span class="arithmatex">\(n\)</span> 列。在实数域中，<span class="arithmatex">\(Ax=\mathbf{0}\)</span> 表示 <span class="arithmatex">\(x\)</span> 与 <span class="arithmatex">\(A\)</span> 的每一行都正交。因此，<span class="arithmatex">\(Ax=\mathbf{0}\)</span> 与 <span class="arithmatex">\(Bx=\mathbf{0}\)</span> 同解，当且仅当 <strong><span class="arithmatex">\(A,B\)</span> 的行空间相同</strong>，也就是两个行向量组能相互线性表示。用秩判断时，把矩阵<strong>上下叠放</strong>：</p>
+<div class="arithmatex">\[
+\ker A=\ker B
+\quad\Longleftrightarrow\quad
+r(A)=r(B)=r\!\begin{pmatrix}A\\ B\end{pmatrix}.
+\]</div>
+<ul>
+<li><strong>已有单向包含时，只需再比较秩。</strong> 若 <span class="arithmatex">\(Ax=\mathbf{0}\)</span> 的每个解都是 <span class="arithmatex">\(Bx=\mathbf{0}\)</span> 的解，则 <span class="arithmatex">\(\ker A\subseteq\ker B\)</span>。此时 <span class="arithmatex">\(r(A)=r(B)\)</span> 就能保证同解，因为两个解空间的维数均为 <span class="arithmatex">\(n-r(A)\)</span>。例如 <span class="arithmatex">\(Ax=\mathbf{0}\)</span> 的解自动满足 <span class="arithmatex">\(CAx=\mathbf{0}\)</span>，故这两组同解当且仅当 <span class="arithmatex">\(r(CA)=r(A)\)</span>。</li>
+<li><strong>只知道秩相等时，还要比较方向。</strong> 例如 <span class="arithmatex">\(x_1=0\)</span> 与 <span class="arithmatex">\(x_2=0\)</span> 在平面内的解集分别是两条不同的坐标轴，尽管两个系数矩阵的秩都是 <span class="arithmatex">\(1\)</span>。用基础解系判断时，要看它们是否张成同一空间，而不是只数向量个数。</li>
+</ul>
+</div>
 <div class="admonition example exercise">
 <p class="admonition-title">☆☆☆ 齐次方程组的同解条件</p>
 <p>设 <span class="arithmatex">\(A=\begin{pmatrix}1&amp;-1&amp;1\\a&amp;1&amp;2\end{pmatrix}\)</span>、<span class="arithmatex">\(B=\begin{pmatrix}1&amp;1\\1&amp;2\\1&amp;b\end{pmatrix}\)</span>，若 <span class="arithmatex">\(Ax=0\)</span> 与 <span class="arithmatex">\(B^{\mathsf T}x=0\)</span> 同解，求 <span class="arithmatex">\(a+b\)</span>。</p>
 <details class="success">
 <summary>解析</summary>
-<p>两个方程组同解，故行空间相同。它包含 <span class="arithmatex">\(A\)</span> 的首行 <span class="arithmatex">\((1,-1,1)\)</span> 和 <span class="arithmatex">\(B^{\mathsf T}\)</span> 的首行 <span class="arithmatex">\((1,1,1)\)</span>；两行独立，张成平面 <span class="arithmatex">\(x_1=x_3\)</span>。其余两行均须在该平面内，给出 <span class="arithmatex">\(a=2,\ b=1\)</span>。反过来两矩阵均有两行独立且在此平面内，确实同解。故 <strong><span class="arithmatex">\(a+b=3\)</span></strong>。</p>
-<p><strong>易错点：</strong> 同解要求行空间相同，单独比较秩只比较了行空间维数。</p>
+<p>齐次方程组的解空间是系数矩阵行空间的正交补。所以“同解”要求<strong>行空间相同</strong>；两个矩阵的秩相同只是必要条件。</p>
+<p>两个行空间若相同，就必须同时包含 <span class="arithmatex">\((1,-1,1)\)</span> 和 <span class="arithmatex">\((1,1,1)\)</span>。这两个向量独立，且第一、三坐标相等，正好张成平面 <span class="arithmatex">\(x_1=x_3\)</span>。每个矩阵都只有两行，其行空间就只能是这个平面。</p>
+<p>于是 <span class="arithmatex">\(A\)</span> 的第二行 <span class="arithmatex">\((a,1,2)\)</span> 要满足 <span class="arithmatex">\(a=2\)</span>，<span class="arithmatex">\(B^{\mathsf T}\)</span> 的第二行 <span class="arithmatex">\((1,2,b)\)</span> 要满足 <span class="arithmatex">\(b=1\)</span>。代回后，两组行向量都独立，确实各自张成整个平面，故 <strong><span class="arithmatex">\(a+b=3\)</span></strong>。</p>
 </details>
 </div>
 <div class="supplement">
@@ -2573,6 +2602,12 @@ D_k=a_kD_{k-1}-b_{k-1}c_{k-1}D_{k-2}
 <li>设 <span class="arithmatex">\(A,B\)</span> 行数相同，则 <span class="arithmatex">\(AX=B\)</span> 有解 <span class="arithmatex">\(\iff r([A\ B])=r(A)\)</span>。</li>
 </ul>
 </div>
+<div class="supplement">
+<p class="supplement__title">非齐次方程组的同解判据</p>
+<p>判断 <span class="arithmatex">\(Ax=b\)</span> 与 <span class="arithmatex">\(Bx=c\)</span> 是否同解，先看它们是否有解：若两组都无解，解集同为空集；若只有一组有解，解集不同。</p>
+<p><strong>两组都有解时，同解当且仅当：有一个公共特解，且对应的齐次方程组同解。</strong> 具体地，取 <span class="arithmatex">\(Ax=b\)</span> 的任一特解 <span class="arithmatex">\(x_0\)</span>，先验算 <span class="arithmatex">\(Bx_0=c\)</span>，再比较 <span class="arithmatex">\(\ker A\)</span> 与 <span class="arithmatex">\(\ker B\)</span>。这是因为有了公共特解后，两组的解集分别是 <span class="arithmatex">\(x_0+\ker A\)</span> 与 <span class="arithmatex">\(x_0+\ker B\)</span>。例如 <span class="arithmatex">\(x_1+x_2=1\)</span> 与 <span class="arithmatex">\(x_1+x_2=2\)</span> 的齐次解空间相同，解集却是两条平行直线。</p>
+<p><strong>用消元判断时，要把右端常数一起变换。</strong> 对两个有解方程组，分别将增广矩阵 <span class="arithmatex">\([A\ b]\)</span>、<span class="arithmatex">\([B\ c]\)</span> 化为行最简形，去掉全零行后，两者完全相同当且仅当两组同解。多出一个能由其余方程线性表示的方程，不会改变解集。</p>
+</div>
 <div class="admonition example exercise">
 <p class="admonition-title">☆☆☆ 实对称矩阵的零空间与通解</p>
 <p>设三阶实对称矩阵 <span class="arithmatex">\(A\)</span> 的秩为 <span class="arithmatex">\(1\)</span>，<span class="arithmatex">\(\alpha=(1,-1,1)^{\mathsf T}\)</span> 是对应特征值 <span class="arithmatex">\(\dfrac{1}{2}\)</span> 的特征向量。其中 <span class="arithmatex">\(k_1,k_2\)</span> 为任意常数，下列哪一项是 <span class="arithmatex">\(Ax=\alpha\)</span> 的通解？</p>
@@ -2584,18 +2619,36 @@ D_k=a_kD_{k-1}-b_{k-1}c_{k-1}D_{k-2}
 </div></p>
 <details class="success">
 <summary>解析</summary>
-<p>特解取 <span class="arithmatex">\(2\alpha\)</span>。秩为 <span class="arithmatex">\(1\)</span>，零特征子空间是二维，且由对称性与 <span class="arithmatex">\(\alpha\)</span> 正交，即 <span class="arithmatex">\(x_1-x_2+x_3=0\)</span>。可取两个独立向量 <span class="arithmatex">\((1,1,0)^{\mathsf T},(-1,1,2)^{\mathsf T}\)</span> 作为基础解系。通解为 <strong><span class="arithmatex">\(2\alpha+k_1(1,1,0)^{\mathsf T}+k_2(-1,1,2)^{\mathsf T}\)</span>（ D ）</strong>。</p>
-<p><strong>易错点：</strong> 特解要乘以特征值的倒数；基础解系要同时满足齐次方程和线性无关。</p>
+<p><strong>先找一个特解。</strong> 已知 <span class="arithmatex">\(A\alpha=\dfrac12\alpha\)</span>，右端恰好是 <span class="arithmatex">\(\alpha\)</span>，所以 <span class="arithmatex">\(A(2\alpha)=\alpha\)</span>。选项中的常向量应是特解，不能直接照抄特征向量。</p>
+<p><strong>再找全部齐次解。</strong> <span class="arithmatex">\(r(A)=1\)</span>，故零空间有两维。由实对称性，属于特征值 <span class="arithmatex">\(0\)</span> 的向量都与 <span class="arithmatex">\(\alpha\)</span> 正交；而平面 <span class="arithmatex">\(x_1-x_2+x_3=0\)</span> 恰是两维，因此它就是整个零空间。</p>
+<p><span class="arithmatex">\((1,1,0)^{\mathsf T}\)</span> 与 <span class="arithmatex">\((-1,1,2)^{\mathsf T}\)</span> 都在平面内且线性无关。把二者的任意线性组合加到特解上，得 <span class="arithmatex">\(x=2\alpha+k_1(1,1,0)^{\mathsf T}+k_2(-1,1,2)^{\mathsf T}\)</span>，选 <strong>D</strong>。</p>
 </details>
 </div>
 <div class="admonition example exercise">
 <p class="admonition-title">☆☆☆ 矩阵方程的相容性与二次型的对称部分</p>
-<p>设 <span class="arithmatex">\(A=\begin{pmatrix}1&amp;-1\\1&amp;1\\a&amp;b\end{pmatrix}\)</span>、<span class="arithmatex">\(C=\begin{pmatrix}1&amp;1&amp;a\\1&amp;2&amp;1\\a&amp;1&amp;1\end{pmatrix}\)</span>。求使 <span class="arithmatex">\(AB=C\)</span> 可解的参数及 <span class="arithmatex">\(B\)</span>，再求 <span class="arithmatex">\(x^{\mathsf T}BAx\)</span> 的正、负惯性指数。</p>
+<p>设矩阵</p>
+<div class="arithmatex">\[
+A=\begin{pmatrix}1&amp;-1\\1&amp;1\\a&amp;b\end{pmatrix},\qquad C=\begin{pmatrix}1&amp;1&amp;a\\1&amp;2&amp;1\\a&amp;1&amp;1\end{pmatrix}.
+\]</div>
+<p>（ 1 ）求参数 <span class="arithmatex">\(a,b\)</span>，使得存在矩阵 <span class="arithmatex">\(B\)</span> 满足 <span class="arithmatex">\(AB=C\)</span>。</p>
+<p>（ 2 ）对每组满足条件的参数，求矩阵 <span class="arithmatex">\(B\)</span>。</p>
+<p>（ 3 ）令 <span class="arithmatex">\(x=(x_1,x_2)^{\mathsf T}\)</span>，求二次型 <span class="arithmatex">\(f=x^{\mathsf T}BAx\)</span> 的正惯性指数和负惯性指数。</p>
 <details class="success">
 <summary>解析</summary>
-<p><span class="arithmatex">\(A\)</span> 的前两行可逆成块，决定 <span class="arithmatex">\(B=\begin{pmatrix}1&amp;\dfrac{3}{2}&amp;\dfrac{a+1}{2}\\0&amp;\dfrac{1}{2}&amp;\dfrac{1-a}{2}\end{pmatrix}\)</span>。第三行要求 <span class="arithmatex">\(3a+b=2\)</span>、<span class="arithmatex">\(a(a+1)+b(1-a)=2\)</span>，代入得 <span class="arithmatex">\(4a(a-1)=0\)</span>，故 <strong><span class="arithmatex">\((a,b)=(0,2)\)</span> 或 <span class="arithmatex">\((1,-1)\)</span></strong>，将各自 <span class="arithmatex">\(a\)</span> 代入上式即得 <span class="arithmatex">\(B\)</span>。</p>
-<p>二次型仅取决于 <span class="arithmatex">\(S=\dfrac{BA+(BA)^{\mathsf T}}{2}\)</span>。两种情形的 <span class="arithmatex">\(S\)</span> 分别为 <span class="arithmatex">\(\begin{pmatrix}\dfrac{5}{2}&amp;1\\1&amp;\dfrac{3}{2}\end{pmatrix}\)</span> 与 <span class="arithmatex">\(\operatorname{diag}(\dfrac{7}{2},\dfrac{1}{2})\)</span>；二者顺序主子式均正，故惯性指数均为 <strong><span class="arithmatex">\((2,0)\)</span></strong>。</p>
-<p><strong>易错点：</strong> 矩阵方程有解要求每个右端列都相容；<span class="arithmatex">\(BA\)</span> 不对称时，应先取对称部分再判惯性。</p>
+<p><strong>（ 1 ）前两行决定 <span class="arithmatex">\(B\)</span>，第三行检验相容性。</strong> 记 <span class="arithmatex">\(B\)</span> 的两行为 <span class="arithmatex">\(u,v\)</span>。矩阵等式前两行给出 <span class="arithmatex">\(u-v=(1,1,a)\)</span>、<span class="arithmatex">\(u+v=(1,2,1)\)</span>。相加、相减便得到</p>
+<div class="arithmatex">\[
+u=\left(1,\frac32,\frac{a+1}{2}\right),\qquad v=\left(0,\frac12,\frac{1-a}{2}\right).
+\]</div>
+<p>第三行还须满足 <span class="arithmatex">\(au+bv=(a,1,1)\)</span>。第一分量自动成立，后两分量要求 <span class="arithmatex">\(3a+b=2\)</span>、<span class="arithmatex">\(a(a+1)+b(1-a)=2\)</span>。消去 <span class="arithmatex">\(b\)</span> 得 <span class="arithmatex">\(4a(a-1)=0\)</span>，所以 <strong><span class="arithmatex">\((a,b)=(0,2)\)</span> 或 <span class="arithmatex">\((1,-1)\)</span></strong>。</p>
+<p><strong>（ 2 ）分别写出矩阵。</strong> 按上述参数顺序，两组解为</p>
+<div class="arithmatex">\[
+\begin{aligned}B_1&amp;=\begin{pmatrix}1&amp;\frac32&amp;\frac12\\[2pt]0&amp;\frac12&amp;\frac12\end{pmatrix},\\[5pt] B_2&amp;=\begin{pmatrix}1&amp;\frac32&amp;1\\[2pt]0&amp;\frac12&amp;0\end{pmatrix}.\end{aligned}
+\]</div>
+<p><strong>（ 3 ）对二次型取对称部分。</strong> 对任意 <span class="arithmatex">\(x\)</span>，标量 <span class="arithmatex">\(x^{\mathsf T}BAx\)</span> 等于其转置，因此可以用 <span class="arithmatex">\(S=\dfrac{BA+(BA)^{\mathsf T}}{2}\)</span> 替代 <span class="arithmatex">\(BA\)</span>。两种参数依次给出</p>
+<div class="arithmatex">\[
+S_1=\begin{pmatrix}\frac52&amp;1\\[2pt]1&amp;\frac32\end{pmatrix},\qquad S_2=\begin{pmatrix}\frac72&amp;0\\[2pt]0&amp;\frac12\end{pmatrix}.
+\]</div>
+<p>两者的一阶顺序主子式均正，行列式分别为 <span class="arithmatex">\(\dfrac{11}{4}\)</span>、<span class="arithmatex">\(\dfrac74\)</span>，也都为正。故两个二次型都正定，<strong>正惯性指数均为 <span class="arithmatex">\(2\)</span>，负惯性指数均为 <span class="arithmatex">\(0\)</span></strong>。</p>
 </details>
 </div>
 <div class="admonition example exercise">
@@ -2611,17 +2664,25 @@ x_1-x_2+kx_4=-1.
 \]</div>
 <details class="success">
 <summary>解析</summary>
-<p>按前两式、后两式分别相加，得 <span class="arithmatex">\(x_2=-x_1\)</span>、<span class="arithmatex">\(x_4=-x_3\)</span>。剩下 <span class="arithmatex">\(kx_1-2x_3=1,\ -2x_1+kx_3=1\)</span>。当 <span class="arithmatex">\(k^2\ne4\)</span> 时有唯一解；<span class="arithmatex">\(k=-2\)</span> 时两式相同，仍有解；<span class="arithmatex">\(k=2\)</span> 时左端互反而右端同为 <span class="arithmatex">\(1\)</span>，矛盾。故 <strong><span class="arithmatex">\(k=2\)</span></strong>。</p>
-<p><strong>易错点：</strong> 系数矩阵奇异只筛出了候选参数，还要比较右端是否相容。</p>
+<p>前两式中 <span class="arithmatex">\(x_3,x_4\)</span> 的系数互反，后两式中 <span class="arithmatex">\(x_1,x_2\)</span> 的系数互反。分别相加，利用 <span class="arithmatex">\(k\ne0\)</span> 得 <span class="arithmatex">\(x_2=-x_1,\ x_4=-x_3\)</span>。代回后，只要判断以下两式是否相容：</p>
+<div class="arithmatex">\[
+kx_1-2x_3=1,\qquad -2x_1+kx_3=1.
+\]</div>
+<p>系数行列式为 <span class="arithmatex">\(k^2-4\)</span>，非零时必有唯一解。为零只说明不能用唯一解公式，<strong>无解还是无穷多解要看右端</strong>。</p>
+<p>当 <span class="arithmatex">\(k=-2\)</span> 时，两式完全相同，仍有解；当 <span class="arithmatex">\(k=2\)</span> 时，两式左端互为相反数，右端却都为 <span class="arithmatex">\(1\)</span>，相加得到 <span class="arithmatex">\(0=2\)</span>。所以无解的参数只有 <strong><span class="arithmatex">\(k=2\)</span></strong>。</p>
 </details>
 </div>
 <div class="admonition example exercise">
 <p class="admonition-title">非齐次通解的基坐标与矩阵作用</p>
-<p>设 <span class="arithmatex">\(Ax=(2,1,0)^{\mathsf T}\)</span> 的通解为 <span class="arithmatex">\(k_1\xi_1+k_2\xi_2+\eta^*\)</span>，其中 <span class="arithmatex">\(\xi_1=(2,1,0)^{\mathsf T},\xi_2=(1,0,1)^{\mathsf T},\eta^*=(-1,2,1)^{\mathsf T}\)</span>。令 <span class="arithmatex">\(B=(\xi_1,\xi_2,\eta^*)\)</span>、<span class="arithmatex">\(\beta=(1,2,3)^{\mathsf T}\)</span>，求 <span class="arithmatex">\(Bx=\beta\)</span> 的解及 <span class="arithmatex">\(\beta^{\mathsf T}A\beta\)</span>。</p>
+<p>设 <span class="arithmatex">\(A\)</span> 为三阶矩阵，非齐次方程组 <span class="arithmatex">\(Ax=(2,1,0)^{\mathsf T}\)</span> 的通解为 <span class="arithmatex">\(k_1\xi_1+k_2\xi_2+\eta^*\)</span>，其中 <span class="arithmatex">\(k_1,k_2\)</span> 为任意常数，<span class="arithmatex">\(\xi_1=(2,1,0)^{\mathsf T}\)</span>，<span class="arithmatex">\(\xi_2=(1,0,1)^{\mathsf T}\)</span>，<span class="arithmatex">\(\eta^*=(-1,2,1)^{\mathsf T}\)</span>。</p>
+<p>记 <span class="arithmatex">\(B=(\xi_1,\xi_2,\eta^*)\)</span>，<span class="arithmatex">\(\beta=(1,2,3)^{\mathsf T}\)</span>。</p>
+<p>（ 1 ）求方程组 <span class="arithmatex">\(Bx=\beta\)</span> 的解。</p>
+<p>（ 2 ）求 <span class="arithmatex">\(\beta^{\mathsf T}A\beta\)</span>。</p>
 <details class="success">
 <summary>解析</summary>
-<p><span class="arithmatex">\(A\xi_i=0\)</span> 但 <span class="arithmatex">\(A\eta^*=(2,1,0)^{\mathsf T}\ne0\)</span>，所以 <span class="arithmatex">\(\eta^*\)</span> 在齐次解空间外，三列独立。因为 <span class="arithmatex">\(\beta=2\xi_2+\eta^*\)</span>，故 <strong><span class="arithmatex">\(x=(0,2,1)^{\mathsf T}\)</span></strong>，并且 <span class="arithmatex">\(A\beta=A\eta^*\)</span>，得 <strong><span class="arithmatex">\(\beta^{\mathsf T}A\beta=4\)</span></strong>。</p>
-<p><strong>要点：</strong> 矩阵 <span class="arithmatex">\(A\)</span> 无需恢复；通解已告知它对三列的作用。</p>
+<p>通解中，任意常数前的两个向量是齐次解，常向量是特解。所以 <span class="arithmatex">\(A\xi_1=A\xi_2=0\)</span>，<span class="arithmatex">\(A\eta^*=(2,1,0)^{\mathsf T}\)</span>。<span class="arithmatex">\(\xi_1,\xi_2\)</span> 独立，<span class="arithmatex">\(\eta^*\)</span> 又不在它们张成的零空间内，因而 <span class="arithmatex">\(B\)</span> 的三列构成一组基。</p>
+<p><strong>（ 1 ）求坐标。</strong> <span class="arithmatex">\(Bx=\beta\)</span> 就是用这组三列表示 <span class="arithmatex">\(\beta\)</span>。逐坐标可见 <span class="arithmatex">\(2(1,0,1)^{\mathsf T}+(-1,2,1)^{\mathsf T}=(1,2,3)^{\mathsf T}\)</span>，故唯一解为 <strong><span class="arithmatex">\(x=(0,2,1)^{\mathsf T}\)</span></strong>。</p>
+<p><strong>（ 2 ）求二次型值。</strong> 不用恢复矩阵 <span class="arithmatex">\(A\)</span>：对上式左乘 <span class="arithmatex">\(A\)</span>，两倍齐次解那一项消失，故 <span class="arithmatex">\(A\beta=A\eta^*=(2,1,0)^{\mathsf T}\)</span>。再与 <span class="arithmatex">\(\beta\)</span> 点乘，得 <strong><span class="arithmatex">\(\beta^{\mathsf T}A\beta=1\cdot2+2\cdot1+3\cdot0=4\)</span></strong>。</p>
 </details>
 </div>
 <h2 id="特征值">特征值<a class="headerlink" href="#特征值" title="Permanent link">&para;</a></h2>
@@ -2646,8 +2707,9 @@ x_1-x_2+kx_4=-1.
 </div></p>
 <details class="success">
 <summary>解析</summary>
-<p>第二个条件给出 <span class="arithmatex">\(A^{\mathsf T}A\)</span> 的特征值 <span class="arithmatex">\(2\)</span>。若 <span class="arithmatex">\(A^{\mathsf T}Ax=2x\)</span>、<span class="arithmatex">\(x\ne0\)</span>，则 <span class="arithmatex">\(Ax\ne0\)</span> 且 <span class="arithmatex">\(AA^{\mathsf T}(Ax)=2Ax\)</span>。于是 <span class="arithmatex">\(AA^{\mathsf T}\)</span> 的两个特征值为 <span class="arithmatex">\(2,1\)</span>；同理，乘 <span class="arithmatex">\(A^{\mathsf T}\)</span> 可把特征值 <span class="arithmatex">\(1\)</span> 传回。又 <span class="arithmatex">\(r(A^{\mathsf T}A)=r(A)=2\)</span>，所以它的特征值是 <span class="arithmatex">\(2,1,0\)</span>。答案为 <strong><span class="arithmatex">\(4\cdot3\cdot2=24\)</span>（ D ）</strong>。</p>
-<p><strong>要点：</strong> 乘矩阵传递特征向量时先检查新向量非零；两个矩阵的尺寸不同，零特征值要单独处理。</p>
+<p>题中同时出现 <span class="arithmatex">\(AA^{\mathsf T}\)</span> 和 <span class="arithmatex">\(A^{\mathsf T}A\)</span>，但两者分别是二阶、三阶矩阵。可以传递的是<strong>非零特征值</strong>，而不是整个特征值表。</p>
+<p>由 <span class="arithmatex">\(\det(A^{\mathsf T}A-2E)=0\)</span>，取 <span class="arithmatex">\(A^{\mathsf T}Ax=2x\)</span>，<span class="arithmatex">\(x\ne0\)</span>。左乘 <span class="arithmatex">\(A\)</span> 得 <span class="arithmatex">\(AA^{\mathsf T}(Ax)=2Ax\)</span>。这里 <span class="arithmatex">\(Ax\ne0\)</span>，否则原式右端也为零。因此 <span class="arithmatex">\(2\)</span> 是 <span class="arithmatex">\(AA^{\mathsf T}\)</span> 的一个特征值。</p>
+<p>二阶矩阵 <span class="arithmatex">\(AA^{\mathsf T}\)</span> 的行列式为 <span class="arithmatex">\(2\)</span>，故另一个特征值为 <span class="arithmatex">\(1\)</span>。同理，左乘 <span class="arithmatex">\(A^{\mathsf T}\)</span> 可将特征值 <span class="arithmatex">\(1\)</span> 传回。最后补上维数差：<span class="arithmatex">\(A\)</span> 的秩为 <span class="arithmatex">\(2\)</span>，<span class="arithmatex">\(A^{\mathsf T}A\)</span> 还有一个零特征值。加 <span class="arithmatex">\(2E\)</span> 后三个特征值变为 <span class="arithmatex">\(4,3,2\)</span>，故行列式为 <strong><span class="arithmatex">\(24\)</span>（ D ）</strong>。</p>
 </details>
 </div>
 <div class="supplement">
@@ -2681,16 +2743,24 @@ x_1-x_2+kx_4=-1.
 </div>
 <div class="admonition example exercise">
 <p class="admonition-title">☆☆☆ 列向量组等价与矩阵相似</p>
-<p>设 <span class="arithmatex">\(a\ne0\)</span>，<span class="arithmatex">\(A\)</span> 的列为 <span class="arithmatex">\((a,0,1)^{\mathsf T},(0,-a,0)^{\mathsf T},(1,0,a)^{\mathsf T}\)</span>，<span class="arithmatex">\(B\)</span> 的列为 <span class="arithmatex">\((a,0,1)^{\mathsf T},(a,1,1)^{\mathsf T},(a^2,0,a)^{\mathsf T}\)</span>。何时两列组等价？何时 <span class="arithmatex">\(P^{-1}AP=B\)</span>，并求一个 <span class="arithmatex">\(P\)</span>？</p>
+<p>设 <span class="arithmatex">\(a\ne0\)</span>，给定两组列向量：</p>
+<div class="arithmatex">\[
+\begin{aligned} &amp;\alpha_1=(a,0,1)^{\mathsf T},\quad\alpha_2=(0,-a,0)^{\mathsf T},\quad\alpha_3=(1,0,a)^{\mathsf T};\\ &amp;\beta_1=(a,0,1)^{\mathsf T},\quad\beta_2=(a,1,1)^{\mathsf T},\quad\beta_3=(a^2,0,a)^{\mathsf T}. \end{aligned}
+\]</div>
+<p>（ 1 ）若这两个向量组等价，求 <span class="arithmatex">\(a\)</span> 的值。</p>
+<p>（ 2 ）记 <span class="arithmatex">\(A=(\alpha_1,\alpha_2,\alpha_3),\ B=(\beta_1,\beta_2,\beta_3)\)</span>。当 <span class="arithmatex">\(a\)</span> 为何值时，存在可逆矩阵 <span class="arithmatex">\(P\)</span>，使 <span class="arithmatex">\(P^{-1}AP=B\)</span>？求出一个这样的 <span class="arithmatex">\(P\)</span>。</p>
 <details class="success">
 <summary>解析</summary>
-<p><span class="arithmatex">\(B\)</span> 的第三列是第一列的 <span class="arithmatex">\(a\)</span> 倍，前两列张成 <span class="arithmatex">\(x=az\)</span>。<span class="arithmatex">\(A\)</span> 的前两列也张成该平面，第三列落入其中当且仅当 <span class="arithmatex">\(a^2=1\)</span>，故等价时 <strong><span class="arithmatex">\(a=\pm1\)</span></strong>。相似时先用秩相等得到 <span class="arithmatex">\(a=\pm1\)</span>（<span class="arithmatex">\(r(B)=2\)</span>），再由 <span class="arithmatex">\(\operatorname{tr}A=a\)</span>、<span class="arithmatex">\(\operatorname{tr}B=2a+1\)</span> 得 <strong><span class="arithmatex">\(a=-1\)</span></strong>。此时两矩阵的特征值同为 <span class="arithmatex">\(0,1,-2\)</span>。分别按此顺序排特征向量：</p>
+<p><strong>（ 1 ）比较列空间。</strong> <span class="arithmatex">\(B\)</span> 的第三列是第一列的 <span class="arithmatex">\(a\)</span> 倍，前两列独立且均满足 <span class="arithmatex">\(x=az\)</span>，所以列空间就是平面 <span class="arithmatex">\(x=az\)</span>。由于 <span class="arithmatex">\(a\ne0\)</span>，<span class="arithmatex">\(A\)</span> 的前两列也张成此平面。只需检查其第三列 <span class="arithmatex">\((1,0,a)^{\mathsf T}\)</span>：代入平面方程得到 <span class="arithmatex">\(1=a^2\)</span>。因此两向量组等价当且仅当 <strong><span class="arithmatex">\(a=\pm1\)</span></strong>。</p>
+<p><strong>（ 2 ）先筛相似的参数。</strong> 相似保持秩和迹。<span class="arithmatex">\(B\)</span> 的秩恒为 <span class="arithmatex">\(2\)</span>，而 <span class="arithmatex">\(A\)</span> 秩为 <span class="arithmatex">\(2\)</span> 恰好要求 <span class="arithmatex">\(a^2=1\)</span>。再比较迹，<span class="arithmatex">\(a=2a+1\)</span>，只剩 <strong><span class="arithmatex">\(a=-1\)</span></strong>。这些不变量给出候选值，还需要实际构造 <span class="arithmatex">\(P\)</span>。</p>
+<p>此时解两组特征方程，按<strong>相同的特征值顺序</strong> <span class="arithmatex">\(0,1,-2\)</span> 把对应特征向量排成列，可取</p>
 <div class="arithmatex">\[
-P_1=\begin{pmatrix}1&amp;0&amp;1\\0&amp;1&amp;0\\1&amp;0&amp;-1\end{pmatrix},\qquad
-P_2=\begin{pmatrix}1&amp;-1&amp;-1\\0&amp;3&amp;0\\1&amp;1&amp;1\end{pmatrix}.
+P_1=\begin{pmatrix}1&amp;0&amp;1\\0&amp;1&amp;0\\1&amp;0&amp;-1\end{pmatrix},\qquad P_2=\begin{pmatrix}1&amp;-1&amp;-1\\0&amp;3&amp;0\\1&amp;1&amp;1\end{pmatrix}.
 \]</div>
-<p>由 <span class="arithmatex">\(P_1^{-1}AP_1=P_2^{-1}BP_2\)</span>，取 <span class="arithmatex">\(P=P_1P_2^{-1}=\begin{pmatrix}0&amp;-\dfrac{1}{3}&amp;1\\0&amp;\dfrac{1}{3}&amp;0\\1&amp;\dfrac{1}{3}&amp;0\end{pmatrix}\)</span>。</p>
-<p><strong>易错点：</strong> 相似要求矩阵同秩，但并不要求原来的两个列空间重合；本题相似的候选参数是由秩单独筛出的。</p>
+<p>于是 <span class="arithmatex">\(P_1^{-1}AP_1=P_2^{-1}BP_2\)</span>。把 <span class="arithmatex">\(P^{-1}AP=B\)</span> 中的左右因子对齐，得到</p>
+<div class="arithmatex">\[
+P=P_1P_2^{-1}=\begin{pmatrix}0&amp;-\frac13&amp;1\\0&amp;\frac13&amp;0\\1&amp;\frac13&amp;0\end{pmatrix}.
+\]</div>
 </details>
 </div>
 <div class="supplement">
@@ -2715,22 +2785,25 @@ P_2=\begin{pmatrix}1&amp;-1&amp;-1\\0&amp;3&amp;0\\1&amp;1&amp;1\end{pmatrix}.
 </div></p>
 <details class="success">
 <summary>解析</summary>
-<p>可对角化时，将 <span class="arithmatex">\(A\)</span> 换成相似的对角阵即得等式。反过来，若等式成立，则对任意 <span class="arithmatex">\(x\)</span> 都有</p>
+<p><strong>从可对角化推矩阵等式。</strong> 令 <span class="arithmatex">\(A=PDP^{-1}\)</span>。对角阵 <span class="arithmatex">\(D\)</span> 的每个对角元都是 <span class="arithmatex">\(a\)</span> 或 <span class="arithmatex">\(b\)</span>，故 <span class="arithmatex">\((D-aE)(D-bE)=0\)</span>。在左右乘回 <span class="arithmatex">\(P,P^{-1}\)</span>，就得到题设等式。</p>
+<p><strong>从矩阵等式推可对角化。</strong> 关键是重特征值 <span class="arithmatex">\(a\)</span> 是否有足够的特征向量。对任意向量 <span class="arithmatex">\(x\)</span>，因 <span class="arithmatex">\(a\ne b\)</span>，可以分解为</p>
 <div class="arithmatex">\[
 x=\frac{(A-bE)x}{a-b}+\frac{(A-aE)x}{b-a}.
 \]</div>
-<p>两项分别属于 <span class="arithmatex">\(a,b\)</span> 的特征子空间，于是这两个子空间张成全空间，<span class="arithmatex">\(A\)</span> 可对角化。故为 <strong>充要条件（ A ）</strong>。</p>
-<p><strong>要点：</strong> 手写的对角阵推导给出一个方向；反向要建立特征向量足以组成基。</p>
+<p>用 <span class="arithmatex">\(A-aE\)</span> 乘第一项得到零，用 <span class="arithmatex">\(A-bE\)</span> 乘第二项也得到零（两个矩阵都是 <span class="arithmatex">\(A\)</span> 的多项式，可以交换）。所以任意 <span class="arithmatex">\(x\)</span> 都在两个特征子空间的和中，能选出一组特征向量基。两个方向均成立，选 <strong>A ：充分必要条件</strong>。</p>
 </details>
 </div>
 <div class="admonition example exercise">
 <p class="admonition-title">☆☆☆ 重特征值的对角化与二次型的正定性</p>
-<p>设 <span class="arithmatex">\(A=\begin{pmatrix}1&amp;0&amp;a\\0&amp;1-a&amp;-2\\-1&amp;0&amp;2\end{pmatrix}\)</span> 的特征值均为实数。求可对角化时 <span class="arithmatex">\(a\)</span> 的范围；若 <span class="arithmatex">\(a&lt;0\)</span> 且 <span class="arithmatex">\(A\)</span> 不可对角化，判断 <span class="arithmatex">\(x^{\mathsf T}Ax\)</span> 的正定性。</p>
+<p>设三阶矩阵 <span class="arithmatex">\(A=\begin{pmatrix}1&amp;0&amp;a\\0&amp;1-a&amp;-2\\-1&amp;0&amp;2\end{pmatrix}\)</span> 的特征值均为实数，<span class="arithmatex">\(x=(x_1,x_2,x_3)^{\mathsf T}\)</span>。</p>
+<p>（ 1 ）若 <span class="arithmatex">\(A\)</span> 可对角化，求参数 <span class="arithmatex">\(a\)</span> 的取值范围。</p>
+<p>（ 2 ）当 <span class="arithmatex">\(a&lt;0\)</span> 且 <span class="arithmatex">\(A\)</span> 不可对角化时，判断二次型 <span class="arithmatex">\(f(x_1,x_2,x_3)=x^{\mathsf T}Ax\)</span> 的正定性。</p>
 <details class="success">
 <summary>解析</summary>
-<p>特征多项式为 <span class="arithmatex">\((\lambda-1+a)(\lambda^2-3\lambda+2+a)\)</span>。实根要求 <span class="arithmatex">\(a\le\dfrac{1}{4}\)</span>。令二次因子的判别式为零，或将 <span class="arithmatex">\(\lambda=1-a\)</span> 代入二次因子，得到重根参数 <span class="arithmatex">\(a=\dfrac{1}{4},0,-2\)</span>，对应重根 <span class="arithmatex">\(\dfrac{3}{2},1,3\)</span>。三种情形的 <span class="arithmatex">\(A-\lambda E\)</span> 的秩均为 <span class="arithmatex">\(2\)</span>，重根只有一维特征子空间，均不可对角化；其余三个特征值互异。故 <strong>可对角化当且仅当 <span class="arithmatex">\(a&lt;\dfrac{1}{4}\)</span> 且 <span class="arithmatex">\(a\notin\{-2,0\}\)</span></strong>。</p>
-<p>第二问只剩 <span class="arithmatex">\(a=-2\)</span>。取 <span class="arithmatex">\(S=\dfrac{A+A^{\mathsf T}}{2}=\begin{pmatrix}1&amp;0&amp;-\dfrac{3}{2}\\0&amp;3&amp;-1\\-\dfrac{3}{2}&amp;-1&amp;2\end{pmatrix}\)</span>，其行列式为 <span class="arithmatex">\(-\dfrac{7}{4}\)</span>，故二次型<strong>不正定</strong>；例如取 <span class="arithmatex">\((1,0,0)\)</span> 得正值，取 <span class="arithmatex">\((3,0,2)\)</span> 得负值。</p>
-<p><strong>易错点：</strong> 重特征值不自动排除对角化，要比较两种重数；二次型正定性看对称部分而不是原矩阵的特征值。</p>
+<p><strong>（ 1 ）先找可能的重根。</strong> 沿 <span class="arithmatex">\(\lambda E-A\)</span> 的第二列展开，特征多项式为 <span class="arithmatex">\((\lambda-1+a)(\lambda^2-3\lambda+2+a)\)</span>。二次因子判别式为 <span class="arithmatex">\(1-4a\)</span>，故实特征值要求 <span class="arithmatex">\(a\le\dfrac14\)</span>。</p>
+<p>重根有两种来源：二次因子自身有重根，给出 <span class="arithmatex">\(a=\dfrac14\)</span>；一次因子的根 <span class="arithmatex">\(1-a\)</span> 也使二次因子为零，代入得 <span class="arithmatex">\(a(a+2)=0\)</span>。其余参数下三个实根互异，必可对角化。</p>
+<p>在 <span class="arithmatex">\(a=\dfrac14,0,-2\)</span> 时，重根依次为 <span class="arithmatex">\(\dfrac32,1,3\)</span>。分别解 <span class="arithmatex">\((A-\lambda E)x=0\)</span>：第一种要求 <span class="arithmatex">\(x_3=2x_1,\ x_2=-\dfrac83x_3\)</span>；后两种均要求 <span class="arithmatex">\(x_1=x_3=0\)</span>。每次都只有一个自由变量，重根的几何重数为 <span class="arithmatex">\(1\)</span>，不足其代数重数 <span class="arithmatex">\(2\)</span>。故 <strong><span class="arithmatex">\(a&lt;\dfrac14\)</span> 且 <span class="arithmatex">\(a\notin\{-2,0\}\)</span></strong> 时可对角化。</p>
+<p><strong>（ 2 ）检验二次型。</strong> <span class="arithmatex">\(a&lt;0\)</span> 且不可对角化只剩 <span class="arithmatex">\(a=-2\)</span>。<span class="arithmatex">\(A\)</span> 不对称，不能直接凭它的特征值判断。取 <span class="arithmatex">\(x=(1,0,0)^{\mathsf T}\)</span>，得 <span class="arithmatex">\(x^{\mathsf T}Ax=1\)</span>；取 <span class="arithmatex">\(x=(3,0,2)^{\mathsf T}\)</span>，得 <span class="arithmatex">\(9-18+8=-1\)</span>。二次型既取正值又取负值，故<strong>不正定</strong>。也可以通过依次计算其顺序主子式，或将 <span class="arithmatex">\(A\)</span> 变为对应的对称矩阵来说明不正定。</p>
 </details>
 </div>
 <div class="supplement">
@@ -2763,8 +2836,12 @@ x=\frac{(A-bE)x}{a-b}+\frac{(A-aE)x}{b-a}.
 </div></p>
 <details class="success">
 <summary>解析</summary>
-<p>由 <span class="arithmatex">\(3A-A^2=E\)</span> 得 <span class="arithmatex">\((A-E)(A-2E)=E\)</span>，故 <span class="arithmatex">\(C=A-E\)</span> 可逆。题设矩阵本身就是 <span class="arithmatex">\(C^{\mathsf T}EC\)</span>，所以 <strong>与 <span class="arithmatex">\(E\)</span> 合同（ D ）</strong>。</p>
-<p><strong>要点：</strong> 合同用 <span class="arithmatex">\(C^{\mathsf T}EC\)</span>，相似用 <span class="arithmatex">\(C^{-1}EC\)</span>；这里识别出合同的形式即可。</p>
+<p>看到 <span class="arithmatex">\((A-E)^{\mathsf T}(A-E)\)</span>，先记 <span class="arithmatex">\(C=A-E\)</span>。它已写成 <span class="arithmatex">\(C^{\mathsf T}EC\)</span>；要据此判定与 <span class="arithmatex">\(E\)</span> 合同，唯一缺少的条件是 <span class="arithmatex">\(C\)</span> 可逆。<span class="arithmatex">\(A\)</span> 可逆本身并不能推出 <span class="arithmatex">\(A-E\)</span> 可逆。</p>
+<p>由 <span class="arithmatex">\(A^{-1}=3E-A\)</span> 得 <span class="arithmatex">\(3A-A^2=E\)</span>，所以</p>
+<div class="arithmatex">\[
+(A-E)(A-2E)=A^2-3A+2E=E.
+\]</div>
+<p>这就找到了 <span class="arithmatex">\(C\)</span> 的逆矩阵 <span class="arithmatex">\(A-2E\)</span>。因此题设矩阵与三阶单位矩阵合同，选 <strong>D</strong>。</p>
 </details>
 </div>
 <div class="supplement">
@@ -2791,11 +2868,23 @@ q_j&amp;=\frac{u_j}{\lVert u_j\rVert}
 </div>
 <div class="admonition example exercise">
 <p class="admonition-title">☆☆☆ 单位球上的二次型最小值</p>
-<p>设 <span class="arithmatex">\(f(x)=2x_1^2+2x_2^2+ax_3^2-2x_1x_2+2x_1x_3-2x_2x_3\)</span>，其矩阵 <span class="arithmatex">\(A\)</span> 有特征向量 <span class="arithmatex">\((1,b,1)^{\mathsf T}\)</span>（<span class="arithmatex">\(b&lt;0\)</span>），对应特征值为 <span class="arithmatex">\(\lambda\)</span>。求 <span class="arithmatex">\(a,b,\lambda\)</span>、一个正交标准形及 <span class="arithmatex">\(x^{\mathsf T}x=1\)</span> 时的最小值。</p>
+<p>已知二次型 <span class="arithmatex">\(f(x_1,x_2,x_3)=2x_1^2+2x_2^2+ax_3^2-2x_1x_2+2x_1x_3-2x_2x_3\)</span>，其矩阵为 <span class="arithmatex">\(A\)</span>。向量 <span class="arithmatex">\(\alpha=(1,b,1)^{\mathsf T}\)</span> 是 <span class="arithmatex">\(A\)</span> 对应于特征值 <span class="arithmatex">\(\lambda\)</span> 的一个特征向量，且 <span class="arithmatex">\(b&lt;0\)</span>。</p>
+<p>（ 1 ）求 <span class="arithmatex">\(a,b,\lambda\)</span>。</p>
+<p>（ 2 ）求正交变换 <span class="arithmatex">\(x=Qy\)</span>，将 <span class="arithmatex">\(f\)</span> 化为标准形，并写出相应的标准形。</p>
+<p>（ 3 ）求 <span class="arithmatex">\(f\)</span> 在 <span class="arithmatex">\(x^{\mathsf T}x=1\)</span> 条件下的最小值。</p>
 <details class="success">
 <summary>解析</summary>
-<p>特征方程的三个分量是 <span class="arithmatex">\(3-b=\lambda,\ 2b-2=b\lambda,\ a-b+1=\lambda\)</span>，解得 <strong><span class="arithmatex">\((a,b,\lambda)=(2,-1,4)\)</span></strong>。此时 <span class="arithmatex">\(A=E+vv^{\mathsf T}\)</span>，<span class="arithmatex">\(v=(1,-1,1)^{\mathsf T}\)</span>。用 <span class="arithmatex">\(q_1=\dfrac{(1,1,0)^{\mathsf T}}{\sqrt2}\)</span>、<span class="arithmatex">\(q_2=\dfrac{(1,-1,-2)^{\mathsf T}}{\sqrt6}\)</span> 张成 <span class="arithmatex">\(v^\perp\)</span>，再取 <span class="arithmatex">\(q_3=\dfrac{v}{\sqrt3}\)</span>。令 <span class="arithmatex">\(x=Qy\)</span>，<span class="arithmatex">\(Q=(q_1,q_2,q_3)\)</span>，标准形为 <span class="arithmatex">\(y_1^2+y_2^2+4y_3^2\)</span>。单位球约束变成 <span class="arithmatex">\(y^{\mathsf T}y=1\)</span>，故最小值是 <strong><span class="arithmatex">\(1\)</span></strong>，在 <span class="arithmatex">\(y_3=0\)</span> 时取到。</p>
-<p><strong>要点：</strong> 正交变换保长度；单位球上二次型的最小值就是最小特征值。</p>
+<p><strong>（ 1 ）由特征向量求参数。</strong> 把交叉项的系数平分到对称位置，得到 <span class="arithmatex">\(A=\begin{pmatrix}2&amp;-1&amp;1\\-1&amp;2&amp;-1\\1&amp;-1&amp;a\end{pmatrix}\)</span>。将 <span class="arithmatex">\(A(1,b,1)^{\mathsf T}=\lambda(1,b,1)^{\mathsf T}\)</span> 按行展开：</p>
+<div class="arithmatex">\[
+3-b=\lambda,\qquad 2b-2=b\lambda,\qquad 1-b+a=\lambda.
+\]</div>
+<p>前两式给出 <span class="arithmatex">\((b-2)(b+1)=0\)</span>，用 <span class="arithmatex">\(b&lt;0\)</span> 选 <span class="arithmatex">\(b=-1\)</span>，再代回得 <strong><span class="arithmatex">\(\lambda=4,\ a=2\)</span></strong>。</p>
+<p><strong>（ 2 ）构造正交变换。</strong> 记 <span class="arithmatex">\(v=(1,-1,1)^{\mathsf T}\)</span>。此时 <span class="arithmatex">\(A=E+vv^{\mathsf T}\)</span>，所以每个垂直于 <span class="arithmatex">\(v\)</span> 的向量都属于特征值 <span class="arithmatex">\(1\)</span>。在这个平面内选两个互相垂直的单位向量，再补上 <span class="arithmatex">\(v\)</span> 的单位向量：</p>
+<div class="arithmatex">\[
+q_1=\frac{(1,1,0)^{\mathsf T}}{\sqrt2},\quad q_2=\frac{(1,-1,-2)^{\mathsf T}}{\sqrt6},\quad q_3=\frac{v}{\sqrt3}.
+\]</div>
+<p>取 <span class="arithmatex">\(x=Qy\)</span>，<span class="arithmatex">\(Q=(q_1,q_2,q_3)\)</span>，标准形为 <span class="arithmatex">\(y_1^2+y_2^2+4y_3^2\)</span>。</p>
+<p><strong>（ 3 ）利用单位球约束。</strong> 正交变换保持长度，<span class="arithmatex">\(y_1^2+y_2^2+y_3^2=1\)</span>。标准形因此等于 <span class="arithmatex">\(1+3y_3^2\)</span>，最小值是 <strong><span class="arithmatex">\(1\)</span></strong>，在 <span class="arithmatex">\(y_3=0\)</span> 的单位向量上取到。这里选正交变换很重要：一般的可逆变换会改变单位球约束。</p>
 </details>
 </div>
 <div class="supplement">

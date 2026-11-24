@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="590" viewBox="0 0 920 590" role="img" aria-labelledby="tcp-handshake-title tcp-handshake-desc">
+  <title id="tcp-handshake-title">TCP 三次握手建立连接</title>
+  <desc id="tcp-handshake-desc">客户端 A 主动打开，服务器 B 被动监听。A 发送 SYN=1、seq=x 后进入 SYN-SENT；B 收到后进入 SYN-RCVD，回复 SYN=1、ACK=1、seq=y、ack=x+1；A 再发送 ACK=1、seq=x+1、ack=y+1，双方进入 ESTABLISHED 状态，随后传送数据。图中时间自上而下。</desc>
+  <defs>
+    <marker id="hs-arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#4051b5"/></marker>
+    <marker id="hs-arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#2f9070"/></marker>
+    <marker id="hs-arrow-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#c07f1e"/></marker>
+    <style>
+      text { fill: #1a237e; font-family: "Source Han Sans SC", "Noto Sans SC", "Microsoft YaHei", sans-serif; text-anchor: middle; }
+      .heading { font-size: 25px; font-weight: 600; }
+      .state { font-family: Consolas, Menlo, "Cascadia Mono", monospace; font-size: 20px; letter-spacing: .5px; }
+      .msg { font-family: Consolas, Menlo, "Cascadia Mono", monospace; font-size: 19px; }
+      .note { font-size: 19px; fill: #8a5a10; }
+      .lifeline { fill: none; stroke-width: 2; stroke-dasharray: 7 7; }
+      .a-line { stroke: #4051b5; opacity: .45; }
+      .b-line { stroke: #2f9070; opacity: .45; }
+      .box-a { fill: #eaf0ff; stroke: #4051b5; stroke-width: 1.5; }
+      .box-b { fill: #e9f6f1; stroke: #2f9070; stroke-width: 1.5; }
+      .text-a { fill: #1a237e; }
+      .text-b { fill: #237354; }
+      .syn { fill: none; stroke: #4051b5; stroke-width: 2.5; marker-end: url(#hs-arrow-blue); }
+      .reply { fill: none; stroke: #2f9070; stroke-width: 2.5; marker-end: url(#hs-arrow-green); }
+      .data { fill: none; stroke: #c07f1e; stroke-width: 2.5; marker-start: url(#hs-arrow-amber); marker-end: url(#hs-arrow-amber); }
+      .head { stroke-width: 2; }
+    </style>
+  </defs>
+  <rect width="920" height="590" fill="#ffffff"/>
+
+  <rect class="head" x="160" y="22" width="220" height="52" rx="10" fill="#eaf0ff" stroke="#4051b5"/>
+  <rect class="head" x="550" y="22" width="220" height="52" rx="10" fill="#e9f6f1" stroke="#2f9070"/>
+  <text class="heading" x="270" y="49" dominant-baseline="middle">客户端 A</text>
+  <text class="heading text-b" x="660" y="49" dominant-baseline="middle">服务器 B</text>
+
+  <path class="lifeline a-line" d="M 270 74 V 560"/>
+  <path class="lifeline b-line" d="M 660 74 V 560"/>
+
+  <rect class="box-a" x="180" y="96" width="180" height="46" rx="8"/>
+  <text class="state text-a" x="270" y="119" dominant-baseline="middle">CLOSED</text>
+  <rect class="box-b" x="570" y="96" width="180" height="46" rx="8"/>
+  <text class="state text-b" x="660" y="119" dominant-baseline="middle">CLOSED</text>
+  <text class="note" x="154" y="119" text-anchor="end" dominant-baseline="middle">主动打开</text>
+  <text class="note" x="776" y="119" text-anchor="start" dominant-baseline="middle">被动打开</text>
+
+  <rect class="box-a" x="180" y="166" width="180" height="46" rx="8"/>
+  <text class="state text-a" x="270" y="189" dominant-baseline="middle">SYN-SENT</text>
+  <rect class="box-b" x="570" y="166" width="180" height="46" rx="8"/>
+  <text class="state text-b" x="660" y="189" dominant-baseline="middle">LISTEN</text>
+
+  <path class="syn" d="M 270 252 H 660"/>
+  <text class="msg" x="465" y="240">SYN=1, seq=x</text>
+
+  <path class="reply" d="M 660 360 H 270"/>
+  <text class="msg text-b" x="465" y="348">SYN=1, ACK=1, seq=y, ack=x+1</text>
+
+  <rect class="box-b" x="570" y="276" width="180" height="46" rx="8"/>
+  <text class="state text-b" x="660" y="299" dominant-baseline="middle">SYN-RCVD</text>
+
+  <path class="syn" d="M 270 430 H 660"/>
+  <text class="msg" x="465" y="418">ACK=1, seq=x+1, ack=y+1</text>
+
+  <rect class="box-a" x="180" y="450" width="180" height="46" rx="8"/>
+  <text class="state text-a" x="270" y="473" dominant-baseline="middle">ESTABLISHED</text>
+  <rect class="box-b" x="570" y="450" width="180" height="46" rx="8"/>
+  <text class="state text-b" x="660" y="473" dominant-baseline="middle">ESTABLISHED</text>
+
+  <path class="data" d="M 270 536 H 660"/>
+  <text class="note" x="465" y="518">数据传送</text>
+</svg>

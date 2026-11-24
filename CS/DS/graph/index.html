@@ -799,10 +799,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#极大连通子图-maximal-connected-subgraph" class="md-nav__link">
+  <a href="#极大连通子图" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        极大连通子图 (Maximal Connected Subgraph)
+        极大连通子图
       </span>
     </span>
   </a>
@@ -810,10 +810,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#极小连通子图-minimal-connected-subgraph" class="md-nav__link">
+  <a href="#极小连通子图" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        极小连通子图 (Minimal Connected Subgraph)
+        极小连通子图
       </span>
     </span>
   </a>
@@ -2271,10 +2271,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#极大连通子图-maximal-connected-subgraph" class="md-nav__link">
+  <a href="#极大连通子图" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        极大连通子图 (Maximal Connected Subgraph)
+        极大连通子图
       </span>
     </span>
   </a>
@@ -2282,10 +2282,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#极小连通子图-minimal-connected-subgraph" class="md-nav__link">
+  <a href="#极小连通子图" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        极小连通子图 (Minimal Connected Subgraph)
+        极小连通子图
       </span>
     </span>
   </a>
@@ -2442,10 +2442,10 @@
 <li><span class="arithmatex">\(n\)</span> 个顶点的无向图若边数 <span class="arithmatex">\(e &lt; n-1\)</span>，则必为 <strong>非连通图</strong>（ n-1 条边恰好对应 n 个顶点）。</li>
 </ul>
 </details>
-<h3 id="极大连通子图-maximal-connected-subgraph">极大连通子图 (Maximal Connected Subgraph)<a class="headerlink" href="#极大连通子图-maximal-connected-subgraph" title="Permanent link">&para;</a></h3>
+<h3 id="极大连通子图">极大连通子图<a class="headerlink" href="#极大连通子图" title="Permanent link">&para;</a></h3>
 <div class="admonition note">
 <p class="admonition-title">正式的解释</p>
-<p><strong>定义</strong>：设 <span class="arithmatex">\(G\)</span> 为无向图，<span class="arithmatex">\(G'\)</span> 是 <span class="arithmatex">\(G\)</span> 的一个连通子图。若 <span class="arithmatex">\(G\)</span> 中不存在连通子图 <span class="arithmatex">\(G''\)</span>，使得 <span class="arithmatex">\(G'\)</span> 是 <span class="arithmatex">\(G''\)</span> 的真子图（<span class="arithmatex">\(G' \subsetneq G''\)</span>），即 <span class="arithmatex">\(G'\)</span> 无法再并入更多顶点（连同其关联边）而仍保持连通，则称 <span class="arithmatex">\(G'\)</span> 为 <span class="arithmatex">\(G\)</span> 的<strong>极大连通子图</strong>。</p>
+<p><strong>定义</strong>：设 <span class="arithmatex">\(G\)</span> 为无向图，<span class="arithmatex">\(G'\)</span> 是 <span class="arithmatex">\(G\)</span> 的一个连通子图。若 <span class="arithmatex">\(G\)</span> 中不存在连通子图 <span class="arithmatex">\(G''\)</span>，使得 <span class="arithmatex">\(G'\)</span> 是 <span class="arithmatex">\(G''\)</span> 的真子图（<span class="arithmatex">\(G' \subsetneq G''\)</span>），即 <span class="arithmatex">\(G'\)</span> 无法再并入更多顶点（连同其关联边）而仍保持连通，则称 <span class="arithmatex">\(G'\)</span> 为 <span class="arithmatex">\(G\)</span> 的<strong>极大连通子图 (Maximal Connected Subgraph)</strong>。</p>
 <ul>
 <li>无向图 <span class="arithmatex">\(G\)</span> 的极大连通子图恰为 <span class="arithmatex">\(G\)</span> 的<strong>连通分量 (Connected Component)</strong>。</li>
 <li>"极大"的意思是包含了依附于连通分量中顶点的<strong>所有边</strong>。</li>
@@ -2464,10 +2464,10 @@
 <li>如果 40 人都互相认识（整个图连通），那这个团体本身就是唯一的一个极大连通子图。</li>
 </ul>
 </details>
-<h3 id="极小连通子图-minimal-connected-subgraph">极小连通子图 (Minimal Connected Subgraph)<a class="headerlink" href="#极小连通子图-minimal-connected-subgraph" title="Permanent link">&para;</a></h3>
+<h3 id="极小连通子图">极小连通子图<a class="headerlink" href="#极小连通子图" title="Permanent link">&para;</a></h3>
 <div class="admonition note">
 <p class="admonition-title">正式的解释</p>
-<p><strong>定义</strong>：设 <span class="arithmatex">\(G\)</span> 为连通图，<span class="arithmatex">\(G'\)</span> 是 <span class="arithmatex">\(G\)</span> 的一个连通子图，且通常要求 <span class="arithmatex">\(G'\)</span> <strong>包含 <span class="arithmatex">\(G\)</span> 的全部顶点</strong>（即生成子图）。若在 <span class="arithmatex">\(G'\)</span> 中<strong>删除任意一条边</strong>都会使其不再连通，则称 <span class="arithmatex">\(G'\)</span> 为 <span class="arithmatex">\(G\)</span> 的<strong>极小连通子图</strong>。</p>
+<p><strong>定义</strong>：设 <span class="arithmatex">\(G\)</span> 为连通图，<span class="arithmatex">\(G'\)</span> 是 <span class="arithmatex">\(G\)</span> 的一个连通子图，且通常要求 <span class="arithmatex">\(G'\)</span> <strong>包含 <span class="arithmatex">\(G\)</span> 的全部顶点</strong>（即生成子图）。若在 <span class="arithmatex">\(G'\)</span> 中<strong>删除任意一条边</strong>都会使其不再连通，则称 <span class="arithmatex">\(G'\)</span> 为 <span class="arithmatex">\(G\)</span> 的<strong>极小连通子图 (Minimal Connected Subgraph)</strong>。</p>
 <ul>
 <li>若 <span class="arithmatex">\(G'\)</span> 含有 <span class="arithmatex">\(G\)</span> 的全部 <span class="arithmatex">\(n\)</span> 个顶点，则 <span class="arithmatex">\(G'\)</span> 恰好有 <span class="arithmatex">\(n-1\)</span> 条边，即 <span class="arithmatex">\(G'\)</span> 是一棵<strong>生成树 (Spanning Tree)</strong>。</li>
 <li>边数已是在"保持连通（并涵盖全部顶点）"前提下的<strong>最小值</strong>：少一条边即不连通，多一条边则产生回路。</li>
@@ -2549,6 +2549,10 @@
 <p>该算法的时间复杂度是 <strong><span class="arithmatex">\(O(|E \log_2 E|)\)</span></strong>。在最坏情况下，由于有些关键边权重很大或存在环路等因素，我们需要对每一条边各扫描一次。在每一次扫描中，如果我们使用堆存储（常用的方法），从中选出最小值的时间是 <span class="arithmatex">\(O(\log_2 |E|)\)</span>。同时，使用并查集来快速确定两个顶点是否已经属于同一棵树（集合）的时间复杂度是 <span class="arithmatex">\(O(\alpha(|V|))\)</span>，由于 <span class="arithmatex">\(\alpha(|V|)\)</span> 增长极其缓慢而近似为常数。</p>
 <p>如果使用排序算法确定最小值，那么排序算法的时间复杂度 <span class="arithmatex">\(O(|E|\log_2 |E|)\)</span>。随后依次取每一条边并判断是否成环的时间大致是 <span class="arithmatex">\(O(|E|)\)</span>（<span class="arithmatex">\(O(\alpha(|V|))\)</span> 被近似为常数）。这样，总体的时间复杂度依旧是 <span class="arithmatex">\(O(|E|\log_2 |E|)\)</span>。</p>
 <p>可以发现算法的时间复杂度与 <span class="arithmatex">\(|V|\)</span> 无关，因此 Kruskal 算法特别适合求解 <strong>边稀疏</strong> 以及 <strong>顶点较多</strong> 的图。</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">MST 问题已被确认在线性时间内解决</p>
+<p>2026 年 11 月 24 日， Louie Putterman 称，他与合作者 Sanjeev Khanna 和 Junkai Song （ NYU ）辅助使用 GPT Astra 6.2 给出了 MST 的 <strong>首个确定性线性时间算法</strong>。</p>
 </div>
 <h3 id="最短路算法">最短路算法<a class="headerlink" href="#最短路算法" title="Permanent link">&para;</a></h3>
 <p>我们之前提到过 BFS 可以求解无权图的最短路径。对于带权图来说应该怎么办呢？</p>

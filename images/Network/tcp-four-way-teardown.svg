@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="800" viewBox="0 0 920 800" role="img" aria-labelledby="tcp-teardown-title tcp-teardown-desc">
+  <title id="tcp-teardown-title">TCP 四次挥手释放连接</title>
+  <desc id="tcp-teardown-desc">客户端 A 主动关闭，服务器 B 被动关闭。A 发送 FIN=1、seq=u 后进入 FIN-WAIT-1；B 回复 ACK=1、ack=u+1 并进入 CLOSE-WAIT，A 收到后进入 FIN-WAIT-2，此时连接处于半关闭状态，B 仍可发送数据；B 发送 FIN=1、ACK=1、seq=w、ack=u+1 后进入 LAST-ACK；A 回复 ACK=1、seq=u+1、ack=w+1 后进入 TIME-WAIT，等待 2MSL 后关闭，B 收到该确认后关闭。图中时间自上而下。</desc>
+  <defs>
+    <marker id="td-arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#4051b5"/></marker>
+    <marker id="td-arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#2f9070"/></marker>
+    <marker id="td-arrow-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#c07f1e"/></marker>
+    <style>
+      text { fill: #1a237e; font-family: "Source Han Sans SC", "Noto Sans SC", "Microsoft YaHei", sans-serif; text-anchor: middle; }
+      .heading { font-size: 25px; font-weight: 600; }
+      .state { font-family: Consolas, Menlo, "Cascadia Mono", monospace; font-size: 20px; letter-spacing: .5px; }
+      .msg { font-family: Consolas, Menlo, "Cascadia Mono", monospace; font-size: 19px; }
+      .note { font-size: 19px; fill: #8a5a10; }
+      .lifeline { fill: none; stroke-width: 2; stroke-dasharray: 7 7; }
+      .a-line { stroke: #4051b5; opacity: .45; }
+      .b-line { stroke: #2f9070; opacity: .45; }
+      .box-a { fill: #eaf0ff; stroke: #4051b5; stroke-width: 1.5; }
+      .box-b { fill: #e9f6f1; stroke: #2f9070; stroke-width: 1.5; }
+      .text-a { fill: #1a237e; }
+      .text-b { fill: #237354; }
+      .syn { fill: none; stroke: #4051b5; stroke-width: 2.5; marker-end: url(#td-arrow-blue); }
+      .reply { fill: none; stroke: #2f9070; stroke-width: 2.5; marker-end: url(#td-arrow-green); }
+      .data { fill: none; stroke: #c07f1e; stroke-width: 2.5; marker-start: url(#td-arrow-amber); marker-end: url(#td-arrow-amber); }
+      .head { stroke-width: 2; }
+      .clock { fill: #eaf0ff; stroke: #4051b5; stroke-width: 1.5; }
+      .hand { fill: none; stroke: #4051b5; stroke-width: 2; stroke-linecap: round; }
+    </style>
+  </defs>
+  <rect width="920" height="800" fill="#ffffff"/>
+
+  <rect class="head" x="160" y="18" width="220" height="48" rx="10" fill="#eaf0ff" stroke="#4051b5"/>
+  <rect class="head" x="550" y="18" width="220" height="48" rx="10" fill="#e9f6f1" stroke="#2f9070"/>
+  <text class="heading" x="270" y="43" dominant-baseline="middle">客户端 A</text>
+  <text class="heading text-b" x="660" y="43" dominant-baseline="middle">服务器 B</text>
+
+  <path class="lifeline a-line" d="M 270 66 V 760"/>
+  <path class="lifeline b-line" d="M 660 66 V 760"/>
+
+  <path class="data" d="M 270 102 H 660"/>
+  <text class="note" x="465" y="90">数据传送</text>
+
+  <rect class="box-a" x="180" y="118" width="180" height="46" rx="8"/>
+  <text class="state text-a" x="270" y="141" dominant-baseline="middle">ESTABLISHED</text>
+  <rect class="box-b" x="570" y="118" width="180" height="46" rx="8"/>
+  <text class="state text-b" x="660" y="141" dominant-baseline="middle">ESTABLISHED</text>
+  <text class="note" x="154" y="141" text-anchor="end" dominant-baseline="middle">主动关闭</text>
+  <text class="note" x="776" y="141" text-anchor="start" dominant-baseline="middle">被动关闭</text>
+
+  <path class="syn" d="M 270 204 H 660"/>
+  <text class="msg" x="465" y="192">FIN=1, seq=u</text>
+
+  <rect class="box-a" x="180" y="224" width="180" height="46" rx="8"/>
+  <text class="state text-a" x="270" y="247" dominant-baseline="middle">FIN-WAIT-1</text>
+  <rect class="box-b" x="570" y="224" width="180" height="46" rx="8"/>
+  <text class="state text-b" x="660" y="247" dominant-baseline="middle">CLOSE-WAIT</text>
+  <text class="note" x="776" y="247" text-anchor="start" dominant-baseline="middle">通知应用进程</text>
+
+  <path class="reply" d="M 660 310 H 270"/>
+  <text class="msg text-b" x="465" y="298">ACK=1, ack=u+1</text>
+
+  <rect class="box-a" x="180" y="330" width="180" height="46" rx="8"/>
+  <text class="state text-a" x="270" y="353" dominant-baseline="middle">FIN-WAIT-2</text>
+
+  <path class="data" d="M 270 404 H 660"/>
+  <text class="note" x="465" y="392">半关闭：B 仍可发送数据</text>
+
+  <path class="reply" d="M 660 468 H 270"/>
+  <text class="msg text-b" x="465" y="456">FIN=1, ACK=1, seq=w, ack=u+1</text>
+
+  <rect class="box-b" x="570" y="488" width="180" height="46" rx="8"/>
+  <text class="state text-b" x="660" y="511" dominant-baseline="middle">LAST-ACK</text>
+
+  <path class="syn" d="M 270 576 H 660"/>
+  <text class="msg" x="465" y="564">ACK=1, seq=u+1, ack=w+1</text>
+
+  <rect class="box-a" x="180" y="594" width="180" height="46" rx="8"/>
+  <text class="state text-a" x="270" y="617" dominant-baseline="middle">TIME-WAIT</text>
+  <rect class="box-b" x="570" y="594" width="180" height="46" rx="8"/>
+  <text class="state text-b" x="660" y="617" dominant-baseline="middle">CLOSED</text>
+
+  <circle class="clock" cx="132" cy="617" r="18"/>
+  <path class="hand" d="M 132 617 V 606 M 132 617 H 141"/>
+  <text class="note" x="132" y="654">等待 2MSL</text>
+
+  <rect class="box-a" x="180" y="684" width="180" height="46" rx="8"/>
+  <text class="state text-a" x="270" y="707" dominant-baseline="middle">CLOSED</text>
+</svg>
