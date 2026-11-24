@@ -2996,12 +2996,12 @@
 <tr>
 <td>数据偏移</td>
 <td>4 bit</td>
-<td>TCP 首部长度，单位 4 B</td>
+<td>TCP 首部长度，单位为 4 B</td>
 </tr>
 <tr>
 <td>窗口</td>
 <td>16 bit</td>
-<td>通告接收方当前还能接收的最大数据量；可通过窗口扩大选项扩展</td>
+<td>以 B 为单位，通告当前还能接收的最大数据量；可通过窗口扩大选项扩展</td>
 </tr>
 <tr>
 <td>校验和</td>
@@ -3041,7 +3041,7 @@
 <ul>
 <li>仅在前两次握手的报文段中，<code>SYN=1</code>。</li>
 <li>仅在第一次握手的报文段中，<code>ACK=0</code>，因为此时未接收到任何报文段。</li>
-<li>第三次握手可以携带数据；若不携带数据，就不额外消耗序号（即开始数据传输时的 <code>seq</code> 仍然是 <code>x+1</code>）。</li>
+<li>第三次握手可以携带数据；若不携带数据，就不额外消耗序号（即开始数据传输时的 <code>seq</code> 仍然是 <code>x+1</code>）。主流操作系统一般都实现为不携带数据。</li>
 </ul>
 <p>三次交换使双方同步初始序号，并确认通信能够双向进行。</p>
 <div class="admonition question">
@@ -3055,7 +3055,7 @@
 <p><img alt="TCP 四次挥手" src="../../../images/Network/tcp-four-way-teardown.svg" width="85%" /></p>
 </figure>
 <p>第二次与第三次之间是<strong>半关闭</strong>： A 已发完，但仍能接收 B 尚未发完的数据。若 B 已无数据要发，它的 ACK 和 FIN 可以合并，因此释放连接也不必总是恰好四个报文段。</p>
-<p>主动关闭方通常在 <strong>TIME-WAIT 等待 2MSL （ Maximum Segment Lifetime ，最长报文段寿命）</strong> 后关闭，主要考虑到两点：一方面保留重发最后 ACK 的机会，确保发送的最后一个 ACK 能够到达对方；另一方面让旧连接中的报文在网络中自然消失。</p>
+<p>主动关闭方通常在 <strong>TIME-WAIT 等待 2MSL （ Maximum Segment Lifetime ，最长报文段寿命）</strong> 后关闭，主要考虑到两点：一方面保留重发最后 ACK 的机会，确保发送的最后一个 ACK 能够到达对方；另一方面让旧连接中的报文在网络中自然消失。由此，可以说，从客户发出 FIN 的时刻算期，客户端释放连接的最短时间为 <strong>1 RTT + 2 MSL</strong>，服务器释放连接的最短时间为 <strong>1.5 RTT</strong>。</p>
 <h2 id="tcp-的可靠传输">TCP 的可靠传输<a class="headerlink" href="#tcp-的可靠传输" title="Permanent link">&para;</a></h2>
 <h3 id="序号与累计确认">序号与累计确认<a class="headerlink" href="#序号与累计确认" title="Permanent link">&para;</a></h3>
 <p>TCP 对每个方向的字节分别编号，序号按 <strong>模 <span class="arithmatex">\(2^{32}\)</span></strong> 循环。确认号 <code>ack=n</code> 表示：<strong>编号 n 之前的数据已连续收到，接下来期望 n 号字节</strong>。</p>
@@ -3064,7 +3064,7 @@
 <p>A 连续发送两个普通数据段，序号分别为 90 和 110 ，则第一段携带 <span class="arithmatex">\(110-90=20\)</span> B 数据。</p>
 <p>若第一段丢失、第二段先到，且 B 此前正等待字节 90 ，则累计确认号仍为 <strong>90</strong>。即使后面的字节已缓存，也要等缺口补齐后才能推进累计确认。</p>
 </div>
-<p><strong>SYN 和 FIN 各占用一个序号，纯 ACK 不占用序号</strong>。普通数据段若 <code>seq=x</code>、携带 <span class="arithmatex">\(L\)</span> B ，则下一个数据字节的序号为 <span class="arithmatex">\(x+L\)</span>；若同段还有 FIN ，还要再加 1。</p>
+<p><strong>SYN 和 FIN 报文各占用一个序号，纯 ACK 不占用序号</strong>。</p>
 <p>接收端可以利用 <strong>SACK （选择确认）</strong>选项报告已经收到的不连续字节块，帮助发送端减少不必要的重传；累计确认号仍指向最前面的缺口。</p>
 <h3 id="超时重传">超时重传<a class="headerlink" href="#超时重传" title="Permanent link">&para;</a></h3>
 <p>TCP 每发送一个报文段，就对该报文段设置一个超时计时器。</p>
@@ -3131,7 +3131,7 @@ W=\min\{\mathrm{rwnd},\mathrm{cwnd}\}
 </tr>
 </tbody>
 </table>
-<p>为了防止 <code>cwnd</code> 无限增长，还设置了 <strong><code>ssthresh</code>（慢启动阈值）</strong>。 当 <code>cwnd &lt; ssthresh</code> 时采用慢启动；大于阈值时采用拥塞避免。等于阈值时，两种算法都可以使用，但一般是采用拥塞避免。</p>
+<p>为了防止 <code>cwnd</code> 无限增长，还设置了 <strong><code>ssthresh</code>（慢启动阈值）</strong>。 当 <code>cwnd &lt; ssthresh</code> 时采用慢启动；大于阈值时采用拥塞避免。等于阈值时，两种算法都可以使用，但一般是采用拥塞避免。特别地，如果在慢启动阶段某次窗口值为 x ，而 <code>x &lt; ssthresh &lt; 2x</code>，则下一次窗口值就是 <code>ssthresh</code> 了。</p>
 <p>发送方判断网络拥塞时，会对 <code>cnwd</code> 和 <code>ssthresh</code> 进行调整，以迅速减少进入网络的流量：</p>
 <ul>
 <li>将 <code>ssthresh</code> 调整为 <strong>当前 <code>cwnd</code></strong> 的一半；</li>
@@ -3171,6 +3171,9 @@ W=\min\{\mathrm{rwnd},\mathrm{cwnd}\}
 <p>因此，“减半后线性增长”描述的是恢复后的窗口变化。</p>
 </div>
 <p><img alt="Tahoe 与 Reno 的窗口变化" src="../../../images/Network/Reno-Tahoe.png" style="display: block; margin: 0 auto;" width="650" /></p>
+<div class="admonition warning">
+<p class="admonition-title">408 考纲中关于 TCP 拥塞控制部分直接默认的是 TCP Reno。</p>
+</div>
 <h3 id="带宽时延积与-bbr">带宽时延积与 BBR<a class="headerlink" href="#带宽时延积与-bbr" title="Permanent link">&para;</a></h3>
 <p>把路径想成一条可以容纳在途数据的管道。若瓶颈带宽为 <span class="arithmatex">\(B\)</span>、往返传播时间为 <span class="arithmatex">\(T\)</span>，填满路径大约需要 <strong><span class="arithmatex">\(B\times T\)</span></strong> 的数据，这就是管道的容量，也就是带宽时延积。继续增加在途量，常会使数据积压在瓶颈队列中，排队时延随之增长。</p>
 <p><strong>BBR</strong> 通过估计瓶颈带宽与往返传播时间，调整发送节奏和在途数据量；其基本思路是建立路径模型，而不是只在丢包后缩小窗口。这里要把无排队时的传播时间与包含排队的实际 RTT 区分开。</p>

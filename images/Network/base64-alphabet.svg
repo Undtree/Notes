@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="120" viewBox="0 0 640 120" role="img" aria-labelledby="title">
+  <title id="title">Base64 索引与字符的对应关系</title>
+  <style>
+    text { fill: #1a237e; text-anchor: middle; font-family: "Source Han Sans SC", "Noto Sans SC", "Microsoft YaHei", sans-serif; font-size: 24px; font-weight: 600; }
+    .values { font-family: "Cascadia Mono", Consolas, "Microsoft YaHei", monospace; }
+  </style>
+  <rect width="640" height="120" fill="#fff"/>
+
+  <rect x="104" y="16" width="518" height="88" rx="7" fill="#f7f8fc"/>
+  <path d="M 104 60 H 622 V 97 Q 622 104 615 104 H 111 Q 104 104 104 97 Z" fill="#eaf0ff"/>
+  <rect x="104" y="16" width="518" height="88" rx="7" fill="none" stroke="#4051b5" stroke-width="1.5"/>
+  <path d="M 222 16 V 104 M 340 16 V 104 M 458 16 V 104 M 540 16 V 104 M 104 60 H 622" fill="none" stroke="#9da8cc" stroke-width="1.5"/>
+
+  <text x="52" y="46">索引</text>
+  <text x="52" y="90">字符</text>
+  <g class="values">
+    <text x="163" y="46">0–25</text>
+    <text x="281" y="46">26–51</text>
+    <text x="399" y="46">52–61</text>
+    <text x="499" y="46">62</text>
+    <text x="581" y="46">63</text>
+
+    <text x="163" y="90">A–Z</text>
+    <text x="281" y="90">a–z</text>
+    <text x="399" y="90">0–9</text>
+    <text x="499" y="90">+</text>
+    <text x="581" y="90">/</text>
+  </g>
+</svg>
