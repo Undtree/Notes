@@ -11756,6 +11756,19 @@ xy'=Y',\qquad x^2y''=Y''-Y',
 <div class="arithmatex">\[
 a_0Y''+(a_1-a_0)Y'+a_2Y=f(e^t).
 \]</div>
+<div class="admonition example exercise">
+<p class="admonition-title">欧拉方程的运用</p>
+<p><strong>（ 2021 数一 13 ）</strong>求欧拉方程 <span class="arithmatex">\(x^2y''+xy'-4y=0\)</span> 满足初值 <span class="arithmatex">\(y(1)=1\)</span>、<span class="arithmatex">\(y'(1)=2\)</span> 的解：<span class="arithmatex">\(y=\underline{\qquad}\)</span>。</p>
+<details class="success">
+<summary>解析</summary>
+<p>在包含初值点 <span class="arithmatex">\(x=1\)</span> 的区间 <span class="arithmatex">\(x&gt;0\)</span> 上，令 <span class="arithmatex">\(t=\ln x\)</span>、<span class="arithmatex">\(Y(t)=y(e^t)\)</span>。由 <span class="arithmatex">\(xy'=Y'\)</span>、<span class="arithmatex">\(x^2y''=Y''-Y'\)</span>，原方程化为 <span class="arithmatex">\(Y''-4Y=0\)</span>。</p>
+<p>特征方程 <span class="arithmatex">\(r^2-4=0\)</span> 的根为 <span class="arithmatex">\(r=\pm2\)</span>，所以 <span class="arithmatex">\(Y(t)=C_1e^{2t}+C_2e^{-2t}\)</span>。换回 <span class="arithmatex">\(x\)</span> 得</p>
+<div class="arithmatex">\[
+y(x)=C_1x^2+C_2x^{-2},\qquad y'(x)=2C_1x-2C_2x^{-3}.
+\]</div>
+<p>代入初值得 <span class="arithmatex">\(C_1+C_2=1\)</span>、<span class="arithmatex">\(2C_1-2C_2=2\)</span>，解得 <span class="arithmatex">\(C_1=1\)</span>、<span class="arithmatex">\(C_2=0\)</span>，故填 <strong><span class="arithmatex">\(x^2\)</span></strong>。</p>
+</details>
+</div>
 <h3 id="8-常系数线性微分方程组">§8 常系数线性微分方程组<a class="headerlink" href="#8-常系数线性微分方程组" title="Permanent link">&para;</a></h3>
 <p>含同一自变量的两个或多个未知函数及其导数的方程组称为常微分方程组；各未知函数及其导数以线性形式出现且系数为常数时，称为常系数线性微分方程组。</p>
 <h3 id="9-二阶变系数线性微分方程的一般解法">§9 二阶变系数线性微分方程的一般解法<a class="headerlink" href="#9-二阶变系数线性微分方程的一般解法" title="Permanent link">&para;</a></h3>

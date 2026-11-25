@@ -9031,7 +9031,7 @@ T=\frac{\overline X-\mu_0}{S/\sqrt n}.
 <tbody>
 <tr>
 <td><span class="arithmatex">\(H_1:\mu\ne\mu_0\)</span></td>
-<td>$</td>
+<td><span class="arithmatex">\(\lvert T\rvert&gt;t_{\alpha/2}(n-1)\)</span></td>
 </tr>
 <tr>
 <td><span class="arithmatex">\(H_1:\mu&gt;\mu_0\)</span></td>
@@ -9099,7 +9099,7 @@ Z=
 <tbody>
 <tr>
 <td><span class="arithmatex">\(H_1:\mu_1-\mu_2\ne\Delta_0\)</span></td>
-<td>$</td>
+<td><span class="arithmatex">\(\lvert Z\rvert&gt;z_{\alpha/2}\)</span></td>
 </tr>
 <tr>
 <td><span class="arithmatex">\(H_1:\mu_1-\mu_2&gt;\Delta_0\)</span></td>
@@ -9138,7 +9138,7 @@ T=
 <tbody>
 <tr>
 <td><span class="arithmatex">\(H_1:\mu_1-\mu_2\ne\Delta_0\)</span></td>
-<td>$</td>
+<td><span class="arithmatex">\(\lvert T\rvert&gt;t_{\alpha/2}(\nu)\)</span></td>
 </tr>
 <tr>
 <td><span class="arithmatex">\(H_1:\mu_1-\mu_2&gt;\Delta_0\)</span></td>
@@ -9252,6 +9252,27 @@ b=\mu_0+z_{\alpha/2}\frac{\sigma}{\sqrt n}.
 =\Phi\left(\frac{b-\mu_1}{\sigma/\sqrt n}\right)
 -\Phi\left(\frac{a-\mu_1}{\sigma/\sqrt n}\right).
 \]</div>
+</div>
+<div class="admonition example exercise">
+<p class="admonition-title">第二类错误</p>
+<p><strong>（ 2021 数一 10 ）</strong>从总体 <span class="arithmatex">\(N(\mu,4)\)</span> 抽取简单随机样本 <span class="arithmatex">\(X_1,\ldots,X_{16}\)</span>，记 <span class="arithmatex">\(\bar X=\dfrac{1}{16}\sum_{i=1}^{16}X_i\)</span>，以 <span class="arithmatex">\(\Phi(x)\)</span> 表示标准正态分布函数。对假设 <span class="arithmatex">\(H_0:\mu\le10\)</span> 与 <span class="arithmatex">\(H_1:\mu&gt;10\)</span>，采用拒绝域 <span class="arithmatex">\(W=\{\bar X\ge11\}\)</span>。当真实均值为 <span class="arithmatex">\(\mu=11.5\)</span> 时，犯第二类错误的概率是（　）。</p>
+<div class="exam-options" markdown="1">
+<p>A. <span class="arithmatex">\(1-\Phi(1)\)</span>
+B. <span class="arithmatex">\(1-\Phi(0.5)\)</span>
+C. <span class="arithmatex">\(1-\Phi(1.5)\)</span>
+D. <span class="arithmatex">\(1-\Phi(2)\)</span>
+</div></p>
+<details class="success">
+<summary>解析</summary>
+<p>真实均值 <span class="arithmatex">\(11.5\)</span> 落在备择假设中。此时未拒绝 <span class="arithmatex">\(H_0\)</span> 就犯了第二类错误，对应拒绝域的补集 <span class="arithmatex">\(\bar X&lt;11\)</span>。</p>
+<p>在 <span class="arithmatex">\(\mu=11.5\)</span> 时，<span class="arithmatex">\(\bar X\sim N(11.5,4/16)=N(11.5,1/4)\)</span>，标准差为 <span class="arithmatex">\(1/2\)</span>。标准化后，由标准正态分布的对称性得</p>
+<div class="arithmatex">\[
+\beta(11.5)=P_{\mu=11.5}(\bar X&lt;11)
+=\Phi\left(\frac{11-11.5}{1/2}\right)
+=\Phi(-1)=1-\Phi(1).
+\]</div>
+<p>故选 <strong>A</strong>。</p>
+</details>
 </div>
 <p>在固定样本量、模型和通常的检验形式下，降低 <span class="arithmatex">\(\alpha\)</span> 会缩小拒绝域，往往使 <span class="arithmatex">\(\beta\)</span> 增大。增加样本量则通常可以在保持 <span class="arithmatex">\(\alpha\)</span> 不变时降低特定备择下的 <span class="arithmatex">\(\beta\)</span>，提高功效。所以，“显著性水平更低”不是说检验在所有方面都更好；还要结合样本量和需要识别的参数偏离程度。</p>
 
