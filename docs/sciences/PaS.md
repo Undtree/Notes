@@ -2657,40 +2657,7 @@ $$
     E(g(X,Y))=\iint_{\mathbb R^2}g(x,y)f(x,y)\,\mathrm dx\,\mathrm dy.
     $$
 
-    积分区域实际取联合密度的非零区域。一般不必先求出 $Z$ 的分布。
-
-    <div class="supplement" markdown="1">
-
-    计算示例
-    {: .supplement__title}
-
-    设
-
-    $$
-    f(x,y)=
-    \begin{cases}
-    2, & 0\lt x\lt y\lt1,\\
-    0, & \text{其他}.
-    \end{cases}
-    $$
-
-    直接利用联合密度，有
-
-    $$
-    E(X)=\int_0^1\int_0^y2x\,\mathrm dx\,\mathrm dy=\frac13,
-    $$
-
-    $$
-    E(Y)=\int_0^1\int_0^y2y\,\mathrm dx\,\mathrm dy=\frac23,
-    $$
-
-    $$
-    E(XY)=\int_0^1\int_0^y2xy\,\mathrm dx\,\mathrm dy=\frac14.
-    $$
-
-    由期望的线性性质， $E(X+Y)=E(X)+E(Y)=1.$
-
-    </div>
+    积分区域实际取联合密度的非零区域。由上，我们也不必先求出 $Z$ 的分布。
 
     !!! example exercise "习题"
 
@@ -3192,7 +3159,7 @@ $$
 
     事实上，统一上界只是便于使用的充分条件。上述证明只需 $\displaystyle \frac1{n^2}\sum_{i=1}^nD(X_i)\to0$
 
-    即可。不能把“每个方差都有限”直接替换为“方差一致有界”；有限方差可能随 $i$ 增大而迅速增长。
+    即可。“每个方差都有限”并不等同于“方差一致有界”；有限方差可能随 $i$ 增大而迅速增长。
 
 #### 辛钦大数定律
 
@@ -4931,7 +4898,7 @@ $$
 
     | 备择假设 | 拒绝域 |
     | --- | --- |
-    | $H_1:\mu\ne\mu_0$ | $|T|>t_{\alpha/2}(n-1)$ |
+    | $H_1:\mu\ne\mu_0$ | $\lvert T\rvert>t_{\alpha/2}(n-1)$ |
     | $H_1:\mu>\mu_0$ | $T>t_\alpha(n-1)$ |
     | $H_1:\mu\lt\mu_0$ | $T\lt-t_\alpha(n-1)$ |
 
@@ -4977,7 +4944,7 @@ $$
 
     | 备择假设 | 拒绝域 |
     | --- | --- |
-    | $H_1:\mu_1-\mu_2\ne\Delta_0$ | $|Z|>z_{\alpha/2}$ |
+    | $H_1:\mu_1-\mu_2\ne\Delta_0$ | $\lvert Z\rvert>z_{\alpha/2}$ |
     | $H_1:\mu_1-\mu_2>\Delta_0$ | $Z>z_\alpha$ |
     | $H_1:\mu_1-\mu_2\lt\Delta_0$ | $Z\lt-z_\alpha$ |
 
@@ -5006,7 +4973,7 @@ $$
 
     | 备择假设 | 拒绝域 |
     | --- | --- |
-    | $H_1:\mu_1-\mu_2\ne\Delta_0$ | $|T|>t_{\alpha/2}(\nu)$ |
+    | $H_1:\mu_1-\mu_2\ne\Delta_0$ | $\lvert T\rvert>t_{\alpha/2}(\nu)$ |
     | $H_1:\mu_1-\mu_2>\Delta_0$ | $T>t_\alpha(\nu)$ |
     | $H_1:\mu_1-\mu_2\lt\Delta_0$ | $T\lt-t_\alpha(\nu)$ |
 
@@ -5105,5 +5072,31 @@ $\beta$ 一般依赖真实参数值、样本量、显著性水平以及检验规
     =\Phi\left(\frac{b-\mu_1}{\sigma/\sqrt n}\right)
     -\Phi\left(\frac{a-\mu_1}{\sigma/\sqrt n}\right).
     $$
+
+!!! example exercise "第二类错误"
+
+    **（2021 数一 10）**从总体 $N(\mu,4)$ 抽取简单随机样本 $X_1,\ldots,X_{16}$，记 $\bar X=\dfrac{1}{16}\sum_{i=1}^{16}X_i$，以 $\Phi(x)$ 表示标准正态分布函数。对假设 $H_0:\mu\le10$ 与 $H_1:\mu>10$，采用拒绝域 $W=\{\bar X\ge11\}$。当真实均值为 $\mu=11.5$ 时，犯第二类错误的概率是（　）。
+
+    <div class="exam-options" markdown="1">
+
+    A. $1-\Phi(1)$
+    B. $1-\Phi(0.5)$
+    C. $1-\Phi(1.5)$
+    D. $1-\Phi(2)$
+    </div>
+
+    ??? success "解析"
+
+        真实均值 $11.5$ 落在备择假设中。此时未拒绝 $H_0$ 就犯了第二类错误，对应拒绝域的补集 $\bar X<11$。
+
+        在 $\mu=11.5$ 时，$\bar X\sim N(11.5,4/16)=N(11.5,1/4)$，标准差为 $1/2$。标准化后，由标准正态分布的对称性得
+
+        $$
+        \beta(11.5)=P_{\mu=11.5}(\bar X<11)
+        =\Phi\left(\frac{11-11.5}{1/2}\right)
+        =\Phi(-1)=1-\Phi(1).
+        $$
+
+        故选 **A**。
 
 在固定样本量、模型和通常的检验形式下，降低 $\alpha$ 会缩小拒绝域，往往使 $\beta$ 增大。增加样本量则通常可以在保持 $\alpha$ 不变时降低特定备择下的 $\beta$，提高功效。所以，“显著性水平更低”不是说检验在所有方面都更好；还要结合样本量和需要识别的参数偏离程度。
