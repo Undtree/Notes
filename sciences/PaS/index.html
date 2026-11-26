@@ -7097,29 +7097,7 @@ E(g(X,Y))=\sum_i\sum_jg(x_i,y_j)p_{ij}
 <div class="arithmatex">\[
 E(g(X,Y))=\iint_{\mathbb R^2}g(x,y)f(x,y)\,\mathrm dx\,\mathrm dy.
 \]</div>
-<p>积分区域实际取联合密度的非零区域。一般不必先求出 <span class="arithmatex">\(Z\)</span> 的分布。</p>
-<div class="supplement" markdown="1">
-<p class="supplement__title">计算示例</p>
-<p>设</p>
-<div class="arithmatex">\[
-f(x,y)=
-\begin{cases}
-2, &amp; 0\lt x\lt y\lt1,\\
-0, &amp; \text{其他}.
-\end{cases}
-\]</div>
-<p>直接利用联合密度，有</p>
-<div class="arithmatex">\[
-E(X)=\int_0^1\int_0^y2x\,\mathrm dx\,\mathrm dy=\frac13,
-\]</div>
-<div class="arithmatex">\[
-E(Y)=\int_0^1\int_0^y2y\,\mathrm dx\,\mathrm dy=\frac23,
-\]</div>
-<div class="arithmatex">\[
-E(XY)=\int_0^1\int_0^y2xy\,\mathrm dx\,\mathrm dy=\frac14.
-\]</div>
-<p>由期望的线性性质， <span class="arithmatex">\(E(X+Y)=E(X)+E(Y)=1.\)</span></p>
-</div>
+<p>积分区域实际取联合密度的非零区域。由上，我们也不必先求出 <span class="arithmatex">\(Z\)</span> 的分布。</p>
 <div class="admonition example exercise">
 <p class="admonition-title">习题</p>
 <p>设随机变量 <span class="arithmatex">\(X\)</span> 和 <span class="arithmatex">\(Y\)</span> 独立同分布，都服从参数为 <span class="arithmatex">\(1\)</span> 的指数分布。若 <span class="arithmatex">\(Z = \begin{cases} 2X, &amp;{X\ge Y},\\ Y-1, &amp;{X\lt Y}, \end{cases}\)</span> 则 <span class="arithmatex">\(E(Z) = \underline\qquad.\)</span></p>
@@ -7549,7 +7527,7 @@ P(|T_n|\ge\varepsilon)
 <p>读者可以回到<a href="#切比雪夫不等式">切比雪夫不等式</a>一节对照形式参看。</p>
 <hr />
 <p>事实上，统一上界只是便于使用的充分条件。上述证明只需 <span class="arithmatex">\(\displaystyle \frac1{n^2}\sum_{i=1}^nD(X_i)\to0\)</span></p>
-<p>即可。不能把“每个方差都有限”直接替换为“方差一致有界”；有限方差可能随 <span class="arithmatex">\(i\)</span> 增大而迅速增长。</p>
+<p>即可。“每个方差都有限”并不等同于“方差一致有界”；有限方差可能随 <span class="arithmatex">\(i\)</span> 增大而迅速增长。</p>
 </details>
 <h4 id="辛钦大数定律">辛钦大数定律<a class="headerlink" href="#辛钦大数定律" title="Permanent link">&para;</a></h4>
 <div class="admonition info">

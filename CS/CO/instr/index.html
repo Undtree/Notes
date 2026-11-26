@@ -3444,7 +3444,12 @@
 <li><strong>操作码</strong> 指明执行的操作，也决定其他字段应如何解释。</li>
 <li><strong>地址码</strong> 给出源操作数、结果或转移目标等信息。字段的含义由寻址方式规定，可以是主存地址、寄存器编号或操作数本身。</li>
 </ul>
-<p><strong>指令字长</strong> 是一条指令包含的二进制位数。所有指令等长，称为 <strong>定长指令字结构</strong>；不同指令可以有不同长度，称为 <strong>变长指令字结构</strong>。定长结构便于确定指令边界、取指和译码；变长结构可以为不同功能分配不同的编码空间。</p>
+<p><strong>指令字长</strong> 是一条指令包含的二进制位数。</p>
+<ul>
+<li><strong>定长指令字结构</strong>：所有指令等长。便于确定指令边界，也便于取指和译码。</li>
+<li><strong>变长指令字结构</strong>：不同指令的长度可以不同，能为不同功能分配不同的编码空间。</li>
+</ul>
+<p>主存通常按字节编址，指令字长一般也取字节的整数倍。这样便于存放、取指和计算后继地址。</p>
 <div class="admonition tip">
 <p class="admonition-title">三种“字长”的区分</p>
 <p>指令字长描述一条指令的编码长度，机器字长描述处理器的基本数据处理宽度，数据字长描述一个操作数的位数。三者可能相同，也可能不同。例如， 32 位机器既可以处理 8 位数据，也可以采用变长指令。</p>
@@ -3541,7 +3546,7 @@ k=\left\lceil\log_2N\right\rceil.
 <p>例如，区分 60 种操作至少需要 6 位操作码。使用其中 60 个编码后，还剩 4 个编码可供保留或扩展。</p>
 <p>操作码位置、长度固定，便于提取和译码。<strong>操作码长度与指令总长度分别规定</strong>：即使操作码等长，地址字段、立即数等仍可能使整条指令的长度变化。</p>
 <h3 id="扩展操作码指令格式">扩展操作码指令格式<a class="headerlink" href="#扩展操作码指令格式" title="Permanent link">&para;</a></h3>
-<p>在指令总长度有限时，可以把少地址指令省下的字段用于扩展操作码。这样，地址字段越少，操作码可以越长，从而容纳更多操作类型。</p>
+<p>在指令总长度有限时，可以把少地址指令省下的字段用于扩展操作码。这样，地址字段越少，操作码可以越长，从而容纳更多操作类型。这样，操作码不再位于固定位置，因而译码时需要逐层判断前缀。当然，采用扩展操作码的相应代价是译码和控制更复杂。</p>
 <p>设指令固定为 16 位，基本操作码和每个地址字段都占 4 位。若把所有基本操作码都分配给三地址指令，只能得到 16 种操作。下面保留 <code>1111</code>，表示还要继续读取后续字段来确定操作：</p>
 <table>
 <thead>
@@ -3746,7 +3751,7 @@ k=\left\lceil\log_2N\right\rceil.
 <div class="arithmatex">\[
 \mathrm{PC}_{\mathrm{ref}}-2^{n-1}
 \;\sim\;
-\mathrm{PC}_{\mathrm{ref}}+2^{n-1}-1.s
+\mathrm{PC}_{\mathrm{ref}}+2^{n-1}-1.
 \]</div>
 <div class="admonition tip">
 <p class="admonition-title">假设取指后 PC 已指向下一条指令，那么基准就是下一条指令地址。</p>
@@ -3761,9 +3766,38 @@ k=\left\lceil\log_2N\right\rceil.
 <h4 id="变址寻址">变址寻址<a class="headerlink" href="#变址寻址" title="Permanent link">&para;</a></h4>
 <p>指令中的 <span class="arithmatex">\(A\)</span> 通常给出数组等数据区域的起点，变址寄存器 IX 保存随程序变化的偏移，适合 <strong>数组访问和循环遍历</strong>。</p>
 <p>例如，数组首地址为 <code>1000H</code>、每个元素占 4 字节，访问从 0 编号的第 3 个元素时，字节偏移为 <span class="arithmatex">\(3\times4=12\)</span>，地址为 <code>100CH</code>。</p>
-<p>基址寻址和变址寻址的加法形式相似，区别主要在用途：前者常把寄存器内容作为区域起点，后者常把寄存器内容作为变化的偏移。带比例因子的具体编码见 <a href="#x86-的内存地址表达式">x86 的内存地址表达式</a>。相对、基址、变址寻址都属于通过基准与位移形成地址的方式。</p>
+<p>基址寻址和变址寻址的加法形式相似，区别主要在用途：前者常把寄存器内容作为区域起点，后者常把寄存器内容作为变化的偏移。带比例因子的具体编码见 <a href="#x86-的内存地址表达式">x86 的内存地址表达式</a>。</p>
+<p>相对寻址、基址寻址和变址寻址，都把一个寄存器内容与形式地址相加，合称 <strong>偏移寻址</strong>。三者只是基准和偏移的来源不同：</p>
+<table>
+<thead>
+<tr>
+<th>方式</th>
+<th>基准</th>
+<th>偏移</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>相对寻址</td>
+<td>PC</td>
+<td>指令中的位移</td>
+</tr>
+<tr>
+<td>基址寻址</td>
+<td>基址寄存器</td>
+<td>指令中的形式地址</td>
+</tr>
+<tr>
+<td>变址寻址</td>
+<td>指令中的形式地址</td>
+<td>变址寄存器</td>
+</tr>
+</tbody>
+</table>
+<p>基址寻址的基址由系统安排，便于程序重定位。变址寻址的偏移由用户程序控制，适合数组和循环。</p>
 <h4 id="堆栈寻址">堆栈寻址<a class="headerlink" href="#堆栈寻址" title="Permanent link">&para;</a></h4>
-<p><strong>堆栈</strong> 按后进先出（ LIFO ）的顺序访问， SP 指示栈顶位置，指令隐含使用栈顶操作数。栈可以由寄存器组实现，也可以在主存中实现。</p>
+<p><strong>堆栈</strong> 按后进先出（ LIFO ）的顺序访问， SP 指示栈顶位置。指令隐含使用栈顶操作数，不必显式给出地址。</p>
+<p>栈可以由寄存器组实现，称为 <strong>硬堆栈</strong>：容量小、速度快、成本高。也可以从主存中划出一段区域实现，称为 <strong>软堆栈</strong>：容量大、成本低。</p>
 <p>压栈和出栈需要配合调整 SP ，但栈向高地址还是低地址增长、SP 指向已占用单元还是下一空闲位置，都要看具体约定。后面的<a href="#压栈和出栈">压栈和出栈</a>采用 32 位 x86 的内存栈模型。</p>
 <div id="常见寻址方式怎样选择"></div>
 
@@ -4090,7 +4124,15 @@ A,A+1,\ldots,A+k-1.
 <h3 id="选择语句的机器级表示">选择语句的机器级表示<a class="headerlink" href="#选择语句的机器级表示" title="Permanent link">&para;</a></h3>
 <p>选择结构通过 <strong>设置条件码、条件转移和必要的无条件转移</strong> 组合实现。在 C 的整数条件表达式中， 0 为假，任何非零值（包括负数）都为真。</p>
 <h4 id="条件码与分支">条件码与分支<a class="headerlink" href="#条件码与分支" title="Permanent link">&para;</a></h4>
-<p>判断条件之前，需要确认哪些指令最近设置过相关标志。ZF 表示结果是否为零， SF 反映结果的符号位， OF 用于判断有符号溢出；对于 CMP 所做的无符号减法， CF 为 1 表示发生借位。运算电路如何产生标志可联系<a href="../datas/#带标志加法器">带标志加法器</a>理解。</p>
+<p>判断条件之前，需要确认哪些指令最近设置过相关标志。四个常用标志是：</p>
+<ul>
+<li><strong>ZF</strong>：结果是否为零。</li>
+<li><strong>SF</strong>：结果的符号位。</li>
+<li><strong>OF</strong>：有符号运算是否溢出。</li>
+<li><strong>CF</strong>：无符号运算是否产生进位或借位。</li>
+</ul>
+<p>对 CMP 所做的无符号减法， CF 为 1 表示发生借位。</p>
+<p>运算电路如何产生这些标志，可联系<a href="../datas/#带标志加法器">带标志加法器</a>理解。</p>
 <div class="admonition info">
 <p class="admonition-title">追踪条件码的来源</p>
 <p>INC、DEC 更新 ZF、SF、OF 等标志，保留 CF ； MOV、LEA、NOT 保留这些条件码。阅读分支前的代码时，应追踪 <strong>分支所用的每个标志由哪条指令最后设置</strong>。具体规则见 Intel 手册 <a href="https://www.intel.com/content/dam/www/public/us/en/documents/manuals/64-ia-32-architectures-software-developer-vol-2a-manual.pdf">Volume 2A 的 INC、DEC、LEA 条目</a>及 <a href="https://cdrdv2-public.intel.com/868141/253667-089-sdm-vol-2b.pdf">Volume 2B 的 MOV、NOT 条目</a>。</p>
@@ -4403,8 +4445,16 @@ A,A+1,\ldots,A+k-1.
 <h3 id="精简指令系统计算机risc">精简指令系统计算机（ RISC ）<a class="headerlink" href="#精简指令系统计算机risc" title="Permanent link">&para;</a></h3>
 <p><strong>精简指令系统计算机</strong>（ Reduced Instruction Set Computer ， RISC ）优先支持常用的简单操作，把较复杂的功能交给这些操作的组合。ARM、MIPS、RISC-V 是常见例子。</p>
 <p>它强调 <strong>寄存器之间的运算</strong>，通常采用 <strong>LOAD/STORE 结构</strong>：访问内存中的数据由加载和存储指令承担，算术、逻辑操作主要在寄存器中完成。这里的“访问内存”指数据访问，取指仍然需要取得指令编码。具体指令序列见<a href="#loadstore-怎样完成对内存数据的计算">访存与运算分离的例子</a>。</p>
-<p>传统 RISC 的基本指令通常采用定长编码，格式和寻址方式较少； CPU 配备较多通用寄存器，控制器常以硬布线逻辑为主。这些安排便于译码，并减少数据在主存与寄存器之间的往返。</p>
+<p>传统 RISC 的常见做法是：</p>
+<ul>
+<li>基本指令采用定长编码，格式和寻址方式较少，便于译码。</li>
+<li>设置较多通用寄存器，减少数据在主存与寄存器之间的往返。</li>
+<li>控制器以硬布线逻辑为主。</li>
+<li>多数简单指令在一个时钟周期内完成，复杂操作由多条指令组合实现。</li>
+</ul>
+<p>指令周期较规整，便于流水线调度。</p>
 <p>RISC 普遍采用流水线来提高指令吞吐率。编译器需要选择指令组合、分配寄存器并安排执行顺序，因此编译优化在这种设计中十分重要。</p>
+<p>流水线并不是 RISC 独有的技术， CISC 同样可以采用。不过 RISC 的定长编码、规整格式和 LOAD/STORE 组织使流水段更容易划分，所以流水线在 RISC 中更为普遍。</p>
 <p>RISC 的“精简”侧重常用操作、规整格式和易于实现的指令语义。扩展可以加入新的功能和编码形式，例如 RISC-V 基本指令为 32 位， C 扩展提供 16 位压缩指令。</p>
 <div class="admonition note">
 <p class="admonition-title">吞吐率与单条指令延迟</p>
@@ -4475,6 +4525,7 @@ A,A+1,\ldots,A+k-1.
 T_{\mathrm{CPU}}=I\times\mathrm{CPI}\times T_{\mathrm{clk}}.
 \]</div>
 <p>复杂指令可能减少 <span class="arithmatex">\(I\)</span>，简单指令可能降低 CPI 或缩短时钟周期，完成同一任务的时间由这三个因素共同决定。</p>
+<p>现代处理器并不严格按这两类划分。CISC 常把复杂指令译码为内部微操作，再交给类 RISC 的执行核心完成。RISC 也通过扩展加入新的功能和编码形式。两类名称描述的是设计倾向，并不是硬性界限。</p>
 
 
 
